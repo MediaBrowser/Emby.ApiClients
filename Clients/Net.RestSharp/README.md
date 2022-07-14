@@ -1,59 +1,54 @@
-# EmbyClient.Dotnet - the C# library for the Emby Server REST API (BETA)
+# Net.RestSharp
 
-Explore the Emby Server API
+<table><tr />
+    <tr>
+        <th valign="top" align="left">Name</th>
+        <td>EmbyClient.Dotnet</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">Language</th>
+        <td>C#</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">SDK Folder</th>
+        <td>SampleCode/RestApi/Clients/Net.RestSharp</td>
+    </tr>
+</table>
 
-- API version: 4.8.0.3
-- SDK version: 0.0.0.0
-    For more information, please visit [https://emby.media/community/index.php?/forum/47-developer-api](https://emby.media/community/index.php?/forum/47-developer-api)
+## Prerequisites 
 
-<a name="frameworks-supported"></a>
-## Frameworks supported
+#### Frameworks supported
+
+- .NET >=5.0
 - .NET Core >=2.0
 - .NetStandard 2.0
 - .NET Framework >=4.6
-- Mono/Xamarin >=vNext
+- Mono/Xamarin
 - UWP >=10.0
 
-<a name="dependencies"></a>
-## Dependencies
+#### Dependencies
 - [RestSharp](https://www.nuget.org/packages/RestSharp) - 106.2.2 or later
 - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 10.0.3 or later
 
-The DLLs included in the package may not be the latest version. We recommend using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the latest version of the packages:
-```
-Install-Package RestSharp
-Install-Package Newtonsoft.Json
-```
+> [!NOTE]
+> RestSharp has introduced breaking changes in v107.x.
+> Updating RestSharp to those version will require a huge amount of changes to the code.
 
-NOTE: RestSharp versions greater than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)
-
-<a name="installation"></a>
-## Installation
-Run the following command to generate the DLL
-- [Mac/Linux] `/bin/sh build.sh`
-- [Windows] `build.bat`
-
-Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
-```csharp
-using EmbyClient.Dotnet.Api;
-using EmbyClient.Dotnet.Client;
-using EmbyClient.Dotnet.Model;
-```
-<a name="packaging"></a>
-## Packaging
-
-A `.nuspec` is included with the project. You can follow the Nuget quickstart to [create](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package#create-the-package) and [publish](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package#publish-the-package) packages.
-
-This `.nuspec` uses placeholders from the `.csproj`, so build the `.csproj` directly:
-
-```
-nuget pack -Build -OutputDirectory out EmbyClient.Dotnet.csproj
-```
-
-Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds) or [other host](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) and consume the new package via Nuget as usual.
-
-<a name="getting-started"></a>
 ## Getting Started
+
+### Using the Client Code
+
+The `Net.RestSharp\EmbyClient.Dotnet` folder includes the C# project `EmbyClient.Dotnet.csproj` and all code that is required. You can copy the whole folder directly into your own project.
+
+### Visal Studio Sample Application
+
+The folder includes a Visual Studio solution which you can open directly in Visual Studio 2019 (or later).
+
+The sample application is a simple Windows Forms application which demonstrates how to authenticate with Emby Server and make basic API calls:
+
+![Csharp App Screenshot](../../../../images/csharp_app_screenshot.png)
+
+### Basic Code Example
 
 ```csharp
 using System;
@@ -92,9 +87,3 @@ namespace Example
     }
 }
 ```
-
-<a name="documentation-for-api-endpoints"></a>
-## Documentation for API Endpoints
-
-All URIs are relative to *http://emby.media/emby*
-

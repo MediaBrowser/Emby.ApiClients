@@ -387,6 +387,9 @@ describe("BrandingServiceApi", () => {
   test("getBrandingCss", () => {
     return expect(instance.getBrandingCss({})).resolves.toBe(null)
   })
+  test("getBrandingCssCss", () => {
+    return expect(instance.getBrandingCssCss({})).resolves.toBe(null)
+  })
 })
 
 describe("ChannelServiceApi", () => {

@@ -1,8 +1,19 @@
-# embyclient-python
+# Python Client
 
-- API version: 4.8.0.3
-- Package version: 0.0.0.0
-- Build package: io.swagger.codegen.v3.generators.python.PythonClientCodegen
+<table><tr />
+    <tr>
+        <th valign="top" align="left">Name</th>
+        <td>embyclient-python</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">Language</th>
+        <td>Python</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">SDK Folder</th>
+        <td>SampleCode/RestApi/Clients/Python</td>
+    </tr>
+</table>
 
 ## Requirements.
 
@@ -53,8 +64,3 @@ try:
 except ApiException as e:
     print("Exception when calling ActivityLogServiceApi->get_system_activitylog_entries: %s\n" % e)
 ```
-
-## Documentation for API Endpoints
-
-All URIs are relative to *http://emby.media/emby*
-

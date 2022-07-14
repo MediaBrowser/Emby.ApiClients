@@ -17150,6 +17150,24 @@ paths:
         "500":
           description: Server error.
       x-RequiredAuthentication: No authentication required
+  /Branding/Css.css:
+    summary: Gets custom css
+    get:
+      tags:
+      - BrandingService
+      summary: Gets custom css
+      description: No authentication required
+      operationId: getBrandingCssCss
+      responses:
+        "200":
+          description: Operation successful. Response content unknown.
+        "400":
+          description: Bad Request. Server cannot process request.
+        "404":
+          description: Resource not found or unavailable.
+        "500":
+          description: Server error.
+      x-RequiredAuthentication: No authentication required
   /Connect/Pending:
     summary: Creates a Connect link for a user
     get:
@@ -55007,6 +55025,7 @@ components:
         LocationType: FileSystem
         IsPremiere: true
         Altitude: 0.5199002018724985
+      x-internal-ref-name: MediaBrowser.Model.Dto.BaseItemDto
     Video3DFormat:
       type: string
       enum:
@@ -55015,6 +55034,7 @@ components:
       - FullTopAndBottom
       - HalfTopAndBottom
       - MVC
+      x-internal-ref-name: MediaBrowser.Model.Entities.Video3DFormat
     ExternalUrl:
       type: object
       properties:
@@ -55025,6 +55045,7 @@ components:
       example:
         Url: Url
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Providers.ExternalUrl
     MediaSourceInfo:
       type: object
       properties:
@@ -55278,6 +55299,7 @@ components:
         Id: Id
         SupportsTranscoding: true
         DefaultAudioStreamIndex: 6
+      x-internal-ref-name: MediaBrowser.Model.Dto.MediaSourceInfo
     MediaInfo.MediaProtocol:
       type: string
       enum:
@@ -55289,12 +55311,14 @@ components:
       - Rtp
       - Ftp
       - Mms
+      x-internal-ref-name: MediaBrowser.Model.MediaInfo.MediaProtocol
     MediaSourceType:
       type: string
       enum:
       - Default
       - Grouping
       - Placeholder
+      x-internal-ref-name: MediaBrowser.Model.Dto.MediaSourceType
     MediaStream:
       type: object
       properties:
@@ -55485,6 +55509,7 @@ components:
         IsInterlaced: true
         Extradata: Extradata
         BitRate: 4
+      x-internal-ref-name: MediaBrowser.Model.Entities.MediaStream
     MediaStreamType:
       type: string
       enum:
@@ -55495,6 +55520,7 @@ components:
       - EmbeddedImage
       - Attachment
       - Data
+      x-internal-ref-name: MediaBrowser.Model.Entities.MediaStreamType
     Dlna.SubtitleDeliveryMethod:
       type: string
       enum:
@@ -55503,22 +55529,26 @@ components:
       - External
       - Hls
       - VideoSideData
+      x-internal-ref-name: MediaBrowser.Model.Dlna.SubtitleDeliveryMethod
     SubtitleLocationType:
       type: string
       enum:
       - InternalStream
       - VideoSideData
+      x-internal-ref-name: MediaBrowser.Model.Entities.SubtitleLocationType
     MediaInfo.TransportStreamTimestamp:
       type: string
       enum:
       - None
       - Zero
       - Valid
+      x-internal-ref-name: MediaBrowser.Model.MediaInfo.TransportStreamTimestamp
     Library.PlayAccess:
       type: string
       enum:
       - Full
       - None
+      x-internal-ref-name: MediaBrowser.Model.Library.PlayAccess
     MediaUrl:
       type: object
       properties:
@@ -55529,10 +55559,12 @@ components:
       example:
         Url: Url
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Entities.MediaUrl
     ProviderIdDictionary:
       type: object
       additionalProperties:
         type: string
+      x-internal-ref-name: MediaBrowser.Model.Entities.ProviderIdDictionary
       x-schema-name: ProviderIdDictionary
     BaseItemPerson:
       type: object
@@ -55553,6 +55585,7 @@ components:
         PrimaryImageTag: PrimaryImageTag
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Dto.BaseItemPerson
     PersonType:
       type: string
       enum:
@@ -55564,6 +55597,7 @@ components:
       - Composer
       - Conductor
       - Lyricist
+      x-internal-ref-name: MediaBrowser.Model.Entities.PersonType
     NameLongIdPair:
       type: object
       properties:
@@ -55575,6 +55609,7 @@ components:
       example:
         Id: 0
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Dto.NameLongIdPair
     UserItemDataDto:
       type: object
       properties:
@@ -55622,6 +55657,7 @@ components:
         IsFavorite: true
         ItemId: ItemId
         Key: Key
+      x-internal-ref-name: MediaBrowser.Model.Dto.UserItemDataDto
     DayOfWeek:
       type: string
       enum:
@@ -55643,6 +55679,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Dto.NameIdPair
     ChapterInfo:
       type: object
       properties:
@@ -55664,6 +55701,7 @@ components:
         MarkerType: Chapter
         ChapterIndex: 0
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Entities.ChapterInfo
     MarkerType:
       type: string
       enum:
@@ -55671,11 +55709,13 @@ components:
       - IntroStart
       - IntroEnd
       - CreditsStart
+      x-internal-ref-name: MediaBrowser.Model.Entities.MarkerType
     LocationType:
       type: string
       enum:
       - FileSystem
       - Virtual
+      x-internal-ref-name: MediaBrowser.Model.Entities.LocationType
     MetadataFields:
       type: string
       enum:
@@ -55692,6 +55732,7 @@ components:
       - ChannelNumber
       - SortName
       - OriginalTitle
+      x-internal-ref-name: MediaBrowser.Model.Entities.MetadataFields
     Drawing.ImageOrientation:
       type: string
       enum:
@@ -55703,12 +55744,14 @@ components:
       - RightTop
       - RightBottom
       - LeftBottom
+      x-internal-ref-name: MediaBrowser.Model.Drawing.ImageOrientation
     LiveTv.TimerType:
       type: string
       enum:
       - Program
       - DateTime
       - Keyword
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.TimerType
     QueryResult_UserLibrary.TagItem:
       type: object
       properties:
@@ -55736,6 +55779,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: Emby.Api.UserLibrary.TagItem
     Collections.CollectionCreationResult:
       type: object
       properties:
@@ -55746,6 +55790,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Collections.CollectionCreationResult
     QueryResult_Devices.DeviceInfo:
       type: object
       properties:
@@ -55815,6 +55860,7 @@ components:
         ReportedDeviceId: ReportedDeviceId
         Name: Name
         AppName: AppName
+      x-internal-ref-name: MediaBrowser.Model.Devices.DeviceInfo
     QueryResult_UserLibrary.OfficialRatingItem:
       type: object
       properties:
@@ -55837,6 +55883,7 @@ components:
           type: string
       example:
         Name: Name
+      x-internal-ref-name: Emby.Api.UserLibrary.OfficialRatingItem
     Updates.PackageInfo:
       type: object
       properties:
@@ -55951,6 +55998,7 @@ components:
         adult: true
         category: category
         previewImage: previewImage
+      x-internal-ref-name: MediaBrowser.Model.Updates.PackageInfo
     Updates.PackageTargetSystem:
       type: string
       enum:
@@ -55958,6 +56006,7 @@ components:
       - MBTheater
       - MBClassic
       - Other
+      x-internal-ref-name: MediaBrowser.Model.Updates.PackageTargetSystem
     Updates.PackageVersionInfo:
       type: object
       properties:
@@ -55995,12 +56044,14 @@ components:
         guid: guid
         description: description
         classification: Release
+      x-internal-ref-name: MediaBrowser.Model.Updates.PackageVersionInfo
     Updates.PackageVersionClass:
       type: string
       enum:
       - Release
       - Beta
       - Dev
+      x-internal-ref-name: MediaBrowser.Model.Updates.PackageVersionClass
     Playlists.PlaylistCreationResult:
       type: object
       properties:
@@ -56011,6 +56062,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Playlists.PlaylistCreationResult
     Plugins.PluginInfo:
       type: object
       properties:
@@ -56033,6 +56085,7 @@ components:
         Id: Id
         ConfigurationFileName: ConfigurationFileName
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Plugins.PluginInfo
     Tasks.TaskInfo:
       type: object
       properties:
@@ -56091,12 +56144,14 @@ components:
           Name: Name
         Key: Key
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Tasks.TaskInfo
     Tasks.TaskState:
       type: string
       enum:
       - Idle
       - Cancelling
       - Running
+      x-internal-ref-name: MediaBrowser.Model.Tasks.TaskState
     Tasks.TaskResult:
       type: object
       properties:
@@ -56127,6 +56182,7 @@ components:
         ErrorMessage: ErrorMessage
         Key: Key
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Tasks.TaskResult
     Tasks.TaskCompletionStatus:
       type: string
       enum:
@@ -56134,6 +56190,7 @@ components:
       - Failed
       - Cancelled
       - Aborted
+      x-internal-ref-name: MediaBrowser.Model.Tasks.TaskCompletionStatus
     Tasks.TaskTriggerInfo:
       type: object
       properties:
@@ -56162,12 +56219,14 @@ components:
         IntervalTicks: 1
         TimeOfDayTicks: 6
         MaxRuntimeTicks: 5
+      x-internal-ref-name: MediaBrowser.Model.Tasks.TaskTriggerInfo
     Tasks.SystemEvent:
       type: string
       enum:
       - WakeFromSleep
       - DisplayConfigurationChange
       - NetworkChange
+      x-internal-ref-name: MediaBrowser.Model.Tasks.SystemEvent
     Session.SessionInfo:
       type: object
       properties:
@@ -56866,6 +56925,7 @@ components:
           SubtitleStreamIndex: 5
           PlaybackRate: 2.3021358869347655
         DeviceName: DeviceName
+      x-internal-ref-name: MediaBrowser.Controller.Session.SessionInfo
     PlayerStateInfo:
       type: object
       properties:
@@ -56916,18 +56976,21 @@ components:
         IsPaused: true
         SubtitleStreamIndex: 5
         PlaybackRate: 2.3021358869347655
+      x-internal-ref-name: MediaBrowser.Model.Session.PlayerStateInfo
     PlayMethod:
       type: string
       enum:
       - Transcode
       - DirectStream
       - DirectPlay
+      x-internal-ref-name: MediaBrowser.Model.Session.PlayMethod
     RepeatMode:
       type: string
       enum:
       - RepeatNone
       - RepeatAll
       - RepeatOne
+      x-internal-ref-name: MediaBrowser.Model.Session.RepeatMode
     SessionUserInfo:
       type: object
       properties:
@@ -56942,6 +57005,7 @@ components:
         UserName: UserName
         UserId: UserId
         UserInternalId: 7
+      x-internal-ref-name: MediaBrowser.Model.Session.SessionUserInfo
     TranscodingInfo:
       type: object
       properties:
@@ -57107,6 +57171,7 @@ components:
         VideoEncoderMediaType: VideoEncoderMediaType
         VideoEncoder: VideoEncoder
         VideoBitrate: 1
+      x-internal-ref-name: MediaBrowser.Model.Session.TranscodingInfo
     TranscodeReason:
       type: string
       enum:
@@ -57134,6 +57199,7 @@ components:
       - SubtitleCodecNotSupported
       - DirectPlayError
       - VideoRangeNotSupported
+      x-internal-ref-name: MediaBrowser.Model.Session.TranscodeReason
     Tuple_Double-Double:
       type: object
       properties:
@@ -57183,6 +57249,7 @@ components:
         Short: Short
         HardwareContextName: HardwareContextName
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Session.Transcoding.VpStepInfo
     Transcoding.VpStepTypes:
       type: string
       enum:
@@ -57205,6 +57272,7 @@ components:
       - ShowSpeaker
       - StripStyles
       - ConnectTo
+      x-internal-ref-name: MediaBrowser.Model.Session.Transcoding.VpStepTypes
     ImageType:
       type: string
       enum:
@@ -57223,6 +57291,7 @@ components:
       - Thumbnail
       - LogoLight
       - LogoLightColor
+      x-internal-ref-name: MediaBrowser.Model.Entities.ImageType
     NameValuePair:
       type: object
       properties:
@@ -57233,6 +57302,7 @@ components:
       example:
         Value: Value
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Dto.NameValuePair
     Branding.BrandingOptions:
       type: object
       properties:
@@ -57243,6 +57313,7 @@ components:
       example:
         CustomCss: CustomCss
         LoginDisclaimer: LoginDisclaimer
+      x-internal-ref-name: MediaBrowser.Model.Branding.BrandingOptions
     Connect.ConnectAuthenticationExchangeResult:
       type: object
       properties:
@@ -57254,6 +57325,7 @@ components:
       example:
         LocalUserId: LocalUserId
         AccessToken: AccessToken
+      x-internal-ref-name: Emby.Server.Connect.ConnectAuthenticationExchangeResult
     Devices.DeviceOptions:
       type: object
       properties:
@@ -57261,6 +57333,7 @@ components:
           type: string
       example:
         CustomName: CustomName
+      x-internal-ref-name: MediaBrowser.Model.Devices.DeviceOptions
     Devices.ContentUploadHistory:
       type: object
       properties:
@@ -57281,6 +57354,7 @@ components:
           MimeType: MimeType
           Name: Name
         DeviceId: DeviceId
+      x-internal-ref-name: MediaBrowser.Model.Devices.ContentUploadHistory
     Devices.LocalFileInfo:
       type: object
       properties:
@@ -57297,6 +57371,7 @@ components:
         Id: Id
         MimeType: MimeType
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Devices.LocalFileInfo
     DisplayPreferences:
       type: object
       properties:
@@ -57345,16 +57420,19 @@ components:
         CustomPrefs:
           key: CustomPrefs
         ViewType: ViewType
+      x-internal-ref-name: MediaBrowser.Model.Entities.DisplayPreferences
     ScrollDirection:
       type: string
       enum:
       - Horizontal
       - Vertical
+      x-internal-ref-name: MediaBrowser.Model.Entities.ScrollDirection
     SortOrder:
       type: string
       enum:
       - Ascending
       - Descending
+      x-internal-ref-name: MediaBrowser.Model.Entities.SortOrder
     Emby.Dlna.Profiles.DlnaProfile:
       type: object
       properties:
@@ -57632,11 +57710,13 @@ components:
           EnabledForVideo: true
           EnabledForAudio: true
           EnabledForPhotos: true
+      x-internal-ref-name: Emby.Dlna.Profiles.DlnaProfile
     Emby.Dlna.Profiles.DeviceProfileType:
       type: string
       enum:
       - System
       - User
+      x-internal-ref-name: Emby.Dlna.Profiles.DeviceProfileType
     Emby.Dlna.Profiles.DeviceIdentification:
       type: object
       properties:
@@ -57679,6 +57759,7 @@ components:
           Match: Equals
         Manufacturer: Manufacturer
         ModelDescription: ModelDescription
+      x-internal-ref-name: Emby.Dlna.Profiles.DeviceIdentification
     Emby.Dlna.Profiles.HttpHeaderInfo:
       type: object
       properties:
@@ -57692,12 +57773,14 @@ components:
         Value: Value
         Name: Name
         Match: Equals
+      x-internal-ref-name: Emby.Dlna.Profiles.HttpHeaderInfo
     Emby.Dlna.Profiles.HeaderMatchType:
       type: string
       enum:
       - Equals
       - Regex
       - Substring
+      x-internal-ref-name: Emby.Dlna.Profiles.HeaderMatchType
     Emby.Dlna.Profiles.ProtocolInfoDetection:
       type: object
       properties:
@@ -57711,6 +57794,7 @@ components:
         EnabledForVideo: true
         EnabledForAudio: true
         EnabledForPhotos: true
+      x-internal-ref-name: Emby.Dlna.Profiles.ProtocolInfoDetection
     Dlna.DirectPlayProfile:
       type: object
       properties:
@@ -57727,12 +57811,14 @@ components:
         Type: Audio
         VideoCodec: VideoCodec
         AudioCodec: AudioCodec
+      x-internal-ref-name: MediaBrowser.Model.Dlna.DirectPlayProfile
     Dlna.DlnaProfileType:
       type: string
       enum:
       - Audio
       - Video
       - Photo
+      x-internal-ref-name: MediaBrowser.Model.Dlna.DlnaProfileType
     Dlna.TranscodingProfile:
       type: object
       properties:
@@ -57791,16 +57877,19 @@ components:
         Protocol: Protocol
         MaxManifestSubtitles: 4
         AudioCodec: AudioCodec
+      x-internal-ref-name: MediaBrowser.Model.Dlna.TranscodingProfile
     Dlna.TranscodeSeekInfo:
       type: string
       enum:
       - Auto
       - Bytes
+      x-internal-ref-name: MediaBrowser.Model.Dlna.TranscodeSeekInfo
     Dlna.EncodingContext:
       type: string
       enum:
       - Streaming
       - Static
+      x-internal-ref-name: MediaBrowser.Model.Dlna.EncodingContext
     Dlna.ContainerProfile:
       type: object
       properties:
@@ -57824,6 +57913,7 @@ components:
           IsRequired: true
           Value: Value
           Property: AudioChannels
+      x-internal-ref-name: MediaBrowser.Model.Dlna.ContainerProfile
     Dlna.ProfileCondition:
       type: object
       properties:
@@ -57840,6 +57930,7 @@ components:
         IsRequired: true
         Value: Value
         Property: AudioChannels
+      x-internal-ref-name: MediaBrowser.Model.Dlna.ProfileCondition
     Dlna.ProfileConditionType:
       type: string
       enum:
@@ -57848,6 +57939,7 @@ components:
       - LessThanEqual
       - GreaterThanEqual
       - EqualsAny
+      x-internal-ref-name: MediaBrowser.Model.Dlna.ProfileConditionType
     Dlna.ProfileConditionValue:
       type: string
       enum:
@@ -57875,6 +57967,7 @@ components:
       - AudioSampleRate
       - AudioBitDepth
       - VideoRange
+      x-internal-ref-name: MediaBrowser.Model.Dlna.ProfileConditionValue
     Dlna.CodecProfile:
       type: object
       properties:
@@ -57902,12 +57995,14 @@ components:
         Conditions:
         - null
         - null
+      x-internal-ref-name: MediaBrowser.Model.Dlna.CodecProfile
     Dlna.CodecType:
       type: string
       enum:
       - Video
       - VideoAudio
       - Audio
+      x-internal-ref-name: MediaBrowser.Model.Dlna.CodecType
     Dlna.ResponseProfile:
       type: object
       properties:
@@ -57937,6 +58032,7 @@ components:
         Conditions:
         - null
         - null
+      x-internal-ref-name: MediaBrowser.Model.Dlna.ResponseProfile
     Dlna.SubtitleProfile:
       type: object
       properties:
@@ -57959,6 +58055,7 @@ components:
         DidlMode: DidlMode
         Method: Encode
         Protocol: Protocol
+      x-internal-ref-name: MediaBrowser.Model.Dlna.SubtitleProfile
     MediaEncoding.Configuration.ToneMapping.ToneMapOptionsVisibility:
       type: object
       properties:
@@ -57996,6 +58093,7 @@ components:
         IsOpenClAvailable: true
         IsQuickSyncNativeAvailable: true
         IsOpenClSuperTAvailable: true
+      x-internal-ref-name: Emby.Server.MediaEncoding.Configuration.ToneMapping.ToneMapOptionsVisibility
     OperatingSystem:
       type: string
       enum:
@@ -58004,6 +58102,7 @@ components:
       - OSX
       - BSD
       - Android
+      x-internal-ref-name: MediaBrowser.Model.System.OperatingSystem
     Emby.Web.GenericEdit.EditObjectContainer:
       type: object
       properties:
@@ -58078,6 +58177,7 @@ components:
           IsReadOnly: true
         DefaultObject: {}
         Object: {}
+      x-internal-ref-name: Emby.Web.GenericEdit.EditObjectContainer
     Emby.Web.GenericEdit.Editors.EditorRoot:
       type: object
       properties:
@@ -58172,6 +58272,7 @@ components:
         Id: Id
         IsAdvanced: true
         IsReadOnly: true
+      x-internal-ref-name: Emby.Web.GenericEdit.Editors.EditorRoot
     Emby.Web.GenericEdit.Conditions.PropertyCondition:
       type: object
       properties:
@@ -58194,11 +58295,13 @@ components:
         Value: {}
         ValueCondition: IsEqual
         ConditionType: Visible
+      x-internal-ref-name: Emby.Web.GenericEdit.Conditions.PropertyCondition
     Emby.Web.GenericEdit.Conditions.PropertyConditionType:
       type: string
       enum:
       - Visible
       - Enabled
+      x-internal-ref-name: Emby.Web.GenericEdit.Conditions.PropertyConditionType
     Attributes.SimpleCondition:
       type: string
       enum:
@@ -58206,6 +58309,7 @@ components:
       - IsFalse
       - IsNull
       - IsNotNullOrEmpty
+      x-internal-ref-name: MediaBrowser.Model.Attributes.SimpleCondition
     Attributes.ValueCondition:
       type: string
       enum:
@@ -58215,6 +58319,7 @@ components:
       - IsGreaterOrEqual
       - IsLess
       - IsLessOrEqual
+      x-internal-ref-name: MediaBrowser.Model.Attributes.ValueCondition
     Emby.Web.GenericEdit.Actions.PostbackAction:
       type: object
       properties:
@@ -58228,6 +58333,7 @@ components:
         CommandParameterPropertyId: CommandParameterPropertyId
         TargetEditorId: TargetEditorId
         PostbackCommandId: PostbackCommandId
+      x-internal-ref-name: Emby.Web.GenericEdit.Actions.PostbackAction
     Emby.Web.GenericEdit.Editors.EditorButtonItem:
       type: object
       properties:
@@ -58259,6 +58365,7 @@ components:
         IsAdvanced: true
         IsReadOnly: true
         Name: Name
+      x-internal-ref-name: Emby.Web.GenericEdit.Editors.EditorButtonItem
     Emby.Web.GenericEdit.Common.EditorTypes:
       type: string
       enum:
@@ -58282,6 +58389,7 @@ components:
       - DataGrid
       - PivotGrid
       - SpacerItem
+      x-internal-ref-name: Emby.Web.GenericEdit.Common.EditorTypes
     Emby.Web.GenericEdit.Editors.EditorBase:
       type: object
       properties:
@@ -58313,11 +58421,13 @@ components:
         IsAdvanced: true
         IsReadOnly: true
         Name: Name
+      x-internal-ref-name: Emby.Web.GenericEdit.Editors.EditorBase
     MediaEncoding.CodecParameterContext:
       type: string
       enum:
       - Playback
       - Conversion
+      x-internal-ref-name: MediaBrowser.Controller.MediaEncoding.CodecParameterContext
     ValidatePath:
       type: object
       properties:
@@ -58326,6 +58436,7 @@ components:
         IsFile:
           type: boolean
           nullable: true
+      x-internal-ref-name: Emby.Api.ValidatePath
     DefaultDirectoryBrowserInfo:
       type: object
       properties:
@@ -58333,6 +58444,7 @@ components:
           type: string
       example:
         Path: Path
+      x-internal-ref-name: Emby.Api.DefaultDirectoryBrowserInfo
     IO.FileSystemEntryInfo:
       type: object
       properties:
@@ -58346,6 +58458,7 @@ components:
         Path: Path
         Type: File
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.IO.FileSystemEntryInfo
     IO.FileSystemEntryType:
       type: string
       enum:
@@ -58353,6 +58466,7 @@ components:
       - Directory
       - NetworkComputer
       - NetworkShare
+      x-internal-ref-name: MediaBrowser.Model.IO.FileSystemEntryType
     GameSystemSummary:
       type: object
       properties:
@@ -58378,6 +58492,7 @@ components:
         DisplayName: DisplayName
         GameCount: 0
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Dto.GameSystemSummary
     Emby.Plugin.GenericEditDemo.Data.DemoTypeInfo:
       type: object
       properties:
@@ -58389,6 +58504,7 @@ components:
       example:
         DemoType: 0
         Name: Name
+      x-internal-ref-name: Emby.Plugin.GenericEditDemo.Data.DemoTypeInfo
     ImageByNameInfo:
       type: object
       properties:
@@ -58409,6 +58525,7 @@ components:
         Theme: Theme
         Name: Name
         FileLength: 0
+      x-internal-ref-name: MediaBrowser.Model.Dto.ImageByNameInfo
     ItemCounts:
       type: object
       properties:
@@ -58469,6 +58586,7 @@ components:
         BoxSetCount: 7
         ItemCount: 1
         SongCount: 3
+      x-internal-ref-name: MediaBrowser.Model.Dto.ItemCounts
     Persistence.IntroDebugInfo:
       type: object
       properties:
@@ -58488,6 +58606,7 @@ components:
         Start: 6
         End: 1
         Id: 0
+      x-internal-ref-name: MediaBrowser.Controller.Persistence.IntroDebugInfo
     Library.LibraryOptionsResult:
       type: object
       properties:
@@ -58567,6 +58686,7 @@ components:
           - Collections
           - Collections
           Name: Name
+      x-internal-ref-name: Emby.Api.Library.LibraryOptionsResult
     Library.LibraryOptionInfo:
       type: object
       properties:
@@ -58584,12 +58704,14 @@ components:
         - Collections
         - Collections
         Name: Name
+      x-internal-ref-name: Emby.Api.Library.LibraryOptionInfo
     Configuration.MetadataFeatures:
       type: string
       enum:
       - Collections
       - Adult
       - RequiredSetup
+      x-internal-ref-name: MediaBrowser.Model.Configuration.MetadataFeatures
     Library.LibraryTypeOptions:
       type: object
       properties:
@@ -58629,6 +58751,7 @@ components:
         MetadataFetchers:
         - null
         - null
+      x-internal-ref-name: Emby.Api.Library.LibraryTypeOptions
     Configuration.ImageOption:
       type: object
       properties:
@@ -58644,6 +58767,7 @@ components:
         Type: null
         Limit: 0
         MinWidth: 6
+      x-internal-ref-name: MediaBrowser.Model.Configuration.ImageOption
     Library.MediaFolder:
       type: object
       properties:
@@ -58668,6 +58792,7 @@ components:
           Id: Id
           Name: Name
         Name: Name
+      x-internal-ref-name: Emby.Api.Library.MediaFolder
     Library.SubFolder:
       type: object
       properties:
@@ -58681,6 +58806,7 @@ components:
         Path: Path
         Id: Id
         Name: Name
+      x-internal-ref-name: Emby.Api.Library.SubFolder
     Library.AddVirtualFolder:
       type: object
       properties:
@@ -58696,6 +58822,7 @@ components:
             type: string
         LibraryOptions:
           $ref: '#/components/schemas/Configuration.LibraryOptions'
+      x-internal-ref-name: Emby.Api.Library.AddVirtualFolder
     Configuration.LibraryOptions:
       type: object
       properties:
@@ -58963,6 +59090,7 @@ components:
           NetworkPath: NetworkPath
         SampleIgnoreSize: 2
         MinCollectionItems: 5
+      x-internal-ref-name: MediaBrowser.Model.Configuration.LibraryOptions
     Configuration.MediaPathInfo:
       type: object
       properties:
@@ -58973,6 +59101,7 @@ components:
       example:
         Path: Path
         NetworkPath: NetworkPath
+      x-internal-ref-name: MediaBrowser.Model.Configuration.MediaPathInfo
     Configuration.TypeOptions:
       type: object
       properties:
@@ -59019,6 +59148,7 @@ components:
         MetadataFetchers:
         - MetadataFetchers
         - MetadataFetchers
+      x-internal-ref-name: MediaBrowser.Model.Configuration.TypeOptions
     MediaInfo.LiveStreamRequest:
       type: object
       properties:
@@ -59069,6 +59199,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MediaInfo.MediaProtocol'
+      x-internal-ref-name: MediaBrowser.Model.MediaInfo.LiveStreamRequest
     Dlna.DeviceProfile:
       type: object
       properties:
@@ -59114,6 +59245,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Dlna.SubtitleProfile'
+      x-internal-ref-name: MediaBrowser.Model.Dlna.DeviceProfile
     MediaInfo.LiveStreamResponse:
       type: object
       properties:
@@ -59268,6 +59400,7 @@ components:
           Id: Id
           SupportsTranscoding: true
           DefaultAudioStreamIndex: 6
+      x-internal-ref-name: MediaBrowser.Model.MediaInfo.LiveStreamResponse
     LiveTV.Api.SetChannelMapping:
       type: object
       properties:
@@ -59275,6 +59408,7 @@ components:
           type: string
         ProviderChannelId:
           type: string
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.SetChannelMapping
     LiveTv.ListingsProviderInfo:
       type: object
       properties:
@@ -59368,6 +59502,7 @@ components:
         DataVersion: DataVersion
         SetupUrl: SetupUrl
         Password: Password
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.ListingsProviderInfo
     LiveTv.TunerHostInfo:
       type: object
       properties:
@@ -59416,6 +59551,7 @@ components:
         Id: Id
         DataVersion: 6
         SetupUrl: SetupUrl
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.TunerHostInfo
     LiveTv.LiveTvInfo:
       type: object
       properties:
@@ -59430,11 +59566,13 @@ components:
         EnabledUsers:
         - EnabledUsers
         - EnabledUsers
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.LiveTvInfo
     LiveTv.ChannelType:
       type: string
       enum:
       - TV
       - Radio
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.ChannelType
     QueryResult_LiveTV.Api.EpgRow:
       type: object
       properties:
@@ -61042,6 +61180,7 @@ components:
           LocationType: FileSystem
           IsPremiere: true
           Altitude: 0.5199002018724985
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.EpgRow
     LiveTV.Api.GetPrograms:
       type: object
       properties:
@@ -61064,6 +61203,7 @@ components:
           type: string
         GroupProgramsBySeries:
           type: boolean
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.GetPrograms
     LiveTv.RecordingStatus:
       type: string
       enum:
@@ -61074,6 +61214,7 @@ components:
       - ConflictedOk
       - ConflictedNotOk
       - Error
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.RecordingStatus
     QueryResult_LiveTv.TimerInfoDto:
       type: object
       properties:
@@ -62798,6 +62939,7 @@ components:
         - ParentBackdropImageTags
         Id: Id
         SeriesTimerId: SeriesTimerId
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.TimerInfoDto
     LiveTv.KeepUntil:
       type: string
       enum:
@@ -62805,6 +62947,7 @@ components:
       - UntilSpaceNeeded
       - UntilWatched
       - UntilDate
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.KeepUntil
     QueryResult_LiveTv.SeriesTimerInfoDto:
       type: object
       properties:
@@ -63047,6 +63190,7 @@ components:
         - ParentBackdropImageTags
         - ParentBackdropImageTags
         Id: Id
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.SeriesTimerInfoDto
     LiveTv.KeywordInfo:
       type: object
       properties:
@@ -63057,6 +63201,7 @@ components:
       example:
         KeywordType: Name
         Keyword: Keyword
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.KeywordInfo
     LiveTv.KeywordType:
       type: string
       enum:
@@ -63065,6 +63210,7 @@ components:
       - Overview
       - Actor
       - Director
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.KeywordType
     LiveTv.SeriesTimerInfo:
       type: object
       properties:
@@ -63131,6 +63277,7 @@ components:
             $ref: '#/components/schemas/LiveTv.KeywordInfo'
         TimerType:
           $ref: '#/components/schemas/LiveTv.TimerType'
+      x-internal-ref-name: MediaBrowser.Controller.LiveTv.SeriesTimerInfo
     LiveTv.GuideInfo:
       type: object
       properties:
@@ -63143,6 +63290,7 @@ components:
       example:
         StartDate: 2000-01-23T04:56:07.000+00:00
         EndDate: 2000-01-23T04:56:07.000+00:00
+      x-internal-ref-name: MediaBrowser.Model.LiveTv.GuideInfo
     ParentalRating:
       type: object
       properties:
@@ -63154,6 +63302,7 @@ components:
       example:
         Value: 0
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Entities.ParentalRating
     Globalization.LocalizatonOption:
       type: object
       properties:
@@ -63164,6 +63313,7 @@ components:
       example:
         Value: Value
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Globalization.LocalizatonOption
     Globalization.CountryInfo:
       type: object
       properties:
@@ -63183,6 +63333,7 @@ components:
         DisplayName: DisplayName
         Name: Name
         EnglishName: EnglishName
+      x-internal-ref-name: MediaBrowser.Model.Globalization.CountryInfo
     Globalization.CultureDto:
       type: object
       properties:
@@ -63213,6 +63364,7 @@ components:
         DisplayName: DisplayName
         Name: Name
         TwoLetterISOLanguageName: TwoLetterISOLanguageName
+      x-internal-ref-name: MediaBrowser.Model.Globalization.CultureDto
     RecommendationDto:
       type: object
       properties:
@@ -64280,6 +64432,7 @@ components:
           LocationType: FileSystem
           IsPremiere: true
           Altitude: 0.5199002018724985
+      x-internal-ref-name: MediaBrowser.Model.Dto.RecommendationDto
     RecommendationType:
       type: string
       enum:
@@ -64289,6 +64442,7 @@ components:
       - HasActorFromRecentlyPlayed
       - HasLikedDirector
       - HasLikedActor
+      x-internal-ref-name: MediaBrowser.Model.Dto.RecommendationType
     Notifications.NotificationTypeInfo:
       type: object
       properties:
@@ -64308,12 +64462,14 @@ components:
         IsBasedOnUserEvent: true
         Enabled: true
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Notifications.NotificationTypeInfo
     Notifications.NotificationLevel:
       type: string
       enum:
       - Normal
       - Warning
       - Error
+      x-internal-ref-name: MediaBrowser.Model.Notifications.NotificationLevel
     Emby.Notifications.Api.NotificationResult:
       type: object
       properties:
@@ -64343,6 +64499,7 @@ components:
           Date: 2000-01-23T04:56:07.000+00:00
           Url: Url
           Name: Name
+      x-internal-ref-name: Emby.Notifications.Api.NotificationResult
     Emby.Notifications.Api.Notification:
       type: object
       properties:
@@ -64372,6 +64529,7 @@ components:
         Date: 2000-01-23T04:56:07.000+00:00
         Url: Url
         Name: Name
+      x-internal-ref-name: Emby.Notifications.Api.Notification
     PlaybackStartInfo:
       type: object
       properties:
@@ -64451,6 +64609,7 @@ components:
           type: array
           items:
             type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.PlaybackStartInfo
     QueueItem:
       type: object
       properties:
@@ -64459,6 +64618,7 @@ components:
           format: int64
         PlaylistItemId:
           type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.QueueItem
     ProgressEvent:
       type: string
       enum:
@@ -64476,6 +64636,7 @@ components:
       - StateChange
       - SubtitleOffsetChange
       - PlaybackRateChange
+      x-internal-ref-name: MediaBrowser.Model.Session.ProgressEvent
     Sync.SyncTarget:
       type: object
       properties:
@@ -64486,6 +64647,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Sync.SyncTarget
     QueryResult_Sync.SyncJob:
       type: object
       properties:
@@ -64648,12 +64810,14 @@ components:
         UserId: 5
         UnwatchedOnly: true
         Id: 0
+      x-internal-ref-name: MediaBrowser.Model.Sync.SyncJob
     Sync.SyncCategory:
       type: string
       enum:
       - Latest
       - NextUp
       - Resume
+      x-internal-ref-name: MediaBrowser.Model.Sync.SyncCategory
     Sync.SyncJobStatus:
       type: string
       enum:
@@ -64664,6 +64828,7 @@ components:
       - Completed
       - CompletedWithError
       - Failed
+      x-internal-ref-name: MediaBrowser.Model.Sync.SyncJobStatus
     QueryResult_Sync.Model.SyncJobItem:
       type: object
       properties:
@@ -65241,6 +65406,7 @@ components:
         ItemName: ItemName
         Id: 0
         JobId: 6
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncJobItem
     Sync.Model.SyncJobItemStatus:
       type: string
       enum:
@@ -65250,6 +65416,7 @@ components:
       - Transferring
       - Synced
       - Failed
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncJobItemStatus
     Sync.Model.ItemFileInfo:
       type: object
       properties:
@@ -65270,12 +65437,14 @@ components:
         Index: 5
         Name: Name
         ImageType: Primary
+      x-internal-ref-name: Emby.Server.Sync.Model.ItemFileInfo
     Sync.Model.ItemFileType:
       type: string
       enum:
       - Media
       - Image
       - Subtitles
+      x-internal-ref-name: Emby.Server.Sync.Model.ItemFileType
     Sync.Model.SyncJobRequest:
       type: object
       properties:
@@ -65317,6 +65486,7 @@ components:
           nullable: true
         Downloaded:
           type: boolean
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncJobRequest
     Sync.Model.SyncJobCreationResult:
       type: object
       properties:
@@ -65702,6 +65872,7 @@ components:
           UserId: 5
           UnwatchedOnly: true
           Id: 0
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncJobCreationResult
     Sync.Model.SyncDialogOptions:
       type: object
       properties:
@@ -65752,6 +65923,7 @@ components:
           Name: Name
         - Id: Id
           Name: Name
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncDialogOptions
     Sync.Model.SyncJobOption:
       type: string
       enum:
@@ -65761,6 +65933,7 @@ components:
       - SyncNewContent
       - ItemLimit
       - Profile
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncJobOption
     Sync.Model.SyncQualityOption:
       type: object
       properties:
@@ -65780,6 +65953,7 @@ components:
         Id: Id
         IsOriginalQuality: true
         Name: Name
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncQualityOption
     Sync.Model.SyncProfileOption:
       type: object
       properties:
@@ -65799,6 +65973,7 @@ components:
         EnableQualityOptions: true
         Id: Id
         Name: Name
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncProfileOption
     Users.UserAction:
       type: object
       properties:
@@ -65819,10 +65994,12 @@ components:
           type: integer
           format: int64
           nullable: true
+      x-internal-ref-name: MediaBrowser.Model.Users.UserAction
     Users.UserActionType:
       type: string
       enum:
       - PlayedItem
+      x-internal-ref-name: MediaBrowser.Model.Users.UserActionType
     Sync.Model.SyncDataRequest:
       type: object
       properties:
@@ -65832,6 +66009,7 @@ components:
             type: string
         TargetId:
           type: string
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncDataRequest
     Sync.Model.SyncDataResponse:
       type: object
       properties:
@@ -65843,6 +66021,7 @@ components:
         ItemIdsToRemove:
         - ItemIdsToRemove
         - ItemIdsToRemove
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncDataResponse
     Configuration.ServerConfiguration:
       type: object
       properties:
@@ -66061,11 +66240,13 @@ components:
         EnableSqLiteMmio: true
         PublicPort: 0
         EnableAutoUpdate: true
+      x-internal-ref-name: MediaBrowser.Model.Configuration.ServerConfiguration
     Configuration.ImageSavingConvention:
       type: string
       enum:
       - Legacy
       - Compatible
+      x-internal-ref-name: MediaBrowser.Model.Configuration.ImageSavingConvention
     Configuration.PathSubstitution:
       type: object
       properties:
@@ -66076,6 +66257,7 @@ components:
       example:
         From: From
         To: To
+      x-internal-ref-name: MediaBrowser.Model.Configuration.PathSubstitution
     WakeOnLanInfo:
       type: object
       properties:
@@ -66090,6 +66272,7 @@ components:
         BroadcastAddress: BroadcastAddress
         Port: 0
         MacAddress: MacAddress
+      x-internal-ref-name: MediaBrowser.Model.System.WakeOnLanInfo
     SystemInfo:
       type: object
       properties:
@@ -66218,6 +66401,7 @@ components:
         HasUpdateAvailable: true
         LogPath: LogPath
         SystemUpdateLevel: Release
+      x-internal-ref-name: MediaBrowser.Model.System.SystemInfo
     Updates.InstallationInfo:
       type: object
       properties:
@@ -66243,6 +66427,7 @@ components:
         PercentComplete: 6.027456183070403
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Updates.InstallationInfo
     Net.EndPointInfo:
       type: object
       properties:
@@ -66253,6 +66438,7 @@ components:
       example:
         IsLocal: true
         IsInNetwork: true
+      x-internal-ref-name: MediaBrowser.Model.Net.EndPointInfo
     UserDto:
       type: object
       properties:
@@ -66407,11 +66593,13 @@ components:
         ConnectLinkType: LinkedUser
         Id: Id
         HasPassword: true
+      x-internal-ref-name: MediaBrowser.Model.Dto.UserDto
     Connect.UserLinkType:
       type: string
       enum:
       - LinkedUser
       - Guest
+      x-internal-ref-name: MediaBrowser.Model.Connect.UserLinkType
     Configuration.UserConfiguration:
       type: object
       properties:
@@ -66474,6 +66662,7 @@ components:
         - MyMediaExcludes
         - MyMediaExcludes
         RememberAudioSelections: true
+      x-internal-ref-name: MediaBrowser.Model.Configuration.UserConfiguration
     Configuration.SubtitlePlaybackMode:
       type: string
       enum:
@@ -66482,12 +66671,14 @@ components:
       - OnlyForced
       - None
       - Smart
+      x-internal-ref-name: MediaBrowser.Model.Configuration.SubtitlePlaybackMode
     Configuration.SegmentSkipMode:
       type: string
       enum:
       - ShowButton
       - AutoSkip
       - None
+      x-internal-ref-name: MediaBrowser.Model.Configuration.SegmentSkipMode
     Users.UserPolicy:
       type: object
       properties:
@@ -66664,6 +66855,7 @@ components:
         IsHiddenFromUnusedDevices: true
         EnableSyncTranscoding: true
         RemoteClientBitrateLimit: 2
+      x-internal-ref-name: MediaBrowser.Model.Users.UserPolicy
     Configuration.AccessSchedule:
       type: object
       properties:
@@ -66679,6 +66871,7 @@ components:
         DayOfWeek: Sunday
         StartHour: 1.4658129805029452
         EndHour: 5.962133916683182
+      x-internal-ref-name: MediaBrowser.Model.Configuration.AccessSchedule
     Configuration.DynamicDayOfWeek:
       type: string
       enum:
@@ -66692,6 +66885,7 @@ components:
       - Everyday
       - Weekday
       - Weekend
+      x-internal-ref-name: MediaBrowser.Model.Configuration.DynamicDayOfWeek
     Configuration.UnratedItem:
       type: string
       enum:
@@ -66705,6 +66899,7 @@ components:
       - LiveTvProgram
       - ChannelContent
       - Other
+      x-internal-ref-name: MediaBrowser.Model.Configuration.UnratedItem
     QueryResult_UserDto:
       type: object
       properties:
@@ -66933,6 +67128,7 @@ components:
           type: string
         Pw:
           type: string
+      x-internal-ref-name: Emby.Api.AuthenticateUserByName
     Authentication.AuthenticationResult:
       type: object
       properties:
@@ -67687,16 +67883,19 @@ components:
             SubtitleStreamIndex: 5
             PlaybackRate: 2.3021358869347655
           DeviceName: DeviceName
+      x-internal-ref-name: MediaBrowser.Controller.Authentication.AuthenticationResult
     CreateUserByName:
       type: object
       properties:
         Name:
           type: string
+      x-internal-ref-name: Emby.Api.CreateUserByName
     ForgotPassword:
       type: object
       properties:
         EnteredUsername:
           type: string
+      x-internal-ref-name: Emby.Api.ForgotPassword
     Users.ForgotPasswordResult:
       type: object
       properties:
@@ -67712,12 +67911,14 @@ components:
         Action: ContactAdmin
         PinExpirationDate: 2000-01-23T04:56:07.000+00:00
         PinFile: PinFile
+      x-internal-ref-name: MediaBrowser.Model.Users.ForgotPasswordResult
     Users.ForgotPasswordAction:
       type: string
       enum:
       - ContactAdmin
       - PinCode
       - InNetworkRequired
+      x-internal-ref-name: MediaBrowser.Model.Users.ForgotPasswordAction
     Emby.Web.Api.ConfigurationPageInfo:
       type: object
       properties:
@@ -67765,11 +67966,13 @@ components:
           DataFolderPath: DataFolderPath
           Id: Id
           Name: Name
+      x-internal-ref-name: Emby.Web.Api.ConfigurationPageInfo
     Plugins.ConfigurationPageType:
       type: string
       enum:
       - PluginConfiguration
       - None
+      x-internal-ref-name: MediaBrowser.Controller.Plugins.ConfigurationPageType
     Common.Plugins.IPlugin:
       type: object
       properties:
@@ -67799,6 +68002,7 @@ components:
         DataFolderPath: DataFolderPath
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.Common.Plugins.IPlugin
     Version:
       type: object
       properties:
@@ -68025,6 +68229,7 @@ components:
         Id: Id
         IsEnabledByDefault: true
         SecondaryFramework: null
+      x-internal-ref-name: Emby.Server.MediaEncoding.Codecs.VideoCodecs.VideoCodecBase
     MediaEncoding.Codecs.Common.Interfaces.ICodecDeviceInfo:
       type: object
       properties:
@@ -68088,6 +68293,7 @@ components:
           SupportsStandaloneDeviceInit: true
         DevPath: DevPath
         DeviceName: DeviceName
+      x-internal-ref-name: Emby.Server.MediaEncoding.Codecs.Common.Interfaces.ICodecDeviceInfo
     MediaEncoding.Codecs.Common.Interfaces.ICodecDeviceCapabilities:
       type: object
       properties:
@@ -68107,6 +68313,7 @@ components:
         SupportsHwDownload: true
         Supports10BitProcessing: true
         SupportsStandaloneDeviceInit: true
+      x-internal-ref-name: Emby.Server.MediaEncoding.Codecs.Common.Interfaces.ICodecDeviceCapabilities
     Emby.Media.Model.Enums.SecondaryFrameworks:
       type: string
       enum:
@@ -68123,12 +68330,14 @@ components:
       - D3d11va
       - VideoToolbox
       - Mmal
+      x-internal-ref-name: Emby.Media.Model.Enums.SecondaryFrameworks
     Emby.Media.Model.Enums.CodecKinds:
       type: string
       enum:
       - Audio
       - Video
       - SubTitles
+      x-internal-ref-name: Emby.Media.Model.Enums.CodecKinds
     Emby.Media.Model.Enums.VideoMediaTypes:
       type: string
       enum:
@@ -68365,6 +68574,7 @@ components:
       - zerocodec
       - zlib
       - zmbv
+      x-internal-ref-name: Emby.Media.Model.Enums.VideoMediaTypes
     Emby.Media.Model.Types.BitRate:
       type: object
       properties:
@@ -68381,6 +68591,7 @@ components:
         bps: 2
         kbps: 4.145608029883936
         Mbps: 7.386281948385884
+      x-internal-ref-name: Emby.Media.Model.Types.BitRate
     Emby.Media.Model.Enums.ColorFormats:
       type: string
       enum:
@@ -68514,6 +68725,7 @@ components:
       - yuva444p12
       - nv24
       - nv42
+      x-internal-ref-name: Emby.Media.Model.Enums.ColorFormats
     Emby.Media.Model.Types.ProfileLevelInformation:
       type: object
       properties:
@@ -68554,6 +68766,7 @@ components:
           BitDepths:
           - 1
           - 1
+      x-internal-ref-name: Emby.Media.Model.Types.ProfileLevelInformation
     Emby.Media.Model.Types.ProfileInformation:
       type: object
       properties:
@@ -68578,6 +68791,7 @@ components:
         BitDepths:
         - 1
         - 1
+      x-internal-ref-name: Emby.Media.Model.Types.ProfileInformation
     Emby.Media.Model.Types.LevelInformation:
       type: object
       properties:
@@ -68629,6 +68843,7 @@ components:
         ResolutionRateStrings:
         - ResolutionRateStrings
         - ResolutionRateStrings
+      x-internal-ref-name: Emby.Media.Model.Types.LevelInformation
     Emby.Media.Model.Types.ResolutionWithRate:
       type: object
       properties:
@@ -68650,6 +68865,7 @@ components:
         Resolution:
           Height: 4
           Width: 1
+      x-internal-ref-name: Emby.Media.Model.Types.ResolutionWithRate
     Emby.Media.Model.Types.Resolution:
       type: object
       properties:
@@ -68662,11 +68878,13 @@ components:
       example:
         Height: 4
         Width: 1
+      x-internal-ref-name: Emby.Media.Model.Types.Resolution
     Emby.Media.Model.Enums.CodecDirections:
       type: string
       enum:
       - Encoder
       - Decoder
+      x-internal-ref-name: Emby.Media.Model.Enums.CodecDirections
     Configuration.CodecConfiguration:
       type: object
       properties:
@@ -68681,6 +68899,7 @@ components:
         IsEnabled: true
         Priority: 0
         CodecId: CodecId
+      x-internal-ref-name: MediaBrowser.Model.Configuration.CodecConfiguration
     ExternalIdInfo:
       type: object
       properties:
@@ -68697,6 +68916,7 @@ components:
         Key: Key
         Name: Name
         UrlFormatString: UrlFormatString
+      x-internal-ref-name: MediaBrowser.Model.Providers.ExternalIdInfo
     Providers.RemoteSearchQuery_Providers.TrailerInfo:
       type: object
       properties:
@@ -68740,6 +68960,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.TrailerInfo
     RemoteSearchResult:
       type: object
       properties:
@@ -68801,6 +69022,7 @@ components:
         Artists:
         - null
         - null
+      x-internal-ref-name: MediaBrowser.Model.Providers.RemoteSearchResult
     Providers.RemoteSearchQuery_Providers.BookInfo:
       type: object
       properties:
@@ -68846,6 +69068,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.BookInfo
     Providers.RemoteSearchQuery_Providers.MovieInfo:
       type: object
       properties:
@@ -68889,6 +69112,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.MovieInfo
     Providers.RemoteSearchQuery_Providers.SeriesInfo:
       type: object
       properties:
@@ -68938,12 +69162,14 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.SeriesInfo
     SeriesDisplayOrder:
       type: string
       enum:
       - Aired
       - Dvd
       - Absolute
+      x-internal-ref-name: MediaBrowser.Model.Entities.SeriesDisplayOrder
     Providers.RemoteSearchQuery_Providers.GameInfo:
       type: object
       properties:
@@ -68987,6 +69213,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.GameInfo
     Providers.RemoteSearchQuery_Providers.ItemLookupInfo:
       type: object
       properties:
@@ -69030,6 +69257,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.ItemLookupInfo
     Providers.RemoteSearchQuery_Providers.MusicVideoInfo:
       type: object
       properties:
@@ -69077,6 +69305,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.MusicVideoInfo
     Providers.RemoteSearchQuery_Providers.PersonLookupInfo:
       type: object
       properties:
@@ -69120,6 +69349,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.PersonLookupInfo
     Providers.RemoteSearchQuery_Providers.AlbumInfo:
       type: object
       properties:
@@ -69171,6 +69401,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.AlbumInfo
     Providers.SongInfo:
       type: object
       properties:
@@ -69216,6 +69447,7 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.SongInfo
     Providers.RemoteSearchQuery_Providers.ArtistInfo:
       type: object
       properties:
@@ -69259,12 +69491,14 @@ components:
           type: boolean
         EnableAdultMetadata:
           type: boolean
+      x-internal-ref-name: MediaBrowser.Controller.Providers.ArtistInfo
     Providers.MetadataRefreshMode:
       type: string
       enum:
       - ValidationOnly
       - Default
       - FullRefresh
+      x-internal-ref-name: MediaBrowser.Controller.Providers.MetadataRefreshMode
     MetadataEditorInfo:
       type: object
       properties:
@@ -69331,6 +69565,7 @@ components:
           Key: Key
           Name: Name
           UrlFormatString: UrlFormatString
+      x-internal-ref-name: MediaBrowser.Model.Dto.MetadataEditorInfo
     Library.DeleteInfo:
       type: object
       properties:
@@ -69342,6 +69577,7 @@ components:
         Paths:
         - Paths
         - Paths
+      x-internal-ref-name: Emby.Api.Library.DeleteInfo
     AllThemeMediaResult:
       type: object
       properties:
@@ -70406,6 +70642,7 @@ components:
             Altitude: 0.5199002018724985
         SoundtrackSongsResult: null
         ThemeSongsResult: null
+      x-internal-ref-name: MediaBrowser.Model.Querying.AllThemeMediaResult
     ThemeMediaResult:
       type: object
       properties:
@@ -71471,6 +71708,7 @@ components:
           LocationType: FileSystem
           IsPremiere: true
           Altitude: 0.5199002018724985
+      x-internal-ref-name: MediaBrowser.Model.Querying.ThemeMediaResult
     ImageInfo:
       type: object
       properties:
@@ -71503,6 +71741,7 @@ components:
         ImageIndex: 0
         Width: 1
         ImageType: Primary
+      x-internal-ref-name: MediaBrowser.Model.Dto.ImageInfo
     RemoteImageResult:
       type: object
       properties:
@@ -71545,6 +71784,7 @@ components:
         Providers:
         - Providers
         - Providers
+      x-internal-ref-name: MediaBrowser.Model.Providers.RemoteImageResult
     RemoteImageInfo:
       type: object
       properties:
@@ -71590,11 +71830,13 @@ components:
         Height: 0
         Width: 6
         Url: Url
+      x-internal-ref-name: MediaBrowser.Model.Providers.RemoteImageInfo
     RatingType:
       type: string
       enum:
       - Score
       - Likes
+      x-internal-ref-name: MediaBrowser.Model.Dto.RatingType
     RokuMetadata.Api.ThumbnailSetInfo:
       type: object
       properties:
@@ -71935,12 +72177,14 @@ components:
           SupportsTranscoding: true
           DefaultAudioStreamIndex: 6
         ErrorCode: NotAllowed
+      x-internal-ref-name: MediaBrowser.Model.MediaInfo.PlaybackInfoResponse
     Dlna.PlaybackErrorCode:
       type: string
       enum:
       - NotAllowed
       - NoCompatibleStream
       - RateLimitExceeded
+      x-internal-ref-name: MediaBrowser.Model.Dlna.PlaybackErrorCode
     MediaInfo.PlaybackInfoRequest:
       type: object
       properties:
@@ -71996,6 +72240,7 @@ components:
             $ref: '#/components/schemas/MediaInfo.MediaProtocol'
         CurrentPlaySessionId:
           type: string
+      x-internal-ref-name: MediaBrowser.Model.MediaInfo.PlaybackInfoRequest
     Library.PostUpdatedMedia:
       type: object
       properties:
@@ -72003,6 +72248,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Library.MediaUpdateInfo'
+      x-internal-ref-name: Emby.Api.Library.PostUpdatedMedia
     Library.MediaUpdateInfo:
       type: object
       properties:
@@ -72010,6 +72256,7 @@ components:
           type: string
         UpdateType:
           type: string
+      x-internal-ref-name: Emby.Api.Library.MediaUpdateInfo
     QueryResult_VirtualFolderInfo:
       type: object
       properties:
@@ -72434,6 +72681,7 @@ components:
         ItemId: ItemId
         RefreshStatus: RefreshStatus
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Entities.VirtualFolderInfo
     Library.UpdateLibraryOptions:
       type: object
       properties:
@@ -72441,6 +72689,7 @@ components:
           type: string
         LibraryOptions:
           $ref: '#/components/schemas/Configuration.LibraryOptions'
+      x-internal-ref-name: Emby.Api.Library.UpdateLibraryOptions
     Library.RenameVirtualFolder:
       type: object
       properties:
@@ -72448,6 +72697,7 @@ components:
           type: string
         NewName:
           type: string
+      x-internal-ref-name: Emby.Api.Library.RenameVirtualFolder
     Library.RemoveVirtualFolder:
       type: object
       properties:
@@ -72455,6 +72705,7 @@ components:
           type: string
         RefreshLibrary:
           type: boolean
+      x-internal-ref-name: Emby.Api.Library.RemoveVirtualFolder
     Library.AddMediaPath:
       type: object
       properties:
@@ -72466,6 +72717,7 @@ components:
           $ref: '#/components/schemas/Configuration.MediaPathInfo'
         RefreshLibrary:
           type: boolean
+      x-internal-ref-name: Emby.Api.Library.AddMediaPath
     QueryResult_Emby.LiveTV.ChannelManagementInfo:
       type: object
       properties:
@@ -72493,6 +72745,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: Emby.LiveTV.ChannelManagementInfo
     LiveTV.Api.TagItem:
       type: object
       properties:
@@ -72503,6 +72756,7 @@ components:
       example:
         Id: Id
         Name: Name
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.TagItem
     LiveTV.Api.ListingProviderTypeInfo:
       type: object
       properties:
@@ -72516,6 +72770,7 @@ components:
         Id: Id
         SetupUrl: SetupUrl
         Name: Name
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.ListingProviderTypeInfo
     Emby.Notifications.Api.NotificationsSummary:
       type: object
       properties:
@@ -72527,6 +72782,7 @@ components:
       example:
         MaxUnreadNotificationLevel: Normal
         UnreadCount: 0
+      x-internal-ref-name: Emby.Notifications.Api.NotificationsSummary
     PlayCommand:
       type: string
       enum:
@@ -72535,6 +72791,7 @@ components:
       - PlayLast
       - PlayInstantMix
       - PlayShuffle
+      x-internal-ref-name: MediaBrowser.Model.Session.PlayCommand
     PlayRequest:
       type: object
       properties:
@@ -72554,6 +72811,7 @@ components:
           type: integer
           format: int32
           nullable: true
+      x-internal-ref-name: MediaBrowser.Model.Session.PlayRequest
     GeneralCommand:
       type: object
       properties:
@@ -72565,6 +72823,7 @@ components:
           type: object
           additionalProperties:
             type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.GeneralCommand
     ClientCapabilities:
       type: object
       properties:
@@ -72590,6 +72849,7 @@ components:
           type: string
         AppId:
           type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.ClientCapabilities
     PlaybackProgressInfo:
       type: object
       properties:
@@ -72669,6 +72929,7 @@ components:
           type: array
           items:
             type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.PlaybackProgressInfo
     PlaybackStopInfo:
       type: object
       properties:
@@ -72704,6 +72965,7 @@ components:
           type: boolean
         NextMediaType:
           type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.PlaybackStopInfo
     Sync.Model.SyncedItemProgress:
       type: object
       properties:
@@ -72713,6 +72975,7 @@ components:
           nullable: true
         Status:
           $ref: '#/components/schemas/Sync.Model.SyncJobItemStatus'
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncedItemProgress
     Sync.Model.SyncedItem:
       type: object
       properties:
@@ -73283,6 +73546,7 @@ components:
         UserId: UserId
         SyncJobId: 0
         SyncJobItemId: 6
+      x-internal-ref-name: Emby.Server.Sync.Model.SyncedItem
     QueryResult_LogFile:
       type: object
       properties:
@@ -73323,6 +73587,7 @@ components:
         DateCreated: 2000-01-23T04:56:07.000+00:00
         DateModified: 2000-01-23T04:56:07.000+00:00
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.System.LogFile
     PublicSystemInfo:
       type: object
       properties:
@@ -73356,6 +73621,7 @@ components:
         - RemoteAddresses
         - RemoteAddresses
         Id: Id
+      x-internal-ref-name: MediaBrowser.Model.System.PublicSystemInfo
     QueryResult_ActivityLogEntry:
       type: object
       properties:
@@ -73425,6 +73691,7 @@ components:
         ItemId: ItemId
         Date: 2000-01-23T04:56:07.000+00:00
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Activity.ActivityLogEntry
     Logging.LogSeverity:
       type: string
       enum:
@@ -73433,11 +73700,13 @@ components:
       - Warn
       - Error
       - Fatal
+      x-internal-ref-name: MediaBrowser.Model.Logging.LogSeverity
     AuthenticateUser:
       type: object
       properties:
         Pw:
           type: string
+      x-internal-ref-name: Emby.Api.AuthenticateUser
     UpdateUserPassword:
       type: object
       properties:
@@ -73449,6 +73718,7 @@ components:
           type: string
         ResetPassword:
           type: boolean
+      x-internal-ref-name: Emby.Api.UpdateUserPassword
     UpdateUserEasyPassword:
       type: object
       properties:
@@ -73458,11 +73728,13 @@ components:
           type: string
         ResetPassword:
           type: boolean
+      x-internal-ref-name: Emby.Api.UpdateUserEasyPassword
     ForgotPasswordPin:
       type: object
       properties:
         Pin:
           type: string
+      x-internal-ref-name: Emby.Api.ForgotPasswordPin
     Users.PinRedeemResult:
       type: object
       properties:
@@ -73477,6 +73749,7 @@ components:
         - UsersReset
         - UsersReset
         Success: true
+      x-internal-ref-name: MediaBrowser.Model.Users.PinRedeemResult
     UserLibrary.AddTags:
       type: object
       properties:
@@ -73484,6 +73757,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/NameIdPair'
+      x-internal-ref-name: Emby.Api.UserLibrary.AddTags
     ImageProviderInfo:
       type: object
       properties:
@@ -73498,6 +73772,7 @@ components:
         - Primary
         - Primary
         Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Providers.ImageProviderInfo
     Library.UpdateMediaPath:
       type: object
       properties:
@@ -73505,6 +73780,7 @@ components:
           type: string
         PathInfo:
           $ref: '#/components/schemas/Configuration.MediaPathInfo'
+      x-internal-ref-name: Emby.Api.Library.UpdateMediaPath
     Library.RemoveMediaPath:
       type: object
       properties:
@@ -73514,6 +73790,7 @@ components:
           type: string
         RefreshLibrary:
           type: boolean
+      x-internal-ref-name: Emby.Api.Library.RemoveMediaPath
     PlaystateCommand:
       type: string
       enum:
@@ -73526,6 +73803,7 @@ components:
       - Rewind
       - FastForward
       - PlayPause
+      x-internal-ref-name: MediaBrowser.Model.Session.PlaystateCommand
     PlaystateRequest:
       type: object
       properties:
@@ -73537,6 +73815,7 @@ components:
           nullable: true
         ControllingUserId:
           type: string
+      x-internal-ref-name: MediaBrowser.Model.Session.PlaystateRequest
     QueryResult_String:
       type: object
       properties:
@@ -73565,6 +73844,7 @@ components:
         IsNewUserInvitation: true
         GuestDisplayName: GuestDisplayName
         IsPending: true
+      x-internal-ref-name: MediaBrowser.Controller.Connect.UserLinkResult
     RemoteSubtitleInfo:
       type: object
       properties:
@@ -73616,6 +73896,7 @@ components:
         CommunityRating: 0.8008282
         Id: Id
         DownloadCount: 6
+      x-internal-ref-name: MediaBrowser.Model.Providers.RemoteSubtitleInfo
     Subtitles.SubtitleDownloadResult:
       type: object
       properties:
@@ -73625,6 +73906,7 @@ components:
           nullable: true
       example:
         NewIndex: 0
+      x-internal-ref-name: Emby.Api.Subtitles.SubtitleDownloadResult
     LiveTV.Api.SetChannelDisabled:
       type: object
       properties:
@@ -73634,6 +73916,7 @@ components:
           type: string
         Disabled:
           type: boolean
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.SetChannelDisabled
     LiveTV.Api.SetChannelSortIndex:
       type: object
       properties:
@@ -73644,6 +73927,7 @@ components:
         NewIndex:
           type: integer
           format: int32
+      x-internal-ref-name: MediaBrowser.LiveTV.Api.SetChannelSortIndex
     MediaEncoding.Api.OnPlaybackProgress:
       type: object
       properties:
@@ -73655,6 +73939,7 @@ components:
           format: int32
         EventName:
           $ref: '#/components/schemas/ProgressEvent'
+      x-internal-ref-name: Emby.Server.MediaEncoding.Api.OnPlaybackProgress
   responses:
     "400":
       description: Bad Request. Server cannot process request.

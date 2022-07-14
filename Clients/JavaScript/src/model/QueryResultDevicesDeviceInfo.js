@@ -16,7 +16,7 @@ import DevicesDeviceInfo from './DevicesDeviceInfo';
 /**
 * The QueryResultDevicesDeviceInfo model module.
 * @module model/QueryResultDevicesDeviceInfo
-* @version 0.0.0.0
+* @version 4.8.0.3
 */
 export default class QueryResultDevicesDeviceInfo {
     /**

@@ -16,7 +16,7 @@ import ThemeMediaResult from './ThemeMediaResult';
 /**
 * The AllThemeMediaResult model module.
 * @module model/AllThemeMediaResult
-* @version 0.0.0.0
+* @version 4.8.0.3
 */
 export default class AllThemeMediaResult {
     /**

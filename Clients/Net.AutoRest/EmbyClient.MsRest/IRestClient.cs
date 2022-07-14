@@ -6635,6 +6635,20 @@ namespace EmbyClient.MsRest
         Task<HttpOperationResponse> GetBrandingCssWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// Gets custom css
+        /// </summary>
+        /// <remarks>
+        /// No authentication required
+        /// </remarks>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse> GetBrandingCssCssWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Creates a Connect link for a user
         /// </summary>
         /// <remarks>

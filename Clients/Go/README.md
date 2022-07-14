@@ -1,21 +1,24 @@
-# Go API client for embyclient-rest-go
+# Go Client
 
-Explore the Emby Server API
+<table><tr />
+    <tr>
+        <th valign="top" align="left">Name</th>
+        <td>embyclient-rest-go</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">Language</th>
+        <td>Go</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">SDK Folder</th>
+        <td>SampleCode/RestApi/Clients/Go</td>
+    </tr>
+</table>
 
-## Overview
-
-- API version: 4.8.0.3
-- Package version: 0.0.0.0
-- Build package: io.swagger.codegen.v3.generators.go.GoClientCodegen
-For more information, please visit [https://emby.media/community/index.php?/forum/47-developer-api](https://emby.media/community/index.php?/forum/47-developer-api)
 
 ## Installation
+
 Put the package under your project folder and add the following in import:
 ```golang
 import "./embyclient-rest-go"
 ```
-
-## Documentation for API Endpoints
-
-All URIs are relative to *http://emby.media/emby*
-

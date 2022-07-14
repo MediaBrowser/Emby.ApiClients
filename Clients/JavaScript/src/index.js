@@ -308,73 +308,73 @@ import Version from './model/Version';
 import Video3DFormat from './model/Video3DFormat';
 import VirtualFolderInfo from './model/VirtualFolderInfo';
 import WakeOnLanInfo from './model/WakeOnLanInfo';
-import ActivityLogServiceApi from './EmbyClient.JavaScript/ActivityLogServiceApi';
-import ArtistsServiceApi from './EmbyClient.JavaScript/ArtistsServiceApi';
-import AudioServiceApi from './EmbyClient.JavaScript/AudioServiceApi';
-import BifServiceApi from './EmbyClient.JavaScript/BifServiceApi';
-import BrandingServiceApi from './EmbyClient.JavaScript/BrandingServiceApi';
-import ChannelServiceApi from './EmbyClient.JavaScript/ChannelServiceApi';
-import CodecParameterServiceApi from './EmbyClient.JavaScript/CodecParameterServiceApi';
-import CollectionServiceApi from './EmbyClient.JavaScript/CollectionServiceApi';
-import ConfigurationServiceApi from './EmbyClient.JavaScript/ConfigurationServiceApi';
-import ConnectServiceApi from './EmbyClient.JavaScript/ConnectServiceApi';
-import DashboardServiceApi from './EmbyClient.JavaScript/DashboardServiceApi';
-import DemoApiServiceApi from './EmbyClient.JavaScript/DemoApiServiceApi';
-import DeviceServiceApi from './EmbyClient.JavaScript/DeviceServiceApi';
-import DiagnosticsPluginServiceApi from './EmbyClient.JavaScript/DiagnosticsPluginServiceApi';
-import DisplayPreferencesServiceApi from './EmbyClient.JavaScript/DisplayPreferencesServiceApi';
-import DlnaServerServiceApi from './EmbyClient.JavaScript/DlnaServerServiceApi';
-import DlnaServiceApi from './EmbyClient.JavaScript/DlnaServiceApi';
-import DynamicHlsServiceApi from './EmbyClient.JavaScript/DynamicHlsServiceApi';
-import EncodingInfoServiceApi from './EmbyClient.JavaScript/EncodingInfoServiceApi';
-import EnvironmentServiceApi from './EmbyClient.JavaScript/EnvironmentServiceApi';
-import FfmpegOptionsServiceApi from './EmbyClient.JavaScript/FfmpegOptionsServiceApi';
-import GameGenresServiceApi from './EmbyClient.JavaScript/GameGenresServiceApi';
-import GamesServiceApi from './EmbyClient.JavaScript/GamesServiceApi';
-import GenresServiceApi from './EmbyClient.JavaScript/GenresServiceApi';
-import HlsSegmentServiceApi from './EmbyClient.JavaScript/HlsSegmentServiceApi';
-import ImageByNameServiceApi from './EmbyClient.JavaScript/ImageByNameServiceApi';
-import ImageServiceApi from './EmbyClient.JavaScript/ImageServiceApi';
-import InstantMixServiceApi from './EmbyClient.JavaScript/InstantMixServiceApi';
-import ItemLookupServiceApi from './EmbyClient.JavaScript/ItemLookupServiceApi';
-import ItemRefreshServiceApi from './EmbyClient.JavaScript/ItemRefreshServiceApi';
-import ItemUpdateServiceApi from './EmbyClient.JavaScript/ItemUpdateServiceApi';
-import ItemsServiceApi from './EmbyClient.JavaScript/ItemsServiceApi';
-import LibraryServiceApi from './EmbyClient.JavaScript/LibraryServiceApi';
-import LibraryStructureServiceApi from './EmbyClient.JavaScript/LibraryStructureServiceApi';
-import LiveTvServiceApi from './EmbyClient.JavaScript/LiveTvServiceApi';
-import LocalizationServiceApi from './EmbyClient.JavaScript/LocalizationServiceApi';
-import MediaInfoServiceApi from './EmbyClient.JavaScript/MediaInfoServiceApi';
-import MoviesServiceApi from './EmbyClient.JavaScript/MoviesServiceApi';
-import MusicGenresServiceApi from './EmbyClient.JavaScript/MusicGenresServiceApi';
-import NotificationsServiceApi from './EmbyClient.JavaScript/NotificationsServiceApi';
-import OfficialRatingServiceApi from './EmbyClient.JavaScript/OfficialRatingServiceApi';
-import OpenApiServiceApi from './EmbyClient.JavaScript/OpenApiServiceApi';
-import PackageServiceApi from './EmbyClient.JavaScript/PackageServiceApi';
-import PersonsServiceApi from './EmbyClient.JavaScript/PersonsServiceApi';
-import PlaylistServiceApi from './EmbyClient.JavaScript/PlaylistServiceApi';
-import PlaystateServiceApi from './EmbyClient.JavaScript/PlaystateServiceApi';
-import PluginServiceApi from './EmbyClient.JavaScript/PluginServiceApi';
-import RemoteImageServiceApi from './EmbyClient.JavaScript/RemoteImageServiceApi';
-import ScheduledTaskServiceApi from './EmbyClient.JavaScript/ScheduledTaskServiceApi';
-import SessionsServiceApi from './EmbyClient.JavaScript/SessionsServiceApi';
-import StudiosServiceApi from './EmbyClient.JavaScript/StudiosServiceApi';
-import SubtitleOptionsServiceApi from './EmbyClient.JavaScript/SubtitleOptionsServiceApi';
-import SubtitleServiceApi from './EmbyClient.JavaScript/SubtitleServiceApi';
-import SuggestionsServiceApi from './EmbyClient.JavaScript/SuggestionsServiceApi';
-import SyncServiceApi from './EmbyClient.JavaScript/SyncServiceApi';
-import SystemServiceApi from './EmbyClient.JavaScript/SystemServiceApi';
-import TagServiceApi from './EmbyClient.JavaScript/TagServiceApi';
-import ToneMapOptionsServiceApi from './EmbyClient.JavaScript/ToneMapOptionsServiceApi';
-import TrailersServiceApi from './EmbyClient.JavaScript/TrailersServiceApi';
-import TvShowsServiceApi from './EmbyClient.JavaScript/TvShowsServiceApi';
-import UniversalAudioServiceApi from './EmbyClient.JavaScript/UniversalAudioServiceApi';
-import UserLibraryServiceApi from './EmbyClient.JavaScript/UserLibraryServiceApi';
-import UserServiceApi from './EmbyClient.JavaScript/UserServiceApi';
-import UserViewsServiceApi from './EmbyClient.JavaScript/UserViewsServiceApi';
-import VideoHlsServiceApi from './EmbyClient.JavaScript/VideoHlsServiceApi';
-import VideoServiceApi from './EmbyClient.JavaScript/VideoServiceApi';
-import VideosServiceApi from './EmbyClient.JavaScript/VideosServiceApi';
+import ActivityLogServiceApi from './EmbyClient.JavaScript.Beta/ActivityLogServiceApi';
+import ArtistsServiceApi from './EmbyClient.JavaScript.Beta/ArtistsServiceApi';
+import AudioServiceApi from './EmbyClient.JavaScript.Beta/AudioServiceApi';
+import BifServiceApi from './EmbyClient.JavaScript.Beta/BifServiceApi';
+import BrandingServiceApi from './EmbyClient.JavaScript.Beta/BrandingServiceApi';
+import ChannelServiceApi from './EmbyClient.JavaScript.Beta/ChannelServiceApi';
+import CodecParameterServiceApi from './EmbyClient.JavaScript.Beta/CodecParameterServiceApi';
+import CollectionServiceApi from './EmbyClient.JavaScript.Beta/CollectionServiceApi';
+import ConfigurationServiceApi from './EmbyClient.JavaScript.Beta/ConfigurationServiceApi';
+import ConnectServiceApi from './EmbyClient.JavaScript.Beta/ConnectServiceApi';
+import DashboardServiceApi from './EmbyClient.JavaScript.Beta/DashboardServiceApi';
+import DemoApiServiceApi from './EmbyClient.JavaScript.Beta/DemoApiServiceApi';
+import DeviceServiceApi from './EmbyClient.JavaScript.Beta/DeviceServiceApi';
+import DiagnosticsPluginServiceApi from './EmbyClient.JavaScript.Beta/DiagnosticsPluginServiceApi';
+import DisplayPreferencesServiceApi from './EmbyClient.JavaScript.Beta/DisplayPreferencesServiceApi';
+import DlnaServerServiceApi from './EmbyClient.JavaScript.Beta/DlnaServerServiceApi';
+import DlnaServiceApi from './EmbyClient.JavaScript.Beta/DlnaServiceApi';
+import DynamicHlsServiceApi from './EmbyClient.JavaScript.Beta/DynamicHlsServiceApi';
+import EncodingInfoServiceApi from './EmbyClient.JavaScript.Beta/EncodingInfoServiceApi';
+import EnvironmentServiceApi from './EmbyClient.JavaScript.Beta/EnvironmentServiceApi';
+import FfmpegOptionsServiceApi from './EmbyClient.JavaScript.Beta/FfmpegOptionsServiceApi';
+import GameGenresServiceApi from './EmbyClient.JavaScript.Beta/GameGenresServiceApi';
+import GamesServiceApi from './EmbyClient.JavaScript.Beta/GamesServiceApi';
+import GenresServiceApi from './EmbyClient.JavaScript.Beta/GenresServiceApi';
+import HlsSegmentServiceApi from './EmbyClient.JavaScript.Beta/HlsSegmentServiceApi';
+import ImageByNameServiceApi from './EmbyClient.JavaScript.Beta/ImageByNameServiceApi';
+import ImageServiceApi from './EmbyClient.JavaScript.Beta/ImageServiceApi';
+import InstantMixServiceApi from './EmbyClient.JavaScript.Beta/InstantMixServiceApi';
+import ItemLookupServiceApi from './EmbyClient.JavaScript.Beta/ItemLookupServiceApi';
+import ItemRefreshServiceApi from './EmbyClient.JavaScript.Beta/ItemRefreshServiceApi';
+import ItemUpdateServiceApi from './EmbyClient.JavaScript.Beta/ItemUpdateServiceApi';
+import ItemsServiceApi from './EmbyClient.JavaScript.Beta/ItemsServiceApi';
+import LibraryServiceApi from './EmbyClient.JavaScript.Beta/LibraryServiceApi';
+import LibraryStructureServiceApi from './EmbyClient.JavaScript.Beta/LibraryStructureServiceApi';
+import LiveTvServiceApi from './EmbyClient.JavaScript.Beta/LiveTvServiceApi';
+import LocalizationServiceApi from './EmbyClient.JavaScript.Beta/LocalizationServiceApi';
+import MediaInfoServiceApi from './EmbyClient.JavaScript.Beta/MediaInfoServiceApi';
+import MoviesServiceApi from './EmbyClient.JavaScript.Beta/MoviesServiceApi';
+import MusicGenresServiceApi from './EmbyClient.JavaScript.Beta/MusicGenresServiceApi';
+import NotificationsServiceApi from './EmbyClient.JavaScript.Beta/NotificationsServiceApi';
+import OfficialRatingServiceApi from './EmbyClient.JavaScript.Beta/OfficialRatingServiceApi';
+import OpenApiServiceApi from './EmbyClient.JavaScript.Beta/OpenApiServiceApi';
+import PackageServiceApi from './EmbyClient.JavaScript.Beta/PackageServiceApi';
+import PersonsServiceApi from './EmbyClient.JavaScript.Beta/PersonsServiceApi';
+import PlaylistServiceApi from './EmbyClient.JavaScript.Beta/PlaylistServiceApi';
+import PlaystateServiceApi from './EmbyClient.JavaScript.Beta/PlaystateServiceApi';
+import PluginServiceApi from './EmbyClient.JavaScript.Beta/PluginServiceApi';
+import RemoteImageServiceApi from './EmbyClient.JavaScript.Beta/RemoteImageServiceApi';
+import ScheduledTaskServiceApi from './EmbyClient.JavaScript.Beta/ScheduledTaskServiceApi';
+import SessionsServiceApi from './EmbyClient.JavaScript.Beta/SessionsServiceApi';
+import StudiosServiceApi from './EmbyClient.JavaScript.Beta/StudiosServiceApi';
+import SubtitleOptionsServiceApi from './EmbyClient.JavaScript.Beta/SubtitleOptionsServiceApi';
+import SubtitleServiceApi from './EmbyClient.JavaScript.Beta/SubtitleServiceApi';
+import SuggestionsServiceApi from './EmbyClient.JavaScript.Beta/SuggestionsServiceApi';
+import SyncServiceApi from './EmbyClient.JavaScript.Beta/SyncServiceApi';
+import SystemServiceApi from './EmbyClient.JavaScript.Beta/SystemServiceApi';
+import TagServiceApi from './EmbyClient.JavaScript.Beta/TagServiceApi';
+import ToneMapOptionsServiceApi from './EmbyClient.JavaScript.Beta/ToneMapOptionsServiceApi';
+import TrailersServiceApi from './EmbyClient.JavaScript.Beta/TrailersServiceApi';
+import TvShowsServiceApi from './EmbyClient.JavaScript.Beta/TvShowsServiceApi';
+import UniversalAudioServiceApi from './EmbyClient.JavaScript.Beta/UniversalAudioServiceApi';
+import UserLibraryServiceApi from './EmbyClient.JavaScript.Beta/UserLibraryServiceApi';
+import UserServiceApi from './EmbyClient.JavaScript.Beta/UserServiceApi';
+import UserViewsServiceApi from './EmbyClient.JavaScript.Beta/UserViewsServiceApi';
+import VideoHlsServiceApi from './EmbyClient.JavaScript.Beta/VideoHlsServiceApi';
+import VideoServiceApi from './EmbyClient.JavaScript.Beta/VideoServiceApi';
+import VideosServiceApi from './EmbyClient.JavaScript.Beta/VideosServiceApi';
 
 /**
 * A client library for accessing Emby Server via REST API.<br>
@@ -382,9 +382,9 @@ import VideosServiceApi from './EmbyClient.JavaScript/VideosServiceApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var EmbyClientJavaScript = require('index'); // See note below*.
-* var xxxSvc = new EmbyClientJavaScript.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new EmbyClientJavaScript.Yyy(); // Construct a model instance.
+* var EmbyClientJavaScriptBeta = require('index'); // See note below*.
+* var xxxSvc = new EmbyClientJavaScriptBeta.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new EmbyClientJavaScriptBeta.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -396,8 +396,8 @@ import VideosServiceApi from './EmbyClient.JavaScript/VideosServiceApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new EmbyClientJavaScript.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new EmbyClientJavaScript.Yyy(); // Construct a model instance.
+* var xxxSvc = new EmbyClientJavaScriptBeta.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new EmbyClientJavaScriptBeta.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -405,7 +405,7 @@ import VideosServiceApi from './EmbyClient.JavaScript/VideosServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 0.0.0.0
+* @version 4.8.0.3
 */
 export {
     /**
@@ -2198,403 +2198,403 @@ export {
 
     /**
     * The ActivityLogServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ActivityLogServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ActivityLogServiceApi}
     */
     ActivityLogServiceApi,
 
     /**
     * The ArtistsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ArtistsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ArtistsServiceApi}
     */
     ArtistsServiceApi,
 
     /**
     * The AudioServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/AudioServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/AudioServiceApi}
     */
     AudioServiceApi,
 
     /**
     * The BifServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/BifServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/BifServiceApi}
     */
     BifServiceApi,
 
     /**
     * The BrandingServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/BrandingServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/BrandingServiceApi}
     */
     BrandingServiceApi,
 
     /**
     * The ChannelServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ChannelServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ChannelServiceApi}
     */
     ChannelServiceApi,
 
     /**
     * The CodecParameterServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/CodecParameterServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/CodecParameterServiceApi}
     */
     CodecParameterServiceApi,
 
     /**
     * The CollectionServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/CollectionServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/CollectionServiceApi}
     */
     CollectionServiceApi,
 
     /**
     * The ConfigurationServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ConfigurationServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ConfigurationServiceApi}
     */
     ConfigurationServiceApi,
 
     /**
     * The ConnectServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ConnectServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ConnectServiceApi}
     */
     ConnectServiceApi,
 
     /**
     * The DashboardServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DashboardServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DashboardServiceApi}
     */
     DashboardServiceApi,
 
     /**
     * The DemoApiServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DemoApiServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DemoApiServiceApi}
     */
     DemoApiServiceApi,
 
     /**
     * The DeviceServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DeviceServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DeviceServiceApi}
     */
     DeviceServiceApi,
 
     /**
     * The DiagnosticsPluginServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DiagnosticsPluginServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DiagnosticsPluginServiceApi}
     */
     DiagnosticsPluginServiceApi,
 
     /**
     * The DisplayPreferencesServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DisplayPreferencesServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DisplayPreferencesServiceApi}
     */
     DisplayPreferencesServiceApi,
 
     /**
     * The DlnaServerServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DlnaServerServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DlnaServerServiceApi}
     */
     DlnaServerServiceApi,
 
     /**
     * The DlnaServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DlnaServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DlnaServiceApi}
     */
     DlnaServiceApi,
 
     /**
     * The DynamicHlsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DynamicHlsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/DynamicHlsServiceApi}
     */
     DynamicHlsServiceApi,
 
     /**
     * The EncodingInfoServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/EncodingInfoServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/EncodingInfoServiceApi}
     */
     EncodingInfoServiceApi,
 
     /**
     * The EnvironmentServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/EnvironmentServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/EnvironmentServiceApi}
     */
     EnvironmentServiceApi,
 
     /**
     * The FfmpegOptionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/FfmpegOptionsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/FfmpegOptionsServiceApi}
     */
     FfmpegOptionsServiceApi,
 
     /**
     * The GameGenresServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/GameGenresServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/GameGenresServiceApi}
     */
     GameGenresServiceApi,
 
     /**
     * The GamesServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/GamesServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/GamesServiceApi}
     */
     GamesServiceApi,
 
     /**
     * The GenresServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/GenresServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/GenresServiceApi}
     */
     GenresServiceApi,
 
     /**
     * The HlsSegmentServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/HlsSegmentServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/HlsSegmentServiceApi}
     */
     HlsSegmentServiceApi,
 
     /**
     * The ImageByNameServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ImageByNameServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ImageByNameServiceApi}
     */
     ImageByNameServiceApi,
 
     /**
     * The ImageServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ImageServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ImageServiceApi}
     */
     ImageServiceApi,
 
     /**
     * The InstantMixServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/InstantMixServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/InstantMixServiceApi}
     */
     InstantMixServiceApi,
 
     /**
     * The ItemLookupServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemLookupServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ItemLookupServiceApi}
     */
     ItemLookupServiceApi,
 
     /**
     * The ItemRefreshServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemRefreshServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ItemRefreshServiceApi}
     */
     ItemRefreshServiceApi,
 
     /**
     * The ItemUpdateServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemUpdateServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ItemUpdateServiceApi}
     */
     ItemUpdateServiceApi,
 
     /**
     * The ItemsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ItemsServiceApi}
     */
     ItemsServiceApi,
 
     /**
     * The LibraryServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LibraryServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/LibraryServiceApi}
     */
     LibraryServiceApi,
 
     /**
     * The LibraryStructureServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LibraryStructureServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/LibraryStructureServiceApi}
     */
     LibraryStructureServiceApi,
 
     /**
     * The LiveTvServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LiveTvServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/LiveTvServiceApi}
     */
     LiveTvServiceApi,
 
     /**
     * The LocalizationServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LocalizationServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/LocalizationServiceApi}
     */
     LocalizationServiceApi,
 
     /**
     * The MediaInfoServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/MediaInfoServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/MediaInfoServiceApi}
     */
     MediaInfoServiceApi,
 
     /**
     * The MoviesServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/MoviesServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/MoviesServiceApi}
     */
     MoviesServiceApi,
 
     /**
     * The MusicGenresServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/MusicGenresServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/MusicGenresServiceApi}
     */
     MusicGenresServiceApi,
 
     /**
     * The NotificationsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/NotificationsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/NotificationsServiceApi}
     */
     NotificationsServiceApi,
 
     /**
     * The OfficialRatingServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/OfficialRatingServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/OfficialRatingServiceApi}
     */
     OfficialRatingServiceApi,
 
     /**
     * The OpenApiServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/OpenApiServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/OpenApiServiceApi}
     */
     OpenApiServiceApi,
 
     /**
     * The PackageServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PackageServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/PackageServiceApi}
     */
     PackageServiceApi,
 
     /**
     * The PersonsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PersonsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/PersonsServiceApi}
     */
     PersonsServiceApi,
 
     /**
     * The PlaylistServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PlaylistServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/PlaylistServiceApi}
     */
     PlaylistServiceApi,
 
     /**
     * The PlaystateServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PlaystateServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/PlaystateServiceApi}
     */
     PlaystateServiceApi,
 
     /**
     * The PluginServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PluginServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/PluginServiceApi}
     */
     PluginServiceApi,
 
     /**
     * The RemoteImageServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/RemoteImageServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/RemoteImageServiceApi}
     */
     RemoteImageServiceApi,
 
     /**
     * The ScheduledTaskServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ScheduledTaskServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ScheduledTaskServiceApi}
     */
     ScheduledTaskServiceApi,
 
     /**
     * The SessionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SessionsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/SessionsServiceApi}
     */
     SessionsServiceApi,
 
     /**
     * The StudiosServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/StudiosServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/StudiosServiceApi}
     */
     StudiosServiceApi,
 
     /**
     * The SubtitleOptionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SubtitleOptionsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/SubtitleOptionsServiceApi}
     */
     SubtitleOptionsServiceApi,
 
     /**
     * The SubtitleServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SubtitleServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/SubtitleServiceApi}
     */
     SubtitleServiceApi,
 
     /**
     * The SuggestionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SuggestionsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/SuggestionsServiceApi}
     */
     SuggestionsServiceApi,
 
     /**
     * The SyncServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SyncServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/SyncServiceApi}
     */
     SyncServiceApi,
 
     /**
     * The SystemServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SystemServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/SystemServiceApi}
     */
     SystemServiceApi,
 
     /**
     * The TagServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/TagServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/TagServiceApi}
     */
     TagServiceApi,
 
     /**
     * The ToneMapOptionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ToneMapOptionsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/ToneMapOptionsServiceApi}
     */
     ToneMapOptionsServiceApi,
 
     /**
     * The TrailersServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/TrailersServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/TrailersServiceApi}
     */
     TrailersServiceApi,
 
     /**
     * The TvShowsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/TvShowsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/TvShowsServiceApi}
     */
     TvShowsServiceApi,
 
     /**
     * The UniversalAudioServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UniversalAudioServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/UniversalAudioServiceApi}
     */
     UniversalAudioServiceApi,
 
     /**
     * The UserLibraryServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserLibraryServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/UserLibraryServiceApi}
     */
     UserLibraryServiceApi,
 
     /**
     * The UserServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/UserServiceApi}
     */
     UserServiceApi,
 
     /**
     * The UserViewsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserViewsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/UserViewsServiceApi}
     */
     UserViewsServiceApi,
 
     /**
     * The VideoHlsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/VideoHlsServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/VideoHlsServiceApi}
     */
     VideoHlsServiceApi,
 
     /**
     * The VideoServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/VideoServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/VideoServiceApi}
     */
     VideoServiceApi,
 
     /**
     * The VideosServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/VideosServiceApi}
+    * @property {module:EmbyClient.JavaScript.Beta/VideosServiceApi}
     */
     VideosServiceApi
 };

@@ -1,11 +1,19 @@
-# embyclient-rest-java
+# Java Client
 
-Emby Server REST API (BETA)
-- API version: 4.8.0.3
-
-Explore the Emby Server API
-
-  For more information, please visit [https://emby.media/community/index.php?/forum/47-developer-api](https://emby.media/community/index.php?/forum/47-developer-api)
+<table><tr />
+    <tr>
+        <th valign="top" align="left">Name</th>
+        <td>embyclient-rest-java</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">Language</th>
+        <td>Java</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">SDK Folder</th>
+        <td>SampleCode/RestApi/Clients/Java</td>
+    </tr>
+</table>
 
 ## Requirements
 
@@ -103,6 +111,3 @@ public class ActivityLogServiceApiExample {
 }
 ```
 
-## Documentation for API Endpoints
-
-All URIs are relative to *http://emby.media/emby*

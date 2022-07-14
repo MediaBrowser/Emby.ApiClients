@@ -13463,6 +13463,37 @@ namespace EmbyClient.MsRest
             }
 
             /// <summary>
+            /// Gets custom css
+            /// </summary>
+            /// <remarks>
+            /// No authentication required
+            /// </remarks>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static void GetBrandingCssCss(this IRestClient operations)
+            {
+                operations.GetBrandingCssCssAsync().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Gets custom css
+            /// </summary>
+            /// <remarks>
+            /// No authentication required
+            /// </remarks>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task GetBrandingCssCssAsync(this IRestClient operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.GetBrandingCssCssWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
             /// Creates a Connect link for a user
             /// </summary>
             /// <remarks>

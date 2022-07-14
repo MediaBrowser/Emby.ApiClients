@@ -1,14 +1,25 @@
-# EmbyClient.JavaScript
+# JavaScript Client
 
-EmbyClientJavaScript - JavaScript client for EmbyClient.JavaScript
-Explore the Emby Server API
-
-- API version: 4.8.0.3
-- Package version: 0.0.0.0
-- Build package: io.swagger.codegen.v3.generators.javascript.JavaScriptClientCodegen
-For more information, please visit [https://emby.media/community/index.php?/forum/47-developer-api](https://emby.media/community/index.php?/forum/47-developer-api)
+<table><tr />
+    <tr>
+        <th valign="top" align="left">Name</th>
+        <td>EmbyClient.JavaScript</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">Language</th>
+        <td>JavaScript</td>
+    </tr>
+    <tr>
+        <th valign="top" align="left">SDK Folder</th>
+        <td>SampleCode/RestApi/Clients/JavaScript</td>
+    </tr>
+</table>
 
 ## Installation
+
+##### Important
+We do not recommend to use and install this code as a package. Probably too many adjustments will be required to get it working according to your requirements.  
+ A better approach is to use the code files directly in your project!
 
 ### For [Node.js](https://nodejs.org/)
 
@@ -16,6 +27,10 @@ For more information, please visit [https://emby.media/community/index.php?/foru
 
 To publish the library as a [npm](https://www.npmjs.com/),
 please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+
+> [!NOTE]
+> Please edit the package name to a custom name of yours before publishing anywhere!
+
 
 Then install it via:
 
@@ -93,4 +108,5 @@ var callback = function(error, data, response) {
 };
 api.getSystemActivitylogEntries(opts, callback);
 ```
+
 

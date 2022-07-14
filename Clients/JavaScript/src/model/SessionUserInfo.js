@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
 * The SessionUserInfo model module.
 * @module model/SessionUserInfo
-* @version 0.0.0.0
+* @version 4.8.0.3
 */
 export default class SessionUserInfo {
     /**

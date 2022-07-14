@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>media.emby</groupId>
-  <artifactId>embyclient-rest-java</artifactId>
+  <artifactId>embyclient-rest-java-beta</artifactId>
   <packaging>jar</packaging>
-  <name>embyclient-rest-java</name>
-  <version>0.0.0.0</version>
+  <name>embyclient-rest-java-beta</name>
+  <version>4.8.0.3</version>
   <url>https://dev.emby.media</url>
   <description>Swagger Java</description>
   <prerequisites>
