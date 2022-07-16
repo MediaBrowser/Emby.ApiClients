@@ -12,7 +12,7 @@ externalDocs:
   url: https://github.com/MediaBrowser/Emby/wiki
 servers:
 - url: http://emby.media/emby
-  description: fv-az283-957
+  description: WIN-48F7RQNJTHI
 tags:
 - name: ArtistsService
 - name: TagService
