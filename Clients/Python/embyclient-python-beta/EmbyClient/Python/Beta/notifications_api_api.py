@@ -14,7 +14,7 @@ import six
 from embyclient-python-beta.api_client import ApiClient
 
 
-class GamesServiceApi(object):
+class NotificationsApiApi(object):
     """NOTE: This class is auto generated.
     """
 
@@ -23,45 +23,43 @@ class GamesServiceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_games_systemsummaries(self, **kwargs):  # noqa: E501
-        """Finds games similar to a given game.  # noqa: E501
+    def get_notifications_all(self, **kwargs):  # noqa: E501
+        """Gets notification types  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_games_systemsummaries(async_req=True)
+        >>> thread = api.get_notifications_all(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str user_id: Optional. Filter by user id
-        :return: list[GameSystemSummary]
+        :return: list[EmbyNotificationsNotificationCategoryInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_games_systemsummaries_with_http_info(**kwargs)  # noqa: E501
+            return self.get_notifications_all_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_games_systemsummaries_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_notifications_all_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_games_systemsummaries_with_http_info(self, **kwargs):  # noqa: E501
-        """Finds games similar to a given game.  # noqa: E501
+    def get_notifications_all_with_http_info(self, **kwargs):  # noqa: E501
+        """Gets notification types  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_games_systemsummaries_with_http_info(async_req=True)
+        >>> thread = api.get_notifications_all_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str user_id: Optional. Filter by user id
-        :return: list[GameSystemSummary]
+        :return: list[EmbyNotificationsNotificationCategoryInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -72,7 +70,7 @@ class GamesServiceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_games_systemsummaries" % key
+                    " to method get_notifications_all" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -82,8 +80,6 @@ class GamesServiceApi(object):
         path_params = {}
 
         query_params = []
-        if 'user_id' in params:
-            query_params.append(('UserId', params['user_id']))  # noqa: E501
 
         header_params = {}
 
@@ -99,14 +95,14 @@ class GamesServiceApi(object):
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/Games/SystemSummaries', 'GET',
+            '/Notifications/All', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GameSystemSummary]',  # noqa: E501
+            response_type='list[EmbyNotificationsNotificationCategoryInfo]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

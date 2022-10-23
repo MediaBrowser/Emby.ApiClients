@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.GameSystemSummary;
+import io.swagger.client.model.EmbyNotificationsNotificationCategoryInfo;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -27,14 +27,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GamesServiceApi {
+public class NotificationsApiApi {
     private ApiClient apiClient;
 
-    public GamesServiceApi() {
+    public NotificationsApiApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public GamesServiceApi(ApiClient apiClient) {
+    public NotificationsApiApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -47,23 +47,20 @@ public class GamesServiceApi {
     }
 
     /**
-     * Build call for getGamesSystemsummaries
-     * @param userId Optional. Filter by user id (optional)
+     * Build call for getNotificationsAll
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getGamesSystemsummariesCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getNotificationsAllCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Games/SystemSummaries";
+        String localVarPath = "/Notifications/All";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (userId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("UserId", userId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -98,9 +95,9 @@ public class GamesServiceApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getGamesSystemsummariesValidateBeforeCall(String userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getNotificationsAllValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = getGamesSystemsummariesCall(userId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getNotificationsAllCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -110,39 +107,36 @@ public class GamesServiceApi {
     }
 
     /**
-     * Finds games similar to a given game.
+     * Gets notification types
      * Requires authentication as user
-     * @param userId Optional. Filter by user id (optional)
-     * @return List&lt;GameSystemSummary&gt;
+     * @return List&lt;EmbyNotificationsNotificationCategoryInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<GameSystemSummary> getGamesSystemsummaries(String userId) throws ApiException {
-        ApiResponse<List<GameSystemSummary>> resp = getGamesSystemsummariesWithHttpInfo(userId);
+    public List<EmbyNotificationsNotificationCategoryInfo> getNotificationsAll() throws ApiException {
+        ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>> resp = getNotificationsAllWithHttpInfo();
         return resp.getData();
     }
 
     /**
-     * Finds games similar to a given game.
+     * Gets notification types
      * Requires authentication as user
-     * @param userId Optional. Filter by user id (optional)
-     * @return ApiResponse&lt;List&lt;GameSystemSummary&gt;&gt;
+     * @return ApiResponse&lt;List&lt;EmbyNotificationsNotificationCategoryInfo&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<GameSystemSummary>> getGamesSystemsummariesWithHttpInfo(String userId) throws ApiException {
-        com.squareup.okhttp.Call call = getGamesSystemsummariesValidateBeforeCall(userId, null, null);
-        Type localVarReturnType = new TypeToken<List<GameSystemSummary>>(){}.getType();
+    public ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>> getNotificationsAllWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getNotificationsAllValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<List<EmbyNotificationsNotificationCategoryInfo>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Finds games similar to a given game. (asynchronously)
+     * Gets notification types (asynchronously)
      * Requires authentication as user
-     * @param userId Optional. Filter by user id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getGamesSystemsummariesAsync(String userId, final ApiCallback<List<GameSystemSummary>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getNotificationsAllAsync(final ApiCallback<List<EmbyNotificationsNotificationCategoryInfo>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -163,8 +157,8 @@ public class GamesServiceApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getGamesSystemsummariesValidateBeforeCall(userId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<GameSystemSummary>>(){}.getType();
+        com.squareup.okhttp.Call call = getNotificationsAllValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<EmbyNotificationsNotificationCategoryInfo>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

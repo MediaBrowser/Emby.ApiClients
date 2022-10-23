@@ -10,18 +10,18 @@
  */
 
 import ApiClient from "../ApiClient";
-import GameSystemSummary from '../model/GameSystemSummary';
+import EmbyNotificationsNotificationCategoryInfo from '../model/EmbyNotificationsNotificationCategoryInfo';
 
 /**
-* GamesService service.
-* @module EmbyClient.JavaScript.Beta/GamesServiceApi
-* @version 4.8.0.10
+* NotificationsApi service.
+* @module EmbyClient.JavaScript.Beta/NotificationsApiApi
+* @version 4.8.0.13
 */
-export default class GamesServiceApi {
+export default class NotificationsApiApi {
 
     /**
-    * Constructs a new GamesServiceApi. 
-    * @alias module:EmbyClient.JavaScript.Beta/GamesServiceApi
+    * Constructs a new NotificationsApiApi. 
+    * @alias module:EmbyClient.JavaScript.Beta/NotificationsApiApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -31,28 +31,25 @@ export default class GamesServiceApi {
     }
 
     /**
-     * Callback function to receive the result of the getGamesSystemsummaries operation.
-     * @callback module:EmbyClient.JavaScript.Beta/GamesServiceApi~getGamesSystemsummariesCallback
+     * Callback function to receive the result of the getNotificationsAll operation.
+     * @callback module:EmbyClient.JavaScript.Beta/NotificationsApiApi~getNotificationsAllCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/GameSystemSummary>} data The data returned by the service call.
+     * @param {Array.<module:model/EmbyNotificationsNotificationCategoryInfo>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Finds games similar to a given game.
+     * Gets notification types
      * Requires authentication as user
-     * @param {Object} opts Optional parameters
-     * @param {module:EmbyClient.JavaScript.Beta/GamesServiceApi~getGamesSystemsummariesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/GameSystemSummary>}
+     * @param {module:EmbyClient.JavaScript.Beta/NotificationsApiApi~getNotificationsAllCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/EmbyNotificationsNotificationCategoryInfo>}
      */
-    getGamesSystemsummaries() {
-      opts = opts || {};
+    getNotificationsAll() {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'UserId': opts['userId']
       };
       let headerParams = {
       };
@@ -62,10 +59,10 @@ export default class GamesServiceApi {
       let authNames = ['apikeyauth', 'embyauth'];
       let contentTypes = [];
       let accepts = ['application/json', 'application/xml'];
-      let returnType = [GameSystemSummary];
+      let returnType = [EmbyNotificationsNotificationCategoryInfo];
 
       return this.apiClient.callApi(
-        '/Games/SystemSummaries', 'GET',
+        '/Notifications/All', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

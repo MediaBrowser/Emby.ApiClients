@@ -5,7 +5,7 @@
 
 package EmbyClient.Java.Beta;
 
-import io.swagger.client.model.GameSystemSummary;
+import io.swagger.client.model.EmbyNotificationsNotificationCategoryInfo;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -17,15 +17,15 @@ import java.util.Map;
 
 
 /**
- * API tests for GamesServiceApi
+ * API tests for NotificationsApiApi
  */
 @Ignore
-public class GamesServiceApiTest {
+public class NotificationsApiApiTest {
 
-    private final GamesServiceApi api = new GamesServiceApi();
+    private final NotificationsApiApi api = new NotificationsApiApi();
 
     /**
-     * Finds games similar to a given game.
+     * Gets notification types
      *
      * Requires authentication as user
      *
@@ -33,9 +33,8 @@ public class GamesServiceApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getGamesSystemsummariesTest() throws Exception {
-        String userId = null;
-        List<GameSystemSummary> response = api.getGamesSystemsummaries(userId);
+    public void getNotificationsAllTest() throws Exception {
+        List<EmbyNotificationsNotificationCategoryInfo> response = api.getNotificationsAll();
 
         // TODO: test validations
     }

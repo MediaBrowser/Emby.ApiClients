@@ -13,7 +13,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -21,39 +20,29 @@ var (
 	_ context.Context
 )
 
-type GamesServiceApiService service
+type NotificationsApiApiService service
 /*
-GamesServiceApiService Finds games similar to a given game.
+NotificationsApiApiService Gets notification types
 Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *GamesServiceApiGetGamesSystemsummariesOpts - Optional Parameters:
-     * @param "UserId" (optional.String) -  Optional. Filter by user id
-@return []GameSystemSummary
+@return []EmbyNotificationsNotificationCategoryInfo
 */
-
-type GamesServiceApiGetGamesSystemsummariesOpts struct {
-    UserId optional.String
-}
-
-func (a *GamesServiceApiService) GetGamesSystemsummaries(ctx context.Context, localVarOptionals *GamesServiceApiGetGamesSystemsummariesOpts) ([]GameSystemSummary, *http.Response, error) {
+func (a *NotificationsApiApiService) GetNotificationsAll(ctx context.Context) ([]EmbyNotificationsNotificationCategoryInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []GameSystemSummary
+		localVarReturnValue []EmbyNotificationsNotificationCategoryInfo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/Games/SystemSummaries"
+	localVarPath := a.client.cfg.BasePath + "/Notifications/All"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.UserId.IsSet() {
-		localVarQueryParams.Add("UserId", parameterToString(localVarOptionals.UserId.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
 
@@ -114,7 +103,7 @@ func (a *GamesServiceApiService) GetGamesSystemsummaries(ctx context.Context, lo
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []GameSystemSummary
+			var v []EmbyNotificationsNotificationCategoryInfo
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

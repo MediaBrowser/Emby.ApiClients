@@ -15,68 +15,64 @@ namespace EmbyClient.Dotnet.Beta.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-        public interface IGamesServiceApi : IApiAccessor
+        public interface INotificationsApiApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Finds games similar to a given game.
+        /// Gets notification types
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>List&lt;GameSystemSummary&gt;</returns>
-        List<GameSystemSummary> GetGamesSystemsummaries (string userId);
+        /// <returns>List&lt;EmbyNotificationsNotificationCategoryInfo&gt;</returns>
+        List<EmbyNotificationsNotificationCategoryInfo> GetNotificationsAll ();
 
         /// <summary>
-        /// Finds games similar to a given game.
+        /// Gets notification types
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>ApiResponse of List&lt;GameSystemSummary&gt;</returns>
-        ApiResponse<List<GameSystemSummary>> GetGamesSystemsummariesWithHttpInfo (string userId);
+        /// <returns>ApiResponse of List&lt;EmbyNotificationsNotificationCategoryInfo&gt;</returns>
+        ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>> GetNotificationsAllWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Finds games similar to a given game.
+        /// Gets notification types
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>Task of List&lt;GameSystemSummary&gt;</returns>
-        System.Threading.Tasks.Task<List<GameSystemSummary>> GetGamesSystemsummariesAsync (string userId);
+        /// <returns>Task of List&lt;EmbyNotificationsNotificationCategoryInfo&gt;</returns>
+        System.Threading.Tasks.Task<List<EmbyNotificationsNotificationCategoryInfo>> GetNotificationsAllAsync ();
 
         /// <summary>
-        /// Finds games similar to a given game.
+        /// Gets notification types
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;GameSystemSummary&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<GameSystemSummary>>> GetGamesSystemsummariesAsyncWithHttpInfo (string userId);
+        /// <returns>Task of ApiResponse (List&lt;EmbyNotificationsNotificationCategoryInfo&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>>> GetNotificationsAllAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-        public partial class GamesServiceApi : IGamesServiceApi
+        public partial class NotificationsApiApi : INotificationsApiApi
     {
         private EmbyClient.Dotnet.Beta.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GamesServiceApi"/> class.
+        /// Initializes a new instance of the <see cref="NotificationsApiApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public GamesServiceApi(String basePath)
+        public NotificationsApiApi(String basePath)
         {
             this.Configuration = new EmbyClient.Dotnet.Beta.Client.Configuration { BasePath = basePath };
 
@@ -84,10 +80,10 @@ namespace EmbyClient.Dotnet.Beta.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GamesServiceApi"/> class
+        /// Initializes a new instance of the <see cref="NotificationsApiApi"/> class
         /// </summary>
         /// <returns></returns>
-        public GamesServiceApi()
+        public NotificationsApiApi()
         {
             this.Configuration = EmbyClient.Dotnet.Beta.Client.Configuration.Default;
 
@@ -95,12 +91,12 @@ namespace EmbyClient.Dotnet.Beta.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GamesServiceApi"/> class
+        /// Initializes a new instance of the <see cref="NotificationsApiApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public GamesServiceApi(EmbyClient.Dotnet.Beta.Client.Configuration configuration = null)
+        public NotificationsApiApi(EmbyClient.Dotnet.Beta.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = EmbyClient.Dotnet.Beta.Client.Configuration.Default;
@@ -174,27 +170,25 @@ namespace EmbyClient.Dotnet.Beta.Api
         }
 
         /// <summary>
-        /// Finds games similar to a given game. Requires authentication as user
+        /// Gets notification types Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>List&lt;GameSystemSummary&gt;</returns>
-        public List<GameSystemSummary> GetGamesSystemsummaries (string userId)
+        /// <returns>List&lt;EmbyNotificationsNotificationCategoryInfo&gt;</returns>
+        public List<EmbyNotificationsNotificationCategoryInfo> GetNotificationsAll ()
         {
-             ApiResponse<List<GameSystemSummary>> localVarResponse = GetGamesSystemsummariesWithHttpInfo(userId);
+             ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>> localVarResponse = GetNotificationsAllWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Finds games similar to a given game. Requires authentication as user
+        /// Gets notification types Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>ApiResponse of List&lt;GameSystemSummary&gt;</returns>
-        public ApiResponse< List<GameSystemSummary> > GetGamesSystemsummariesWithHttpInfo (string userId)
+        /// <returns>ApiResponse of List&lt;EmbyNotificationsNotificationCategoryInfo&gt;</returns>
+        public ApiResponse< List<EmbyNotificationsNotificationCategoryInfo> > GetNotificationsAllWithHttpInfo ()
         {
 
-            var localVarPath = "/Games/SystemSummaries";
+            var localVarPath = "/Notifications/All";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -216,7 +210,6 @@ namespace EmbyClient.Dotnet.Beta.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (userId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "UserId", userId)); // query parameter
             // authentication (apikeyauth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
             {
@@ -238,38 +231,36 @@ namespace EmbyClient.Dotnet.Beta.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetGamesSystemsummaries", localVarResponse);
+                Exception exception = ExceptionFactory("GetNotificationsAll", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<GameSystemSummary>>(localVarStatusCode,
+            return new ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<GameSystemSummary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GameSystemSummary>)));
+                (List<EmbyNotificationsNotificationCategoryInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EmbyNotificationsNotificationCategoryInfo>)));
         }
 
         /// <summary>
-        /// Finds games similar to a given game. Requires authentication as user
+        /// Gets notification types Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>Task of List&lt;GameSystemSummary&gt;</returns>
-        public async System.Threading.Tasks.Task<List<GameSystemSummary>> GetGamesSystemsummariesAsync (string userId)
+        /// <returns>Task of List&lt;EmbyNotificationsNotificationCategoryInfo&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EmbyNotificationsNotificationCategoryInfo>> GetNotificationsAllAsync ()
         {
-             ApiResponse<List<GameSystemSummary>> localVarResponse = await GetGamesSystemsummariesAsyncWithHttpInfo(userId);
+             ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>> localVarResponse = await GetNotificationsAllAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Finds games similar to a given game. Requires authentication as user
+        /// Gets notification types Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Beta.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userId">Optional. Filter by user id (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;GameSystemSummary&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<GameSystemSummary>>> GetGamesSystemsummariesAsyncWithHttpInfo (string userId)
+        /// <returns>Task of ApiResponse (List&lt;EmbyNotificationsNotificationCategoryInfo&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>>> GetNotificationsAllAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/Games/SystemSummaries";
+            var localVarPath = "/Notifications/All";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -291,7 +282,6 @@ namespace EmbyClient.Dotnet.Beta.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (userId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "UserId", userId)); // query parameter
             // authentication (apikeyauth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
             {
@@ -313,13 +303,13 @@ namespace EmbyClient.Dotnet.Beta.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetGamesSystemsummaries", localVarResponse);
+                Exception exception = ExceptionFactory("GetNotificationsAll", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<GameSystemSummary>>(localVarStatusCode,
+            return new ApiResponse<List<EmbyNotificationsNotificationCategoryInfo>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<GameSystemSummary>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<GameSystemSummary>)));
+                (List<EmbyNotificationsNotificationCategoryInfo>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EmbyNotificationsNotificationCategoryInfo>)));
         }
 
     }
