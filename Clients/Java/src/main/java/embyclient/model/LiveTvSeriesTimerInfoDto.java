@@ -18,11 +18,11 @@ import embyclient.model.LiveTvKeywordInfo;
 import embyclient.model.LiveTvTimerType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.threeten.bp.OffsetDateTime;
 /**
  * Class SeriesTimerInfoDto.  
  */
@@ -276,7 +276,7 @@ public class LiveTvSeriesTimerInfoDto {
 
   public LiveTvSeriesTimerInfoDto addChannelIdsItem(String channelIdsItem) {
     if (this.channelIds == null) {
-      this.channelIds = new ArrayList<String>();
+      this.channelIds = new ArrayList<>();
     }
     this.channelIds.add(channelIdsItem);
     return this;
@@ -302,7 +302,7 @@ public class LiveTvSeriesTimerInfoDto {
 
   public LiveTvSeriesTimerInfoDto addDaysItem(DayOfWeek daysItem) {
     if (this.days == null) {
-      this.days = new ArrayList<DayOfWeek>();
+      this.days = new ArrayList<>();
     }
     this.days.add(daysItem);
     return this;
@@ -328,7 +328,7 @@ public class LiveTvSeriesTimerInfoDto {
 
   public LiveTvSeriesTimerInfoDto putImageTagsItem(String key, String imageTagsItem) {
     if (this.imageTags == null) {
-      this.imageTags = new HashMap<String, String>();
+      this.imageTags = new HashMap<>();
     }
     this.imageTags.put(key, imageTagsItem);
     return this;
@@ -444,7 +444,7 @@ public class LiveTvSeriesTimerInfoDto {
 
   public LiveTvSeriesTimerInfoDto addKeywordsItem(LiveTvKeywordInfo keywordsItem) {
     if (this.keywords == null) {
-      this.keywords = new ArrayList<LiveTvKeywordInfo>();
+      this.keywords = new ArrayList<>();
     }
     this.keywords.add(keywordsItem);
     return this;
@@ -812,7 +812,7 @@ public class LiveTvSeriesTimerInfoDto {
 
   public LiveTvSeriesTimerInfoDto addParentBackdropImageTagsItem(String parentBackdropImageTagsItem) {
     if (this.parentBackdropImageTags == null) {
-      this.parentBackdropImageTags = new ArrayList<String>();
+      this.parentBackdropImageTags = new ArrayList<>();
     }
     this.parentBackdropImageTags.add(parentBackdropImageTagsItem);
     return this;

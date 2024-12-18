@@ -96,7 +96,7 @@ public class LibraryOptionInfo {
 
   public LibraryOptionInfo addFeaturesItem(MetadataFeatures featuresItem) {
     if (this.features == null) {
-      this.features = new ArrayList<MetadataFeatures>();
+      this.features = new ArrayList<>();
     }
     this.features.add(featuresItem);
     return this;

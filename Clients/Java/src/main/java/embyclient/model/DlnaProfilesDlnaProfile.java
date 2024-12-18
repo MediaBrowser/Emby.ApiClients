@@ -749,7 +749,7 @@ public class DlnaProfilesDlnaProfile {
 
   public DlnaProfilesDlnaProfile addDirectPlayProfilesItem(DirectPlayProfile directPlayProfilesItem) {
     if (this.directPlayProfiles == null) {
-      this.directPlayProfiles = new ArrayList<DirectPlayProfile>();
+      this.directPlayProfiles = new ArrayList<>();
     }
     this.directPlayProfiles.add(directPlayProfilesItem);
     return this;
@@ -775,7 +775,7 @@ public class DlnaProfilesDlnaProfile {
 
   public DlnaProfilesDlnaProfile addTranscodingProfilesItem(TranscodingProfile transcodingProfilesItem) {
     if (this.transcodingProfiles == null) {
-      this.transcodingProfiles = new ArrayList<TranscodingProfile>();
+      this.transcodingProfiles = new ArrayList<>();
     }
     this.transcodingProfiles.add(transcodingProfilesItem);
     return this;
@@ -801,7 +801,7 @@ public class DlnaProfilesDlnaProfile {
 
   public DlnaProfilesDlnaProfile addContainerProfilesItem(ContainerProfile containerProfilesItem) {
     if (this.containerProfiles == null) {
-      this.containerProfiles = new ArrayList<ContainerProfile>();
+      this.containerProfiles = new ArrayList<>();
     }
     this.containerProfiles.add(containerProfilesItem);
     return this;
@@ -827,7 +827,7 @@ public class DlnaProfilesDlnaProfile {
 
   public DlnaProfilesDlnaProfile addCodecProfilesItem(CodecProfile codecProfilesItem) {
     if (this.codecProfiles == null) {
-      this.codecProfiles = new ArrayList<CodecProfile>();
+      this.codecProfiles = new ArrayList<>();
     }
     this.codecProfiles.add(codecProfilesItem);
     return this;
@@ -853,7 +853,7 @@ public class DlnaProfilesDlnaProfile {
 
   public DlnaProfilesDlnaProfile addResponseProfilesItem(ResponseProfile responseProfilesItem) {
     if (this.responseProfiles == null) {
-      this.responseProfiles = new ArrayList<ResponseProfile>();
+      this.responseProfiles = new ArrayList<>();
     }
     this.responseProfiles.add(responseProfilesItem);
     return this;
@@ -879,7 +879,7 @@ public class DlnaProfilesDlnaProfile {
 
   public DlnaProfilesDlnaProfile addSubtitleProfilesItem(SubtitleProfile subtitleProfilesItem) {
     if (this.subtitleProfiles == null) {
-      this.subtitleProfiles = new ArrayList<SubtitleProfile>();
+      this.subtitleProfiles = new ArrayList<>();
     }
     this.subtitleProfiles.add(subtitleProfilesItem);
     return this;

@@ -16,9 +16,9 @@ import embyclient.model.PackageTargetSystem;
 import embyclient.model.PackageVersionInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * Class PackageInfo  
  */
@@ -461,7 +461,7 @@ public class PackageInfo {
 
   public PackageInfo addVersionsItem(PackageVersionInfo versionsItem) {
     if (this.versions == null) {
-      this.versions = new ArrayList<PackageVersionInfo>();
+      this.versions = new ArrayList<>();
     }
     this.versions.add(versionsItem);
     return this;

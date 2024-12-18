@@ -76,7 +76,7 @@ public class EditorsEditorRoot {
 
   public EditorsEditorRoot addPropertyConditionsItem(ConditionsPropertyCondition propertyConditionsItem) {
     if (this.propertyConditions == null) {
-      this.propertyConditions = new ArrayList<ConditionsPropertyCondition>();
+      this.propertyConditions = new ArrayList<>();
     }
     this.propertyConditions.add(propertyConditionsItem);
     return this;
@@ -102,7 +102,7 @@ public class EditorsEditorRoot {
 
   public EditorsEditorRoot addPostbackActionsItem(ActionsPostbackAction postbackActionsItem) {
     if (this.postbackActions == null) {
-      this.postbackActions = new ArrayList<ActionsPostbackAction>();
+      this.postbackActions = new ArrayList<>();
     }
     this.postbackActions.add(postbackActionsItem);
     return this;
@@ -146,7 +146,7 @@ public class EditorsEditorRoot {
 
   public EditorsEditorRoot addEditorItemsItem(EditorsEditorBase editorItemsItem) {
     if (this.editorItems == null) {
-      this.editorItems = new ArrayList<EditorsEditorBase>();
+      this.editorItems = new ArrayList<>();
     }
     this.editorItems.add(editorItemsItem);
     return this;

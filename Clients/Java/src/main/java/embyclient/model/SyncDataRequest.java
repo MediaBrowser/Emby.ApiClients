@@ -35,7 +35,7 @@ public class SyncDataRequest {
 
   public SyncDataRequest addLocalItemIdsItem(String localItemIdsItem) {
     if (this.localItemIds == null) {
-      this.localItemIds = new ArrayList<String>();
+      this.localItemIds = new ArrayList<>();
     }
     this.localItemIds.add(localItemIdsItem);
     return this;
@@ -61,7 +61,7 @@ public class SyncDataRequest {
 
   public SyncDataRequest addInternalTargetIdsItem(Long internalTargetIdsItem) {
     if (this.internalTargetIds == null) {
-      this.internalTargetIds = new ArrayList<Long>();
+      this.internalTargetIds = new ArrayList<>();
     }
     this.internalTargetIds.add(internalTargetIdsItem);
     return this;

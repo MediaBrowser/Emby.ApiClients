@@ -55,7 +55,7 @@ public class SyncJobCreationResult {
 
   public SyncJobCreationResult addJobItemsItem(SyncJobItem jobItemsItem) {
     if (this.jobItems == null) {
-      this.jobItems = new ArrayList<SyncJobItem>();
+      this.jobItems = new ArrayList<>();
     }
     this.jobItems.add(jobItemsItem);
     return this;

@@ -99,7 +99,7 @@ public class RemoteSearchQueryPersonLookupInfo {
 
   public RemoteSearchQueryPersonLookupInfo addProvidersItem(String providersItem) {
     if (this.providers == null) {
-      this.providers = new ArrayList<String>();
+      this.providers = new ArrayList<>();
     }
     this.providers.add(providersItem);
     return this;

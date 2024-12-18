@@ -16,9 +16,9 @@ import embyclient.model.SyncCategory;
 import embyclient.model.SyncJobStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * SyncJob
  */
@@ -455,7 +455,7 @@ public class SyncJob {
 
   public SyncJob addRequestedItemIdsItem(Long requestedItemIdsItem) {
     if (this.requestedItemIds == null) {
-      this.requestedItemIds = new ArrayList<Long>();
+      this.requestedItemIds = new ArrayList<>();
     }
     this.requestedItemIds.add(requestedItemIdsItem);
     return this;

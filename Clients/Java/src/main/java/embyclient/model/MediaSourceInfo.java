@@ -20,11 +20,11 @@ import embyclient.model.TransportStreamTimestamp;
 import embyclient.model.Video3DFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.threeten.bp.OffsetDateTime;
 /**
  * MediaSourceInfo
  */
@@ -179,7 +179,7 @@ public class MediaSourceInfo {
 
   public MediaSourceInfo addChaptersItem(ChapterInfo chaptersItem) {
     if (this.chapters == null) {
-      this.chapters = new ArrayList<ChapterInfo>();
+      this.chapters = new ArrayList<>();
     }
     this.chapters.add(chaptersItem);
     return this;
@@ -745,7 +745,7 @@ public class MediaSourceInfo {
 
   public MediaSourceInfo addMediaStreamsItem(MediaStream mediaStreamsItem) {
     if (this.mediaStreams == null) {
-      this.mediaStreams = new ArrayList<MediaStream>();
+      this.mediaStreams = new ArrayList<>();
     }
     this.mediaStreams.add(mediaStreamsItem);
     return this;
@@ -771,7 +771,7 @@ public class MediaSourceInfo {
 
   public MediaSourceInfo addFormatsItem(String formatsItem) {
     if (this.formats == null) {
-      this.formats = new ArrayList<String>();
+      this.formats = new ArrayList<>();
     }
     this.formats.add(formatsItem);
     return this;
@@ -833,7 +833,7 @@ public class MediaSourceInfo {
 
   public MediaSourceInfo putRequiredHttpHeadersItem(String key, String requiredHttpHeadersItem) {
     if (this.requiredHttpHeaders == null) {
-      this.requiredHttpHeaders = new HashMap<String, String>();
+      this.requiredHttpHeaders = new HashMap<>();
     }
     this.requiredHttpHeaders.put(key, requiredHttpHeadersItem);
     return this;

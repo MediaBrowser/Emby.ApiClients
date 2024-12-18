@@ -64,7 +64,7 @@ public class CodecProfile {
 
   public CodecProfile addConditionsItem(ProfileCondition conditionsItem) {
     if (this.conditions == null) {
-      this.conditions = new ArrayList<ProfileCondition>();
+      this.conditions = new ArrayList<>();
     }
     this.conditions.add(conditionsItem);
     return this;
@@ -90,7 +90,7 @@ public class CodecProfile {
 
   public CodecProfile addApplyConditionsItem(ProfileCondition applyConditionsItem) {
     if (this.applyConditions == null) {
-      this.applyConditions = new ArrayList<ProfileCondition>();
+      this.applyConditions = new ArrayList<>();
     }
     this.applyConditions.add(applyConditionsItem);
     return this;

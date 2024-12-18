@@ -65,7 +65,7 @@ public class LibraryTypeOptions {
 
   public LibraryTypeOptions addMetadataFetchersItem(LibraryOptionInfo metadataFetchersItem) {
     if (this.metadataFetchers == null) {
-      this.metadataFetchers = new ArrayList<LibraryOptionInfo>();
+      this.metadataFetchers = new ArrayList<>();
     }
     this.metadataFetchers.add(metadataFetchersItem);
     return this;
@@ -91,7 +91,7 @@ public class LibraryTypeOptions {
 
   public LibraryTypeOptions addImageFetchersItem(LibraryOptionInfo imageFetchersItem) {
     if (this.imageFetchers == null) {
-      this.imageFetchers = new ArrayList<LibraryOptionInfo>();
+      this.imageFetchers = new ArrayList<>();
     }
     this.imageFetchers.add(imageFetchersItem);
     return this;
@@ -117,7 +117,7 @@ public class LibraryTypeOptions {
 
   public LibraryTypeOptions addSupportedImageTypesItem(ImageType supportedImageTypesItem) {
     if (this.supportedImageTypes == null) {
-      this.supportedImageTypes = new ArrayList<ImageType>();
+      this.supportedImageTypes = new ArrayList<>();
     }
     this.supportedImageTypes.add(supportedImageTypesItem);
     return this;
@@ -143,7 +143,7 @@ public class LibraryTypeOptions {
 
   public LibraryTypeOptions addDefaultImageOptionsItem(ImageOption defaultImageOptionsItem) {
     if (this.defaultImageOptions == null) {
-      this.defaultImageOptions = new ArrayList<ImageOption>();
+      this.defaultImageOptions = new ArrayList<>();
     }
     this.defaultImageOptions.add(defaultImageOptionsItem);
     return this;

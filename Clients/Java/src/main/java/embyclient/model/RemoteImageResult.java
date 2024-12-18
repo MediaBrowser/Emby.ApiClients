@@ -39,7 +39,7 @@ public class RemoteImageResult {
 
   public RemoteImageResult addImagesItem(RemoteImageInfo imagesItem) {
     if (this.images == null) {
-      this.images = new ArrayList<RemoteImageInfo>();
+      this.images = new ArrayList<>();
     }
     this.images.add(imagesItem);
     return this;
@@ -83,7 +83,7 @@ public class RemoteImageResult {
 
   public RemoteImageResult addProvidersItem(String providersItem) {
     if (this.providers == null) {
-      this.providers = new ArrayList<String>();
+      this.providers = new ArrayList<>();
     }
     this.providers.add(providersItem);
     return this;

@@ -36,7 +36,7 @@ public class QueryResultSyncJob {
 
   public QueryResultSyncJob addItemsItem(SyncJob itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<SyncJob>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

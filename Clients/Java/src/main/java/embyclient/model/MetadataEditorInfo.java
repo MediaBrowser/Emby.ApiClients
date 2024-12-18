@@ -45,7 +45,7 @@ public class MetadataEditorInfo {
 
   public MetadataEditorInfo addParentalRatingOptionsItem(ParentalRating parentalRatingOptionsItem) {
     if (this.parentalRatingOptions == null) {
-      this.parentalRatingOptions = new ArrayList<ParentalRating>();
+      this.parentalRatingOptions = new ArrayList<>();
     }
     this.parentalRatingOptions.add(parentalRatingOptionsItem);
     return this;
@@ -71,7 +71,7 @@ public class MetadataEditorInfo {
 
   public MetadataEditorInfo addCountriesItem(GlobalizationCountryInfo countriesItem) {
     if (this.countries == null) {
-      this.countries = new ArrayList<GlobalizationCountryInfo>();
+      this.countries = new ArrayList<>();
     }
     this.countries.add(countriesItem);
     return this;
@@ -97,7 +97,7 @@ public class MetadataEditorInfo {
 
   public MetadataEditorInfo addCulturesItem(GlobalizationCultureDto culturesItem) {
     if (this.cultures == null) {
-      this.cultures = new ArrayList<GlobalizationCultureDto>();
+      this.cultures = new ArrayList<>();
     }
     this.cultures.add(culturesItem);
     return this;
@@ -123,7 +123,7 @@ public class MetadataEditorInfo {
 
   public MetadataEditorInfo addExternalIdInfosItem(ExternalIdInfo externalIdInfosItem) {
     if (this.externalIdInfos == null) {
-      this.externalIdInfos = new ArrayList<ExternalIdInfo>();
+      this.externalIdInfos = new ArrayList<>();
     }
     this.externalIdInfos.add(externalIdInfosItem);
     return this;

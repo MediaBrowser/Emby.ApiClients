@@ -36,7 +36,7 @@ public class QueryResultUserLibraryOfficialRatingItem {
 
   public QueryResultUserLibraryOfficialRatingItem addItemsItem(UserLibraryOfficialRatingItem itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<UserLibraryOfficialRatingItem>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

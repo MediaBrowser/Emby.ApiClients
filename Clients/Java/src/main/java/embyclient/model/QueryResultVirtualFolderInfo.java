@@ -36,7 +36,7 @@ public class QueryResultVirtualFolderInfo {
 
   public QueryResultVirtualFolderInfo addItemsItem(VirtualFolderInfo itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<VirtualFolderInfo>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

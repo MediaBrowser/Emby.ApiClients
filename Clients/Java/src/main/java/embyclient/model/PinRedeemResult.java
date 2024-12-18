@@ -53,7 +53,7 @@ public class PinRedeemResult {
 
   public PinRedeemResult addUsersResetItem(String usersResetItem) {
     if (this.usersReset == null) {
-      this.usersReset = new ArrayList<String>();
+      this.usersReset = new ArrayList<>();
     }
     this.usersReset.add(usersResetItem);
     return this;

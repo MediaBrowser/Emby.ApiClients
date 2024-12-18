@@ -99,7 +99,7 @@ public class LibraryMediaFolder {
 
   public LibraryMediaFolder addSubFoldersItem(LibrarySubFolder subFoldersItem) {
     if (this.subFolders == null) {
-      this.subFolders = new ArrayList<LibrarySubFolder>();
+      this.subFolders = new ArrayList<>();
     }
     this.subFolders.add(subFoldersItem);
     return this;

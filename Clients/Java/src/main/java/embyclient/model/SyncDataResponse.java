@@ -32,7 +32,7 @@ public class SyncDataResponse {
 
   public SyncDataResponse addItemIdsToRemoveItem(String itemIdsToRemoveItem) {
     if (this.itemIdsToRemove == null) {
-      this.itemIdsToRemove = new ArrayList<String>();
+      this.itemIdsToRemove = new ArrayList<>();
     }
     this.itemIdsToRemove.add(itemIdsToRemoveItem);
     return this;

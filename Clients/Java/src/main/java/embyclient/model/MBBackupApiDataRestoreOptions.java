@@ -33,7 +33,7 @@ public class MBBackupApiDataRestoreOptions {
 
   public MBBackupApiDataRestoreOptions addUsersItem(MBBackupApiUserRestoreInfo usersItem) {
     if (this.users == null) {
-      this.users = new ArrayList<MBBackupApiUserRestoreInfo>();
+      this.users = new ArrayList<>();
     }
     this.users.add(usersItem);
     return this;

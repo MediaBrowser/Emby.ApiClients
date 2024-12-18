@@ -117,7 +117,7 @@ public class ProcessRunMetricsProcessStatistics {
 
   public ProcessRunMetricsProcessStatistics addMetricsItem(ProcessRunMetricsProcessMetricPoint metricsItem) {
     if (this.metrics == null) {
-      this.metrics = new ArrayList<ProcessRunMetricsProcessMetricPoint>();
+      this.metrics = new ArrayList<>();
     }
     this.metrics.add(metricsItem);
     return this;

@@ -36,7 +36,7 @@ public class QueryResultLiveTvSeriesTimerInfoDto {
 
   public QueryResultLiveTvSeriesTimerInfoDto addItemsItem(LiveTvSeriesTimerInfoDto itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<LiveTvSeriesTimerInfoDto>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

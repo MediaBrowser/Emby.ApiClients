@@ -36,7 +36,7 @@ public class QueryResultUserDto {
 
   public QueryResultUserDto addItemsItem(UserDto itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<UserDto>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

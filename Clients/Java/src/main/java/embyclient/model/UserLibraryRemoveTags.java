@@ -33,7 +33,7 @@ public class UserLibraryRemoveTags {
 
   public UserLibraryRemoveTags addTagsItem(NameIdPair tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<NameIdPair>();
+      this.tags = new ArrayList<>();
     }
     this.tags.add(tagsItem);
     return this;

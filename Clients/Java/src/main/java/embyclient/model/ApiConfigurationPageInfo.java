@@ -286,7 +286,7 @@ public class ApiConfigurationPageInfo {
 
   public ApiConfigurationPageInfo addTranslationsItem(String translationsItem) {
     if (this.translations == null) {
-      this.translations = new ArrayList<String>();
+      this.translations = new ArrayList<>();
     }
     this.translations.add(translationsItem);
     return this;

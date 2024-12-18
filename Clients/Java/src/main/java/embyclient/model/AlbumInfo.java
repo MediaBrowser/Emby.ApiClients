@@ -17,9 +17,9 @@ import embyclient.model.ProviderIdDictionary;
 import embyclient.model.SongInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * AlbumInfo
  */
@@ -75,7 +75,7 @@ public class AlbumInfo {
 
   public AlbumInfo addAlbumArtistsItem(String albumArtistsItem) {
     if (this.albumArtists == null) {
-      this.albumArtists = new ArrayList<String>();
+      this.albumArtists = new ArrayList<>();
     }
     this.albumArtists.add(albumArtistsItem);
     return this;
@@ -101,7 +101,7 @@ public class AlbumInfo {
 
   public AlbumInfo addSongInfosItem(SongInfo songInfosItem) {
     if (this.songInfos == null) {
-      this.songInfos = new ArrayList<SongInfo>();
+      this.songInfos = new ArrayList<>();
     }
     this.songInfos.add(songInfosItem);
     return this;
@@ -199,7 +199,7 @@ public class AlbumInfo {
 
   public AlbumInfo addMetadataLanguagesItem(GlobalizationCultureDto metadataLanguagesItem) {
     if (this.metadataLanguages == null) {
-      this.metadataLanguages = new ArrayList<GlobalizationCultureDto>();
+      this.metadataLanguages = new ArrayList<>();
     }
     this.metadataLanguages.add(metadataLanguagesItem);
     return this;

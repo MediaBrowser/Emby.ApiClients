@@ -566,7 +566,7 @@ public class ApiBaseItemsRequest {
 
   public ApiBaseItemsRequest addAirDaysItem(DayOfWeek airDaysItem) {
     if (this.airDays == null) {
-      this.airDays = new ArrayList<DayOfWeek>();
+      this.airDays = new ArrayList<>();
     }
     this.airDays.add(airDaysItem);
     return this;

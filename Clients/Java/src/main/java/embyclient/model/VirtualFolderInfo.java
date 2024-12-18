@@ -81,7 +81,7 @@ public class VirtualFolderInfo {
 
   public VirtualFolderInfo addLocationsItem(String locationsItem) {
     if (this.locations == null) {
-      this.locations = new ArrayList<String>();
+      this.locations = new ArrayList<>();
     }
     this.locations.add(locationsItem);
     return this;

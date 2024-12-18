@@ -1,7 +1,7 @@
 lazy val root = (project in file(".")).
   settings(
     organization := "media.emby",
-    name := "embyclient-java-beta",
+    name := "embyclient",
     version := "4.9.0.33",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
@@ -14,7 +14,6 @@ lazy val root = (project in file(".")).
       "com.squareup.okhttp" % "logging-interceptor" % "2.7.5",
       "com.google.code.gson" % "gson" % "2.8.1",
       "io.gsonfire" % "gson-fire" % "1.8.3" % "compile",
-      "org.threeten" % "threetenbp" % "1.3.5" % "compile",
       "junit" % "junit" % "4.12" % "test",
       "com.novocode" % "junit-interface" % "0.10" % "test"
     )

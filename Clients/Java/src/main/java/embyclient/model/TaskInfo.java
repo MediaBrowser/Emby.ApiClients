@@ -152,7 +152,7 @@ public class TaskInfo {
 
   public TaskInfo addTriggersItem(TaskTriggerInfo triggersItem) {
     if (this.triggers == null) {
-      this.triggers = new ArrayList<TaskTriggerInfo>();
+      this.triggers = new ArrayList<>();
     }
     this.triggers.add(triggersItem);
     return this;

@@ -16,9 +16,9 @@ import embyclient.model.GlobalizationCultureDto;
 import embyclient.model.ProviderIdDictionary;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * SongInfo
  */
@@ -80,7 +80,7 @@ public class SongInfo {
 
   public SongInfo addAlbumArtistsItem(String albumArtistsItem) {
     if (this.albumArtists == null) {
-      this.albumArtists = new ArrayList<String>();
+      this.albumArtists = new ArrayList<>();
     }
     this.albumArtists.add(albumArtistsItem);
     return this;
@@ -124,7 +124,7 @@ public class SongInfo {
 
   public SongInfo addArtistsItem(String artistsItem) {
     if (this.artists == null) {
-      this.artists = new ArrayList<String>();
+      this.artists = new ArrayList<>();
     }
     this.artists.add(artistsItem);
     return this;
@@ -150,7 +150,7 @@ public class SongInfo {
 
   public SongInfo addComposersItem(String composersItem) {
     if (this.composers == null) {
-      this.composers = new ArrayList<String>();
+      this.composers = new ArrayList<>();
     }
     this.composers.add(composersItem);
     return this;
@@ -248,7 +248,7 @@ public class SongInfo {
 
   public SongInfo addMetadataLanguagesItem(GlobalizationCultureDto metadataLanguagesItem) {
     if (this.metadataLanguages == null) {
-      this.metadataLanguages = new ArrayList<GlobalizationCultureDto>();
+      this.metadataLanguages = new ArrayList<>();
     }
     this.metadataLanguages.add(metadataLanguagesItem);
     return this;

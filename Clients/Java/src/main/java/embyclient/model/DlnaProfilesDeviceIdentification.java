@@ -222,7 +222,7 @@ public class DlnaProfilesDeviceIdentification {
 
   public DlnaProfilesDeviceIdentification addHeadersItem(DlnaProfilesHttpHeaderInfo headersItem) {
     if (this.headers == null) {
-      this.headers = new ArrayList<DlnaProfilesHttpHeaderInfo>();
+      this.headers = new ArrayList<>();
     }
     this.headers.add(headersItem);
     return this;

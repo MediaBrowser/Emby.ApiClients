@@ -154,7 +154,7 @@ public class PlaybackProgressInfo {
 
   public PlaybackProgressInfo addNowPlayingQueueItem(QueueItem nowPlayingQueueItem) {
     if (this.nowPlayingQueue == null) {
-      this.nowPlayingQueue = new ArrayList<QueueItem>();
+      this.nowPlayingQueue = new ArrayList<>();
     }
     this.nowPlayingQueue.add(nowPlayingQueueItem);
     return this;
@@ -612,7 +612,7 @@ public class PlaybackProgressInfo {
 
   public PlaybackProgressInfo addPlaylistItemIdsItem(String playlistItemIdsItem) {
     if (this.playlistItemIds == null) {
-      this.playlistItemIds = new ArrayList<String>();
+      this.playlistItemIds = new ArrayList<>();
     }
     this.playlistItemIds.add(playlistItemIdsItem);
     return this;

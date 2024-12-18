@@ -252,7 +252,7 @@ public class UIViewInfo {
 
   public UIViewInfo addCommandsItem(UICommand commandsItem) {
     if (this.commands == null) {
-      this.commands = new ArrayList<UICommand>();
+      this.commands = new ArrayList<>();
     }
     this.commands.add(commandsItem);
     return this;
@@ -278,7 +278,7 @@ public class UIViewInfo {
 
   public UIViewInfo addTabPageInfosItem(UITabPageInfo tabPageInfosItem) {
     if (this.tabPageInfos == null) {
-      this.tabPageInfos = new ArrayList<UITabPageInfo>();
+      this.tabPageInfos = new ArrayList<>();
     }
     this.tabPageInfos.add(tabPageInfosItem);
     return this;

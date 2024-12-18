@@ -18,9 +18,9 @@ import embyclient.model.LiveTvRecordingStatus;
 import embyclient.model.LiveTvTimerType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * LiveTvTimerInfoDto
  */
@@ -526,7 +526,7 @@ public class LiveTvTimerInfoDto {
 
   public LiveTvTimerInfoDto addParentBackdropImageTagsItem(String parentBackdropImageTagsItem) {
     if (this.parentBackdropImageTags == null) {
-      this.parentBackdropImageTags = new ArrayList<String>();
+      this.parentBackdropImageTags = new ArrayList<>();
     }
     this.parentBackdropImageTags.add(parentBackdropImageTagsItem);
     return this;

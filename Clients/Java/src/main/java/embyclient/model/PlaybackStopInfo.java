@@ -73,7 +73,7 @@ public class PlaybackStopInfo {
 
   public PlaybackStopInfo addNowPlayingQueueItem(QueueItem nowPlayingQueueItem) {
     if (this.nowPlayingQueue == null) {
-      this.nowPlayingQueue = new ArrayList<QueueItem>();
+      this.nowPlayingQueue = new ArrayList<>();
     }
     this.nowPlayingQueue.add(nowPlayingQueueItem);
     return this;

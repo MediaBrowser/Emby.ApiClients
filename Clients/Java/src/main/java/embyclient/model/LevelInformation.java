@@ -166,7 +166,7 @@ public class LevelInformation {
 
   public LevelInformation addResolutionRatesItem(ResolutionWithRate resolutionRatesItem) {
     if (this.resolutionRates == null) {
-      this.resolutionRates = new ArrayList<ResolutionWithRate>();
+      this.resolutionRates = new ArrayList<>();
     }
     this.resolutionRates.add(resolutionRatesItem);
     return this;
@@ -192,7 +192,7 @@ public class LevelInformation {
 
   public LevelInformation addResolutionRateStringsItem(String resolutionRateStringsItem) {
     if (this.resolutionRateStrings == null) {
-      this.resolutionRateStrings = new ArrayList<String>();
+      this.resolutionRateStrings = new ArrayList<>();
     }
     this.resolutionRateStrings.add(resolutionRateStringsItem);
     return this;

@@ -15,9 +15,9 @@ import com.google.gson.stream.JsonWriter;
 import embyclient.model.NameIdPair;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * MBBackupBackupInfo
  */
@@ -160,7 +160,7 @@ public class MBBackupBackupInfo {
 
   public MBBackupBackupInfo addUsersItem(NameIdPair usersItem) {
     if (this.users == null) {
-      this.users = new ArrayList<NameIdPair>();
+      this.users = new ArrayList<>();
     }
     this.users.add(usersItem);
     return this;

@@ -36,7 +36,7 @@ public class QueryResultDevicesDeviceInfo {
 
   public QueryResultDevicesDeviceInfo addItemsItem(DevicesDeviceInfo itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<DevicesDeviceInfo>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

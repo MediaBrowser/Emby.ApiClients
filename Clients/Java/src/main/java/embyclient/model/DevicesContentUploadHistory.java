@@ -54,7 +54,7 @@ public class DevicesContentUploadHistory {
 
   public DevicesContentUploadHistory addFilesUploadedItem(DevicesLocalFileInfo filesUploadedItem) {
     if (this.filesUploaded == null) {
-      this.filesUploaded = new ArrayList<DevicesLocalFileInfo>();
+      this.filesUploaded = new ArrayList<>();
     }
     this.filesUploaded.add(filesUploadedItem);
     return this;

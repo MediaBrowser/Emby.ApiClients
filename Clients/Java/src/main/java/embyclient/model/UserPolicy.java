@@ -310,7 +310,7 @@ public class UserPolicy {
 
   public UserPolicy addBlockedTagsItem(String blockedTagsItem) {
     if (this.blockedTags == null) {
-      this.blockedTags = new ArrayList<String>();
+      this.blockedTags = new ArrayList<>();
     }
     this.blockedTags.add(blockedTagsItem);
     return this;
@@ -354,7 +354,7 @@ public class UserPolicy {
 
   public UserPolicy addIncludeTagsItem(String includeTagsItem) {
     if (this.includeTags == null) {
-      this.includeTags = new ArrayList<String>();
+      this.includeTags = new ArrayList<>();
     }
     this.includeTags.add(includeTagsItem);
     return this;
@@ -398,7 +398,7 @@ public class UserPolicy {
 
   public UserPolicy addAccessSchedulesItem(AccessSchedule accessSchedulesItem) {
     if (this.accessSchedules == null) {
-      this.accessSchedules = new ArrayList<AccessSchedule>();
+      this.accessSchedules = new ArrayList<>();
     }
     this.accessSchedules.add(accessSchedulesItem);
     return this;
@@ -424,7 +424,7 @@ public class UserPolicy {
 
   public UserPolicy addBlockUnratedItemsItem(UnratedItem blockUnratedItemsItem) {
     if (this.blockUnratedItems == null) {
-      this.blockUnratedItems = new ArrayList<UnratedItem>();
+      this.blockUnratedItems = new ArrayList<>();
     }
     this.blockUnratedItems.add(blockUnratedItemsItem);
     return this;
@@ -630,7 +630,7 @@ public class UserPolicy {
 
   public UserPolicy addRestrictedFeaturesItem(String restrictedFeaturesItem) {
     if (this.restrictedFeatures == null) {
-      this.restrictedFeatures = new ArrayList<String>();
+      this.restrictedFeatures = new ArrayList<>();
     }
     this.restrictedFeatures.add(restrictedFeaturesItem);
     return this;
@@ -656,7 +656,7 @@ public class UserPolicy {
 
   public UserPolicy addEnableContentDeletionFromFoldersItem(String enableContentDeletionFromFoldersItem) {
     if (this.enableContentDeletionFromFolders == null) {
-      this.enableContentDeletionFromFolders = new ArrayList<String>();
+      this.enableContentDeletionFromFolders = new ArrayList<>();
     }
     this.enableContentDeletionFromFolders.add(enableContentDeletionFromFoldersItem);
     return this;
@@ -772,7 +772,7 @@ public class UserPolicy {
 
   public UserPolicy addEnabledChannelsItem(String enabledChannelsItem) {
     if (this.enabledChannels == null) {
-      this.enabledChannels = new ArrayList<String>();
+      this.enabledChannels = new ArrayList<>();
     }
     this.enabledChannels.add(enabledChannelsItem);
     return this;
@@ -816,7 +816,7 @@ public class UserPolicy {
 
   public UserPolicy addEnabledFoldersItem(String enabledFoldersItem) {
     if (this.enabledFolders == null) {
-      this.enabledFolders = new ArrayList<String>();
+      this.enabledFolders = new ArrayList<>();
     }
     this.enabledFolders.add(enabledFoldersItem);
     return this;
@@ -932,7 +932,7 @@ public class UserPolicy {
 
   public UserPolicy addExcludedSubFoldersItem(String excludedSubFoldersItem) {
     if (this.excludedSubFolders == null) {
-      this.excludedSubFolders = new ArrayList<String>();
+      this.excludedSubFolders = new ArrayList<>();
     }
     this.excludedSubFolders.add(excludedSubFoldersItem);
     return this;
@@ -976,7 +976,7 @@ public class UserPolicy {
 
   public UserPolicy addEnabledDevicesItem(String enabledDevicesItem) {
     if (this.enabledDevices == null) {
-      this.enabledDevices = new ArrayList<String>();
+      this.enabledDevices = new ArrayList<>();
     }
     this.enabledDevices.add(enabledDevicesItem);
     return this;

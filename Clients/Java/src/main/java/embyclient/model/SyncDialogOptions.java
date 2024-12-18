@@ -45,7 +45,7 @@ public class SyncDialogOptions {
 
   public SyncDialogOptions addTargetsItem(SyncTarget targetsItem) {
     if (this.targets == null) {
-      this.targets = new ArrayList<SyncTarget>();
+      this.targets = new ArrayList<>();
     }
     this.targets.add(targetsItem);
     return this;
@@ -71,7 +71,7 @@ public class SyncDialogOptions {
 
   public SyncDialogOptions addOptionsItem(SyncJobOption optionsItem) {
     if (this.options == null) {
-      this.options = new ArrayList<SyncJobOption>();
+      this.options = new ArrayList<>();
     }
     this.options.add(optionsItem);
     return this;
@@ -97,7 +97,7 @@ public class SyncDialogOptions {
 
   public SyncDialogOptions addQualityOptionsItem(SyncQualityOption qualityOptionsItem) {
     if (this.qualityOptions == null) {
-      this.qualityOptions = new ArrayList<SyncQualityOption>();
+      this.qualityOptions = new ArrayList<>();
     }
     this.qualityOptions.add(qualityOptionsItem);
     return this;
@@ -123,7 +123,7 @@ public class SyncDialogOptions {
 
   public SyncDialogOptions addProfileOptionsItem(SyncProfileOption profileOptionsItem) {
     if (this.profileOptions == null) {
-      this.profileOptions = new ArrayList<SyncProfileOption>();
+      this.profileOptions = new ArrayList<>();
     }
     this.profileOptions.add(profileOptionsItem);
     return this;

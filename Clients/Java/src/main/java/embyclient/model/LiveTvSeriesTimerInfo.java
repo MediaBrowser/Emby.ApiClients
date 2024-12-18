@@ -19,9 +19,9 @@ import embyclient.model.LiveTvTimerType;
 import embyclient.model.ProviderIdDictionary;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * LiveTvSeriesTimerInfo
  */
@@ -152,7 +152,7 @@ public class LiveTvSeriesTimerInfo {
 
   public LiveTvSeriesTimerInfo addChannelIdsItem(String channelIdsItem) {
     if (this.channelIds == null) {
-      this.channelIds = new ArrayList<String>();
+      this.channelIds = new ArrayList<>();
     }
     this.channelIds.add(channelIdsItem);
     return this;
@@ -412,7 +412,7 @@ public class LiveTvSeriesTimerInfo {
 
   public LiveTvSeriesTimerInfo addDaysItem(DayOfWeek daysItem) {
     if (this.days == null) {
-      this.days = new ArrayList<DayOfWeek>();
+      this.days = new ArrayList<>();
     }
     this.days.add(daysItem);
     return this;
@@ -582,7 +582,7 @@ public class LiveTvSeriesTimerInfo {
 
   public LiveTvSeriesTimerInfo addKeywordsItem(LiveTvKeywordInfo keywordsItem) {
     if (this.keywords == null) {
-      this.keywords = new ArrayList<LiveTvKeywordInfo>();
+      this.keywords = new ArrayList<>();
     }
     this.keywords.add(keywordsItem);
     return this;

@@ -54,7 +54,7 @@ public class ImageProviderInfo {
 
   public ImageProviderInfo addSupportedImagesItem(ImageType supportedImagesItem) {
     if (this.supportedImages == null) {
-      this.supportedImages = new ArrayList<ImageType>();
+      this.supportedImages = new ArrayList<>();
     }
     this.supportedImages.add(supportedImagesItem);
     return this;

@@ -119,7 +119,7 @@ public class GlobalizationCultureDto {
 
   public GlobalizationCultureDto addThreeLetterISOLanguageNamesItem(String threeLetterISOLanguageNamesItem) {
     if (this.threeLetterISOLanguageNames == null) {
-      this.threeLetterISOLanguageNames = new ArrayList<String>();
+      this.threeLetterISOLanguageNames = new ArrayList<>();
     }
     this.threeLetterISOLanguageNames.add(threeLetterISOLanguageNamesItem);
     return this;
@@ -145,7 +145,7 @@ public class GlobalizationCultureDto {
 
   public GlobalizationCultureDto addTwoLetterISOLanguageNamesItem(String twoLetterISOLanguageNamesItem) {
     if (this.twoLetterISOLanguageNames == null) {
-      this.twoLetterISOLanguageNames = new ArrayList<String>();
+      this.twoLetterISOLanguageNames = new ArrayList<>();
     }
     this.twoLetterISOLanguageNames.add(twoLetterISOLanguageNamesItem);
     return this;

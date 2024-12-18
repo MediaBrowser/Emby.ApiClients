@@ -82,7 +82,7 @@ public class DisplayPreferences {
 
   public DisplayPreferences putCustomPrefsItem(String key, String customPrefsItem) {
     if (this.customPrefs == null) {
-      this.customPrefs = new HashMap<String, String>();
+      this.customPrefs = new HashMap<>();
     }
     this.customPrefs.put(key, customPrefsItem);
     return this;

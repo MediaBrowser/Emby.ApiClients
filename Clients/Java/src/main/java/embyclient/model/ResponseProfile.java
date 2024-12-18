@@ -160,7 +160,7 @@ public class ResponseProfile {
 
   public ResponseProfile addConditionsItem(ProfileCondition conditionsItem) {
     if (this.conditions == null) {
-      this.conditions = new ArrayList<ProfileCondition>();
+      this.conditions = new ArrayList<>();
     }
     this.conditions.add(conditionsItem);
     return this;

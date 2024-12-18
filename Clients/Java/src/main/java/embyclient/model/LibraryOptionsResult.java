@@ -46,7 +46,7 @@ public class LibraryOptionsResult {
 
   public LibraryOptionsResult addMetadataSaversItem(LibraryOptionInfo metadataSaversItem) {
     if (this.metadataSavers == null) {
-      this.metadataSavers = new ArrayList<LibraryOptionInfo>();
+      this.metadataSavers = new ArrayList<>();
     }
     this.metadataSavers.add(metadataSaversItem);
     return this;
@@ -72,7 +72,7 @@ public class LibraryOptionsResult {
 
   public LibraryOptionsResult addMetadataReadersItem(LibraryOptionInfo metadataReadersItem) {
     if (this.metadataReaders == null) {
-      this.metadataReaders = new ArrayList<LibraryOptionInfo>();
+      this.metadataReaders = new ArrayList<>();
     }
     this.metadataReaders.add(metadataReadersItem);
     return this;
@@ -98,7 +98,7 @@ public class LibraryOptionsResult {
 
   public LibraryOptionsResult addSubtitleFetchersItem(LibraryOptionInfo subtitleFetchersItem) {
     if (this.subtitleFetchers == null) {
-      this.subtitleFetchers = new ArrayList<LibraryOptionInfo>();
+      this.subtitleFetchers = new ArrayList<>();
     }
     this.subtitleFetchers.add(subtitleFetchersItem);
     return this;
@@ -124,7 +124,7 @@ public class LibraryOptionsResult {
 
   public LibraryOptionsResult addLyricsFetchersItem(LibraryOptionInfo lyricsFetchersItem) {
     if (this.lyricsFetchers == null) {
-      this.lyricsFetchers = new ArrayList<LibraryOptionInfo>();
+      this.lyricsFetchers = new ArrayList<>();
     }
     this.lyricsFetchers.add(lyricsFetchersItem);
     return this;
@@ -150,7 +150,7 @@ public class LibraryOptionsResult {
 
   public LibraryOptionsResult addTypeOptionsItem(LibraryTypeOptions typeOptionsItem) {
     if (this.typeOptions == null) {
-      this.typeOptions = new ArrayList<LibraryTypeOptions>();
+      this.typeOptions = new ArrayList<>();
     }
     this.typeOptions.add(typeOptionsItem);
     return this;

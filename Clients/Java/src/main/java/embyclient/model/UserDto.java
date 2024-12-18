@@ -18,7 +18,7 @@ import embyclient.model.UserItemShareLevel;
 import embyclient.model.UserPolicy;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 /**
  * Class UserDto  
  */

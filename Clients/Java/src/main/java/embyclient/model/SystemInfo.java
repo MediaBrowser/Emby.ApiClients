@@ -335,7 +335,7 @@ public class SystemInfo {
 
   public SystemInfo addCompletedInstallationsItem(InstallationInfo completedInstallationsItem) {
     if (this.completedInstallations == null) {
-      this.completedInstallations = new ArrayList<InstallationInfo>();
+      this.completedInstallations = new ArrayList<>();
     }
     this.completedInstallations.add(completedInstallationsItem);
     return this;
@@ -631,7 +631,7 @@ public class SystemInfo {
 
   public SystemInfo addWakeOnLanInfoItem(WakeOnLanInfo wakeOnLanInfoItem) {
     if (this.wakeOnLanInfo == null) {
-      this.wakeOnLanInfo = new ArrayList<WakeOnLanInfo>();
+      this.wakeOnLanInfo = new ArrayList<>();
     }
     this.wakeOnLanInfo.add(wakeOnLanInfoItem);
     return this;
@@ -675,7 +675,7 @@ public class SystemInfo {
 
   public SystemInfo addLocalAddressesItem(String localAddressesItem) {
     if (this.localAddresses == null) {
-      this.localAddresses = new ArrayList<String>();
+      this.localAddresses = new ArrayList<>();
     }
     this.localAddresses.add(localAddressesItem);
     return this;
@@ -719,7 +719,7 @@ public class SystemInfo {
 
   public SystemInfo addRemoteAddressesItem(String remoteAddressesItem) {
     if (this.remoteAddresses == null) {
-      this.remoteAddresses = new ArrayList<String>();
+      this.remoteAddresses = new ArrayList<>();
     }
     this.remoteAddresses.add(remoteAddressesItem);
     return this;

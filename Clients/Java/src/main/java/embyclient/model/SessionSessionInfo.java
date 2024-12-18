@@ -18,9 +18,9 @@ import embyclient.model.SessionUserInfo;
 import embyclient.model.TranscodingInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * Class SessionInfo  
  */
@@ -127,7 +127,7 @@ public class SessionSessionInfo {
 
   public SessionSessionInfo addAdditionalUsersItem(SessionUserInfo additionalUsersItem) {
     if (this.additionalUsers == null) {
-      this.additionalUsers = new ArrayList<SessionUserInfo>();
+      this.additionalUsers = new ArrayList<>();
     }
     this.additionalUsers.add(additionalUsersItem);
     return this;
@@ -189,7 +189,7 @@ public class SessionSessionInfo {
 
   public SessionSessionInfo addPlayableMediaTypesItem(String playableMediaTypesItem) {
     if (this.playableMediaTypes == null) {
-      this.playableMediaTypes = new ArrayList<String>();
+      this.playableMediaTypes = new ArrayList<>();
     }
     this.playableMediaTypes.add(playableMediaTypesItem);
     return this;
@@ -521,7 +521,7 @@ public class SessionSessionInfo {
 
   public SessionSessionInfo addSupportedCommandsItem(String supportedCommandsItem) {
     if (this.supportedCommands == null) {
-      this.supportedCommands = new ArrayList<String>();
+      this.supportedCommands = new ArrayList<>();
     }
     this.supportedCommands.add(supportedCommandsItem);
     return this;

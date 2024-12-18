@@ -66,7 +66,7 @@ public class TypeOptions {
 
   public TypeOptions addMetadataFetchersItem(String metadataFetchersItem) {
     if (this.metadataFetchers == null) {
-      this.metadataFetchers = new ArrayList<String>();
+      this.metadataFetchers = new ArrayList<>();
     }
     this.metadataFetchers.add(metadataFetchersItem);
     return this;
@@ -92,7 +92,7 @@ public class TypeOptions {
 
   public TypeOptions addMetadataFetcherOrderItem(String metadataFetcherOrderItem) {
     if (this.metadataFetcherOrder == null) {
-      this.metadataFetcherOrder = new ArrayList<String>();
+      this.metadataFetcherOrder = new ArrayList<>();
     }
     this.metadataFetcherOrder.add(metadataFetcherOrderItem);
     return this;
@@ -118,7 +118,7 @@ public class TypeOptions {
 
   public TypeOptions addImageFetchersItem(String imageFetchersItem) {
     if (this.imageFetchers == null) {
-      this.imageFetchers = new ArrayList<String>();
+      this.imageFetchers = new ArrayList<>();
     }
     this.imageFetchers.add(imageFetchersItem);
     return this;
@@ -144,7 +144,7 @@ public class TypeOptions {
 
   public TypeOptions addImageFetcherOrderItem(String imageFetcherOrderItem) {
     if (this.imageFetcherOrder == null) {
-      this.imageFetcherOrder = new ArrayList<String>();
+      this.imageFetcherOrder = new ArrayList<>();
     }
     this.imageFetcherOrder.add(imageFetcherOrderItem);
     return this;
@@ -170,7 +170,7 @@ public class TypeOptions {
 
   public TypeOptions addImageOptionsItem(ImageOption imageOptionsItem) {
     if (this.imageOptions == null) {
-      this.imageOptions = new ArrayList<ImageOption>();
+      this.imageOptions = new ArrayList<>();
     }
     this.imageOptions.add(imageOptionsItem);
     return this;

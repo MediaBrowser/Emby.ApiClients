@@ -99,7 +99,7 @@ public class LibraryAddVirtualFolder {
 
   public LibraryAddVirtualFolder addPathsItem(String pathsItem) {
     if (this.paths == null) {
-      this.paths = new ArrayList<String>();
+      this.paths = new ArrayList<>();
     }
     this.paths.add(pathsItem);
     return this;

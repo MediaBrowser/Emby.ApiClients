@@ -57,7 +57,7 @@ public class ClientCapabilities {
 
   public ClientCapabilities addPlayableMediaTypesItem(String playableMediaTypesItem) {
     if (this.playableMediaTypes == null) {
-      this.playableMediaTypes = new ArrayList<String>();
+      this.playableMediaTypes = new ArrayList<>();
     }
     this.playableMediaTypes.add(playableMediaTypesItem);
     return this;
@@ -83,7 +83,7 @@ public class ClientCapabilities {
 
   public ClientCapabilities addSupportedCommandsItem(String supportedCommandsItem) {
     if (this.supportedCommands == null) {
-      this.supportedCommands = new ArrayList<String>();
+      this.supportedCommands = new ArrayList<>();
     }
     this.supportedCommands.add(supportedCommandsItem);
     return this;

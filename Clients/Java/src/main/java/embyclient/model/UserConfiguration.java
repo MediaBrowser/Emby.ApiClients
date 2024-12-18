@@ -193,7 +193,7 @@ public class UserConfiguration {
 
   public UserConfiguration addOrderedViewsItem(String orderedViewsItem) {
     if (this.orderedViews == null) {
-      this.orderedViews = new ArrayList<String>();
+      this.orderedViews = new ArrayList<>();
     }
     this.orderedViews.add(orderedViewsItem);
     return this;
@@ -219,7 +219,7 @@ public class UserConfiguration {
 
   public UserConfiguration addLatestItemsExcludesItem(String latestItemsExcludesItem) {
     if (this.latestItemsExcludes == null) {
-      this.latestItemsExcludes = new ArrayList<String>();
+      this.latestItemsExcludes = new ArrayList<>();
     }
     this.latestItemsExcludes.add(latestItemsExcludesItem);
     return this;
@@ -245,7 +245,7 @@ public class UserConfiguration {
 
   public UserConfiguration addMyMediaExcludesItem(String myMediaExcludesItem) {
     if (this.myMediaExcludes == null) {
-      this.myMediaExcludes = new ArrayList<String>();
+      this.myMediaExcludes = new ArrayList<>();
     }
     this.myMediaExcludes.add(myMediaExcludesItem);
     return this;

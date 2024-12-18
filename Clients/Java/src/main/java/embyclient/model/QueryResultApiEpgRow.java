@@ -36,7 +36,7 @@ public class QueryResultApiEpgRow {
 
   public QueryResultApiEpgRow addItemsItem(ApiEpgRow itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<ApiEpgRow>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

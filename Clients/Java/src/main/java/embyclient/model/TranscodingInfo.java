@@ -417,7 +417,7 @@ public class TranscodingInfo {
 
   public TranscodingInfo addTranscodeReasonsItem(TranscodeReason transcodeReasonsItem) {
     if (this.transcodeReasons == null) {
-      this.transcodeReasons = new ArrayList<TranscodeReason>();
+      this.transcodeReasons = new ArrayList<>();
     }
     this.transcodeReasons.add(transcodeReasonsItem);
     return this;
@@ -479,7 +479,7 @@ public class TranscodingInfo {
 
   public TranscodingInfo addCpuHistoryItem(TupleDoubleDouble cpuHistoryItem) {
     if (this.cpuHistory == null) {
-      this.cpuHistory = new ArrayList<TupleDoubleDouble>();
+      this.cpuHistory = new ArrayList<>();
     }
     this.cpuHistory.add(cpuHistoryItem);
     return this;
@@ -685,7 +685,7 @@ public class TranscodingInfo {
 
   public TranscodingInfo addVideoPipelineInfoItem(TranscodingVpStepInfo videoPipelineInfoItem) {
     if (this.videoPipelineInfo == null) {
-      this.videoPipelineInfo = new ArrayList<TranscodingVpStepInfo>();
+      this.videoPipelineInfo = new ArrayList<>();
     }
     this.videoPipelineInfo.add(videoPipelineInfoItem);
     return this;
@@ -711,7 +711,7 @@ public class TranscodingInfo {
 
   public TranscodingInfo addSubtitlePipelineInfosItem(List<TranscodingVpStepInfo> subtitlePipelineInfosItem) {
     if (this.subtitlePipelineInfos == null) {
-      this.subtitlePipelineInfos = new ArrayList<List<TranscodingVpStepInfo>>();
+      this.subtitlePipelineInfos = new ArrayList<>();
     }
     this.subtitlePipelineInfos.add(subtitlePipelineInfosItem);
     return this;

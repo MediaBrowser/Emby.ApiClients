@@ -202,7 +202,7 @@ public class UserNotificationInfo {
 
   public UserNotificationInfo addUserIdsItem(String userIdsItem) {
     if (this.userIds == null) {
-      this.userIds = new ArrayList<String>();
+      this.userIds = new ArrayList<>();
     }
     this.userIds.add(userIdsItem);
     return this;
@@ -228,7 +228,7 @@ public class UserNotificationInfo {
 
   public UserNotificationInfo addDeviceIdsItem(String deviceIdsItem) {
     if (this.deviceIds == null) {
-      this.deviceIds = new ArrayList<String>();
+      this.deviceIds = new ArrayList<>();
     }
     this.deviceIds.add(deviceIdsItem);
     return this;
@@ -254,7 +254,7 @@ public class UserNotificationInfo {
 
   public UserNotificationInfo addLibraryIdsItem(String libraryIdsItem) {
     if (this.libraryIds == null) {
-      this.libraryIds = new ArrayList<String>();
+      this.libraryIds = new ArrayList<>();
     }
     this.libraryIds.add(libraryIdsItem);
     return this;
@@ -280,7 +280,7 @@ public class UserNotificationInfo {
 
   public UserNotificationInfo addEventIdsItem(String eventIdsItem) {
     if (this.eventIds == null) {
-      this.eventIds = new ArrayList<String>();
+      this.eventIds = new ArrayList<>();
     }
     this.eventIds.add(eventIdsItem);
     return this;
@@ -360,7 +360,7 @@ public class UserNotificationInfo {
 
   public UserNotificationInfo putOptionsItem(String key, String optionsItem) {
     if (this.options == null) {
-      this.options = new HashMap<String, String>();
+      this.options = new HashMap<>();
     }
     this.options.put(key, optionsItem);
     return this;

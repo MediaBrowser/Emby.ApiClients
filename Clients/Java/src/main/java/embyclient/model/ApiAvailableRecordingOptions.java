@@ -39,7 +39,7 @@ public class ApiAvailableRecordingOptions {
 
   public ApiAvailableRecordingOptions addRecordingFoldersItem(ApiNameIdDescriptionPair recordingFoldersItem) {
     if (this.recordingFolders == null) {
-      this.recordingFolders = new ArrayList<ApiNameIdDescriptionPair>();
+      this.recordingFolders = new ArrayList<>();
     }
     this.recordingFolders.add(recordingFoldersItem);
     return this;
@@ -65,7 +65,7 @@ public class ApiAvailableRecordingOptions {
 
   public ApiAvailableRecordingOptions addMovieRecordingFoldersItem(ApiNameIdDescriptionPair movieRecordingFoldersItem) {
     if (this.movieRecordingFolders == null) {
-      this.movieRecordingFolders = new ArrayList<ApiNameIdDescriptionPair>();
+      this.movieRecordingFolders = new ArrayList<>();
     }
     this.movieRecordingFolders.add(movieRecordingFoldersItem);
     return this;
@@ -91,7 +91,7 @@ public class ApiAvailableRecordingOptions {
 
   public ApiAvailableRecordingOptions addSeriesRecordingFoldersItem(ApiNameIdDescriptionPair seriesRecordingFoldersItem) {
     if (this.seriesRecordingFolders == null) {
-      this.seriesRecordingFolders = new ArrayList<ApiNameIdDescriptionPair>();
+      this.seriesRecordingFolders = new ArrayList<>();
     }
     this.seriesRecordingFolders.add(seriesRecordingFoldersItem);
     return this;

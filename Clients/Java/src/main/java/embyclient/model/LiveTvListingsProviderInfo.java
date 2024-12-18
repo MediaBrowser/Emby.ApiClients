@@ -273,7 +273,7 @@ public class LiveTvListingsProviderInfo {
 
   public LiveTvListingsProviderInfo addEnabledTunersItem(String enabledTunersItem) {
     if (this.enabledTuners == null) {
-      this.enabledTuners = new ArrayList<String>();
+      this.enabledTuners = new ArrayList<>();
     }
     this.enabledTuners.add(enabledTunersItem);
     return this;
@@ -317,7 +317,7 @@ public class LiveTvListingsProviderInfo {
 
   public LiveTvListingsProviderInfo addNewsCategoriesItem(String newsCategoriesItem) {
     if (this.newsCategories == null) {
-      this.newsCategories = new ArrayList<String>();
+      this.newsCategories = new ArrayList<>();
     }
     this.newsCategories.add(newsCategoriesItem);
     return this;
@@ -343,7 +343,7 @@ public class LiveTvListingsProviderInfo {
 
   public LiveTvListingsProviderInfo addSportsCategoriesItem(String sportsCategoriesItem) {
     if (this.sportsCategories == null) {
-      this.sportsCategories = new ArrayList<String>();
+      this.sportsCategories = new ArrayList<>();
     }
     this.sportsCategories.add(sportsCategoriesItem);
     return this;
@@ -369,7 +369,7 @@ public class LiveTvListingsProviderInfo {
 
   public LiveTvListingsProviderInfo addKidsCategoriesItem(String kidsCategoriesItem) {
     if (this.kidsCategories == null) {
-      this.kidsCategories = new ArrayList<String>();
+      this.kidsCategories = new ArrayList<>();
     }
     this.kidsCategories.add(kidsCategoriesItem);
     return this;
@@ -395,7 +395,7 @@ public class LiveTvListingsProviderInfo {
 
   public LiveTvListingsProviderInfo addMovieCategoriesItem(String movieCategoriesItem) {
     if (this.movieCategories == null) {
-      this.movieCategories = new ArrayList<String>();
+      this.movieCategories = new ArrayList<>();
     }
     this.movieCategories.add(movieCategoriesItem);
     return this;
@@ -421,7 +421,7 @@ public class LiveTvListingsProviderInfo {
 
   public LiveTvListingsProviderInfo addChannelMappingsItem(NameValuePair channelMappingsItem) {
     if (this.channelMappings == null) {
-      this.channelMappings = new ArrayList<NameValuePair>();
+      this.channelMappings = new ArrayList<>();
     }
     this.channelMappings.add(channelMappingsItem);
     return this;

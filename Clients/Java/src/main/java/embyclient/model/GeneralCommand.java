@@ -75,7 +75,7 @@ public class GeneralCommand {
 
   public GeneralCommand putArgumentsItem(String key, String argumentsItem) {
     if (this.arguments == null) {
-      this.arguments = new HashMap<String, String>();
+      this.arguments = new HashMap<>();
     }
     this.arguments.put(key, argumentsItem);
     return this;

@@ -75,7 +75,7 @@ public class NotificationCategoryInfo {
 
   public NotificationCategoryInfo addEventsItem(NotificationTypeInfo eventsItem) {
     if (this.events == null) {
-      this.events = new ArrayList<NotificationTypeInfo>();
+      this.events = new ArrayList<>();
     }
     this.events.add(eventsItem);
     return this;

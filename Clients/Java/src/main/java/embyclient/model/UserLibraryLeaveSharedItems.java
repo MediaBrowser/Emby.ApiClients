@@ -35,7 +35,7 @@ public class UserLibraryLeaveSharedItems {
 
   public UserLibraryLeaveSharedItems addItemIdsItem(String itemIdsItem) {
     if (this.itemIds == null) {
-      this.itemIds = new ArrayList<String>();
+      this.itemIds = new ArrayList<>();
     }
     this.itemIds.add(itemIdsItem);
     return this;

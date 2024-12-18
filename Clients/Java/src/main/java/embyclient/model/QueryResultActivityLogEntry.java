@@ -36,7 +36,7 @@ public class QueryResultActivityLogEntry {
 
   public QueryResultActivityLogEntry addItemsItem(ActivityLogEntry itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<ActivityLogEntry>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

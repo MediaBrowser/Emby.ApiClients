@@ -310,7 +310,7 @@ public class VideoCodecBase {
 
   public VideoCodecBase addSupportedColorFormatsItem(ColorFormats supportedColorFormatsItem) {
     if (this.supportedColorFormats == null) {
-      this.supportedColorFormats = new ArrayList<ColorFormats>();
+      this.supportedColorFormats = new ArrayList<>();
     }
     this.supportedColorFormats.add(supportedColorFormatsItem);
     return this;
@@ -336,7 +336,7 @@ public class VideoCodecBase {
 
   public VideoCodecBase addSupportedColorFormatStringsItem(String supportedColorFormatStringsItem) {
     if (this.supportedColorFormatStrings == null) {
-      this.supportedColorFormatStrings = new ArrayList<String>();
+      this.supportedColorFormatStrings = new ArrayList<>();
     }
     this.supportedColorFormatStrings.add(supportedColorFormatStringsItem);
     return this;
@@ -362,7 +362,7 @@ public class VideoCodecBase {
 
   public VideoCodecBase addProfileAndLevelInformationItem(ProfileLevelInformation profileAndLevelInformationItem) {
     if (this.profileAndLevelInformation == null) {
-      this.profileAndLevelInformation = new ArrayList<ProfileLevelInformation>();
+      this.profileAndLevelInformation = new ArrayList<>();
     }
     this.profileAndLevelInformation.add(profileAndLevelInformationItem);
     return this;

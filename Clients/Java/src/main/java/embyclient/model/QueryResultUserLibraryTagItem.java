@@ -36,7 +36,7 @@ public class QueryResultUserLibraryTagItem {
 
   public QueryResultUserLibraryTagItem addItemsItem(UserLibraryTagItem itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<UserLibraryTagItem>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

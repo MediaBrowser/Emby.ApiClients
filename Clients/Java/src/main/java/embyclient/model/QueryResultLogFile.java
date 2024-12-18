@@ -36,7 +36,7 @@ public class QueryResultLogFile {
 
   public QueryResultLogFile addItemsItem(LogFile itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<LogFile>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

@@ -388,7 +388,7 @@ public class LibraryOptions {
 
   public LibraryOptions addPathInfosItem(MediaPathInfo pathInfosItem) {
     if (this.pathInfos == null) {
-      this.pathInfos = new ArrayList<MediaPathInfo>();
+      this.pathInfos = new ArrayList<>();
     }
     this.pathInfos.add(pathInfosItem);
     return this;
@@ -432,7 +432,7 @@ public class LibraryOptions {
 
   public LibraryOptions addIgnoreFileExtensionsItem(String ignoreFileExtensionsItem) {
     if (this.ignoreFileExtensions == null) {
-      this.ignoreFileExtensions = new ArrayList<String>();
+      this.ignoreFileExtensions = new ArrayList<>();
     }
     this.ignoreFileExtensions.add(ignoreFileExtensionsItem);
     return this;
@@ -728,7 +728,7 @@ public class LibraryOptions {
 
   public LibraryOptions addMetadataSaversItem(String metadataSaversItem) {
     if (this.metadataSavers == null) {
-      this.metadataSavers = new ArrayList<String>();
+      this.metadataSavers = new ArrayList<>();
     }
     this.metadataSavers.add(metadataSaversItem);
     return this;
@@ -754,7 +754,7 @@ public class LibraryOptions {
 
   public LibraryOptions addDisabledLocalMetadataReadersItem(String disabledLocalMetadataReadersItem) {
     if (this.disabledLocalMetadataReaders == null) {
-      this.disabledLocalMetadataReaders = new ArrayList<String>();
+      this.disabledLocalMetadataReaders = new ArrayList<>();
     }
     this.disabledLocalMetadataReaders.add(disabledLocalMetadataReadersItem);
     return this;
@@ -780,7 +780,7 @@ public class LibraryOptions {
 
   public LibraryOptions addLocalMetadataReaderOrderItem(String localMetadataReaderOrderItem) {
     if (this.localMetadataReaderOrder == null) {
-      this.localMetadataReaderOrder = new ArrayList<String>();
+      this.localMetadataReaderOrder = new ArrayList<>();
     }
     this.localMetadataReaderOrder.add(localMetadataReaderOrderItem);
     return this;
@@ -806,7 +806,7 @@ public class LibraryOptions {
 
   public LibraryOptions addDisabledLyricsFetchersItem(String disabledLyricsFetchersItem) {
     if (this.disabledLyricsFetchers == null) {
-      this.disabledLyricsFetchers = new ArrayList<String>();
+      this.disabledLyricsFetchers = new ArrayList<>();
     }
     this.disabledLyricsFetchers.add(disabledLyricsFetchersItem);
     return this;
@@ -868,7 +868,7 @@ public class LibraryOptions {
 
   public LibraryOptions addLyricsFetcherOrderItem(String lyricsFetcherOrderItem) {
     if (this.lyricsFetcherOrder == null) {
-      this.lyricsFetcherOrder = new ArrayList<String>();
+      this.lyricsFetcherOrder = new ArrayList<>();
     }
     this.lyricsFetcherOrder.add(lyricsFetcherOrderItem);
     return this;
@@ -894,7 +894,7 @@ public class LibraryOptions {
 
   public LibraryOptions addLyricsDownloadLanguagesItem(String lyricsDownloadLanguagesItem) {
     if (this.lyricsDownloadLanguages == null) {
-      this.lyricsDownloadLanguages = new ArrayList<String>();
+      this.lyricsDownloadLanguages = new ArrayList<>();
     }
     this.lyricsDownloadLanguages.add(lyricsDownloadLanguagesItem);
     return this;
@@ -920,7 +920,7 @@ public class LibraryOptions {
 
   public LibraryOptions addDisabledSubtitleFetchersItem(String disabledSubtitleFetchersItem) {
     if (this.disabledSubtitleFetchers == null) {
-      this.disabledSubtitleFetchers = new ArrayList<String>();
+      this.disabledSubtitleFetchers = new ArrayList<>();
     }
     this.disabledSubtitleFetchers.add(disabledSubtitleFetchersItem);
     return this;
@@ -946,7 +946,7 @@ public class LibraryOptions {
 
   public LibraryOptions addSubtitleFetcherOrderItem(String subtitleFetcherOrderItem) {
     if (this.subtitleFetcherOrder == null) {
-      this.subtitleFetcherOrder = new ArrayList<String>();
+      this.subtitleFetcherOrder = new ArrayList<>();
     }
     this.subtitleFetcherOrder.add(subtitleFetcherOrderItem);
     return this;
@@ -1008,7 +1008,7 @@ public class LibraryOptions {
 
   public LibraryOptions addSubtitleDownloadLanguagesItem(String subtitleDownloadLanguagesItem) {
     if (this.subtitleDownloadLanguages == null) {
-      this.subtitleDownloadLanguages = new ArrayList<String>();
+      this.subtitleDownloadLanguages = new ArrayList<>();
     }
     this.subtitleDownloadLanguages.add(subtitleDownloadLanguagesItem);
     return this;
@@ -1124,7 +1124,7 @@ public class LibraryOptions {
 
   public LibraryOptions addTypeOptionsItem(TypeOptions typeOptionsItem) {
     if (this.typeOptions == null) {
-      this.typeOptions = new ArrayList<TypeOptions>();
+      this.typeOptions = new ArrayList<>();
     }
     this.typeOptions.add(typeOptionsItem);
     return this;

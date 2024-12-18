@@ -116,7 +116,7 @@ public class ProfileInformation {
 
   public ProfileInformation addBitDepthsItem(Integer bitDepthsItem) {
     if (this.bitDepths == null) {
-      this.bitDepths = new ArrayList<Integer>();
+      this.bitDepths = new ArrayList<>();
     }
     this.bitDepths.add(bitDepthsItem);
     return this;

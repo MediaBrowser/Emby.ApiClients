@@ -53,7 +53,7 @@ public class LiveTvLiveTvInfo {
 
   public LiveTvLiveTvInfo addEnabledUsersItem(String enabledUsersItem) {
     if (this.enabledUsers == null) {
-      this.enabledUsers = new ArrayList<String>();
+      this.enabledUsers = new ArrayList<>();
     }
     this.enabledUsers.add(enabledUsersItem);
     return this;

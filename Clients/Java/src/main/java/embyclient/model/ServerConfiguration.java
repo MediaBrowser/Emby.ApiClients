@@ -528,7 +528,7 @@ public class ServerConfiguration {
 
   public ServerConfiguration addSortRemoveWordsItem(String sortRemoveWordsItem) {
     if (this.sortRemoveWords == null) {
-      this.sortRemoveWords = new ArrayList<String>();
+      this.sortRemoveWords = new ArrayList<>();
     }
     this.sortRemoveWords.add(sortRemoveWordsItem);
     return this;
@@ -734,7 +734,7 @@ public class ServerConfiguration {
 
   public ServerConfiguration addLocalNetworkSubnetsItem(String localNetworkSubnetsItem) {
     if (this.localNetworkSubnets == null) {
-      this.localNetworkSubnets = new ArrayList<String>();
+      this.localNetworkSubnets = new ArrayList<>();
     }
     this.localNetworkSubnets.add(localNetworkSubnetsItem);
     return this;
@@ -760,7 +760,7 @@ public class ServerConfiguration {
 
   public ServerConfiguration addLocalNetworkAddressesItem(String localNetworkAddressesItem) {
     if (this.localNetworkAddresses == null) {
-      this.localNetworkAddresses = new ArrayList<String>();
+      this.localNetworkAddresses = new ArrayList<>();
     }
     this.localNetworkAddresses.add(localNetworkAddressesItem);
     return this;
@@ -840,7 +840,7 @@ public class ServerConfiguration {
 
   public ServerConfiguration addRemoteIPFilterItem(String remoteIPFilterItem) {
     if (this.remoteIPFilter == null) {
-      this.remoteIPFilter = new ArrayList<String>();
+      this.remoteIPFilter = new ArrayList<>();
     }
     this.remoteIPFilter.add(remoteIPFilterItem);
     return this;
@@ -902,7 +902,7 @@ public class ServerConfiguration {
 
   public ServerConfiguration addPathSubstitutionsItem(PathSubstitution pathSubstitutionsItem) {
     if (this.pathSubstitutions == null) {
-      this.pathSubstitutions = new ArrayList<PathSubstitution>();
+      this.pathSubstitutions = new ArrayList<>();
     }
     this.pathSubstitutions.add(pathSubstitutionsItem);
     return this;
@@ -928,7 +928,7 @@ public class ServerConfiguration {
 
   public ServerConfiguration addUninstalledPluginsItem(String uninstalledPluginsItem) {
     if (this.uninstalledPlugins == null) {
-      this.uninstalledPlugins = new ArrayList<String>();
+      this.uninstalledPlugins = new ArrayList<>();
     }
     this.uninstalledPlugins.add(uninstalledPluginsItem);
     return this;

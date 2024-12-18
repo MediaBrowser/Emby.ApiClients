@@ -35,7 +35,7 @@ public class QueryResultString {
 
   public QueryResultString addItemsItem(String itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<String>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

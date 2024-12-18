@@ -54,7 +54,7 @@ public class ApiEpgRow {
 
   public ApiEpgRow addProgramsItem(BaseItemDto programsItem) {
     if (this.programs == null) {
-      this.programs = new ArrayList<BaseItemDto>();
+      this.programs = new ArrayList<>();
     }
     this.programs.add(programsItem);
     return this;

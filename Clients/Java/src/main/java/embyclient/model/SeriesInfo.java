@@ -17,9 +17,9 @@ import embyclient.model.ProviderIdDictionary;
 import embyclient.model.SeriesDisplayOrder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * SeriesInfo
  */
@@ -183,7 +183,7 @@ public class SeriesInfo {
 
   public SeriesInfo addMetadataLanguagesItem(GlobalizationCultureDto metadataLanguagesItem) {
     if (this.metadataLanguages == null) {
-      this.metadataLanguages = new ArrayList<GlobalizationCultureDto>();
+      this.metadataLanguages = new ArrayList<>();
     }
     this.metadataLanguages.add(metadataLanguagesItem);
     return this;

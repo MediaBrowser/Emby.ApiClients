@@ -17,9 +17,9 @@ import embyclient.model.MediaSourceInfo;
 import embyclient.model.SyncJobItemStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * SyncJobItem
  */
@@ -351,7 +351,7 @@ public class SyncJobItem {
 
   public SyncJobItem addAdditionalFilesItem(ItemFileInfo additionalFilesItem) {
     if (this.additionalFiles == null) {
-      this.additionalFiles = new ArrayList<ItemFileInfo>();
+      this.additionalFiles = new ArrayList<>();
     }
     this.additionalFiles.add(additionalFilesItem);
     return this;

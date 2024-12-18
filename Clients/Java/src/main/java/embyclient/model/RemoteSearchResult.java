@@ -16,9 +16,9 @@ import embyclient.model.ProviderIdDictionary;
 import embyclient.model.RemoteSearchResult;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 /**
  * RemoteSearchResult
  */
@@ -371,7 +371,7 @@ public class RemoteSearchResult {
 
   public RemoteSearchResult addArtistsItem(RemoteSearchResult artistsItem) {
     if (this.artists == null) {
-      this.artists = new ArrayList<RemoteSearchResult>();
+      this.artists = new ArrayList<>();
     }
     this.artists.add(artistsItem);
     return this;

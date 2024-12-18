@@ -54,7 +54,7 @@ public class MBBackupApiAllBackupsInfo {
 
   public MBBackupApiAllBackupsInfo addLightBackupsItem(MBBackupBackupInfo lightBackupsItem) {
     if (this.lightBackups == null) {
-      this.lightBackups = new ArrayList<MBBackupBackupInfo>();
+      this.lightBackups = new ArrayList<>();
     }
     this.lightBackups.add(lightBackupsItem);
     return this;

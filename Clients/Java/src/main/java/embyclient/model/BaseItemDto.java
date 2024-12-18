@@ -32,11 +32,11 @@ import embyclient.model.UserItemDataDto;
 import embyclient.model.Video3DFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.threeten.bp.OffsetDateTime;
 /**
  * This is strictly used as a data transfer object from the api layer. This holds information about a BaseItem in a format that is convenient for the client.  
  */
@@ -1034,7 +1034,7 @@ public class BaseItemDto {
 
   public BaseItemDto addExternalUrlsItem(ExternalUrl externalUrlsItem) {
     if (this.externalUrls == null) {
-      this.externalUrls = new ArrayList<ExternalUrl>();
+      this.externalUrls = new ArrayList<>();
     }
     this.externalUrls.add(externalUrlsItem);
     return this;
@@ -1060,7 +1060,7 @@ public class BaseItemDto {
 
   public BaseItemDto addMediaSourcesItem(MediaSourceInfo mediaSourcesItem) {
     if (this.mediaSources == null) {
-      this.mediaSources = new ArrayList<MediaSourceInfo>();
+      this.mediaSources = new ArrayList<>();
     }
     this.mediaSources.add(mediaSourcesItem);
     return this;
@@ -1158,7 +1158,7 @@ public class BaseItemDto {
 
   public BaseItemDto addProductionLocationsItem(String productionLocationsItem) {
     if (this.productionLocations == null) {
-      this.productionLocations = new ArrayList<String>();
+      this.productionLocations = new ArrayList<>();
     }
     this.productionLocations.add(productionLocationsItem);
     return this;
@@ -1292,7 +1292,7 @@ public class BaseItemDto {
 
   public BaseItemDto addTaglinesItem(String taglinesItem) {
     if (this.taglines == null) {
-      this.taglines = new ArrayList<String>();
+      this.taglines = new ArrayList<>();
     }
     this.taglines.add(taglinesItem);
     return this;
@@ -1318,7 +1318,7 @@ public class BaseItemDto {
 
   public BaseItemDto addGenresItem(String genresItem) {
     if (this.genres == null) {
-      this.genres = new ArrayList<String>();
+      this.genres = new ArrayList<>();
     }
     this.genres.add(genresItem);
     return this;
@@ -1542,7 +1542,7 @@ public class BaseItemDto {
 
   public BaseItemDto addRemoteTrailersItem(MediaUrl remoteTrailersItem) {
     if (this.remoteTrailers == null) {
-      this.remoteTrailers = new ArrayList<MediaUrl>();
+      this.remoteTrailers = new ArrayList<>();
     }
     this.remoteTrailers.add(remoteTrailersItem);
     return this;
@@ -1640,7 +1640,7 @@ public class BaseItemDto {
 
   public BaseItemDto addPeopleItem(BaseItemPerson peopleItem) {
     if (this.people == null) {
-      this.people = new ArrayList<BaseItemPerson>();
+      this.people = new ArrayList<>();
     }
     this.people.add(peopleItem);
     return this;
@@ -1666,7 +1666,7 @@ public class BaseItemDto {
 
   public BaseItemDto addStudiosItem(NameLongIdPair studiosItem) {
     if (this.studios == null) {
-      this.studios = new ArrayList<NameLongIdPair>();
+      this.studios = new ArrayList<>();
     }
     this.studios.add(studiosItem);
     return this;
@@ -1692,7 +1692,7 @@ public class BaseItemDto {
 
   public BaseItemDto addGenreItemsItem(NameLongIdPair genreItemsItem) {
     if (this.genreItems == null) {
-      this.genreItems = new ArrayList<NameLongIdPair>();
+      this.genreItems = new ArrayList<>();
     }
     this.genreItems.add(genreItemsItem);
     return this;
@@ -1718,7 +1718,7 @@ public class BaseItemDto {
 
   public BaseItemDto addTagItemsItem(NameLongIdPair tagItemsItem) {
     if (this.tagItems == null) {
-      this.tagItems = new ArrayList<NameLongIdPair>();
+      this.tagItems = new ArrayList<>();
     }
     this.tagItems.add(tagItemsItem);
     return this;
@@ -1780,7 +1780,7 @@ public class BaseItemDto {
 
   public BaseItemDto addParentBackdropImageTagsItem(String parentBackdropImageTagsItem) {
     if (this.parentBackdropImageTags == null) {
-      this.parentBackdropImageTags = new ArrayList<String>();
+      this.parentBackdropImageTags = new ArrayList<>();
     }
     this.parentBackdropImageTags.add(parentBackdropImageTagsItem);
     return this;
@@ -1986,7 +1986,7 @@ public class BaseItemDto {
 
   public BaseItemDto addAirDaysItem(DayOfWeek airDaysItem) {
     if (this.airDays == null) {
-      this.airDays = new ArrayList<DayOfWeek>();
+      this.airDays = new ArrayList<>();
     }
     this.airDays.add(airDaysItem);
     return this;
@@ -2012,7 +2012,7 @@ public class BaseItemDto {
 
   public BaseItemDto addTagsItem(String tagsItem) {
     if (this.tags == null) {
-      this.tags = new ArrayList<String>();
+      this.tags = new ArrayList<>();
     }
     this.tags.add(tagsItem);
     return this;
@@ -2056,7 +2056,7 @@ public class BaseItemDto {
 
   public BaseItemDto addArtistsItem(String artistsItem) {
     if (this.artists == null) {
-      this.artists = new ArrayList<String>();
+      this.artists = new ArrayList<>();
     }
     this.artists.add(artistsItem);
     return this;
@@ -2082,7 +2082,7 @@ public class BaseItemDto {
 
   public BaseItemDto addArtistItemsItem(NameIdPair artistItemsItem) {
     if (this.artistItems == null) {
-      this.artistItems = new ArrayList<NameIdPair>();
+      this.artistItems = new ArrayList<>();
     }
     this.artistItems.add(artistItemsItem);
     return this;
@@ -2108,7 +2108,7 @@ public class BaseItemDto {
 
   public BaseItemDto addComposersItem(NameIdPair composersItem) {
     if (this.composers == null) {
-      this.composers = new ArrayList<NameIdPair>();
+      this.composers = new ArrayList<>();
     }
     this.composers.add(composersItem);
     return this;
@@ -2260,7 +2260,7 @@ public class BaseItemDto {
 
   public BaseItemDto addAlbumArtistsItem(NameIdPair albumArtistsItem) {
     if (this.albumArtists == null) {
-      this.albumArtists = new ArrayList<NameIdPair>();
+      this.albumArtists = new ArrayList<>();
     }
     this.albumArtists.add(albumArtistsItem);
     return this;
@@ -2304,7 +2304,7 @@ public class BaseItemDto {
 
   public BaseItemDto addMediaStreamsItem(MediaStream mediaStreamsItem) {
     if (this.mediaStreams == null) {
-      this.mediaStreams = new ArrayList<MediaStream>();
+      this.mediaStreams = new ArrayList<>();
     }
     this.mediaStreams.add(mediaStreamsItem);
     return this;
@@ -2348,7 +2348,7 @@ public class BaseItemDto {
 
   public BaseItemDto putImageTagsItem(String key, String imageTagsItem) {
     if (this.imageTags == null) {
-      this.imageTags = new HashMap<String, String>();
+      this.imageTags = new HashMap<>();
     }
     this.imageTags.put(key, imageTagsItem);
     return this;
@@ -2374,7 +2374,7 @@ public class BaseItemDto {
 
   public BaseItemDto addBackdropImageTagsItem(String backdropImageTagsItem) {
     if (this.backdropImageTags == null) {
-      this.backdropImageTags = new ArrayList<String>();
+      this.backdropImageTags = new ArrayList<>();
     }
     this.backdropImageTags.add(backdropImageTagsItem);
     return this;
@@ -2508,7 +2508,7 @@ public class BaseItemDto {
 
   public BaseItemDto addChaptersItem(ChapterInfo chaptersItem) {
     if (this.chapters == null) {
-      this.chapters = new ArrayList<ChapterInfo>();
+      this.chapters = new ArrayList<>();
     }
     this.chapters.add(chaptersItem);
     return this;
@@ -2588,7 +2588,7 @@ public class BaseItemDto {
 
   public BaseItemDto addLockedFieldsItem(MetadataFields lockedFieldsItem) {
     if (this.lockedFields == null) {
-      this.lockedFields = new ArrayList<MetadataFields>();
+      this.lockedFields = new ArrayList<>();
     }
     this.lockedFields.add(lockedFieldsItem);
     return this;
@@ -3316,7 +3316,7 @@ public class BaseItemDto {
 
   public BaseItemDto addSubviewsItem(String subviewsItem) {
     if (this.subviews == null) {
-      this.subviews = new ArrayList<String>();
+      this.subviews = new ArrayList<>();
     }
     this.subviews.add(subviewsItem);
     return this;

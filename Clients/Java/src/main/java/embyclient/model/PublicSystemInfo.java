@@ -68,7 +68,7 @@ public class PublicSystemInfo {
 
   public PublicSystemInfo addLocalAddressesItem(String localAddressesItem) {
     if (this.localAddresses == null) {
-      this.localAddresses = new ArrayList<String>();
+      this.localAddresses = new ArrayList<>();
     }
     this.localAddresses.add(localAddressesItem);
     return this;
@@ -112,7 +112,7 @@ public class PublicSystemInfo {
 
   public PublicSystemInfo addRemoteAddressesItem(String remoteAddressesItem) {
     if (this.remoteAddresses == null) {
-      this.remoteAddresses = new ArrayList<String>();
+      this.remoteAddresses = new ArrayList<>();
     }
     this.remoteAddresses.add(remoteAddressesItem);
     return this;

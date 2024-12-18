@@ -54,7 +54,7 @@ public class RokuMetadataApiThumbnailSetInfo {
 
   public RokuMetadataApiThumbnailSetInfo addThumbnailsItem(RokuMetadataApiThumbnailInfo thumbnailsItem) {
     if (this.thumbnails == null) {
-      this.thumbnails = new ArrayList<RokuMetadataApiThumbnailInfo>();
+      this.thumbnails = new ArrayList<>();
     }
     this.thumbnails.add(thumbnailsItem);
     return this;

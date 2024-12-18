@@ -36,7 +36,7 @@ public class QueryResultChannelManagementInfo {
 
   public QueryResultChannelManagementInfo addItemsItem(ChannelManagementInfo itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<ChannelManagementInfo>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

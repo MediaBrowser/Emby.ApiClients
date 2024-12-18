@@ -33,7 +33,7 @@ public class LibraryPostUpdatedMedia {
 
   public LibraryPostUpdatedMedia addUpdatesItem(LibraryMediaUpdateInfo updatesItem) {
     if (this.updates == null) {
-      this.updates = new ArrayList<LibraryMediaUpdateInfo>();
+      this.updates = new ArrayList<>();
     }
     this.updates.add(updatesItem);
     return this;

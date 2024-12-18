@@ -40,7 +40,7 @@ public class PlaybackInfoResponse {
 
   public PlaybackInfoResponse addMediaSourcesItem(MediaSourceInfo mediaSourcesItem) {
     if (this.mediaSources == null) {
-      this.mediaSources = new ArrayList<MediaSourceInfo>();
+      this.mediaSources = new ArrayList<>();
     }
     this.mediaSources.add(mediaSourcesItem);
     return this;

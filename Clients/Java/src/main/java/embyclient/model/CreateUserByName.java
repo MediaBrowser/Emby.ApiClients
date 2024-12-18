@@ -75,7 +75,7 @@ public class CreateUserByName {
 
   public CreateUserByName addUserCopyOptionsItem(LibraryUserCopyOptions userCopyOptionsItem) {
     if (this.userCopyOptions == null) {
-      this.userCopyOptions = new ArrayList<LibraryUserCopyOptions>();
+      this.userCopyOptions = new ArrayList<>();
     }
     this.userCopyOptions.add(userCopyOptionsItem);
     return this;

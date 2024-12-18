@@ -57,7 +57,7 @@ public class ThemeMediaResult {
 
   public ThemeMediaResult addItemsItem(BaseItemDto itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<BaseItemDto>();
+      this.items = new ArrayList<>();
     }
     this.items.add(itemsItem);
     return this;

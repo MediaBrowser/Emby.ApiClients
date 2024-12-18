@@ -39,7 +39,7 @@ public class UserLibraryUpdateUserItemAccess {
 
   public UserLibraryUpdateUserItemAccess addItemIdsItem(String itemIdsItem) {
     if (this.itemIds == null) {
-      this.itemIds = new ArrayList<String>();
+      this.itemIds = new ArrayList<>();
     }
     this.itemIds.add(itemIdsItem);
     return this;
@@ -65,7 +65,7 @@ public class UserLibraryUpdateUserItemAccess {
 
   public UserLibraryUpdateUserItemAccess addUserIdsItem(String userIdsItem) {
     if (this.userIds == null) {
-      this.userIds = new ArrayList<String>();
+      this.userIds = new ArrayList<>();
     }
     this.userIds.add(userIdsItem);
     return this;
