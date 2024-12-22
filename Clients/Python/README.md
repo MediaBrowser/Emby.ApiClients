@@ -1,66 +1,64 @@
-# Python Client
+# embyclient
 
-<table><tr />
-    <tr>
-        <th valign="top" align="left">Name</th>
-        <td>embyclient-python</td>
-    </tr>
-    <tr>
-        <th valign="top" align="left">Language</th>
-        <td>Python</td>
-    </tr>
-    <tr>
-        <th valign="top" align="left">SDK Folder</th>
-        <td>SampleCode/RestApi/Clients/Python</td>
-    </tr>
-</table>
+- API version: 4.9.0.34
+- Package version: 4.9.0.34
+- Build package: io.swagger.codegen.v3.generators.python.PythonClientCodegen
 
 ## Requirements.
 
-Python 2.7 and 3.4+
+Python 2.7 (deprecated) and 3.4+
 
-## Installation & Usage
-### Setuptools
+## Installation
 
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+Install via [pip](https://pypi.org/project/embyclient/)
 
 ```sh
-python setup.py install --user
-```
-(or `sudo python setup.py install` to install the package for all users)
-
-Then import the package:
-```python
-import embyclient-python
+pip install embyclient
 ```
 
-## Getting Started
+## Usage
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Import the package:
 
 ```python
-from __future__ import print_function
-import time
-import embyclient-python
-from embyclient-python.rest import ApiException
-from pprint import pprint
+import embyclient
+```
+Configure a client instance:
+
+```python
+import embyclient
+from embyclient.rest import ApiException
 
 # Configure API key authorization: apikeyauth
-configuration = embyclient-python.Configuration()
+configuration = embyclient.Configuration()
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = embyclient-python.ActivityLogServiceApi(embyclient-python.ApiClient(configuration))
-start_index = 56 # int | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
-limit = 56 # int | Optional. The maximum number of records to return (optional)
-min_date = 'min_date_example' # str | Optional. The minimum date. Format = ISO (optional)
+client = embyclient.ApiClient(configuration)
+```
+
+Then use the client to interact via specific API services:
+
+```python
+activity_log_service = embyclient.ActivityLogServiceApi(client)
 
 try:
     # Gets activity log entries
-    api_response = api_instance.get_system_activitylog_entries(start_index=start_index, limit=limit, min_date=min_date)
-    pprint(api_response)
+    api_response = activity_log_service.get_activity_log_entries(start_index=56, limit=56, min_date='min_date_example')
+    print(api_response)
 except ApiException as e:
-    print("Exception when calling ActivityLogServiceApi->get_system_activitylog_entries: %s\n" % e)
+    print("Exception when calling ActivityLogServiceApi->get_activity_log_entries: %s\n" % e)
 ```
+
+## Documentation
+
+Emby Server REST Api Documentation: https://dev.emby.media/doc/restapi/index.html
+
+Emby Server REST Api Reference: https://dev.emby.media/reference/index.html
+
+## Credits
+
+Big thanks to [nwithan8](https://github.com/nwithan8) for required adjustments and bringing this to pypi.org originally
+

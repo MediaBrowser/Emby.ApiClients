@@ -9,7 +9,7 @@
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
         <RootNamespace>Emby.ApiClient</RootNamespace>
-        <Version>4.9.0.33</Version>
+        <Version>4.9.0.34</Version>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -17,8 +17,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13" />
+        <PackageReference Include="RestSharp" Version="112.1.0" />
         <PackageReference Include="ServiceStack.Text.Core" Version="6.11.0" />
+        <PackageReference Include="System.Text.Json" Version="8.0.5" />
     </ItemGroup>
 
 

@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The UserLibraryLeaveSharedItems model module.
 * @module model/UserLibraryLeaveSharedItems
-* @version 4.9.0.33
+* @version 4.9.0.34
 */
 export default class UserLibraryLeaveSharedItems {
     /**

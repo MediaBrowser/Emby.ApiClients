@@ -401,7 +401,7 @@ import VideosServiceApi from './api/VideosServiceApi';
 import WebAppServiceApi from './api/WebAppServiceApi';
 
 /**
-* A client library for accessing Emby Server via REST API.<br>
+* The official JavaScript client library for Emby Server REST API access.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -429,7 +429,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.0.33
+* @version 4.9.0.34
 */
 export {
     /**

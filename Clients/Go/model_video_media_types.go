@@ -7,7 +7,6 @@
 package embyclient
 // VideoMediaTypes : Enum listing video media types.      The enum member names are matching exactly those that are used by ffmpeg. Exception: Items that are starting with a number are prefixed with an underscore here.  
 type VideoMediaTypes string
-
 // List of VideoMediaTypes
 const (
 	UNKNOWN_VideoMediaTypes VideoMediaTypes = "Unknown"
@@ -30,9 +29,9 @@ const (
 	WMV1_VideoMediaTypes VideoMediaTypes = "wmv1"
 	WMV2_VideoMediaTypes VideoMediaTypes = "wmv2"
 	WMV3_VideoMediaTypes VideoMediaTypes = "wmv3"
-	012V__VideoMediaTypes VideoMediaTypes = "_012v"
-	4XM__VideoMediaTypes VideoMediaTypes = "_4xm"
-	8BPS__VideoMediaTypes VideoMediaTypes = "_8bps"
+	_012V__VideoMediaTypes VideoMediaTypes = "_012v"
+	_4XM__VideoMediaTypes VideoMediaTypes = "_4xm"
+	_8BPS__VideoMediaTypes VideoMediaTypes = "_8bps"
 	A64_MULTI_VideoMediaTypes VideoMediaTypes = "a64_multi"
 	A64_MULTI5_VideoMediaTypes VideoMediaTypes = "a64_multi5"
 	AASC_VideoMediaTypes VideoMediaTypes = "aasc"

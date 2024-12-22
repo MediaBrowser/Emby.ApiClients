@@ -4,30 +4,37 @@
     Emby Server REST API (BETA)
 """
 
-from setuptools import setup, find_packages  # noqa: H301
+import setuptools
 
-NAME = "emby-client"
-VERSION = "4.9.0.33"
-# To install the library, run the following
-#
-# python setup.py install
-#
-# prerequisite: setuptools
-# http://pypi.python.org/pypi/setuptools
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+
+NAME = "embyclient"
+VERSION = "4.9.0.34"
+
 
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+
+classifiers = [
+    'Intended Audience :: Developers',
+    'Topic :: Software Development :: Build Tools',
+    'Topic :: Multimedia :: Video',
+    'Topic :: Multimedia',
+    'Topic :: Internet :: WWW/HTTP',
+    'Operating System :: OS Independent'
+]
 
 setup(
     name=NAME,
     version=VERSION,
-    description="Emby Server REST API (BETA)",
-    author_email="",
-    url="",
-    keywords=["Emby Server REST API (BETA)"],
-    install_requires=REQUIRES,
-    packages=find_packages(),
+    packages=setuptools.find_packages(exclude=["tests"]),
     include_package_data=True,
-    long_description="""\
-    Explore the Emby Server API  # noqa: E501
-    """
+    description="",
+    install_requires=REQUIRES,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="",
+    keywords=["Emby", "Rest", "API", "client", "media", "server", "JSON"],
+    classifiers=classifiers,
 )

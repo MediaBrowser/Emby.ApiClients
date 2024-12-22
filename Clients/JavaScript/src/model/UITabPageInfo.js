@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The UITabPageInfo model module.
 * @module model/UITabPageInfo
-* @version 4.9.0.33
+* @version 4.9.0.34
 */
 export default class UITabPageInfo {
     /**

@@ -18,7 +18,7 @@ import UserPolicy from './UserPolicy';
 /**
 * The UserDto model module.
 * @module model/UserDto
-* @version 4.9.0.33
+* @version 4.9.0.34
 */
 export default class UserDto {
     /**

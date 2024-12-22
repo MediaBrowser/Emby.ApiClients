@@ -18,7 +18,7 @@ import UITabPageInfo from './UITabPageInfo';
 /**
 * The UIViewInfo model module.
 * @module model/UIViewInfo
-* @version 4.9.0.33
+* @version 4.9.0.34
 */
 export default class UIViewInfo {
     /**

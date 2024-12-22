@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.33
+  version: 4.9.0.34
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -81230,6 +81230,14 @@ components:
           type: string
           format: date-time
           nullable: true
+        StartDate:
+          type: string
+          format: date-time
+          nullable: true
+        EndDate:
+          type: string
+          format: date-time
+          nullable: true
         ImageUrl:
           type: string
         SearchProviderName:
@@ -81255,8 +81263,10 @@ components:
         Overview: Overview
         ParentIndexNumber: 5
         DisambiguationComment: DisambiguationComment
+        EndDate: 2000-01-23T04:56:07.000+00:00
         AlbumArtist: null
         Name: Name
+        StartDate: 2000-01-23T04:56:07.000+00:00
         ProductionYear: 0
         OriginalTitle: OriginalTitle
         IndexNumber: 6

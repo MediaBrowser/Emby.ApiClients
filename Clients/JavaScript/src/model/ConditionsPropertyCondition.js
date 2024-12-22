@@ -17,7 +17,7 @@ import ConditionsPropertyConditionType from './ConditionsPropertyConditionType';
 /**
 * The ConditionsPropertyCondition model module.
 * @module model/ConditionsPropertyCondition
-* @version 4.9.0.33
+* @version 4.9.0.34
 */
 export default class ConditionsPropertyCondition {
     /**

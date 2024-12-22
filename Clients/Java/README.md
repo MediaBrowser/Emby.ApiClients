@@ -1,24 +1,16 @@
-# Java Client
+# embyclient
 
-<table><tr />
-    <tr>
-        <th valign="top" align="left">Name</th>
-        <td>embyclient-rest-java</td>
-    </tr>
-    <tr>
-        <th valign="top" align="left">Language</th>
-        <td>Java</td>
-    </tr>
-    <tr>
-        <th valign="top" align="left">SDK Folder</th>
-        <td>SampleCode/RestApi/Clients/Java</td>
-    </tr>
-</table>
+Emby Server REST API (BETA)
+- API version: 4.9.0.34
+
+Explore the Emby Server API
+
+  For more information, please visit [https://emby.media/community/index.php?/forum/47-developer-api](https://emby.media/community/index.php?/forum/47-developer-api)
 
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.8+
 2. Maven/Gradle
 
 ## Installation
@@ -44,8 +36,8 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>media.emby</groupId>
-  <artifactId>embyclient-rest-java</artifactId>
-  <version>0.0.0.0</version>
+  <artifactId>embyclient</artifactId>
+  <version>4.9.0.34</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +47,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "media.emby:embyclient-rest-java:0.0.0.0"
+compile "media.emby:embyclient:4.9.0.34"
 ```
 
 ### Others
@@ -68,7 +60,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/embyclient-rest-java-0.0.0.0.jar`
+* `target/embyclient-4.9.0.34.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -76,10 +68,10 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-import EmbyClient.*;
-import EmbyClient.auth.*;
-import io.swagger.client.model.*;
-import EmbyClient.Java.ActivityLogServiceApi;
+import embyclient.*;
+import embyclient.auth.*;
+import embyclient.model.*;
+import embyclient.api.ActivityLogServiceApi;
 
 import java.io.File;
 import java.util.*;
@@ -111,3 +103,6 @@ public class ActivityLogServiceApiExample {
 }
 ```
 
+## Documentation for API Endpoints
+
+All URIs are relative to *http://emby.media/emby*

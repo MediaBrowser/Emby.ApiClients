@@ -7,7 +7,6 @@
 package embyclient
 // ColorFormats : Enum listing color formats.      The enum member names are matching those that are used by ffmpeg. (execute 'ffmpeg \\-pix\\_fmts' to list them) Exception: Items that are starting with a number are prefixed with an underscore here. In ffmpeg code these are prefixed with 'AV\\_PIX\\_FMT\\_' and all\\-caps.  
 type ColorFormats string
-
 // List of ColorFormats
 const (
 	UNKNOWN_ColorFormats ColorFormats = "Unknown"
@@ -95,9 +94,9 @@ const (
 	MMAL_ColorFormats ColorFormats = "mmal"
 	D3D11VA_VLD_ColorFormats ColorFormats = "d3d11va_vld"
 	CUDA_ColorFormats ColorFormats = "cuda"
-	0RGB__ColorFormats ColorFormats = "_0rgb"
+	_0RGB__ColorFormats ColorFormats = "_0rgb"
 	RGB0_ColorFormats ColorFormats = "rgb0"
-	0BGR__ColorFormats ColorFormats = "_0bgr"
+	_0BGR__ColorFormats ColorFormats = "_0bgr"
 	BGR0_ColorFormats ColorFormats = "bgr0"
 	YUV420P12_ColorFormats ColorFormats = "yuv420p12"
 	YUV420P14_ColorFormats ColorFormats = "yuv420p14"
