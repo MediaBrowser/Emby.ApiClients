@@ -31,7 +31,7 @@ import Video3DFormat from './Video3DFormat';
 /**
 * The BaseItemDto model module.
 * @module model/BaseItemDto
-* @version 4.9.0.34
+* @version 4.9.0.35
 */
 export default class BaseItemDto {
     /**
@@ -79,6 +79,9 @@ export default class BaseItemDto {
             }
             if (data.hasOwnProperty('Prefix')) {
                 obj['Prefix'] = ApiClient.convertToType(data['Prefix'], 'String');
+            }
+            if (data.hasOwnProperty('TunerName')) {
+                obj['TunerName'] = ApiClient.convertToType(data['TunerName'], 'String');
             }
             if (data.hasOwnProperty('PlaylistItemId')) {
                 obj['PlaylistItemId'] = ApiClient.convertToType(data['PlaylistItemId'], 'String');
@@ -558,6 +561,10 @@ export default class BaseItemDto {
     * @member {String} Prefix
     */
     'Prefix' = undefined;
+    /**
+    * @member {String} TunerName
+    */
+    'TunerName' = undefined;
     /**
     * The playlist item identifier.
     * @member {String} PlaylistItemId

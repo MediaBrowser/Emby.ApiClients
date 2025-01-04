@@ -173,6 +173,12 @@ public class ServerConfiguration {
   @SerializedName("DatabaseAnalysisLimit")
   private Integer databaseAnalysisLimit = null;
 
+  @SerializedName("Max_LibraryDbConnections")
+  private Integer maxLibraryDbConnections = null;
+
+  @SerializedName("Max_OtherDbConnections")
+  private Integer maxOtherDbConnections = null;
+
   @SerializedName("DisableAsyncIO")
   private Boolean disableAsyncIO = null;
 
@@ -1145,6 +1151,42 @@ public class ServerConfiguration {
     this.databaseAnalysisLimit = databaseAnalysisLimit;
   }
 
+  public ServerConfiguration maxLibraryDbConnections(Integer maxLibraryDbConnections) {
+    this.maxLibraryDbConnections = maxLibraryDbConnections;
+    return this;
+  }
+
+   /**
+   * Get maxLibraryDbConnections
+   * @return maxLibraryDbConnections
+  **/
+  @Schema(description = "")
+  public Integer getMaxLibraryDbConnections() {
+    return maxLibraryDbConnections;
+  }
+
+  public void setMaxLibraryDbConnections(Integer maxLibraryDbConnections) {
+    this.maxLibraryDbConnections = maxLibraryDbConnections;
+  }
+
+  public ServerConfiguration maxOtherDbConnections(Integer maxOtherDbConnections) {
+    this.maxOtherDbConnections = maxOtherDbConnections;
+    return this;
+  }
+
+   /**
+   * Get maxOtherDbConnections
+   * @return maxOtherDbConnections
+  **/
+  @Schema(description = "")
+  public Integer getMaxOtherDbConnections() {
+    return maxOtherDbConnections;
+  }
+
+  public void setMaxOtherDbConnections(Integer maxOtherDbConnections) {
+    this.maxOtherDbConnections = maxOtherDbConnections;
+  }
+
   public ServerConfiguration disableAsyncIO(Boolean disableAsyncIO) {
     this.disableAsyncIO = disableAsyncIO;
     return this;
@@ -1456,6 +1498,8 @@ public class ServerConfiguration {
         Objects.equals(this.enablePeopleLetterSubFolders, serverConfiguration.enablePeopleLetterSubFolders) &&
         Objects.equals(this.optimizeDatabaseOnShutdown, serverConfiguration.optimizeDatabaseOnShutdown) &&
         Objects.equals(this.databaseAnalysisLimit, serverConfiguration.databaseAnalysisLimit) &&
+        Objects.equals(this.maxLibraryDbConnections, serverConfiguration.maxLibraryDbConnections) &&
+        Objects.equals(this.maxOtherDbConnections, serverConfiguration.maxOtherDbConnections) &&
         Objects.equals(this.disableAsyncIO, serverConfiguration.disableAsyncIO) &&
         Objects.equals(this.migratedToUserItemShares8, serverConfiguration.migratedToUserItemShares8) &&
         Objects.equals(this.migratedLibraryOptionsToDb, serverConfiguration.migratedLibraryOptionsToDb) &&
@@ -1474,7 +1518,7 @@ public class ServerConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableUPnP, publicPort, publicHttpsPort, httpServerPortNumber, httpsPortNumber, enableHttps, certificatePath, certificatePassword, isPortAuthorized, autoRunWebApp, enableRemoteAccess, logAllQueryTimes, enableCaseSensitiveItemIds, metadataPath, metadataNetworkPath, preferredMetadataLanguage, metadataCountryCode, sortRemoveWords, libraryMonitorDelaySeconds, enableDashboardResponseCaching, dashboardSourcePath, imageSavingConvention, enableAutomaticRestart, serverName, preferredDetectedRemoteAddressFamily, wanDdns, uiCulture, remoteClientBitrateLimit, localNetworkSubnets, localNetworkAddresses, enableExternalContentInSuggestions, requireHttps, isBehindProxy, remoteIPFilter, isRemoteIPFilterBlacklist, imageExtractionTimeoutMs, pathSubstitutions, uninstalledPlugins, collapseVideoFolders, enableOriginalTrackTitles, vacuumDatabaseOnStartup, simultaneousStreamLimit, databaseCacheSizeMB, enableSqLiteMmio, playlistsUpgradedToM3U, imageExtractorUpgraded1, enablePeopleLetterSubFolders, optimizeDatabaseOnShutdown, databaseAnalysisLimit, disableAsyncIO, migratedToUserItemShares8, migratedLibraryOptionsToDb, allowLegacyLocalNetworkPassword, enableSavedMetadataForPeople, tvChannelsRefreshed, proxyHeaderMode, enableDebugLevelLogging, revertDebugLogging, enableAutoUpdate, logFileRetentionDays, runAtStartup, isStartupWizardCompleted, cachePath);
+    return Objects.hash(enableUPnP, publicPort, publicHttpsPort, httpServerPortNumber, httpsPortNumber, enableHttps, certificatePath, certificatePassword, isPortAuthorized, autoRunWebApp, enableRemoteAccess, logAllQueryTimes, enableCaseSensitiveItemIds, metadataPath, metadataNetworkPath, preferredMetadataLanguage, metadataCountryCode, sortRemoveWords, libraryMonitorDelaySeconds, enableDashboardResponseCaching, dashboardSourcePath, imageSavingConvention, enableAutomaticRestart, serverName, preferredDetectedRemoteAddressFamily, wanDdns, uiCulture, remoteClientBitrateLimit, localNetworkSubnets, localNetworkAddresses, enableExternalContentInSuggestions, requireHttps, isBehindProxy, remoteIPFilter, isRemoteIPFilterBlacklist, imageExtractionTimeoutMs, pathSubstitutions, uninstalledPlugins, collapseVideoFolders, enableOriginalTrackTitles, vacuumDatabaseOnStartup, simultaneousStreamLimit, databaseCacheSizeMB, enableSqLiteMmio, playlistsUpgradedToM3U, imageExtractorUpgraded1, enablePeopleLetterSubFolders, optimizeDatabaseOnShutdown, databaseAnalysisLimit, maxLibraryDbConnections, maxOtherDbConnections, disableAsyncIO, migratedToUserItemShares8, migratedLibraryOptionsToDb, allowLegacyLocalNetworkPassword, enableSavedMetadataForPeople, tvChannelsRefreshed, proxyHeaderMode, enableDebugLevelLogging, revertDebugLogging, enableAutoUpdate, logFileRetentionDays, runAtStartup, isStartupWizardCompleted, cachePath);
   }
 
 
@@ -1532,6 +1576,8 @@ public class ServerConfiguration {
     sb.append("    enablePeopleLetterSubFolders: ").append(toIndentedString(enablePeopleLetterSubFolders)).append("\n");
     sb.append("    optimizeDatabaseOnShutdown: ").append(toIndentedString(optimizeDatabaseOnShutdown)).append("\n");
     sb.append("    databaseAnalysisLimit: ").append(toIndentedString(databaseAnalysisLimit)).append("\n");
+    sb.append("    maxLibraryDbConnections: ").append(toIndentedString(maxLibraryDbConnections)).append("\n");
+    sb.append("    maxOtherDbConnections: ").append(toIndentedString(maxOtherDbConnections)).append("\n");
     sb.append("    disableAsyncIO: ").append(toIndentedString(disableAsyncIO)).append("\n");
     sb.append("    migratedToUserItemShares8: ").append(toIndentedString(migratedToUserItemShares8)).append("\n");
     sb.append("    migratedLibraryOptionsToDb: ").append(toIndentedString(migratedLibraryOptionsToDb)).append("\n");

@@ -5261,6 +5261,8 @@ public class LiveTvServiceApi {
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * API Documentation: Item Information
+     * @see <a href="https://betadev.emby.media/doc/restapi/Item-Information.html">Gets the channel management list Documentation</a>
      */
     public com.squareup.okhttp.Call getLivetvManageChannelsCall(Integer startIndex, Integer limit, String sortBy, String sortOrder, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -5330,11 +5332,13 @@ public class LiveTvServiceApi {
      * @param limit Optional. The maximum number of records to return (optional)
      * @param sortBy Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)
      * @param sortOrder Sort Order - Ascending,Descending (optional)
-     * @return QueryResultChannelManagementInfo
+     * @return QueryResultBaseItemDto
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * API Documentation: Item Information
+     * @see <a href="https://betadev.emby.media/doc/restapi/Item-Information.html">Gets the channel management list Documentation</a>
      */
-    public QueryResultChannelManagementInfo getLivetvManageChannels(Integer startIndex, Integer limit, String sortBy, String sortOrder) throws ApiException {
-        ApiResponse<QueryResultChannelManagementInfo> resp = getLivetvManageChannelsWithHttpInfo(startIndex, limit, sortBy, sortOrder);
+    public QueryResultBaseItemDto getLivetvManageChannels(Integer startIndex, Integer limit, String sortBy, String sortOrder) throws ApiException {
+        ApiResponse<QueryResultBaseItemDto> resp = getLivetvManageChannelsWithHttpInfo(startIndex, limit, sortBy, sortOrder);
         return resp.getData();
     }
 
@@ -5345,12 +5349,14 @@ public class LiveTvServiceApi {
      * @param limit Optional. The maximum number of records to return (optional)
      * @param sortBy Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)
      * @param sortOrder Sort Order - Ascending,Descending (optional)
-     * @return ApiResponse&lt;QueryResultChannelManagementInfo&gt;
+     * @return ApiResponse&lt;QueryResultBaseItemDto&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * API Documentation: Item Information
+     * @see <a href="https://betadev.emby.media/doc/restapi/Item-Information.html">Gets the channel management list Documentation</a>
      */
-    public ApiResponse<QueryResultChannelManagementInfo> getLivetvManageChannelsWithHttpInfo(Integer startIndex, Integer limit, String sortBy, String sortOrder) throws ApiException {
+    public ApiResponse<QueryResultBaseItemDto> getLivetvManageChannelsWithHttpInfo(Integer startIndex, Integer limit, String sortBy, String sortOrder) throws ApiException {
         com.squareup.okhttp.Call call = getLivetvManageChannelsValidateBeforeCall(startIndex, limit, sortBy, sortOrder, null, null);
-        Type localVarReturnType = new TypeToken<QueryResultChannelManagementInfo>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryResultBaseItemDto>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -5364,8 +5370,10 @@ public class LiveTvServiceApi {
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * API Documentation: Item Information
+     * @see <a href="https://betadev.emby.media/doc/restapi/Item-Information.html">Gets the channel management list Documentation</a>
      */
-    public com.squareup.okhttp.Call getLivetvManageChannelsAsync(Integer startIndex, Integer limit, String sortBy, String sortOrder, final ApiCallback<QueryResultChannelManagementInfo> callback) throws ApiException {
+    public com.squareup.okhttp.Call getLivetvManageChannelsAsync(Integer startIndex, Integer limit, String sortBy, String sortOrder, final ApiCallback<QueryResultBaseItemDto> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5387,7 +5395,7 @@ public class LiveTvServiceApi {
         }
 
         com.squareup.okhttp.Call call = getLivetvManageChannelsValidateBeforeCall(startIndex, limit, sortBy, sortOrder, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<QueryResultChannelManagementInfo>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryResultBaseItemDto>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

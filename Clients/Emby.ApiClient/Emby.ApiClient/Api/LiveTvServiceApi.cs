@@ -2962,8 +2962,8 @@ namespace Emby.ApiClient.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>Task of ApiResponse (QueryResultChannelManagementInfo)</returns>
-        public async Task<RestResponse<QueryResultChannelManagementInfo>> GetLivetvManageChannels (int? startIndex, int? limit, string sortBy, string sortOrder)
+        /// <returns>Task of ApiResponse (QueryResultBaseItemDto)</returns>
+        public async Task<RestResponse<QueryResultBaseItemDto>> GetLivetvManageChannels (int? startIndex, int? limit, string sortBy, string sortOrder)
         {
             var request = new RestRequest("/LiveTv/Manage/Channels", Method.Get);
 
@@ -2988,7 +2988,7 @@ namespace Emby.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.ApiClient.RestClient.ExecuteAsync<QueryResultChannelManagementInfo>(request).ConfigureAwait(false);
+            var localVarResponse = await this.ApiClient.RestClient.ExecuteAsync<QueryResultBaseItemDto>(request).ConfigureAwait(false);
             return localVarResponse;
         }
 

@@ -3694,7 +3694,7 @@ class LiveTvServiceApi(object):
         :param int limit: Optional. The maximum number of records to return
         :param str sort_by: Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate
         :param str sort_order: Sort Order - Ascending,Descending
-        :return: QueryResultChannelManagementInfo
+        :return: QueryResultBaseItemDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3719,7 +3719,7 @@ class LiveTvServiceApi(object):
         :param int limit: Optional. The maximum number of records to return
         :param str sort_by: Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate
         :param str sort_order: Sort Order - Ascending,Descending
-        :return: QueryResultChannelManagementInfo
+        :return: QueryResultBaseItemDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3775,7 +3775,7 @@ class LiveTvServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='QueryResultChannelManagementInfo',  # noqa: E501
+            response_type='QueryResultBaseItemDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

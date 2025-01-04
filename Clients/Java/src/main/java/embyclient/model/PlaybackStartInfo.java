@@ -30,9 +30,6 @@ public class PlaybackStartInfo {
   @SerializedName("CanSeek")
   private Boolean canSeek = null;
 
-  @SerializedName("Item")
-  private BaseItemDto item = null;
-
   @SerializedName("NowPlayingQueue")
   private List<QueueItem> nowPlayingQueue = null;
 
@@ -66,9 +63,6 @@ public class PlaybackStartInfo {
   @SerializedName("IsMuted")
   private Boolean isMuted = null;
 
-  @SerializedName("PositionTicks")
-  private Long positionTicks = null;
-
   @SerializedName("RunTimeTicks")
   private Long runTimeTicks = null;
 
@@ -93,9 +87,6 @@ public class PlaybackStartInfo {
   @SerializedName("LiveStreamId")
   private String liveStreamId = null;
 
-  @SerializedName("PlaySessionId")
-  private String playSessionId = null;
-
   @SerializedName("RepeatMode")
   private RepeatMode repeatMode = null;
 
@@ -110,6 +101,15 @@ public class PlaybackStartInfo {
 
   @SerializedName("PlaylistItemIds")
   private List<String> playlistItemIds = null;
+
+  @SerializedName("PlaySessionId")
+  private String playSessionId = null;
+
+  @SerializedName("Item")
+  private BaseItemDto item = null;
+
+  @SerializedName("PositionTicks")
+  private Long positionTicks = null;
 
   public PlaybackStartInfo canSeek(Boolean canSeek) {
     this.canSeek = canSeek;
@@ -127,24 +127,6 @@ public class PlaybackStartInfo {
 
   public void setCanSeek(Boolean canSeek) {
     this.canSeek = canSeek;
-  }
-
-  public PlaybackStartInfo item(BaseItemDto item) {
-    this.item = item;
-    return this;
-  }
-
-   /**
-   * Get item
-   * @return item
-  **/
-  @Schema(description = "")
-  public BaseItemDto getItem() {
-    return item;
-  }
-
-  public void setItem(BaseItemDto item) {
-    this.item = item;
   }
 
   public PlaybackStartInfo nowPlayingQueue(List<QueueItem> nowPlayingQueue) {
@@ -353,24 +335,6 @@ public class PlaybackStartInfo {
     this.isMuted = isMuted;
   }
 
-  public PlaybackStartInfo positionTicks(Long positionTicks) {
-    this.positionTicks = positionTicks;
-    return this;
-  }
-
-   /**
-   * The position ticks.
-   * @return positionTicks
-  **/
-  @Schema(description = "The position ticks.")
-  public Long getPositionTicks() {
-    return positionTicks;
-  }
-
-  public void setPositionTicks(Long positionTicks) {
-    this.positionTicks = positionTicks;
-  }
-
   public PlaybackStartInfo runTimeTicks(Long runTimeTicks) {
     this.runTimeTicks = runTimeTicks;
     return this;
@@ -515,24 +479,6 @@ public class PlaybackStartInfo {
     this.liveStreamId = liveStreamId;
   }
 
-  public PlaybackStartInfo playSessionId(String playSessionId) {
-    this.playSessionId = playSessionId;
-    return this;
-  }
-
-   /**
-   * The play session identifier.
-   * @return playSessionId
-  **/
-  @Schema(description = "The play session identifier.")
-  public String getPlaySessionId() {
-    return playSessionId;
-  }
-
-  public void setPlaySessionId(String playSessionId) {
-    this.playSessionId = playSessionId;
-  }
-
   public PlaybackStartInfo repeatMode(RepeatMode repeatMode) {
     this.repeatMode = repeatMode;
     return this;
@@ -631,6 +577,60 @@ public class PlaybackStartInfo {
     this.playlistItemIds = playlistItemIds;
   }
 
+  public PlaybackStartInfo playSessionId(String playSessionId) {
+    this.playSessionId = playSessionId;
+    return this;
+  }
+
+   /**
+   * The play session identifier.
+   * @return playSessionId
+  **/
+  @Schema(description = "The play session identifier.")
+  public String getPlaySessionId() {
+    return playSessionId;
+  }
+
+  public void setPlaySessionId(String playSessionId) {
+    this.playSessionId = playSessionId;
+  }
+
+  public PlaybackStartInfo item(BaseItemDto item) {
+    this.item = item;
+    return this;
+  }
+
+   /**
+   * Get item
+   * @return item
+  **/
+  @Schema(description = "")
+  public BaseItemDto getItem() {
+    return item;
+  }
+
+  public void setItem(BaseItemDto item) {
+    this.item = item;
+  }
+
+  public PlaybackStartInfo positionTicks(Long positionTicks) {
+    this.positionTicks = positionTicks;
+    return this;
+  }
+
+   /**
+   * The position ticks.
+   * @return positionTicks
+  **/
+  @Schema(description = "The position ticks.")
+  public Long getPositionTicks() {
+    return positionTicks;
+  }
+
+  public void setPositionTicks(Long positionTicks) {
+    this.positionTicks = positionTicks;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -642,7 +642,6 @@ public class PlaybackStartInfo {
     }
     PlaybackStartInfo playbackStartInfo = (PlaybackStartInfo) o;
     return Objects.equals(this.canSeek, playbackStartInfo.canSeek) &&
-        Objects.equals(this.item, playbackStartInfo.item) &&
         Objects.equals(this.nowPlayingQueue, playbackStartInfo.nowPlayingQueue) &&
         Objects.equals(this.playlistItemId, playbackStartInfo.playlistItemId) &&
         Objects.equals(this.itemId, playbackStartInfo.itemId) &&
@@ -654,7 +653,6 @@ public class PlaybackStartInfo {
         Objects.equals(this.playlistIndex, playbackStartInfo.playlistIndex) &&
         Objects.equals(this.playlistLength, playbackStartInfo.playlistLength) &&
         Objects.equals(this.isMuted, playbackStartInfo.isMuted) &&
-        Objects.equals(this.positionTicks, playbackStartInfo.positionTicks) &&
         Objects.equals(this.runTimeTicks, playbackStartInfo.runTimeTicks) &&
         Objects.equals(this.playbackStartTimeTicks, playbackStartInfo.playbackStartTimeTicks) &&
         Objects.equals(this.volumeLevel, playbackStartInfo.volumeLevel) &&
@@ -663,17 +661,19 @@ public class PlaybackStartInfo {
         Objects.equals(this.eventName, playbackStartInfo.eventName) &&
         Objects.equals(this.playMethod, playbackStartInfo.playMethod) &&
         Objects.equals(this.liveStreamId, playbackStartInfo.liveStreamId) &&
-        Objects.equals(this.playSessionId, playbackStartInfo.playSessionId) &&
         Objects.equals(this.repeatMode, playbackStartInfo.repeatMode) &&
         Objects.equals(this.shuffle, playbackStartInfo.shuffle) &&
         Objects.equals(this.subtitleOffset, playbackStartInfo.subtitleOffset) &&
         Objects.equals(this.playbackRate, playbackStartInfo.playbackRate) &&
-        Objects.equals(this.playlistItemIds, playbackStartInfo.playlistItemIds);
+        Objects.equals(this.playlistItemIds, playbackStartInfo.playlistItemIds) &&
+        Objects.equals(this.playSessionId, playbackStartInfo.playSessionId) &&
+        Objects.equals(this.item, playbackStartInfo.item) &&
+        Objects.equals(this.positionTicks, playbackStartInfo.positionTicks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(canSeek, item, nowPlayingQueue, playlistItemId, itemId, sessionId, mediaSourceId, audioStreamIndex, subtitleStreamIndex, isPaused, playlistIndex, playlistLength, isMuted, positionTicks, runTimeTicks, playbackStartTimeTicks, volumeLevel, brightness, aspectRatio, eventName, playMethod, liveStreamId, playSessionId, repeatMode, shuffle, subtitleOffset, playbackRate, playlistItemIds);
+    return Objects.hash(canSeek, nowPlayingQueue, playlistItemId, itemId, sessionId, mediaSourceId, audioStreamIndex, subtitleStreamIndex, isPaused, playlistIndex, playlistLength, isMuted, runTimeTicks, playbackStartTimeTicks, volumeLevel, brightness, aspectRatio, eventName, playMethod, liveStreamId, repeatMode, shuffle, subtitleOffset, playbackRate, playlistItemIds, playSessionId, item, positionTicks);
   }
 
 
@@ -683,7 +683,6 @@ public class PlaybackStartInfo {
     sb.append("class PlaybackStartInfo {\n");
     
     sb.append("    canSeek: ").append(toIndentedString(canSeek)).append("\n");
-    sb.append("    item: ").append(toIndentedString(item)).append("\n");
     sb.append("    nowPlayingQueue: ").append(toIndentedString(nowPlayingQueue)).append("\n");
     sb.append("    playlistItemId: ").append(toIndentedString(playlistItemId)).append("\n");
     sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
@@ -695,7 +694,6 @@ public class PlaybackStartInfo {
     sb.append("    playlistIndex: ").append(toIndentedString(playlistIndex)).append("\n");
     sb.append("    playlistLength: ").append(toIndentedString(playlistLength)).append("\n");
     sb.append("    isMuted: ").append(toIndentedString(isMuted)).append("\n");
-    sb.append("    positionTicks: ").append(toIndentedString(positionTicks)).append("\n");
     sb.append("    runTimeTicks: ").append(toIndentedString(runTimeTicks)).append("\n");
     sb.append("    playbackStartTimeTicks: ").append(toIndentedString(playbackStartTimeTicks)).append("\n");
     sb.append("    volumeLevel: ").append(toIndentedString(volumeLevel)).append("\n");
@@ -704,12 +702,14 @@ public class PlaybackStartInfo {
     sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
     sb.append("    playMethod: ").append(toIndentedString(playMethod)).append("\n");
     sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
-    sb.append("    playSessionId: ").append(toIndentedString(playSessionId)).append("\n");
     sb.append("    repeatMode: ").append(toIndentedString(repeatMode)).append("\n");
     sb.append("    shuffle: ").append(toIndentedString(shuffle)).append("\n");
     sb.append("    subtitleOffset: ").append(toIndentedString(subtitleOffset)).append("\n");
     sb.append("    playbackRate: ").append(toIndentedString(playbackRate)).append("\n");
     sb.append("    playlistItemIds: ").append(toIndentedString(playlistItemIds)).append("\n");
+    sb.append("    playSessionId: ").append(toIndentedString(playSessionId)).append("\n");
+    sb.append("    item: ").append(toIndentedString(item)).append("\n");
+    sb.append("    positionTicks: ").append(toIndentedString(positionTicks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

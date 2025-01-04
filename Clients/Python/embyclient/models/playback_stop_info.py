@@ -26,16 +26,16 @@ class PlaybackStopInfo(object):
         'playlist_item_id': 'str',
         'playlist_index': 'int',
         'playlist_length': 'int',
-        'item': 'BaseItemDto',
         'item_id': 'str',
         'session_id': 'str',
         'media_source_id': 'str',
-        'position_ticks': 'int',
         'live_stream_id': 'str',
-        'play_session_id': 'str',
         'failed': 'bool',
         'is_automated': 'bool',
-        'next_media_type': 'str'
+        'next_media_type': 'str',
+        'play_session_id': 'str',
+        'item': 'BaseItemDto',
+        'position_ticks': 'int'
     }
 
     attribute_map = {
@@ -43,34 +43,34 @@ class PlaybackStopInfo(object):
         'playlist_item_id': 'PlaylistItemId',
         'playlist_index': 'PlaylistIndex',
         'playlist_length': 'PlaylistLength',
-        'item': 'Item',
         'item_id': 'ItemId',
         'session_id': 'SessionId',
         'media_source_id': 'MediaSourceId',
-        'position_ticks': 'PositionTicks',
         'live_stream_id': 'LiveStreamId',
-        'play_session_id': 'PlaySessionId',
         'failed': 'Failed',
         'is_automated': 'IsAutomated',
-        'next_media_type': 'NextMediaType'
+        'next_media_type': 'NextMediaType',
+        'play_session_id': 'PlaySessionId',
+        'item': 'Item',
+        'position_ticks': 'PositionTicks'
     }
 
-    def __init__(self, now_playing_queue=None, playlist_item_id=None, playlist_index=None, playlist_length=None, item=None, item_id=None, session_id=None, media_source_id=None, position_ticks=None, live_stream_id=None, play_session_id=None, failed=None, is_automated=None, next_media_type=None):  # noqa: E501
+    def __init__(self, now_playing_queue=None, playlist_item_id=None, playlist_index=None, playlist_length=None, item_id=None, session_id=None, media_source_id=None, live_stream_id=None, failed=None, is_automated=None, next_media_type=None, play_session_id=None, item=None, position_ticks=None):  # noqa: E501
         """PlaybackStopInfo - a model defined in Swagger"""  # noqa: E501
         self._now_playing_queue = None
         self._playlist_item_id = None
         self._playlist_index = None
         self._playlist_length = None
-        self._item = None
         self._item_id = None
         self._session_id = None
         self._media_source_id = None
-        self._position_ticks = None
         self._live_stream_id = None
-        self._play_session_id = None
         self._failed = None
         self._is_automated = None
         self._next_media_type = None
+        self._play_session_id = None
+        self._item = None
+        self._position_ticks = None
         self.discriminator = None
         if now_playing_queue is not None:
             self.now_playing_queue = now_playing_queue
@@ -80,26 +80,26 @@ class PlaybackStopInfo(object):
             self.playlist_index = playlist_index
         if playlist_length is not None:
             self.playlist_length = playlist_length
-        if item is not None:
-            self.item = item
         if item_id is not None:
             self.item_id = item_id
         if session_id is not None:
             self.session_id = session_id
         if media_source_id is not None:
             self.media_source_id = media_source_id
-        if position_ticks is not None:
-            self.position_ticks = position_ticks
         if live_stream_id is not None:
             self.live_stream_id = live_stream_id
-        if play_session_id is not None:
-            self.play_session_id = play_session_id
         if failed is not None:
             self.failed = failed
         if is_automated is not None:
             self.is_automated = is_automated
         if next_media_type is not None:
             self.next_media_type = next_media_type
+        if play_session_id is not None:
+            self.play_session_id = play_session_id
+        if item is not None:
+            self.item = item
+        if position_ticks is not None:
+            self.position_ticks = position_ticks
 
     @property
     def now_playing_queue(self):
@@ -186,27 +186,6 @@ class PlaybackStopInfo(object):
         self._playlist_length = playlist_length
 
     @property
-    def item(self):
-        """Gets the item of this PlaybackStopInfo.  # noqa: E501
-
-
-        :return: The item of this PlaybackStopInfo.  # noqa: E501
-        :rtype: BaseItemDto
-        """
-        return self._item
-
-    @item.setter
-    def item(self, item):
-        """Sets the item of this PlaybackStopInfo.
-
-
-        :param item: The item of this PlaybackStopInfo.  # noqa: E501
-        :type: BaseItemDto
-        """
-
-        self._item = item
-
-    @property
     def item_id(self):
         """Gets the item_id of this PlaybackStopInfo.  # noqa: E501
 
@@ -276,29 +255,6 @@ class PlaybackStopInfo(object):
         self._media_source_id = media_source_id
 
     @property
-    def position_ticks(self):
-        """Gets the position_ticks of this PlaybackStopInfo.  # noqa: E501
-
-        The position ticks.  # noqa: E501
-
-        :return: The position_ticks of this PlaybackStopInfo.  # noqa: E501
-        :rtype: int
-        """
-        return self._position_ticks
-
-    @position_ticks.setter
-    def position_ticks(self, position_ticks):
-        """Sets the position_ticks of this PlaybackStopInfo.
-
-        The position ticks.  # noqa: E501
-
-        :param position_ticks: The position_ticks of this PlaybackStopInfo.  # noqa: E501
-        :type: int
-        """
-
-        self._position_ticks = position_ticks
-
-    @property
     def live_stream_id(self):
         """Gets the live_stream_id of this PlaybackStopInfo.  # noqa: E501
 
@@ -320,29 +276,6 @@ class PlaybackStopInfo(object):
         """
 
         self._live_stream_id = live_stream_id
-
-    @property
-    def play_session_id(self):
-        """Gets the play_session_id of this PlaybackStopInfo.  # noqa: E501
-
-        The play session identifier.  # noqa: E501
-
-        :return: The play_session_id of this PlaybackStopInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._play_session_id
-
-    @play_session_id.setter
-    def play_session_id(self, play_session_id):
-        """Sets the play_session_id of this PlaybackStopInfo.
-
-        The play session identifier.  # noqa: E501
-
-        :param play_session_id: The play_session_id of this PlaybackStopInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._play_session_id = play_session_id
 
     @property
     def failed(self):
@@ -408,6 +341,73 @@ class PlaybackStopInfo(object):
         """
 
         self._next_media_type = next_media_type
+
+    @property
+    def play_session_id(self):
+        """Gets the play_session_id of this PlaybackStopInfo.  # noqa: E501
+
+        The play session identifier.  # noqa: E501
+
+        :return: The play_session_id of this PlaybackStopInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._play_session_id
+
+    @play_session_id.setter
+    def play_session_id(self, play_session_id):
+        """Sets the play_session_id of this PlaybackStopInfo.
+
+        The play session identifier.  # noqa: E501
+
+        :param play_session_id: The play_session_id of this PlaybackStopInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._play_session_id = play_session_id
+
+    @property
+    def item(self):
+        """Gets the item of this PlaybackStopInfo.  # noqa: E501
+
+
+        :return: The item of this PlaybackStopInfo.  # noqa: E501
+        :rtype: BaseItemDto
+        """
+        return self._item
+
+    @item.setter
+    def item(self, item):
+        """Sets the item of this PlaybackStopInfo.
+
+
+        :param item: The item of this PlaybackStopInfo.  # noqa: E501
+        :type: BaseItemDto
+        """
+
+        self._item = item
+
+    @property
+    def position_ticks(self):
+        """Gets the position_ticks of this PlaybackStopInfo.  # noqa: E501
+
+        The position ticks.  # noqa: E501
+
+        :return: The position_ticks of this PlaybackStopInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._position_ticks
+
+    @position_ticks.setter
+    def position_ticks(self, position_ticks):
+        """Sets the position_ticks of this PlaybackStopInfo.
+
+        The position ticks.  # noqa: E501
+
+        :param position_ticks: The position_ticks of this PlaybackStopInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._position_ticks = position_ticks
 
     def to_dict(self):
         """Returns the model properties as a dict"""

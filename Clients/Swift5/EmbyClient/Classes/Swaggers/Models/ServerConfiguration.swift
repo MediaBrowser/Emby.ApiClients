@@ -77,6 +77,8 @@ public struct ServerConfiguration: Codable {
     public var enablePeopleLetterSubFolders: Bool?
     public var optimizeDatabaseOnShutdown: Bool?
     public var databaseAnalysisLimit: Int?
+    public var maxLibraryDbConnections: Int?
+    public var maxOtherDbConnections: Int?
     public var disableAsyncIO: Bool?
     public var migratedToUserItemShares8: Bool?
     public var migratedLibraryOptionsToDb: Bool?
@@ -98,7 +100,7 @@ public struct ServerConfiguration: Codable {
     /** The cache path. */
     public var cachePath: String?
 
-    public init(enableUPnP: Bool? = nil, publicPort: Int? = nil, publicHttpsPort: Int? = nil, httpServerPortNumber: Int? = nil, httpsPortNumber: Int? = nil, enableHttps: Bool? = nil, certificatePath: String? = nil, certificatePassword: String? = nil, isPortAuthorized: Bool? = nil, autoRunWebApp: Bool? = nil, enableRemoteAccess: Bool? = nil, logAllQueryTimes: Bool? = nil, enableCaseSensitiveItemIds: Bool? = nil, metadataPath: String? = nil, metadataNetworkPath: String? = nil, preferredMetadataLanguage: String? = nil, metadataCountryCode: String? = nil, sortRemoveWords: [String]? = nil, libraryMonitorDelaySeconds: Int? = nil, enableDashboardResponseCaching: Bool? = nil, dashboardSourcePath: String? = nil, imageSavingConvention: ImageSavingConvention? = nil, enableAutomaticRestart: Bool? = nil, serverName: String? = nil, preferredDetectedRemoteAddressFamily: NetSocketsAddressFamily? = nil, wanDdns: String? = nil, uICulture: String? = nil, remoteClientBitrateLimit: Int? = nil, localNetworkSubnets: [String]? = nil, localNetworkAddresses: [String]? = nil, enableExternalContentInSuggestions: Bool? = nil, requireHttps: Bool? = nil, isBehindProxy: Bool? = nil, remoteIPFilter: [String]? = nil, isRemoteIPFilterBlacklist: Bool? = nil, imageExtractionTimeoutMs: Int? = nil, pathSubstitutions: [PathSubstitution]? = nil, uninstalledPlugins: [String]? = nil, collapseVideoFolders: Bool? = nil, enableOriginalTrackTitles: Bool? = nil, vacuumDatabaseOnStartup: Bool? = nil, simultaneousStreamLimit: Int? = nil, databaseCacheSizeMB: Int? = nil, enableSqLiteMmio: Bool? = nil, playlistsUpgradedToM3U: Bool? = nil, imageExtractorUpgraded1: Bool? = nil, enablePeopleLetterSubFolders: Bool? = nil, optimizeDatabaseOnShutdown: Bool? = nil, databaseAnalysisLimit: Int? = nil, disableAsyncIO: Bool? = nil, migratedToUserItemShares8: Bool? = nil, migratedLibraryOptionsToDb: Bool? = nil, allowLegacyLocalNetworkPassword: Bool? = nil, enableSavedMetadataForPeople: Bool? = nil, tvChannelsRefreshed: Bool? = nil, proxyHeaderMode: ProxyHeaderMode? = nil, enableDebugLevelLogging: Bool? = nil, revertDebugLogging: String? = nil, enableAutoUpdate: Bool? = nil, logFileRetentionDays: Int? = nil, runAtStartup: Bool? = nil, isStartupWizardCompleted: Bool? = nil, cachePath: String? = nil) {
+    public init(enableUPnP: Bool? = nil, publicPort: Int? = nil, publicHttpsPort: Int? = nil, httpServerPortNumber: Int? = nil, httpsPortNumber: Int? = nil, enableHttps: Bool? = nil, certificatePath: String? = nil, certificatePassword: String? = nil, isPortAuthorized: Bool? = nil, autoRunWebApp: Bool? = nil, enableRemoteAccess: Bool? = nil, logAllQueryTimes: Bool? = nil, enableCaseSensitiveItemIds: Bool? = nil, metadataPath: String? = nil, metadataNetworkPath: String? = nil, preferredMetadataLanguage: String? = nil, metadataCountryCode: String? = nil, sortRemoveWords: [String]? = nil, libraryMonitorDelaySeconds: Int? = nil, enableDashboardResponseCaching: Bool? = nil, dashboardSourcePath: String? = nil, imageSavingConvention: ImageSavingConvention? = nil, enableAutomaticRestart: Bool? = nil, serverName: String? = nil, preferredDetectedRemoteAddressFamily: NetSocketsAddressFamily? = nil, wanDdns: String? = nil, uICulture: String? = nil, remoteClientBitrateLimit: Int? = nil, localNetworkSubnets: [String]? = nil, localNetworkAddresses: [String]? = nil, enableExternalContentInSuggestions: Bool? = nil, requireHttps: Bool? = nil, isBehindProxy: Bool? = nil, remoteIPFilter: [String]? = nil, isRemoteIPFilterBlacklist: Bool? = nil, imageExtractionTimeoutMs: Int? = nil, pathSubstitutions: [PathSubstitution]? = nil, uninstalledPlugins: [String]? = nil, collapseVideoFolders: Bool? = nil, enableOriginalTrackTitles: Bool? = nil, vacuumDatabaseOnStartup: Bool? = nil, simultaneousStreamLimit: Int? = nil, databaseCacheSizeMB: Int? = nil, enableSqLiteMmio: Bool? = nil, playlistsUpgradedToM3U: Bool? = nil, imageExtractorUpgraded1: Bool? = nil, enablePeopleLetterSubFolders: Bool? = nil, optimizeDatabaseOnShutdown: Bool? = nil, databaseAnalysisLimit: Int? = nil, maxLibraryDbConnections: Int? = nil, maxOtherDbConnections: Int? = nil, disableAsyncIO: Bool? = nil, migratedToUserItemShares8: Bool? = nil, migratedLibraryOptionsToDb: Bool? = nil, allowLegacyLocalNetworkPassword: Bool? = nil, enableSavedMetadataForPeople: Bool? = nil, tvChannelsRefreshed: Bool? = nil, proxyHeaderMode: ProxyHeaderMode? = nil, enableDebugLevelLogging: Bool? = nil, revertDebugLogging: String? = nil, enableAutoUpdate: Bool? = nil, logFileRetentionDays: Int? = nil, runAtStartup: Bool? = nil, isStartupWizardCompleted: Bool? = nil, cachePath: String? = nil) {
         self.enableUPnP = enableUPnP
         self.publicPort = publicPort
         self.publicHttpsPort = publicHttpsPort
@@ -148,6 +150,8 @@ public struct ServerConfiguration: Codable {
         self.enablePeopleLetterSubFolders = enablePeopleLetterSubFolders
         self.optimizeDatabaseOnShutdown = optimizeDatabaseOnShutdown
         self.databaseAnalysisLimit = databaseAnalysisLimit
+        self.maxLibraryDbConnections = maxLibraryDbConnections
+        self.maxOtherDbConnections = maxOtherDbConnections
         self.disableAsyncIO = disableAsyncIO
         self.migratedToUserItemShares8 = migratedToUserItemShares8
         self.migratedLibraryOptionsToDb = migratedLibraryOptionsToDb
@@ -214,6 +218,8 @@ public struct ServerConfiguration: Codable {
         case enablePeopleLetterSubFolders = "EnablePeopleLetterSubFolders"
         case optimizeDatabaseOnShutdown = "OptimizeDatabaseOnShutdown"
         case databaseAnalysisLimit = "DatabaseAnalysisLimit"
+        case maxLibraryDbConnections = "Max_LibraryDbConnections"
+        case maxOtherDbConnections = "Max_OtherDbConnections"
         case disableAsyncIO = "DisableAsyncIO"
         case migratedToUserItemShares8 = "MigratedToUserItemShares8"
         case migratedLibraryOptionsToDb = "MigratedLibraryOptionsToDb"

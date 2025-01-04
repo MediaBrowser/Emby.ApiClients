@@ -36,9 +36,6 @@ public class PlaybackStopInfo {
   @SerializedName("PlaylistLength")
   private Integer playlistLength = null;
 
-  @SerializedName("Item")
-  private BaseItemDto item = null;
-
   @SerializedName("ItemId")
   private String itemId = null;
 
@@ -48,14 +45,8 @@ public class PlaybackStopInfo {
   @SerializedName("MediaSourceId")
   private String mediaSourceId = null;
 
-  @SerializedName("PositionTicks")
-  private Long positionTicks = null;
-
   @SerializedName("LiveStreamId")
   private String liveStreamId = null;
-
-  @SerializedName("PlaySessionId")
-  private String playSessionId = null;
 
   @SerializedName("Failed")
   private Boolean failed = null;
@@ -65,6 +56,15 @@ public class PlaybackStopInfo {
 
   @SerializedName("NextMediaType")
   private String nextMediaType = null;
+
+  @SerializedName("PlaySessionId")
+  private String playSessionId = null;
+
+  @SerializedName("Item")
+  private BaseItemDto item = null;
+
+  @SerializedName("PositionTicks")
+  private Long positionTicks = null;
 
   public PlaybackStopInfo nowPlayingQueue(List<QueueItem> nowPlayingQueue) {
     this.nowPlayingQueue = nowPlayingQueue;
@@ -146,24 +146,6 @@ public class PlaybackStopInfo {
     this.playlistLength = playlistLength;
   }
 
-  public PlaybackStopInfo item(BaseItemDto item) {
-    this.item = item;
-    return this;
-  }
-
-   /**
-   * Get item
-   * @return item
-  **/
-  @Schema(description = "")
-  public BaseItemDto getItem() {
-    return item;
-  }
-
-  public void setItem(BaseItemDto item) {
-    this.item = item;
-  }
-
   public PlaybackStopInfo itemId(String itemId) {
     this.itemId = itemId;
     return this;
@@ -218,24 +200,6 @@ public class PlaybackStopInfo {
     this.mediaSourceId = mediaSourceId;
   }
 
-  public PlaybackStopInfo positionTicks(Long positionTicks) {
-    this.positionTicks = positionTicks;
-    return this;
-  }
-
-   /**
-   * The position ticks.
-   * @return positionTicks
-  **/
-  @Schema(description = "The position ticks.")
-  public Long getPositionTicks() {
-    return positionTicks;
-  }
-
-  public void setPositionTicks(Long positionTicks) {
-    this.positionTicks = positionTicks;
-  }
-
   public PlaybackStopInfo liveStreamId(String liveStreamId) {
     this.liveStreamId = liveStreamId;
     return this;
@@ -252,24 +216,6 @@ public class PlaybackStopInfo {
 
   public void setLiveStreamId(String liveStreamId) {
     this.liveStreamId = liveStreamId;
-  }
-
-  public PlaybackStopInfo playSessionId(String playSessionId) {
-    this.playSessionId = playSessionId;
-    return this;
-  }
-
-   /**
-   * The play session identifier.
-   * @return playSessionId
-  **/
-  @Schema(description = "The play session identifier.")
-  public String getPlaySessionId() {
-    return playSessionId;
-  }
-
-  public void setPlaySessionId(String playSessionId) {
-    this.playSessionId = playSessionId;
   }
 
   public PlaybackStopInfo failed(Boolean failed) {
@@ -326,6 +272,60 @@ public class PlaybackStopInfo {
     this.nextMediaType = nextMediaType;
   }
 
+  public PlaybackStopInfo playSessionId(String playSessionId) {
+    this.playSessionId = playSessionId;
+    return this;
+  }
+
+   /**
+   * The play session identifier.
+   * @return playSessionId
+  **/
+  @Schema(description = "The play session identifier.")
+  public String getPlaySessionId() {
+    return playSessionId;
+  }
+
+  public void setPlaySessionId(String playSessionId) {
+    this.playSessionId = playSessionId;
+  }
+
+  public PlaybackStopInfo item(BaseItemDto item) {
+    this.item = item;
+    return this;
+  }
+
+   /**
+   * Get item
+   * @return item
+  **/
+  @Schema(description = "")
+  public BaseItemDto getItem() {
+    return item;
+  }
+
+  public void setItem(BaseItemDto item) {
+    this.item = item;
+  }
+
+  public PlaybackStopInfo positionTicks(Long positionTicks) {
+    this.positionTicks = positionTicks;
+    return this;
+  }
+
+   /**
+   * The position ticks.
+   * @return positionTicks
+  **/
+  @Schema(description = "The position ticks.")
+  public Long getPositionTicks() {
+    return positionTicks;
+  }
+
+  public void setPositionTicks(Long positionTicks) {
+    this.positionTicks = positionTicks;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -340,21 +340,21 @@ public class PlaybackStopInfo {
         Objects.equals(this.playlistItemId, playbackStopInfo.playlistItemId) &&
         Objects.equals(this.playlistIndex, playbackStopInfo.playlistIndex) &&
         Objects.equals(this.playlistLength, playbackStopInfo.playlistLength) &&
-        Objects.equals(this.item, playbackStopInfo.item) &&
         Objects.equals(this.itemId, playbackStopInfo.itemId) &&
         Objects.equals(this.sessionId, playbackStopInfo.sessionId) &&
         Objects.equals(this.mediaSourceId, playbackStopInfo.mediaSourceId) &&
-        Objects.equals(this.positionTicks, playbackStopInfo.positionTicks) &&
         Objects.equals(this.liveStreamId, playbackStopInfo.liveStreamId) &&
-        Objects.equals(this.playSessionId, playbackStopInfo.playSessionId) &&
         Objects.equals(this.failed, playbackStopInfo.failed) &&
         Objects.equals(this.isAutomated, playbackStopInfo.isAutomated) &&
-        Objects.equals(this.nextMediaType, playbackStopInfo.nextMediaType);
+        Objects.equals(this.nextMediaType, playbackStopInfo.nextMediaType) &&
+        Objects.equals(this.playSessionId, playbackStopInfo.playSessionId) &&
+        Objects.equals(this.item, playbackStopInfo.item) &&
+        Objects.equals(this.positionTicks, playbackStopInfo.positionTicks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nowPlayingQueue, playlistItemId, playlistIndex, playlistLength, item, itemId, sessionId, mediaSourceId, positionTicks, liveStreamId, playSessionId, failed, isAutomated, nextMediaType);
+    return Objects.hash(nowPlayingQueue, playlistItemId, playlistIndex, playlistLength, itemId, sessionId, mediaSourceId, liveStreamId, failed, isAutomated, nextMediaType, playSessionId, item, positionTicks);
   }
 
 
@@ -367,16 +367,16 @@ public class PlaybackStopInfo {
     sb.append("    playlistItemId: ").append(toIndentedString(playlistItemId)).append("\n");
     sb.append("    playlistIndex: ").append(toIndentedString(playlistIndex)).append("\n");
     sb.append("    playlistLength: ").append(toIndentedString(playlistLength)).append("\n");
-    sb.append("    item: ").append(toIndentedString(item)).append("\n");
     sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    mediaSourceId: ").append(toIndentedString(mediaSourceId)).append("\n");
-    sb.append("    positionTicks: ").append(toIndentedString(positionTicks)).append("\n");
     sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
-    sb.append("    playSessionId: ").append(toIndentedString(playSessionId)).append("\n");
     sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
     sb.append("    isAutomated: ").append(toIndentedString(isAutomated)).append("\n");
     sb.append("    nextMediaType: ").append(toIndentedString(nextMediaType)).append("\n");
+    sb.append("    playSessionId: ").append(toIndentedString(playSessionId)).append("\n");
+    sb.append("    item: ").append(toIndentedString(item)).append("\n");
+    sb.append("    positionTicks: ").append(toIndentedString(positionTicks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -18,7 +18,7 @@ import ProxyHeaderMode from './ProxyHeaderMode';
 /**
 * The ServerConfiguration model module.
 * @module model/ServerConfiguration
-* @version 4.9.0.34
+* @version 4.9.0.35
 */
 export default class ServerConfiguration {
     /**
@@ -192,6 +192,12 @@ export default class ServerConfiguration {
             }
             if (data.hasOwnProperty('DatabaseAnalysisLimit')) {
                 obj['DatabaseAnalysisLimit'] = ApiClient.convertToType(data['DatabaseAnalysisLimit'], 'Number');
+            }
+            if (data.hasOwnProperty('Max_LibraryDbConnections')) {
+                obj['Max_LibraryDbConnections'] = ApiClient.convertToType(data['Max_LibraryDbConnections'], 'Number');
+            }
+            if (data.hasOwnProperty('Max_OtherDbConnections')) {
+                obj['Max_OtherDbConnections'] = ApiClient.convertToType(data['Max_OtherDbConnections'], 'Number');
             }
             if (data.hasOwnProperty('DisableAsyncIO')) {
                 obj['DisableAsyncIO'] = ApiClient.convertToType(data['DisableAsyncIO'], 'Boolean');
@@ -451,6 +457,14 @@ export default class ServerConfiguration {
     * @member {Number} DatabaseAnalysisLimit
     */
     'DatabaseAnalysisLimit' = undefined;
+    /**
+    * @member {Number} Max_LibraryDbConnections
+    */
+    'Max_LibraryDbConnections' = undefined;
+    /**
+    * @member {Number} Max_OtherDbConnections
+    */
+    'Max_OtherDbConnections' = undefined;
     /**
     * @member {Boolean} DisableAsyncIO
     */

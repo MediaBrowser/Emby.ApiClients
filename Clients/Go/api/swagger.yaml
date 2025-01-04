@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Emby Server REST API (BETA)
   description: Explore the Emby Server API
@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.34
+  version: 4.9.0.35
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -40934,6 +40934,9 @@ paths:
       - LiveTvService
       summary: Gets the channel management list
       description: Requires authentication as administrator
+      externalDocs:
+        description: "API Documentation: Item Information"
+        url: https://betadev.emby.media/doc/restapi/Item-Information.html
       operationId: getLivetvManageChannels
       parameters:
       - name: StartIndex
@@ -40976,15 +40979,15 @@ paths:
           type: string
       responses:
         "200":
-          description: Operation successful. Returning a QueryResult<ChannelManagementInfo>
+          description: Operation successful. Returning a QueryResult<BaseItemDto>
             object.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/QueryResult_ChannelManagementInfo'
+                $ref: '#/components/schemas/QueryResult_BaseItemDto'
             application/xml:
               schema:
-                $ref: '#/components/schemas/QueryResult_ChannelManagementInfo'
+                $ref: '#/components/schemas/QueryResult_BaseItemDto'
         "400":
           description: Bad Request. Server cannot process request.
         "401":
@@ -63174,6 +63177,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -63735,6 +63739,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -64302,6 +64307,8 @@ components:
         Prefix:
           type: string
           description: The Prefix.
+        TunerName:
+          type: string
         PlaylistItemId:
           type: string
           description: The playlist item identifier.
@@ -64844,6 +64851,7 @@ components:
         ExtraType: ExtraType
         ParentBackdropItemId: ParentBackdropItemId
         Etag: Etag
+        TunerName: TunerName
         ParentLogoImageTag: ParentLogoImageTag
         ExposureTime: 6.628464275087742
         MediaType: MediaType
@@ -67051,6 +67059,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -70654,6 +70663,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -71219,6 +71229,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -71794,6 +71805,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -72489,6 +72501,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -73078,6 +73091,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -73751,6 +73765,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -74891,6 +74906,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -75452,6 +75468,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -76055,8 +76072,6 @@ components:
         CanSeek:
           type: boolean
           description: A value indicating whether this instance can seek.
-        Item:
-          $ref: '#/components/schemas/BaseItemDto'
         NowPlayingQueue:
           type: array
           items:
@@ -76094,11 +76109,6 @@ components:
         IsMuted:
           type: boolean
           description: A value indicating whether this instance is muted.
-        PositionTicks:
-          type: integer
-          description: The position ticks.
-          format: int64
-          nullable: true
         RunTimeTicks:
           type: integer
           format: int64
@@ -76125,9 +76135,6 @@ components:
         LiveStreamId:
           type: string
           description: The live stream identifier.
-        PlaySessionId:
-          type: string
-          description: The play session identifier.
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
         Shuffle:
@@ -76142,6 +76149,16 @@ components:
           type: array
           items:
             type: string
+        PlaySessionId:
+          type: string
+          description: The play session identifier.
+        Item:
+          $ref: '#/components/schemas/BaseItemDto'
+        PositionTicks:
+          type: integer
+          description: The position ticks.
+          format: int64
+          nullable: true
       description: "Class PlaybackStartInfo.\r\n"
       x-internal-ref-name: MediaBrowser.Model.Session.PlaybackStartInfo
     QueueItem:
@@ -77842,6 +77859,12 @@ components:
         DatabaseAnalysisLimit:
           type: integer
           format: int32
+        Max_LibraryDbConnections:
+          type: integer
+          format: int32
+        Max_OtherDbConnections:
+          type: integer
+          format: int32
         DisableAsyncIO:
           type: boolean
         MigratedToUserItemShares8:
@@ -77909,7 +77932,8 @@ components:
         HttpServerPortNumber: 1
         RequireHttps: true
         DashboardSourcePath: DashboardSourcePath
-        LogFileRetentionDays: 4
+        Max_OtherDbConnections: 7
+        LogFileRetentionDays: 1
         HttpsPortNumber: 5
         LibraryMonitorDelaySeconds: 5
         CertificatePassword: CertificatePassword
@@ -77920,6 +77944,7 @@ components:
         EnableExternalContentInSuggestions: true
         EnableCaseSensitiveItemIds: true
         EnablePeopleLetterSubFolders: true
+        Max_LibraryDbConnections: 4
         DisableAsyncIO: true
         PreferredDetectedRemoteAddressFamily: Unspecified
         MigratedToUserItemShares8: true
@@ -79356,6 +79381,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -82012,6 +82038,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -82573,6 +82600,7 @@ components:
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
+            TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
             ExposureTime: 6.628464275087742
             MediaType: MediaType
@@ -83156,6 +83184,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -83717,6 +83746,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -85378,34 +85408,6 @@ components:
         RefreshLibrary:
           type: boolean
       x-internal-ref-name: Emby.Api.Library.AddMediaPath
-    QueryResult_ChannelManagementInfo:
-      type: object
-      properties:
-        Items:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChannelManagementInfo'
-        TotalRecordCount:
-          type: integer
-          format: int32
-      example:
-        TotalRecordCount: 0
-        Items:
-        - Id: Id
-          Name: Name
-        - Id: Id
-          Name: Name
-    ChannelManagementInfo:
-      type: object
-      properties:
-        Id:
-          type: string
-        Name:
-          type: string
-      example:
-        Id: Id
-        Name: Name
-      x-internal-ref-name: Emby.LiveTV.ChannelManagementInfo
     Api.TagItem:
       type: object
       properties:
@@ -85604,8 +85606,6 @@ components:
         CanSeek:
           type: boolean
           description: A value indicating whether this instance can seek.
-        Item:
-          $ref: '#/components/schemas/BaseItemDto'
         NowPlayingQueue:
           type: array
           items:
@@ -85643,11 +85643,6 @@ components:
         IsMuted:
           type: boolean
           description: A value indicating whether this instance is muted.
-        PositionTicks:
-          type: integer
-          description: The position ticks.
-          format: int64
-          nullable: true
         RunTimeTicks:
           type: integer
           format: int64
@@ -85674,9 +85669,6 @@ components:
         LiveStreamId:
           type: string
           description: The live stream identifier.
-        PlaySessionId:
-          type: string
-          description: The play session identifier.
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
         Shuffle:
@@ -85691,6 +85683,16 @@ components:
           type: array
           items:
             type: string
+        PlaySessionId:
+          type: string
+          description: The play session identifier.
+        Item:
+          $ref: '#/components/schemas/BaseItemDto'
+        PositionTicks:
+          type: integer
+          description: The position ticks.
+          format: int64
+          nullable: true
       description: "Class PlaybackProgressInfo.\r\n"
       x-internal-ref-name: MediaBrowser.Model.Session.PlaybackProgressInfo
     PlaybackStopInfo:
@@ -85708,8 +85710,6 @@ components:
         PlaylistLength:
           type: integer
           format: int32
-        Item:
-          $ref: '#/components/schemas/BaseItemDto'
         ItemId:
           type: string
           description: The item identifier.
@@ -85719,17 +85719,9 @@ components:
         MediaSourceId:
           type: string
           description: The media version identifier.
-        PositionTicks:
-          type: integer
-          description: The position ticks.
-          format: int64
-          nullable: true
         LiveStreamId:
           type: string
           description: The live stream identifier.
-        PlaySessionId:
-          type: string
-          description: The play session identifier.
         Failed:
           type: boolean
           description: A value indicating whether this `MediaBrowser.Model.Session.PlaybackStopInfo`
@@ -85738,6 +85730,16 @@ components:
           type: boolean
         NextMediaType:
           type: string
+        PlaySessionId:
+          type: string
+          description: The play session identifier.
+        Item:
+          $ref: '#/components/schemas/BaseItemDto'
+        PositionTicks:
+          type: integer
+          description: The position ticks.
+          format: int64
+          nullable: true
       description: "Class PlaybackStopInfo.\r\n"
       x-internal-ref-name: MediaBrowser.Model.Session.PlaybackStopInfo
     SyncedItemProgress:
@@ -85794,6 +85796,7 @@ components:
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
+          TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
           ExposureTime: 6.628464275087742
           MediaType: MediaType
@@ -86766,6 +86769,34 @@ components:
         Disabled:
           type: boolean
       x-internal-ref-name: Emby.LiveTV.Api.SetChannelDisabled
+    QueryResult_ChannelManagementInfo:
+      type: object
+      properties:
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChannelManagementInfo'
+        TotalRecordCount:
+          type: integer
+          format: int32
+      example:
+        TotalRecordCount: 0
+        Items:
+        - Id: Id
+          Name: Name
+        - Id: Id
+          Name: Name
+    ChannelManagementInfo:
+      type: object
+      properties:
+        Id:
+          type: string
+        Name:
+          type: string
+      example:
+        Id: Id
+        Name: Name
+      x-internal-ref-name: Emby.LiveTV.ChannelManagementInfo
     Api.SetChannelSortIndex:
       type: object
       properties:

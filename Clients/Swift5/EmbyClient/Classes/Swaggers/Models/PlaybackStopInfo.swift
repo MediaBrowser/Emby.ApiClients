@@ -16,39 +16,39 @@ public struct PlaybackStopInfo: Codable {
     public var playlistItemId: String?
     public var playlistIndex: Int?
     public var playlistLength: Int?
-    public var item: BaseItemDto?
     /** The item identifier. */
     public var itemId: String?
     /** The session id. */
     public var sessionId: String?
     /** The media version identifier. */
     public var mediaSourceId: String?
-    /** The position ticks. */
-    public var positionTicks: Int64?
     /** The live stream identifier. */
     public var liveStreamId: String?
-    /** The play session identifier. */
-    public var playSessionId: String?
     /** A value indicating whether this &#x60;MediaBrowser.Model.Session.PlaybackStopInfo&#x60; is failed. */
     public var failed: Bool?
     public var isAutomated: Bool?
     public var nextMediaType: String?
+    /** The play session identifier. */
+    public var playSessionId: String?
+    public var item: BaseItemDto?
+    /** The position ticks. */
+    public var positionTicks: Int64?
 
-    public init(nowPlayingQueue: [QueueItem]? = nil, playlistItemId: String? = nil, playlistIndex: Int? = nil, playlistLength: Int? = nil, item: BaseItemDto? = nil, itemId: String? = nil, sessionId: String? = nil, mediaSourceId: String? = nil, positionTicks: Int64? = nil, liveStreamId: String? = nil, playSessionId: String? = nil, failed: Bool? = nil, isAutomated: Bool? = nil, nextMediaType: String? = nil) {
+    public init(nowPlayingQueue: [QueueItem]? = nil, playlistItemId: String? = nil, playlistIndex: Int? = nil, playlistLength: Int? = nil, itemId: String? = nil, sessionId: String? = nil, mediaSourceId: String? = nil, liveStreamId: String? = nil, failed: Bool? = nil, isAutomated: Bool? = nil, nextMediaType: String? = nil, playSessionId: String? = nil, item: BaseItemDto? = nil, positionTicks: Int64? = nil) {
         self.nowPlayingQueue = nowPlayingQueue
         self.playlistItemId = playlistItemId
         self.playlistIndex = playlistIndex
         self.playlistLength = playlistLength
-        self.item = item
         self.itemId = itemId
         self.sessionId = sessionId
         self.mediaSourceId = mediaSourceId
-        self.positionTicks = positionTicks
         self.liveStreamId = liveStreamId
-        self.playSessionId = playSessionId
         self.failed = failed
         self.isAutomated = isAutomated
         self.nextMediaType = nextMediaType
+        self.playSessionId = playSessionId
+        self.item = item
+        self.positionTicks = positionTicks
     }
 
     public enum CodingKeys: String, CodingKey { 
@@ -56,16 +56,16 @@ public struct PlaybackStopInfo: Codable {
         case playlistItemId = "PlaylistItemId"
         case playlistIndex = "PlaylistIndex"
         case playlistLength = "PlaylistLength"
-        case item = "Item"
         case itemId = "ItemId"
         case sessionId = "SessionId"
         case mediaSourceId = "MediaSourceId"
-        case positionTicks = "PositionTicks"
         case liveStreamId = "LiveStreamId"
-        case playSessionId = "PlaySessionId"
         case failed = "Failed"
         case isAutomated = "IsAutomated"
         case nextMediaType = "NextMediaType"
+        case playSessionId = "PlaySessionId"
+        case item = "Item"
+        case positionTicks = "PositionTicks"
     }
 
 }

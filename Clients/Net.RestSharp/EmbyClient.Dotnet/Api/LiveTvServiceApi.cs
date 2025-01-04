@@ -1296,8 +1296,8 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>QueryResultChannelManagementInfo</returns>
-        QueryResultChannelManagementInfo GetLivetvManageChannels (int? startIndex, int? limit, string sortBy, string sortOrder);
+        /// <returns>QueryResultBaseItemDto</returns>
+        QueryResultBaseItemDto GetLivetvManageChannels (int? startIndex, int? limit, string sortBy, string sortOrder);
 
         /// <summary>
         /// Gets the channel management list
@@ -1310,8 +1310,8 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>ApiResponse of QueryResultChannelManagementInfo</returns>
-        ApiResponse<QueryResultChannelManagementInfo> GetLivetvManageChannelsWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder);
+        /// <returns>ApiResponse of QueryResultBaseItemDto</returns>
+        ApiResponse<QueryResultBaseItemDto> GetLivetvManageChannelsWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder);
         /// <summary>
         /// Gets available live tv epgs..
         /// </summary>
@@ -4028,8 +4028,8 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>Task of QueryResultChannelManagementInfo</returns>
-        System.Threading.Tasks.Task<QueryResultChannelManagementInfo> GetLivetvManageChannelsAsync (int? startIndex, int? limit, string sortBy, string sortOrder);
+        /// <returns>Task of QueryResultBaseItemDto</returns>
+        System.Threading.Tasks.Task<QueryResultBaseItemDto> GetLivetvManageChannelsAsync (int? startIndex, int? limit, string sortBy, string sortOrder);
 
         /// <summary>
         /// Gets the channel management list
@@ -4042,8 +4042,8 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>Task of ApiResponse (QueryResultChannelManagementInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QueryResultChannelManagementInfo>> GetLivetvManageChannelsAsyncWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder);
+        /// <returns>Task of ApiResponse (QueryResultBaseItemDto)</returns>
+        System.Threading.Tasks.Task<ApiResponse<QueryResultBaseItemDto>> GetLivetvManageChannelsAsyncWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder);
         /// <summary>
         /// Gets available live tv epgs..
         /// </summary>
@@ -11372,10 +11372,10 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>QueryResultChannelManagementInfo</returns>
-        public QueryResultChannelManagementInfo GetLivetvManageChannels (int? startIndex, int? limit, string sortBy, string sortOrder)
+        /// <returns>QueryResultBaseItemDto</returns>
+        public QueryResultBaseItemDto GetLivetvManageChannels (int? startIndex, int? limit, string sortBy, string sortOrder)
         {
-             ApiResponse<QueryResultChannelManagementInfo> localVarResponse = GetLivetvManageChannelsWithHttpInfo(startIndex, limit, sortBy, sortOrder);
+             ApiResponse<QueryResultBaseItemDto> localVarResponse = GetLivetvManageChannelsWithHttpInfo(startIndex, limit, sortBy, sortOrder);
              return localVarResponse.Data;
         }
 
@@ -11387,8 +11387,8 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>ApiResponse of QueryResultChannelManagementInfo</returns>
-        public ApiResponse< QueryResultChannelManagementInfo > GetLivetvManageChannelsWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder)
+        /// <returns>ApiResponse of QueryResultBaseItemDto</returns>
+        public ApiResponse< QueryResultBaseItemDto > GetLivetvManageChannelsWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder)
         {
 
             var localVarPath = "/LiveTv/Manage/Channels";
@@ -11442,9 +11442,9 @@ namespace EmbyClient.Dotnet.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<QueryResultChannelManagementInfo>(localVarStatusCode,
+            return new ApiResponse<QueryResultBaseItemDto>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (QueryResultChannelManagementInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QueryResultChannelManagementInfo)));
+                (QueryResultBaseItemDto) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QueryResultBaseItemDto)));
         }
 
         /// <summary>
@@ -11455,10 +11455,10 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>Task of QueryResultChannelManagementInfo</returns>
-        public async System.Threading.Tasks.Task<QueryResultChannelManagementInfo> GetLivetvManageChannelsAsync (int? startIndex, int? limit, string sortBy, string sortOrder)
+        /// <returns>Task of QueryResultBaseItemDto</returns>
+        public async System.Threading.Tasks.Task<QueryResultBaseItemDto> GetLivetvManageChannelsAsync (int? startIndex, int? limit, string sortBy, string sortOrder)
         {
-             ApiResponse<QueryResultChannelManagementInfo> localVarResponse = await GetLivetvManageChannelsAsyncWithHttpInfo(startIndex, limit, sortBy, sortOrder);
+             ApiResponse<QueryResultBaseItemDto> localVarResponse = await GetLivetvManageChannelsAsyncWithHttpInfo(startIndex, limit, sortBy, sortOrder);
              return localVarResponse.Data;
 
         }
@@ -11471,8 +11471,8 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="sortBy">Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate (optional)</param>
         /// <param name="sortOrder">Sort Order - Ascending,Descending (optional)</param>
-        /// <returns>Task of ApiResponse (QueryResultChannelManagementInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<QueryResultChannelManagementInfo>> GetLivetvManageChannelsAsyncWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder)
+        /// <returns>Task of ApiResponse (QueryResultBaseItemDto)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<QueryResultBaseItemDto>> GetLivetvManageChannelsAsyncWithHttpInfo (int? startIndex, int? limit, string sortBy, string sortOrder)
         {
 
             var localVarPath = "/LiveTv/Manage/Channels";
@@ -11526,9 +11526,9 @@ namespace EmbyClient.Dotnet.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<QueryResultChannelManagementInfo>(localVarStatusCode,
+            return new ApiResponse<QueryResultBaseItemDto>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (QueryResultChannelManagementInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QueryResultChannelManagementInfo)));
+                (QueryResultBaseItemDto) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QueryResultBaseItemDto)));
         }
 
         /// <summary>

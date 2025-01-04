@@ -27,7 +27,6 @@ namespace EmbyClient.Dotnet.Model
         /// Initializes a new instance of the <see cref="PlaybackProgressInfo" /> class.
         /// </summary>
         /// <param name="canSeek">A value indicating whether this instance can seek..</param>
-        /// <param name="item">item.</param>
         /// <param name="nowPlayingQueue">nowPlayingQueue.</param>
         /// <param name="playlistItemId">playlistItemId.</param>
         /// <param name="itemId">The item identifier..</param>
@@ -39,7 +38,6 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="playlistIndex">playlistIndex.</param>
         /// <param name="playlistLength">playlistLength.</param>
         /// <param name="isMuted">A value indicating whether this instance is muted..</param>
-        /// <param name="positionTicks">The position ticks..</param>
         /// <param name="runTimeTicks">runTimeTicks.</param>
         /// <param name="playbackStartTimeTicks">playbackStartTimeTicks.</param>
         /// <param name="volumeLevel">The volume level..</param>
@@ -48,16 +46,17 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="eventName">eventName.</param>
         /// <param name="playMethod">playMethod.</param>
         /// <param name="liveStreamId">The live stream identifier..</param>
-        /// <param name="playSessionId">The play session identifier..</param>
         /// <param name="repeatMode">repeatMode.</param>
         /// <param name="shuffle">shuffle.</param>
         /// <param name="subtitleOffset">subtitleOffset.</param>
         /// <param name="playbackRate">playbackRate.</param>
         /// <param name="playlistItemIds">playlistItemIds.</param>
-        public PlaybackProgressInfo(bool? canSeek = default(bool?), BaseItemDto item = default(BaseItemDto), List<QueueItem> nowPlayingQueue = default(List<QueueItem>), string playlistItemId = default(string), string itemId = default(string), string sessionId = default(string), string mediaSourceId = default(string), int? audioStreamIndex = default(int?), int? subtitleStreamIndex = default(int?), bool? isPaused = default(bool?), int? playlistIndex = default(int?), int? playlistLength = default(int?), bool? isMuted = default(bool?), long? positionTicks = default(long?), long? runTimeTicks = default(long?), long? playbackStartTimeTicks = default(long?), int? volumeLevel = default(int?), int? brightness = default(int?), string aspectRatio = default(string), ProgressEvent eventName = default(ProgressEvent), PlayMethod playMethod = default(PlayMethod), string liveStreamId = default(string), string playSessionId = default(string), RepeatMode repeatMode = default(RepeatMode), bool? shuffle = default(bool?), int? subtitleOffset = default(int?), double? playbackRate = default(double?), List<string> playlistItemIds = default(List<string>))
+        /// <param name="playSessionId">The play session identifier..</param>
+        /// <param name="item">item.</param>
+        /// <param name="positionTicks">The position ticks..</param>
+        public PlaybackProgressInfo(bool? canSeek = default(bool?), List<QueueItem> nowPlayingQueue = default(List<QueueItem>), string playlistItemId = default(string), string itemId = default(string), string sessionId = default(string), string mediaSourceId = default(string), int? audioStreamIndex = default(int?), int? subtitleStreamIndex = default(int?), bool? isPaused = default(bool?), int? playlistIndex = default(int?), int? playlistLength = default(int?), bool? isMuted = default(bool?), long? runTimeTicks = default(long?), long? playbackStartTimeTicks = default(long?), int? volumeLevel = default(int?), int? brightness = default(int?), string aspectRatio = default(string), ProgressEvent eventName = default(ProgressEvent), PlayMethod playMethod = default(PlayMethod), string liveStreamId = default(string), RepeatMode repeatMode = default(RepeatMode), bool? shuffle = default(bool?), int? subtitleOffset = default(int?), double? playbackRate = default(double?), List<string> playlistItemIds = default(List<string>), string playSessionId = default(string), BaseItemDto item = default(BaseItemDto), long? positionTicks = default(long?))
         {
             this.CanSeek = canSeek;
-            this.Item = item;
             this.NowPlayingQueue = nowPlayingQueue;
             this.PlaylistItemId = playlistItemId;
             this.ItemId = itemId;
@@ -69,7 +68,6 @@ namespace EmbyClient.Dotnet.Model
             this.PlaylistIndex = playlistIndex;
             this.PlaylistLength = playlistLength;
             this.IsMuted = isMuted;
-            this.PositionTicks = positionTicks;
             this.RunTimeTicks = runTimeTicks;
             this.PlaybackStartTimeTicks = playbackStartTimeTicks;
             this.VolumeLevel = volumeLevel;
@@ -78,12 +76,14 @@ namespace EmbyClient.Dotnet.Model
             this.EventName = eventName;
             this.PlayMethod = playMethod;
             this.LiveStreamId = liveStreamId;
-            this.PlaySessionId = playSessionId;
             this.RepeatMode = repeatMode;
             this.Shuffle = shuffle;
             this.SubtitleOffset = subtitleOffset;
             this.PlaybackRate = playbackRate;
             this.PlaylistItemIds = playlistItemIds;
+            this.PlaySessionId = playSessionId;
+            this.Item = item;
+            this.PositionTicks = positionTicks;
         }
         
         /// <summary>
@@ -92,12 +92,6 @@ namespace EmbyClient.Dotnet.Model
         /// <value>A value indicating whether this instance can seek.</value>
         [DataMember(Name="CanSeek", EmitDefaultValue=false)]
         public bool? CanSeek { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Item
-        /// </summary>
-        [DataMember(Name="Item", EmitDefaultValue=false)]
-        public BaseItemDto Item { get; set; }
 
         /// <summary>
         /// Gets or Sets NowPlayingQueue
@@ -173,13 +167,6 @@ namespace EmbyClient.Dotnet.Model
         public bool? IsMuted { get; set; }
 
         /// <summary>
-        /// The position ticks.
-        /// </summary>
-        /// <value>The position ticks.</value>
-        [DataMember(Name="PositionTicks", EmitDefaultValue=false)]
-        public long? PositionTicks { get; set; }
-
-        /// <summary>
         /// Gets or Sets RunTimeTicks
         /// </summary>
         [DataMember(Name="RunTimeTicks", EmitDefaultValue=false)]
@@ -230,13 +217,6 @@ namespace EmbyClient.Dotnet.Model
         public string LiveStreamId { get; set; }
 
         /// <summary>
-        /// The play session identifier.
-        /// </summary>
-        /// <value>The play session identifier.</value>
-        [DataMember(Name="PlaySessionId", EmitDefaultValue=false)]
-        public string PlaySessionId { get; set; }
-
-        /// <summary>
         /// Gets or Sets RepeatMode
         /// </summary>
         [DataMember(Name="RepeatMode", EmitDefaultValue=false)]
@@ -267,6 +247,26 @@ namespace EmbyClient.Dotnet.Model
         public List<string> PlaylistItemIds { get; set; }
 
         /// <summary>
+        /// The play session identifier.
+        /// </summary>
+        /// <value>The play session identifier.</value>
+        [DataMember(Name="PlaySessionId", EmitDefaultValue=false)]
+        public string PlaySessionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Item
+        /// </summary>
+        [DataMember(Name="Item", EmitDefaultValue=false)]
+        public BaseItemDto Item { get; set; }
+
+        /// <summary>
+        /// The position ticks.
+        /// </summary>
+        /// <value>The position ticks.</value>
+        [DataMember(Name="PositionTicks", EmitDefaultValue=false)]
+        public long? PositionTicks { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -275,7 +275,6 @@ namespace EmbyClient.Dotnet.Model
             var sb = new StringBuilder();
             sb.Append("class PlaybackProgressInfo {\n");
             sb.Append("  CanSeek: ").Append(CanSeek).Append("\n");
-            sb.Append("  Item: ").Append(Item).Append("\n");
             sb.Append("  NowPlayingQueue: ").Append(NowPlayingQueue).Append("\n");
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  ItemId: ").Append(ItemId).Append("\n");
@@ -287,7 +286,6 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  PlaylistIndex: ").Append(PlaylistIndex).Append("\n");
             sb.Append("  PlaylistLength: ").Append(PlaylistLength).Append("\n");
             sb.Append("  IsMuted: ").Append(IsMuted).Append("\n");
-            sb.Append("  PositionTicks: ").Append(PositionTicks).Append("\n");
             sb.Append("  RunTimeTicks: ").Append(RunTimeTicks).Append("\n");
             sb.Append("  PlaybackStartTimeTicks: ").Append(PlaybackStartTimeTicks).Append("\n");
             sb.Append("  VolumeLevel: ").Append(VolumeLevel).Append("\n");
@@ -296,12 +294,14 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  LiveStreamId: ").Append(LiveStreamId).Append("\n");
-            sb.Append("  PlaySessionId: ").Append(PlaySessionId).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
             sb.Append("  SubtitleOffset: ").Append(SubtitleOffset).Append("\n");
             sb.Append("  PlaybackRate: ").Append(PlaybackRate).Append("\n");
             sb.Append("  PlaylistItemIds: ").Append(PlaylistItemIds).Append("\n");
+            sb.Append("  PlaySessionId: ").Append(PlaySessionId).Append("\n");
+            sb.Append("  Item: ").Append(Item).Append("\n");
+            sb.Append("  PositionTicks: ").Append(PositionTicks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -340,11 +340,6 @@ namespace EmbyClient.Dotnet.Model
                     this.CanSeek == input.CanSeek ||
                     (this.CanSeek != null &&
                     this.CanSeek.Equals(input.CanSeek))
-                ) && 
-                (
-                    this.Item == input.Item ||
-                    (this.Item != null &&
-                    this.Item.Equals(input.Item))
                 ) && 
                 (
                     this.NowPlayingQueue == input.NowPlayingQueue ||
@@ -403,11 +398,6 @@ namespace EmbyClient.Dotnet.Model
                     this.IsMuted.Equals(input.IsMuted))
                 ) && 
                 (
-                    this.PositionTicks == input.PositionTicks ||
-                    (this.PositionTicks != null &&
-                    this.PositionTicks.Equals(input.PositionTicks))
-                ) && 
-                (
                     this.RunTimeTicks == input.RunTimeTicks ||
                     (this.RunTimeTicks != null &&
                     this.RunTimeTicks.Equals(input.RunTimeTicks))
@@ -448,11 +438,6 @@ namespace EmbyClient.Dotnet.Model
                     this.LiveStreamId.Equals(input.LiveStreamId))
                 ) && 
                 (
-                    this.PlaySessionId == input.PlaySessionId ||
-                    (this.PlaySessionId != null &&
-                    this.PlaySessionId.Equals(input.PlaySessionId))
-                ) && 
-                (
                     this.RepeatMode == input.RepeatMode ||
                     (this.RepeatMode != null &&
                     this.RepeatMode.Equals(input.RepeatMode))
@@ -477,6 +462,21 @@ namespace EmbyClient.Dotnet.Model
                     this.PlaylistItemIds != null &&
                     input.PlaylistItemIds != null &&
                     this.PlaylistItemIds.SequenceEqual(input.PlaylistItemIds)
+                ) && 
+                (
+                    this.PlaySessionId == input.PlaySessionId ||
+                    (this.PlaySessionId != null &&
+                    this.PlaySessionId.Equals(input.PlaySessionId))
+                ) && 
+                (
+                    this.Item == input.Item ||
+                    (this.Item != null &&
+                    this.Item.Equals(input.Item))
+                ) && 
+                (
+                    this.PositionTicks == input.PositionTicks ||
+                    (this.PositionTicks != null &&
+                    this.PositionTicks.Equals(input.PositionTicks))
                 );
         }
 
@@ -491,8 +491,6 @@ namespace EmbyClient.Dotnet.Model
                 int hashCode = 41;
                 if (this.CanSeek != null)
                     hashCode = hashCode * 59 + this.CanSeek.GetHashCode();
-                if (this.Item != null)
-                    hashCode = hashCode * 59 + this.Item.GetHashCode();
                 if (this.NowPlayingQueue != null)
                     hashCode = hashCode * 59 + this.NowPlayingQueue.GetHashCode();
                 if (this.PlaylistItemId != null)
@@ -515,8 +513,6 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.PlaylistLength.GetHashCode();
                 if (this.IsMuted != null)
                     hashCode = hashCode * 59 + this.IsMuted.GetHashCode();
-                if (this.PositionTicks != null)
-                    hashCode = hashCode * 59 + this.PositionTicks.GetHashCode();
                 if (this.RunTimeTicks != null)
                     hashCode = hashCode * 59 + this.RunTimeTicks.GetHashCode();
                 if (this.PlaybackStartTimeTicks != null)
@@ -533,8 +529,6 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.LiveStreamId != null)
                     hashCode = hashCode * 59 + this.LiveStreamId.GetHashCode();
-                if (this.PlaySessionId != null)
-                    hashCode = hashCode * 59 + this.PlaySessionId.GetHashCode();
                 if (this.RepeatMode != null)
                     hashCode = hashCode * 59 + this.RepeatMode.GetHashCode();
                 if (this.Shuffle != null)
@@ -545,6 +539,12 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.PlaybackRate.GetHashCode();
                 if (this.PlaylistItemIds != null)
                     hashCode = hashCode * 59 + this.PlaylistItemIds.GetHashCode();
+                if (this.PlaySessionId != null)
+                    hashCode = hashCode * 59 + this.PlaySessionId.GetHashCode();
+                if (this.Item != null)
+                    hashCode = hashCode * 59 + this.Item.GetHashCode();
+                if (this.PositionTicks != null)
+                    hashCode = hashCode * 59 + this.PositionTicks.GetHashCode();
                 return hashCode;
             }
         }

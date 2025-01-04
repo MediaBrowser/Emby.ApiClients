@@ -798,7 +798,7 @@ public class LiveTvServiceApiTest {
         Integer limit = null;
         String sortBy = null;
         String sortOrder = null;
-        QueryResultChannelManagementInfo response = api.getLivetvManageChannels(startIndex, limit, sortBy, sortOrder);
+        QueryResultBaseItemDto response = api.getLivetvManageChannels(startIndex, limit, sortBy, sortOrder);
 
         // TODO: test validations
     }

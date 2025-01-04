@@ -23,6 +23,7 @@ type BaseItemDto struct {
 	Etag string `json:"Etag,omitempty"`
 	// The Prefix.
 	Prefix string `json:"Prefix,omitempty"`
+	TunerName string `json:"TunerName,omitempty"`
 	// The playlist item identifier.
 	PlaylistItemId string `json:"PlaylistItemId,omitempty"`
 	// The date created.

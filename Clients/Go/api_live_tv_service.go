@@ -4158,7 +4158,7 @@ Requires authentication as administrator
      * @param "Limit" (optional.Int32) -  Optional. The maximum number of records to return
      * @param "SortBy" (optional.String) -  Optional. Specify one or more sort orders, comma delimeted. Options: Name, StartDate
      * @param "SortOrder" (optional.String) -  Sort Order - Ascending,Descending
-@return QueryResultChannelManagementInfo
+@return QueryResultBaseItemDto
 */
 
 type LiveTvServiceApiGetLivetvManageChannelsOpts struct {
@@ -4168,13 +4168,13 @@ type LiveTvServiceApiGetLivetvManageChannelsOpts struct {
     SortOrder optional.String
 }
 
-func (a *LiveTvServiceApiService) GetLivetvManageChannels(ctx context.Context, localVarOptionals *LiveTvServiceApiGetLivetvManageChannelsOpts) (QueryResultChannelManagementInfo, *http.Response, error) {
+func (a *LiveTvServiceApiService) GetLivetvManageChannels(ctx context.Context, localVarOptionals *LiveTvServiceApiGetLivetvManageChannelsOpts) (QueryResultBaseItemDto, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue QueryResultChannelManagementInfo
+		localVarReturnValue QueryResultBaseItemDto
 	)
 
 	// create path and map variables
@@ -4256,7 +4256,7 @@ func (a *LiveTvServiceApiService) GetLivetvManageChannels(ctx context.Context, l
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v QueryResultChannelManagementInfo
+			var v QueryResultBaseItemDto
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

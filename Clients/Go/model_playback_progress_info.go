@@ -10,7 +10,6 @@ package embyclient
 type PlaybackProgressInfo struct {
 	// A value indicating whether this instance can seek.
 	CanSeek bool `json:"CanSeek,omitempty"`
-	Item *BaseItemDto `json:"Item,omitempty"`
 	NowPlayingQueue []QueueItem `json:"NowPlayingQueue,omitempty"`
 	PlaylistItemId string `json:"PlaylistItemId,omitempty"`
 	// The item identifier.
@@ -29,8 +28,6 @@ type PlaybackProgressInfo struct {
 	PlaylistLength int32 `json:"PlaylistLength,omitempty"`
 	// A value indicating whether this instance is muted.
 	IsMuted bool `json:"IsMuted,omitempty"`
-	// The position ticks.
-	PositionTicks int64 `json:"PositionTicks,omitempty"`
 	RunTimeTicks int64 `json:"RunTimeTicks,omitempty"`
 	PlaybackStartTimeTicks int64 `json:"PlaybackStartTimeTicks,omitempty"`
 	// The volume level.
@@ -41,11 +38,14 @@ type PlaybackProgressInfo struct {
 	PlayMethod *PlayMethod `json:"PlayMethod,omitempty"`
 	// The live stream identifier.
 	LiveStreamId string `json:"LiveStreamId,omitempty"`
-	// The play session identifier.
-	PlaySessionId string `json:"PlaySessionId,omitempty"`
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
 	Shuffle bool `json:"Shuffle,omitempty"`
 	SubtitleOffset int32 `json:"SubtitleOffset,omitempty"`
 	PlaybackRate float64 `json:"PlaybackRate,omitempty"`
 	PlaylistItemIds []string `json:"PlaylistItemIds,omitempty"`
+	// The play session identifier.
+	PlaySessionId string `json:"PlaySessionId,omitempty"`
+	Item *BaseItemDto `json:"Item,omitempty"`
+	// The position ticks.
+	PositionTicks int64 `json:"PositionTicks,omitempty"`
 }

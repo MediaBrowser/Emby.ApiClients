@@ -33,12 +33,6 @@ namespace Emby.ApiClient.Model
         public bool? CanSeek { get; set; }
 
         /// <summary>
-        /// Gets or Sets Item
-        /// </summary>
-        /// <value>The Item.</value>
-        public BaseItemDto Item { get; set; }
-
-        /// <summary>
         /// Gets or Sets NowPlayingQueue
         /// </summary>
         /// <value>The NowPlayingQueue.</value>
@@ -105,12 +99,6 @@ namespace Emby.ApiClient.Model
         public bool? IsMuted { get; set; }
 
         /// <summary>
-        /// The position ticks.
-        /// </summary>
-        /// <value>The PositionTicks.</value>
-        public long? PositionTicks { get; set; }
-
-        /// <summary>
         /// Gets or Sets RunTimeTicks
         /// </summary>
         /// <value>The RunTimeTicks.</value>
@@ -159,12 +147,6 @@ namespace Emby.ApiClient.Model
         public string LiveStreamId { get; set; }
 
         /// <summary>
-        /// The play session identifier.
-        /// </summary>
-        /// <value>The PlaySessionId.</value>
-        public string PlaySessionId { get; set; }
-
-        /// <summary>
         /// Gets or Sets RepeatMode
         /// </summary>
         /// <value>The RepeatMode.</value>
@@ -195,6 +177,24 @@ namespace Emby.ApiClient.Model
         public List<string> PlaylistItemIds { get; set; }
 
         /// <summary>
+        /// The play session identifier.
+        /// </summary>
+        /// <value>The PlaySessionId.</value>
+        public string PlaySessionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Item
+        /// </summary>
+        /// <value>The Item.</value>
+        public BaseItemDto Item { get; set; }
+
+        /// <summary>
+        /// The position ticks.
+        /// </summary>
+        /// <value>The PositionTicks.</value>
+        public long? PositionTicks { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -203,7 +203,6 @@ namespace Emby.ApiClient.Model
             var sb = new StringBuilder();
             sb.Append("class PlaybackProgressInfo {\n");
             sb.Append("  CanSeek: ").Append(CanSeek).Append("\n");
-            sb.Append("  Item: ").Append(Item).Append("\n");
             sb.Append("  NowPlayingQueue: ").Append(NowPlayingQueue).Append("\n");
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  ItemId: ").Append(ItemId).Append("\n");
@@ -215,7 +214,6 @@ namespace Emby.ApiClient.Model
             sb.Append("  PlaylistIndex: ").Append(PlaylistIndex).Append("\n");
             sb.Append("  PlaylistLength: ").Append(PlaylistLength).Append("\n");
             sb.Append("  IsMuted: ").Append(IsMuted).Append("\n");
-            sb.Append("  PositionTicks: ").Append(PositionTicks).Append("\n");
             sb.Append("  RunTimeTicks: ").Append(RunTimeTicks).Append("\n");
             sb.Append("  PlaybackStartTimeTicks: ").Append(PlaybackStartTimeTicks).Append("\n");
             sb.Append("  VolumeLevel: ").Append(VolumeLevel).Append("\n");
@@ -224,12 +222,14 @@ namespace Emby.ApiClient.Model
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  LiveStreamId: ").Append(LiveStreamId).Append("\n");
-            sb.Append("  PlaySessionId: ").Append(PlaySessionId).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
             sb.Append("  SubtitleOffset: ").Append(SubtitleOffset).Append("\n");
             sb.Append("  PlaybackRate: ").Append(PlaybackRate).Append("\n");
             sb.Append("  PlaylistItemIds: ").Append(PlaylistItemIds).Append("\n");
+            sb.Append("  PlaySessionId: ").Append(PlaySessionId).Append("\n");
+            sb.Append("  Item: ").Append(Item).Append("\n");
+            sb.Append("  PositionTicks: ").Append(PositionTicks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,11 +259,6 @@ namespace Emby.ApiClient.Model
                     this.CanSeek == input.CanSeek ||
                     (this.CanSeek != null &&
                     this.CanSeek.Equals(input.CanSeek))
-                ) && 
-                (
-                    this.Item == input.Item ||
-                    (this.Item != null &&
-                    this.Item.Equals(input.Item))
                 ) && 
                 (
                     this.NowPlayingQueue == input.NowPlayingQueue ||
@@ -322,11 +317,6 @@ namespace Emby.ApiClient.Model
                     this.IsMuted.Equals(input.IsMuted))
                 ) && 
                 (
-                    this.PositionTicks == input.PositionTicks ||
-                    (this.PositionTicks != null &&
-                    this.PositionTicks.Equals(input.PositionTicks))
-                ) && 
-                (
                     this.RunTimeTicks == input.RunTimeTicks ||
                     (this.RunTimeTicks != null &&
                     this.RunTimeTicks.Equals(input.RunTimeTicks))
@@ -367,11 +357,6 @@ namespace Emby.ApiClient.Model
                     this.LiveStreamId.Equals(input.LiveStreamId))
                 ) && 
                 (
-                    this.PlaySessionId == input.PlaySessionId ||
-                    (this.PlaySessionId != null &&
-                    this.PlaySessionId.Equals(input.PlaySessionId))
-                ) && 
-                (
                     this.RepeatMode == input.RepeatMode ||
                     (this.RepeatMode != null &&
                     this.RepeatMode.Equals(input.RepeatMode))
@@ -396,6 +381,21 @@ namespace Emby.ApiClient.Model
                     this.PlaylistItemIds != null &&
                     input.PlaylistItemIds != null &&
                     this.PlaylistItemIds.SequenceEqual(input.PlaylistItemIds)
+                ) && 
+                (
+                    this.PlaySessionId == input.PlaySessionId ||
+                    (this.PlaySessionId != null &&
+                    this.PlaySessionId.Equals(input.PlaySessionId))
+                ) && 
+                (
+                    this.Item == input.Item ||
+                    (this.Item != null &&
+                    this.Item.Equals(input.Item))
+                ) && 
+                (
+                    this.PositionTicks == input.PositionTicks ||
+                    (this.PositionTicks != null &&
+                    this.PositionTicks.Equals(input.PositionTicks))
                 );
         }
 
@@ -410,8 +410,6 @@ namespace Emby.ApiClient.Model
                 int hashCode = 41;
                 if (this.CanSeek != null)
                     hashCode = hashCode * 59 + this.CanSeek.GetHashCode();
-                if (this.Item != null)
-                    hashCode = hashCode * 59 + this.Item.GetHashCode();
                 if (this.NowPlayingQueue != null)
                     hashCode = hashCode * 59 + this.NowPlayingQueue.GetHashCode();
                 if (this.PlaylistItemId != null)
@@ -434,8 +432,6 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.PlaylistLength.GetHashCode();
                 if (this.IsMuted != null)
                     hashCode = hashCode * 59 + this.IsMuted.GetHashCode();
-                if (this.PositionTicks != null)
-                    hashCode = hashCode * 59 + this.PositionTicks.GetHashCode();
                 if (this.RunTimeTicks != null)
                     hashCode = hashCode * 59 + this.RunTimeTicks.GetHashCode();
                 if (this.PlaybackStartTimeTicks != null)
@@ -452,8 +448,6 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.LiveStreamId != null)
                     hashCode = hashCode * 59 + this.LiveStreamId.GetHashCode();
-                if (this.PlaySessionId != null)
-                    hashCode = hashCode * 59 + this.PlaySessionId.GetHashCode();
                 if (this.RepeatMode != null)
                     hashCode = hashCode * 59 + this.RepeatMode.GetHashCode();
                 if (this.Shuffle != null)
@@ -464,6 +458,12 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.PlaybackRate.GetHashCode();
                 if (this.PlaylistItemIds != null)
                     hashCode = hashCode * 59 + this.PlaylistItemIds.GetHashCode();
+                if (this.PlaySessionId != null)
+                    hashCode = hashCode * 59 + this.PlaySessionId.GetHashCode();
+                if (this.Item != null)
+                    hashCode = hashCode * 59 + this.Item.GetHashCode();
+                if (this.PositionTicks != null)
+                    hashCode = hashCode * 59 + this.PositionTicks.GetHashCode();
                 return hashCode;
             }
         }

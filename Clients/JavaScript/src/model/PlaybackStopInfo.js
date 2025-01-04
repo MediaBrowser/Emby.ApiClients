@@ -16,7 +16,7 @@ import QueueItem from './QueueItem';
 /**
 * The PlaybackStopInfo model module.
 * @module model/PlaybackStopInfo
-* @version 4.9.0.34
+* @version 4.9.0.35
 */
 export default class PlaybackStopInfo {
     /**
@@ -56,9 +56,6 @@ export default class PlaybackStopInfo {
             if (data.hasOwnProperty('PlaylistLength')) {
                 obj['PlaylistLength'] = ApiClient.convertToType(data['PlaylistLength'], 'Number');
             }
-            if (data.hasOwnProperty('Item')) {
-                obj['Item'] = BaseItemDto.constructFromObject(data['Item']);
-            }
             if (data.hasOwnProperty('ItemId')) {
                 obj['ItemId'] = ApiClient.convertToType(data['ItemId'], 'String');
             }
@@ -68,14 +65,8 @@ export default class PlaybackStopInfo {
             if (data.hasOwnProperty('MediaSourceId')) {
                 obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
             }
-            if (data.hasOwnProperty('PositionTicks')) {
-                obj['PositionTicks'] = ApiClient.convertToType(data['PositionTicks'], 'Number');
-            }
             if (data.hasOwnProperty('LiveStreamId')) {
                 obj['LiveStreamId'] = ApiClient.convertToType(data['LiveStreamId'], 'String');
-            }
-            if (data.hasOwnProperty('PlaySessionId')) {
-                obj['PlaySessionId'] = ApiClient.convertToType(data['PlaySessionId'], 'String');
             }
             if (data.hasOwnProperty('Failed')) {
                 obj['Failed'] = ApiClient.convertToType(data['Failed'], 'Boolean');
@@ -85,6 +76,15 @@ export default class PlaybackStopInfo {
             }
             if (data.hasOwnProperty('NextMediaType')) {
                 obj['NextMediaType'] = ApiClient.convertToType(data['NextMediaType'], 'String');
+            }
+            if (data.hasOwnProperty('PlaySessionId')) {
+                obj['PlaySessionId'] = ApiClient.convertToType(data['PlaySessionId'], 'String');
+            }
+            if (data.hasOwnProperty('Item')) {
+                obj['Item'] = BaseItemDto.constructFromObject(data['Item']);
+            }
+            if (data.hasOwnProperty('PositionTicks')) {
+                obj['PositionTicks'] = ApiClient.convertToType(data['PositionTicks'], 'Number');
             }
         }
         return obj;
@@ -107,10 +107,6 @@ export default class PlaybackStopInfo {
     */
     'PlaylistLength' = undefined;
     /**
-    * @member {module:model/BaseItemDto} Item
-    */
-    'Item' = undefined;
-    /**
     * The item identifier.
     * @member {String} ItemId
     */
@@ -126,20 +122,10 @@ export default class PlaybackStopInfo {
     */
     'MediaSourceId' = undefined;
     /**
-    * The position ticks.
-    * @member {Number} PositionTicks
-    */
-    'PositionTicks' = undefined;
-    /**
     * The live stream identifier.
     * @member {String} LiveStreamId
     */
     'LiveStreamId' = undefined;
-    /**
-    * The play session identifier.
-    * @member {String} PlaySessionId
-    */
-    'PlaySessionId' = undefined;
     /**
     * A value indicating whether this `MediaBrowser.Model.Session.PlaybackStopInfo` is failed.
     * @member {Boolean} Failed
@@ -153,6 +139,20 @@ export default class PlaybackStopInfo {
     * @member {String} NextMediaType
     */
     'NextMediaType' = undefined;
+    /**
+    * The play session identifier.
+    * @member {String} PlaySessionId
+    */
+    'PlaySessionId' = undefined;
+    /**
+    * @member {module:model/BaseItemDto} Item
+    */
+    'Item' = undefined;
+    /**
+    * The position ticks.
+    * @member {Number} PositionTicks
+    */
+    'PositionTicks' = undefined;
 
 
 

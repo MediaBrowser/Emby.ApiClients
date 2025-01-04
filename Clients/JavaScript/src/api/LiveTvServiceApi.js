@@ -38,7 +38,7 @@ import SortOrder from '../model/SortOrder';
 /**
 * LiveTvService service.
 * @module api/LiveTvServiceApi
-* @version 4.9.0.34
+* @version 4.9.0.35
 */
 export default class LiveTvServiceApi {
 
@@ -1454,7 +1454,7 @@ export default class LiveTvServiceApi {
      * Gets the channel management list
      * Requires authentication as administrator
      * @param {Object} opts Optional parameters
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QueryResultChannelManagementInfo} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QueryResultBaseItemDto} and HTTP response
      */
     getLivetvManageChannelsWithHttpInfo() {
       opts = opts || {};
@@ -1476,7 +1476,7 @@ export default class LiveTvServiceApi {
       let authNames = ['apikeyauth', 'embyauth'];
       let contentTypes = [];
       let accepts = ['application/json', 'application/xml'];
-      let returnType = QueryResultChannelManagementInfo;
+      let returnType = QueryResultBaseItemDto;
 
       return this.apiClient.callApi(
         '/LiveTv/Manage/Channels', 'GET',
@@ -1489,7 +1489,7 @@ export default class LiveTvServiceApi {
      * Gets the channel management list
      * Requires authentication as administrator
      * @param {Object} opts Optional parameters
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QueryResultChannelManagementInfo}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QueryResultBaseItemDto}
      */
     getLivetvManageChannels() {
       return this.getLivetvManageChannelsWithHttpInfo()

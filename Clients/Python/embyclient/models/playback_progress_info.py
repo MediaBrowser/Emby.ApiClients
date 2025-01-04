@@ -23,7 +23,6 @@ class PlaybackProgressInfo(object):
     """
     swagger_types = {
         'can_seek': 'bool',
-        'item': 'BaseItemDto',
         'now_playing_queue': 'list[QueueItem]',
         'playlist_item_id': 'str',
         'item_id': 'str',
@@ -35,7 +34,6 @@ class PlaybackProgressInfo(object):
         'playlist_index': 'int',
         'playlist_length': 'int',
         'is_muted': 'bool',
-        'position_ticks': 'int',
         'run_time_ticks': 'int',
         'playback_start_time_ticks': 'int',
         'volume_level': 'int',
@@ -44,17 +42,18 @@ class PlaybackProgressInfo(object):
         'event_name': 'ProgressEvent',
         'play_method': 'PlayMethod',
         'live_stream_id': 'str',
-        'play_session_id': 'str',
         'repeat_mode': 'RepeatMode',
         'shuffle': 'bool',
         'subtitle_offset': 'int',
         'playback_rate': 'float',
-        'playlist_item_ids': 'list[str]'
+        'playlist_item_ids': 'list[str]',
+        'play_session_id': 'str',
+        'item': 'BaseItemDto',
+        'position_ticks': 'int'
     }
 
     attribute_map = {
         'can_seek': 'CanSeek',
-        'item': 'Item',
         'now_playing_queue': 'NowPlayingQueue',
         'playlist_item_id': 'PlaylistItemId',
         'item_id': 'ItemId',
@@ -66,7 +65,6 @@ class PlaybackProgressInfo(object):
         'playlist_index': 'PlaylistIndex',
         'playlist_length': 'PlaylistLength',
         'is_muted': 'IsMuted',
-        'position_ticks': 'PositionTicks',
         'run_time_ticks': 'RunTimeTicks',
         'playback_start_time_ticks': 'PlaybackStartTimeTicks',
         'volume_level': 'VolumeLevel',
@@ -75,18 +73,19 @@ class PlaybackProgressInfo(object):
         'event_name': 'EventName',
         'play_method': 'PlayMethod',
         'live_stream_id': 'LiveStreamId',
-        'play_session_id': 'PlaySessionId',
         'repeat_mode': 'RepeatMode',
         'shuffle': 'Shuffle',
         'subtitle_offset': 'SubtitleOffset',
         'playback_rate': 'PlaybackRate',
-        'playlist_item_ids': 'PlaylistItemIds'
+        'playlist_item_ids': 'PlaylistItemIds',
+        'play_session_id': 'PlaySessionId',
+        'item': 'Item',
+        'position_ticks': 'PositionTicks'
     }
 
-    def __init__(self, can_seek=None, item=None, now_playing_queue=None, playlist_item_id=None, item_id=None, session_id=None, media_source_id=None, audio_stream_index=None, subtitle_stream_index=None, is_paused=None, playlist_index=None, playlist_length=None, is_muted=None, position_ticks=None, run_time_ticks=None, playback_start_time_ticks=None, volume_level=None, brightness=None, aspect_ratio=None, event_name=None, play_method=None, live_stream_id=None, play_session_id=None, repeat_mode=None, shuffle=None, subtitle_offset=None, playback_rate=None, playlist_item_ids=None):  # noqa: E501
+    def __init__(self, can_seek=None, now_playing_queue=None, playlist_item_id=None, item_id=None, session_id=None, media_source_id=None, audio_stream_index=None, subtitle_stream_index=None, is_paused=None, playlist_index=None, playlist_length=None, is_muted=None, run_time_ticks=None, playback_start_time_ticks=None, volume_level=None, brightness=None, aspect_ratio=None, event_name=None, play_method=None, live_stream_id=None, repeat_mode=None, shuffle=None, subtitle_offset=None, playback_rate=None, playlist_item_ids=None, play_session_id=None, item=None, position_ticks=None):  # noqa: E501
         """PlaybackProgressInfo - a model defined in Swagger"""  # noqa: E501
         self._can_seek = None
-        self._item = None
         self._now_playing_queue = None
         self._playlist_item_id = None
         self._item_id = None
@@ -98,7 +97,6 @@ class PlaybackProgressInfo(object):
         self._playlist_index = None
         self._playlist_length = None
         self._is_muted = None
-        self._position_ticks = None
         self._run_time_ticks = None
         self._playback_start_time_ticks = None
         self._volume_level = None
@@ -107,17 +105,17 @@ class PlaybackProgressInfo(object):
         self._event_name = None
         self._play_method = None
         self._live_stream_id = None
-        self._play_session_id = None
         self._repeat_mode = None
         self._shuffle = None
         self._subtitle_offset = None
         self._playback_rate = None
         self._playlist_item_ids = None
+        self._play_session_id = None
+        self._item = None
+        self._position_ticks = None
         self.discriminator = None
         if can_seek is not None:
             self.can_seek = can_seek
-        if item is not None:
-            self.item = item
         if now_playing_queue is not None:
             self.now_playing_queue = now_playing_queue
         if playlist_item_id is not None:
@@ -140,8 +138,6 @@ class PlaybackProgressInfo(object):
             self.playlist_length = playlist_length
         if is_muted is not None:
             self.is_muted = is_muted
-        if position_ticks is not None:
-            self.position_ticks = position_ticks
         if run_time_ticks is not None:
             self.run_time_ticks = run_time_ticks
         if playback_start_time_ticks is not None:
@@ -158,8 +154,6 @@ class PlaybackProgressInfo(object):
             self.play_method = play_method
         if live_stream_id is not None:
             self.live_stream_id = live_stream_id
-        if play_session_id is not None:
-            self.play_session_id = play_session_id
         if repeat_mode is not None:
             self.repeat_mode = repeat_mode
         if shuffle is not None:
@@ -170,6 +164,12 @@ class PlaybackProgressInfo(object):
             self.playback_rate = playback_rate
         if playlist_item_ids is not None:
             self.playlist_item_ids = playlist_item_ids
+        if play_session_id is not None:
+            self.play_session_id = play_session_id
+        if item is not None:
+            self.item = item
+        if position_ticks is not None:
+            self.position_ticks = position_ticks
 
     @property
     def can_seek(self):
@@ -193,27 +193,6 @@ class PlaybackProgressInfo(object):
         """
 
         self._can_seek = can_seek
-
-    @property
-    def item(self):
-        """Gets the item of this PlaybackProgressInfo.  # noqa: E501
-
-
-        :return: The item of this PlaybackProgressInfo.  # noqa: E501
-        :rtype: BaseItemDto
-        """
-        return self._item
-
-    @item.setter
-    def item(self, item):
-        """Sets the item of this PlaybackProgressInfo.
-
-
-        :param item: The item of this PlaybackProgressInfo.  # noqa: E501
-        :type: BaseItemDto
-        """
-
-        self._item = item
 
     @property
     def now_playing_queue(self):
@@ -461,29 +440,6 @@ class PlaybackProgressInfo(object):
         self._is_muted = is_muted
 
     @property
-    def position_ticks(self):
-        """Gets the position_ticks of this PlaybackProgressInfo.  # noqa: E501
-
-        The position ticks.  # noqa: E501
-
-        :return: The position_ticks of this PlaybackProgressInfo.  # noqa: E501
-        :rtype: int
-        """
-        return self._position_ticks
-
-    @position_ticks.setter
-    def position_ticks(self, position_ticks):
-        """Sets the position_ticks of this PlaybackProgressInfo.
-
-        The position ticks.  # noqa: E501
-
-        :param position_ticks: The position_ticks of this PlaybackProgressInfo.  # noqa: E501
-        :type: int
-        """
-
-        self._position_ticks = position_ticks
-
-    @property
     def run_time_ticks(self):
         """Gets the run_time_ticks of this PlaybackProgressInfo.  # noqa: E501
 
@@ -656,29 +612,6 @@ class PlaybackProgressInfo(object):
         self._live_stream_id = live_stream_id
 
     @property
-    def play_session_id(self):
-        """Gets the play_session_id of this PlaybackProgressInfo.  # noqa: E501
-
-        The play session identifier.  # noqa: E501
-
-        :return: The play_session_id of this PlaybackProgressInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._play_session_id
-
-    @play_session_id.setter
-    def play_session_id(self, play_session_id):
-        """Sets the play_session_id of this PlaybackProgressInfo.
-
-        The play session identifier.  # noqa: E501
-
-        :param play_session_id: The play_session_id of this PlaybackProgressInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._play_session_id = play_session_id
-
-    @property
     def repeat_mode(self):
         """Gets the repeat_mode of this PlaybackProgressInfo.  # noqa: E501
 
@@ -782,6 +715,73 @@ class PlaybackProgressInfo(object):
         """
 
         self._playlist_item_ids = playlist_item_ids
+
+    @property
+    def play_session_id(self):
+        """Gets the play_session_id of this PlaybackProgressInfo.  # noqa: E501
+
+        The play session identifier.  # noqa: E501
+
+        :return: The play_session_id of this PlaybackProgressInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._play_session_id
+
+    @play_session_id.setter
+    def play_session_id(self, play_session_id):
+        """Sets the play_session_id of this PlaybackProgressInfo.
+
+        The play session identifier.  # noqa: E501
+
+        :param play_session_id: The play_session_id of this PlaybackProgressInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._play_session_id = play_session_id
+
+    @property
+    def item(self):
+        """Gets the item of this PlaybackProgressInfo.  # noqa: E501
+
+
+        :return: The item of this PlaybackProgressInfo.  # noqa: E501
+        :rtype: BaseItemDto
+        """
+        return self._item
+
+    @item.setter
+    def item(self, item):
+        """Sets the item of this PlaybackProgressInfo.
+
+
+        :param item: The item of this PlaybackProgressInfo.  # noqa: E501
+        :type: BaseItemDto
+        """
+
+        self._item = item
+
+    @property
+    def position_ticks(self):
+        """Gets the position_ticks of this PlaybackProgressInfo.  # noqa: E501
+
+        The position ticks.  # noqa: E501
+
+        :return: The position_ticks of this PlaybackProgressInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._position_ticks
+
+    @position_ticks.setter
+    def position_ticks(self, position_ticks):
+        """Sets the position_ticks of this PlaybackProgressInfo.
+
+        The position ticks.  # noqa: E501
+
+        :param position_ticks: The position_ticks of this PlaybackProgressInfo.  # noqa: E501
+        :type: int
+        """
+
+        self._position_ticks = position_ticks
 
     def to_dict(self):
         """Returns the model properties as a dict"""

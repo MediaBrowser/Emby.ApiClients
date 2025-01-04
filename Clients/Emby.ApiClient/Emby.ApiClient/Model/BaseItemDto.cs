@@ -69,6 +69,12 @@ namespace Emby.ApiClient.Model
         public string Prefix { get; set; }
 
         /// <summary>
+        /// Gets or Sets TunerName
+        /// </summary>
+        /// <value>The TunerName.</value>
+        public string TunerName { get; set; }
+
+        /// <summary>
         /// The playlist item identifier.
         /// </summary>
         /// <value>The PlaylistItemId.</value>
@@ -965,6 +971,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  Guid: ").Append(Guid).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
+            sb.Append("  TunerName: ").Append(TunerName).Append("\n");
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
             sb.Append("  ExtraType: ").Append(ExtraType).Append("\n");
@@ -1171,6 +1178,11 @@ namespace Emby.ApiClient.Model
                     this.Prefix == input.Prefix ||
                     (this.Prefix != null &&
                     this.Prefix.Equals(input.Prefix))
+                ) && 
+                (
+                    this.TunerName == input.TunerName ||
+                    (this.TunerName != null &&
+                    this.TunerName.Equals(input.TunerName))
                 ) && 
                 (
                     this.PlaylistItemId == input.PlaylistItemId ||
@@ -1955,6 +1967,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Prefix != null)
                     hashCode = hashCode * 59 + this.Prefix.GetHashCode();
+                if (this.TunerName != null)
+                    hashCode = hashCode * 59 + this.TunerName.GetHashCode();
                 if (this.PlaylistItemId != null)
                     hashCode = hashCode * 59 + this.PlaylistItemId.GetHashCode();
                 if (this.DateCreated != null)
