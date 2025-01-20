@@ -18,7 +18,7 @@ import ProxyHeaderMode from './ProxyHeaderMode';
 /**
 * The ServerConfiguration model module.
 * @module model/ServerConfiguration
-* @version 4.9.0.35
+* @version 4.9.0.36
 */
 export default class ServerConfiguration {
     /**
@@ -196,8 +196,11 @@ export default class ServerConfiguration {
             if (data.hasOwnProperty('Max_LibraryDbConnections')) {
                 obj['Max_LibraryDbConnections'] = ApiClient.convertToType(data['Max_LibraryDbConnections'], 'Number');
             }
-            if (data.hasOwnProperty('Max_OtherDbConnections')) {
-                obj['Max_OtherDbConnections'] = ApiClient.convertToType(data['Max_OtherDbConnections'], 'Number');
+            if (data.hasOwnProperty('MaxAuthDbConnections')) {
+                obj['MaxAuthDbConnections'] = ApiClient.convertToType(data['MaxAuthDbConnections'], 'Number');
+            }
+            if (data.hasOwnProperty('MaxOtherDbConnections')) {
+                obj['MaxOtherDbConnections'] = ApiClient.convertToType(data['MaxOtherDbConnections'], 'Number');
             }
             if (data.hasOwnProperty('DisableAsyncIO')) {
                 obj['DisableAsyncIO'] = ApiClient.convertToType(data['DisableAsyncIO'], 'Boolean');
@@ -462,9 +465,13 @@ export default class ServerConfiguration {
     */
     'Max_LibraryDbConnections' = undefined;
     /**
-    * @member {Number} Max_OtherDbConnections
+    * @member {Number} MaxAuthDbConnections
     */
-    'Max_OtherDbConnections' = undefined;
+    'MaxAuthDbConnections' = undefined;
+    /**
+    * @member {Number} MaxOtherDbConnections
+    */
+    'MaxOtherDbConnections' = undefined;
     /**
     * @member {Boolean} DisableAsyncIO
     */

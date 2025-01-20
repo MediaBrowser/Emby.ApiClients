@@ -18,7 +18,7 @@ import SyncTarget from './SyncTarget';
 /**
 * The SyncDialogOptions model module.
 * @module model/SyncDialogOptions
-* @version 4.9.0.35
+* @version 4.9.0.36
 */
 export default class SyncDialogOptions {
     /**

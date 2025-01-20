@@ -15,7 +15,7 @@ import DynamicDayOfWeek from './DynamicDayOfWeek';
 /**
 * The AccessSchedule model module.
 * @module model/AccessSchedule
-* @version 4.9.0.35
+* @version 4.9.0.36
 */
 export default class AccessSchedule {
     /**

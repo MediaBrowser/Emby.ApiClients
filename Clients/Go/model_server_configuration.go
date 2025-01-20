@@ -74,7 +74,8 @@ type ServerConfiguration struct {
 	OptimizeDatabaseOnShutdown bool `json:"OptimizeDatabaseOnShutdown,omitempty"`
 	DatabaseAnalysisLimit int32 `json:"DatabaseAnalysisLimit,omitempty"`
 	MaxLibraryDbConnections int32 `json:"Max_LibraryDbConnections,omitempty"`
-	MaxOtherDbConnections int32 `json:"Max_OtherDbConnections,omitempty"`
+	MaxAuthDbConnections int32 `json:"MaxAuthDbConnections,omitempty"`
+	MaxOtherDbConnections int32 `json:"MaxOtherDbConnections,omitempty"`
 	DisableAsyncIO bool `json:"DisableAsyncIO,omitempty"`
 	MigratedToUserItemShares8 bool `json:"MigratedToUserItemShares8,omitempty"`
 	MigratedLibraryOptionsToDb bool `json:"MigratedLibraryOptionsToDb,omitempty"`

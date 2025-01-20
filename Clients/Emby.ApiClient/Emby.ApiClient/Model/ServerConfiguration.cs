@@ -327,10 +327,16 @@ namespace Emby.ApiClient.Model
         public int? Max_LibraryDbConnections { get; set; }
 
         /// <summary>
-        /// Gets or Sets Max_OtherDbConnections
+        /// Gets or Sets MaxAuthDbConnections
         /// </summary>
-        /// <value>The Max_OtherDbConnections.</value>
-        public int? Max_OtherDbConnections { get; set; }
+        /// <value>The MaxAuthDbConnections.</value>
+        public int? MaxAuthDbConnections { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaxOtherDbConnections
+        /// </summary>
+        /// <value>The MaxOtherDbConnections.</value>
+        public int? MaxOtherDbConnections { get; set; }
 
         /// <summary>
         /// Gets or Sets DisableAsyncIO
@@ -474,7 +480,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  OptimizeDatabaseOnShutdown: ").Append(OptimizeDatabaseOnShutdown).Append("\n");
             sb.Append("  DatabaseAnalysisLimit: ").Append(DatabaseAnalysisLimit).Append("\n");
             sb.Append("  Max_LibraryDbConnections: ").Append(Max_LibraryDbConnections).Append("\n");
-            sb.Append("  Max_OtherDbConnections: ").Append(Max_OtherDbConnections).Append("\n");
+            sb.Append("  MaxAuthDbConnections: ").Append(MaxAuthDbConnections).Append("\n");
+            sb.Append("  MaxOtherDbConnections: ").Append(MaxOtherDbConnections).Append("\n");
             sb.Append("  DisableAsyncIO: ").Append(DisableAsyncIO).Append("\n");
             sb.Append("  MigratedToUserItemShares8: ").Append(MigratedToUserItemShares8).Append("\n");
             sb.Append("  MigratedLibraryOptionsToDb: ").Append(MigratedLibraryOptionsToDb).Append("\n");
@@ -771,9 +778,14 @@ namespace Emby.ApiClient.Model
                     this.Max_LibraryDbConnections.Equals(input.Max_LibraryDbConnections))
                 ) && 
                 (
-                    this.Max_OtherDbConnections == input.Max_OtherDbConnections ||
-                    (this.Max_OtherDbConnections != null &&
-                    this.Max_OtherDbConnections.Equals(input.Max_OtherDbConnections))
+                    this.MaxAuthDbConnections == input.MaxAuthDbConnections ||
+                    (this.MaxAuthDbConnections != null &&
+                    this.MaxAuthDbConnections.Equals(input.MaxAuthDbConnections))
+                ) && 
+                (
+                    this.MaxOtherDbConnections == input.MaxOtherDbConnections ||
+                    (this.MaxOtherDbConnections != null &&
+                    this.MaxOtherDbConnections.Equals(input.MaxOtherDbConnections))
                 ) && 
                 (
                     this.DisableAsyncIO == input.DisableAsyncIO ||
@@ -956,8 +968,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.DatabaseAnalysisLimit.GetHashCode();
                 if (this.Max_LibraryDbConnections != null)
                     hashCode = hashCode * 59 + this.Max_LibraryDbConnections.GetHashCode();
-                if (this.Max_OtherDbConnections != null)
-                    hashCode = hashCode * 59 + this.Max_OtherDbConnections.GetHashCode();
+                if (this.MaxAuthDbConnections != null)
+                    hashCode = hashCode * 59 + this.MaxAuthDbConnections.GetHashCode();
+                if (this.MaxOtherDbConnections != null)
+                    hashCode = hashCode * 59 + this.MaxOtherDbConnections.GetHashCode();
                 if (this.DisableAsyncIO != null)
                     hashCode = hashCode * 59 + this.DisableAsyncIO.GetHashCode();
                 if (this.MigratedToUserItemShares8 != null)

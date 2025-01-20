@@ -14,18 +14,107 @@ open class InstantMixServiceAPI {
      Creates an instant playlist based on a given album
 
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getAlbumsByIdInstantmix(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getAlbumsByIdInstantmixWithRequestBuilder(_id: _id, includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getAlbumsByIdInstantmix(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getAlbumsByIdInstantmixWithRequestBuilder(_id: _id, artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -1132,18 +1221,107 @@ open class InstantMixServiceAPI {
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getAlbumsByIdInstantmixWithRequestBuilder(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getAlbumsByIdInstantmixWithRequestBuilder(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         var path = "/Albums/{Id}/InstantMix"
         let _idPreEscape = "\(_id)"
         let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1152,14 +1330,103 @@ open class InstantMixServiceAPI {
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
@@ -1170,18 +1437,107 @@ open class InstantMixServiceAPI {
     /**
      Creates an instant playlist based on a given artist
 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getArtistsInstantmix(includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getArtistsInstantmixWithRequestBuilder(includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getArtistsInstantmix(artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getArtistsInstantmixWithRequestBuilder(artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -2287,31 +2643,209 @@ open class InstantMixServiceAPI {
     description: API Documentation: Item Information
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getArtistsInstantmixWithRequestBuilder(includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getArtistsInstantmixWithRequestBuilder(artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         let path = "/Artists/InstantMix"
         let URLString = EmbyClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
@@ -3481,18 +4015,107 @@ open class InstantMixServiceAPI {
      Creates an instant playlist based on a given item
 
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getItemsByIdInstantmix(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getItemsByIdInstantmixWithRequestBuilder(_id: _id, includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getItemsByIdInstantmix(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getItemsByIdInstantmixWithRequestBuilder(_id: _id, artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -4599,18 +5222,107 @@ open class InstantMixServiceAPI {
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getItemsByIdInstantmixWithRequestBuilder(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getItemsByIdInstantmixWithRequestBuilder(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         var path = "/Items/{Id}/InstantMix"
         let _idPreEscape = "\(_id)"
         let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -4619,14 +5331,103 @@ open class InstantMixServiceAPI {
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
@@ -4638,18 +5439,107 @@ open class InstantMixServiceAPI {
      Creates an instant playlist based on a music genre
 
      - parameter name: (path) The genre name 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getMusicgenresByNameInstantmix(name: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getMusicgenresByNameInstantmixWithRequestBuilder(name: name, includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getMusicgenresByNameInstantmix(name: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getMusicgenresByNameInstantmixWithRequestBuilder(name: name, artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -5756,18 +6646,107 @@ open class InstantMixServiceAPI {
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
      - parameter name: (path) The genre name 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getMusicgenresByNameInstantmixWithRequestBuilder(name: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getMusicgenresByNameInstantmixWithRequestBuilder(name: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         var path = "/MusicGenres/{Name}/InstantMix"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -5776,14 +6755,103 @@ open class InstantMixServiceAPI {
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
@@ -5794,18 +6862,107 @@ open class InstantMixServiceAPI {
     /**
      Creates an instant playlist based on a music genre
 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getMusicgenresInstantmix(includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getMusicgenresInstantmixWithRequestBuilder(includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getMusicgenresInstantmix(artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getMusicgenresInstantmixWithRequestBuilder(artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -6911,31 +8068,209 @@ open class InstantMixServiceAPI {
     description: API Documentation: Item Information
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getMusicgenresInstantmixWithRequestBuilder(includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getMusicgenresInstantmixWithRequestBuilder(artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         let path = "/MusicGenres/InstantMix"
         let URLString = EmbyClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
@@ -6947,18 +8282,107 @@ open class InstantMixServiceAPI {
      Creates an instant playlist based on a given playlist
 
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getPlaylistsByIdInstantmix(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getPlaylistsByIdInstantmixWithRequestBuilder(_id: _id, includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getPlaylistsByIdInstantmix(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getPlaylistsByIdInstantmixWithRequestBuilder(_id: _id, artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -8065,18 +9489,107 @@ open class InstantMixServiceAPI {
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getPlaylistsByIdInstantmixWithRequestBuilder(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getPlaylistsByIdInstantmixWithRequestBuilder(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         var path = "/Playlists/{Id}/InstantMix"
         let _idPreEscape = "\(_id)"
         let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -8085,14 +9598,103 @@ open class InstantMixServiceAPI {
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
@@ -8104,18 +9706,107 @@ open class InstantMixServiceAPI {
      Creates an instant playlist based on a given song
 
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getSongsByIdInstantmix(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
-        getSongsByIdInstantmixWithRequestBuilder(_id: _id, includeItemTypes: includeItemTypes, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, userId: userId, limit: limit, fields: fields).execute { (response, error) -> Void in
+    open class func getSongsByIdInstantmix(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil, completion: @escaping ((_ data: QueryResultBaseItemDto?,_ error: Error?) -> Void)) {
+        getSongsByIdInstantmixWithRequestBuilder(_id: _id, artistType: artistType, maxOfficialRating: maxOfficialRating, hasThemeSong: hasThemeSong, hasThemeVideo: hasThemeVideo, hasSubtitles: hasSubtitles, hasSpecialFeature: hasSpecialFeature, hasTrailer: hasTrailer, adjacentTo: adjacentTo, minIndexNumber: minIndexNumber, minStartDate: minStartDate, maxStartDate: maxStartDate, minEndDate: minEndDate, maxEndDate: maxEndDate, minPlayers: minPlayers, maxPlayers: maxPlayers, parentIndexNumber: parentIndexNumber, hasParentalRating: hasParentalRating, isHD: isHD, isUnaired: isUnaired, minCommunityRating: minCommunityRating, minCriticRating: minCriticRating, airedDuringSeason: airedDuringSeason, minPremiereDate: minPremiereDate, minDateLastSaved: minDateLastSaved, minDateLastSavedForUser: minDateLastSavedForUser, maxPremiereDate: maxPremiereDate, hasOverview: hasOverview, hasImdbId: hasImdbId, hasTmdbId: hasTmdbId, hasTvdbId: hasTvdbId, excludeItemIds: excludeItemIds, startIndex: startIndex, limit: limit, recursive: recursive, searchTerm: searchTerm, sortOrder: sortOrder, parentId: parentId, fields: fields, excludeItemTypes: excludeItemTypes, includeItemTypes: includeItemTypes, anyProviderIdEquals: anyProviderIdEquals, filters: filters, isFavorite: isFavorite, isMovie: isMovie, isSeries: isSeries, isFolder: isFolder, isNews: isNews, isKids: isKids, isSports: isSports, isNew: isNew, isPremiere: isPremiere, isNewOrPremiere: isNewOrPremiere, isRepeat: isRepeat, projectToMedia: projectToMedia, mediaTypes: mediaTypes, imageTypes: imageTypes, sortBy: sortBy, isPlayed: isPlayed, genres: genres, officialRatings: officialRatings, tags: tags, excludeTags: excludeTags, years: years, enableImages: enableImages, enableUserData: enableUserData, imageTypeLimit: imageTypeLimit, enableImageTypes: enableImageTypes, person: person, personIds: personIds, personTypes: personTypes, studios: studios, studioIds: studioIds, artists: artists, artistIds: artistIds, albums: albums, ids: ids, videoTypes: videoTypes, containers: containers, audioCodecs: audioCodecs, audioLayouts: audioLayouts, videoCodecs: videoCodecs, extendedVideoTypes: extendedVideoTypes, subtitleCodecs: subtitleCodecs, path: path, userId: userId, minOfficialRating: minOfficialRating, isLocked: isLocked, isPlaceHolder: isPlaceHolder, hasOfficialRating: hasOfficialRating, groupItemsIntoCollections: groupItemsIntoCollections, is3D: is3D, seriesStatus: seriesStatus, nameStartsWithOrGreater: nameStartsWithOrGreater, artistStartsWithOrGreater: artistStartsWithOrGreater, albumArtistStartsWithOrGreater: albumArtistStartsWithOrGreater, nameStartsWith: nameStartsWith, nameLessThan: nameLessThan).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -9222,18 +10913,107 @@ open class InstantMixServiceAPI {
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
      - parameter _id: (path) Item Id 
+     - parameter artistType: (query) Artist or AlbumArtist (optional)
+     - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
+     - parameter hasThemeVideo: (query) Optional filter by items with theme videos. (optional)
+     - parameter hasSubtitles: (query) Optional filter by items with subtitles. (optional)
+     - parameter hasSpecialFeature: (query) Optional filter by items with special features. (optional)
+     - parameter hasTrailer: (query) Optional filter by items with trailers. (optional)
+     - parameter adjacentTo: (query) Optional. Return items that are siblings of a supplied item. (optional)
+     - parameter minIndexNumber: (query) Optional filter by minimum index number. (optional)
+     - parameter minStartDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxStartDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minEndDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxEndDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter minPlayers: (query) Optional filter by minimum number of game players. (optional)
+     - parameter maxPlayers: (query) Optional filter by maximum number of game players. (optional)
+     - parameter parentIndexNumber: (query) Optional filter by parent index number. (optional)
+     - parameter hasParentalRating: (query) Optional filter by items that have or do not have a parental rating (optional)
+     - parameter isHD: (query) Optional filter by items that are HD or not. (optional)
+     - parameter isUnaired: (query) Optional filter by items that are unaired episodes or not. (optional)
+     - parameter minCommunityRating: (query) Optional filter by minimum community rating. (optional)
+     - parameter minCriticRating: (query) Optional filter by minimum critic rating. (optional)
+     - parameter airedDuringSeason: (query) Gets all episodes that aired during a season, including specials. (optional)
+     - parameter minPremiereDate: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSaved: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter minDateLastSavedForUser: (query) Optional. The minimum premiere date. Format &#x3D; ISO (optional)
+     - parameter maxPremiereDate: (query) Optional. The maximum premiere date. Format &#x3D; ISO (optional)
+     - parameter hasOverview: (query) Optional filter by items that have an overview or not. (optional)
+     - parameter hasImdbId: (query) Optional filter by items that have an imdb id or not. (optional)
+     - parameter hasTmdbId: (query) Optional filter by items that have a tmdb id or not. (optional)
+     - parameter hasTvdbId: (query) Optional filter by items that have a tvdb id or not. (optional)
+     - parameter excludeItemIds: (query) Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted. (optional)
+     - parameter startIndex: (query) Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
+     - parameter limit: (query) Optional. The maximum number of records to return (optional)
+     - parameter recursive: (query) When searching within folders, this determines whether or not the search will be recursive. true/false (optional)
+     - parameter searchTerm: (query) Enter a search term to perform a search request (optional)
+     - parameter sortOrder: (query) Sort Order - Ascending,Descending (optional)
+     - parameter parentId: (query) Specify this to localize the search to a specific item or folder. Omit to use the root (optional)
+     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines (optional)
+     - parameter excludeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
      - parameter includeItemTypes: (query) Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimeted. (optional)
+     - parameter anyProviderIdEquals: (query) Optional. If specified, result will be filtered to contain only items which match at least one of the specified IDs. Each provider ID must be in the form &#x27;prov.id&#x27;, e.g. &#x27;imdb.tt123456&#x27;. This allows multiple, comma delimeted value pairs. (optional)
+     - parameter filters: (query) Optional. Specify additional filters to apply. This allows multiple, comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes (optional)
+     - parameter isFavorite: (query) Optional filter by items that are marked as favorite, or not. (optional)
+     - parameter isMovie: (query) Optional filter for movies. (optional)
+     - parameter isSeries: (query) Optional filter for series. (optional)
+     - parameter isFolder: (query) Optional filter for folders. (optional)
+     - parameter isNews: (query) Optional filter for news. (optional)
+     - parameter isKids: (query) Optional filter for kids. (optional)
+     - parameter isSports: (query) Optional filter for sports. (optional)
+     - parameter isNew: (query) Optional filter for IsNew. (optional)
+     - parameter isPremiere: (query) Optional filter for IsPremiere. (optional)
+     - parameter isNewOrPremiere: (query) Optional filter for IsNewOrPremiere. (optional)
+     - parameter isRepeat: (query) Optional filter for IsRepeat. (optional)
+     - parameter projectToMedia: (query) ProjectToMedia (optional)
+     - parameter mediaTypes: (query) Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+     - parameter imageTypes: (query) Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+     - parameter sortBy: (query) Optional. Specify one or more sort orders, comma delimeted. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime (optional)
+     - parameter isPlayed: (query) Optional filter by items that are played, or not. (optional)
+     - parameter genres: (query) Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimeted. (optional)
+     - parameter officialRatings: (query) Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimeted. (optional)
+     - parameter tags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter excludeTags: (query) Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimeted. (optional)
+     - parameter years: (query) Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted. (optional)
      - parameter enableImages: (query) Optional, include image information in output (optional)
      - parameter enableUserData: (query) Optional, include user data (optional)
      - parameter imageTypeLimit: (query) Optional, the max number of images to return, per image type (optional)
      - parameter enableImageTypes: (query) Optional. The image types to include in the output. (optional)
-     - parameter userId: (query) Optional. Filter by user id, and attach user data (optional)
-     - parameter limit: (query) Optional. The maximum number of records to return (optional)
-     - parameter fields: (query) Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimeted. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls (optional)
+     - parameter person: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personIds: (query) Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
+     - parameter personTypes: (query) Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited (optional)
+     - parameter studios: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter studioIds: (query) Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimeted. (optional)
+     - parameter artists: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter artistIds: (query) Optional. If specified, results will be filtered based on artist. This allows multiple, pipe delimeted. (optional)
+     - parameter albums: (query) Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimeted. (optional)
+     - parameter ids: (query) Optional. If specific items are needed, specify a list of item id&#x27;s to retrieve. This allows multiple, comma delimited. (optional)
+     - parameter videoTypes: (query) Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimeted. (optional)
+     - parameter containers: (query) Optional filter by Container. Allows multiple, comma delimeted. (optional)
+     - parameter audioCodecs: (query) Optional filter by AudioCodec. Allows multiple, comma delimeted. (optional)
+     - parameter audioLayouts: (query) Optional filter by AudioLayout. Allows multiple, comma delimeted. (optional)
+     - parameter videoCodecs: (query) Optional filter by VideoCodec. Allows multiple, comma delimeted. (optional)
+     - parameter extendedVideoTypes: (query) Optional filter by ExtendedVideoType. Allows multiple, comma delimeted. (optional)
+     - parameter subtitleCodecs: (query) Optional filter by SubtitleCodec. Allows multiple, comma delimeted. (optional)
+     - parameter path: (query) Optional filter by Path. (optional)
+     - parameter userId: (query) User Id (optional)
+     - parameter minOfficialRating: (query) Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
+     - parameter isLocked: (query) Optional filter by items that are locked. (optional)
+     - parameter isPlaceHolder: (query) Optional filter by items that are placeholders (optional)
+     - parameter hasOfficialRating: (query) Optional filter by items that have official ratings (optional)
+     - parameter groupItemsIntoCollections: (query) Whether or not to hide items behind their boxsets. (optional)
+     - parameter is3D: (query) Optional filter by items that are 3D, or not. (optional)
+     - parameter seriesStatus: (query) Optional filter by Series Status. Allows multiple, comma delimeted. (optional)
+     - parameter nameStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter artistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter albumArtistStartsWithOrGreater: (query) Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
+     - parameter nameStartsWith: (query) Optional filter by items whose name is sorted equally than a given input string. (optional)
+     - parameter nameLessThan: (query) Optional filter by items whose name is equally or lesser than a given input string. (optional)
 
      - returns: RequestBuilder<QueryResultBaseItemDto> 
      */
-    open class func getSongsByIdInstantmixWithRequestBuilder(_id: String, includeItemTypes: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, userId: String? = nil, limit: Int? = nil, fields: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
+    open class func getSongsByIdInstantmixWithRequestBuilder(_id: String, artistType: String? = nil, maxOfficialRating: String? = nil, hasThemeSong: Bool? = nil, hasThemeVideo: Bool? = nil, hasSubtitles: Bool? = nil, hasSpecialFeature: Bool? = nil, hasTrailer: Bool? = nil, adjacentTo: String? = nil, minIndexNumber: Int? = nil, minStartDate: String? = nil, maxStartDate: String? = nil, minEndDate: String? = nil, maxEndDate: String? = nil, minPlayers: Int? = nil, maxPlayers: Int? = nil, parentIndexNumber: Int? = nil, hasParentalRating: Bool? = nil, isHD: Bool? = nil, isUnaired: Bool? = nil, minCommunityRating: Double? = nil, minCriticRating: Double? = nil, airedDuringSeason: Int? = nil, minPremiereDate: String? = nil, minDateLastSaved: String? = nil, minDateLastSavedForUser: String? = nil, maxPremiereDate: String? = nil, hasOverview: Bool? = nil, hasImdbId: Bool? = nil, hasTmdbId: Bool? = nil, hasTvdbId: Bool? = nil, excludeItemIds: String? = nil, startIndex: Int? = nil, limit: Int? = nil, recursive: Bool? = nil, searchTerm: String? = nil, sortOrder: String? = nil, parentId: String? = nil, fields: String? = nil, excludeItemTypes: String? = nil, includeItemTypes: String? = nil, anyProviderIdEquals: String? = nil, filters: String? = nil, isFavorite: Bool? = nil, isMovie: Bool? = nil, isSeries: Bool? = nil, isFolder: Bool? = nil, isNews: Bool? = nil, isKids: Bool? = nil, isSports: Bool? = nil, isNew: Bool? = nil, isPremiere: Bool? = nil, isNewOrPremiere: Bool? = nil, isRepeat: Bool? = nil, projectToMedia: Bool? = nil, mediaTypes: String? = nil, imageTypes: String? = nil, sortBy: String? = nil, isPlayed: Bool? = nil, genres: String? = nil, officialRatings: String? = nil, tags: String? = nil, excludeTags: String? = nil, years: String? = nil, enableImages: Bool? = nil, enableUserData: Bool? = nil, imageTypeLimit: Int? = nil, enableImageTypes: String? = nil, person: String? = nil, personIds: String? = nil, personTypes: String? = nil, studios: String? = nil, studioIds: String? = nil, artists: String? = nil, artistIds: String? = nil, albums: String? = nil, ids: String? = nil, videoTypes: String? = nil, containers: String? = nil, audioCodecs: String? = nil, audioLayouts: String? = nil, videoCodecs: String? = nil, extendedVideoTypes: String? = nil, subtitleCodecs: String? = nil, path: String? = nil, userId: String? = nil, minOfficialRating: String? = nil, isLocked: Bool? = nil, isPlaceHolder: Bool? = nil, hasOfficialRating: Bool? = nil, groupItemsIntoCollections: Bool? = nil, is3D: Bool? = nil, seriesStatus: String? = nil, nameStartsWithOrGreater: String? = nil, artistStartsWithOrGreater: String? = nil, albumArtistStartsWithOrGreater: String? = nil, nameStartsWith: String? = nil, nameLessThan: String? = nil) -> RequestBuilder<QueryResultBaseItemDto> {
         var path = "/Songs/{Id}/InstantMix"
         let _idPreEscape = "\(_id)"
         let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -9242,14 +11022,103 @@ open class InstantMixServiceAPI {
         let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
+                        "ArtistType": artistType, 
+                        "MaxOfficialRating": maxOfficialRating, 
+                        "HasThemeSong": hasThemeSong, 
+                        "HasThemeVideo": hasThemeVideo, 
+                        "HasSubtitles": hasSubtitles, 
+                        "HasSpecialFeature": hasSpecialFeature, 
+                        "HasTrailer": hasTrailer, 
+                        "AdjacentTo": adjacentTo, 
+                        "MinIndexNumber": minIndexNumber?.encodeToJSON(), 
+                        "MinStartDate": minStartDate, 
+                        "MaxStartDate": maxStartDate, 
+                        "MinEndDate": minEndDate, 
+                        "MaxEndDate": maxEndDate, 
+                        "MinPlayers": minPlayers?.encodeToJSON(), 
+                        "MaxPlayers": maxPlayers?.encodeToJSON(), 
+                        "ParentIndexNumber": parentIndexNumber?.encodeToJSON(), 
+                        "HasParentalRating": hasParentalRating, 
+                        "IsHD": isHD, 
+                        "IsUnaired": isUnaired, 
+                        "MinCommunityRating": minCommunityRating, 
+                        "MinCriticRating": minCriticRating, 
+                        "AiredDuringSeason": airedDuringSeason?.encodeToJSON(), 
+                        "MinPremiereDate": minPremiereDate, 
+                        "MinDateLastSaved": minDateLastSaved, 
+                        "MinDateLastSavedForUser": minDateLastSavedForUser, 
+                        "MaxPremiereDate": maxPremiereDate, 
+                        "HasOverview": hasOverview, 
+                        "HasImdbId": hasImdbId, 
+                        "HasTmdbId": hasTmdbId, 
+                        "HasTvdbId": hasTvdbId, 
+                        "ExcludeItemIds": excludeItemIds, 
+                        "StartIndex": startIndex?.encodeToJSON(), 
+                        "Limit": limit?.encodeToJSON(), 
+                        "Recursive": recursive, 
+                        "SearchTerm": searchTerm, 
+                        "SortOrder": sortOrder, 
+                        "ParentId": parentId, 
+                        "Fields": fields, 
+                        "ExcludeItemTypes": excludeItemTypes, 
                         "IncludeItemTypes": includeItemTypes, 
+                        "AnyProviderIdEquals": anyProviderIdEquals, 
+                        "Filters": filters, 
+                        "IsFavorite": isFavorite, 
+                        "IsMovie": isMovie, 
+                        "IsSeries": isSeries, 
+                        "IsFolder": isFolder, 
+                        "IsNews": isNews, 
+                        "IsKids": isKids, 
+                        "IsSports": isSports, 
+                        "IsNew": isNew, 
+                        "IsPremiere": isPremiere, 
+                        "IsNewOrPremiere": isNewOrPremiere, 
+                        "IsRepeat": isRepeat, 
+                        "ProjectToMedia": projectToMedia, 
+                        "MediaTypes": mediaTypes, 
+                        "ImageTypes": imageTypes, 
+                        "SortBy": sortBy, 
+                        "IsPlayed": isPlayed, 
+                        "Genres": genres, 
+                        "OfficialRatings": officialRatings, 
+                        "Tags": tags, 
+                        "ExcludeTags": excludeTags, 
+                        "Years": years, 
                         "EnableImages": enableImages, 
                         "EnableUserData": enableUserData, 
                         "ImageTypeLimit": imageTypeLimit?.encodeToJSON(), 
                         "EnableImageTypes": enableImageTypes, 
+                        "Person": person, 
+                        "PersonIds": personIds, 
+                        "PersonTypes": personTypes, 
+                        "Studios": studios, 
+                        "StudioIds": studioIds, 
+                        "Artists": artists, 
+                        "ArtistIds": artistIds, 
+                        "Albums": albums, 
+                        "Ids": ids, 
+                        "VideoTypes": videoTypes, 
+                        "Containers": containers, 
+                        "AudioCodecs": audioCodecs, 
+                        "AudioLayouts": audioLayouts, 
+                        "VideoCodecs": videoCodecs, 
+                        "ExtendedVideoTypes": extendedVideoTypes, 
+                        "SubtitleCodecs": subtitleCodecs, 
+                        "Path": path, 
                         "UserId": userId, 
-                        "Limit": limit?.encodeToJSON(), 
-                        "Fields": fields
+                        "MinOfficialRating": minOfficialRating, 
+                        "IsLocked": isLocked, 
+                        "IsPlaceHolder": isPlaceHolder, 
+                        "HasOfficialRating": hasOfficialRating, 
+                        "GroupItemsIntoCollections": groupItemsIntoCollections, 
+                        "Is3D": is3D, 
+                        "SeriesStatus": seriesStatus, 
+                        "NameStartsWithOrGreater": nameStartsWithOrGreater, 
+                        "ArtistStartsWithOrGreater": artistStartsWithOrGreater, 
+                        "AlbumArtistStartsWithOrGreater": albumArtistStartsWithOrGreater, 
+                        "NameStartsWith": nameStartsWith, 
+                        "NameLessThan": nameLessThan
         ])
 
 
