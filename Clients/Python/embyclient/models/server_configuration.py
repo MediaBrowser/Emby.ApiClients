@@ -140,7 +140,7 @@ class ServerConfiguration(object):
         'enable_people_letter_sub_folders': 'EnablePeopleLetterSubFolders',
         'optimize_database_on_shutdown': 'OptimizeDatabaseOnShutdown',
         'database_analysis_limit': 'DatabaseAnalysisLimit',
-        'max_library_db_connections': 'Max_LibraryDbConnections',
+        'max_library_db_connections': 'MaxLibraryDbConnections',
         'max_auth_db_connections': 'MaxAuthDbConnections',
         'max_other_db_connections': 'MaxOtherDbConnections',
         'disable_async_io': 'DisableAsyncIO',

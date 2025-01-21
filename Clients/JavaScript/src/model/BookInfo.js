@@ -16,7 +16,7 @@ import ProviderIdDictionary from './ProviderIdDictionary';
 /**
 * The BookInfo model module.
 * @module model/BookInfo
-* @version 4.9.0.36
+* @version 4.9.0.37
 */
 export default class BookInfo {
     /**

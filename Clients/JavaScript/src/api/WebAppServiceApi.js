@@ -15,7 +15,7 @@ import ApiConfigurationPageInfo from '../model/ApiConfigurationPageInfo';
 /**
 * WebAppService service.
 * @module api/WebAppServiceApi
-* @version 4.9.0.36
+* @version 4.9.0.37
 */
 export default class WebAppServiceApi {
 

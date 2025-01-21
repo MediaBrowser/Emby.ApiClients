@@ -220,7 +220,7 @@ public struct ServerConfiguration: Codable {
         case enablePeopleLetterSubFolders = "EnablePeopleLetterSubFolders"
         case optimizeDatabaseOnShutdown = "OptimizeDatabaseOnShutdown"
         case databaseAnalysisLimit = "DatabaseAnalysisLimit"
-        case maxLibraryDbConnections = "Max_LibraryDbConnections"
+        case maxLibraryDbConnections = "MaxLibraryDbConnections"
         case maxAuthDbConnections = "MaxAuthDbConnections"
         case maxOtherDbConnections = "MaxOtherDbConnections"
         case disableAsyncIO = "DisableAsyncIO"

@@ -18,7 +18,7 @@ import ProxyHeaderMode from './ProxyHeaderMode';
 /**
 * The ServerConfiguration model module.
 * @module model/ServerConfiguration
-* @version 4.9.0.36
+* @version 4.9.0.37
 */
 export default class ServerConfiguration {
     /**
@@ -193,8 +193,8 @@ export default class ServerConfiguration {
             if (data.hasOwnProperty('DatabaseAnalysisLimit')) {
                 obj['DatabaseAnalysisLimit'] = ApiClient.convertToType(data['DatabaseAnalysisLimit'], 'Number');
             }
-            if (data.hasOwnProperty('Max_LibraryDbConnections')) {
-                obj['Max_LibraryDbConnections'] = ApiClient.convertToType(data['Max_LibraryDbConnections'], 'Number');
+            if (data.hasOwnProperty('MaxLibraryDbConnections')) {
+                obj['MaxLibraryDbConnections'] = ApiClient.convertToType(data['MaxLibraryDbConnections'], 'Number');
             }
             if (data.hasOwnProperty('MaxAuthDbConnections')) {
                 obj['MaxAuthDbConnections'] = ApiClient.convertToType(data['MaxAuthDbConnections'], 'Number');
@@ -461,9 +461,9 @@ export default class ServerConfiguration {
     */
     'DatabaseAnalysisLimit' = undefined;
     /**
-    * @member {Number} Max_LibraryDbConnections
+    * @member {Number} MaxLibraryDbConnections
     */
-    'Max_LibraryDbConnections' = undefined;
+    'MaxLibraryDbConnections' = undefined;
     /**
     * @member {Number} MaxAuthDbConnections
     */

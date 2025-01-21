@@ -173,7 +173,7 @@ public class ServerConfiguration {
   @SerializedName("DatabaseAnalysisLimit")
   private Integer databaseAnalysisLimit = null;
 
-  @SerializedName("Max_LibraryDbConnections")
+  @SerializedName("MaxLibraryDbConnections")
   private Integer maxLibraryDbConnections = null;
 
   @SerializedName("MaxAuthDbConnections")
