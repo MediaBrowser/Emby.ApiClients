@@ -44,13 +44,14 @@ namespace EmbyClient.Dotnet.Api
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns></returns>
-        void PostNotificationsAdmin (string name, string description, string imageUrl, string url, string level);
+        void PostNotificationsAdmin (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level);
 
         /// <summary>
         /// Sends a notification to all admin users
@@ -59,13 +60,14 @@ namespace EmbyClient.Dotnet.Api
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PostNotificationsAdminWithHttpInfo (string name, string description, string imageUrl, string url, string level);
+        ApiResponse<Object> PostNotificationsAdminWithHttpInfo (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -94,13 +96,14 @@ namespace EmbyClient.Dotnet.Api
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PostNotificationsAdminAsync (string name, string description, string imageUrl, string url, string level);
+        System.Threading.Tasks.Task PostNotificationsAdminAsync (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level);
 
         /// <summary>
         /// Sends a notification to all admin users
@@ -109,13 +112,14 @@ namespace EmbyClient.Dotnet.Api
         /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PostNotificationsAdminAsyncWithHttpInfo (string name, string description, string imageUrl, string url, string level);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PostNotificationsAdminAsyncWithHttpInfo (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level);
         #endregion Asynchronous Operations
     }
 
@@ -374,29 +378,34 @@ namespace EmbyClient.Dotnet.Api
         /// Sends a notification to all admin users Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns></returns>
-        public void PostNotificationsAdmin (string name, string description, string imageUrl, string url, string level)
+        public void PostNotificationsAdmin (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level)
         {
-             PostNotificationsAdminWithHttpInfo(name, description, imageUrl, url, level);
+             PostNotificationsAdminWithHttpInfo(body, name, description, imageUrl, url, level);
         }
 
         /// <summary>
         /// Sends a notification to all admin users Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PostNotificationsAdminWithHttpInfo (string name, string description, string imageUrl, string url, string level)
+        public ApiResponse<Object> PostNotificationsAdminWithHttpInfo (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling NotificationsServiceApi->PostNotificationsAdmin");
             // verify the required parameter 'name' is set
             if (name == null)
                 throw new ApiException(400, "Missing required parameter 'name' when calling NotificationsServiceApi->PostNotificationsAdmin");
@@ -414,6 +423,8 @@ namespace EmbyClient.Dotnet.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -429,6 +440,14 @@ namespace EmbyClient.Dotnet.Api
             if (imageUrl != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "ImageUrl", imageUrl)); // query parameter
             if (url != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "Url", url)); // query parameter
             if (level != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "Level", level)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
             // authentication (apikeyauth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
             {
@@ -463,15 +482,16 @@ namespace EmbyClient.Dotnet.Api
         /// Sends a notification to all admin users Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PostNotificationsAdminAsync (string name, string description, string imageUrl, string url, string level)
+        public async System.Threading.Tasks.Task PostNotificationsAdminAsync (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level)
         {
-             await PostNotificationsAdminAsyncWithHttpInfo(name, description, imageUrl, url, level);
+             await PostNotificationsAdminAsyncWithHttpInfo(body, name, description, imageUrl, url, level);
 
         }
 
@@ -479,14 +499,18 @@ namespace EmbyClient.Dotnet.Api
         /// Sends a notification to all admin users Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostNotificationsAdminAsyncWithHttpInfo (string name, string description, string imageUrl, string url, string level)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostNotificationsAdminAsyncWithHttpInfo (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling NotificationsServiceApi->PostNotificationsAdmin");
             // verify the required parameter 'name' is set
             if (name == null)
                 throw new ApiException(400, "Missing required parameter 'name' when calling NotificationsServiceApi->PostNotificationsAdmin");
@@ -504,6 +528,8 @@ namespace EmbyClient.Dotnet.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -519,6 +545,14 @@ namespace EmbyClient.Dotnet.Api
             if (imageUrl != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "ImageUrl", imageUrl)); // query parameter
             if (url != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "Url", url)); // query parameter
             if (level != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "Level", level)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
             // authentication (apikeyauth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
             {

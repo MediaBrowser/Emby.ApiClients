@@ -110,16 +110,17 @@ class NotificationsServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_notifications_admin(self, name, description, **kwargs):  # noqa: E501
+    def post_notifications_admin(self, body, name, description, **kwargs):  # noqa: E501
         """Sends a notification to all admin users  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_notifications_admin(name, description, async_req=True)
+        >>> thread = api.post_notifications_admin(body, name, description, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param ApiAddAdminNotification body: AddAdminNotification (required)
         :param str name: The notification's name (required)
         :param str description: The notification's description (required)
         :param str image_url: The notification's image url
@@ -131,21 +132,22 @@ class NotificationsServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_notifications_admin_with_http_info(name, description, **kwargs)  # noqa: E501
+            return self.post_notifications_admin_with_http_info(body, name, description, **kwargs)  # noqa: E501
         else:
-            (data) = self.post_notifications_admin_with_http_info(name, description, **kwargs)  # noqa: E501
+            (data) = self.post_notifications_admin_with_http_info(body, name, description, **kwargs)  # noqa: E501
             return data
 
-    def post_notifications_admin_with_http_info(self, name, description, **kwargs):  # noqa: E501
+    def post_notifications_admin_with_http_info(self, body, name, description, **kwargs):  # noqa: E501
         """Sends a notification to all admin users  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_notifications_admin_with_http_info(name, description, async_req=True)
+        >>> thread = api.post_notifications_admin_with_http_info(body, name, description, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param ApiAddAdminNotification body: AddAdminNotification (required)
         :param str name: The notification's name (required)
         :param str description: The notification's description (required)
         :param str image_url: The notification's image url
@@ -156,7 +158,7 @@ class NotificationsServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name', 'description', 'image_url', 'url', 'level']  # noqa: E501
+        all_params = ['body', 'name', 'description', 'image_url', 'url', 'level']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -171,6 +173,10 @@ class NotificationsServiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_notifications_admin`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -202,6 +208,12 @@ class NotificationsServiceApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/xml'])  # noqa: E501
+
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
 

@@ -16,7 +16,7 @@ import ProfileCondition from './ProfileCondition';
 /**
 * The ResponseProfile model module.
 * @module model/ResponseProfile
-* @version 4.9.0.37
+* @version 4.9.0.38
 */
 export default class ResponseProfile {
     /**

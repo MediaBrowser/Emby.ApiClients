@@ -5,6 +5,7 @@
 
 package embyclient.api;
 
+import embyclient.model.ApiAddAdminNotification;
 import embyclient.model.NotificationCategoryInfo;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -48,12 +49,13 @@ public class NotificationsServiceApiTest {
      */
     @Test
     public void postNotificationsAdminTest() throws Exception {
+        ApiAddAdminNotification body = null;
         String name = null;
         String description = null;
         String imageUrl = null;
         String url = null;
         String level = null;
-        api.postNotificationsAdmin(name, description, imageUrl, url, level);
+        api.postNotificationsAdmin(body, name, description, imageUrl, url, level);
 
         // TODO: test validations
     }

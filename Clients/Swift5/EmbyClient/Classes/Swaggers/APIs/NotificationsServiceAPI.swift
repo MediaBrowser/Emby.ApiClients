@@ -78,6 +78,7 @@ open class NotificationsServiceAPI {
     /**
      Sends a notification to all admin users
 
+     - parameter body: (body) AddAdminNotification 
      - parameter name: (query) The notification&#x27;s name 
      - parameter _description: (query) The notification&#x27;s description 
      - parameter imageUrl: (query) The notification&#x27;s image url (optional)
@@ -85,8 +86,8 @@ open class NotificationsServiceAPI {
      - parameter level: (query) The notification level (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func postNotificationsAdmin(name: String, _description: String, imageUrl: String? = nil, url: String? = nil, level: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
-        postNotificationsAdminWithRequestBuilder(name: name, _description: _description, imageUrl: imageUrl, url: url, level: level).execute { (response, error) -> Void in
+    open class func postNotificationsAdmin(body: ApiAddAdminNotification, name: String, _description: String, imageUrl: String? = nil, url: String? = nil, level: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        postNotificationsAdminWithRequestBuilder(body: body, name: name, _description: _description, imageUrl: imageUrl, url: url, level: level).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
             } else {
@@ -106,6 +107,7 @@ open class NotificationsServiceAPI {
      - :
        - type: http
        - name: embyauth
+     - parameter body: (body) AddAdminNotification 
      - parameter name: (query) The notification&#x27;s name 
      - parameter _description: (query) The notification&#x27;s description 
      - parameter imageUrl: (query) The notification&#x27;s image url (optional)
@@ -114,10 +116,10 @@ open class NotificationsServiceAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func postNotificationsAdminWithRequestBuilder(name: String, _description: String, imageUrl: String? = nil, url: String? = nil, level: String? = nil) -> RequestBuilder<Void> {
+    open class func postNotificationsAdminWithRequestBuilder(body: ApiAddAdminNotification, name: String, _description: String, imageUrl: String? = nil, url: String? = nil, level: String? = nil) -> RequestBuilder<Void> {
         let path = "/Notifications/Admin"
         let URLString = EmbyClientAPI.basePath + path
-        let parameters: [String:Any]? = nil
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
                         "Name": name, 
@@ -130,6 +132,6 @@ open class NotificationsServiceAPI {
 
         let requestBuilder: RequestBuilder<Void>.Type = EmbyClientAPI.requestBuilderFactory.getNonDecodableBuilder()
 
-        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
 }

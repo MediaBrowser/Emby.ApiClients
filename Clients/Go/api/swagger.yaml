@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.37
+  version: 4.9.0.38
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -33177,6 +33177,16 @@ paths:
         explode: false
         schema:
           type: string
+      requestBody:
+        description: AddAdminNotification
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Api.AddAdminNotification'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Api.AddAdminNotification'
+        required: true
       responses:
         "200":
           description: Operation successful. Empty response.
@@ -88004,6 +88014,12 @@ components:
         Id: Id
         Name: Name
       x-internal-ref-name: Emby.Notifications.NotificationTypeInfo
+    Api.AddAdminNotification:
+      type: object
+      properties:
+        DisplayDateTime:
+          type: boolean
+      x-internal-ref-name: Emby.Notifications.Api.AddAdminNotification
     PlaybackStartInfo:
       type: object
       properties:

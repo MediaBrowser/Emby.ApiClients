@@ -2,7 +2,7 @@
  * Emby Server REST API (BETA)
  * Explore the Emby Server API
  *
- * OpenAPI spec version: 4.9.0.37
+ * OpenAPI spec version: 4.9.0.38
  * 
  *
  * NOTE: This file is auto generated.
@@ -5469,12 +5469,13 @@ describe("NotificationsServiceApi", () => {
     return expect(instance.getNotificationsTypes({})).resolves.toBe(null)
   })
   test("postNotificationsAdmin", () => {
+    const body: api.ApiAddAdminNotification = undefined
     const Name: string = "Name_example"
     const Description: string = "Description_example"
     const ImageUrl: string = "ImageUrl_example"
     const Url: string = "Url_example"
     const Level: string = "Level_example"
-    return expect(instance.postNotificationsAdmin(Name, Description, ImageUrl, Url, Level, {})).resolves.toBe(null)
+    return expect(instance.postNotificationsAdmin(body, Name, Description, ImageUrl, Url, Level, {})).resolves.toBe(null)
   })
 })
 

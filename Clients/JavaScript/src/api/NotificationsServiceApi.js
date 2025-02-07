@@ -10,12 +10,13 @@
  */
 
 import ApiClient from "../ApiClient";
+import ApiAddAdminNotification from '../model/ApiAddAdminNotification';
 import NotificationCategoryInfo from '../model/NotificationCategoryInfo';
 
 /**
 * NotificationsService service.
 * @module api/NotificationsServiceApi
-* @version 4.9.0.37
+* @version 4.9.0.38
 */
 export default class NotificationsServiceApi {
 
@@ -82,7 +83,7 @@ export default class NotificationsServiceApi {
      */
     postNotificationsAdminWithHttpInfo() {
       opts = opts || {};
-      let postBody = null;
+      let postBody = body;
 
       let pathParams = {
       };
@@ -99,7 +100,7 @@ export default class NotificationsServiceApi {
       };
 
       let authNames = ['apikeyauth', 'embyauth'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/xml'];
       let accepts = [];
       let returnType = null;
 

@@ -23,7 +23,7 @@ import SessionSessionInfo from '../model/SessionSessionInfo';
 /**
 * SessionsService service.
 * @module api/SessionsServiceApi
-* @version 4.9.0.37
+* @version 4.9.0.38
 */
 export default class SessionsServiceApi {
 

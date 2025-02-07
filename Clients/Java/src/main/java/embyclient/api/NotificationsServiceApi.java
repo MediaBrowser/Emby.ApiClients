@@ -19,6 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import embyclient.model.ApiAddAdminNotification;
 import embyclient.model.NotificationCategoryInfo;
 
 import java.lang.reflect.Type;
@@ -164,6 +165,7 @@ public class NotificationsServiceApi {
     }
     /**
      * Build call for postNotificationsAdmin
+     * @param body AddAdminNotification (required)
      * @param name The notification&#x27;s name (required)
      * @param description The notification&#x27;s description (required)
      * @param imageUrl The notification&#x27;s image url (optional)
@@ -174,8 +176,8 @@ public class NotificationsServiceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call postNotificationsAdminCall(String name, String description, String imageUrl, String url, String level, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call postNotificationsAdminCall(ApiAddAdminNotification body, String name, String description, String imageUrl, String url, String level, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/Notifications/Admin";
@@ -204,7 +206,7 @@ public class NotificationsServiceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json", "application/xml"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -226,7 +228,11 @@ public class NotificationsServiceApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call postNotificationsAdminValidateBeforeCall(String name, String description, String imageUrl, String url, String level, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postNotificationsAdminValidateBeforeCall(ApiAddAdminNotification body, String name, String description, String imageUrl, String url, String level, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling postNotificationsAdmin(Async)");
+        }
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling postNotificationsAdmin(Async)");
@@ -236,7 +242,7 @@ public class NotificationsServiceApi {
             throw new ApiException("Missing the required parameter 'description' when calling postNotificationsAdmin(Async)");
         }
         
-        com.squareup.okhttp.Call call = postNotificationsAdminCall(name, description, imageUrl, url, level, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postNotificationsAdminCall(body, name, description, imageUrl, url, level, progressListener, progressRequestListener);
         return call;
 
         
@@ -248,6 +254,7 @@ public class NotificationsServiceApi {
     /**
      * Sends a notification to all admin users
      * Requires authentication as user
+     * @param body AddAdminNotification (required)
      * @param name The notification&#x27;s name (required)
      * @param description The notification&#x27;s description (required)
      * @param imageUrl The notification&#x27;s image url (optional)
@@ -255,13 +262,14 @@ public class NotificationsServiceApi {
      * @param level The notification level (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void postNotificationsAdmin(String name, String description, String imageUrl, String url, String level) throws ApiException {
-        postNotificationsAdminWithHttpInfo(name, description, imageUrl, url, level);
+    public void postNotificationsAdmin(ApiAddAdminNotification body, String name, String description, String imageUrl, String url, String level) throws ApiException {
+        postNotificationsAdminWithHttpInfo(body, name, description, imageUrl, url, level);
     }
 
     /**
      * Sends a notification to all admin users
      * Requires authentication as user
+     * @param body AddAdminNotification (required)
      * @param name The notification&#x27;s name (required)
      * @param description The notification&#x27;s description (required)
      * @param imageUrl The notification&#x27;s image url (optional)
@@ -270,14 +278,15 @@ public class NotificationsServiceApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> postNotificationsAdminWithHttpInfo(String name, String description, String imageUrl, String url, String level) throws ApiException {
-        com.squareup.okhttp.Call call = postNotificationsAdminValidateBeforeCall(name, description, imageUrl, url, level, null, null);
+    public ApiResponse<Void> postNotificationsAdminWithHttpInfo(ApiAddAdminNotification body, String name, String description, String imageUrl, String url, String level) throws ApiException {
+        com.squareup.okhttp.Call call = postNotificationsAdminValidateBeforeCall(body, name, description, imageUrl, url, level, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Sends a notification to all admin users (asynchronously)
      * Requires authentication as user
+     * @param body AddAdminNotification (required)
      * @param name The notification&#x27;s name (required)
      * @param description The notification&#x27;s description (required)
      * @param imageUrl The notification&#x27;s image url (optional)
@@ -287,7 +296,7 @@ public class NotificationsServiceApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postNotificationsAdminAsync(String name, String description, String imageUrl, String url, String level, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postNotificationsAdminAsync(ApiAddAdminNotification body, String name, String description, String imageUrl, String url, String level, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -308,7 +317,7 @@ public class NotificationsServiceApi {
             };
         }
 
-        com.squareup.okhttp.Call call = postNotificationsAdminValidateBeforeCall(name, description, imageUrl, url, level, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postNotificationsAdminValidateBeforeCall(body, name, description, imageUrl, url, level, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

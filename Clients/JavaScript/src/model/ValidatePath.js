@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ValidatePath model module.
 * @module model/ValidatePath
-* @version 4.9.0.37
+* @version 4.9.0.38
 */
 export default class ValidatePath {
     /**

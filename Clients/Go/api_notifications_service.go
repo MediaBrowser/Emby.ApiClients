@@ -122,6 +122,7 @@ func (a *NotificationsServiceApiService) GetNotificationsTypes(ctx context.Conte
 NotificationsServiceApiService Sends a notification to all admin users
 Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body AddAdminNotification
  * @param name The notification&#x27;s name
  * @param description The notification&#x27;s description
  * @param optional nil or *NotificationsServiceApiPostNotificationsAdminOpts - Optional Parameters:
@@ -137,7 +138,7 @@ type NotificationsServiceApiPostNotificationsAdminOpts struct {
     Level optional.String
 }
 
-func (a *NotificationsServiceApiService) PostNotificationsAdmin(ctx context.Context, name string, description string, localVarOptionals *NotificationsServiceApiPostNotificationsAdminOpts) (*http.Response, error) {
+func (a *NotificationsServiceApiService) PostNotificationsAdmin(ctx context.Context, body ApiAddAdminNotification, name string, description string, localVarOptionals *NotificationsServiceApiPostNotificationsAdminOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -165,7 +166,7 @@ func (a *NotificationsServiceApiService) PostNotificationsAdmin(ctx context.Cont
 		localVarQueryParams.Add("Level", parameterToString(localVarOptionals.Level.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json", "application/xml"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -181,6 +182,8 @@ func (a *NotificationsServiceApiService) PostNotificationsAdmin(ctx context.Cont
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	// body params
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

@@ -15,6 +15,7 @@ import ActionsPostbackAction from './model/ActionsPostbackAction';
 import ActivityLogEntry from './model/ActivityLogEntry';
 import AlbumInfo from './model/AlbumInfo';
 import AllThemeMediaResult from './model/AllThemeMediaResult';
+import ApiAddAdminNotification from './model/ApiAddAdminNotification';
 import ApiAvailableRecordingOptions from './model/ApiAvailableRecordingOptions';
 import ApiBaseItemsRequest from './model/ApiBaseItemsRequest';
 import ApiConfigurationPageInfo from './model/ApiConfigurationPageInfo';
@@ -429,7 +430,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.0.37
+* @version 4.9.0.38
 */
 export {
     /**
@@ -467,6 +468,12 @@ export {
      * @property {module:model/AllThemeMediaResult}
      */
     AllThemeMediaResult,
+
+    /**
+     * The ApiAddAdminNotification model constructor.
+     * @property {module:model/ApiAddAdminNotification}
+     */
+    ApiAddAdminNotification,
 
     /**
      * The ApiAvailableRecordingOptions model constructor.

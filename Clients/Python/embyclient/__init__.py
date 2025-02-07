@@ -86,6 +86,7 @@ from embyclient.models.actions_postback_action import ActionsPostbackAction
 from embyclient.models.activity_log_entry import ActivityLogEntry
 from embyclient.models.album_info import AlbumInfo
 from embyclient.models.all_theme_media_result import AllThemeMediaResult
+from embyclient.models.api_add_admin_notification import ApiAddAdminNotification
 from embyclient.models.api_available_recording_options import ApiAvailableRecordingOptions
 from embyclient.models.api_base_items_request import ApiBaseItemsRequest
 from embyclient.models.api_configuration_page_info import ApiConfigurationPageInfo
