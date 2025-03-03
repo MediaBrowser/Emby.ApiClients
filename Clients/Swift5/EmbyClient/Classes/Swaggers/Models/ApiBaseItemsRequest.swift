@@ -11,6 +11,7 @@ import Foundation
 
 public struct ApiBaseItemsRequest: Codable {
 
+    public var isSpecialEpisode: Bool?
     public var is4K: Bool?
     public var enableTotalRecordCount: Bool?
     public var name: String?
@@ -31,6 +32,7 @@ public struct ApiBaseItemsRequest: Codable {
     public var subtitleLanguages: String?
     public var canEditItems: Bool?
     public var groupItemsInto: LibraryItemLinkType?
+    public var isStandaloneSpecial: Bool?
     public var minWidth: Int?
     public var minHeight: Int?
     public var maxWidth: Int?
@@ -39,8 +41,10 @@ public struct ApiBaseItemsRequest: Codable {
     public var airDays: [DayOfWeek]?
     public var isAiring: Bool?
     public var hasAired: Bool?
+    public var collectionTypes: String?
 
-    public init(is4K: Bool? = nil, enableTotalRecordCount: Bool? = nil, name: String? = nil, recordingKeyword: String? = nil, recordingKeywordType: LiveTvKeywordType? = nil, randomSeed: Int? = nil, genreIds: String? = nil, collectionIds: String? = nil, tagIds: String? = nil, excludeTagIds: String? = nil, excludeArtistIds: String? = nil, albumArtistIds: String? = nil, contributingArtistIds: String? = nil, albumIds: String? = nil, outerIds: String? = nil, listItemIds: String? = nil, audioLanguages: String? = nil, subtitleLanguages: String? = nil, canEditItems: Bool? = nil, groupItemsInto: LibraryItemLinkType? = nil, minWidth: Int? = nil, minHeight: Int? = nil, maxWidth: Int? = nil, maxHeight: Int? = nil, groupProgramsBySeries: Bool? = nil, airDays: [DayOfWeek]? = nil, isAiring: Bool? = nil, hasAired: Bool? = nil) {
+    public init(isSpecialEpisode: Bool? = nil, is4K: Bool? = nil, enableTotalRecordCount: Bool? = nil, name: String? = nil, recordingKeyword: String? = nil, recordingKeywordType: LiveTvKeywordType? = nil, randomSeed: Int? = nil, genreIds: String? = nil, collectionIds: String? = nil, tagIds: String? = nil, excludeTagIds: String? = nil, excludeArtistIds: String? = nil, albumArtistIds: String? = nil, contributingArtistIds: String? = nil, albumIds: String? = nil, outerIds: String? = nil, listItemIds: String? = nil, audioLanguages: String? = nil, subtitleLanguages: String? = nil, canEditItems: Bool? = nil, groupItemsInto: LibraryItemLinkType? = nil, isStandaloneSpecial: Bool? = nil, minWidth: Int? = nil, minHeight: Int? = nil, maxWidth: Int? = nil, maxHeight: Int? = nil, groupProgramsBySeries: Bool? = nil, airDays: [DayOfWeek]? = nil, isAiring: Bool? = nil, hasAired: Bool? = nil, collectionTypes: String? = nil) {
+        self.isSpecialEpisode = isSpecialEpisode
         self.is4K = is4K
         self.enableTotalRecordCount = enableTotalRecordCount
         self.name = name
@@ -61,6 +65,7 @@ public struct ApiBaseItemsRequest: Codable {
         self.subtitleLanguages = subtitleLanguages
         self.canEditItems = canEditItems
         self.groupItemsInto = groupItemsInto
+        self.isStandaloneSpecial = isStandaloneSpecial
         self.minWidth = minWidth
         self.minHeight = minHeight
         self.maxWidth = maxWidth
@@ -69,9 +74,11 @@ public struct ApiBaseItemsRequest: Codable {
         self.airDays = airDays
         self.isAiring = isAiring
         self.hasAired = hasAired
+        self.collectionTypes = collectionTypes
     }
 
     public enum CodingKeys: String, CodingKey { 
+        case isSpecialEpisode = "IsSpecialEpisode"
         case is4K = "Is4K"
         case enableTotalRecordCount = "EnableTotalRecordCount"
         case name = "Name"
@@ -92,6 +99,7 @@ public struct ApiBaseItemsRequest: Codable {
         case subtitleLanguages = "SubtitleLanguages"
         case canEditItems = "CanEditItems"
         case groupItemsInto = "GroupItemsInto"
+        case isStandaloneSpecial = "IsStandaloneSpecial"
         case minWidth = "MinWidth"
         case minHeight = "MinHeight"
         case maxWidth = "MaxWidth"
@@ -100,6 +108,7 @@ public struct ApiBaseItemsRequest: Codable {
         case airDays = "AirDays"
         case isAiring = "IsAiring"
         case hasAired = "HasAired"
+        case collectionTypes = "CollectionTypes"
     }
 
 }

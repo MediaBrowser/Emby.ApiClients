@@ -15,7 +15,7 @@ import ChannelManagementInfo from './ChannelManagementInfo';
 /**
 * The QueryResultChannelManagementInfo model module.
 * @module model/QueryResultChannelManagementInfo
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class QueryResultChannelManagementInfo {
     /**

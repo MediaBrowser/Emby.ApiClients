@@ -28,6 +28,7 @@ type ServerConfiguration struct {
 	AutoRunWebApp bool `json:"AutoRunWebApp,omitempty"`
 	EnableRemoteAccess bool `json:"EnableRemoteAccess,omitempty"`
 	LogAllQueryTimes bool `json:"LogAllQueryTimes,omitempty"`
+	DisableOutgoingIPv6 bool `json:"DisableOutgoingIPv6,omitempty"`
 	// A value indicating whether \\[enable case sensitive item ids\\].
 	EnableCaseSensitiveItemIds bool `json:"EnableCaseSensitiveItemIds,omitempty"`
 	// The metadata path.

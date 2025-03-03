@@ -40,7 +40,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -158,7 +160,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -253,7 +257,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -288,8 +292,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -515,7 +523,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -633,7 +643,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -728,7 +740,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -763,8 +775,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -990,7 +1006,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -1108,7 +1126,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -1203,7 +1223,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1238,8 +1258,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -1465,7 +1489,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -1583,7 +1609,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -1678,7 +1706,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1713,8 +1741,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -1940,7 +1972,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -2058,7 +2092,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -2153,7 +2189,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2188,8 +2224,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -2415,7 +2455,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -2533,7 +2575,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -2628,7 +2672,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2663,8 +2707,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -2890,7 +2938,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -3008,7 +3058,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -3103,7 +3155,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3138,8 +3190,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -3365,7 +3421,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -3483,7 +3541,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -3578,7 +3638,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3613,8 +3673,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -3840,7 +3904,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -3958,7 +4024,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -4053,7 +4121,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4088,8 +4156,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -4315,7 +4387,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -4433,7 +4507,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -4528,7 +4604,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4563,8 +4639,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -4790,7 +4870,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -4908,7 +4990,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -5003,7 +5087,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5038,8 +5122,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:
@@ -5265,7 +5353,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -5383,7 +5473,9 @@ class TagServiceApi(object):
         :param bool has_subtitles: Optional filter by items with subtitles.
         :param bool has_special_feature: Optional filter by items with special features.
         :param bool has_trailer: Optional filter by items with trailers.
+        :param bool is_special_season: Optional. Filter by special season.
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
+        :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
         :param str min_start_date: Optional. The minimum premiere date. Format = ISO
         :param str max_start_date: Optional. The maximum premiere date. Format = ISO
@@ -5478,7 +5570,7 @@ class TagServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'adjacent_to', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
+        all_params = ['artist_type', 'max_official_rating', 'has_theme_song', 'has_theme_video', 'has_subtitles', 'has_special_feature', 'has_trailer', 'is_special_season', 'adjacent_to', 'start_item_id', 'min_index_number', 'min_start_date', 'max_start_date', 'min_end_date', 'max_end_date', 'min_players', 'max_players', 'parent_index_number', 'has_parental_rating', 'is_hd', 'is_unaired', 'min_community_rating', 'min_critic_rating', 'aired_during_season', 'min_premiere_date', 'min_date_last_saved', 'min_date_last_saved_for_user', 'max_premiere_date', 'has_overview', 'has_imdb_id', 'has_tmdb_id', 'has_tvdb_id', 'exclude_item_ids', 'start_index', 'limit', 'recursive', 'search_term', 'sort_order', 'parent_id', 'fields', 'exclude_item_types', 'include_item_types', 'any_provider_id_equals', 'filters', 'is_favorite', 'is_movie', 'is_series', 'is_folder', 'is_news', 'is_kids', 'is_sports', 'is_new', 'is_premiere', 'is_new_or_premiere', 'is_repeat', 'project_to_media', 'media_types', 'image_types', 'sort_by', 'is_played', 'genres', 'official_ratings', 'tags', 'exclude_tags', 'years', 'enable_images', 'enable_user_data', 'image_type_limit', 'enable_image_types', 'person', 'person_ids', 'person_types', 'studios', 'studio_ids', 'artists', 'artist_ids', 'albums', 'ids', 'video_types', 'containers', 'audio_codecs', 'audio_layouts', 'video_codecs', 'extended_video_types', 'subtitle_codecs', 'path', 'user_id', 'min_official_rating', 'is_locked', 'is_place_holder', 'has_official_rating', 'group_items_into_collections', 'is3_d', 'series_status', 'name_starts_with_or_greater', 'artist_starts_with_or_greater', 'album_artist_starts_with_or_greater', 'name_starts_with', 'name_less_than']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5513,8 +5605,12 @@ class TagServiceApi(object):
             query_params.append(('HasSpecialFeature', params['has_special_feature']))  # noqa: E501
         if 'has_trailer' in params:
             query_params.append(('HasTrailer', params['has_trailer']))  # noqa: E501
+        if 'is_special_season' in params:
+            query_params.append(('IsSpecialSeason', params['is_special_season']))  # noqa: E501
         if 'adjacent_to' in params:
             query_params.append(('AdjacentTo', params['adjacent_to']))  # noqa: E501
+        if 'start_item_id' in params:
+            query_params.append(('StartItemId', params['start_item_id']))  # noqa: E501
         if 'min_index_number' in params:
             query_params.append(('MinIndexNumber', params['min_index_number']))  # noqa: E501
         if 'min_start_date' in params:

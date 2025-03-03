@@ -24,7 +24,7 @@ import ThemeMediaResult from '../model/ThemeMediaResult';
 /**
 * LibraryService service.
 * @module api/LibraryServiceApi
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class LibraryServiceApi {
 
@@ -148,7 +148,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -291,7 +293,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -434,7 +438,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -801,7 +807,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -1360,7 +1368,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -1503,7 +1513,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -1646,7 +1658,9 @@ export default class LibraryServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],

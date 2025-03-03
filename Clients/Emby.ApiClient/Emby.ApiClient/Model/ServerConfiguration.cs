@@ -99,6 +99,12 @@ namespace Emby.ApiClient.Model
         public bool? LogAllQueryTimes { get; set; }
 
         /// <summary>
+        /// Gets or Sets DisableOutgoingIPv6
+        /// </summary>
+        /// <value>The DisableOutgoingIPv6.</value>
+        public bool? DisableOutgoingIPv6 { get; set; }
+
+        /// <summary>
         /// A value indicating whether \\[enable case sensitive item ids\\].
         /// </summary>
         /// <value>The EnableCaseSensitiveItemIds.</value>
@@ -442,6 +448,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  AutoRunWebApp: ").Append(AutoRunWebApp).Append("\n");
             sb.Append("  EnableRemoteAccess: ").Append(EnableRemoteAccess).Append("\n");
             sb.Append("  LogAllQueryTimes: ").Append(LogAllQueryTimes).Append("\n");
+            sb.Append("  DisableOutgoingIPv6: ").Append(DisableOutgoingIPv6).Append("\n");
             sb.Append("  EnableCaseSensitiveItemIds: ").Append(EnableCaseSensitiveItemIds).Append("\n");
             sb.Append("  MetadataPath: ").Append(MetadataPath).Append("\n");
             sb.Append("  MetadataNetworkPath: ").Append(MetadataNetworkPath).Append("\n");
@@ -580,6 +587,11 @@ namespace Emby.ApiClient.Model
                     this.LogAllQueryTimes == input.LogAllQueryTimes ||
                     (this.LogAllQueryTimes != null &&
                     this.LogAllQueryTimes.Equals(input.LogAllQueryTimes))
+                ) && 
+                (
+                    this.DisableOutgoingIPv6 == input.DisableOutgoingIPv6 ||
+                    (this.DisableOutgoingIPv6 != null &&
+                    this.DisableOutgoingIPv6.Equals(input.DisableOutgoingIPv6))
                 ) && 
                 (
                     this.EnableCaseSensitiveItemIds == input.EnableCaseSensitiveItemIds ||
@@ -892,6 +904,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableRemoteAccess.GetHashCode();
                 if (this.LogAllQueryTimes != null)
                     hashCode = hashCode * 59 + this.LogAllQueryTimes.GetHashCode();
+                if (this.DisableOutgoingIPv6 != null)
+                    hashCode = hashCode * 59 + this.DisableOutgoingIPv6.GetHashCode();
                 if (this.EnableCaseSensitiveItemIds != null)
                     hashCode = hashCode * 59 + this.EnableCaseSensitiveItemIds.GetHashCode();
                 if (this.MetadataPath != null)

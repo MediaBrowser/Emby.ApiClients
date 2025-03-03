@@ -22,6 +22,7 @@ class ApiBaseItemsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'is_special_episode': 'bool',
         'is4_k': 'bool',
         'enable_total_record_count': 'bool',
         'name': 'str',
@@ -42,6 +43,7 @@ class ApiBaseItemsRequest(object):
         'subtitle_languages': 'str',
         'can_edit_items': 'bool',
         'group_items_into': 'LibraryItemLinkType',
+        'is_standalone_special': 'bool',
         'min_width': 'int',
         'min_height': 'int',
         'max_width': 'int',
@@ -49,10 +51,12 @@ class ApiBaseItemsRequest(object):
         'group_programs_by_series': 'bool',
         'air_days': 'list[DayOfWeek]',
         'is_airing': 'bool',
-        'has_aired': 'bool'
+        'has_aired': 'bool',
+        'collection_types': 'str'
     }
 
     attribute_map = {
+        'is_special_episode': 'IsSpecialEpisode',
         'is4_k': 'Is4K',
         'enable_total_record_count': 'EnableTotalRecordCount',
         'name': 'Name',
@@ -73,6 +77,7 @@ class ApiBaseItemsRequest(object):
         'subtitle_languages': 'SubtitleLanguages',
         'can_edit_items': 'CanEditItems',
         'group_items_into': 'GroupItemsInto',
+        'is_standalone_special': 'IsStandaloneSpecial',
         'min_width': 'MinWidth',
         'min_height': 'MinHeight',
         'max_width': 'MaxWidth',
@@ -80,11 +85,13 @@ class ApiBaseItemsRequest(object):
         'group_programs_by_series': 'GroupProgramsBySeries',
         'air_days': 'AirDays',
         'is_airing': 'IsAiring',
-        'has_aired': 'HasAired'
+        'has_aired': 'HasAired',
+        'collection_types': 'CollectionTypes'
     }
 
-    def __init__(self, is4_k=None, enable_total_record_count=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, exclude_artist_ids=None, album_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None):  # noqa: E501
+    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, exclude_artist_ids=None, album_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None):  # noqa: E501
         """ApiBaseItemsRequest - a model defined in Swagger"""  # noqa: E501
+        self._is_special_episode = None
         self._is4_k = None
         self._enable_total_record_count = None
         self._name = None
@@ -105,6 +112,7 @@ class ApiBaseItemsRequest(object):
         self._subtitle_languages = None
         self._can_edit_items = None
         self._group_items_into = None
+        self._is_standalone_special = None
         self._min_width = None
         self._min_height = None
         self._max_width = None
@@ -113,7 +121,10 @@ class ApiBaseItemsRequest(object):
         self._air_days = None
         self._is_airing = None
         self._has_aired = None
+        self._collection_types = None
         self.discriminator = None
+        if is_special_episode is not None:
+            self.is_special_episode = is_special_episode
         if is4_k is not None:
             self.is4_k = is4_k
         if enable_total_record_count is not None:
@@ -154,6 +165,8 @@ class ApiBaseItemsRequest(object):
             self.can_edit_items = can_edit_items
         if group_items_into is not None:
             self.group_items_into = group_items_into
+        if is_standalone_special is not None:
+            self.is_standalone_special = is_standalone_special
         if min_width is not None:
             self.min_width = min_width
         if min_height is not None:
@@ -170,6 +183,29 @@ class ApiBaseItemsRequest(object):
             self.is_airing = is_airing
         if has_aired is not None:
             self.has_aired = has_aired
+        if collection_types is not None:
+            self.collection_types = collection_types
+
+    @property
+    def is_special_episode(self):
+        """Gets the is_special_episode of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The is_special_episode of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_special_episode
+
+    @is_special_episode.setter
+    def is_special_episode(self, is_special_episode):
+        """Sets the is_special_episode of this ApiBaseItemsRequest.
+
+
+        :param is_special_episode: The is_special_episode of this ApiBaseItemsRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_special_episode = is_special_episode
 
     @property
     def is4_k(self):
@@ -592,6 +628,27 @@ class ApiBaseItemsRequest(object):
         self._group_items_into = group_items_into
 
     @property
+    def is_standalone_special(self):
+        """Gets the is_standalone_special of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The is_standalone_special of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_standalone_special
+
+    @is_standalone_special.setter
+    def is_standalone_special(self, is_standalone_special):
+        """Sets the is_standalone_special of this ApiBaseItemsRequest.
+
+
+        :param is_standalone_special: The is_standalone_special of this ApiBaseItemsRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_standalone_special = is_standalone_special
+
+    @property
     def min_width(self):
         """Gets the min_width of this ApiBaseItemsRequest.  # noqa: E501
 
@@ -758,6 +815,27 @@ class ApiBaseItemsRequest(object):
         """
 
         self._has_aired = has_aired
+
+    @property
+    def collection_types(self):
+        """Gets the collection_types of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The collection_types of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_types
+
+    @collection_types.setter
+    def collection_types(self, collection_types):
+        """Sets the collection_types of this ApiBaseItemsRequest.
+
+
+        :param collection_types: The collection_types of this ApiBaseItemsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_types = collection_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

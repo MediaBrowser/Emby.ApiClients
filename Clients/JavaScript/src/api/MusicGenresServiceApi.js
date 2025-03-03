@@ -16,7 +16,7 @@ import QueryResultBaseItemDto from '../model/QueryResultBaseItemDto';
 /**
 * MusicGenresService service.
 * @module api/MusicGenresServiceApi
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class MusicGenresServiceApi {
 
@@ -53,7 +53,9 @@ export default class MusicGenresServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],

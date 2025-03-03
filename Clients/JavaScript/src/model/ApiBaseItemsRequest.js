@@ -17,7 +17,7 @@ import LiveTvKeywordType from './LiveTvKeywordType';
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -44,6 +44,9 @@ export default class ApiBaseItemsRequest {
             obj = obj || new ApiBaseItemsRequest();
                         
             
+            if (data.hasOwnProperty('IsSpecialEpisode')) {
+                obj['IsSpecialEpisode'] = ApiClient.convertToType(data['IsSpecialEpisode'], 'Boolean');
+            }
             if (data.hasOwnProperty('Is4K')) {
                 obj['Is4K'] = ApiClient.convertToType(data['Is4K'], 'Boolean');
             }
@@ -104,6 +107,9 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('GroupItemsInto')) {
                 obj['GroupItemsInto'] = LibraryItemLinkType.constructFromObject(data['GroupItemsInto']);
             }
+            if (data.hasOwnProperty('IsStandaloneSpecial')) {
+                obj['IsStandaloneSpecial'] = ApiClient.convertToType(data['IsStandaloneSpecial'], 'Boolean');
+            }
             if (data.hasOwnProperty('MinWidth')) {
                 obj['MinWidth'] = ApiClient.convertToType(data['MinWidth'], 'Number');
             }
@@ -128,10 +134,17 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('HasAired')) {
                 obj['HasAired'] = ApiClient.convertToType(data['HasAired'], 'Boolean');
             }
+            if (data.hasOwnProperty('CollectionTypes')) {
+                obj['CollectionTypes'] = ApiClient.convertToType(data['CollectionTypes'], 'String');
+            }
         }
         return obj;
     }
 
+    /**
+    * @member {Boolean} IsSpecialEpisode
+    */
+    'IsSpecialEpisode' = undefined;
     /**
     * @member {Boolean} Is4K
     */
@@ -213,6 +226,10 @@ export default class ApiBaseItemsRequest {
     */
     'GroupItemsInto' = undefined;
     /**
+    * @member {Boolean} IsStandaloneSpecial
+    */
+    'IsStandaloneSpecial' = undefined;
+    /**
     * @member {Number} MinWidth
     */
     'MinWidth' = undefined;
@@ -244,6 +261,10 @@ export default class ApiBaseItemsRequest {
     * @member {Boolean} HasAired
     */
     'HasAired' = undefined;
+    /**
+    * @member {String} CollectionTypes
+    */
+    'CollectionTypes' = undefined;
 
 
 

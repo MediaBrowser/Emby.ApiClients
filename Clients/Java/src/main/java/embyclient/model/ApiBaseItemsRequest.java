@@ -25,6 +25,9 @@ import java.util.List;
 
 
 public class ApiBaseItemsRequest {
+  @SerializedName("IsSpecialEpisode")
+  private Boolean isSpecialEpisode = null;
+
   @SerializedName("Is4K")
   private Boolean is4K = null;
 
@@ -85,6 +88,9 @@ public class ApiBaseItemsRequest {
   @SerializedName("GroupItemsInto")
   private LibraryItemLinkType groupItemsInto = null;
 
+  @SerializedName("IsStandaloneSpecial")
+  private Boolean isStandaloneSpecial = null;
+
   @SerializedName("MinWidth")
   private Integer minWidth = null;
 
@@ -108,6 +114,27 @@ public class ApiBaseItemsRequest {
 
   @SerializedName("HasAired")
   private Boolean hasAired = null;
+
+  @SerializedName("CollectionTypes")
+  private String collectionTypes = null;
+
+  public ApiBaseItemsRequest isSpecialEpisode(Boolean isSpecialEpisode) {
+    this.isSpecialEpisode = isSpecialEpisode;
+    return this;
+  }
+
+   /**
+   * Get isSpecialEpisode
+   * @return isSpecialEpisode
+  **/
+  @Schema(description = "")
+  public Boolean isIsSpecialEpisode() {
+    return isSpecialEpisode;
+  }
+
+  public void setIsSpecialEpisode(Boolean isSpecialEpisode) {
+    this.isSpecialEpisode = isSpecialEpisode;
+  }
 
   public ApiBaseItemsRequest is4K(Boolean is4K) {
     this.is4K = is4K;
@@ -469,6 +496,24 @@ public class ApiBaseItemsRequest {
     this.groupItemsInto = groupItemsInto;
   }
 
+  public ApiBaseItemsRequest isStandaloneSpecial(Boolean isStandaloneSpecial) {
+    this.isStandaloneSpecial = isStandaloneSpecial;
+    return this;
+  }
+
+   /**
+   * Get isStandaloneSpecial
+   * @return isStandaloneSpecial
+  **/
+  @Schema(description = "")
+  public Boolean isIsStandaloneSpecial() {
+    return isStandaloneSpecial;
+  }
+
+  public void setIsStandaloneSpecial(Boolean isStandaloneSpecial) {
+    this.isStandaloneSpecial = isStandaloneSpecial;
+  }
+
   public ApiBaseItemsRequest minWidth(Integer minWidth) {
     this.minWidth = minWidth;
     return this;
@@ -621,6 +666,24 @@ public class ApiBaseItemsRequest {
     this.hasAired = hasAired;
   }
 
+  public ApiBaseItemsRequest collectionTypes(String collectionTypes) {
+    this.collectionTypes = collectionTypes;
+    return this;
+  }
+
+   /**
+   * Get collectionTypes
+   * @return collectionTypes
+  **/
+  @Schema(description = "")
+  public String getCollectionTypes() {
+    return collectionTypes;
+  }
+
+  public void setCollectionTypes(String collectionTypes) {
+    this.collectionTypes = collectionTypes;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -631,7 +694,8 @@ public class ApiBaseItemsRequest {
       return false;
     }
     ApiBaseItemsRequest apiBaseItemsRequest = (ApiBaseItemsRequest) o;
-    return Objects.equals(this.is4K, apiBaseItemsRequest.is4K) &&
+    return Objects.equals(this.isSpecialEpisode, apiBaseItemsRequest.isSpecialEpisode) &&
+        Objects.equals(this.is4K, apiBaseItemsRequest.is4K) &&
         Objects.equals(this.enableTotalRecordCount, apiBaseItemsRequest.enableTotalRecordCount) &&
         Objects.equals(this.name, apiBaseItemsRequest.name) &&
         Objects.equals(this.recordingKeyword, apiBaseItemsRequest.recordingKeyword) &&
@@ -651,6 +715,7 @@ public class ApiBaseItemsRequest {
         Objects.equals(this.subtitleLanguages, apiBaseItemsRequest.subtitleLanguages) &&
         Objects.equals(this.canEditItems, apiBaseItemsRequest.canEditItems) &&
         Objects.equals(this.groupItemsInto, apiBaseItemsRequest.groupItemsInto) &&
+        Objects.equals(this.isStandaloneSpecial, apiBaseItemsRequest.isStandaloneSpecial) &&
         Objects.equals(this.minWidth, apiBaseItemsRequest.minWidth) &&
         Objects.equals(this.minHeight, apiBaseItemsRequest.minHeight) &&
         Objects.equals(this.maxWidth, apiBaseItemsRequest.maxWidth) &&
@@ -658,12 +723,13 @@ public class ApiBaseItemsRequest {
         Objects.equals(this.groupProgramsBySeries, apiBaseItemsRequest.groupProgramsBySeries) &&
         Objects.equals(this.airDays, apiBaseItemsRequest.airDays) &&
         Objects.equals(this.isAiring, apiBaseItemsRequest.isAiring) &&
-        Objects.equals(this.hasAired, apiBaseItemsRequest.hasAired);
+        Objects.equals(this.hasAired, apiBaseItemsRequest.hasAired) &&
+        Objects.equals(this.collectionTypes, apiBaseItemsRequest.collectionTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(is4K, enableTotalRecordCount, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, excludeArtistIds, albumArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired);
+    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, excludeArtistIds, albumArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes);
   }
 
 
@@ -672,6 +738,7 @@ public class ApiBaseItemsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiBaseItemsRequest {\n");
     
+    sb.append("    isSpecialEpisode: ").append(toIndentedString(isSpecialEpisode)).append("\n");
     sb.append("    is4K: ").append(toIndentedString(is4K)).append("\n");
     sb.append("    enableTotalRecordCount: ").append(toIndentedString(enableTotalRecordCount)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -692,6 +759,7 @@ public class ApiBaseItemsRequest {
     sb.append("    subtitleLanguages: ").append(toIndentedString(subtitleLanguages)).append("\n");
     sb.append("    canEditItems: ").append(toIndentedString(canEditItems)).append("\n");
     sb.append("    groupItemsInto: ").append(toIndentedString(groupItemsInto)).append("\n");
+    sb.append("    isStandaloneSpecial: ").append(toIndentedString(isStandaloneSpecial)).append("\n");
     sb.append("    minWidth: ").append(toIndentedString(minWidth)).append("\n");
     sb.append("    minHeight: ").append(toIndentedString(minHeight)).append("\n");
     sb.append("    maxWidth: ").append(toIndentedString(maxWidth)).append("\n");
@@ -700,6 +768,7 @@ public class ApiBaseItemsRequest {
     sb.append("    airDays: ").append(toIndentedString(airDays)).append("\n");
     sb.append("    isAiring: ").append(toIndentedString(isAiring)).append("\n");
     sb.append("    hasAired: ").append(toIndentedString(hasAired)).append("\n");
+    sb.append("    collectionTypes: ").append(toIndentedString(collectionTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

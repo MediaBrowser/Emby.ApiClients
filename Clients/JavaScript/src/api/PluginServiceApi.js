@@ -15,7 +15,7 @@ import PluginsPluginInfo from '../model/PluginsPluginInfo';
 /**
 * PluginService service.
 * @module api/PluginServiceApi
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class PluginServiceApi {
 

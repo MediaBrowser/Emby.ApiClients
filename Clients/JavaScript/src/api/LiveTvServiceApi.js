@@ -38,7 +38,7 @@ import SortOrder from '../model/SortOrder';
 /**
 * LiveTvService service.
 * @module api/LiveTvServiceApi
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class LiveTvServiceApi {
 
@@ -507,7 +507,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -696,7 +698,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -838,7 +842,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -986,7 +992,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -1520,7 +1528,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -1726,7 +1736,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -2822,7 +2834,9 @@ export default class LiveTvServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],

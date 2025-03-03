@@ -27,6 +27,12 @@ namespace Emby.ApiClient.Model
         }
         
         /// <summary>
+        /// Gets or Sets IsSpecialEpisode
+        /// </summary>
+        /// <value>The IsSpecialEpisode.</value>
+        public bool? IsSpecialEpisode { get; set; }
+
+        /// <summary>
         /// Gets or Sets Is4K
         /// </summary>
         /// <value>The Is4K.</value>
@@ -147,6 +153,12 @@ namespace Emby.ApiClient.Model
         public LibraryItemLinkType GroupItemsInto { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsStandaloneSpecial
+        /// </summary>
+        /// <value>The IsStandaloneSpecial.</value>
+        public bool? IsStandaloneSpecial { get; set; }
+
+        /// <summary>
         /// Gets or Sets MinWidth
         /// </summary>
         /// <value>The MinWidth.</value>
@@ -195,6 +207,12 @@ namespace Emby.ApiClient.Model
         public bool? HasAired { get; set; }
 
         /// <summary>
+        /// Gets or Sets CollectionTypes
+        /// </summary>
+        /// <value>The CollectionTypes.</value>
+        public string CollectionTypes { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -202,6 +220,7 @@ namespace Emby.ApiClient.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiBaseItemsRequest {\n");
+            sb.Append("  IsSpecialEpisode: ").Append(IsSpecialEpisode).Append("\n");
             sb.Append("  Is4K: ").Append(Is4K).Append("\n");
             sb.Append("  EnableTotalRecordCount: ").Append(EnableTotalRecordCount).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -222,6 +241,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  SubtitleLanguages: ").Append(SubtitleLanguages).Append("\n");
             sb.Append("  CanEditItems: ").Append(CanEditItems).Append("\n");
             sb.Append("  GroupItemsInto: ").Append(GroupItemsInto).Append("\n");
+            sb.Append("  IsStandaloneSpecial: ").Append(IsStandaloneSpecial).Append("\n");
             sb.Append("  MinWidth: ").Append(MinWidth).Append("\n");
             sb.Append("  MinHeight: ").Append(MinHeight).Append("\n");
             sb.Append("  MaxWidth: ").Append(MaxWidth).Append("\n");
@@ -230,6 +250,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  AirDays: ").Append(AirDays).Append("\n");
             sb.Append("  IsAiring: ").Append(IsAiring).Append("\n");
             sb.Append("  HasAired: ").Append(HasAired).Append("\n");
+            sb.Append("  CollectionTypes: ").Append(CollectionTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -255,6 +276,11 @@ namespace Emby.ApiClient.Model
                 return false;
 
             return 
+                (
+                    this.IsSpecialEpisode == input.IsSpecialEpisode ||
+                    (this.IsSpecialEpisode != null &&
+                    this.IsSpecialEpisode.Equals(input.IsSpecialEpisode))
+                ) && 
                 (
                     this.Is4K == input.Is4K ||
                     (this.Is4K != null &&
@@ -356,6 +382,11 @@ namespace Emby.ApiClient.Model
                     this.GroupItemsInto.Equals(input.GroupItemsInto))
                 ) && 
                 (
+                    this.IsStandaloneSpecial == input.IsStandaloneSpecial ||
+                    (this.IsStandaloneSpecial != null &&
+                    this.IsStandaloneSpecial.Equals(input.IsStandaloneSpecial))
+                ) && 
+                (
                     this.MinWidth == input.MinWidth ||
                     (this.MinWidth != null &&
                     this.MinWidth.Equals(input.MinWidth))
@@ -395,6 +426,11 @@ namespace Emby.ApiClient.Model
                     this.HasAired == input.HasAired ||
                     (this.HasAired != null &&
                     this.HasAired.Equals(input.HasAired))
+                ) && 
+                (
+                    this.CollectionTypes == input.CollectionTypes ||
+                    (this.CollectionTypes != null &&
+                    this.CollectionTypes.Equals(input.CollectionTypes))
                 );
         }
 
@@ -407,6 +443,8 @@ namespace Emby.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.IsSpecialEpisode != null)
+                    hashCode = hashCode * 59 + this.IsSpecialEpisode.GetHashCode();
                 if (this.Is4K != null)
                     hashCode = hashCode * 59 + this.Is4K.GetHashCode();
                 if (this.EnableTotalRecordCount != null)
@@ -447,6 +485,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.CanEditItems.GetHashCode();
                 if (this.GroupItemsInto != null)
                     hashCode = hashCode * 59 + this.GroupItemsInto.GetHashCode();
+                if (this.IsStandaloneSpecial != null)
+                    hashCode = hashCode * 59 + this.IsStandaloneSpecial.GetHashCode();
                 if (this.MinWidth != null)
                     hashCode = hashCode * 59 + this.MinWidth.GetHashCode();
                 if (this.MinHeight != null)
@@ -463,6 +503,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.IsAiring.GetHashCode();
                 if (this.HasAired != null)
                     hashCode = hashCode * 59 + this.HasAired.GetHashCode();
+                if (this.CollectionTypes != null)
+                    hashCode = hashCode * 59 + this.CollectionTypes.GetHashCode();
                 return hashCode;
             }
         }

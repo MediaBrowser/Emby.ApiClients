@@ -314,7 +314,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -405,7 +407,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse (QueryResultBaseItemDto)</returns>
-        public async Task<RestResponse<QueryResultBaseItemDto>> GetLivetvChannels (LiveTvChannelType type, bool? isLiked, bool? isDisliked, bool? enableFavoriteSorting, bool? addCurrentProgram, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<QueryResultBaseItemDto>> GetLivetvChannels (LiveTvChannelType type, bool? isLiked, bool? isDisliked, bool? enableFavoriteSorting, bool? addCurrentProgram, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             var request = new RestRequest("/LiveTv/Channels", Method.Get);
 
@@ -469,9 +471,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)
@@ -971,7 +983,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -1062,7 +1076,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse (QueryResultBaseItemDto)</returns>
-        public async Task<RestResponse<QueryResultBaseItemDto>> GetLivetvChanneltags (string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<QueryResultBaseItemDto>> GetLivetvChanneltags (string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             var request = new RestRequest("/LiveTv/ChannelTags", Method.Get);
 
@@ -1101,9 +1115,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)
@@ -1569,7 +1593,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -1660,7 +1686,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ApiTagItem&gt;)</returns>
-        public async Task<RestResponse<List<ApiTagItem>>> GetLivetvChanneltagsPrefixes (string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<List<ApiTagItem>>> GetLivetvChanneltagsPrefixes (string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             var request = new RestRequest("/LiveTv/ChannelTags/Prefixes", Method.Get);
 
@@ -1699,9 +1725,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)
@@ -2173,7 +2209,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -2264,7 +2302,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse (QueryResultApiEpgRow)</returns>
-        public async Task<RestResponse<QueryResultApiEpgRow>> GetLivetvEPG (LiveTvChannelType type, bool? isLiked, bool? isDisliked, bool? enableFavoriteSorting, bool? addCurrentProgram, string channelIds, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<QueryResultApiEpgRow>> GetLivetvEPG (LiveTvChannelType type, bool? isLiked, bool? isDisliked, bool? enableFavoriteSorting, bool? addCurrentProgram, string channelIds, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             var request = new RestRequest("/LiveTv/EPG", Method.Get);
 
@@ -2333,9 +2371,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)
@@ -3006,7 +3054,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -3097,7 +3147,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async Task<RestResponse<Object>> GetLivetvPrograms (string channelIds, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<Object>> GetLivetvPrograms (string channelIds, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             var request = new RestRequest("/LiveTv/Programs", Method.Get);
 
@@ -3141,9 +3191,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)
@@ -3719,7 +3779,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -3810,7 +3872,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async Task<RestResponse<Object>> GetLivetvRecordings (string channelId, LiveTvRecordingStatus status, bool? isInProgress, string seriesTimerId, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<Object>> GetLivetvRecordings (string channelId, LiveTvRecordingStatus status, bool? isInProgress, string seriesTimerId, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             var request = new RestRequest("/LiveTv/Recordings", Method.Get);
 
@@ -3869,9 +3931,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)
@@ -4949,7 +5021,9 @@ namespace Emby.ApiClient.Api
         /// <param name="hasSubtitles">Optional filter by items with subtitles. (optional)</param>
         /// <param name="hasSpecialFeature">Optional filter by items with special features. (optional)</param>
         /// <param name="hasTrailer">Optional filter by items with trailers. (optional)</param>
+        /// <param name="isSpecialSeason">Optional. Filter by special season. (optional)</param>
         /// <param name="adjacentTo">Optional. Return items that are siblings of a supplied item. (optional)</param>
+        /// <param name="startItemId">Optional. Skip through the list until a given item is found. (optional)</param>
         /// <param name="minIndexNumber">Optional filter by minimum index number. (optional)</param>
         /// <param name="minStartDate">Optional. The minimum premiere date. Format &#x3D; ISO (optional)</param>
         /// <param name="maxStartDate">Optional. The maximum premiere date. Format &#x3D; ISO (optional)</param>
@@ -5040,7 +5114,7 @@ namespace Emby.ApiClient.Api
         /// <param name="nameStartsWith">Optional filter by items whose name is sorted equally than a given input string. (optional)</param>
         /// <param name="nameLessThan">Optional filter by items whose name is equally or lesser than a given input string. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async Task<RestResponse<Object>> PostLivetvPrograms (ApiBaseItemsRequest body, string channelIds, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, string adjacentTo, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
+        public async Task<RestResponse<Object>> PostLivetvPrograms (ApiBaseItemsRequest body, string channelIds, string artistType, string maxOfficialRating, bool? hasThemeSong, bool? hasThemeVideo, bool? hasSubtitles, bool? hasSpecialFeature, bool? hasTrailer, bool? isSpecialSeason, string adjacentTo, string startItemId, int? minIndexNumber, string minStartDate, string maxStartDate, string minEndDate, string maxEndDate, int? minPlayers, int? maxPlayers, int? parentIndexNumber, bool? hasParentalRating, bool? isHD, bool? isUnaired, double? minCommunityRating, double? minCriticRating, int? airedDuringSeason, string minPremiereDate, string minDateLastSaved, string minDateLastSavedForUser, string maxPremiereDate, bool? hasOverview, bool? hasImdbId, bool? hasTmdbId, bool? hasTvdbId, string excludeItemIds, int? startIndex, int? limit, bool? recursive, string searchTerm, string sortOrder, string parentId, string fields, string excludeItemTypes, string includeItemTypes, string anyProviderIdEquals, string filters, bool? isFavorite, bool? isMovie, bool? isSeries, bool? isFolder, bool? isNews, bool? isKids, bool? isSports, bool? isNew, bool? isPremiere, bool? isNewOrPremiere, bool? isRepeat, bool? projectToMedia, string mediaTypes, string imageTypes, string sortBy, bool? isPlayed, string genres, string officialRatings, string tags, string excludeTags, string years, bool? enableImages, bool? enableUserData, int? imageTypeLimit, string enableImageTypes, string person, string personIds, string personTypes, string studios, string studioIds, string artists, string artistIds, string albums, string ids, string videoTypes, string containers, string audioCodecs, string audioLayouts, string videoCodecs, string extendedVideoTypes, string subtitleCodecs, string path, string userId, string minOfficialRating, bool? isLocked, bool? isPlaceHolder, bool? hasOfficialRating, bool? groupItemsIntoCollections, bool? is3D, string seriesStatus, string nameStartsWithOrGreater, string artistStartsWithOrGreater, string albumArtistStartsWithOrGreater, string nameStartsWith, string nameLessThan)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -5090,9 +5164,19 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("HasTrailer", this.ApiClient.ParameterToString(hasTrailer));
             }
 
+            if (isSpecialSeason != null)
+            {
+                request.AddQueryParameter("IsSpecialSeason", this.ApiClient.ParameterToString(isSpecialSeason));
+            }
+
             if (adjacentTo != null)
             {
                 request.AddQueryParameter("AdjacentTo", this.ApiClient.ParameterToString(adjacentTo));
+            }
+
+            if (startItemId != null)
+            {
+                request.AddQueryParameter("StartItemId", this.ApiClient.ParameterToString(startItemId));
             }
 
             if (minIndexNumber != null)

@@ -15,7 +15,7 @@ import QueryResultBaseItemDto from '../model/QueryResultBaseItemDto';
 /**
 * ItemsService service.
 * @module api/ItemsServiceApi
-* @version 4.9.0.38
+* @version 4.9.0.41
 */
 export default class ItemsServiceApi {
 
@@ -52,7 +52,9 @@ export default class ItemsServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -195,7 +197,9 @@ export default class ItemsServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],
@@ -337,7 +341,9 @@ export default class ItemsServiceApi {
         'HasSubtitles': opts['HasSubtitles'],
         'HasSpecialFeature': opts['HasSpecialFeature'],
         'HasTrailer': opts['HasTrailer'],
+        'IsSpecialSeason': opts['IsSpecialSeason'],
         'AdjacentTo': opts['AdjacentTo'],
+        'StartItemId': opts['StartItemId'],
         'MinIndexNumber': opts['MinIndexNumber'],
         'MinStartDate': opts['MinStartDate'],
         'MaxStartDate': opts['MaxStartDate'],

@@ -2,7 +2,7 @@
  * Emby Server REST API (BETA)
  * Explore the Emby Server API
  *
- * OpenAPI spec version: 4.9.0.38
+ * OpenAPI spec version: 4.9.0.41
  * 
  *
  * NOTE: This file is auto generated.
@@ -42,7 +42,9 @@ describe("ArtistsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -132,7 +134,7 @@ describe("ArtistsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getArtists(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getArtists(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getArtistsAlbumartists", () => {
     const ArtistType: string = "ArtistType_example"
@@ -142,7 +144,9 @@ describe("ArtistsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -232,7 +236,7 @@ describe("ArtistsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getArtistsAlbumartists(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getArtistsAlbumartists(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getArtistsByName", () => {
     const Name: string = "Name_example"
@@ -481,7 +485,9 @@ describe("ChannelServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -571,7 +577,7 @@ describe("ChannelServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getChannels(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getChannels(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
 })
 
@@ -1228,7 +1234,9 @@ describe("GameGenresServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -1318,7 +1326,7 @@ describe("GameGenresServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getGamegenres(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getGamegenres(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getGamegenresByName", () => {
     const Name: string = "Name_example"
@@ -1358,7 +1366,9 @@ describe("GenresServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -1448,7 +1458,7 @@ describe("GenresServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getGenres(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getGenres(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getGenresByName", () => {
     const Name: string = "Name_example"
@@ -2240,7 +2250,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2330,7 +2342,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getAlbumsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getAlbumsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getArtistsInstantmix", () => {
     const ArtistType: string = "ArtistType_example"
@@ -2340,7 +2352,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2430,7 +2444,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getArtistsInstantmix(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getArtistsInstantmix(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getAudiobooksNextup", () => {
     const UserId: string = "UserId_example"
@@ -2454,7 +2468,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2544,7 +2560,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getItemsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getItemsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getMusicgenresByNameInstantmix", () => {
     const Name: string = "Name_example"
@@ -2555,7 +2571,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2645,7 +2663,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getMusicgenresByNameInstantmix(Name, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getMusicgenresByNameInstantmix(Name, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getMusicgenresInstantmix", () => {
     const ArtistType: string = "ArtistType_example"
@@ -2655,7 +2673,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2745,7 +2765,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getMusicgenresInstantmix(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getMusicgenresInstantmix(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getPlaylistsByIdInstantmix", () => {
     const Id: string = "Id_example"
@@ -2756,7 +2776,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2846,7 +2868,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getPlaylistsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getPlaylistsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getSongsByIdInstantmix", () => {
     const Id: string = "Id_example"
@@ -2857,7 +2879,9 @@ describe("InstantMixServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -2947,7 +2971,7 @@ describe("InstantMixServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getSongsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getSongsByIdInstantmix(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
 })
 
@@ -3066,7 +3090,9 @@ describe("ItemsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3156,7 +3182,7 @@ describe("ItemsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getItems(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getItems(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getUsersByUseridItems", () => {
     const UserId: string = "UserId_example"
@@ -3167,7 +3193,9 @@ describe("ItemsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3256,7 +3284,7 @@ describe("ItemsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getUsersByUseridItems(UserId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getUsersByUseridItems(UserId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getUsersByUseridItemsResume", () => {
     const UserId: string = "UserId_example"
@@ -3267,7 +3295,9 @@ describe("ItemsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3356,7 +3386,7 @@ describe("ItemsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getUsersByUseridItemsResume(UserId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getUsersByUseridItemsResume(UserId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
 })
 
@@ -3383,7 +3413,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3473,7 +3505,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getAlbumsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getAlbumsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getArtistsByIdSimilar", () => {
     const Id: string = "Id_example"
@@ -3484,7 +3516,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3574,7 +3608,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getArtistsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getArtistsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getGamesByIdSimilar", () => {
     const Id: string = "Id_example"
@@ -3585,7 +3619,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3675,7 +3711,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getGamesByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getGamesByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getItemsByIdAncestors", () => {
     const Id: string = "Id_example"
@@ -3709,7 +3745,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3799,7 +3837,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getItemsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getItemsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getItemsByIdThememedia", () => {
     const Id: string = "Id_example"
@@ -3864,7 +3902,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -3954,7 +3994,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getMoviesByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getMoviesByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getShowsByIdSimilar", () => {
     const Id: string = "Id_example"
@@ -3965,7 +4005,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4055,7 +4097,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getShowsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getShowsByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getTrailersByIdSimilar", () => {
     const Id: string = "Id_example"
@@ -4066,7 +4108,9 @@ describe("LibraryServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4156,7 +4200,7 @@ describe("LibraryServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getTrailersByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getTrailersByIdSimilar(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("postItemsByIdDelete", () => {
     const Id: string = "Id_example"
@@ -4361,7 +4405,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4451,7 +4497,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getLivetvChannels(Type, IsLiked, IsDisliked, EnableFavoriteSorting, AddCurrentProgram, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getLivetvChannels(Type, IsLiked, IsDisliked, EnableFavoriteSorting, AddCurrentProgram, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getLivetvChannelsById", () => {
     const Id: string = "Id_example"
@@ -4466,7 +4512,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4556,7 +4604,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getLivetvChanneltags(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getLivetvChanneltags(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getLivetvChanneltagsPrefixes", () => {
     const ArtistType: string = "ArtistType_example"
@@ -4566,7 +4614,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4656,7 +4706,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getLivetvChanneltagsPrefixes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getLivetvChanneltagsPrefixes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getLivetvEPG", () => {
     const Type: LiveTvChannelType = undefined
@@ -4672,7 +4722,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4762,7 +4814,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getLivetvEPG(Type, IsLiked, IsDisliked, EnableFavoriteSorting, AddCurrentProgram, ChannelIds, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getLivetvEPG(Type, IsLiked, IsDisliked, EnableFavoriteSorting, AddCurrentProgram, ChannelIds, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getLivetvFolder", () => {
     return expect(instance.getLivetvFolder({})).resolves.toBe(null)
@@ -4809,7 +4861,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -4899,7 +4953,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getLivetvPrograms(ChannelIds, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getLivetvPrograms(ChannelIds, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getLivetvProgramsRecommended", () => {
     const UserId: string = "UserId_example"
@@ -4931,7 +4985,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -5021,7 +5077,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getLivetvRecordings(ChannelId, Status, IsInProgress, SeriesTimerId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getLivetvRecordings(ChannelId, Status, IsInProgress, SeriesTimerId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getLivetvRecordingsById", () => {
     const Id: string = "Id_example"
@@ -5128,7 +5184,9 @@ describe("LiveTvServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -5218,7 +5276,7 @@ describe("LiveTvServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.postLivetvPrograms(body, ChannelIds, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.postLivetvPrograms(body, ChannelIds, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("postLivetvRecordingsByIdDelete", () => {
     const Id: string = "Id_example"
@@ -5360,7 +5418,9 @@ describe("MusicGenresServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -5450,7 +5510,7 @@ describe("MusicGenresServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getMusicgenres(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getMusicgenres(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getMusicgenresByName", () => {
     const Name: string = "Name_example"
@@ -5493,7 +5553,9 @@ describe("OfficialRatingServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -5583,7 +5645,7 @@ describe("OfficialRatingServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getOfficialratings(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getOfficialratings(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
 })
 
@@ -5660,7 +5722,9 @@ describe("PersonsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -5750,7 +5814,7 @@ describe("PersonsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getPersons(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getPersons(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getPersonsByName", () => {
     const Name: string = "Name_example"
@@ -6136,7 +6200,9 @@ describe("StudiosServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -6226,7 +6292,7 @@ describe("StudiosServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getStudios(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getStudios(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getStudiosByName", () => {
     const Name: string = "Name_example"
@@ -6584,7 +6650,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -6674,7 +6742,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getArtistsPrefixes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getArtistsPrefixes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getAudiocodecs", () => {
     const ArtistType: string = "ArtistType_example"
@@ -6684,7 +6752,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -6774,7 +6844,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getAudiocodecs(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getAudiocodecs(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getAudiolayouts", () => {
     const ArtistType: string = "ArtistType_example"
@@ -6784,7 +6854,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -6874,7 +6946,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getAudiolayouts(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getAudiolayouts(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getContainers", () => {
     const ArtistType: string = "ArtistType_example"
@@ -6884,7 +6956,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -6974,7 +7048,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getContainers(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getContainers(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getExtendedvideotypes", () => {
     const ArtistType: string = "ArtistType_example"
@@ -6984,7 +7058,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7074,7 +7150,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getExtendedvideotypes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getExtendedvideotypes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getItemsPrefixes", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7084,7 +7160,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7174,7 +7252,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getItemsPrefixes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getItemsPrefixes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getItemtypes", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7184,7 +7262,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7274,7 +7354,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getItemtypes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getItemtypes(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getStreamlanguages", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7284,7 +7364,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7374,7 +7456,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getStreamlanguages(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getStreamlanguages(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getSubtitlecodecs", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7384,7 +7466,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7474,7 +7558,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getSubtitlecodecs(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getSubtitlecodecs(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getTags", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7484,7 +7568,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7574,7 +7660,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getTags(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getTags(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getVideocodecs", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7584,7 +7670,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7674,7 +7762,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getVideocodecs(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getVideocodecs(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getYears", () => {
     const ArtistType: string = "ArtistType_example"
@@ -7684,7 +7772,9 @@ describe("TagServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7774,7 +7864,7 @@ describe("TagServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getYears(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getYears(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("postItemsByIdTagsAdd", () => {
     const body: api.UserLibraryAddTags = undefined
@@ -7824,7 +7914,9 @@ describe("TrailersServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -7914,7 +8006,7 @@ describe("TrailersServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getTrailers(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getTrailers(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
 })
 
@@ -7928,7 +8020,6 @@ describe("TvShowsServiceApi", () => {
     const Id: string = "Id_example"
     const Season: number = 56
     const SeasonId: string = "SeasonId_example"
-    const StartItemId: string = "StartItemId_example"
     const ArtistType: string = "ArtistType_example"
     const MaxOfficialRating: string = "MaxOfficialRating_example"
     const HasThemeSong: boolean = true
@@ -7936,7 +8027,9 @@ describe("TvShowsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -8026,19 +8119,110 @@ describe("TvShowsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getShowsByIdEpisodes(Id, Season, SeasonId, StartItemId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getShowsByIdEpisodes(Id, Season, SeasonId, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getShowsByIdSeasons", () => {
-    const UserId: string = "UserId_example"
     const Id: string = "Id_example"
-    const Fields: string = "Fields_example"
+    const ArtistType: string = "ArtistType_example"
+    const MaxOfficialRating: string = "MaxOfficialRating_example"
+    const HasThemeSong: boolean = true
+    const HasThemeVideo: boolean = true
+    const HasSubtitles: boolean = true
+    const HasSpecialFeature: boolean = true
+    const HasTrailer: boolean = true
     const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
+    const MinIndexNumber: number = 56
+    const MinStartDate: string = "MinStartDate_example"
+    const MaxStartDate: string = "MaxStartDate_example"
+    const MinEndDate: string = "MinEndDate_example"
+    const MaxEndDate: string = "MaxEndDate_example"
+    const MinPlayers: number = 56
+    const MaxPlayers: number = 56
+    const ParentIndexNumber: number = 56
+    const HasParentalRating: boolean = true
+    const IsHD: boolean = true
+    const IsUnaired: boolean = true
+    const MinCommunityRating: number = 1.2
+    const MinCriticRating: number = 1.2
+    const AiredDuringSeason: number = 56
+    const MinPremiereDate: string = "MinPremiereDate_example"
+    const MinDateLastSaved: string = "MinDateLastSaved_example"
+    const MinDateLastSavedForUser: string = "MinDateLastSavedForUser_example"
+    const MaxPremiereDate: string = "MaxPremiereDate_example"
+    const HasOverview: boolean = true
+    const HasImdbId: boolean = true
+    const HasTmdbId: boolean = true
+    const HasTvdbId: boolean = true
+    const ExcludeItemIds: string = "ExcludeItemIds_example"
+    const StartIndex: number = 56
+    const Limit: number = 56
+    const Recursive: boolean = true
+    const SearchTerm: string = "SearchTerm_example"
+    const SortOrder: string = "SortOrder_example"
+    const ParentId: string = "ParentId_example"
+    const Fields: string = "Fields_example"
+    const ExcludeItemTypes: string = "ExcludeItemTypes_example"
+    const IncludeItemTypes: string = "IncludeItemTypes_example"
+    const AnyProviderIdEquals: string = "AnyProviderIdEquals_example"
+    const Filters: string = "Filters_example"
+    const IsFavorite: boolean = true
+    const IsMovie: boolean = true
+    const IsSeries: boolean = true
+    const IsFolder: boolean = true
+    const IsNews: boolean = true
+    const IsKids: boolean = true
+    const IsSports: boolean = true
+    const IsNew: boolean = true
+    const IsPremiere: boolean = true
+    const IsNewOrPremiere: boolean = true
+    const IsRepeat: boolean = true
+    const ProjectToMedia: boolean = true
+    const MediaTypes: string = "MediaTypes_example"
+    const ImageTypes: string = "ImageTypes_example"
+    const SortBy: string = "SortBy_example"
+    const IsPlayed: boolean = true
+    const Genres: string = "Genres_example"
+    const OfficialRatings: string = "OfficialRatings_example"
+    const Tags: string = "Tags_example"
+    const ExcludeTags: string = "ExcludeTags_example"
+    const Years: string = "Years_example"
     const EnableImages: boolean = true
+    const EnableUserData: boolean = true
     const ImageTypeLimit: number = 56
     const EnableImageTypes: string = "EnableImageTypes_example"
-    const EnableUserData: boolean = true
-    return expect(instance.getShowsByIdSeasons(UserId, Id, Fields, IsSpecialSeason, AdjacentTo, EnableImages, ImageTypeLimit, EnableImageTypes, EnableUserData, {})).resolves.toBe(null)
+    const Person: string = "Person_example"
+    const PersonIds: string = "PersonIds_example"
+    const PersonTypes: string = "PersonTypes_example"
+    const Studios: string = "Studios_example"
+    const StudioIds: string = "StudioIds_example"
+    const Artists: string = "Artists_example"
+    const ArtistIds: string = "ArtistIds_example"
+    const Albums: string = "Albums_example"
+    const Ids: string = "Ids_example"
+    const VideoTypes: string = "VideoTypes_example"
+    const Containers: string = "Containers_example"
+    const AudioCodecs: string = "AudioCodecs_example"
+    const AudioLayouts: string = "AudioLayouts_example"
+    const VideoCodecs: string = "VideoCodecs_example"
+    const ExtendedVideoTypes: string = "ExtendedVideoTypes_example"
+    const SubtitleCodecs: string = "SubtitleCodecs_example"
+    const Path: string = "Path_example"
+    const UserId: string = "UserId_example"
+    const MinOfficialRating: string = "MinOfficialRating_example"
+    const IsLocked: boolean = true
+    const IsPlaceHolder: boolean = true
+    const HasOfficialRating: boolean = true
+    const GroupItemsIntoCollections: boolean = true
+    const Is3D: boolean = true
+    const SeriesStatus: string = "SeriesStatus_example"
+    const NameStartsWithOrGreater: string = "NameStartsWithOrGreater_example"
+    const ArtistStartsWithOrGreater: string = "ArtistStartsWithOrGreater_example"
+    const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
+    const NameStartsWith: string = "NameStartsWith_example"
+    const NameLessThan: string = "NameLessThan_example"
+    return expect(instance.getShowsByIdSeasons(Id, ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getShowsMissing", () => {
     const ArtistType: string = "ArtistType_example"
@@ -8048,7 +8232,9 @@ describe("TvShowsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -8138,7 +8324,7 @@ describe("TvShowsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getShowsMissing(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getShowsMissing(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
   test("getShowsNextup", () => {
     const UserId: string = "UserId_example"
@@ -8161,7 +8347,9 @@ describe("TvShowsServiceApi", () => {
     const HasSubtitles: boolean = true
     const HasSpecialFeature: boolean = true
     const HasTrailer: boolean = true
+    const IsSpecialSeason: boolean = true
     const AdjacentTo: string = "AdjacentTo_example"
+    const StartItemId: string = "StartItemId_example"
     const MinIndexNumber: number = 56
     const MinStartDate: string = "MinStartDate_example"
     const MaxStartDate: string = "MaxStartDate_example"
@@ -8251,7 +8439,7 @@ describe("TvShowsServiceApi", () => {
     const AlbumArtistStartsWithOrGreater: string = "AlbumArtistStartsWithOrGreater_example"
     const NameStartsWith: string = "NameStartsWith_example"
     const NameLessThan: string = "NameLessThan_example"
-    return expect(instance.getShowsUpcoming(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, AdjacentTo, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
+    return expect(instance.getShowsUpcoming(ArtistType, MaxOfficialRating, HasThemeSong, HasThemeVideo, HasSubtitles, HasSpecialFeature, HasTrailer, IsSpecialSeason, AdjacentTo, StartItemId, MinIndexNumber, MinStartDate, MaxStartDate, MinEndDate, MaxEndDate, MinPlayers, MaxPlayers, ParentIndexNumber, HasParentalRating, IsHD, IsUnaired, MinCommunityRating, MinCriticRating, AiredDuringSeason, MinPremiereDate, MinDateLastSaved, MinDateLastSavedForUser, MaxPremiereDate, HasOverview, HasImdbId, HasTmdbId, HasTvdbId, ExcludeItemIds, StartIndex, Limit, Recursive, SearchTerm, SortOrder, ParentId, Fields, ExcludeItemTypes, IncludeItemTypes, AnyProviderIdEquals, Filters, IsFavorite, IsMovie, IsSeries, IsFolder, IsNews, IsKids, IsSports, IsNew, IsPremiere, IsNewOrPremiere, IsRepeat, ProjectToMedia, MediaTypes, ImageTypes, SortBy, IsPlayed, Genres, OfficialRatings, Tags, ExcludeTags, Years, EnableImages, EnableUserData, ImageTypeLimit, EnableImageTypes, Person, PersonIds, PersonTypes, Studios, StudioIds, Artists, ArtistIds, Albums, Ids, VideoTypes, Containers, AudioCodecs, AudioLayouts, VideoCodecs, ExtendedVideoTypes, SubtitleCodecs, Path, UserId, MinOfficialRating, IsLocked, IsPlaceHolder, HasOfficialRating, GroupItemsIntoCollections, Is3D, SeriesStatus, NameStartsWithOrGreater, ArtistStartsWithOrGreater, AlbumArtistStartsWithOrGreater, NameStartsWith, NameLessThan, {})).resolves.toBe(null)
   })
 })
 

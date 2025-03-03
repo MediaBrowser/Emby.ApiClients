@@ -52,6 +52,7 @@ open class ConfigurationServiceAPI {
   "LogAllQueryTimes" : true,
   "PlaylistsUpgradedToM3U" : true,
   "AllowLegacyLocalNetworkPassword" : true,
+  "DisableOutgoingIPv6" : true,
   "RunAtStartup" : true,
   "HttpServerPortNumber" : 1,
   "RequireHttps" : true,

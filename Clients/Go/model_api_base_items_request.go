@@ -7,6 +7,7 @@
 package embyclient
 
 type ApiBaseItemsRequest struct {
+	IsSpecialEpisode bool `json:"IsSpecialEpisode,omitempty"`
 	Is4K bool `json:"Is4K,omitempty"`
 	EnableTotalRecordCount bool `json:"EnableTotalRecordCount,omitempty"`
 	Name string `json:"Name,omitempty"`
@@ -27,6 +28,7 @@ type ApiBaseItemsRequest struct {
 	SubtitleLanguages string `json:"SubtitleLanguages,omitempty"`
 	CanEditItems bool `json:"CanEditItems,omitempty"`
 	GroupItemsInto *LibraryItemLinkType `json:"GroupItemsInto,omitempty"`
+	IsStandaloneSpecial bool `json:"IsStandaloneSpecial,omitempty"`
 	MinWidth int32 `json:"MinWidth,omitempty"`
 	MinHeight int32 `json:"MinHeight,omitempty"`
 	MaxWidth int32 `json:"MaxWidth,omitempty"`
@@ -35,4 +37,5 @@ type ApiBaseItemsRequest struct {
 	AirDays []DayOfWeek `json:"AirDays,omitempty"`
 	IsAiring bool `json:"IsAiring,omitempty"`
 	HasAired bool `json:"HasAired,omitempty"`
+	CollectionTypes string `json:"CollectionTypes,omitempty"`
 }
