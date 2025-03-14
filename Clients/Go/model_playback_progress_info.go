@@ -5,6 +5,9 @@
  *
  */
 package embyclient
+import (
+	"time"
+)
 
 // Class PlaybackProgressInfo.  
 type PlaybackProgressInfo struct {
@@ -39,6 +42,8 @@ type PlaybackProgressInfo struct {
 	// The live stream identifier.
 	LiveStreamId string `json:"LiveStreamId,omitempty"`
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
+	SleepTimerMode *SleepTimerMode `json:"SleepTimerMode,omitempty"`
+	SleepTimerEndTime time.Time `json:"SleepTimerEndTime,omitempty"`
 	Shuffle bool `json:"Shuffle,omitempty"`
 	SubtitleOffset int32 `json:"SubtitleOffset,omitempty"`
 	PlaybackRate float64 `json:"PlaybackRate,omitempty"`

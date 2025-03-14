@@ -17,8 +17,10 @@ import embyclient.model.PlayMethod;
 import embyclient.model.ProgressEvent;
 import embyclient.model.QueueItem;
 import embyclient.model.RepeatMode;
+import embyclient.model.SleepTimerMode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -89,6 +91,12 @@ public class PlaybackStartInfo {
 
   @SerializedName("RepeatMode")
   private RepeatMode repeatMode = null;
+
+  @SerializedName("SleepTimerMode")
+  private SleepTimerMode sleepTimerMode = null;
+
+  @SerializedName("SleepTimerEndTime")
+  private OffsetDateTime sleepTimerEndTime = null;
 
   @SerializedName("Shuffle")
   private Boolean shuffle = null;
@@ -497,6 +505,42 @@ public class PlaybackStartInfo {
     this.repeatMode = repeatMode;
   }
 
+  public PlaybackStartInfo sleepTimerMode(SleepTimerMode sleepTimerMode) {
+    this.sleepTimerMode = sleepTimerMode;
+    return this;
+  }
+
+   /**
+   * Get sleepTimerMode
+   * @return sleepTimerMode
+  **/
+  @Schema(description = "")
+  public SleepTimerMode getSleepTimerMode() {
+    return sleepTimerMode;
+  }
+
+  public void setSleepTimerMode(SleepTimerMode sleepTimerMode) {
+    this.sleepTimerMode = sleepTimerMode;
+  }
+
+  public PlaybackStartInfo sleepTimerEndTime(OffsetDateTime sleepTimerEndTime) {
+    this.sleepTimerEndTime = sleepTimerEndTime;
+    return this;
+  }
+
+   /**
+   * Get sleepTimerEndTime
+   * @return sleepTimerEndTime
+  **/
+  @Schema(description = "")
+  public OffsetDateTime getSleepTimerEndTime() {
+    return sleepTimerEndTime;
+  }
+
+  public void setSleepTimerEndTime(OffsetDateTime sleepTimerEndTime) {
+    this.sleepTimerEndTime = sleepTimerEndTime;
+  }
+
   public PlaybackStartInfo shuffle(Boolean shuffle) {
     this.shuffle = shuffle;
     return this;
@@ -662,6 +706,8 @@ public class PlaybackStartInfo {
         Objects.equals(this.playMethod, playbackStartInfo.playMethod) &&
         Objects.equals(this.liveStreamId, playbackStartInfo.liveStreamId) &&
         Objects.equals(this.repeatMode, playbackStartInfo.repeatMode) &&
+        Objects.equals(this.sleepTimerMode, playbackStartInfo.sleepTimerMode) &&
+        Objects.equals(this.sleepTimerEndTime, playbackStartInfo.sleepTimerEndTime) &&
         Objects.equals(this.shuffle, playbackStartInfo.shuffle) &&
         Objects.equals(this.subtitleOffset, playbackStartInfo.subtitleOffset) &&
         Objects.equals(this.playbackRate, playbackStartInfo.playbackRate) &&
@@ -673,7 +719,7 @@ public class PlaybackStartInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(canSeek, nowPlayingQueue, playlistItemId, itemId, sessionId, mediaSourceId, audioStreamIndex, subtitleStreamIndex, isPaused, playlistIndex, playlistLength, isMuted, runTimeTicks, playbackStartTimeTicks, volumeLevel, brightness, aspectRatio, eventName, playMethod, liveStreamId, repeatMode, shuffle, subtitleOffset, playbackRate, playlistItemIds, playSessionId, item, positionTicks);
+    return Objects.hash(canSeek, nowPlayingQueue, playlistItemId, itemId, sessionId, mediaSourceId, audioStreamIndex, subtitleStreamIndex, isPaused, playlistIndex, playlistLength, isMuted, runTimeTicks, playbackStartTimeTicks, volumeLevel, brightness, aspectRatio, eventName, playMethod, liveStreamId, repeatMode, sleepTimerMode, sleepTimerEndTime, shuffle, subtitleOffset, playbackRate, playlistItemIds, playSessionId, item, positionTicks);
   }
 
 
@@ -703,6 +749,8 @@ public class PlaybackStartInfo {
     sb.append("    playMethod: ").append(toIndentedString(playMethod)).append("\n");
     sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
     sb.append("    repeatMode: ").append(toIndentedString(repeatMode)).append("\n");
+    sb.append("    sleepTimerMode: ").append(toIndentedString(sleepTimerMode)).append("\n");
+    sb.append("    sleepTimerEndTime: ").append(toIndentedString(sleepTimerEndTime)).append("\n");
     sb.append("    shuffle: ").append(toIndentedString(shuffle)).append("\n");
     sb.append("    subtitleOffset: ").append(toIndentedString(subtitleOffset)).append("\n");
     sb.append("    playbackRate: ").append(toIndentedString(playbackRate)).append("\n");

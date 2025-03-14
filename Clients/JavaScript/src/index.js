@@ -265,6 +265,7 @@ import SeriesInfo from './model/SeriesInfo';
 import ServerConfiguration from './model/ServerConfiguration';
 import SessionSessionInfo from './model/SessionSessionInfo';
 import SessionUserInfo from './model/SessionUserInfo';
+import SleepTimerMode from './model/SleepTimerMode';
 import SongInfo from './model/SongInfo';
 import SortOrder from './model/SortOrder';
 import SubtitleDeliveryMethod from './model/SubtitleDeliveryMethod';
@@ -430,7 +431,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.0.41
+* @version 4.9.0.42
 */
 export {
     /**
@@ -1968,6 +1969,12 @@ export {
      * @property {module:model/SessionUserInfo}
      */
     SessionUserInfo,
+
+    /**
+     * The SleepTimerMode model constructor.
+     * @property {module:model/SleepTimerMode}
+     */
+    SleepTimerMode,
 
     /**
      * The SongInfo model constructor.

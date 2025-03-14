@@ -13,8 +13,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import embyclient.model.ProgressEvent;
+import embyclient.model.SleepTimerMode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 /**
  * ApiOnPlaybackProgress
  */
@@ -29,6 +31,12 @@ public class ApiOnPlaybackProgress {
 
   @SerializedName("Shuffle")
   private Boolean shuffle = null;
+
+  @SerializedName("SleepTimerMode")
+  private SleepTimerMode sleepTimerMode = null;
+
+  @SerializedName("SleepTimerEndTime")
+  private OffsetDateTime sleepTimerEndTime = null;
 
   @SerializedName("EventName")
   private ProgressEvent eventName = null;
@@ -87,6 +95,42 @@ public class ApiOnPlaybackProgress {
     this.shuffle = shuffle;
   }
 
+  public ApiOnPlaybackProgress sleepTimerMode(SleepTimerMode sleepTimerMode) {
+    this.sleepTimerMode = sleepTimerMode;
+    return this;
+  }
+
+   /**
+   * Get sleepTimerMode
+   * @return sleepTimerMode
+  **/
+  @Schema(description = "")
+  public SleepTimerMode getSleepTimerMode() {
+    return sleepTimerMode;
+  }
+
+  public void setSleepTimerMode(SleepTimerMode sleepTimerMode) {
+    this.sleepTimerMode = sleepTimerMode;
+  }
+
+  public ApiOnPlaybackProgress sleepTimerEndTime(OffsetDateTime sleepTimerEndTime) {
+    this.sleepTimerEndTime = sleepTimerEndTime;
+    return this;
+  }
+
+   /**
+   * Get sleepTimerEndTime
+   * @return sleepTimerEndTime
+  **/
+  @Schema(description = "")
+  public OffsetDateTime getSleepTimerEndTime() {
+    return sleepTimerEndTime;
+  }
+
+  public void setSleepTimerEndTime(OffsetDateTime sleepTimerEndTime) {
+    this.sleepTimerEndTime = sleepTimerEndTime;
+  }
+
   public ApiOnPlaybackProgress eventName(ProgressEvent eventName) {
     this.eventName = eventName;
     return this;
@@ -118,12 +162,14 @@ public class ApiOnPlaybackProgress {
     return Objects.equals(this.playlistIndex, apiOnPlaybackProgress.playlistIndex) &&
         Objects.equals(this.playlistLength, apiOnPlaybackProgress.playlistLength) &&
         Objects.equals(this.shuffle, apiOnPlaybackProgress.shuffle) &&
+        Objects.equals(this.sleepTimerMode, apiOnPlaybackProgress.sleepTimerMode) &&
+        Objects.equals(this.sleepTimerEndTime, apiOnPlaybackProgress.sleepTimerEndTime) &&
         Objects.equals(this.eventName, apiOnPlaybackProgress.eventName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(playlistIndex, playlistLength, shuffle, eventName);
+    return Objects.hash(playlistIndex, playlistLength, shuffle, sleepTimerMode, sleepTimerEndTime, eventName);
   }
 
 
@@ -135,6 +181,8 @@ public class ApiOnPlaybackProgress {
     sb.append("    playlistIndex: ").append(toIndentedString(playlistIndex)).append("\n");
     sb.append("    playlistLength: ").append(toIndentedString(playlistLength)).append("\n");
     sb.append("    shuffle: ").append(toIndentedString(shuffle)).append("\n");
+    sb.append("    sleepTimerMode: ").append(toIndentedString(sleepTimerMode)).append("\n");
+    sb.append("    sleepTimerEndTime: ").append(toIndentedString(sleepTimerEndTime)).append("\n");
     sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -11,4 +11,5 @@ import Foundation
 public enum LibraryUserCopyOptions: String, Codable {
     case userPolicy = "UserPolicy"
     case userConfiguration = "UserConfiguration"
+    case userData = "UserData"
 }

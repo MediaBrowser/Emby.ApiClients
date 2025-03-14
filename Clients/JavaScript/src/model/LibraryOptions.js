@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.9.0.41
+* @version 4.9.0.42
 */
 export default class LibraryOptions {
     /**
@@ -193,11 +193,14 @@ export default class LibraryOptions {
             if (data.hasOwnProperty('ImportCollections')) {
                 obj['ImportCollections'] = ApiClient.convertToType(data['ImportCollections'], 'Boolean');
             }
-            if (data.hasOwnProperty('DisableMultiVersionItems')) {
-                obj['DisableMultiVersionItems'] = ApiClient.convertToType(data['DisableMultiVersionItems'], 'Boolean');
+            if (data.hasOwnProperty('EnableMultiVersionByFiles')) {
+                obj['EnableMultiVersionByFiles'] = ApiClient.convertToType(data['EnableMultiVersionByFiles'], 'Boolean');
             }
-            if (data.hasOwnProperty('DisableMultiPartItems')) {
-                obj['DisableMultiPartItems'] = ApiClient.convertToType(data['DisableMultiPartItems'], 'Boolean');
+            if (data.hasOwnProperty('EnableMultiVersionByMetadata')) {
+                obj['EnableMultiVersionByMetadata'] = ApiClient.convertToType(data['EnableMultiVersionByMetadata'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnableMultiPartItems')) {
+                obj['EnableMultiPartItems'] = ApiClient.convertToType(data['EnableMultiPartItems'], 'Boolean');
             }
             if (data.hasOwnProperty('MinCollectionItems')) {
                 obj['MinCollectionItems'] = ApiClient.convertToType(data['MinCollectionItems'], 'Number');
@@ -427,13 +430,17 @@ export default class LibraryOptions {
     */
     'ImportCollections' = undefined;
     /**
-    * @member {Boolean} DisableMultiVersionItems
+    * @member {Boolean} EnableMultiVersionByFiles
     */
-    'DisableMultiVersionItems' = undefined;
+    'EnableMultiVersionByFiles' = undefined;
     /**
-    * @member {Boolean} DisableMultiPartItems
+    * @member {Boolean} EnableMultiVersionByMetadata
     */
-    'DisableMultiPartItems' = undefined;
+    'EnableMultiVersionByMetadata' = undefined;
+    /**
+    * @member {Boolean} EnableMultiPartItems
+    */
+    'EnableMultiPartItems' = undefined;
     /**
     * @member {Number} MinCollectionItems
     */

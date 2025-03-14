@@ -29,11 +29,13 @@ public struct PlayerStateInfo: Codable {
     public var mediaSourceId: String?
     public var playMethod: PlayMethod?
     public var repeatMode: RepeatMode?
+    public var sleepTimerMode: SleepTimerMode?
+    public var sleepTimerEndTime: Date?
     public var subtitleOffset: Int?
     public var shuffle: Bool?
     public var playbackRate: Double?
 
-    public init(positionTicks: Int64? = nil, canSeek: Bool? = nil, isPaused: Bool? = nil, isMuted: Bool? = nil, volumeLevel: Int? = nil, audioStreamIndex: Int? = nil, subtitleStreamIndex: Int? = nil, mediaSourceId: String? = nil, playMethod: PlayMethod? = nil, repeatMode: RepeatMode? = nil, subtitleOffset: Int? = nil, shuffle: Bool? = nil, playbackRate: Double? = nil) {
+    public init(positionTicks: Int64? = nil, canSeek: Bool? = nil, isPaused: Bool? = nil, isMuted: Bool? = nil, volumeLevel: Int? = nil, audioStreamIndex: Int? = nil, subtitleStreamIndex: Int? = nil, mediaSourceId: String? = nil, playMethod: PlayMethod? = nil, repeatMode: RepeatMode? = nil, sleepTimerMode: SleepTimerMode? = nil, sleepTimerEndTime: Date? = nil, subtitleOffset: Int? = nil, shuffle: Bool? = nil, playbackRate: Double? = nil) {
         self.positionTicks = positionTicks
         self.canSeek = canSeek
         self.isPaused = isPaused
@@ -44,6 +46,8 @@ public struct PlayerStateInfo: Codable {
         self.mediaSourceId = mediaSourceId
         self.playMethod = playMethod
         self.repeatMode = repeatMode
+        self.sleepTimerMode = sleepTimerMode
+        self.sleepTimerEndTime = sleepTimerEndTime
         self.subtitleOffset = subtitleOffset
         self.shuffle = shuffle
         self.playbackRate = playbackRate
@@ -60,6 +64,8 @@ public struct PlayerStateInfo: Codable {
         case mediaSourceId = "MediaSourceId"
         case playMethod = "PlayMethod"
         case repeatMode = "RepeatMode"
+        case sleepTimerMode = "SleepTimerMode"
+        case sleepTimerEndTime = "SleepTimerEndTime"
         case subtitleOffset = "SubtitleOffset"
         case shuffle = "Shuffle"
         case playbackRate = "PlaybackRate"

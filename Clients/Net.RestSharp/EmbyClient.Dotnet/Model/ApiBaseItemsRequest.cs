@@ -29,6 +29,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="isSpecialEpisode">isSpecialEpisode.</param>
         /// <param name="is4K">is4K.</param>
         /// <param name="enableTotalRecordCount">enableTotalRecordCount.</param>
+        /// <param name="isDuplicate">isDuplicate.</param>
         /// <param name="name">name.</param>
         /// <param name="recordingKeyword">recordingKeyword.</param>
         /// <param name="recordingKeywordType">recordingKeywordType.</param>
@@ -39,6 +40,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="excludeTagIds">excludeTagIds.</param>
         /// <param name="excludeArtistIds">excludeArtistIds.</param>
         /// <param name="albumArtistIds">albumArtistIds.</param>
+        /// <param name="composerArtistIds">composerArtistIds.</param>
         /// <param name="contributingArtistIds">contributingArtistIds.</param>
         /// <param name="albumIds">albumIds.</param>
         /// <param name="outerIds">outerIds.</param>
@@ -57,11 +59,12 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="isAiring">isAiring.</param>
         /// <param name="hasAired">hasAired.</param>
         /// <param name="collectionTypes">collectionTypes.</param>
-        public ApiBaseItemsRequest(bool? isSpecialEpisode = default(bool?), bool? is4K = default(bool?), bool? enableTotalRecordCount = default(bool?), string name = default(string), string recordingKeyword = default(string), LiveTvKeywordType recordingKeywordType = default(LiveTvKeywordType), int? randomSeed = default(int?), string genreIds = default(string), string collectionIds = default(string), string tagIds = default(string), string excludeTagIds = default(string), string excludeArtistIds = default(string), string albumArtistIds = default(string), string contributingArtistIds = default(string), string albumIds = default(string), string outerIds = default(string), string listItemIds = default(string), string audioLanguages = default(string), string subtitleLanguages = default(string), bool? canEditItems = default(bool?), LibraryItemLinkType groupItemsInto = default(LibraryItemLinkType), bool? isStandaloneSpecial = default(bool?), int? minWidth = default(int?), int? minHeight = default(int?), int? maxWidth = default(int?), int? maxHeight = default(int?), bool? groupProgramsBySeries = default(bool?), List<DayOfWeek> airDays = default(List<DayOfWeek>), bool? isAiring = default(bool?), bool? hasAired = default(bool?), string collectionTypes = default(string))
+        public ApiBaseItemsRequest(bool? isSpecialEpisode = default(bool?), bool? is4K = default(bool?), bool? enableTotalRecordCount = default(bool?), bool? isDuplicate = default(bool?), string name = default(string), string recordingKeyword = default(string), LiveTvKeywordType recordingKeywordType = default(LiveTvKeywordType), int? randomSeed = default(int?), string genreIds = default(string), string collectionIds = default(string), string tagIds = default(string), string excludeTagIds = default(string), string excludeArtistIds = default(string), string albumArtistIds = default(string), string composerArtistIds = default(string), string contributingArtistIds = default(string), string albumIds = default(string), string outerIds = default(string), string listItemIds = default(string), string audioLanguages = default(string), string subtitleLanguages = default(string), bool? canEditItems = default(bool?), LibraryItemLinkType groupItemsInto = default(LibraryItemLinkType), bool? isStandaloneSpecial = default(bool?), int? minWidth = default(int?), int? minHeight = default(int?), int? maxWidth = default(int?), int? maxHeight = default(int?), bool? groupProgramsBySeries = default(bool?), List<DayOfWeek> airDays = default(List<DayOfWeek>), bool? isAiring = default(bool?), bool? hasAired = default(bool?), string collectionTypes = default(string))
         {
             this.IsSpecialEpisode = isSpecialEpisode;
             this.Is4K = is4K;
             this.EnableTotalRecordCount = enableTotalRecordCount;
+            this.IsDuplicate = isDuplicate;
             this.Name = name;
             this.RecordingKeyword = recordingKeyword;
             this.RecordingKeywordType = recordingKeywordType;
@@ -72,6 +75,7 @@ namespace EmbyClient.Dotnet.Model
             this.ExcludeTagIds = excludeTagIds;
             this.ExcludeArtistIds = excludeArtistIds;
             this.AlbumArtistIds = albumArtistIds;
+            this.ComposerArtistIds = composerArtistIds;
             this.ContributingArtistIds = contributingArtistIds;
             this.AlbumIds = albumIds;
             this.OuterIds = outerIds;
@@ -109,6 +113,12 @@ namespace EmbyClient.Dotnet.Model
         /// </summary>
         [DataMember(Name="EnableTotalRecordCount", EmitDefaultValue=false)]
         public bool? EnableTotalRecordCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDuplicate
+        /// </summary>
+        [DataMember(Name="IsDuplicate", EmitDefaultValue=false)]
+        public bool? IsDuplicate { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -169,6 +179,12 @@ namespace EmbyClient.Dotnet.Model
         /// </summary>
         [DataMember(Name="AlbumArtistIds", EmitDefaultValue=false)]
         public string AlbumArtistIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ComposerArtistIds
+        /// </summary>
+        [DataMember(Name="ComposerArtistIds", EmitDefaultValue=false)]
+        public string ComposerArtistIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ContributingArtistIds
@@ -289,6 +305,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  IsSpecialEpisode: ").Append(IsSpecialEpisode).Append("\n");
             sb.Append("  Is4K: ").Append(Is4K).Append("\n");
             sb.Append("  EnableTotalRecordCount: ").Append(EnableTotalRecordCount).Append("\n");
+            sb.Append("  IsDuplicate: ").Append(IsDuplicate).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  RecordingKeyword: ").Append(RecordingKeyword).Append("\n");
             sb.Append("  RecordingKeywordType: ").Append(RecordingKeywordType).Append("\n");
@@ -299,6 +316,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  ExcludeTagIds: ").Append(ExcludeTagIds).Append("\n");
             sb.Append("  ExcludeArtistIds: ").Append(ExcludeArtistIds).Append("\n");
             sb.Append("  AlbumArtistIds: ").Append(AlbumArtistIds).Append("\n");
+            sb.Append("  ComposerArtistIds: ").Append(ComposerArtistIds).Append("\n");
             sb.Append("  ContributingArtistIds: ").Append(ContributingArtistIds).Append("\n");
             sb.Append("  AlbumIds: ").Append(AlbumIds).Append("\n");
             sb.Append("  OuterIds: ").Append(OuterIds).Append("\n");
@@ -367,6 +385,11 @@ namespace EmbyClient.Dotnet.Model
                     this.EnableTotalRecordCount.Equals(input.EnableTotalRecordCount))
                 ) && 
                 (
+                    this.IsDuplicate == input.IsDuplicate ||
+                    (this.IsDuplicate != null &&
+                    this.IsDuplicate.Equals(input.IsDuplicate))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -415,6 +438,11 @@ namespace EmbyClient.Dotnet.Model
                     this.AlbumArtistIds == input.AlbumArtistIds ||
                     (this.AlbumArtistIds != null &&
                     this.AlbumArtistIds.Equals(input.AlbumArtistIds))
+                ) && 
+                (
+                    this.ComposerArtistIds == input.ComposerArtistIds ||
+                    (this.ComposerArtistIds != null &&
+                    this.ComposerArtistIds.Equals(input.ComposerArtistIds))
                 ) && 
                 (
                     this.ContributingArtistIds == input.ContributingArtistIds ||
@@ -524,6 +552,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.Is4K.GetHashCode();
                 if (this.EnableTotalRecordCount != null)
                     hashCode = hashCode * 59 + this.EnableTotalRecordCount.GetHashCode();
+                if (this.IsDuplicate != null)
+                    hashCode = hashCode * 59 + this.IsDuplicate.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RecordingKeyword != null)
@@ -544,6 +574,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.ExcludeArtistIds.GetHashCode();
                 if (this.AlbumArtistIds != null)
                     hashCode = hashCode * 59 + this.AlbumArtistIds.GetHashCode();
+                if (this.ComposerArtistIds != null)
+                    hashCode = hashCode * 59 + this.ComposerArtistIds.GetHashCode();
                 if (this.ContributingArtistIds != null)
                     hashCode = hashCode * 59 + this.ContributingArtistIds.GetHashCode();
                 if (this.AlbumIds != null)

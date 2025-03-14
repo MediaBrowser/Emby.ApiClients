@@ -5,6 +5,9 @@
  *
  */
 package embyclient
+import (
+	"time"
+)
 
 type PlayerStateInfo struct {
 	// The now playing position ticks.
@@ -25,6 +28,8 @@ type PlayerStateInfo struct {
 	MediaSourceId string `json:"MediaSourceId,omitempty"`
 	PlayMethod *PlayMethod `json:"PlayMethod,omitempty"`
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
+	SleepTimerMode *SleepTimerMode `json:"SleepTimerMode,omitempty"`
+	SleepTimerEndTime time.Time `json:"SleepTimerEndTime,omitempty"`
 	SubtitleOffset int32 `json:"SubtitleOffset,omitempty"`
 	Shuffle bool `json:"Shuffle,omitempty"`
 	PlaybackRate float64 `json:"PlaybackRate,omitempty"`

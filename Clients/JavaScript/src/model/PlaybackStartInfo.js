@@ -15,11 +15,12 @@ import PlayMethod from './PlayMethod';
 import ProgressEvent from './ProgressEvent';
 import QueueItem from './QueueItem';
 import RepeatMode from './RepeatMode';
+import SleepTimerMode from './SleepTimerMode';
 
 /**
 * The PlaybackStartInfo model module.
 * @module model/PlaybackStartInfo
-* @version 4.9.0.41
+* @version 4.9.0.42
 */
 export default class PlaybackStartInfo {
     /**
@@ -109,6 +110,12 @@ export default class PlaybackStartInfo {
             }
             if (data.hasOwnProperty('RepeatMode')) {
                 obj['RepeatMode'] = RepeatMode.constructFromObject(data['RepeatMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerMode')) {
+                obj['SleepTimerMode'] = SleepTimerMode.constructFromObject(data['SleepTimerMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerEndTime')) {
+                obj['SleepTimerEndTime'] = ApiClient.convertToType(data['SleepTimerEndTime'], 'Date');
             }
             if (data.hasOwnProperty('Shuffle')) {
                 obj['Shuffle'] = ApiClient.convertToType(data['Shuffle'], 'Boolean');
@@ -229,6 +236,14 @@ export default class PlaybackStartInfo {
     * @member {module:model/RepeatMode} RepeatMode
     */
     'RepeatMode' = undefined;
+    /**
+    * @member {module:model/SleepTimerMode} SleepTimerMode
+    */
+    'SleepTimerMode' = undefined;
+    /**
+    * @member {Date} SleepTimerEndTime
+    */
+    'SleepTimerEndTime' = undefined;
     /**
     * @member {Boolean} Shuffle
     */

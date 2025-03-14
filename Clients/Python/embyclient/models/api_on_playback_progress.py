@@ -25,6 +25,8 @@ class ApiOnPlaybackProgress(object):
         'playlist_index': 'int',
         'playlist_length': 'int',
         'shuffle': 'bool',
+        'sleep_timer_mode': 'SleepTimerMode',
+        'sleep_timer_end_time': 'datetime',
         'event_name': 'ProgressEvent'
     }
 
@@ -32,14 +34,18 @@ class ApiOnPlaybackProgress(object):
         'playlist_index': 'PlaylistIndex',
         'playlist_length': 'PlaylistLength',
         'shuffle': 'Shuffle',
+        'sleep_timer_mode': 'SleepTimerMode',
+        'sleep_timer_end_time': 'SleepTimerEndTime',
         'event_name': 'EventName'
     }
 
-    def __init__(self, playlist_index=None, playlist_length=None, shuffle=None, event_name=None):  # noqa: E501
+    def __init__(self, playlist_index=None, playlist_length=None, shuffle=None, sleep_timer_mode=None, sleep_timer_end_time=None, event_name=None):  # noqa: E501
         """ApiOnPlaybackProgress - a model defined in Swagger"""  # noqa: E501
         self._playlist_index = None
         self._playlist_length = None
         self._shuffle = None
+        self._sleep_timer_mode = None
+        self._sleep_timer_end_time = None
         self._event_name = None
         self.discriminator = None
         if playlist_index is not None:
@@ -48,6 +54,10 @@ class ApiOnPlaybackProgress(object):
             self.playlist_length = playlist_length
         if shuffle is not None:
             self.shuffle = shuffle
+        if sleep_timer_mode is not None:
+            self.sleep_timer_mode = sleep_timer_mode
+        if sleep_timer_end_time is not None:
+            self.sleep_timer_end_time = sleep_timer_end_time
         if event_name is not None:
             self.event_name = event_name
 
@@ -113,6 +123,48 @@ class ApiOnPlaybackProgress(object):
         """
 
         self._shuffle = shuffle
+
+    @property
+    def sleep_timer_mode(self):
+        """Gets the sleep_timer_mode of this ApiOnPlaybackProgress.  # noqa: E501
+
+
+        :return: The sleep_timer_mode of this ApiOnPlaybackProgress.  # noqa: E501
+        :rtype: SleepTimerMode
+        """
+        return self._sleep_timer_mode
+
+    @sleep_timer_mode.setter
+    def sleep_timer_mode(self, sleep_timer_mode):
+        """Sets the sleep_timer_mode of this ApiOnPlaybackProgress.
+
+
+        :param sleep_timer_mode: The sleep_timer_mode of this ApiOnPlaybackProgress.  # noqa: E501
+        :type: SleepTimerMode
+        """
+
+        self._sleep_timer_mode = sleep_timer_mode
+
+    @property
+    def sleep_timer_end_time(self):
+        """Gets the sleep_timer_end_time of this ApiOnPlaybackProgress.  # noqa: E501
+
+
+        :return: The sleep_timer_end_time of this ApiOnPlaybackProgress.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._sleep_timer_end_time
+
+    @sleep_timer_end_time.setter
+    def sleep_timer_end_time(self, sleep_timer_end_time):
+        """Sets the sleep_timer_end_time of this ApiOnPlaybackProgress.
+
+
+        :param sleep_timer_end_time: The sleep_timer_end_time of this ApiOnPlaybackProgress.  # noqa: E501
+        :type: datetime
+        """
+
+        self._sleep_timer_end_time = sleep_timer_end_time
 
     @property
     def event_name(self):

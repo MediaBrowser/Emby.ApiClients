@@ -32,6 +32,8 @@ class PlayerStateInfo(object):
         'media_source_id': 'str',
         'play_method': 'PlayMethod',
         'repeat_mode': 'RepeatMode',
+        'sleep_timer_mode': 'SleepTimerMode',
+        'sleep_timer_end_time': 'datetime',
         'subtitle_offset': 'int',
         'shuffle': 'bool',
         'playback_rate': 'float'
@@ -48,12 +50,14 @@ class PlayerStateInfo(object):
         'media_source_id': 'MediaSourceId',
         'play_method': 'PlayMethod',
         'repeat_mode': 'RepeatMode',
+        'sleep_timer_mode': 'SleepTimerMode',
+        'sleep_timer_end_time': 'SleepTimerEndTime',
         'subtitle_offset': 'SubtitleOffset',
         'shuffle': 'Shuffle',
         'playback_rate': 'PlaybackRate'
     }
 
-    def __init__(self, position_ticks=None, can_seek=None, is_paused=None, is_muted=None, volume_level=None, audio_stream_index=None, subtitle_stream_index=None, media_source_id=None, play_method=None, repeat_mode=None, subtitle_offset=None, shuffle=None, playback_rate=None):  # noqa: E501
+    def __init__(self, position_ticks=None, can_seek=None, is_paused=None, is_muted=None, volume_level=None, audio_stream_index=None, subtitle_stream_index=None, media_source_id=None, play_method=None, repeat_mode=None, sleep_timer_mode=None, sleep_timer_end_time=None, subtitle_offset=None, shuffle=None, playback_rate=None):  # noqa: E501
         """PlayerStateInfo - a model defined in Swagger"""  # noqa: E501
         self._position_ticks = None
         self._can_seek = None
@@ -65,6 +69,8 @@ class PlayerStateInfo(object):
         self._media_source_id = None
         self._play_method = None
         self._repeat_mode = None
+        self._sleep_timer_mode = None
+        self._sleep_timer_end_time = None
         self._subtitle_offset = None
         self._shuffle = None
         self._playback_rate = None
@@ -89,6 +95,10 @@ class PlayerStateInfo(object):
             self.play_method = play_method
         if repeat_mode is not None:
             self.repeat_mode = repeat_mode
+        if sleep_timer_mode is not None:
+            self.sleep_timer_mode = sleep_timer_mode
+        if sleep_timer_end_time is not None:
+            self.sleep_timer_end_time = sleep_timer_end_time
         if subtitle_offset is not None:
             self.subtitle_offset = subtitle_offset
         if shuffle is not None:
@@ -321,6 +331,48 @@ class PlayerStateInfo(object):
         """
 
         self._repeat_mode = repeat_mode
+
+    @property
+    def sleep_timer_mode(self):
+        """Gets the sleep_timer_mode of this PlayerStateInfo.  # noqa: E501
+
+
+        :return: The sleep_timer_mode of this PlayerStateInfo.  # noqa: E501
+        :rtype: SleepTimerMode
+        """
+        return self._sleep_timer_mode
+
+    @sleep_timer_mode.setter
+    def sleep_timer_mode(self, sleep_timer_mode):
+        """Sets the sleep_timer_mode of this PlayerStateInfo.
+
+
+        :param sleep_timer_mode: The sleep_timer_mode of this PlayerStateInfo.  # noqa: E501
+        :type: SleepTimerMode
+        """
+
+        self._sleep_timer_mode = sleep_timer_mode
+
+    @property
+    def sleep_timer_end_time(self):
+        """Gets the sleep_timer_end_time of this PlayerStateInfo.  # noqa: E501
+
+
+        :return: The sleep_timer_end_time of this PlayerStateInfo.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._sleep_timer_end_time
+
+    @sleep_timer_end_time.setter
+    def sleep_timer_end_time(self, sleep_timer_end_time):
+        """Sets the sleep_timer_end_time of this PlayerStateInfo.
+
+
+        :param sleep_timer_end_time: The sleep_timer_end_time of this PlayerStateInfo.  # noqa: E501
+        :type: datetime
+        """
+
+        self._sleep_timer_end_time = sleep_timer_end_time
 
     @property
     def subtitle_offset(self):

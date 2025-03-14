@@ -38,6 +38,9 @@ public class MetadataEditorInfo {
   @SerializedName("ExternalIdInfos")
   private List<ExternalIdInfo> externalIdInfos = null;
 
+  @SerializedName("PersonExternalIdInfos")
+  private List<ExternalIdInfo> personExternalIdInfos = null;
+
   public MetadataEditorInfo parentalRatingOptions(List<ParentalRating> parentalRatingOptions) {
     this.parentalRatingOptions = parentalRatingOptions;
     return this;
@@ -142,6 +145,32 @@ public class MetadataEditorInfo {
     this.externalIdInfos = externalIdInfos;
   }
 
+  public MetadataEditorInfo personExternalIdInfos(List<ExternalIdInfo> personExternalIdInfos) {
+    this.personExternalIdInfos = personExternalIdInfos;
+    return this;
+  }
+
+  public MetadataEditorInfo addPersonExternalIdInfosItem(ExternalIdInfo personExternalIdInfosItem) {
+    if (this.personExternalIdInfos == null) {
+      this.personExternalIdInfos = new ArrayList<>();
+    }
+    this.personExternalIdInfos.add(personExternalIdInfosItem);
+    return this;
+  }
+
+   /**
+   * Get personExternalIdInfos
+   * @return personExternalIdInfos
+  **/
+  @Schema(description = "")
+  public List<ExternalIdInfo> getPersonExternalIdInfos() {
+    return personExternalIdInfos;
+  }
+
+  public void setPersonExternalIdInfos(List<ExternalIdInfo> personExternalIdInfos) {
+    this.personExternalIdInfos = personExternalIdInfos;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,12 +184,13 @@ public class MetadataEditorInfo {
     return Objects.equals(this.parentalRatingOptions, metadataEditorInfo.parentalRatingOptions) &&
         Objects.equals(this.countries, metadataEditorInfo.countries) &&
         Objects.equals(this.cultures, metadataEditorInfo.cultures) &&
-        Objects.equals(this.externalIdInfos, metadataEditorInfo.externalIdInfos);
+        Objects.equals(this.externalIdInfos, metadataEditorInfo.externalIdInfos) &&
+        Objects.equals(this.personExternalIdInfos, metadataEditorInfo.personExternalIdInfos);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentalRatingOptions, countries, cultures, externalIdInfos);
+    return Objects.hash(parentalRatingOptions, countries, cultures, externalIdInfos, personExternalIdInfos);
   }
 
 
@@ -173,6 +203,7 @@ public class MetadataEditorInfo {
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    cultures: ").append(toIndentedString(cultures)).append("\n");
     sb.append("    externalIdInfos: ").append(toIndentedString(externalIdInfos)).append("\n");
+    sb.append("    personExternalIdInfos: ").append(toIndentedString(personExternalIdInfos)).append("\n");
     sb.append("}");
     return sb.toString();
   }

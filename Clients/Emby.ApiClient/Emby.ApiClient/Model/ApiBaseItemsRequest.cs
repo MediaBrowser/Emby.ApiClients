@@ -45,6 +45,12 @@ namespace Emby.ApiClient.Model
         public bool? EnableTotalRecordCount { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsDuplicate
+        /// </summary>
+        /// <value>The IsDuplicate.</value>
+        public bool? IsDuplicate { get; set; }
+
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         /// <value>The Name.</value>
@@ -103,6 +109,12 @@ namespace Emby.ApiClient.Model
         /// </summary>
         /// <value>The AlbumArtistIds.</value>
         public string AlbumArtistIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ComposerArtistIds
+        /// </summary>
+        /// <value>The ComposerArtistIds.</value>
+        public string ComposerArtistIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ContributingArtistIds
@@ -223,6 +235,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  IsSpecialEpisode: ").Append(IsSpecialEpisode).Append("\n");
             sb.Append("  Is4K: ").Append(Is4K).Append("\n");
             sb.Append("  EnableTotalRecordCount: ").Append(EnableTotalRecordCount).Append("\n");
+            sb.Append("  IsDuplicate: ").Append(IsDuplicate).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  RecordingKeyword: ").Append(RecordingKeyword).Append("\n");
             sb.Append("  RecordingKeywordType: ").Append(RecordingKeywordType).Append("\n");
@@ -233,6 +246,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  ExcludeTagIds: ").Append(ExcludeTagIds).Append("\n");
             sb.Append("  ExcludeArtistIds: ").Append(ExcludeArtistIds).Append("\n");
             sb.Append("  AlbumArtistIds: ").Append(AlbumArtistIds).Append("\n");
+            sb.Append("  ComposerArtistIds: ").Append(ComposerArtistIds).Append("\n");
             sb.Append("  ContributingArtistIds: ").Append(ContributingArtistIds).Append("\n");
             sb.Append("  AlbumIds: ").Append(AlbumIds).Append("\n");
             sb.Append("  OuterIds: ").Append(OuterIds).Append("\n");
@@ -292,6 +306,11 @@ namespace Emby.ApiClient.Model
                     this.EnableTotalRecordCount.Equals(input.EnableTotalRecordCount))
                 ) && 
                 (
+                    this.IsDuplicate == input.IsDuplicate ||
+                    (this.IsDuplicate != null &&
+                    this.IsDuplicate.Equals(input.IsDuplicate))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -340,6 +359,11 @@ namespace Emby.ApiClient.Model
                     this.AlbumArtistIds == input.AlbumArtistIds ||
                     (this.AlbumArtistIds != null &&
                     this.AlbumArtistIds.Equals(input.AlbumArtistIds))
+                ) && 
+                (
+                    this.ComposerArtistIds == input.ComposerArtistIds ||
+                    (this.ComposerArtistIds != null &&
+                    this.ComposerArtistIds.Equals(input.ComposerArtistIds))
                 ) && 
                 (
                     this.ContributingArtistIds == input.ContributingArtistIds ||
@@ -449,6 +473,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.Is4K.GetHashCode();
                 if (this.EnableTotalRecordCount != null)
                     hashCode = hashCode * 59 + this.EnableTotalRecordCount.GetHashCode();
+                if (this.IsDuplicate != null)
+                    hashCode = hashCode * 59 + this.IsDuplicate.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RecordingKeyword != null)
@@ -469,6 +495,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.ExcludeArtistIds.GetHashCode();
                 if (this.AlbumArtistIds != null)
                     hashCode = hashCode * 59 + this.AlbumArtistIds.GetHashCode();
+                if (this.ComposerArtistIds != null)
+                    hashCode = hashCode * 59 + this.ComposerArtistIds.GetHashCode();
                 if (this.ContributingArtistIds != null)
                     hashCode = hashCode * 59 + this.ContributingArtistIds.GetHashCode();
                 if (this.AlbumIds != null)

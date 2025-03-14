@@ -20,7 +20,8 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(LibraryUserCopyOptions.Adapter.class)
 public enum LibraryUserCopyOptions {
   USERPOLICY("UserPolicy"),
-  USERCONFIGURATION("UserConfiguration");
+  USERCONFIGURATION("UserConfiguration"),
+  USERDATA("UserData");
 
   private String value;
 

@@ -41,6 +41,7 @@ open class ItemUpdateServiceAPI {
     "Value" : 0,
     "Name" : "Name"
   } ],
+  "PersonExternalIdInfos" : [ null, null ],
   "Countries" : [ {
     "TwoLetterISORegionName" : "TwoLetterISORegionName",
     "ThreeLetterISORegionName" : "ThreeLetterISORegionName",

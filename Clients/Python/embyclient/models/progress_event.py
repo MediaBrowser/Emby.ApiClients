@@ -33,6 +33,7 @@ class ProgressEvent(object):
     SUBTITLEOFFSETCHANGE = "SubtitleOffsetChange"
     PLAYBACKRATECHANGE = "PlaybackRateChange"
     SHUFFLECHANGE = "ShuffleChange"
+    SLEEPTIMERCHANGE = "SleepTimerChange"
     """
     Attributes:
       swagger_types (dict): The key is attribute name

@@ -63,8 +63,9 @@ public struct LibraryOptions: Codable {
     public var collapseSingleItemFolders: Bool?
     public var enableAdultMetadata: Bool?
     public var importCollections: Bool?
-    public var disableMultiVersionItems: Bool?
-    public var disableMultiPartItems: Bool?
+    public var enableMultiVersionByFiles: Bool?
+    public var enableMultiVersionByMetadata: Bool?
+    public var enableMultiPartItems: Bool?
     public var minCollectionItems: Int?
     public var musicFolderStructure: String?
     /** The minimum percentage of an item that must be played in order for playstate to be updated. */
@@ -76,7 +77,7 @@ public struct LibraryOptions: Codable {
     public var thumbnailImagesIntervalSeconds: Int?
     public var sampleIgnoreSize: Int?
 
-    public init(enableArchiveMediaFiles: Bool? = nil, enablePhotos: Bool? = nil, enableRealtimeMonitor: Bool? = nil, enableMarkerDetection: Bool? = nil, enableMarkerDetectionDuringLibraryScan: Bool? = nil, introDetectionFingerprintLength: Int? = nil, enableChapterImageExtraction: Bool? = nil, extractChapterImagesDuringLibraryScan: Bool? = nil, downloadImagesInAdvance: Bool? = nil, cacheImages: Bool? = nil, pathInfos: [MediaPathInfo]? = nil, ignoreHiddenFiles: Bool? = nil, ignoreFileExtensions: [String]? = nil, saveLocalMetadata: Bool? = nil, saveMetadataHidden: Bool? = nil, saveLocalThumbnailSets: Bool? = nil, importPlaylists: Bool? = nil, enableAutomaticSeriesGrouping: Bool? = nil, shareEmbeddedMusicAlbumImages: Bool? = nil, enableEmbeddedTitles: Bool? = nil, enableAudioResume: Bool? = nil, autoGenerateChapters: Bool? = nil, automaticRefreshIntervalDays: Int? = nil, placeholderMetadataRefreshIntervalDays: Int? = nil, preferredMetadataLanguage: String? = nil, preferredImageLanguage: String? = nil, contentType: String? = nil, metadataCountryCode: String? = nil, metadataSavers: [String]? = nil, disabledLocalMetadataReaders: [String]? = nil, localMetadataReaderOrder: [String]? = nil, disabledLyricsFetchers: [String]? = nil, saveLyricsWithMedia: Bool? = nil, lyricsDownloadMaxAgeDays: Int? = nil, lyricsFetcherOrder: [String]? = nil, lyricsDownloadLanguages: [String]? = nil, disabledSubtitleFetchers: [String]? = nil, subtitleFetcherOrder: [String]? = nil, skipSubtitlesIfEmbeddedSubtitlesPresent: Bool? = nil, skipSubtitlesIfAudioTrackMatches: Bool? = nil, subtitleDownloadLanguages: [String]? = nil, subtitleDownloadMaxAgeDays: Int? = nil, requirePerfectSubtitleMatch: Bool? = nil, saveSubtitlesWithMedia: Bool? = nil, forcedSubtitlesOnly: Bool? = nil, hearingImpairedSubtitlesOnly: Bool? = nil, typeOptions: [TypeOptions]? = nil, collapseSingleItemFolders: Bool? = nil, enableAdultMetadata: Bool? = nil, importCollections: Bool? = nil, disableMultiVersionItems: Bool? = nil, disableMultiPartItems: Bool? = nil, minCollectionItems: Int? = nil, musicFolderStructure: String? = nil, minResumePct: Int? = nil, maxResumePct: Int? = nil, minResumeDurationSeconds: Int? = nil, thumbnailImagesIntervalSeconds: Int? = nil, sampleIgnoreSize: Int? = nil) {
+    public init(enableArchiveMediaFiles: Bool? = nil, enablePhotos: Bool? = nil, enableRealtimeMonitor: Bool? = nil, enableMarkerDetection: Bool? = nil, enableMarkerDetectionDuringLibraryScan: Bool? = nil, introDetectionFingerprintLength: Int? = nil, enableChapterImageExtraction: Bool? = nil, extractChapterImagesDuringLibraryScan: Bool? = nil, downloadImagesInAdvance: Bool? = nil, cacheImages: Bool? = nil, pathInfos: [MediaPathInfo]? = nil, ignoreHiddenFiles: Bool? = nil, ignoreFileExtensions: [String]? = nil, saveLocalMetadata: Bool? = nil, saveMetadataHidden: Bool? = nil, saveLocalThumbnailSets: Bool? = nil, importPlaylists: Bool? = nil, enableAutomaticSeriesGrouping: Bool? = nil, shareEmbeddedMusicAlbumImages: Bool? = nil, enableEmbeddedTitles: Bool? = nil, enableAudioResume: Bool? = nil, autoGenerateChapters: Bool? = nil, automaticRefreshIntervalDays: Int? = nil, placeholderMetadataRefreshIntervalDays: Int? = nil, preferredMetadataLanguage: String? = nil, preferredImageLanguage: String? = nil, contentType: String? = nil, metadataCountryCode: String? = nil, metadataSavers: [String]? = nil, disabledLocalMetadataReaders: [String]? = nil, localMetadataReaderOrder: [String]? = nil, disabledLyricsFetchers: [String]? = nil, saveLyricsWithMedia: Bool? = nil, lyricsDownloadMaxAgeDays: Int? = nil, lyricsFetcherOrder: [String]? = nil, lyricsDownloadLanguages: [String]? = nil, disabledSubtitleFetchers: [String]? = nil, subtitleFetcherOrder: [String]? = nil, skipSubtitlesIfEmbeddedSubtitlesPresent: Bool? = nil, skipSubtitlesIfAudioTrackMatches: Bool? = nil, subtitleDownloadLanguages: [String]? = nil, subtitleDownloadMaxAgeDays: Int? = nil, requirePerfectSubtitleMatch: Bool? = nil, saveSubtitlesWithMedia: Bool? = nil, forcedSubtitlesOnly: Bool? = nil, hearingImpairedSubtitlesOnly: Bool? = nil, typeOptions: [TypeOptions]? = nil, collapseSingleItemFolders: Bool? = nil, enableAdultMetadata: Bool? = nil, importCollections: Bool? = nil, enableMultiVersionByFiles: Bool? = nil, enableMultiVersionByMetadata: Bool? = nil, enableMultiPartItems: Bool? = nil, minCollectionItems: Int? = nil, musicFolderStructure: String? = nil, minResumePct: Int? = nil, maxResumePct: Int? = nil, minResumeDurationSeconds: Int? = nil, thumbnailImagesIntervalSeconds: Int? = nil, sampleIgnoreSize: Int? = nil) {
         self.enableArchiveMediaFiles = enableArchiveMediaFiles
         self.enablePhotos = enablePhotos
         self.enableRealtimeMonitor = enableRealtimeMonitor
@@ -127,8 +128,9 @@ public struct LibraryOptions: Codable {
         self.collapseSingleItemFolders = collapseSingleItemFolders
         self.enableAdultMetadata = enableAdultMetadata
         self.importCollections = importCollections
-        self.disableMultiVersionItems = disableMultiVersionItems
-        self.disableMultiPartItems = disableMultiPartItems
+        self.enableMultiVersionByFiles = enableMultiVersionByFiles
+        self.enableMultiVersionByMetadata = enableMultiVersionByMetadata
+        self.enableMultiPartItems = enableMultiPartItems
         self.minCollectionItems = minCollectionItems
         self.musicFolderStructure = musicFolderStructure
         self.minResumePct = minResumePct
@@ -189,8 +191,9 @@ public struct LibraryOptions: Codable {
         case collapseSingleItemFolders = "CollapseSingleItemFolders"
         case enableAdultMetadata = "EnableAdultMetadata"
         case importCollections = "ImportCollections"
-        case disableMultiVersionItems = "DisableMultiVersionItems"
-        case disableMultiPartItems = "DisableMultiPartItems"
+        case enableMultiVersionByFiles = "EnableMultiVersionByFiles"
+        case enableMultiVersionByMetadata = "EnableMultiVersionByMetadata"
+        case enableMultiPartItems = "EnableMultiPartItems"
         case minCollectionItems = "MinCollectionItems"
         case musicFolderStructure = "MusicFolderStructure"
         case minResumePct = "MinResumePct"

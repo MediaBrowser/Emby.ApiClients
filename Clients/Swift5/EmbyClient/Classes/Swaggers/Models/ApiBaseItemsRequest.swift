@@ -14,6 +14,7 @@ public struct ApiBaseItemsRequest: Codable {
     public var isSpecialEpisode: Bool?
     public var is4K: Bool?
     public var enableTotalRecordCount: Bool?
+    public var isDuplicate: Bool?
     public var name: String?
     public var recordingKeyword: String?
     public var recordingKeywordType: LiveTvKeywordType?
@@ -24,6 +25,7 @@ public struct ApiBaseItemsRequest: Codable {
     public var excludeTagIds: String?
     public var excludeArtistIds: String?
     public var albumArtistIds: String?
+    public var composerArtistIds: String?
     public var contributingArtistIds: String?
     public var albumIds: String?
     public var outerIds: String?
@@ -43,10 +45,11 @@ public struct ApiBaseItemsRequest: Codable {
     public var hasAired: Bool?
     public var collectionTypes: String?
 
-    public init(isSpecialEpisode: Bool? = nil, is4K: Bool? = nil, enableTotalRecordCount: Bool? = nil, name: String? = nil, recordingKeyword: String? = nil, recordingKeywordType: LiveTvKeywordType? = nil, randomSeed: Int? = nil, genreIds: String? = nil, collectionIds: String? = nil, tagIds: String? = nil, excludeTagIds: String? = nil, excludeArtistIds: String? = nil, albumArtistIds: String? = nil, contributingArtistIds: String? = nil, albumIds: String? = nil, outerIds: String? = nil, listItemIds: String? = nil, audioLanguages: String? = nil, subtitleLanguages: String? = nil, canEditItems: Bool? = nil, groupItemsInto: LibraryItemLinkType? = nil, isStandaloneSpecial: Bool? = nil, minWidth: Int? = nil, minHeight: Int? = nil, maxWidth: Int? = nil, maxHeight: Int? = nil, groupProgramsBySeries: Bool? = nil, airDays: [DayOfWeek]? = nil, isAiring: Bool? = nil, hasAired: Bool? = nil, collectionTypes: String? = nil) {
+    public init(isSpecialEpisode: Bool? = nil, is4K: Bool? = nil, enableTotalRecordCount: Bool? = nil, isDuplicate: Bool? = nil, name: String? = nil, recordingKeyword: String? = nil, recordingKeywordType: LiveTvKeywordType? = nil, randomSeed: Int? = nil, genreIds: String? = nil, collectionIds: String? = nil, tagIds: String? = nil, excludeTagIds: String? = nil, excludeArtistIds: String? = nil, albumArtistIds: String? = nil, composerArtistIds: String? = nil, contributingArtistIds: String? = nil, albumIds: String? = nil, outerIds: String? = nil, listItemIds: String? = nil, audioLanguages: String? = nil, subtitleLanguages: String? = nil, canEditItems: Bool? = nil, groupItemsInto: LibraryItemLinkType? = nil, isStandaloneSpecial: Bool? = nil, minWidth: Int? = nil, minHeight: Int? = nil, maxWidth: Int? = nil, maxHeight: Int? = nil, groupProgramsBySeries: Bool? = nil, airDays: [DayOfWeek]? = nil, isAiring: Bool? = nil, hasAired: Bool? = nil, collectionTypes: String? = nil) {
         self.isSpecialEpisode = isSpecialEpisode
         self.is4K = is4K
         self.enableTotalRecordCount = enableTotalRecordCount
+        self.isDuplicate = isDuplicate
         self.name = name
         self.recordingKeyword = recordingKeyword
         self.recordingKeywordType = recordingKeywordType
@@ -57,6 +60,7 @@ public struct ApiBaseItemsRequest: Codable {
         self.excludeTagIds = excludeTagIds
         self.excludeArtistIds = excludeArtistIds
         self.albumArtistIds = albumArtistIds
+        self.composerArtistIds = composerArtistIds
         self.contributingArtistIds = contributingArtistIds
         self.albumIds = albumIds
         self.outerIds = outerIds
@@ -81,6 +85,7 @@ public struct ApiBaseItemsRequest: Codable {
         case isSpecialEpisode = "IsSpecialEpisode"
         case is4K = "Is4K"
         case enableTotalRecordCount = "EnableTotalRecordCount"
+        case isDuplicate = "IsDuplicate"
         case name = "Name"
         case recordingKeyword = "RecordingKeyword"
         case recordingKeywordType = "RecordingKeywordType"
@@ -91,6 +96,7 @@ public struct ApiBaseItemsRequest: Codable {
         case excludeTagIds = "ExcludeTagIds"
         case excludeArtistIds = "ExcludeArtistIds"
         case albumArtistIds = "AlbumArtistIds"
+        case composerArtistIds = "ComposerArtistIds"
         case contributingArtistIds = "ContributingArtistIds"
         case albumIds = "AlbumIds"
         case outerIds = "OuterIds"

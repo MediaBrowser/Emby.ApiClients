@@ -15,12 +15,14 @@ public struct MetadataEditorInfo: Codable {
     public var countries: [GlobalizationCountryInfo]?
     public var cultures: [GlobalizationCultureDto]?
     public var externalIdInfos: [ExternalIdInfo]?
+    public var personExternalIdInfos: [ExternalIdInfo]?
 
-    public init(parentalRatingOptions: [ParentalRating]? = nil, countries: [GlobalizationCountryInfo]? = nil, cultures: [GlobalizationCultureDto]? = nil, externalIdInfos: [ExternalIdInfo]? = nil) {
+    public init(parentalRatingOptions: [ParentalRating]? = nil, countries: [GlobalizationCountryInfo]? = nil, cultures: [GlobalizationCultureDto]? = nil, externalIdInfos: [ExternalIdInfo]? = nil, personExternalIdInfos: [ExternalIdInfo]? = nil) {
         self.parentalRatingOptions = parentalRatingOptions
         self.countries = countries
         self.cultures = cultures
         self.externalIdInfos = externalIdInfos
+        self.personExternalIdInfos = personExternalIdInfos
     }
 
     public enum CodingKeys: String, CodingKey { 
@@ -28,6 +30,7 @@ public struct MetadataEditorInfo: Codable {
         case countries = "Countries"
         case cultures = "Cultures"
         case externalIdInfos = "ExternalIdInfos"
+        case personExternalIdInfos = "PersonExternalIdInfos"
     }
 
 }

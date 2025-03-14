@@ -153,6 +153,18 @@ namespace Emby.ApiClient.Model
         public RepeatMode RepeatMode { get; set; }
 
         /// <summary>
+        /// Gets or Sets SleepTimerMode
+        /// </summary>
+        /// <value>The SleepTimerMode.</value>
+        public SleepTimerMode SleepTimerMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerEndTime
+        /// </summary>
+        /// <value>The SleepTimerEndTime.</value>
+        public DateTimeOffset? SleepTimerEndTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets Shuffle
         /// </summary>
         /// <value>The Shuffle.</value>
@@ -223,6 +235,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  LiveStreamId: ").Append(LiveStreamId).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
+            sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
+            sb.Append("  SleepTimerEndTime: ").Append(SleepTimerEndTime).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
             sb.Append("  SubtitleOffset: ").Append(SubtitleOffset).Append("\n");
             sb.Append("  PlaybackRate: ").Append(PlaybackRate).Append("\n");
@@ -362,6 +376,16 @@ namespace Emby.ApiClient.Model
                     this.RepeatMode.Equals(input.RepeatMode))
                 ) && 
                 (
+                    this.SleepTimerMode == input.SleepTimerMode ||
+                    (this.SleepTimerMode != null &&
+                    this.SleepTimerMode.Equals(input.SleepTimerMode))
+                ) && 
+                (
+                    this.SleepTimerEndTime == input.SleepTimerEndTime ||
+                    (this.SleepTimerEndTime != null &&
+                    this.SleepTimerEndTime.Equals(input.SleepTimerEndTime))
+                ) && 
+                (
                     this.Shuffle == input.Shuffle ||
                     (this.Shuffle != null &&
                     this.Shuffle.Equals(input.Shuffle))
@@ -450,6 +474,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.LiveStreamId.GetHashCode();
                 if (this.RepeatMode != null)
                     hashCode = hashCode * 59 + this.RepeatMode.GetHashCode();
+                if (this.SleepTimerMode != null)
+                    hashCode = hashCode * 59 + this.SleepTimerMode.GetHashCode();
+                if (this.SleepTimerEndTime != null)
+                    hashCode = hashCode * 59 + this.SleepTimerEndTime.GetHashCode();
                 if (this.Shuffle != null)
                     hashCode = hashCode * 59 + this.Shuffle.GetHashCode();
                 if (this.SubtitleOffset != null)

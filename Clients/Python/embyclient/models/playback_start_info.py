@@ -43,6 +43,8 @@ class PlaybackStartInfo(object):
         'play_method': 'PlayMethod',
         'live_stream_id': 'str',
         'repeat_mode': 'RepeatMode',
+        'sleep_timer_mode': 'SleepTimerMode',
+        'sleep_timer_end_time': 'datetime',
         'shuffle': 'bool',
         'subtitle_offset': 'int',
         'playback_rate': 'float',
@@ -74,6 +76,8 @@ class PlaybackStartInfo(object):
         'play_method': 'PlayMethod',
         'live_stream_id': 'LiveStreamId',
         'repeat_mode': 'RepeatMode',
+        'sleep_timer_mode': 'SleepTimerMode',
+        'sleep_timer_end_time': 'SleepTimerEndTime',
         'shuffle': 'Shuffle',
         'subtitle_offset': 'SubtitleOffset',
         'playback_rate': 'PlaybackRate',
@@ -83,7 +87,7 @@ class PlaybackStartInfo(object):
         'position_ticks': 'PositionTicks'
     }
 
-    def __init__(self, can_seek=None, now_playing_queue=None, playlist_item_id=None, item_id=None, session_id=None, media_source_id=None, audio_stream_index=None, subtitle_stream_index=None, is_paused=None, playlist_index=None, playlist_length=None, is_muted=None, run_time_ticks=None, playback_start_time_ticks=None, volume_level=None, brightness=None, aspect_ratio=None, event_name=None, play_method=None, live_stream_id=None, repeat_mode=None, shuffle=None, subtitle_offset=None, playback_rate=None, playlist_item_ids=None, play_session_id=None, item=None, position_ticks=None):  # noqa: E501
+    def __init__(self, can_seek=None, now_playing_queue=None, playlist_item_id=None, item_id=None, session_id=None, media_source_id=None, audio_stream_index=None, subtitle_stream_index=None, is_paused=None, playlist_index=None, playlist_length=None, is_muted=None, run_time_ticks=None, playback_start_time_ticks=None, volume_level=None, brightness=None, aspect_ratio=None, event_name=None, play_method=None, live_stream_id=None, repeat_mode=None, sleep_timer_mode=None, sleep_timer_end_time=None, shuffle=None, subtitle_offset=None, playback_rate=None, playlist_item_ids=None, play_session_id=None, item=None, position_ticks=None):  # noqa: E501
         """PlaybackStartInfo - a model defined in Swagger"""  # noqa: E501
         self._can_seek = None
         self._now_playing_queue = None
@@ -106,6 +110,8 @@ class PlaybackStartInfo(object):
         self._play_method = None
         self._live_stream_id = None
         self._repeat_mode = None
+        self._sleep_timer_mode = None
+        self._sleep_timer_end_time = None
         self._shuffle = None
         self._subtitle_offset = None
         self._playback_rate = None
@@ -156,6 +162,10 @@ class PlaybackStartInfo(object):
             self.live_stream_id = live_stream_id
         if repeat_mode is not None:
             self.repeat_mode = repeat_mode
+        if sleep_timer_mode is not None:
+            self.sleep_timer_mode = sleep_timer_mode
+        if sleep_timer_end_time is not None:
+            self.sleep_timer_end_time = sleep_timer_end_time
         if shuffle is not None:
             self.shuffle = shuffle
         if subtitle_offset is not None:
@@ -631,6 +641,48 @@ class PlaybackStartInfo(object):
         """
 
         self._repeat_mode = repeat_mode
+
+    @property
+    def sleep_timer_mode(self):
+        """Gets the sleep_timer_mode of this PlaybackStartInfo.  # noqa: E501
+
+
+        :return: The sleep_timer_mode of this PlaybackStartInfo.  # noqa: E501
+        :rtype: SleepTimerMode
+        """
+        return self._sleep_timer_mode
+
+    @sleep_timer_mode.setter
+    def sleep_timer_mode(self, sleep_timer_mode):
+        """Sets the sleep_timer_mode of this PlaybackStartInfo.
+
+
+        :param sleep_timer_mode: The sleep_timer_mode of this PlaybackStartInfo.  # noqa: E501
+        :type: SleepTimerMode
+        """
+
+        self._sleep_timer_mode = sleep_timer_mode
+
+    @property
+    def sleep_timer_end_time(self):
+        """Gets the sleep_timer_end_time of this PlaybackStartInfo.  # noqa: E501
+
+
+        :return: The sleep_timer_end_time of this PlaybackStartInfo.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._sleep_timer_end_time
+
+    @sleep_timer_end_time.setter
+    def sleep_timer_end_time(self, sleep_timer_end_time):
+        """Sets the sleep_timer_end_time of this PlaybackStartInfo.
+
+
+        :param sleep_timer_end_time: The sleep_timer_end_time of this PlaybackStartInfo.  # noqa: E501
+        :type: datetime
+        """
+
+        self._sleep_timer_end_time = sleep_timer_end_time
 
     @property
     def shuffle(self):

@@ -327,16 +327,22 @@ namespace Emby.ApiClient.Model
         public bool? ImportCollections { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisableMultiVersionItems
+        /// Gets or Sets EnableMultiVersionByFiles
         /// </summary>
-        /// <value>The DisableMultiVersionItems.</value>
-        public bool? DisableMultiVersionItems { get; set; }
+        /// <value>The EnableMultiVersionByFiles.</value>
+        public bool? EnableMultiVersionByFiles { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisableMultiPartItems
+        /// Gets or Sets EnableMultiVersionByMetadata
         /// </summary>
-        /// <value>The DisableMultiPartItems.</value>
-        public bool? DisableMultiPartItems { get; set; }
+        /// <value>The EnableMultiVersionByMetadata.</value>
+        public bool? EnableMultiVersionByMetadata { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnableMultiPartItems
+        /// </summary>
+        /// <value>The EnableMultiPartItems.</value>
+        public bool? EnableMultiPartItems { get; set; }
 
         /// <summary>
         /// Gets or Sets MinCollectionItems
@@ -438,8 +444,9 @@ namespace Emby.ApiClient.Model
             sb.Append("  CollapseSingleItemFolders: ").Append(CollapseSingleItemFolders).Append("\n");
             sb.Append("  EnableAdultMetadata: ").Append(EnableAdultMetadata).Append("\n");
             sb.Append("  ImportCollections: ").Append(ImportCollections).Append("\n");
-            sb.Append("  DisableMultiVersionItems: ").Append(DisableMultiVersionItems).Append("\n");
-            sb.Append("  DisableMultiPartItems: ").Append(DisableMultiPartItems).Append("\n");
+            sb.Append("  EnableMultiVersionByFiles: ").Append(EnableMultiVersionByFiles).Append("\n");
+            sb.Append("  EnableMultiVersionByMetadata: ").Append(EnableMultiVersionByMetadata).Append("\n");
+            sb.Append("  EnableMultiPartItems: ").Append(EnableMultiPartItems).Append("\n");
             sb.Append("  MinCollectionItems: ").Append(MinCollectionItems).Append("\n");
             sb.Append("  MusicFolderStructure: ").Append(MusicFolderStructure).Append("\n");
             sb.Append("  MinResumePct: ").Append(MinResumePct).Append("\n");
@@ -735,14 +742,19 @@ namespace Emby.ApiClient.Model
                     this.ImportCollections.Equals(input.ImportCollections))
                 ) && 
                 (
-                    this.DisableMultiVersionItems == input.DisableMultiVersionItems ||
-                    (this.DisableMultiVersionItems != null &&
-                    this.DisableMultiVersionItems.Equals(input.DisableMultiVersionItems))
+                    this.EnableMultiVersionByFiles == input.EnableMultiVersionByFiles ||
+                    (this.EnableMultiVersionByFiles != null &&
+                    this.EnableMultiVersionByFiles.Equals(input.EnableMultiVersionByFiles))
                 ) && 
                 (
-                    this.DisableMultiPartItems == input.DisableMultiPartItems ||
-                    (this.DisableMultiPartItems != null &&
-                    this.DisableMultiPartItems.Equals(input.DisableMultiPartItems))
+                    this.EnableMultiVersionByMetadata == input.EnableMultiVersionByMetadata ||
+                    (this.EnableMultiVersionByMetadata != null &&
+                    this.EnableMultiVersionByMetadata.Equals(input.EnableMultiVersionByMetadata))
+                ) && 
+                (
+                    this.EnableMultiPartItems == input.EnableMultiPartItems ||
+                    (this.EnableMultiPartItems != null &&
+                    this.EnableMultiPartItems.Equals(input.EnableMultiPartItems))
                 ) && 
                 (
                     this.MinCollectionItems == input.MinCollectionItems ||
@@ -890,10 +902,12 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableAdultMetadata.GetHashCode();
                 if (this.ImportCollections != null)
                     hashCode = hashCode * 59 + this.ImportCollections.GetHashCode();
-                if (this.DisableMultiVersionItems != null)
-                    hashCode = hashCode * 59 + this.DisableMultiVersionItems.GetHashCode();
-                if (this.DisableMultiPartItems != null)
-                    hashCode = hashCode * 59 + this.DisableMultiPartItems.GetHashCode();
+                if (this.EnableMultiVersionByFiles != null)
+                    hashCode = hashCode * 59 + this.EnableMultiVersionByFiles.GetHashCode();
+                if (this.EnableMultiVersionByMetadata != null)
+                    hashCode = hashCode * 59 + this.EnableMultiVersionByMetadata.GetHashCode();
+                if (this.EnableMultiPartItems != null)
+                    hashCode = hashCode * 59 + this.EnableMultiPartItems.GetHashCode();
                 if (this.MinCollectionItems != null)
                     hashCode = hashCode * 59 + this.MinCollectionItems.GetHashCode();
                 if (this.MusicFolderStructure != null)

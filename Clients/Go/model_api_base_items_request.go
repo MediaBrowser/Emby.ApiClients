@@ -10,6 +10,7 @@ type ApiBaseItemsRequest struct {
 	IsSpecialEpisode bool `json:"IsSpecialEpisode,omitempty"`
 	Is4K bool `json:"Is4K,omitempty"`
 	EnableTotalRecordCount bool `json:"EnableTotalRecordCount,omitempty"`
+	IsDuplicate bool `json:"IsDuplicate,omitempty"`
 	Name string `json:"Name,omitempty"`
 	RecordingKeyword string `json:"RecordingKeyword,omitempty"`
 	RecordingKeywordType *LiveTvKeywordType `json:"RecordingKeywordType,omitempty"`
@@ -20,6 +21,7 @@ type ApiBaseItemsRequest struct {
 	ExcludeTagIds string `json:"ExcludeTagIds,omitempty"`
 	ExcludeArtistIds string `json:"ExcludeArtistIds,omitempty"`
 	AlbumArtistIds string `json:"AlbumArtistIds,omitempty"`
+	ComposerArtistIds string `json:"ComposerArtistIds,omitempty"`
 	ContributingArtistIds string `json:"ContributingArtistIds,omitempty"`
 	AlbumIds string `json:"AlbumIds,omitempty"`
 	OuterIds string `json:"OuterIds,omitempty"`

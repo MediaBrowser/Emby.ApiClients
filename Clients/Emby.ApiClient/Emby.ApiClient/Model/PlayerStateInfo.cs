@@ -87,6 +87,18 @@ namespace Emby.ApiClient.Model
         public RepeatMode RepeatMode { get; set; }
 
         /// <summary>
+        /// Gets or Sets SleepTimerMode
+        /// </summary>
+        /// <value>The SleepTimerMode.</value>
+        public SleepTimerMode SleepTimerMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerEndTime
+        /// </summary>
+        /// <value>The SleepTimerEndTime.</value>
+        public DateTimeOffset? SleepTimerEndTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets SubtitleOffset
         /// </summary>
         /// <value>The SubtitleOffset.</value>
@@ -122,6 +134,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  MediaSourceId: ").Append(MediaSourceId).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
+            sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
+            sb.Append("  SleepTimerEndTime: ").Append(SleepTimerEndTime).Append("\n");
             sb.Append("  SubtitleOffset: ").Append(SubtitleOffset).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
             sb.Append("  PlaybackRate: ").Append(PlaybackRate).Append("\n");
@@ -201,6 +215,16 @@ namespace Emby.ApiClient.Model
                     this.RepeatMode.Equals(input.RepeatMode))
                 ) && 
                 (
+                    this.SleepTimerMode == input.SleepTimerMode ||
+                    (this.SleepTimerMode != null &&
+                    this.SleepTimerMode.Equals(input.SleepTimerMode))
+                ) && 
+                (
+                    this.SleepTimerEndTime == input.SleepTimerEndTime ||
+                    (this.SleepTimerEndTime != null &&
+                    this.SleepTimerEndTime.Equals(input.SleepTimerEndTime))
+                ) && 
+                (
                     this.SubtitleOffset == input.SubtitleOffset ||
                     (this.SubtitleOffset != null &&
                     this.SubtitleOffset.Equals(input.SubtitleOffset))
@@ -246,6 +270,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.RepeatMode != null)
                     hashCode = hashCode * 59 + this.RepeatMode.GetHashCode();
+                if (this.SleepTimerMode != null)
+                    hashCode = hashCode * 59 + this.SleepTimerMode.GetHashCode();
+                if (this.SleepTimerEndTime != null)
+                    hashCode = hashCode * 59 + this.SleepTimerEndTime.GetHashCode();
                 if (this.SubtitleOffset != null)
                     hashCode = hashCode * 59 + this.SubtitleOffset.GetHashCode();
                 if (this.Shuffle != null)

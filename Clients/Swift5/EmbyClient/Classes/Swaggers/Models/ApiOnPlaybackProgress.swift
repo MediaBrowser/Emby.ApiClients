@@ -14,12 +14,16 @@ public struct ApiOnPlaybackProgress: Codable {
     public var playlistIndex: Int?
     public var playlistLength: Int?
     public var shuffle: Bool?
+    public var sleepTimerMode: SleepTimerMode?
+    public var sleepTimerEndTime: Date?
     public var eventName: ProgressEvent?
 
-    public init(playlistIndex: Int? = nil, playlistLength: Int? = nil, shuffle: Bool? = nil, eventName: ProgressEvent? = nil) {
+    public init(playlistIndex: Int? = nil, playlistLength: Int? = nil, shuffle: Bool? = nil, sleepTimerMode: SleepTimerMode? = nil, sleepTimerEndTime: Date? = nil, eventName: ProgressEvent? = nil) {
         self.playlistIndex = playlistIndex
         self.playlistLength = playlistLength
         self.shuffle = shuffle
+        self.sleepTimerMode = sleepTimerMode
+        self.sleepTimerEndTime = sleepTimerEndTime
         self.eventName = eventName
     }
 
@@ -27,6 +31,8 @@ public struct ApiOnPlaybackProgress: Codable {
         case playlistIndex = "PlaylistIndex"
         case playlistLength = "PlaylistLength"
         case shuffle = "Shuffle"
+        case sleepTimerMode = "SleepTimerMode"
+        case sleepTimerEndTime = "SleepTimerEndTime"
         case eventName = "EventName"
     }
 

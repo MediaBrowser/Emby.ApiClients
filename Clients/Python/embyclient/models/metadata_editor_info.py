@@ -25,22 +25,25 @@ class MetadataEditorInfo(object):
         'parental_rating_options': 'list[ParentalRating]',
         'countries': 'list[GlobalizationCountryInfo]',
         'cultures': 'list[GlobalizationCultureDto]',
-        'external_id_infos': 'list[ExternalIdInfo]'
+        'external_id_infos': 'list[ExternalIdInfo]',
+        'person_external_id_infos': 'list[ExternalIdInfo]'
     }
 
     attribute_map = {
         'parental_rating_options': 'ParentalRatingOptions',
         'countries': 'Countries',
         'cultures': 'Cultures',
-        'external_id_infos': 'ExternalIdInfos'
+        'external_id_infos': 'ExternalIdInfos',
+        'person_external_id_infos': 'PersonExternalIdInfos'
     }
 
-    def __init__(self, parental_rating_options=None, countries=None, cultures=None, external_id_infos=None):  # noqa: E501
+    def __init__(self, parental_rating_options=None, countries=None, cultures=None, external_id_infos=None, person_external_id_infos=None):  # noqa: E501
         """MetadataEditorInfo - a model defined in Swagger"""  # noqa: E501
         self._parental_rating_options = None
         self._countries = None
         self._cultures = None
         self._external_id_infos = None
+        self._person_external_id_infos = None
         self.discriminator = None
         if parental_rating_options is not None:
             self.parental_rating_options = parental_rating_options
@@ -50,6 +53,8 @@ class MetadataEditorInfo(object):
             self.cultures = cultures
         if external_id_infos is not None:
             self.external_id_infos = external_id_infos
+        if person_external_id_infos is not None:
+            self.person_external_id_infos = person_external_id_infos
 
     @property
     def parental_rating_options(self):
@@ -134,6 +139,27 @@ class MetadataEditorInfo(object):
         """
 
         self._external_id_infos = external_id_infos
+
+    @property
+    def person_external_id_infos(self):
+        """Gets the person_external_id_infos of this MetadataEditorInfo.  # noqa: E501
+
+
+        :return: The person_external_id_infos of this MetadataEditorInfo.  # noqa: E501
+        :rtype: list[ExternalIdInfo]
+        """
+        return self._person_external_id_infos
+
+    @person_external_id_infos.setter
+    def person_external_id_infos(self, person_external_id_infos):
+        """Sets the person_external_id_infos of this MetadataEditorInfo.
+
+
+        :param person_external_id_infos: The person_external_id_infos of this MetadataEditorInfo.  # noqa: E501
+        :type: list[ExternalIdInfo]
+        """
+
+        self._person_external_id_infos = person_external_id_infos
 
     def to_dict(self):
         """Returns the model properties as a dict"""

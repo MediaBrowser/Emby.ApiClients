@@ -72,8 +72,9 @@ class LibraryOptions(object):
         'collapse_single_item_folders': 'bool',
         'enable_adult_metadata': 'bool',
         'import_collections': 'bool',
-        'disable_multi_version_items': 'bool',
-        'disable_multi_part_items': 'bool',
+        'enable_multi_version_by_files': 'bool',
+        'enable_multi_version_by_metadata': 'bool',
+        'enable_multi_part_items': 'bool',
         'min_collection_items': 'int',
         'music_folder_structure': 'str',
         'min_resume_pct': 'int',
@@ -134,8 +135,9 @@ class LibraryOptions(object):
         'collapse_single_item_folders': 'CollapseSingleItemFolders',
         'enable_adult_metadata': 'EnableAdultMetadata',
         'import_collections': 'ImportCollections',
-        'disable_multi_version_items': 'DisableMultiVersionItems',
-        'disable_multi_part_items': 'DisableMultiPartItems',
+        'enable_multi_version_by_files': 'EnableMultiVersionByFiles',
+        'enable_multi_version_by_metadata': 'EnableMultiVersionByMetadata',
+        'enable_multi_part_items': 'EnableMultiPartItems',
         'min_collection_items': 'MinCollectionItems',
         'music_folder_structure': 'MusicFolderStructure',
         'min_resume_pct': 'MinResumePct',
@@ -145,7 +147,7 @@ class LibraryOptions(object):
         'sample_ignore_size': 'SampleIgnoreSize'
     }
 
-    def __init__(self, enable_archive_media_files=None, enable_photos=None, enable_realtime_monitor=None, enable_marker_detection=None, enable_marker_detection_during_library_scan=None, intro_detection_fingerprint_length=None, enable_chapter_image_extraction=None, extract_chapter_images_during_library_scan=None, download_images_in_advance=None, cache_images=None, path_infos=None, ignore_hidden_files=None, ignore_file_extensions=None, save_local_metadata=None, save_metadata_hidden=None, save_local_thumbnail_sets=None, import_playlists=None, enable_automatic_series_grouping=None, share_embedded_music_album_images=None, enable_embedded_titles=None, enable_audio_resume=None, auto_generate_chapters=None, automatic_refresh_interval_days=None, placeholder_metadata_refresh_interval_days=None, preferred_metadata_language=None, preferred_image_language=None, content_type=None, metadata_country_code=None, metadata_savers=None, disabled_local_metadata_readers=None, local_metadata_reader_order=None, disabled_lyrics_fetchers=None, save_lyrics_with_media=None, lyrics_download_max_age_days=None, lyrics_fetcher_order=None, lyrics_download_languages=None, disabled_subtitle_fetchers=None, subtitle_fetcher_order=None, skip_subtitles_if_embedded_subtitles_present=None, skip_subtitles_if_audio_track_matches=None, subtitle_download_languages=None, subtitle_download_max_age_days=None, require_perfect_subtitle_match=None, save_subtitles_with_media=None, forced_subtitles_only=None, hearing_impaired_subtitles_only=None, type_options=None, collapse_single_item_folders=None, enable_adult_metadata=None, import_collections=None, disable_multi_version_items=None, disable_multi_part_items=None, min_collection_items=None, music_folder_structure=None, min_resume_pct=None, max_resume_pct=None, min_resume_duration_seconds=None, thumbnail_images_interval_seconds=None, sample_ignore_size=None):  # noqa: E501
+    def __init__(self, enable_archive_media_files=None, enable_photos=None, enable_realtime_monitor=None, enable_marker_detection=None, enable_marker_detection_during_library_scan=None, intro_detection_fingerprint_length=None, enable_chapter_image_extraction=None, extract_chapter_images_during_library_scan=None, download_images_in_advance=None, cache_images=None, path_infos=None, ignore_hidden_files=None, ignore_file_extensions=None, save_local_metadata=None, save_metadata_hidden=None, save_local_thumbnail_sets=None, import_playlists=None, enable_automatic_series_grouping=None, share_embedded_music_album_images=None, enable_embedded_titles=None, enable_audio_resume=None, auto_generate_chapters=None, automatic_refresh_interval_days=None, placeholder_metadata_refresh_interval_days=None, preferred_metadata_language=None, preferred_image_language=None, content_type=None, metadata_country_code=None, metadata_savers=None, disabled_local_metadata_readers=None, local_metadata_reader_order=None, disabled_lyrics_fetchers=None, save_lyrics_with_media=None, lyrics_download_max_age_days=None, lyrics_fetcher_order=None, lyrics_download_languages=None, disabled_subtitle_fetchers=None, subtitle_fetcher_order=None, skip_subtitles_if_embedded_subtitles_present=None, skip_subtitles_if_audio_track_matches=None, subtitle_download_languages=None, subtitle_download_max_age_days=None, require_perfect_subtitle_match=None, save_subtitles_with_media=None, forced_subtitles_only=None, hearing_impaired_subtitles_only=None, type_options=None, collapse_single_item_folders=None, enable_adult_metadata=None, import_collections=None, enable_multi_version_by_files=None, enable_multi_version_by_metadata=None, enable_multi_part_items=None, min_collection_items=None, music_folder_structure=None, min_resume_pct=None, max_resume_pct=None, min_resume_duration_seconds=None, thumbnail_images_interval_seconds=None, sample_ignore_size=None):  # noqa: E501
         """LibraryOptions - a model defined in Swagger"""  # noqa: E501
         self._enable_archive_media_files = None
         self._enable_photos = None
@@ -197,8 +199,9 @@ class LibraryOptions(object):
         self._collapse_single_item_folders = None
         self._enable_adult_metadata = None
         self._import_collections = None
-        self._disable_multi_version_items = None
-        self._disable_multi_part_items = None
+        self._enable_multi_version_by_files = None
+        self._enable_multi_version_by_metadata = None
+        self._enable_multi_part_items = None
         self._min_collection_items = None
         self._music_folder_structure = None
         self._min_resume_pct = None
@@ -307,10 +310,12 @@ class LibraryOptions(object):
             self.enable_adult_metadata = enable_adult_metadata
         if import_collections is not None:
             self.import_collections = import_collections
-        if disable_multi_version_items is not None:
-            self.disable_multi_version_items = disable_multi_version_items
-        if disable_multi_part_items is not None:
-            self.disable_multi_part_items = disable_multi_part_items
+        if enable_multi_version_by_files is not None:
+            self.enable_multi_version_by_files = enable_multi_version_by_files
+        if enable_multi_version_by_metadata is not None:
+            self.enable_multi_version_by_metadata = enable_multi_version_by_metadata
+        if enable_multi_part_items is not None:
+            self.enable_multi_part_items = enable_multi_part_items
         if min_collection_items is not None:
             self.min_collection_items = min_collection_items
         if music_folder_structure is not None:
@@ -1381,46 +1386,67 @@ class LibraryOptions(object):
         self._import_collections = import_collections
 
     @property
-    def disable_multi_version_items(self):
-        """Gets the disable_multi_version_items of this LibraryOptions.  # noqa: E501
+    def enable_multi_version_by_files(self):
+        """Gets the enable_multi_version_by_files of this LibraryOptions.  # noqa: E501
 
 
-        :return: The disable_multi_version_items of this LibraryOptions.  # noqa: E501
+        :return: The enable_multi_version_by_files of this LibraryOptions.  # noqa: E501
         :rtype: bool
         """
-        return self._disable_multi_version_items
+        return self._enable_multi_version_by_files
 
-    @disable_multi_version_items.setter
-    def disable_multi_version_items(self, disable_multi_version_items):
-        """Sets the disable_multi_version_items of this LibraryOptions.
+    @enable_multi_version_by_files.setter
+    def enable_multi_version_by_files(self, enable_multi_version_by_files):
+        """Sets the enable_multi_version_by_files of this LibraryOptions.
 
 
-        :param disable_multi_version_items: The disable_multi_version_items of this LibraryOptions.  # noqa: E501
+        :param enable_multi_version_by_files: The enable_multi_version_by_files of this LibraryOptions.  # noqa: E501
         :type: bool
         """
 
-        self._disable_multi_version_items = disable_multi_version_items
+        self._enable_multi_version_by_files = enable_multi_version_by_files
 
     @property
-    def disable_multi_part_items(self):
-        """Gets the disable_multi_part_items of this LibraryOptions.  # noqa: E501
+    def enable_multi_version_by_metadata(self):
+        """Gets the enable_multi_version_by_metadata of this LibraryOptions.  # noqa: E501
 
 
-        :return: The disable_multi_part_items of this LibraryOptions.  # noqa: E501
+        :return: The enable_multi_version_by_metadata of this LibraryOptions.  # noqa: E501
         :rtype: bool
         """
-        return self._disable_multi_part_items
+        return self._enable_multi_version_by_metadata
 
-    @disable_multi_part_items.setter
-    def disable_multi_part_items(self, disable_multi_part_items):
-        """Sets the disable_multi_part_items of this LibraryOptions.
+    @enable_multi_version_by_metadata.setter
+    def enable_multi_version_by_metadata(self, enable_multi_version_by_metadata):
+        """Sets the enable_multi_version_by_metadata of this LibraryOptions.
 
 
-        :param disable_multi_part_items: The disable_multi_part_items of this LibraryOptions.  # noqa: E501
+        :param enable_multi_version_by_metadata: The enable_multi_version_by_metadata of this LibraryOptions.  # noqa: E501
         :type: bool
         """
 
-        self._disable_multi_part_items = disable_multi_part_items
+        self._enable_multi_version_by_metadata = enable_multi_version_by_metadata
+
+    @property
+    def enable_multi_part_items(self):
+        """Gets the enable_multi_part_items of this LibraryOptions.  # noqa: E501
+
+
+        :return: The enable_multi_part_items of this LibraryOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_multi_part_items
+
+    @enable_multi_part_items.setter
+    def enable_multi_part_items(self, enable_multi_part_items):
+        """Sets the enable_multi_part_items of this LibraryOptions.
+
+
+        :param enable_multi_part_items: The enable_multi_part_items of this LibraryOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_multi_part_items = enable_multi_part_items
 
     @property
     def min_collection_items(self):

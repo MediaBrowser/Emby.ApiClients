@@ -20,6 +20,7 @@ class LibraryUserCopyOptions(object):
     """
     USERPOLICY = "UserPolicy"
     USERCONFIGURATION = "UserConfiguration"
+    USERDATA = "UserData"
     """
     Attributes:
       swagger_types (dict): The key is attribute name

@@ -25,6 +25,7 @@ class ApiBaseItemsRequest(object):
         'is_special_episode': 'bool',
         'is4_k': 'bool',
         'enable_total_record_count': 'bool',
+        'is_duplicate': 'bool',
         'name': 'str',
         'recording_keyword': 'str',
         'recording_keyword_type': 'LiveTvKeywordType',
@@ -35,6 +36,7 @@ class ApiBaseItemsRequest(object):
         'exclude_tag_ids': 'str',
         'exclude_artist_ids': 'str',
         'album_artist_ids': 'str',
+        'composer_artist_ids': 'str',
         'contributing_artist_ids': 'str',
         'album_ids': 'str',
         'outer_ids': 'str',
@@ -59,6 +61,7 @@ class ApiBaseItemsRequest(object):
         'is_special_episode': 'IsSpecialEpisode',
         'is4_k': 'Is4K',
         'enable_total_record_count': 'EnableTotalRecordCount',
+        'is_duplicate': 'IsDuplicate',
         'name': 'Name',
         'recording_keyword': 'RecordingKeyword',
         'recording_keyword_type': 'RecordingKeywordType',
@@ -69,6 +72,7 @@ class ApiBaseItemsRequest(object):
         'exclude_tag_ids': 'ExcludeTagIds',
         'exclude_artist_ids': 'ExcludeArtistIds',
         'album_artist_ids': 'AlbumArtistIds',
+        'composer_artist_ids': 'ComposerArtistIds',
         'contributing_artist_ids': 'ContributingArtistIds',
         'album_ids': 'AlbumIds',
         'outer_ids': 'OuterIds',
@@ -89,11 +93,12 @@ class ApiBaseItemsRequest(object):
         'collection_types': 'CollectionTypes'
     }
 
-    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, exclude_artist_ids=None, album_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None):  # noqa: E501
+    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None):  # noqa: E501
         """ApiBaseItemsRequest - a model defined in Swagger"""  # noqa: E501
         self._is_special_episode = None
         self._is4_k = None
         self._enable_total_record_count = None
+        self._is_duplicate = None
         self._name = None
         self._recording_keyword = None
         self._recording_keyword_type = None
@@ -104,6 +109,7 @@ class ApiBaseItemsRequest(object):
         self._exclude_tag_ids = None
         self._exclude_artist_ids = None
         self._album_artist_ids = None
+        self._composer_artist_ids = None
         self._contributing_artist_ids = None
         self._album_ids = None
         self._outer_ids = None
@@ -129,6 +135,8 @@ class ApiBaseItemsRequest(object):
             self.is4_k = is4_k
         if enable_total_record_count is not None:
             self.enable_total_record_count = enable_total_record_count
+        if is_duplicate is not None:
+            self.is_duplicate = is_duplicate
         if name is not None:
             self.name = name
         if recording_keyword is not None:
@@ -149,6 +157,8 @@ class ApiBaseItemsRequest(object):
             self.exclude_artist_ids = exclude_artist_ids
         if album_artist_ids is not None:
             self.album_artist_ids = album_artist_ids
+        if composer_artist_ids is not None:
+            self.composer_artist_ids = composer_artist_ids
         if contributing_artist_ids is not None:
             self.contributing_artist_ids = contributing_artist_ids
         if album_ids is not None:
@@ -248,6 +258,27 @@ class ApiBaseItemsRequest(object):
         """
 
         self._enable_total_record_count = enable_total_record_count
+
+    @property
+    def is_duplicate(self):
+        """Gets the is_duplicate of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The is_duplicate of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_duplicate
+
+    @is_duplicate.setter
+    def is_duplicate(self, is_duplicate):
+        """Sets the is_duplicate of this ApiBaseItemsRequest.
+
+
+        :param is_duplicate: The is_duplicate of this ApiBaseItemsRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_duplicate = is_duplicate
 
     @property
     def name(self):
@@ -458,6 +489,27 @@ class ApiBaseItemsRequest(object):
         """
 
         self._album_artist_ids = album_artist_ids
+
+    @property
+    def composer_artist_ids(self):
+        """Gets the composer_artist_ids of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The composer_artist_ids of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._composer_artist_ids
+
+    @composer_artist_ids.setter
+    def composer_artist_ids(self, composer_artist_ids):
+        """Sets the composer_artist_ids of this ApiBaseItemsRequest.
+
+
+        :param composer_artist_ids: The composer_artist_ids of this ApiBaseItemsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._composer_artist_ids = composer_artist_ids
 
     @property
     def contributing_artist_ids(self):

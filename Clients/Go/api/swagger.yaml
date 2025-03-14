@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.41
+  version: 4.9.0.42
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -81287,10 +81287,12 @@ components:
           MediaSourceId: MediaSourceId
           IsPaused: true
           SubtitleStreamIndex: 5
+          SleepTimerMode: None
           PlaybackRate: 2.3021358869347655
           RepeatMode: RepeatNone
           CanSeek: true
           PlayMethod: Transcode
+          SleepTimerEndTime: 2000-01-23T04:56:07.000+00:00
           SubtitleOffset: 5
           AudioStreamIndex: 1
           IsMuted: true
@@ -81336,6 +81338,12 @@ components:
           $ref: '#/components/schemas/PlayMethod'
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
+        SleepTimerMode:
+          $ref: '#/components/schemas/SleepTimerMode'
+        SleepTimerEndTime:
+          type: string
+          format: date-time
+          nullable: true
         SubtitleOffset:
           type: integer
           format: int32
@@ -81350,10 +81358,12 @@ components:
         MediaSourceId: MediaSourceId
         IsPaused: true
         SubtitleStreamIndex: 5
+        SleepTimerMode: None
         PlaybackRate: 2.3021358869347655
         RepeatMode: RepeatNone
         CanSeek: true
         PlayMethod: Transcode
+        SleepTimerEndTime: 2000-01-23T04:56:07.000+00:00
         SubtitleOffset: 5
         AudioStreamIndex: 1
         IsMuted: true
@@ -81373,6 +81383,13 @@ components:
       - RepeatAll
       - RepeatOne
       x-internal-ref-name: MediaBrowser.Model.Session.RepeatMode
+    SleepTimerMode:
+      type: string
+      enum:
+      - None
+      - AfterItem
+      - AtTime
+      x-internal-ref-name: MediaBrowser.Model.Session.SleepTimerMode
     SessionUserInfo:
       type: object
       properties:
@@ -83534,9 +83551,11 @@ components:
           type: boolean
         ImportCollections:
           type: boolean
-        DisableMultiVersionItems:
+        EnableMultiVersionByFiles:
           type: boolean
-        DisableMultiPartItems:
+        EnableMultiVersionByMetadata:
+          type: boolean
+        EnableMultiPartItems:
           type: boolean
         MinCollectionItems:
           type: integer
@@ -83578,12 +83597,11 @@ components:
         - MetadataSavers
         SaveMetadataHidden: true
         SaveLocalMetadata: true
-        DisableMultiVersionItems: true
         PreferredImageLanguage: PreferredImageLanguage
+        EnableMultiVersionByMetadata: true
         DownloadImagesInAdvance: true
         ThumbnailImagesIntervalSeconds: 2
         MaxResumePct: 9
-        DisableMultiPartItems: true
         MinResumeDurationSeconds: 3
         EnableAudioResume: true
         MusicFolderStructure: MusicFolderStructure
@@ -83653,6 +83671,7 @@ components:
         DisabledSubtitleFetchers:
         - DisabledSubtitleFetchers
         - DisabledSubtitleFetchers
+        EnableMultiPartItems: true
         LocalMetadataReaderOrder:
         - LocalMetadataReaderOrder
         - LocalMetadataReaderOrder
@@ -83676,6 +83695,7 @@ components:
         ImportCollections: true
         AutoGenerateChapters: true
         EnableArchiveMediaFiles: true
+        EnableMultiVersionByFiles: true
         DisabledLocalMetadataReaders:
         - DisabledLocalMetadataReaders
         - DisabledLocalMetadataReaders
@@ -85954,6 +85974,9 @@ components:
           nullable: true
         EnableTotalRecordCount:
           type: boolean
+        IsDuplicate:
+          type: boolean
+          nullable: true
         Name:
           type: string
         RecordingKeyword:
@@ -85974,6 +85997,8 @@ components:
         ExcludeArtistIds:
           type: string
         AlbumArtistIds:
+          type: string
+        ComposerArtistIds:
           type: string
         ContributingArtistIds:
           type: string
@@ -89742,6 +89767,12 @@ components:
           description: The live stream identifier.
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
+        SleepTimerMode:
+          $ref: '#/components/schemas/SleepTimerMode'
+        SleepTimerEndTime:
+          type: string
+          format: date-time
+          nullable: true
         Shuffle:
           type: boolean
         SubtitleOffset:
@@ -89793,6 +89824,7 @@ components:
       - SubtitleOffsetChange
       - PlaybackRateChange
       - ShuffleChange
+      - SleepTimerChange
       x-internal-ref-name: MediaBrowser.Model.Session.ProgressEvent
     SyncTarget:
       type: object
@@ -93634,10 +93666,12 @@ components:
             MediaSourceId: MediaSourceId
             IsPaused: true
             SubtitleStreamIndex: 5
+            SleepTimerMode: None
             PlaybackRate: 2.3021358869347655
             RepeatMode: RepeatNone
             CanSeek: true
             PlayMethod: Transcode
+            SleepTimerEndTime: 2000-01-23T04:56:07.000+00:00
             SubtitleOffset: 5
             AudioStreamIndex: 1
             IsMuted: true
@@ -93661,6 +93695,7 @@ components:
       enum:
       - UserPolicy
       - UserConfiguration
+      - UserData
       x-internal-ref-name: MediaBrowser.Controller.Library.UserCopyOptions
     ForgotPassword:
       type: object
@@ -95548,12 +95583,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ExternalIdInfo'
+        PersonExternalIdInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExternalIdInfo'
       example:
         ParentalRatingOptions:
         - Value: 0
           Name: Name
         - Value: 0
           Name: Name
+        PersonExternalIdInfos:
+        - null
+        - null
         Countries:
         - TwoLetterISORegionName: TwoLetterISORegionName
           ThreeLetterISORegionName: ThreeLetterISORegionName
@@ -98545,12 +98587,11 @@ components:
             - MetadataSavers
             SaveMetadataHidden: true
             SaveLocalMetadata: true
-            DisableMultiVersionItems: true
             PreferredImageLanguage: PreferredImageLanguage
+            EnableMultiVersionByMetadata: true
             DownloadImagesInAdvance: true
             ThumbnailImagesIntervalSeconds: 2
             MaxResumePct: 9
-            DisableMultiPartItems: true
             MinResumeDurationSeconds: 3
             EnableAudioResume: true
             MusicFolderStructure: MusicFolderStructure
@@ -98620,6 +98661,7 @@ components:
             DisabledSubtitleFetchers:
             - DisabledSubtitleFetchers
             - DisabledSubtitleFetchers
+            EnableMultiPartItems: true
             LocalMetadataReaderOrder:
             - LocalMetadataReaderOrder
             - LocalMetadataReaderOrder
@@ -98643,6 +98685,7 @@ components:
             ImportCollections: true
             AutoGenerateChapters: true
             EnableArchiveMediaFiles: true
+            EnableMultiVersionByFiles: true
             DisabledLocalMetadataReaders:
             - DisabledLocalMetadataReaders
             - DisabledLocalMetadataReaders
@@ -98685,12 +98728,11 @@ components:
             - MetadataSavers
             SaveMetadataHidden: true
             SaveLocalMetadata: true
-            DisableMultiVersionItems: true
             PreferredImageLanguage: PreferredImageLanguage
+            EnableMultiVersionByMetadata: true
             DownloadImagesInAdvance: true
             ThumbnailImagesIntervalSeconds: 2
             MaxResumePct: 9
-            DisableMultiPartItems: true
             MinResumeDurationSeconds: 3
             EnableAudioResume: true
             MusicFolderStructure: MusicFolderStructure
@@ -98760,6 +98802,7 @@ components:
             DisabledSubtitleFetchers:
             - DisabledSubtitleFetchers
             - DisabledSubtitleFetchers
+            EnableMultiPartItems: true
             LocalMetadataReaderOrder:
             - LocalMetadataReaderOrder
             - LocalMetadataReaderOrder
@@ -98783,6 +98826,7 @@ components:
             ImportCollections: true
             AutoGenerateChapters: true
             EnableArchiveMediaFiles: true
+            EnableMultiVersionByFiles: true
             DisabledLocalMetadataReaders:
             - DisabledLocalMetadataReaders
             - DisabledLocalMetadataReaders
@@ -98863,12 +98907,11 @@ components:
           - MetadataSavers
           SaveMetadataHidden: true
           SaveLocalMetadata: true
-          DisableMultiVersionItems: true
           PreferredImageLanguage: PreferredImageLanguage
+          EnableMultiVersionByMetadata: true
           DownloadImagesInAdvance: true
           ThumbnailImagesIntervalSeconds: 2
           MaxResumePct: 9
-          DisableMultiPartItems: true
           MinResumeDurationSeconds: 3
           EnableAudioResume: true
           MusicFolderStructure: MusicFolderStructure
@@ -98938,6 +98981,7 @@ components:
           DisabledSubtitleFetchers:
           - DisabledSubtitleFetchers
           - DisabledSubtitleFetchers
+          EnableMultiPartItems: true
           LocalMetadataReaderOrder:
           - LocalMetadataReaderOrder
           - LocalMetadataReaderOrder
@@ -98961,6 +99005,7 @@ components:
           ImportCollections: true
           AutoGenerateChapters: true
           EnableArchiveMediaFiles: true
+          EnableMultiVersionByFiles: true
           DisabledLocalMetadataReaders:
           - DisabledLocalMetadataReaders
           - DisabledLocalMetadataReaders
@@ -99283,6 +99328,12 @@ components:
           description: The live stream identifier.
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
+        SleepTimerMode:
+          $ref: '#/components/schemas/SleepTimerMode'
+        SleepTimerEndTime:
+          type: string
+          format: date-time
+          nullable: true
         Shuffle:
           type: boolean
         SubtitleOffset:
@@ -100431,6 +100482,12 @@ components:
           format: int32
         Shuffle:
           type: boolean
+        SleepTimerMode:
+          $ref: '#/components/schemas/SleepTimerMode'
+        SleepTimerEndTime:
+          type: string
+          format: date-time
+          nullable: true
         EventName:
           $ref: '#/components/schemas/ProgressEvent'
       x-internal-ref-name: Emby.Server.MediaEncoding.Api.OnPlaybackProgress

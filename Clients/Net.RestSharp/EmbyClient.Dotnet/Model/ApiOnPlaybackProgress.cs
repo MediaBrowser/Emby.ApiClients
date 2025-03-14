@@ -29,12 +29,16 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="playlistIndex">playlistIndex.</param>
         /// <param name="playlistLength">playlistLength.</param>
         /// <param name="shuffle">shuffle.</param>
+        /// <param name="sleepTimerMode">sleepTimerMode.</param>
+        /// <param name="sleepTimerEndTime">sleepTimerEndTime.</param>
         /// <param name="eventName">eventName.</param>
-        public ApiOnPlaybackProgress(int? playlistIndex = default(int?), int? playlistLength = default(int?), bool? shuffle = default(bool?), ProgressEvent eventName = default(ProgressEvent))
+        public ApiOnPlaybackProgress(int? playlistIndex = default(int?), int? playlistLength = default(int?), bool? shuffle = default(bool?), SleepTimerMode sleepTimerMode = default(SleepTimerMode), DateTimeOffset? sleepTimerEndTime = default(DateTimeOffset?), ProgressEvent eventName = default(ProgressEvent))
         {
             this.PlaylistIndex = playlistIndex;
             this.PlaylistLength = playlistLength;
             this.Shuffle = shuffle;
+            this.SleepTimerMode = sleepTimerMode;
+            this.SleepTimerEndTime = sleepTimerEndTime;
             this.EventName = eventName;
         }
         
@@ -57,6 +61,18 @@ namespace EmbyClient.Dotnet.Model
         public bool? Shuffle { get; set; }
 
         /// <summary>
+        /// Gets or Sets SleepTimerMode
+        /// </summary>
+        [DataMember(Name="SleepTimerMode", EmitDefaultValue=false)]
+        public SleepTimerMode SleepTimerMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerEndTime
+        /// </summary>
+        [DataMember(Name="SleepTimerEndTime", EmitDefaultValue=false)]
+        public DateTimeOffset? SleepTimerEndTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets EventName
         /// </summary>
         [DataMember(Name="EventName", EmitDefaultValue=false)]
@@ -73,6 +89,8 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  PlaylistIndex: ").Append(PlaylistIndex).Append("\n");
             sb.Append("  PlaylistLength: ").Append(PlaylistLength).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
+            sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
+            sb.Append("  SleepTimerEndTime: ").Append(SleepTimerEndTime).Append("\n");
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -124,6 +142,16 @@ namespace EmbyClient.Dotnet.Model
                     this.Shuffle.Equals(input.Shuffle))
                 ) && 
                 (
+                    this.SleepTimerMode == input.SleepTimerMode ||
+                    (this.SleepTimerMode != null &&
+                    this.SleepTimerMode.Equals(input.SleepTimerMode))
+                ) && 
+                (
+                    this.SleepTimerEndTime == input.SleepTimerEndTime ||
+                    (this.SleepTimerEndTime != null &&
+                    this.SleepTimerEndTime.Equals(input.SleepTimerEndTime))
+                ) && 
+                (
                     this.EventName == input.EventName ||
                     (this.EventName != null &&
                     this.EventName.Equals(input.EventName))
@@ -145,6 +173,10 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.PlaylistLength.GetHashCode();
                 if (this.Shuffle != null)
                     hashCode = hashCode * 59 + this.Shuffle.GetHashCode();
+                if (this.SleepTimerMode != null)
+                    hashCode = hashCode * 59 + this.SleepTimerMode.GetHashCode();
+                if (this.SleepTimerEndTime != null)
+                    hashCode = hashCode * 59 + this.SleepTimerEndTime.GetHashCode();
                 if (this.EventName != null)
                     hashCode = hashCode * 59 + this.EventName.GetHashCode();
                 return hashCode;

@@ -28,6 +28,12 @@ export default class LibraryUserCopyOptions {
          */
         UserConfiguration = "UserConfiguration";
 
+        /**
+         * value: "UserData"
+         * @const
+         */
+        UserData = "UserData";
+
 
     /**
     * Returns a <code>LibraryUserCopyOptions</code> enum value from a Javascript object name.

@@ -11,11 +11,12 @@
 
 import ApiClient from '../ApiClient';
 import ProgressEvent from './ProgressEvent';
+import SleepTimerMode from './SleepTimerMode';
 
 /**
 * The ApiOnPlaybackProgress model module.
 * @module model/ApiOnPlaybackProgress
-* @version 4.9.0.41
+* @version 4.9.0.42
 */
 export default class ApiOnPlaybackProgress {
     /**
@@ -51,6 +52,12 @@ export default class ApiOnPlaybackProgress {
             if (data.hasOwnProperty('Shuffle')) {
                 obj['Shuffle'] = ApiClient.convertToType(data['Shuffle'], 'Boolean');
             }
+            if (data.hasOwnProperty('SleepTimerMode')) {
+                obj['SleepTimerMode'] = SleepTimerMode.constructFromObject(data['SleepTimerMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerEndTime')) {
+                obj['SleepTimerEndTime'] = ApiClient.convertToType(data['SleepTimerEndTime'], 'Date');
+            }
             if (data.hasOwnProperty('EventName')) {
                 obj['EventName'] = ProgressEvent.constructFromObject(data['EventName']);
             }
@@ -70,6 +77,14 @@ export default class ApiOnPlaybackProgress {
     * @member {Boolean} Shuffle
     */
     'Shuffle' = undefined;
+    /**
+    * @member {module:model/SleepTimerMode} SleepTimerMode
+    */
+    'SleepTimerMode' = undefined;
+    /**
+    * @member {Date} SleepTimerEndTime
+    */
+    'SleepTimerEndTime' = undefined;
     /**
     * @member {module:model/ProgressEvent} EventName
     */

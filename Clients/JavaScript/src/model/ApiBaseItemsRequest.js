@@ -17,7 +17,7 @@ import LiveTvKeywordType from './LiveTvKeywordType';
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.9.0.41
+* @version 4.9.0.42
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -53,6 +53,9 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('EnableTotalRecordCount')) {
                 obj['EnableTotalRecordCount'] = ApiClient.convertToType(data['EnableTotalRecordCount'], 'Boolean');
             }
+            if (data.hasOwnProperty('IsDuplicate')) {
+                obj['IsDuplicate'] = ApiClient.convertToType(data['IsDuplicate'], 'Boolean');
+            }
             if (data.hasOwnProperty('Name')) {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
             }
@@ -82,6 +85,9 @@ export default class ApiBaseItemsRequest {
             }
             if (data.hasOwnProperty('AlbumArtistIds')) {
                 obj['AlbumArtistIds'] = ApiClient.convertToType(data['AlbumArtistIds'], 'String');
+            }
+            if (data.hasOwnProperty('ComposerArtistIds')) {
+                obj['ComposerArtistIds'] = ApiClient.convertToType(data['ComposerArtistIds'], 'String');
             }
             if (data.hasOwnProperty('ContributingArtistIds')) {
                 obj['ContributingArtistIds'] = ApiClient.convertToType(data['ContributingArtistIds'], 'String');
@@ -154,6 +160,10 @@ export default class ApiBaseItemsRequest {
     */
     'EnableTotalRecordCount' = undefined;
     /**
+    * @member {Boolean} IsDuplicate
+    */
+    'IsDuplicate' = undefined;
+    /**
     * @member {String} Name
     */
     'Name' = undefined;
@@ -193,6 +203,10 @@ export default class ApiBaseItemsRequest {
     * @member {String} AlbumArtistIds
     */
     'AlbumArtistIds' = undefined;
+    /**
+    * @member {String} ComposerArtistIds
+    */
+    'ComposerArtistIds' = undefined;
     /**
     * @member {String} ContributingArtistIds
     */

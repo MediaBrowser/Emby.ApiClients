@@ -263,6 +263,7 @@ from embyclient.models.series_info import SeriesInfo
 from embyclient.models.server_configuration import ServerConfiguration
 from embyclient.models.session_session_info import SessionSessionInfo
 from embyclient.models.session_user_info import SessionUserInfo
+from embyclient.models.sleep_timer_mode import SleepTimerMode
 from embyclient.models.song_info import SongInfo
 from embyclient.models.sort_order import SortOrder
 from embyclient.models.subtitle_delivery_method import SubtitleDeliveryMethod

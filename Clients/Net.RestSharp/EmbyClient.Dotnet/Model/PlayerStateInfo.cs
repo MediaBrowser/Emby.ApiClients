@@ -36,10 +36,12 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="mediaSourceId">The now playing media version identifier..</param>
         /// <param name="playMethod">playMethod.</param>
         /// <param name="repeatMode">repeatMode.</param>
+        /// <param name="sleepTimerMode">sleepTimerMode.</param>
+        /// <param name="sleepTimerEndTime">sleepTimerEndTime.</param>
         /// <param name="subtitleOffset">subtitleOffset.</param>
         /// <param name="shuffle">shuffle.</param>
         /// <param name="playbackRate">playbackRate.</param>
-        public PlayerStateInfo(long? positionTicks = default(long?), bool? canSeek = default(bool?), bool? isPaused = default(bool?), bool? isMuted = default(bool?), int? volumeLevel = default(int?), int? audioStreamIndex = default(int?), int? subtitleStreamIndex = default(int?), string mediaSourceId = default(string), PlayMethod playMethod = default(PlayMethod), RepeatMode repeatMode = default(RepeatMode), int? subtitleOffset = default(int?), bool? shuffle = default(bool?), double? playbackRate = default(double?))
+        public PlayerStateInfo(long? positionTicks = default(long?), bool? canSeek = default(bool?), bool? isPaused = default(bool?), bool? isMuted = default(bool?), int? volumeLevel = default(int?), int? audioStreamIndex = default(int?), int? subtitleStreamIndex = default(int?), string mediaSourceId = default(string), PlayMethod playMethod = default(PlayMethod), RepeatMode repeatMode = default(RepeatMode), SleepTimerMode sleepTimerMode = default(SleepTimerMode), DateTimeOffset? sleepTimerEndTime = default(DateTimeOffset?), int? subtitleOffset = default(int?), bool? shuffle = default(bool?), double? playbackRate = default(double?))
         {
             this.PositionTicks = positionTicks;
             this.CanSeek = canSeek;
@@ -51,6 +53,8 @@ namespace EmbyClient.Dotnet.Model
             this.MediaSourceId = mediaSourceId;
             this.PlayMethod = playMethod;
             this.RepeatMode = repeatMode;
+            this.SleepTimerMode = sleepTimerMode;
+            this.SleepTimerEndTime = sleepTimerEndTime;
             this.SubtitleOffset = subtitleOffset;
             this.Shuffle = shuffle;
             this.PlaybackRate = playbackRate;
@@ -125,6 +129,18 @@ namespace EmbyClient.Dotnet.Model
         public RepeatMode RepeatMode { get; set; }
 
         /// <summary>
+        /// Gets or Sets SleepTimerMode
+        /// </summary>
+        [DataMember(Name="SleepTimerMode", EmitDefaultValue=false)]
+        public SleepTimerMode SleepTimerMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerEndTime
+        /// </summary>
+        [DataMember(Name="SleepTimerEndTime", EmitDefaultValue=false)]
+        public DateTimeOffset? SleepTimerEndTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets SubtitleOffset
         /// </summary>
         [DataMember(Name="SubtitleOffset", EmitDefaultValue=false)]
@@ -160,6 +176,8 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  MediaSourceId: ").Append(MediaSourceId).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
+            sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
+            sb.Append("  SleepTimerEndTime: ").Append(SleepTimerEndTime).Append("\n");
             sb.Append("  SubtitleOffset: ").Append(SubtitleOffset).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
             sb.Append("  PlaybackRate: ").Append(PlaybackRate).Append("\n");
@@ -248,6 +266,16 @@ namespace EmbyClient.Dotnet.Model
                     this.RepeatMode.Equals(input.RepeatMode))
                 ) && 
                 (
+                    this.SleepTimerMode == input.SleepTimerMode ||
+                    (this.SleepTimerMode != null &&
+                    this.SleepTimerMode.Equals(input.SleepTimerMode))
+                ) && 
+                (
+                    this.SleepTimerEndTime == input.SleepTimerEndTime ||
+                    (this.SleepTimerEndTime != null &&
+                    this.SleepTimerEndTime.Equals(input.SleepTimerEndTime))
+                ) && 
+                (
                     this.SubtitleOffset == input.SubtitleOffset ||
                     (this.SubtitleOffset != null &&
                     this.SubtitleOffset.Equals(input.SubtitleOffset))
@@ -293,6 +321,10 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.RepeatMode != null)
                     hashCode = hashCode * 59 + this.RepeatMode.GetHashCode();
+                if (this.SleepTimerMode != null)
+                    hashCode = hashCode * 59 + this.SleepTimerMode.GetHashCode();
+                if (this.SleepTimerEndTime != null)
+                    hashCode = hashCode * 59 + this.SleepTimerEndTime.GetHashCode();
                 if (this.SubtitleOffset != null)
                     hashCode = hashCode * 59 + this.SubtitleOffset.GetHashCode();
                 if (this.Shuffle != null)

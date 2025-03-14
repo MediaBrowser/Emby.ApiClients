@@ -12,11 +12,12 @@
 import ApiClient from '../ApiClient';
 import PlayMethod from './PlayMethod';
 import RepeatMode from './RepeatMode';
+import SleepTimerMode from './SleepTimerMode';
 
 /**
 * The PlayerStateInfo model module.
 * @module model/PlayerStateInfo
-* @version 4.9.0.41
+* @version 4.9.0.42
 */
 export default class PlayerStateInfo {
     /**
@@ -72,6 +73,12 @@ export default class PlayerStateInfo {
             }
             if (data.hasOwnProperty('RepeatMode')) {
                 obj['RepeatMode'] = RepeatMode.constructFromObject(data['RepeatMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerMode')) {
+                obj['SleepTimerMode'] = SleepTimerMode.constructFromObject(data['SleepTimerMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerEndTime')) {
+                obj['SleepTimerEndTime'] = ApiClient.convertToType(data['SleepTimerEndTime'], 'Date');
             }
             if (data.hasOwnProperty('SubtitleOffset')) {
                 obj['SubtitleOffset'] = ApiClient.convertToType(data['SubtitleOffset'], 'Number');
@@ -134,6 +141,14 @@ export default class PlayerStateInfo {
     * @member {module:model/RepeatMode} RepeatMode
     */
     'RepeatMode' = undefined;
+    /**
+    * @member {module:model/SleepTimerMode} SleepTimerMode
+    */
+    'SleepTimerMode' = undefined;
+    /**
+    * @member {Date} SleepTimerEndTime
+    */
+    'SleepTimerEndTime' = undefined;
     /**
     * @member {Number} SubtitleOffset
     */

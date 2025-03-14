@@ -34,6 +34,9 @@ public class ApiBaseItemsRequest {
   @SerializedName("EnableTotalRecordCount")
   private Boolean enableTotalRecordCount = null;
 
+  @SerializedName("IsDuplicate")
+  private Boolean isDuplicate = null;
+
   @SerializedName("Name")
   private String name = null;
 
@@ -63,6 +66,9 @@ public class ApiBaseItemsRequest {
 
   @SerializedName("AlbumArtistIds")
   private String albumArtistIds = null;
+
+  @SerializedName("ComposerArtistIds")
+  private String composerArtistIds = null;
 
   @SerializedName("ContributingArtistIds")
   private String contributingArtistIds = null;
@@ -170,6 +176,24 @@ public class ApiBaseItemsRequest {
 
   public void setEnableTotalRecordCount(Boolean enableTotalRecordCount) {
     this.enableTotalRecordCount = enableTotalRecordCount;
+  }
+
+  public ApiBaseItemsRequest isDuplicate(Boolean isDuplicate) {
+    this.isDuplicate = isDuplicate;
+    return this;
+  }
+
+   /**
+   * Get isDuplicate
+   * @return isDuplicate
+  **/
+  @Schema(description = "")
+  public Boolean isIsDuplicate() {
+    return isDuplicate;
+  }
+
+  public void setIsDuplicate(Boolean isDuplicate) {
+    this.isDuplicate = isDuplicate;
   }
 
   public ApiBaseItemsRequest name(String name) {
@@ -350,6 +374,24 @@ public class ApiBaseItemsRequest {
 
   public void setAlbumArtistIds(String albumArtistIds) {
     this.albumArtistIds = albumArtistIds;
+  }
+
+  public ApiBaseItemsRequest composerArtistIds(String composerArtistIds) {
+    this.composerArtistIds = composerArtistIds;
+    return this;
+  }
+
+   /**
+   * Get composerArtistIds
+   * @return composerArtistIds
+  **/
+  @Schema(description = "")
+  public String getComposerArtistIds() {
+    return composerArtistIds;
+  }
+
+  public void setComposerArtistIds(String composerArtistIds) {
+    this.composerArtistIds = composerArtistIds;
   }
 
   public ApiBaseItemsRequest contributingArtistIds(String contributingArtistIds) {
@@ -697,6 +739,7 @@ public class ApiBaseItemsRequest {
     return Objects.equals(this.isSpecialEpisode, apiBaseItemsRequest.isSpecialEpisode) &&
         Objects.equals(this.is4K, apiBaseItemsRequest.is4K) &&
         Objects.equals(this.enableTotalRecordCount, apiBaseItemsRequest.enableTotalRecordCount) &&
+        Objects.equals(this.isDuplicate, apiBaseItemsRequest.isDuplicate) &&
         Objects.equals(this.name, apiBaseItemsRequest.name) &&
         Objects.equals(this.recordingKeyword, apiBaseItemsRequest.recordingKeyword) &&
         Objects.equals(this.recordingKeywordType, apiBaseItemsRequest.recordingKeywordType) &&
@@ -707,6 +750,7 @@ public class ApiBaseItemsRequest {
         Objects.equals(this.excludeTagIds, apiBaseItemsRequest.excludeTagIds) &&
         Objects.equals(this.excludeArtistIds, apiBaseItemsRequest.excludeArtistIds) &&
         Objects.equals(this.albumArtistIds, apiBaseItemsRequest.albumArtistIds) &&
+        Objects.equals(this.composerArtistIds, apiBaseItemsRequest.composerArtistIds) &&
         Objects.equals(this.contributingArtistIds, apiBaseItemsRequest.contributingArtistIds) &&
         Objects.equals(this.albumIds, apiBaseItemsRequest.albumIds) &&
         Objects.equals(this.outerIds, apiBaseItemsRequest.outerIds) &&
@@ -729,7 +773,7 @@ public class ApiBaseItemsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, excludeArtistIds, albumArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes);
+    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes);
   }
 
 
@@ -741,6 +785,7 @@ public class ApiBaseItemsRequest {
     sb.append("    isSpecialEpisode: ").append(toIndentedString(isSpecialEpisode)).append("\n");
     sb.append("    is4K: ").append(toIndentedString(is4K)).append("\n");
     sb.append("    enableTotalRecordCount: ").append(toIndentedString(enableTotalRecordCount)).append("\n");
+    sb.append("    isDuplicate: ").append(toIndentedString(isDuplicate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    recordingKeyword: ").append(toIndentedString(recordingKeyword)).append("\n");
     sb.append("    recordingKeywordType: ").append(toIndentedString(recordingKeywordType)).append("\n");
@@ -751,6 +796,7 @@ public class ApiBaseItemsRequest {
     sb.append("    excludeTagIds: ").append(toIndentedString(excludeTagIds)).append("\n");
     sb.append("    excludeArtistIds: ").append(toIndentedString(excludeArtistIds)).append("\n");
     sb.append("    albumArtistIds: ").append(toIndentedString(albumArtistIds)).append("\n");
+    sb.append("    composerArtistIds: ").append(toIndentedString(composerArtistIds)).append("\n");
     sb.append("    contributingArtistIds: ").append(toIndentedString(contributingArtistIds)).append("\n");
     sb.append("    albumIds: ").append(toIndentedString(albumIds)).append("\n");
     sb.append("    outerIds: ").append(toIndentedString(outerIds)).append("\n");

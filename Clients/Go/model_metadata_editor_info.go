@@ -11,4 +11,5 @@ type MetadataEditorInfo struct {
 	Countries []GlobalizationCountryInfo `json:"Countries,omitempty"`
 	Cultures []GlobalizationCultureDto `json:"Cultures,omitempty"`
 	ExternalIdInfos []ExternalIdInfo `json:"ExternalIdInfos,omitempty"`
+	PersonExternalIdInfos []ExternalIdInfo `json:"PersonExternalIdInfos,omitempty"`
 }

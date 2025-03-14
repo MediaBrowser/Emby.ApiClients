@@ -59,8 +59,9 @@ type LibraryOptions struct {
 	CollapseSingleItemFolders bool `json:"CollapseSingleItemFolders,omitempty"`
 	EnableAdultMetadata bool `json:"EnableAdultMetadata,omitempty"`
 	ImportCollections bool `json:"ImportCollections,omitempty"`
-	DisableMultiVersionItems bool `json:"DisableMultiVersionItems,omitempty"`
-	DisableMultiPartItems bool `json:"DisableMultiPartItems,omitempty"`
+	EnableMultiVersionByFiles bool `json:"EnableMultiVersionByFiles,omitempty"`
+	EnableMultiVersionByMetadata bool `json:"EnableMultiVersionByMetadata,omitempty"`
+	EnableMultiPartItems bool `json:"EnableMultiPartItems,omitempty"`
 	MinCollectionItems int32 `json:"MinCollectionItems,omitempty"`
 	MusicFolderStructure string `json:"MusicFolderStructure,omitempty"`
 	// The minimum percentage of an item that must be played in order for playstate to be updated.
