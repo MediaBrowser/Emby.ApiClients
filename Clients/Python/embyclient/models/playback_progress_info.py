@@ -25,9 +25,7 @@ class PlaybackProgressInfo(object):
         'can_seek': 'bool',
         'now_playing_queue': 'list[QueueItem]',
         'playlist_item_id': 'str',
-        'item_id': 'str',
         'session_id': 'str',
-        'media_source_id': 'str',
         'audio_stream_index': 'int',
         'subtitle_stream_index': 'int',
         'is_paused': 'bool',
@@ -41,7 +39,6 @@ class PlaybackProgressInfo(object):
         'aspect_ratio': 'str',
         'event_name': 'ProgressEvent',
         'play_method': 'PlayMethod',
-        'live_stream_id': 'str',
         'repeat_mode': 'RepeatMode',
         'sleep_timer_mode': 'SleepTimerMode',
         'sleep_timer_end_time': 'datetime',
@@ -50,6 +47,9 @@ class PlaybackProgressInfo(object):
         'playback_rate': 'float',
         'playlist_item_ids': 'list[str]',
         'play_session_id': 'str',
+        'item_id': 'str',
+        'live_stream_id': 'str',
+        'media_source_id': 'str',
         'item': 'BaseItemDto',
         'position_ticks': 'int'
     }
@@ -58,9 +58,7 @@ class PlaybackProgressInfo(object):
         'can_seek': 'CanSeek',
         'now_playing_queue': 'NowPlayingQueue',
         'playlist_item_id': 'PlaylistItemId',
-        'item_id': 'ItemId',
         'session_id': 'SessionId',
-        'media_source_id': 'MediaSourceId',
         'audio_stream_index': 'AudioStreamIndex',
         'subtitle_stream_index': 'SubtitleStreamIndex',
         'is_paused': 'IsPaused',
@@ -74,7 +72,6 @@ class PlaybackProgressInfo(object):
         'aspect_ratio': 'AspectRatio',
         'event_name': 'EventName',
         'play_method': 'PlayMethod',
-        'live_stream_id': 'LiveStreamId',
         'repeat_mode': 'RepeatMode',
         'sleep_timer_mode': 'SleepTimerMode',
         'sleep_timer_end_time': 'SleepTimerEndTime',
@@ -83,18 +80,19 @@ class PlaybackProgressInfo(object):
         'playback_rate': 'PlaybackRate',
         'playlist_item_ids': 'PlaylistItemIds',
         'play_session_id': 'PlaySessionId',
+        'item_id': 'ItemId',
+        'live_stream_id': 'LiveStreamId',
+        'media_source_id': 'MediaSourceId',
         'item': 'Item',
         'position_ticks': 'PositionTicks'
     }
 
-    def __init__(self, can_seek=None, now_playing_queue=None, playlist_item_id=None, item_id=None, session_id=None, media_source_id=None, audio_stream_index=None, subtitle_stream_index=None, is_paused=None, playlist_index=None, playlist_length=None, is_muted=None, run_time_ticks=None, playback_start_time_ticks=None, volume_level=None, brightness=None, aspect_ratio=None, event_name=None, play_method=None, live_stream_id=None, repeat_mode=None, sleep_timer_mode=None, sleep_timer_end_time=None, shuffle=None, subtitle_offset=None, playback_rate=None, playlist_item_ids=None, play_session_id=None, item=None, position_ticks=None):  # noqa: E501
+    def __init__(self, can_seek=None, now_playing_queue=None, playlist_item_id=None, session_id=None, audio_stream_index=None, subtitle_stream_index=None, is_paused=None, playlist_index=None, playlist_length=None, is_muted=None, run_time_ticks=None, playback_start_time_ticks=None, volume_level=None, brightness=None, aspect_ratio=None, event_name=None, play_method=None, repeat_mode=None, sleep_timer_mode=None, sleep_timer_end_time=None, shuffle=None, subtitle_offset=None, playback_rate=None, playlist_item_ids=None, play_session_id=None, item_id=None, live_stream_id=None, media_source_id=None, item=None, position_ticks=None):  # noqa: E501
         """PlaybackProgressInfo - a model defined in Swagger"""  # noqa: E501
         self._can_seek = None
         self._now_playing_queue = None
         self._playlist_item_id = None
-        self._item_id = None
         self._session_id = None
-        self._media_source_id = None
         self._audio_stream_index = None
         self._subtitle_stream_index = None
         self._is_paused = None
@@ -108,7 +106,6 @@ class PlaybackProgressInfo(object):
         self._aspect_ratio = None
         self._event_name = None
         self._play_method = None
-        self._live_stream_id = None
         self._repeat_mode = None
         self._sleep_timer_mode = None
         self._sleep_timer_end_time = None
@@ -117,6 +114,9 @@ class PlaybackProgressInfo(object):
         self._playback_rate = None
         self._playlist_item_ids = None
         self._play_session_id = None
+        self._item_id = None
+        self._live_stream_id = None
+        self._media_source_id = None
         self._item = None
         self._position_ticks = None
         self.discriminator = None
@@ -126,12 +126,8 @@ class PlaybackProgressInfo(object):
             self.now_playing_queue = now_playing_queue
         if playlist_item_id is not None:
             self.playlist_item_id = playlist_item_id
-        if item_id is not None:
-            self.item_id = item_id
         if session_id is not None:
             self.session_id = session_id
-        if media_source_id is not None:
-            self.media_source_id = media_source_id
         if audio_stream_index is not None:
             self.audio_stream_index = audio_stream_index
         if subtitle_stream_index is not None:
@@ -158,8 +154,6 @@ class PlaybackProgressInfo(object):
             self.event_name = event_name
         if play_method is not None:
             self.play_method = play_method
-        if live_stream_id is not None:
-            self.live_stream_id = live_stream_id
         if repeat_mode is not None:
             self.repeat_mode = repeat_mode
         if sleep_timer_mode is not None:
@@ -176,6 +170,12 @@ class PlaybackProgressInfo(object):
             self.playlist_item_ids = playlist_item_ids
         if play_session_id is not None:
             self.play_session_id = play_session_id
+        if item_id is not None:
+            self.item_id = item_id
+        if live_stream_id is not None:
+            self.live_stream_id = live_stream_id
+        if media_source_id is not None:
+            self.media_source_id = media_source_id
         if item is not None:
             self.item = item
         if position_ticks is not None:
@@ -247,29 +247,6 @@ class PlaybackProgressInfo(object):
         self._playlist_item_id = playlist_item_id
 
     @property
-    def item_id(self):
-        """Gets the item_id of this PlaybackProgressInfo.  # noqa: E501
-
-        The item identifier.  # noqa: E501
-
-        :return: The item_id of this PlaybackProgressInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._item_id
-
-    @item_id.setter
-    def item_id(self, item_id):
-        """Sets the item_id of this PlaybackProgressInfo.
-
-        The item identifier.  # noqa: E501
-
-        :param item_id: The item_id of this PlaybackProgressInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._item_id = item_id
-
-    @property
     def session_id(self):
         """Gets the session_id of this PlaybackProgressInfo.  # noqa: E501
 
@@ -291,29 +268,6 @@ class PlaybackProgressInfo(object):
         """
 
         self._session_id = session_id
-
-    @property
-    def media_source_id(self):
-        """Gets the media_source_id of this PlaybackProgressInfo.  # noqa: E501
-
-        The media version identifier.  # noqa: E501
-
-        :return: The media_source_id of this PlaybackProgressInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._media_source_id
-
-    @media_source_id.setter
-    def media_source_id(self, media_source_id):
-        """Sets the media_source_id of this PlaybackProgressInfo.
-
-        The media version identifier.  # noqa: E501
-
-        :param media_source_id: The media_source_id of this PlaybackProgressInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._media_source_id = media_source_id
 
     @property
     def audio_stream_index(self):
@@ -599,29 +553,6 @@ class PlaybackProgressInfo(object):
         self._play_method = play_method
 
     @property
-    def live_stream_id(self):
-        """Gets the live_stream_id of this PlaybackProgressInfo.  # noqa: E501
-
-        The live stream identifier.  # noqa: E501
-
-        :return: The live_stream_id of this PlaybackProgressInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._live_stream_id
-
-    @live_stream_id.setter
-    def live_stream_id(self, live_stream_id):
-        """Sets the live_stream_id of this PlaybackProgressInfo.
-
-        The live stream identifier.  # noqa: E501
-
-        :param live_stream_id: The live_stream_id of this PlaybackProgressInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._live_stream_id = live_stream_id
-
-    @property
     def repeat_mode(self):
         """Gets the repeat_mode of this PlaybackProgressInfo.  # noqa: E501
 
@@ -790,6 +721,75 @@ class PlaybackProgressInfo(object):
         """
 
         self._play_session_id = play_session_id
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this PlaybackProgressInfo.  # noqa: E501
+
+        The item identifier.  # noqa: E501
+
+        :return: The item_id of this PlaybackProgressInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this PlaybackProgressInfo.
+
+        The item identifier.  # noqa: E501
+
+        :param item_id: The item_id of this PlaybackProgressInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._item_id = item_id
+
+    @property
+    def live_stream_id(self):
+        """Gets the live_stream_id of this PlaybackProgressInfo.  # noqa: E501
+
+        The live stream identifier.  # noqa: E501
+
+        :return: The live_stream_id of this PlaybackProgressInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_stream_id
+
+    @live_stream_id.setter
+    def live_stream_id(self, live_stream_id):
+        """Sets the live_stream_id of this PlaybackProgressInfo.
+
+        The live stream identifier.  # noqa: E501
+
+        :param live_stream_id: The live_stream_id of this PlaybackProgressInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._live_stream_id = live_stream_id
+
+    @property
+    def media_source_id(self):
+        """Gets the media_source_id of this PlaybackProgressInfo.  # noqa: E501
+
+        The media version identifier.  # noqa: E501
+
+        :return: The media_source_id of this PlaybackProgressInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._media_source_id
+
+    @media_source_id.setter
+    def media_source_id(self, media_source_id):
+        """Sets the media_source_id of this PlaybackProgressInfo.
+
+        The media version identifier.  # noqa: E501
+
+        :param media_source_id: The media_source_id of this PlaybackProgressInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._media_source_id = media_source_id
 
     @property
     def item(self):

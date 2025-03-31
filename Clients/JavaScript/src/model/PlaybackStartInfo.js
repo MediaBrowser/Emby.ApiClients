@@ -20,7 +20,7 @@ import SleepTimerMode from './SleepTimerMode';
 /**
 * The PlaybackStartInfo model module.
 * @module model/PlaybackStartInfo
-* @version 4.9.0.42
+* @version 4.9.0.43
 */
 export default class PlaybackStartInfo {
     /**
@@ -57,14 +57,8 @@ export default class PlaybackStartInfo {
             if (data.hasOwnProperty('PlaylistItemId')) {
                 obj['PlaylistItemId'] = ApiClient.convertToType(data['PlaylistItemId'], 'String');
             }
-            if (data.hasOwnProperty('ItemId')) {
-                obj['ItemId'] = ApiClient.convertToType(data['ItemId'], 'String');
-            }
             if (data.hasOwnProperty('SessionId')) {
                 obj['SessionId'] = ApiClient.convertToType(data['SessionId'], 'String');
-            }
-            if (data.hasOwnProperty('MediaSourceId')) {
-                obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
             }
             if (data.hasOwnProperty('AudioStreamIndex')) {
                 obj['AudioStreamIndex'] = ApiClient.convertToType(data['AudioStreamIndex'], 'Number');
@@ -105,9 +99,6 @@ export default class PlaybackStartInfo {
             if (data.hasOwnProperty('PlayMethod')) {
                 obj['PlayMethod'] = PlayMethod.constructFromObject(data['PlayMethod']);
             }
-            if (data.hasOwnProperty('LiveStreamId')) {
-                obj['LiveStreamId'] = ApiClient.convertToType(data['LiveStreamId'], 'String');
-            }
             if (data.hasOwnProperty('RepeatMode')) {
                 obj['RepeatMode'] = RepeatMode.constructFromObject(data['RepeatMode']);
             }
@@ -131,6 +122,15 @@ export default class PlaybackStartInfo {
             }
             if (data.hasOwnProperty('PlaySessionId')) {
                 obj['PlaySessionId'] = ApiClient.convertToType(data['PlaySessionId'], 'String');
+            }
+            if (data.hasOwnProperty('ItemId')) {
+                obj['ItemId'] = ApiClient.convertToType(data['ItemId'], 'String');
+            }
+            if (data.hasOwnProperty('LiveStreamId')) {
+                obj['LiveStreamId'] = ApiClient.convertToType(data['LiveStreamId'], 'String');
+            }
+            if (data.hasOwnProperty('MediaSourceId')) {
+                obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
             }
             if (data.hasOwnProperty('Item')) {
                 obj['Item'] = BaseItemDto.constructFromObject(data['Item']);
@@ -156,20 +156,10 @@ export default class PlaybackStartInfo {
     */
     'PlaylistItemId' = undefined;
     /**
-    * The item identifier.
-    * @member {String} ItemId
-    */
-    'ItemId' = undefined;
-    /**
     * The session id.
     * @member {String} SessionId
     */
     'SessionId' = undefined;
-    /**
-    * The media version identifier.
-    * @member {String} MediaSourceId
-    */
-    'MediaSourceId' = undefined;
     /**
     * The index of the audio stream.
     * @member {Number} AudioStreamIndex
@@ -228,11 +218,6 @@ export default class PlaybackStartInfo {
     */
     'PlayMethod' = undefined;
     /**
-    * The live stream identifier.
-    * @member {String} LiveStreamId
-    */
-    'LiveStreamId' = undefined;
-    /**
     * @member {module:model/RepeatMode} RepeatMode
     */
     'RepeatMode' = undefined;
@@ -265,6 +250,21 @@ export default class PlaybackStartInfo {
     * @member {String} PlaySessionId
     */
     'PlaySessionId' = undefined;
+    /**
+    * The item identifier.
+    * @member {String} ItemId
+    */
+    'ItemId' = undefined;
+    /**
+    * The live stream identifier.
+    * @member {String} LiveStreamId
+    */
+    'LiveStreamId' = undefined;
+    /**
+    * The media version identifier.
+    * @member {String} MediaSourceId
+    */
+    'MediaSourceId' = undefined;
     /**
     * @member {module:model/BaseItemDto} Item
     */

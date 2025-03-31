@@ -38,14 +38,8 @@ public class PlaybackStartInfo {
   @SerializedName("PlaylistItemId")
   private String playlistItemId = null;
 
-  @SerializedName("ItemId")
-  private String itemId = null;
-
   @SerializedName("SessionId")
   private String sessionId = null;
-
-  @SerializedName("MediaSourceId")
-  private String mediaSourceId = null;
 
   @SerializedName("AudioStreamIndex")
   private Integer audioStreamIndex = null;
@@ -86,9 +80,6 @@ public class PlaybackStartInfo {
   @SerializedName("PlayMethod")
   private PlayMethod playMethod = null;
 
-  @SerializedName("LiveStreamId")
-  private String liveStreamId = null;
-
   @SerializedName("RepeatMode")
   private RepeatMode repeatMode = null;
 
@@ -112,6 +103,15 @@ public class PlaybackStartInfo {
 
   @SerializedName("PlaySessionId")
   private String playSessionId = null;
+
+  @SerializedName("ItemId")
+  private String itemId = null;
+
+  @SerializedName("LiveStreamId")
+  private String liveStreamId = null;
+
+  @SerializedName("MediaSourceId")
+  private String mediaSourceId = null;
 
   @SerializedName("Item")
   private BaseItemDto item = null;
@@ -181,24 +181,6 @@ public class PlaybackStartInfo {
     this.playlistItemId = playlistItemId;
   }
 
-  public PlaybackStartInfo itemId(String itemId) {
-    this.itemId = itemId;
-    return this;
-  }
-
-   /**
-   * The item identifier.
-   * @return itemId
-  **/
-  @Schema(description = "The item identifier.")
-  public String getItemId() {
-    return itemId;
-  }
-
-  public void setItemId(String itemId) {
-    this.itemId = itemId;
-  }
-
   public PlaybackStartInfo sessionId(String sessionId) {
     this.sessionId = sessionId;
     return this;
@@ -215,24 +197,6 @@ public class PlaybackStartInfo {
 
   public void setSessionId(String sessionId) {
     this.sessionId = sessionId;
-  }
-
-  public PlaybackStartInfo mediaSourceId(String mediaSourceId) {
-    this.mediaSourceId = mediaSourceId;
-    return this;
-  }
-
-   /**
-   * The media version identifier.
-   * @return mediaSourceId
-  **/
-  @Schema(description = "The media version identifier.")
-  public String getMediaSourceId() {
-    return mediaSourceId;
-  }
-
-  public void setMediaSourceId(String mediaSourceId) {
-    this.mediaSourceId = mediaSourceId;
   }
 
   public PlaybackStartInfo audioStreamIndex(Integer audioStreamIndex) {
@@ -469,24 +433,6 @@ public class PlaybackStartInfo {
     this.playMethod = playMethod;
   }
 
-  public PlaybackStartInfo liveStreamId(String liveStreamId) {
-    this.liveStreamId = liveStreamId;
-    return this;
-  }
-
-   /**
-   * The live stream identifier.
-   * @return liveStreamId
-  **/
-  @Schema(description = "The live stream identifier.")
-  public String getLiveStreamId() {
-    return liveStreamId;
-  }
-
-  public void setLiveStreamId(String liveStreamId) {
-    this.liveStreamId = liveStreamId;
-  }
-
   public PlaybackStartInfo repeatMode(RepeatMode repeatMode) {
     this.repeatMode = repeatMode;
     return this;
@@ -639,6 +585,60 @@ public class PlaybackStartInfo {
     this.playSessionId = playSessionId;
   }
 
+  public PlaybackStartInfo itemId(String itemId) {
+    this.itemId = itemId;
+    return this;
+  }
+
+   /**
+   * The item identifier.
+   * @return itemId
+  **/
+  @Schema(description = "The item identifier.")
+  public String getItemId() {
+    return itemId;
+  }
+
+  public void setItemId(String itemId) {
+    this.itemId = itemId;
+  }
+
+  public PlaybackStartInfo liveStreamId(String liveStreamId) {
+    this.liveStreamId = liveStreamId;
+    return this;
+  }
+
+   /**
+   * The live stream identifier.
+   * @return liveStreamId
+  **/
+  @Schema(description = "The live stream identifier.")
+  public String getLiveStreamId() {
+    return liveStreamId;
+  }
+
+  public void setLiveStreamId(String liveStreamId) {
+    this.liveStreamId = liveStreamId;
+  }
+
+  public PlaybackStartInfo mediaSourceId(String mediaSourceId) {
+    this.mediaSourceId = mediaSourceId;
+    return this;
+  }
+
+   /**
+   * The media version identifier.
+   * @return mediaSourceId
+  **/
+  @Schema(description = "The media version identifier.")
+  public String getMediaSourceId() {
+    return mediaSourceId;
+  }
+
+  public void setMediaSourceId(String mediaSourceId) {
+    this.mediaSourceId = mediaSourceId;
+  }
+
   public PlaybackStartInfo item(BaseItemDto item) {
     this.item = item;
     return this;
@@ -688,9 +688,7 @@ public class PlaybackStartInfo {
     return Objects.equals(this.canSeek, playbackStartInfo.canSeek) &&
         Objects.equals(this.nowPlayingQueue, playbackStartInfo.nowPlayingQueue) &&
         Objects.equals(this.playlistItemId, playbackStartInfo.playlistItemId) &&
-        Objects.equals(this.itemId, playbackStartInfo.itemId) &&
         Objects.equals(this.sessionId, playbackStartInfo.sessionId) &&
-        Objects.equals(this.mediaSourceId, playbackStartInfo.mediaSourceId) &&
         Objects.equals(this.audioStreamIndex, playbackStartInfo.audioStreamIndex) &&
         Objects.equals(this.subtitleStreamIndex, playbackStartInfo.subtitleStreamIndex) &&
         Objects.equals(this.isPaused, playbackStartInfo.isPaused) &&
@@ -704,7 +702,6 @@ public class PlaybackStartInfo {
         Objects.equals(this.aspectRatio, playbackStartInfo.aspectRatio) &&
         Objects.equals(this.eventName, playbackStartInfo.eventName) &&
         Objects.equals(this.playMethod, playbackStartInfo.playMethod) &&
-        Objects.equals(this.liveStreamId, playbackStartInfo.liveStreamId) &&
         Objects.equals(this.repeatMode, playbackStartInfo.repeatMode) &&
         Objects.equals(this.sleepTimerMode, playbackStartInfo.sleepTimerMode) &&
         Objects.equals(this.sleepTimerEndTime, playbackStartInfo.sleepTimerEndTime) &&
@@ -713,13 +710,16 @@ public class PlaybackStartInfo {
         Objects.equals(this.playbackRate, playbackStartInfo.playbackRate) &&
         Objects.equals(this.playlistItemIds, playbackStartInfo.playlistItemIds) &&
         Objects.equals(this.playSessionId, playbackStartInfo.playSessionId) &&
+        Objects.equals(this.itemId, playbackStartInfo.itemId) &&
+        Objects.equals(this.liveStreamId, playbackStartInfo.liveStreamId) &&
+        Objects.equals(this.mediaSourceId, playbackStartInfo.mediaSourceId) &&
         Objects.equals(this.item, playbackStartInfo.item) &&
         Objects.equals(this.positionTicks, playbackStartInfo.positionTicks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(canSeek, nowPlayingQueue, playlistItemId, itemId, sessionId, mediaSourceId, audioStreamIndex, subtitleStreamIndex, isPaused, playlistIndex, playlistLength, isMuted, runTimeTicks, playbackStartTimeTicks, volumeLevel, brightness, aspectRatio, eventName, playMethod, liveStreamId, repeatMode, sleepTimerMode, sleepTimerEndTime, shuffle, subtitleOffset, playbackRate, playlistItemIds, playSessionId, item, positionTicks);
+    return Objects.hash(canSeek, nowPlayingQueue, playlistItemId, sessionId, audioStreamIndex, subtitleStreamIndex, isPaused, playlistIndex, playlistLength, isMuted, runTimeTicks, playbackStartTimeTicks, volumeLevel, brightness, aspectRatio, eventName, playMethod, repeatMode, sleepTimerMode, sleepTimerEndTime, shuffle, subtitleOffset, playbackRate, playlistItemIds, playSessionId, itemId, liveStreamId, mediaSourceId, item, positionTicks);
   }
 
 
@@ -731,9 +731,7 @@ public class PlaybackStartInfo {
     sb.append("    canSeek: ").append(toIndentedString(canSeek)).append("\n");
     sb.append("    nowPlayingQueue: ").append(toIndentedString(nowPlayingQueue)).append("\n");
     sb.append("    playlistItemId: ").append(toIndentedString(playlistItemId)).append("\n");
-    sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
-    sb.append("    mediaSourceId: ").append(toIndentedString(mediaSourceId)).append("\n");
     sb.append("    audioStreamIndex: ").append(toIndentedString(audioStreamIndex)).append("\n");
     sb.append("    subtitleStreamIndex: ").append(toIndentedString(subtitleStreamIndex)).append("\n");
     sb.append("    isPaused: ").append(toIndentedString(isPaused)).append("\n");
@@ -747,7 +745,6 @@ public class PlaybackStartInfo {
     sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
     sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
     sb.append("    playMethod: ").append(toIndentedString(playMethod)).append("\n");
-    sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
     sb.append("    repeatMode: ").append(toIndentedString(repeatMode)).append("\n");
     sb.append("    sleepTimerMode: ").append(toIndentedString(sleepTimerMode)).append("\n");
     sb.append("    sleepTimerEndTime: ").append(toIndentedString(sleepTimerEndTime)).append("\n");
@@ -756,6 +753,9 @@ public class PlaybackStartInfo {
     sb.append("    playbackRate: ").append(toIndentedString(playbackRate)).append("\n");
     sb.append("    playlistItemIds: ").append(toIndentedString(playlistItemIds)).append("\n");
     sb.append("    playSessionId: ").append(toIndentedString(playSessionId)).append("\n");
+    sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
+    sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
+    sb.append("    mediaSourceId: ").append(toIndentedString(mediaSourceId)).append("\n");
     sb.append("    item: ").append(toIndentedString(item)).append("\n");
     sb.append("    positionTicks: ").append(toIndentedString(positionTicks)).append("\n");
     sb.append("}");

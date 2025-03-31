@@ -15,12 +15,8 @@ type PlaybackProgressInfo struct {
 	CanSeek bool `json:"CanSeek,omitempty"`
 	NowPlayingQueue []QueueItem `json:"NowPlayingQueue,omitempty"`
 	PlaylistItemId string `json:"PlaylistItemId,omitempty"`
-	// The item identifier.
-	ItemId string `json:"ItemId,omitempty"`
 	// The session id.
 	SessionId string `json:"SessionId,omitempty"`
-	// The media version identifier.
-	MediaSourceId string `json:"MediaSourceId,omitempty"`
 	// The index of the audio stream.
 	AudioStreamIndex int32 `json:"AudioStreamIndex,omitempty"`
 	// The index of the subtitle stream.
@@ -39,8 +35,6 @@ type PlaybackProgressInfo struct {
 	AspectRatio string `json:"AspectRatio,omitempty"`
 	EventName *ProgressEvent `json:"EventName,omitempty"`
 	PlayMethod *PlayMethod `json:"PlayMethod,omitempty"`
-	// The live stream identifier.
-	LiveStreamId string `json:"LiveStreamId,omitempty"`
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
 	SleepTimerMode *SleepTimerMode `json:"SleepTimerMode,omitempty"`
 	SleepTimerEndTime time.Time `json:"SleepTimerEndTime,omitempty"`
@@ -50,6 +44,12 @@ type PlaybackProgressInfo struct {
 	PlaylistItemIds []string `json:"PlaylistItemIds,omitempty"`
 	// The play session identifier.
 	PlaySessionId string `json:"PlaySessionId,omitempty"`
+	// The item identifier.
+	ItemId string `json:"ItemId,omitempty"`
+	// The live stream identifier.
+	LiveStreamId string `json:"LiveStreamId,omitempty"`
+	// The media version identifier.
+	MediaSourceId string `json:"MediaSourceId,omitempty"`
 	Item *BaseItemDto `json:"Item,omitempty"`
 	// The position ticks.
 	PositionTicks int64 `json:"PositionTicks,omitempty"`

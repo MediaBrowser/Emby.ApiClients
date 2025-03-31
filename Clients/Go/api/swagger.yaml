@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.42
+  version: 4.9.0.43
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -89708,15 +89708,9 @@ components:
             $ref: '#/components/schemas/QueueItem'
         PlaylistItemId:
           type: string
-        ItemId:
-          type: string
-          description: The item identifier.
         SessionId:
           type: string
           description: The session id.
-        MediaSourceId:
-          type: string
-          description: The media version identifier.
         AudioStreamIndex:
           type: integer
           description: The index of the audio stream.
@@ -89762,9 +89756,6 @@ components:
           $ref: '#/components/schemas/ProgressEvent'
         PlayMethod:
           $ref: '#/components/schemas/PlayMethod'
-        LiveStreamId:
-          type: string
-          description: The live stream identifier.
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
         SleepTimerMode:
@@ -89788,6 +89779,15 @@ components:
         PlaySessionId:
           type: string
           description: The play session identifier.
+        ItemId:
+          type: string
+          description: The item identifier.
+        LiveStreamId:
+          type: string
+          description: The live stream identifier.
+        MediaSourceId:
+          type: string
+          description: The media version identifier.
         Item:
           $ref: '#/components/schemas/BaseItemDto'
         PositionTicks:
@@ -99269,15 +99269,9 @@ components:
             $ref: '#/components/schemas/QueueItem'
         PlaylistItemId:
           type: string
-        ItemId:
-          type: string
-          description: The item identifier.
         SessionId:
           type: string
           description: The session id.
-        MediaSourceId:
-          type: string
-          description: The media version identifier.
         AudioStreamIndex:
           type: integer
           description: The index of the audio stream.
@@ -99323,9 +99317,6 @@ components:
           $ref: '#/components/schemas/ProgressEvent'
         PlayMethod:
           $ref: '#/components/schemas/PlayMethod'
-        LiveStreamId:
-          type: string
-          description: The live stream identifier.
         RepeatMode:
           $ref: '#/components/schemas/RepeatMode'
         SleepTimerMode:
@@ -99349,6 +99340,15 @@ components:
         PlaySessionId:
           type: string
           description: The play session identifier.
+        ItemId:
+          type: string
+          description: The item identifier.
+        LiveStreamId:
+          type: string
+          description: The live stream identifier.
+        MediaSourceId:
+          type: string
+          description: The media version identifier.
         Item:
           $ref: '#/components/schemas/BaseItemDto'
         PositionTicks:
