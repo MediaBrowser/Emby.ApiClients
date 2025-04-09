@@ -15,7 +15,7 @@ import ApiNameIdDescriptionPair from './ApiNameIdDescriptionPair';
 /**
 * The ApiAvailableRecordingOptions model module.
 * @module model/ApiAvailableRecordingOptions
-* @version 4.9.0.43
+* @version 4.9.0.44
 */
 export default class ApiAvailableRecordingOptions {
     /**

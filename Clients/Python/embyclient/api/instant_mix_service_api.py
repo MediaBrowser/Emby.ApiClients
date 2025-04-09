@@ -1629,7 +1629,7 @@ class InstantMixServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: The genre name (required)
+        :param str name: (required)
         :param str artist_type: Artist or AlbumArtist
         :param str max_official_rating: Optional filter by maximum official rating (PG, PG-13, TV-MA, etc).
         :param bool has_theme_song: Optional filter by items with theme songs.
@@ -1750,7 +1750,7 @@ class InstantMixServiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: The genre name (required)
+        :param str name: (required)
         :param str artist_type: Artist or AlbumArtist
         :param str max_official_rating: Optional filter by maximum official rating (PG, PG-13, TV-MA, etc).
         :param bool has_theme_song: Optional filter by items with theme songs.

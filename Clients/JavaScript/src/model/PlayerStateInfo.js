@@ -10,6 +10,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import MediaSourceInfo from './MediaSourceInfo';
 import PlayMethod from './PlayMethod';
 import RepeatMode from './RepeatMode';
 import SleepTimerMode from './SleepTimerMode';
@@ -17,7 +18,7 @@ import SleepTimerMode from './SleepTimerMode';
 /**
 * The PlayerStateInfo model module.
 * @module model/PlayerStateInfo
-* @version 4.9.0.43
+* @version 4.9.0.44
 */
 export default class PlayerStateInfo {
     /**
@@ -67,6 +68,9 @@ export default class PlayerStateInfo {
             }
             if (data.hasOwnProperty('MediaSourceId')) {
                 obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
+            }
+            if (data.hasOwnProperty('MediaSource')) {
+                obj['MediaSource'] = MediaSourceInfo.constructFromObject(data['MediaSource']);
             }
             if (data.hasOwnProperty('PlayMethod')) {
                 obj['PlayMethod'] = PlayMethod.constructFromObject(data['PlayMethod']);
@@ -133,6 +137,10 @@ export default class PlayerStateInfo {
     * @member {String} MediaSourceId
     */
     'MediaSourceId' = undefined;
+    /**
+    * @member {module:model/MediaSourceInfo} MediaSource
+    */
+    'MediaSource' = undefined;
     /**
     * @member {module:model/PlayMethod} PlayMethod
     */

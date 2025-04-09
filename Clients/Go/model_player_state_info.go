@@ -26,6 +26,7 @@ type PlayerStateInfo struct {
 	SubtitleStreamIndex int32 `json:"SubtitleStreamIndex,omitempty"`
 	// The now playing media version identifier.
 	MediaSourceId string `json:"MediaSourceId,omitempty"`
+	MediaSource *MediaSourceInfo `json:"MediaSource,omitempty"`
 	PlayMethod *PlayMethod `json:"PlayMethod,omitempty"`
 	RepeatMode *RepeatMode `json:"RepeatMode,omitempty"`
 	SleepTimerMode *SleepTimerMode `json:"SleepTimerMode,omitempty"`

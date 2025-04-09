@@ -12,6 +12,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import embyclient.model.MediaSourceInfo;
 import embyclient.model.PlayMethod;
 import embyclient.model.RepeatMode;
 import embyclient.model.SleepTimerMode;
@@ -47,6 +48,9 @@ public class PlayerStateInfo {
 
   @SerializedName("MediaSourceId")
   private String mediaSourceId = null;
+
+  @SerializedName("MediaSource")
+  private MediaSourceInfo mediaSource = null;
 
   @SerializedName("PlayMethod")
   private PlayMethod playMethod = null;
@@ -213,6 +217,24 @@ public class PlayerStateInfo {
     this.mediaSourceId = mediaSourceId;
   }
 
+  public PlayerStateInfo mediaSource(MediaSourceInfo mediaSource) {
+    this.mediaSource = mediaSource;
+    return this;
+  }
+
+   /**
+   * Get mediaSource
+   * @return mediaSource
+  **/
+  @Schema(description = "")
+  public MediaSourceInfo getMediaSource() {
+    return mediaSource;
+  }
+
+  public void setMediaSource(MediaSourceInfo mediaSource) {
+    this.mediaSource = mediaSource;
+  }
+
   public PlayerStateInfo playMethod(PlayMethod playMethod) {
     this.playMethod = playMethod;
     return this;
@@ -357,6 +379,7 @@ public class PlayerStateInfo {
         Objects.equals(this.audioStreamIndex, playerStateInfo.audioStreamIndex) &&
         Objects.equals(this.subtitleStreamIndex, playerStateInfo.subtitleStreamIndex) &&
         Objects.equals(this.mediaSourceId, playerStateInfo.mediaSourceId) &&
+        Objects.equals(this.mediaSource, playerStateInfo.mediaSource) &&
         Objects.equals(this.playMethod, playerStateInfo.playMethod) &&
         Objects.equals(this.repeatMode, playerStateInfo.repeatMode) &&
         Objects.equals(this.sleepTimerMode, playerStateInfo.sleepTimerMode) &&
@@ -368,7 +391,7 @@ public class PlayerStateInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(positionTicks, canSeek, isPaused, isMuted, volumeLevel, audioStreamIndex, subtitleStreamIndex, mediaSourceId, playMethod, repeatMode, sleepTimerMode, sleepTimerEndTime, subtitleOffset, shuffle, playbackRate);
+    return Objects.hash(positionTicks, canSeek, isPaused, isMuted, volumeLevel, audioStreamIndex, subtitleStreamIndex, mediaSourceId, mediaSource, playMethod, repeatMode, sleepTimerMode, sleepTimerEndTime, subtitleOffset, shuffle, playbackRate);
   }
 
 
@@ -385,6 +408,7 @@ public class PlayerStateInfo {
     sb.append("    audioStreamIndex: ").append(toIndentedString(audioStreamIndex)).append("\n");
     sb.append("    subtitleStreamIndex: ").append(toIndentedString(subtitleStreamIndex)).append("\n");
     sb.append("    mediaSourceId: ").append(toIndentedString(mediaSourceId)).append("\n");
+    sb.append("    mediaSource: ").append(toIndentedString(mediaSource)).append("\n");
     sb.append("    playMethod: ").append(toIndentedString(playMethod)).append("\n");
     sb.append("    repeatMode: ").append(toIndentedString(repeatMode)).append("\n");
     sb.append("    sleepTimerMode: ").append(toIndentedString(sleepTimerMode)).append("\n");

@@ -36,29 +36,29 @@ public class PlaybackStopInfo {
   @SerializedName("PlaylistLength")
   private Integer playlistLength = null;
 
-  @SerializedName("ItemId")
-  private String itemId = null;
-
   @SerializedName("SessionId")
   private String sessionId = null;
 
-  @SerializedName("MediaSourceId")
-  private String mediaSourceId = null;
-
-  @SerializedName("LiveStreamId")
-  private String liveStreamId = null;
+  @SerializedName("IsAutomated")
+  private Boolean isAutomated = null;
 
   @SerializedName("Failed")
   private Boolean failed = null;
-
-  @SerializedName("IsAutomated")
-  private Boolean isAutomated = null;
 
   @SerializedName("NextMediaType")
   private String nextMediaType = null;
 
   @SerializedName("PlaySessionId")
   private String playSessionId = null;
+
+  @SerializedName("ItemId")
+  private String itemId = null;
+
+  @SerializedName("LiveStreamId")
+  private String liveStreamId = null;
+
+  @SerializedName("MediaSourceId")
+  private String mediaSourceId = null;
 
   @SerializedName("Item")
   private BaseItemDto item = null;
@@ -146,24 +146,6 @@ public class PlaybackStopInfo {
     this.playlistLength = playlistLength;
   }
 
-  public PlaybackStopInfo itemId(String itemId) {
-    this.itemId = itemId;
-    return this;
-  }
-
-   /**
-   * The item identifier.
-   * @return itemId
-  **/
-  @Schema(description = "The item identifier.")
-  public String getItemId() {
-    return itemId;
-  }
-
-  public void setItemId(String itemId) {
-    this.itemId = itemId;
-  }
-
   public PlaybackStopInfo sessionId(String sessionId) {
     this.sessionId = sessionId;
     return this;
@@ -182,40 +164,22 @@ public class PlaybackStopInfo {
     this.sessionId = sessionId;
   }
 
-  public PlaybackStopInfo mediaSourceId(String mediaSourceId) {
-    this.mediaSourceId = mediaSourceId;
+  public PlaybackStopInfo isAutomated(Boolean isAutomated) {
+    this.isAutomated = isAutomated;
     return this;
   }
 
    /**
-   * The media version identifier.
-   * @return mediaSourceId
+   * Get isAutomated
+   * @return isAutomated
   **/
-  @Schema(description = "The media version identifier.")
-  public String getMediaSourceId() {
-    return mediaSourceId;
+  @Schema(description = "")
+  public Boolean isIsAutomated() {
+    return isAutomated;
   }
 
-  public void setMediaSourceId(String mediaSourceId) {
-    this.mediaSourceId = mediaSourceId;
-  }
-
-  public PlaybackStopInfo liveStreamId(String liveStreamId) {
-    this.liveStreamId = liveStreamId;
-    return this;
-  }
-
-   /**
-   * The live stream identifier.
-   * @return liveStreamId
-  **/
-  @Schema(description = "The live stream identifier.")
-  public String getLiveStreamId() {
-    return liveStreamId;
-  }
-
-  public void setLiveStreamId(String liveStreamId) {
-    this.liveStreamId = liveStreamId;
+  public void setIsAutomated(Boolean isAutomated) {
+    this.isAutomated = isAutomated;
   }
 
   public PlaybackStopInfo failed(Boolean failed) {
@@ -234,24 +198,6 @@ public class PlaybackStopInfo {
 
   public void setFailed(Boolean failed) {
     this.failed = failed;
-  }
-
-  public PlaybackStopInfo isAutomated(Boolean isAutomated) {
-    this.isAutomated = isAutomated;
-    return this;
-  }
-
-   /**
-   * Get isAutomated
-   * @return isAutomated
-  **/
-  @Schema(description = "")
-  public Boolean isIsAutomated() {
-    return isAutomated;
-  }
-
-  public void setIsAutomated(Boolean isAutomated) {
-    this.isAutomated = isAutomated;
   }
 
   public PlaybackStopInfo nextMediaType(String nextMediaType) {
@@ -288,6 +234,60 @@ public class PlaybackStopInfo {
 
   public void setPlaySessionId(String playSessionId) {
     this.playSessionId = playSessionId;
+  }
+
+  public PlaybackStopInfo itemId(String itemId) {
+    this.itemId = itemId;
+    return this;
+  }
+
+   /**
+   * The item identifier.
+   * @return itemId
+  **/
+  @Schema(description = "The item identifier.")
+  public String getItemId() {
+    return itemId;
+  }
+
+  public void setItemId(String itemId) {
+    this.itemId = itemId;
+  }
+
+  public PlaybackStopInfo liveStreamId(String liveStreamId) {
+    this.liveStreamId = liveStreamId;
+    return this;
+  }
+
+   /**
+   * The live stream identifier.
+   * @return liveStreamId
+  **/
+  @Schema(description = "The live stream identifier.")
+  public String getLiveStreamId() {
+    return liveStreamId;
+  }
+
+  public void setLiveStreamId(String liveStreamId) {
+    this.liveStreamId = liveStreamId;
+  }
+
+  public PlaybackStopInfo mediaSourceId(String mediaSourceId) {
+    this.mediaSourceId = mediaSourceId;
+    return this;
+  }
+
+   /**
+   * The media version identifier.
+   * @return mediaSourceId
+  **/
+  @Schema(description = "The media version identifier.")
+  public String getMediaSourceId() {
+    return mediaSourceId;
+  }
+
+  public void setMediaSourceId(String mediaSourceId) {
+    this.mediaSourceId = mediaSourceId;
   }
 
   public PlaybackStopInfo item(BaseItemDto item) {
@@ -340,21 +340,21 @@ public class PlaybackStopInfo {
         Objects.equals(this.playlistItemId, playbackStopInfo.playlistItemId) &&
         Objects.equals(this.playlistIndex, playbackStopInfo.playlistIndex) &&
         Objects.equals(this.playlistLength, playbackStopInfo.playlistLength) &&
-        Objects.equals(this.itemId, playbackStopInfo.itemId) &&
         Objects.equals(this.sessionId, playbackStopInfo.sessionId) &&
-        Objects.equals(this.mediaSourceId, playbackStopInfo.mediaSourceId) &&
-        Objects.equals(this.liveStreamId, playbackStopInfo.liveStreamId) &&
-        Objects.equals(this.failed, playbackStopInfo.failed) &&
         Objects.equals(this.isAutomated, playbackStopInfo.isAutomated) &&
+        Objects.equals(this.failed, playbackStopInfo.failed) &&
         Objects.equals(this.nextMediaType, playbackStopInfo.nextMediaType) &&
         Objects.equals(this.playSessionId, playbackStopInfo.playSessionId) &&
+        Objects.equals(this.itemId, playbackStopInfo.itemId) &&
+        Objects.equals(this.liveStreamId, playbackStopInfo.liveStreamId) &&
+        Objects.equals(this.mediaSourceId, playbackStopInfo.mediaSourceId) &&
         Objects.equals(this.item, playbackStopInfo.item) &&
         Objects.equals(this.positionTicks, playbackStopInfo.positionTicks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nowPlayingQueue, playlistItemId, playlistIndex, playlistLength, itemId, sessionId, mediaSourceId, liveStreamId, failed, isAutomated, nextMediaType, playSessionId, item, positionTicks);
+    return Objects.hash(nowPlayingQueue, playlistItemId, playlistIndex, playlistLength, sessionId, isAutomated, failed, nextMediaType, playSessionId, itemId, liveStreamId, mediaSourceId, item, positionTicks);
   }
 
 
@@ -367,14 +367,14 @@ public class PlaybackStopInfo {
     sb.append("    playlistItemId: ").append(toIndentedString(playlistItemId)).append("\n");
     sb.append("    playlistIndex: ").append(toIndentedString(playlistIndex)).append("\n");
     sb.append("    playlistLength: ").append(toIndentedString(playlistLength)).append("\n");
-    sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
-    sb.append("    mediaSourceId: ").append(toIndentedString(mediaSourceId)).append("\n");
-    sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
-    sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
     sb.append("    isAutomated: ").append(toIndentedString(isAutomated)).append("\n");
+    sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
     sb.append("    nextMediaType: ").append(toIndentedString(nextMediaType)).append("\n");
     sb.append("    playSessionId: ").append(toIndentedString(playSessionId)).append("\n");
+    sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
+    sb.append("    liveStreamId: ").append(toIndentedString(liveStreamId)).append("\n");
+    sb.append("    mediaSourceId: ").append(toIndentedString(mediaSourceId)).append("\n");
     sb.append("    item: ").append(toIndentedString(item)).append("\n");
     sb.append("    positionTicks: ").append(toIndentedString(positionTicks)).append("\n");
     sb.append("}");

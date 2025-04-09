@@ -2408,7 +2408,7 @@ public class InstantMixServiceApi {
     }
     /**
      * Build call for getMusicgenresByNameInstantmix
-     * @param name The genre name (required)
+     * @param name  (required)
      * @param artistType Artist or AlbumArtist (optional)
      * @param maxOfficialRating Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
      * @param hasThemeSong Optional filter by items with theme songs. (optional)
@@ -2774,7 +2774,7 @@ public class InstantMixServiceApi {
     /**
      * Creates an instant playlist based on a music genre
      * Requires authentication as user
-     * @param name The genre name (required)
+     * @param name  (required)
      * @param artistType Artist or AlbumArtist (optional)
      * @param maxOfficialRating Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
      * @param hasThemeSong Optional filter by items with theme songs. (optional)
@@ -2887,7 +2887,7 @@ public class InstantMixServiceApi {
     /**
      * Creates an instant playlist based on a music genre
      * Requires authentication as user
-     * @param name The genre name (required)
+     * @param name  (required)
      * @param artistType Artist or AlbumArtist (optional)
      * @param maxOfficialRating Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
      * @param hasThemeSong Optional filter by items with theme songs. (optional)
@@ -3001,7 +3001,7 @@ public class InstantMixServiceApi {
     /**
      * Creates an instant playlist based on a music genre (asynchronously)
      * Requires authentication as user
-     * @param name The genre name (required)
+     * @param name  (required)
      * @param artistType Artist or AlbumArtist (optional)
      * @param maxOfficialRating Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
      * @param hasThemeSong Optional filter by items with theme songs. (optional)

@@ -5456,7 +5456,7 @@ open class InstantMixServiceAPI {
     /**
      Creates an instant playlist based on a music genre
 
-     - parameter name: (path) The genre name 
+     - parameter name: (path)  
      - parameter artistType: (query) Artist or AlbumArtist (optional)
      - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
      - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)
@@ -6665,7 +6665,7 @@ open class InstantMixServiceAPI {
     description: API Documentation: Item Information
     url: https://betadev.emby.media/doc/restapi/Item-Information.html
 }
-     - parameter name: (path) The genre name 
+     - parameter name: (path)  
      - parameter artistType: (query) Artist or AlbumArtist (optional)
      - parameter maxOfficialRating: (query) Optional filter by maximum official rating (PG, PG-13, TV-MA, etc). (optional)
      - parameter hasThemeSong: (query) Optional filter by items with theme songs. (optional)

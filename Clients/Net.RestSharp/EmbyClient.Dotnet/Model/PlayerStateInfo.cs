@@ -34,6 +34,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="audioStreamIndex">The index of the now playing audio stream..</param>
         /// <param name="subtitleStreamIndex">The index of the now playing subtitle stream..</param>
         /// <param name="mediaSourceId">The now playing media version identifier..</param>
+        /// <param name="mediaSource">mediaSource.</param>
         /// <param name="playMethod">playMethod.</param>
         /// <param name="repeatMode">repeatMode.</param>
         /// <param name="sleepTimerMode">sleepTimerMode.</param>
@@ -41,7 +42,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="subtitleOffset">subtitleOffset.</param>
         /// <param name="shuffle">shuffle.</param>
         /// <param name="playbackRate">playbackRate.</param>
-        public PlayerStateInfo(long? positionTicks = default(long?), bool? canSeek = default(bool?), bool? isPaused = default(bool?), bool? isMuted = default(bool?), int? volumeLevel = default(int?), int? audioStreamIndex = default(int?), int? subtitleStreamIndex = default(int?), string mediaSourceId = default(string), PlayMethod playMethod = default(PlayMethod), RepeatMode repeatMode = default(RepeatMode), SleepTimerMode sleepTimerMode = default(SleepTimerMode), DateTimeOffset? sleepTimerEndTime = default(DateTimeOffset?), int? subtitleOffset = default(int?), bool? shuffle = default(bool?), double? playbackRate = default(double?))
+        public PlayerStateInfo(long? positionTicks = default(long?), bool? canSeek = default(bool?), bool? isPaused = default(bool?), bool? isMuted = default(bool?), int? volumeLevel = default(int?), int? audioStreamIndex = default(int?), int? subtitleStreamIndex = default(int?), string mediaSourceId = default(string), MediaSourceInfo mediaSource = default(MediaSourceInfo), PlayMethod playMethod = default(PlayMethod), RepeatMode repeatMode = default(RepeatMode), SleepTimerMode sleepTimerMode = default(SleepTimerMode), DateTimeOffset? sleepTimerEndTime = default(DateTimeOffset?), int? subtitleOffset = default(int?), bool? shuffle = default(bool?), double? playbackRate = default(double?))
         {
             this.PositionTicks = positionTicks;
             this.CanSeek = canSeek;
@@ -51,6 +52,7 @@ namespace EmbyClient.Dotnet.Model
             this.AudioStreamIndex = audioStreamIndex;
             this.SubtitleStreamIndex = subtitleStreamIndex;
             this.MediaSourceId = mediaSourceId;
+            this.MediaSource = mediaSource;
             this.PlayMethod = playMethod;
             this.RepeatMode = repeatMode;
             this.SleepTimerMode = sleepTimerMode;
@@ -117,6 +119,12 @@ namespace EmbyClient.Dotnet.Model
         public string MediaSourceId { get; set; }
 
         /// <summary>
+        /// Gets or Sets MediaSource
+        /// </summary>
+        [DataMember(Name="MediaSource", EmitDefaultValue=false)]
+        public MediaSourceInfo MediaSource { get; set; }
+
+        /// <summary>
         /// Gets or Sets PlayMethod
         /// </summary>
         [DataMember(Name="PlayMethod", EmitDefaultValue=false)]
@@ -174,6 +182,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  AudioStreamIndex: ").Append(AudioStreamIndex).Append("\n");
             sb.Append("  SubtitleStreamIndex: ").Append(SubtitleStreamIndex).Append("\n");
             sb.Append("  MediaSourceId: ").Append(MediaSourceId).Append("\n");
+            sb.Append("  MediaSource: ").Append(MediaSource).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
             sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
@@ -256,6 +265,11 @@ namespace EmbyClient.Dotnet.Model
                     this.MediaSourceId.Equals(input.MediaSourceId))
                 ) && 
                 (
+                    this.MediaSource == input.MediaSource ||
+                    (this.MediaSource != null &&
+                    this.MediaSource.Equals(input.MediaSource))
+                ) && 
+                (
                     this.PlayMethod == input.PlayMethod ||
                     (this.PlayMethod != null &&
                     this.PlayMethod.Equals(input.PlayMethod))
@@ -317,6 +331,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.SubtitleStreamIndex.GetHashCode();
                 if (this.MediaSourceId != null)
                     hashCode = hashCode * 59 + this.MediaSourceId.GetHashCode();
+                if (this.MediaSource != null)
+                    hashCode = hashCode * 59 + this.MediaSource.GetHashCode();
                 if (this.PlayMethod != null)
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.RepeatMode != null)

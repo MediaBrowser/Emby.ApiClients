@@ -75,6 +75,12 @@ namespace Emby.ApiClient.Model
         public string MediaSourceId { get; set; }
 
         /// <summary>
+        /// Gets or Sets MediaSource
+        /// </summary>
+        /// <value>The MediaSource.</value>
+        public MediaSourceInfo MediaSource { get; set; }
+
+        /// <summary>
         /// Gets or Sets PlayMethod
         /// </summary>
         /// <value>The PlayMethod.</value>
@@ -132,6 +138,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  AudioStreamIndex: ").Append(AudioStreamIndex).Append("\n");
             sb.Append("  SubtitleStreamIndex: ").Append(SubtitleStreamIndex).Append("\n");
             sb.Append("  MediaSourceId: ").Append(MediaSourceId).Append("\n");
+            sb.Append("  MediaSource: ").Append(MediaSource).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
             sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
@@ -205,6 +212,11 @@ namespace Emby.ApiClient.Model
                     this.MediaSourceId.Equals(input.MediaSourceId))
                 ) && 
                 (
+                    this.MediaSource == input.MediaSource ||
+                    (this.MediaSource != null &&
+                    this.MediaSource.Equals(input.MediaSource))
+                ) && 
+                (
                     this.PlayMethod == input.PlayMethod ||
                     (this.PlayMethod != null &&
                     this.PlayMethod.Equals(input.PlayMethod))
@@ -266,6 +278,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.SubtitleStreamIndex.GetHashCode();
                 if (this.MediaSourceId != null)
                     hashCode = hashCode * 59 + this.MediaSourceId.GetHashCode();
+                if (this.MediaSource != null)
+                    hashCode = hashCode * 59 + this.MediaSource.GetHashCode();
                 if (this.PlayMethod != null)
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.RepeatMode != null)

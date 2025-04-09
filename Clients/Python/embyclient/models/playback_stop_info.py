@@ -26,14 +26,14 @@ class PlaybackStopInfo(object):
         'playlist_item_id': 'str',
         'playlist_index': 'int',
         'playlist_length': 'int',
-        'item_id': 'str',
         'session_id': 'str',
-        'media_source_id': 'str',
-        'live_stream_id': 'str',
-        'failed': 'bool',
         'is_automated': 'bool',
+        'failed': 'bool',
         'next_media_type': 'str',
         'play_session_id': 'str',
+        'item_id': 'str',
+        'live_stream_id': 'str',
+        'media_source_id': 'str',
         'item': 'BaseItemDto',
         'position_ticks': 'int'
     }
@@ -43,32 +43,32 @@ class PlaybackStopInfo(object):
         'playlist_item_id': 'PlaylistItemId',
         'playlist_index': 'PlaylistIndex',
         'playlist_length': 'PlaylistLength',
-        'item_id': 'ItemId',
         'session_id': 'SessionId',
-        'media_source_id': 'MediaSourceId',
-        'live_stream_id': 'LiveStreamId',
-        'failed': 'Failed',
         'is_automated': 'IsAutomated',
+        'failed': 'Failed',
         'next_media_type': 'NextMediaType',
         'play_session_id': 'PlaySessionId',
+        'item_id': 'ItemId',
+        'live_stream_id': 'LiveStreamId',
+        'media_source_id': 'MediaSourceId',
         'item': 'Item',
         'position_ticks': 'PositionTicks'
     }
 
-    def __init__(self, now_playing_queue=None, playlist_item_id=None, playlist_index=None, playlist_length=None, item_id=None, session_id=None, media_source_id=None, live_stream_id=None, failed=None, is_automated=None, next_media_type=None, play_session_id=None, item=None, position_ticks=None):  # noqa: E501
+    def __init__(self, now_playing_queue=None, playlist_item_id=None, playlist_index=None, playlist_length=None, session_id=None, is_automated=None, failed=None, next_media_type=None, play_session_id=None, item_id=None, live_stream_id=None, media_source_id=None, item=None, position_ticks=None):  # noqa: E501
         """PlaybackStopInfo - a model defined in Swagger"""  # noqa: E501
         self._now_playing_queue = None
         self._playlist_item_id = None
         self._playlist_index = None
         self._playlist_length = None
-        self._item_id = None
         self._session_id = None
-        self._media_source_id = None
-        self._live_stream_id = None
-        self._failed = None
         self._is_automated = None
+        self._failed = None
         self._next_media_type = None
         self._play_session_id = None
+        self._item_id = None
+        self._live_stream_id = None
+        self._media_source_id = None
         self._item = None
         self._position_ticks = None
         self.discriminator = None
@@ -80,22 +80,22 @@ class PlaybackStopInfo(object):
             self.playlist_index = playlist_index
         if playlist_length is not None:
             self.playlist_length = playlist_length
-        if item_id is not None:
-            self.item_id = item_id
         if session_id is not None:
             self.session_id = session_id
-        if media_source_id is not None:
-            self.media_source_id = media_source_id
-        if live_stream_id is not None:
-            self.live_stream_id = live_stream_id
-        if failed is not None:
-            self.failed = failed
         if is_automated is not None:
             self.is_automated = is_automated
+        if failed is not None:
+            self.failed = failed
         if next_media_type is not None:
             self.next_media_type = next_media_type
         if play_session_id is not None:
             self.play_session_id = play_session_id
+        if item_id is not None:
+            self.item_id = item_id
+        if live_stream_id is not None:
+            self.live_stream_id = live_stream_id
+        if media_source_id is not None:
+            self.media_source_id = media_source_id
         if item is not None:
             self.item = item
         if position_ticks is not None:
@@ -186,29 +186,6 @@ class PlaybackStopInfo(object):
         self._playlist_length = playlist_length
 
     @property
-    def item_id(self):
-        """Gets the item_id of this PlaybackStopInfo.  # noqa: E501
-
-        The item identifier.  # noqa: E501
-
-        :return: The item_id of this PlaybackStopInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._item_id
-
-    @item_id.setter
-    def item_id(self, item_id):
-        """Sets the item_id of this PlaybackStopInfo.
-
-        The item identifier.  # noqa: E501
-
-        :param item_id: The item_id of this PlaybackStopInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._item_id = item_id
-
-    @property
     def session_id(self):
         """Gets the session_id of this PlaybackStopInfo.  # noqa: E501
 
@@ -232,50 +209,25 @@ class PlaybackStopInfo(object):
         self._session_id = session_id
 
     @property
-    def media_source_id(self):
-        """Gets the media_source_id of this PlaybackStopInfo.  # noqa: E501
+    def is_automated(self):
+        """Gets the is_automated of this PlaybackStopInfo.  # noqa: E501
 
-        The media version identifier.  # noqa: E501
 
-        :return: The media_source_id of this PlaybackStopInfo.  # noqa: E501
-        :rtype: str
+        :return: The is_automated of this PlaybackStopInfo.  # noqa: E501
+        :rtype: bool
         """
-        return self._media_source_id
+        return self._is_automated
 
-    @media_source_id.setter
-    def media_source_id(self, media_source_id):
-        """Sets the media_source_id of this PlaybackStopInfo.
+    @is_automated.setter
+    def is_automated(self, is_automated):
+        """Sets the is_automated of this PlaybackStopInfo.
 
-        The media version identifier.  # noqa: E501
 
-        :param media_source_id: The media_source_id of this PlaybackStopInfo.  # noqa: E501
-        :type: str
+        :param is_automated: The is_automated of this PlaybackStopInfo.  # noqa: E501
+        :type: bool
         """
 
-        self._media_source_id = media_source_id
-
-    @property
-    def live_stream_id(self):
-        """Gets the live_stream_id of this PlaybackStopInfo.  # noqa: E501
-
-        The live stream identifier.  # noqa: E501
-
-        :return: The live_stream_id of this PlaybackStopInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._live_stream_id
-
-    @live_stream_id.setter
-    def live_stream_id(self, live_stream_id):
-        """Sets the live_stream_id of this PlaybackStopInfo.
-
-        The live stream identifier.  # noqa: E501
-
-        :param live_stream_id: The live_stream_id of this PlaybackStopInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._live_stream_id = live_stream_id
+        self._is_automated = is_automated
 
     @property
     def failed(self):
@@ -299,27 +251,6 @@ class PlaybackStopInfo(object):
         """
 
         self._failed = failed
-
-    @property
-    def is_automated(self):
-        """Gets the is_automated of this PlaybackStopInfo.  # noqa: E501
-
-
-        :return: The is_automated of this PlaybackStopInfo.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_automated
-
-    @is_automated.setter
-    def is_automated(self, is_automated):
-        """Sets the is_automated of this PlaybackStopInfo.
-
-
-        :param is_automated: The is_automated of this PlaybackStopInfo.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_automated = is_automated
 
     @property
     def next_media_type(self):
@@ -364,6 +295,75 @@ class PlaybackStopInfo(object):
         """
 
         self._play_session_id = play_session_id
+
+    @property
+    def item_id(self):
+        """Gets the item_id of this PlaybackStopInfo.  # noqa: E501
+
+        The item identifier.  # noqa: E501
+
+        :return: The item_id of this PlaybackStopInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._item_id
+
+    @item_id.setter
+    def item_id(self, item_id):
+        """Sets the item_id of this PlaybackStopInfo.
+
+        The item identifier.  # noqa: E501
+
+        :param item_id: The item_id of this PlaybackStopInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._item_id = item_id
+
+    @property
+    def live_stream_id(self):
+        """Gets the live_stream_id of this PlaybackStopInfo.  # noqa: E501
+
+        The live stream identifier.  # noqa: E501
+
+        :return: The live_stream_id of this PlaybackStopInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_stream_id
+
+    @live_stream_id.setter
+    def live_stream_id(self, live_stream_id):
+        """Sets the live_stream_id of this PlaybackStopInfo.
+
+        The live stream identifier.  # noqa: E501
+
+        :param live_stream_id: The live_stream_id of this PlaybackStopInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._live_stream_id = live_stream_id
+
+    @property
+    def media_source_id(self):
+        """Gets the media_source_id of this PlaybackStopInfo.  # noqa: E501
+
+        The media version identifier.  # noqa: E501
+
+        :return: The media_source_id of this PlaybackStopInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._media_source_id
+
+    @media_source_id.setter
+    def media_source_id(self, media_source_id):
+        """Sets the media_source_id of this PlaybackStopInfo.
+
+        The media version identifier.  # noqa: E501
+
+        :param media_source_id: The media_source_id of this PlaybackStopInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._media_source_id = media_source_id
 
     @property
     def item(self):

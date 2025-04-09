@@ -30,6 +30,7 @@ class PlayerStateInfo(object):
         'audio_stream_index': 'int',
         'subtitle_stream_index': 'int',
         'media_source_id': 'str',
+        'media_source': 'MediaSourceInfo',
         'play_method': 'PlayMethod',
         'repeat_mode': 'RepeatMode',
         'sleep_timer_mode': 'SleepTimerMode',
@@ -48,6 +49,7 @@ class PlayerStateInfo(object):
         'audio_stream_index': 'AudioStreamIndex',
         'subtitle_stream_index': 'SubtitleStreamIndex',
         'media_source_id': 'MediaSourceId',
+        'media_source': 'MediaSource',
         'play_method': 'PlayMethod',
         'repeat_mode': 'RepeatMode',
         'sleep_timer_mode': 'SleepTimerMode',
@@ -57,7 +59,7 @@ class PlayerStateInfo(object):
         'playback_rate': 'PlaybackRate'
     }
 
-    def __init__(self, position_ticks=None, can_seek=None, is_paused=None, is_muted=None, volume_level=None, audio_stream_index=None, subtitle_stream_index=None, media_source_id=None, play_method=None, repeat_mode=None, sleep_timer_mode=None, sleep_timer_end_time=None, subtitle_offset=None, shuffle=None, playback_rate=None):  # noqa: E501
+    def __init__(self, position_ticks=None, can_seek=None, is_paused=None, is_muted=None, volume_level=None, audio_stream_index=None, subtitle_stream_index=None, media_source_id=None, media_source=None, play_method=None, repeat_mode=None, sleep_timer_mode=None, sleep_timer_end_time=None, subtitle_offset=None, shuffle=None, playback_rate=None):  # noqa: E501
         """PlayerStateInfo - a model defined in Swagger"""  # noqa: E501
         self._position_ticks = None
         self._can_seek = None
@@ -67,6 +69,7 @@ class PlayerStateInfo(object):
         self._audio_stream_index = None
         self._subtitle_stream_index = None
         self._media_source_id = None
+        self._media_source = None
         self._play_method = None
         self._repeat_mode = None
         self._sleep_timer_mode = None
@@ -91,6 +94,8 @@ class PlayerStateInfo(object):
             self.subtitle_stream_index = subtitle_stream_index
         if media_source_id is not None:
             self.media_source_id = media_source_id
+        if media_source is not None:
+            self.media_source = media_source
         if play_method is not None:
             self.play_method = play_method
         if repeat_mode is not None:
@@ -289,6 +294,27 @@ class PlayerStateInfo(object):
         """
 
         self._media_source_id = media_source_id
+
+    @property
+    def media_source(self):
+        """Gets the media_source of this PlayerStateInfo.  # noqa: E501
+
+
+        :return: The media_source of this PlayerStateInfo.  # noqa: E501
+        :rtype: MediaSourceInfo
+        """
+        return self._media_source
+
+    @media_source.setter
+    def media_source(self, media_source):
+        """Sets the media_source of this PlayerStateInfo.
+
+
+        :param media_source: The media_source of this PlayerStateInfo.  # noqa: E501
+        :type: MediaSourceInfo
+        """
+
+        self._media_source = media_source
 
     @property
     def play_method(self):

@@ -27,6 +27,7 @@ public struct PlayerStateInfo: Codable {
     public var subtitleStreamIndex: Int?
     /** The now playing media version identifier. */
     public var mediaSourceId: String?
+    public var mediaSource: MediaSourceInfo?
     public var playMethod: PlayMethod?
     public var repeatMode: RepeatMode?
     public var sleepTimerMode: SleepTimerMode?
@@ -35,7 +36,7 @@ public struct PlayerStateInfo: Codable {
     public var shuffle: Bool?
     public var playbackRate: Double?
 
-    public init(positionTicks: Int64? = nil, canSeek: Bool? = nil, isPaused: Bool? = nil, isMuted: Bool? = nil, volumeLevel: Int? = nil, audioStreamIndex: Int? = nil, subtitleStreamIndex: Int? = nil, mediaSourceId: String? = nil, playMethod: PlayMethod? = nil, repeatMode: RepeatMode? = nil, sleepTimerMode: SleepTimerMode? = nil, sleepTimerEndTime: Date? = nil, subtitleOffset: Int? = nil, shuffle: Bool? = nil, playbackRate: Double? = nil) {
+    public init(positionTicks: Int64? = nil, canSeek: Bool? = nil, isPaused: Bool? = nil, isMuted: Bool? = nil, volumeLevel: Int? = nil, audioStreamIndex: Int? = nil, subtitleStreamIndex: Int? = nil, mediaSourceId: String? = nil, mediaSource: MediaSourceInfo? = nil, playMethod: PlayMethod? = nil, repeatMode: RepeatMode? = nil, sleepTimerMode: SleepTimerMode? = nil, sleepTimerEndTime: Date? = nil, subtitleOffset: Int? = nil, shuffle: Bool? = nil, playbackRate: Double? = nil) {
         self.positionTicks = positionTicks
         self.canSeek = canSeek
         self.isPaused = isPaused
@@ -44,6 +45,7 @@ public struct PlayerStateInfo: Codable {
         self.audioStreamIndex = audioStreamIndex
         self.subtitleStreamIndex = subtitleStreamIndex
         self.mediaSourceId = mediaSourceId
+        self.mediaSource = mediaSource
         self.playMethod = playMethod
         self.repeatMode = repeatMode
         self.sleepTimerMode = sleepTimerMode
@@ -62,6 +64,7 @@ public struct PlayerStateInfo: Codable {
         case audioStreamIndex = "AudioStreamIndex"
         case subtitleStreamIndex = "SubtitleStreamIndex"
         case mediaSourceId = "MediaSourceId"
+        case mediaSource = "MediaSource"
         case playMethod = "PlayMethod"
         case repeatMode = "RepeatMode"
         case sleepTimerMode = "SleepTimerMode"

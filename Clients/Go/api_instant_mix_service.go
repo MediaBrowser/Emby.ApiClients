@@ -1967,7 +1967,7 @@ func (a *InstantMixServiceApiService) GetItemsByIdInstantmix(ctx context.Context
 InstantMixServiceApiService Creates an instant playlist based on a music genre
 Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param name The genre name
+ * @param name
  * @param optional nil or *InstantMixServiceApiGetMusicgenresByNameInstantmixOpts - Optional Parameters:
      * @param "ArtistType" (optional.String) -  Artist or AlbumArtist
      * @param "MaxOfficialRating" (optional.String) -  Optional filter by maximum official rating (PG, PG-13, TV-MA, etc).
