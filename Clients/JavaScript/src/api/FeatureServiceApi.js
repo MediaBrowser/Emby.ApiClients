@@ -15,7 +15,7 @@ import FeatureInfo from '../model/FeatureInfo';
 /**
 * FeatureService service.
 * @module api/FeatureServiceApi
-* @version 4.9.0.44
+* @version 4.9.0.45
 */
 export default class FeatureServiceApi {
 
