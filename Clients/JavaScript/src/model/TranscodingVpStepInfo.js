@@ -15,7 +15,7 @@ import TranscodingVpStepTypes from './TranscodingVpStepTypes';
 /**
 * The TranscodingVpStepInfo model module.
 * @module model/TranscodingVpStepInfo
-* @version 4.9.0.45
+* @version 4.9.0.46
 */
 export default class TranscodingVpStepInfo {
     /**
