@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.46
+  version: 4.9.0.47
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -76375,6 +76375,57 @@ paths:
         explode: false
         schema:
           type: boolean
+      responses:
+        "200":
+          description: Operation successful. Response content unknown.
+        "400":
+          description: Bad Request. Server cannot process request.
+        "401":
+          description: Unauthorized. Client needs to authenticate.
+        "403":
+          description: Forbidden. No permission for the reqested operation.
+        "404":
+          description: Resource not found or unavailable.
+        "500":
+          description: Server error.
+      security:
+      - apikeyauth: []
+      - embyauth: []
+      x-RequiredAuthentication: Requires authentication as user
+  /Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream:
+    summary: Gets subtitles in a specified format.
+    get:
+      tags:
+      - SubtitleService
+      summary: Gets subtitles in a specified format.
+      description: Requires authentication as user
+      operationId: getVideosByIdByMediasourceidAttachmentsByIndexStream
+      parameters:
+      - name: Id
+        in: path
+        description: Item Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: MediaSourceId
+        in: path
+        description: MediaSourceId
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: Index
+        in: path
+        description: The subtitle stream index
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
       responses:
         "200":
           description: Operation successful. Response content unknown.

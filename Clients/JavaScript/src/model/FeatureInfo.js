@@ -15,7 +15,7 @@ import FeatureType from './FeatureType';
 /**
 * The FeatureInfo model module.
 * @module model/FeatureInfo
-* @version 4.9.0.46
+* @version 4.9.0.47
 */
 export default class FeatureInfo {
     /**

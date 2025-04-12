@@ -402,6 +402,61 @@ open class SubtitleServiceAPI {
      - parameter _id: (path) Item Id 
      - parameter mediaSourceId: (path) MediaSourceId 
      - parameter index: (path) The subtitle stream index 
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getVideosByIdByMediasourceidAttachmentsByIndexStream(_id: String, mediaSourceId: String, index: Int, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        getVideosByIdByMediasourceidAttachmentsByIndexStreamWithRequestBuilder(_id: _id, mediaSourceId: mediaSourceId, index: index).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Gets subtitles in a specified format.
+     - GET /Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream
+
+     - API Key:
+       - type: apiKey api_key (QUERY)
+       - name: apikeyauth
+     - :
+       - type: http
+       - name: embyauth
+     - parameter _id: (path) Item Id 
+     - parameter mediaSourceId: (path) MediaSourceId 
+     - parameter index: (path) The subtitle stream index 
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func getVideosByIdByMediasourceidAttachmentsByIndexStreamWithRequestBuilder(_id: String, mediaSourceId: String, index: Int) -> RequestBuilder<Void> {
+        var path = "/Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream"
+        let _idPreEscape = "\(_id)"
+        let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{Id}", with: _idPostEscape, options: .literal, range: nil)
+        let mediaSourceIdPreEscape = "\(mediaSourceId)"
+        let mediaSourceIdPostEscape = mediaSourceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{MediaSourceId}", with: mediaSourceIdPostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{Index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = EmbyClientAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        let url = URLComponents(string: URLString)
+
+
+        let requestBuilder: RequestBuilder<Void>.Type = EmbyClientAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+    /**
+     Gets subtitles in a specified format.
+
+     - parameter _id: (path) Item Id 
+     - parameter mediaSourceId: (path) MediaSourceId 
+     - parameter index: (path) The subtitle stream index 
      - parameter format: (path) Format 
      - parameter startPositionTicks: (path) StartPositionTicks 
      - parameter endPositionTicks: (query) EndPositionTicks (optional)

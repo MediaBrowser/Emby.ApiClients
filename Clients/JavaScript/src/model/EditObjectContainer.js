@@ -15,7 +15,7 @@ import EditorsEditorRoot from './EditorsEditorRoot';
 /**
 * The EditObjectContainer model module.
 * @module model/EditObjectContainer
-* @version 4.9.0.46
+* @version 4.9.0.47
 */
 export default class EditObjectContainer {
     /**

@@ -196,6 +196,31 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="id">Item Id</param>
         /// <param name="mediaSourceId">MediaSourceId</param>
         /// <param name="index">The subtitle stream index</param>
+        /// <returns></returns>
+        void GetVideosByIdByMediasourceidAttachmentsByIndexStream (string id, string mediaSourceId, int? index);
+
+        /// <summary>
+        /// Gets subtitles in a specified format.
+        /// </summary>
+        /// <remarks>
+        /// Requires authentication as user
+        /// </remarks>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> GetVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo (string id, string mediaSourceId, int? index);
+        /// <summary>
+        /// Gets subtitles in a specified format.
+        /// </summary>
+        /// <remarks>
+        /// Requires authentication as user
+        /// </remarks>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
         /// <param name="format">Format</param>
         /// <param name="startPositionTicks">StartPositionTicks</param>
         /// <param name="endPositionTicks">EndPositionTicks (optional)</param>
@@ -629,6 +654,31 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="id">Item Id</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> GetProvidersSubtitlesSubtitlesByIdAsyncWithHttpInfo (string id);
+        /// <summary>
+        /// Gets subtitles in a specified format.
+        /// </summary>
+        /// <remarks>
+        /// Requires authentication as user
+        /// </remarks>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task GetVideosByIdByMediasourceidAttachmentsByIndexStreamAsync (string id, string mediaSourceId, int? index);
+
+        /// <summary>
+        /// Gets subtitles in a specified format.
+        /// </summary>
+        /// <remarks>
+        /// Requires authentication as user
+        /// </remarks>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> GetVideosByIdByMediasourceidAttachmentsByIndexStreamAsyncWithHttpInfo (string id, string mediaSourceId, int? index);
         /// <summary>
         /// Gets subtitles in a specified format.
         /// </summary>
@@ -2109,6 +2159,179 @@ namespace EmbyClient.Dotnet.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("GetProvidersSubtitlesSubtitlesById", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                null);
+        }
+
+        /// <summary>
+        /// Gets subtitles in a specified format. Requires authentication as user
+        /// </summary>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns></returns>
+        public void GetVideosByIdByMediasourceidAttachmentsByIndexStream (string id, string mediaSourceId, int? index)
+        {
+             GetVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo(id, mediaSourceId, index);
+        }
+
+        /// <summary>
+        /// Gets subtitles in a specified format. Requires authentication as user
+        /// </summary>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> GetVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo (string id, string mediaSourceId, int? index)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            // verify the required parameter 'mediaSourceId' is set
+            if (mediaSourceId == null)
+                throw new ApiException(400, "Missing required parameter 'mediaSourceId' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            // verify the required parameter 'index' is set
+            if (index == null)
+                throw new ApiException(400, "Missing required parameter 'index' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+
+            var localVarPath = "/Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("Id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (mediaSourceId != null) localVarPathParams.Add("MediaSourceId", this.Configuration.ApiClient.ParameterToString(mediaSourceId)); // path parameter
+            if (index != null) localVarPathParams.Add("Index", this.Configuration.ApiClient.ParameterToString(index)); // path parameter
+            // authentication (apikeyauth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+            }
+            // authentication (embyauth) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetVideosByIdByMediasourceidAttachmentsByIndexStream", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                null);
+        }
+
+        /// <summary>
+        /// Gets subtitles in a specified format. Requires authentication as user
+        /// </summary>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task GetVideosByIdByMediasourceidAttachmentsByIndexStreamAsync (string id, string mediaSourceId, int? index)
+        {
+             await GetVideosByIdByMediasourceidAttachmentsByIndexStreamAsyncWithHttpInfo(id, mediaSourceId, index);
+
+        }
+
+        /// <summary>
+        /// Gets subtitles in a specified format. Requires authentication as user
+        /// </summary>
+        /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetVideosByIdByMediasourceidAttachmentsByIndexStreamAsyncWithHttpInfo (string id, string mediaSourceId, int? index)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            // verify the required parameter 'mediaSourceId' is set
+            if (mediaSourceId == null)
+                throw new ApiException(400, "Missing required parameter 'mediaSourceId' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            // verify the required parameter 'index' is set
+            if (index == null)
+                throw new ApiException(400, "Missing required parameter 'index' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+
+            var localVarPath = "/Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("Id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (mediaSourceId != null) localVarPathParams.Add("MediaSourceId", this.Configuration.ApiClient.ParameterToString(mediaSourceId)); // path parameter
+            if (index != null) localVarPathParams.Add("Index", this.Configuration.ApiClient.ParameterToString(index)); // path parameter
+            // authentication (apikeyauth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api_key")))
+            {
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", this.Configuration.GetApiKeyWithPrefix("api_key")));
+            }
+            // authentication (embyauth) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetVideosByIdByMediasourceidAttachmentsByIndexStream", localVarResponse);
                 if (exception != null) throw exception;
             }
 

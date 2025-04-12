@@ -946,6 +946,145 @@ public class SubtitleServiceApi {
         return call;
     }
     /**
+     * Build call for getVideosByIdByMediasourceidAttachmentsByIndexStream
+     * @param id Item Id (required)
+     * @param mediaSourceId MediaSourceId (required)
+     * @param index The subtitle stream index (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getVideosByIdByMediasourceidAttachmentsByIndexStreamCall(String id, String mediaSourceId, Integer index, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream"
+            .replaceAll("\\{" + "Id" + "\\}", apiClient.escapeString(id.toString()))
+            .replaceAll("\\{" + "MediaSourceId" + "\\}", apiClient.escapeString(mediaSourceId.toString()))
+            .replaceAll("\\{" + "Index" + "\\}", apiClient.escapeString(index.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "apikeyauth", "embyauth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getVideosByIdByMediasourceidAttachmentsByIndexStreamValidateBeforeCall(String id, String mediaSourceId, Integer index, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getVideosByIdByMediasourceidAttachmentsByIndexStream(Async)");
+        }
+        // verify the required parameter 'mediaSourceId' is set
+        if (mediaSourceId == null) {
+            throw new ApiException("Missing the required parameter 'mediaSourceId' when calling getVideosByIdByMediasourceidAttachmentsByIndexStream(Async)");
+        }
+        // verify the required parameter 'index' is set
+        if (index == null) {
+            throw new ApiException("Missing the required parameter 'index' when calling getVideosByIdByMediasourceidAttachmentsByIndexStream(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = getVideosByIdByMediasourceidAttachmentsByIndexStreamCall(id, mediaSourceId, index, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Gets subtitles in a specified format.
+     * Requires authentication as user
+     * @param id Item Id (required)
+     * @param mediaSourceId MediaSourceId (required)
+     * @param index The subtitle stream index (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void getVideosByIdByMediasourceidAttachmentsByIndexStream(String id, String mediaSourceId, Integer index) throws ApiException {
+        getVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo(id, mediaSourceId, index);
+    }
+
+    /**
+     * Gets subtitles in a specified format.
+     * Requires authentication as user
+     * @param id Item Id (required)
+     * @param mediaSourceId MediaSourceId (required)
+     * @param index The subtitle stream index (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> getVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo(String id, String mediaSourceId, Integer index) throws ApiException {
+        com.squareup.okhttp.Call call = getVideosByIdByMediasourceidAttachmentsByIndexStreamValidateBeforeCall(id, mediaSourceId, index, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Gets subtitles in a specified format. (asynchronously)
+     * Requires authentication as user
+     * @param id Item Id (required)
+     * @param mediaSourceId MediaSourceId (required)
+     * @param index The subtitle stream index (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getVideosByIdByMediasourceidAttachmentsByIndexStreamAsync(String id, String mediaSourceId, Integer index, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getVideosByIdByMediasourceidAttachmentsByIndexStreamValidateBeforeCall(id, mediaSourceId, index, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for getVideosByIdByMediasourceidSubtitlesByIndexByStartpositionticksStreamByFormat
      * @param id Item Id (required)
      * @param mediaSourceId MediaSourceId (required)

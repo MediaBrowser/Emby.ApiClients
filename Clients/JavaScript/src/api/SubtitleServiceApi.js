@@ -16,7 +16,7 @@ import SubtitlesSubtitleDownloadResult from '../model/SubtitlesSubtitleDownloadR
 /**
 * SubtitleService service.
 * @module api/SubtitleServiceApi
-* @version 4.9.0.46
+* @version 4.9.0.47
 */
 export default class SubtitleServiceApi {
 
@@ -311,6 +311,51 @@ export default class SubtitleServiceApi {
      */
     getProvidersSubtitlesSubtitlesById() {
       return this.getProvidersSubtitlesSubtitlesByIdWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Gets subtitles in a specified format.
+     * Requires authentication as user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    getVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo() {
+      let postBody = null;
+
+      let pathParams = {
+        'Id': Id,
+        'MediaSourceId': MediaSourceId,
+        'Index': Index
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikeyauth', 'embyauth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+
+      return this.apiClient.callApi(
+        '/Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Gets subtitles in a specified format.
+     * Requires authentication as user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    getVideosByIdByMediasourceidAttachmentsByIndexStream() {
+      return this.getVideosByIdByMediasourceidAttachmentsByIndexStreamWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

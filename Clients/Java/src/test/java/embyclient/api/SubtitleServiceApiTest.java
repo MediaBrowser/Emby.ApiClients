@@ -145,6 +145,23 @@ public class SubtitleServiceApiTest {
      *          if the Api call fails
      */
     @Test
+    public void getVideosByIdByMediasourceidAttachmentsByIndexStreamTest() throws Exception {
+        String id = null;
+        String mediaSourceId = null;
+        Integer index = null;
+        api.getVideosByIdByMediasourceidAttachmentsByIndexStream(id, mediaSourceId, index);
+
+        // TODO: test validations
+    }
+    /**
+     * Gets subtitles in a specified format.
+     *
+     * Requires authentication as user
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
     public void getVideosByIdByMediasourceidSubtitlesByIndexByStartpositionticksStreamByFormatTest() throws Exception {
         String id = null;
         String mediaSourceId = null;
