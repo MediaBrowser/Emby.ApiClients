@@ -19,6 +19,7 @@ type ApiBaseItemsRequest struct {
 	CollectionIds string `json:"CollectionIds,omitempty"`
 	TagIds string `json:"TagIds,omitempty"`
 	ExcludeTagIds string `json:"ExcludeTagIds,omitempty"`
+	ItemPersonTypes []PersonType `json:"ItemPersonTypes,omitempty"`
 	ExcludeArtistIds string `json:"ExcludeArtistIds,omitempty"`
 	AlbumArtistIds string `json:"AlbumArtistIds,omitempty"`
 	ComposerArtistIds string `json:"ComposerArtistIds,omitempty"`

@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.9.0.47
+* @version 4.9.0.48
 */
 export default class LibraryOptions {
     /**
@@ -108,6 +108,9 @@ export default class LibraryOptions {
             }
             if (data.hasOwnProperty('AutoGenerateChapters')) {
                 obj['AutoGenerateChapters'] = ApiClient.convertToType(data['AutoGenerateChapters'], 'Boolean');
+            }
+            if (data.hasOwnProperty('AutoGenerateChapterIntervalMinutes')) {
+                obj['AutoGenerateChapterIntervalMinutes'] = ApiClient.convertToType(data['AutoGenerateChapterIntervalMinutes'], 'Number');
             }
             if (data.hasOwnProperty('AutomaticRefreshIntervalDays')) {
                 obj['AutomaticRefreshIntervalDays'] = ApiClient.convertToType(data['AutomaticRefreshIntervalDays'], 'Number');
@@ -315,6 +318,10 @@ export default class LibraryOptions {
     * @member {Boolean} AutoGenerateChapters
     */
     'AutoGenerateChapters' = undefined;
+    /**
+    * @member {Number} AutoGenerateChapterIntervalMinutes
+    */
+    'AutoGenerateChapterIntervalMinutes' = undefined;
     /**
     * @member {Number} AutomaticRefreshIntervalDays
     */

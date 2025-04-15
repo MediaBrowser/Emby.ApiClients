@@ -99,6 +99,12 @@ namespace Emby.ApiClient.Model
         public string ExcludeTagIds { get; set; }
 
         /// <summary>
+        /// Gets or Sets ItemPersonTypes
+        /// </summary>
+        /// <value>The ItemPersonTypes.</value>
+        public List<PersonType> ItemPersonTypes { get; set; }
+
+        /// <summary>
         /// Gets or Sets ExcludeArtistIds
         /// </summary>
         /// <value>The ExcludeArtistIds.</value>
@@ -244,6 +250,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  CollectionIds: ").Append(CollectionIds).Append("\n");
             sb.Append("  TagIds: ").Append(TagIds).Append("\n");
             sb.Append("  ExcludeTagIds: ").Append(ExcludeTagIds).Append("\n");
+            sb.Append("  ItemPersonTypes: ").Append(ItemPersonTypes).Append("\n");
             sb.Append("  ExcludeArtistIds: ").Append(ExcludeArtistIds).Append("\n");
             sb.Append("  AlbumArtistIds: ").Append(AlbumArtistIds).Append("\n");
             sb.Append("  ComposerArtistIds: ").Append(ComposerArtistIds).Append("\n");
@@ -349,6 +356,12 @@ namespace Emby.ApiClient.Model
                     this.ExcludeTagIds == input.ExcludeTagIds ||
                     (this.ExcludeTagIds != null &&
                     this.ExcludeTagIds.Equals(input.ExcludeTagIds))
+                ) && 
+                (
+                    this.ItemPersonTypes == input.ItemPersonTypes ||
+                    this.ItemPersonTypes != null &&
+                    input.ItemPersonTypes != null &&
+                    this.ItemPersonTypes.SequenceEqual(input.ItemPersonTypes)
                 ) && 
                 (
                     this.ExcludeArtistIds == input.ExcludeArtistIds ||
@@ -491,6 +504,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.TagIds.GetHashCode();
                 if (this.ExcludeTagIds != null)
                     hashCode = hashCode * 59 + this.ExcludeTagIds.GetHashCode();
+                if (this.ItemPersonTypes != null)
+                    hashCode = hashCode * 59 + this.ItemPersonTypes.GetHashCode();
                 if (this.ExcludeArtistIds != null)
                     hashCode = hashCode * 59 + this.ExcludeArtistIds.GetHashCode();
                 if (this.AlbumArtistIds != null)

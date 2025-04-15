@@ -13,11 +13,12 @@ import ApiClient from '../ApiClient';
 import DayOfWeek from './DayOfWeek';
 import LibraryItemLinkType from './LibraryItemLinkType';
 import LiveTvKeywordType from './LiveTvKeywordType';
+import PersonType from './PersonType';
 
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.9.0.47
+* @version 4.9.0.48
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -79,6 +80,9 @@ export default class ApiBaseItemsRequest {
             }
             if (data.hasOwnProperty('ExcludeTagIds')) {
                 obj['ExcludeTagIds'] = ApiClient.convertToType(data['ExcludeTagIds'], 'String');
+            }
+            if (data.hasOwnProperty('ItemPersonTypes')) {
+                obj['ItemPersonTypes'] = ApiClient.convertToType(data['ItemPersonTypes'], [PersonType]);
             }
             if (data.hasOwnProperty('ExcludeArtistIds')) {
                 obj['ExcludeArtistIds'] = ApiClient.convertToType(data['ExcludeArtistIds'], 'String');
@@ -195,6 +199,10 @@ export default class ApiBaseItemsRequest {
     * @member {String} ExcludeTagIds
     */
     'ExcludeTagIds' = undefined;
+    /**
+    * @member {Array.<module:model/PersonType>} ItemPersonTypes
+    */
+    'ItemPersonTypes' = undefined;
     /**
     * @member {String} ExcludeArtistIds
     */

@@ -15,6 +15,7 @@ import com.google.gson.stream.JsonWriter;
 import embyclient.model.DayOfWeek;
 import embyclient.model.LibraryItemLinkType;
 import embyclient.model.LiveTvKeywordType;
+import embyclient.model.PersonType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,6 +61,9 @@ public class ApiBaseItemsRequest {
 
   @SerializedName("ExcludeTagIds")
   private String excludeTagIds = null;
+
+  @SerializedName("ItemPersonTypes")
+  private List<PersonType> itemPersonTypes = null;
 
   @SerializedName("ExcludeArtistIds")
   private String excludeArtistIds = null;
@@ -338,6 +342,32 @@ public class ApiBaseItemsRequest {
 
   public void setExcludeTagIds(String excludeTagIds) {
     this.excludeTagIds = excludeTagIds;
+  }
+
+  public ApiBaseItemsRequest itemPersonTypes(List<PersonType> itemPersonTypes) {
+    this.itemPersonTypes = itemPersonTypes;
+    return this;
+  }
+
+  public ApiBaseItemsRequest addItemPersonTypesItem(PersonType itemPersonTypesItem) {
+    if (this.itemPersonTypes == null) {
+      this.itemPersonTypes = new ArrayList<>();
+    }
+    this.itemPersonTypes.add(itemPersonTypesItem);
+    return this;
+  }
+
+   /**
+   * Get itemPersonTypes
+   * @return itemPersonTypes
+  **/
+  @Schema(description = "")
+  public List<PersonType> getItemPersonTypes() {
+    return itemPersonTypes;
+  }
+
+  public void setItemPersonTypes(List<PersonType> itemPersonTypes) {
+    this.itemPersonTypes = itemPersonTypes;
   }
 
   public ApiBaseItemsRequest excludeArtistIds(String excludeArtistIds) {
@@ -748,6 +778,7 @@ public class ApiBaseItemsRequest {
         Objects.equals(this.collectionIds, apiBaseItemsRequest.collectionIds) &&
         Objects.equals(this.tagIds, apiBaseItemsRequest.tagIds) &&
         Objects.equals(this.excludeTagIds, apiBaseItemsRequest.excludeTagIds) &&
+        Objects.equals(this.itemPersonTypes, apiBaseItemsRequest.itemPersonTypes) &&
         Objects.equals(this.excludeArtistIds, apiBaseItemsRequest.excludeArtistIds) &&
         Objects.equals(this.albumArtistIds, apiBaseItemsRequest.albumArtistIds) &&
         Objects.equals(this.composerArtistIds, apiBaseItemsRequest.composerArtistIds) &&
@@ -773,7 +804,7 @@ public class ApiBaseItemsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes);
+    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, itemPersonTypes, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes);
   }
 
 
@@ -794,6 +825,7 @@ public class ApiBaseItemsRequest {
     sb.append("    collectionIds: ").append(toIndentedString(collectionIds)).append("\n");
     sb.append("    tagIds: ").append(toIndentedString(tagIds)).append("\n");
     sb.append("    excludeTagIds: ").append(toIndentedString(excludeTagIds)).append("\n");
+    sb.append("    itemPersonTypes: ").append(toIndentedString(itemPersonTypes)).append("\n");
     sb.append("    excludeArtistIds: ").append(toIndentedString(excludeArtistIds)).append("\n");
     sb.append("    albumArtistIds: ").append(toIndentedString(albumArtistIds)).append("\n");
     sb.append("    composerArtistIds: ").append(toIndentedString(composerArtistIds)).append("\n");

@@ -23,6 +23,7 @@ public struct ApiBaseItemsRequest: Codable {
     public var collectionIds: String?
     public var tagIds: String?
     public var excludeTagIds: String?
+    public var itemPersonTypes: [PersonType]?
     public var excludeArtistIds: String?
     public var albumArtistIds: String?
     public var composerArtistIds: String?
@@ -45,7 +46,7 @@ public struct ApiBaseItemsRequest: Codable {
     public var hasAired: Bool?
     public var collectionTypes: String?
 
-    public init(isSpecialEpisode: Bool? = nil, is4K: Bool? = nil, enableTotalRecordCount: Bool? = nil, isDuplicate: Bool? = nil, name: String? = nil, recordingKeyword: String? = nil, recordingKeywordType: LiveTvKeywordType? = nil, randomSeed: Int? = nil, genreIds: String? = nil, collectionIds: String? = nil, tagIds: String? = nil, excludeTagIds: String? = nil, excludeArtistIds: String? = nil, albumArtistIds: String? = nil, composerArtistIds: String? = nil, contributingArtistIds: String? = nil, albumIds: String? = nil, outerIds: String? = nil, listItemIds: String? = nil, audioLanguages: String? = nil, subtitleLanguages: String? = nil, canEditItems: Bool? = nil, groupItemsInto: LibraryItemLinkType? = nil, isStandaloneSpecial: Bool? = nil, minWidth: Int? = nil, minHeight: Int? = nil, maxWidth: Int? = nil, maxHeight: Int? = nil, groupProgramsBySeries: Bool? = nil, airDays: [DayOfWeek]? = nil, isAiring: Bool? = nil, hasAired: Bool? = nil, collectionTypes: String? = nil) {
+    public init(isSpecialEpisode: Bool? = nil, is4K: Bool? = nil, enableTotalRecordCount: Bool? = nil, isDuplicate: Bool? = nil, name: String? = nil, recordingKeyword: String? = nil, recordingKeywordType: LiveTvKeywordType? = nil, randomSeed: Int? = nil, genreIds: String? = nil, collectionIds: String? = nil, tagIds: String? = nil, excludeTagIds: String? = nil, itemPersonTypes: [PersonType]? = nil, excludeArtistIds: String? = nil, albumArtistIds: String? = nil, composerArtistIds: String? = nil, contributingArtistIds: String? = nil, albumIds: String? = nil, outerIds: String? = nil, listItemIds: String? = nil, audioLanguages: String? = nil, subtitleLanguages: String? = nil, canEditItems: Bool? = nil, groupItemsInto: LibraryItemLinkType? = nil, isStandaloneSpecial: Bool? = nil, minWidth: Int? = nil, minHeight: Int? = nil, maxWidth: Int? = nil, maxHeight: Int? = nil, groupProgramsBySeries: Bool? = nil, airDays: [DayOfWeek]? = nil, isAiring: Bool? = nil, hasAired: Bool? = nil, collectionTypes: String? = nil) {
         self.isSpecialEpisode = isSpecialEpisode
         self.is4K = is4K
         self.enableTotalRecordCount = enableTotalRecordCount
@@ -58,6 +59,7 @@ public struct ApiBaseItemsRequest: Codable {
         self.collectionIds = collectionIds
         self.tagIds = tagIds
         self.excludeTagIds = excludeTagIds
+        self.itemPersonTypes = itemPersonTypes
         self.excludeArtistIds = excludeArtistIds
         self.albumArtistIds = albumArtistIds
         self.composerArtistIds = composerArtistIds
@@ -94,6 +96,7 @@ public struct ApiBaseItemsRequest: Codable {
         case collectionIds = "CollectionIds"
         case tagIds = "TagIds"
         case excludeTagIds = "ExcludeTagIds"
+        case itemPersonTypes = "ItemPersonTypes"
         case excludeArtistIds = "ExcludeArtistIds"
         case albumArtistIds = "AlbumArtistIds"
         case composerArtistIds = "ComposerArtistIds"

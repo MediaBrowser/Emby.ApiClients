@@ -34,6 +34,7 @@ class ApiBaseItemsRequest(object):
         'collection_ids': 'str',
         'tag_ids': 'str',
         'exclude_tag_ids': 'str',
+        'item_person_types': 'list[PersonType]',
         'exclude_artist_ids': 'str',
         'album_artist_ids': 'str',
         'composer_artist_ids': 'str',
@@ -70,6 +71,7 @@ class ApiBaseItemsRequest(object):
         'collection_ids': 'CollectionIds',
         'tag_ids': 'TagIds',
         'exclude_tag_ids': 'ExcludeTagIds',
+        'item_person_types': 'ItemPersonTypes',
         'exclude_artist_ids': 'ExcludeArtistIds',
         'album_artist_ids': 'AlbumArtistIds',
         'composer_artist_ids': 'ComposerArtistIds',
@@ -93,7 +95,7 @@ class ApiBaseItemsRequest(object):
         'collection_types': 'CollectionTypes'
     }
 
-    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None):  # noqa: E501
+    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None):  # noqa: E501
         """ApiBaseItemsRequest - a model defined in Swagger"""  # noqa: E501
         self._is_special_episode = None
         self._is4_k = None
@@ -107,6 +109,7 @@ class ApiBaseItemsRequest(object):
         self._collection_ids = None
         self._tag_ids = None
         self._exclude_tag_ids = None
+        self._item_person_types = None
         self._exclude_artist_ids = None
         self._album_artist_ids = None
         self._composer_artist_ids = None
@@ -153,6 +156,8 @@ class ApiBaseItemsRequest(object):
             self.tag_ids = tag_ids
         if exclude_tag_ids is not None:
             self.exclude_tag_ids = exclude_tag_ids
+        if item_person_types is not None:
+            self.item_person_types = item_person_types
         if exclude_artist_ids is not None:
             self.exclude_artist_ids = exclude_artist_ids
         if album_artist_ids is not None:
@@ -447,6 +452,27 @@ class ApiBaseItemsRequest(object):
         """
 
         self._exclude_tag_ids = exclude_tag_ids
+
+    @property
+    def item_person_types(self):
+        """Gets the item_person_types of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The item_person_types of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: list[PersonType]
+        """
+        return self._item_person_types
+
+    @item_person_types.setter
+    def item_person_types(self, item_person_types):
+        """Sets the item_person_types of this ApiBaseItemsRequest.
+
+
+        :param item_person_types: The item_person_types of this ApiBaseItemsRequest.  # noqa: E501
+        :type: list[PersonType]
+        """
+
+        self._item_person_types = item_person_types
 
     @property
     def exclude_artist_ids(self):

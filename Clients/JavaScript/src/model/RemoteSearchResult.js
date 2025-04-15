@@ -15,7 +15,7 @@ import ProviderIdDictionary from './ProviderIdDictionary';
 /**
 * The RemoteSearchResult model module.
 * @module model/RemoteSearchResult
-* @version 4.9.0.47
+* @version 4.9.0.48
 */
 export default class RemoteSearchResult {
     /**

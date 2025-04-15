@@ -159,6 +159,12 @@ namespace Emby.ApiClient.Model
         public bool? AutoGenerateChapters { get; set; }
 
         /// <summary>
+        /// Gets or Sets AutoGenerateChapterIntervalMinutes
+        /// </summary>
+        /// <value>The AutoGenerateChapterIntervalMinutes.</value>
+        public int? AutoGenerateChapterIntervalMinutes { get; set; }
+
+        /// <summary>
         /// Gets or Sets AutomaticRefreshIntervalDays
         /// </summary>
         /// <value>The AutomaticRefreshIntervalDays.</value>
@@ -416,6 +422,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  EnableEmbeddedTitles: ").Append(EnableEmbeddedTitles).Append("\n");
             sb.Append("  EnableAudioResume: ").Append(EnableAudioResume).Append("\n");
             sb.Append("  AutoGenerateChapters: ").Append(AutoGenerateChapters).Append("\n");
+            sb.Append("  AutoGenerateChapterIntervalMinutes: ").Append(AutoGenerateChapterIntervalMinutes).Append("\n");
             sb.Append("  AutomaticRefreshIntervalDays: ").Append(AutomaticRefreshIntervalDays).Append("\n");
             sb.Append("  PlaceholderMetadataRefreshIntervalDays: ").Append(PlaceholderMetadataRefreshIntervalDays).Append("\n");
             sb.Append("  PreferredMetadataLanguage: ").Append(PreferredMetadataLanguage).Append("\n");
@@ -590,6 +597,11 @@ namespace Emby.ApiClient.Model
                     this.AutoGenerateChapters == input.AutoGenerateChapters ||
                     (this.AutoGenerateChapters != null &&
                     this.AutoGenerateChapters.Equals(input.AutoGenerateChapters))
+                ) && 
+                (
+                    this.AutoGenerateChapterIntervalMinutes == input.AutoGenerateChapterIntervalMinutes ||
+                    (this.AutoGenerateChapterIntervalMinutes != null &&
+                    this.AutoGenerateChapterIntervalMinutes.Equals(input.AutoGenerateChapterIntervalMinutes))
                 ) && 
                 (
                     this.AutomaticRefreshIntervalDays == input.AutomaticRefreshIntervalDays ||
@@ -846,6 +858,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableAudioResume.GetHashCode();
                 if (this.AutoGenerateChapters != null)
                     hashCode = hashCode * 59 + this.AutoGenerateChapters.GetHashCode();
+                if (this.AutoGenerateChapterIntervalMinutes != null)
+                    hashCode = hashCode * 59 + this.AutoGenerateChapterIntervalMinutes.GetHashCode();
                 if (this.AutomaticRefreshIntervalDays != null)
                     hashCode = hashCode * 59 + this.AutomaticRefreshIntervalDays.GetHashCode();
                 if (this.PlaceholderMetadataRefreshIntervalDays != null)
