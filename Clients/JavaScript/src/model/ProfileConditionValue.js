@@ -166,6 +166,12 @@ export default class ProfileConditionValue {
          */
         VideoRotation = "VideoRotation";
 
+        /**
+         * value: "IsExternalAudio"
+         * @const
+         */
+        IsExternalAudio = "IsExternalAudio";
+
 
     /**
     * Returns a <code>ProfileConditionValue</code> enum value from a Javascript object name.

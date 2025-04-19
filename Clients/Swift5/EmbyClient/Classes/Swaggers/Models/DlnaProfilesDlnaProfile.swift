@@ -45,6 +45,7 @@ public struct DlnaProfilesDlnaProfile: Codable {
     public var maxStreamingBitrate: Int64?
     public var musicStreamingTranscodingBitrate: Int?
     public var maxStaticMusicBitrate: Int?
+    public var declaredFeatures: [String]?
     /** The direct play profiles. */
     public var directPlayProfiles: [DirectPlayProfile]?
     /** The transcoding profiles. */
@@ -54,7 +55,7 @@ public struct DlnaProfilesDlnaProfile: Codable {
     public var responseProfiles: [ResponseProfile]?
     public var subtitleProfiles: [SubtitleProfile]?
 
-    public init(type: DlnaProfilesDeviceProfileType? = nil, path: String? = nil, userId: String? = nil, albumArtPn: String? = nil, maxAlbumArtWidth: Int? = nil, maxAlbumArtHeight: Int? = nil, maxIconWidth: Int? = nil, maxIconHeight: Int? = nil, friendlyName: String? = nil, manufacturer: String? = nil, manufacturerUrl: String? = nil, modelName: String? = nil, modelDescription: String? = nil, modelNumber: String? = nil, modelUrl: String? = nil, serialNumber: String? = nil, enableAlbumArtInDidl: Bool? = nil, enableSingleAlbumArtLimit: Bool? = nil, enableSingleSubtitleLimit: Bool? = nil, protocolInfo: String? = nil, timelineOffsetSeconds: Int? = nil, requiresPlainVideoItems: Bool? = nil, requiresPlainFolders: Bool? = nil, ignoreTranscodeByteRangeRequests: Bool? = nil, supportsSamsungBookmark: Bool? = nil, identification: DlnaProfilesDeviceIdentification? = nil, protocolInfoDetection: DlnaProfilesProtocolInfoDetection? = nil, name: String? = nil, _id: String? = nil, supportedMediaTypes: String? = nil, maxStreamingBitrate: Int64? = nil, musicStreamingTranscodingBitrate: Int? = nil, maxStaticMusicBitrate: Int? = nil, directPlayProfiles: [DirectPlayProfile]? = nil, transcodingProfiles: [TranscodingProfile]? = nil, containerProfiles: [ContainerProfile]? = nil, codecProfiles: [CodecProfile]? = nil, responseProfiles: [ResponseProfile]? = nil, subtitleProfiles: [SubtitleProfile]? = nil) {
+    public init(type: DlnaProfilesDeviceProfileType? = nil, path: String? = nil, userId: String? = nil, albumArtPn: String? = nil, maxAlbumArtWidth: Int? = nil, maxAlbumArtHeight: Int? = nil, maxIconWidth: Int? = nil, maxIconHeight: Int? = nil, friendlyName: String? = nil, manufacturer: String? = nil, manufacturerUrl: String? = nil, modelName: String? = nil, modelDescription: String? = nil, modelNumber: String? = nil, modelUrl: String? = nil, serialNumber: String? = nil, enableAlbumArtInDidl: Bool? = nil, enableSingleAlbumArtLimit: Bool? = nil, enableSingleSubtitleLimit: Bool? = nil, protocolInfo: String? = nil, timelineOffsetSeconds: Int? = nil, requiresPlainVideoItems: Bool? = nil, requiresPlainFolders: Bool? = nil, ignoreTranscodeByteRangeRequests: Bool? = nil, supportsSamsungBookmark: Bool? = nil, identification: DlnaProfilesDeviceIdentification? = nil, protocolInfoDetection: DlnaProfilesProtocolInfoDetection? = nil, name: String? = nil, _id: String? = nil, supportedMediaTypes: String? = nil, maxStreamingBitrate: Int64? = nil, musicStreamingTranscodingBitrate: Int? = nil, maxStaticMusicBitrate: Int? = nil, declaredFeatures: [String]? = nil, directPlayProfiles: [DirectPlayProfile]? = nil, transcodingProfiles: [TranscodingProfile]? = nil, containerProfiles: [ContainerProfile]? = nil, codecProfiles: [CodecProfile]? = nil, responseProfiles: [ResponseProfile]? = nil, subtitleProfiles: [SubtitleProfile]? = nil) {
         self.type = type
         self.path = path
         self.userId = userId
@@ -88,6 +89,7 @@ public struct DlnaProfilesDlnaProfile: Codable {
         self.maxStreamingBitrate = maxStreamingBitrate
         self.musicStreamingTranscodingBitrate = musicStreamingTranscodingBitrate
         self.maxStaticMusicBitrate = maxStaticMusicBitrate
+        self.declaredFeatures = declaredFeatures
         self.directPlayProfiles = directPlayProfiles
         self.transcodingProfiles = transcodingProfiles
         self.containerProfiles = containerProfiles
@@ -130,6 +132,7 @@ public struct DlnaProfilesDlnaProfile: Codable {
         case maxStreamingBitrate = "MaxStreamingBitrate"
         case musicStreamingTranscodingBitrate = "MusicStreamingTranscodingBitrate"
         case maxStaticMusicBitrate = "MaxStaticMusicBitrate"
+        case declaredFeatures = "DeclaredFeatures"
         case directPlayProfiles = "DirectPlayProfiles"
         case transcodingProfiles = "TranscodingProfiles"
         case containerProfiles = "ContainerProfiles"

@@ -143,5 +143,15 @@ namespace Emby.ApiClient.Model
         /// Enum SubtitleContentOptionsEnabled for value: SubtitleContentOptionsEnabled
         /// </summary>
         [EnumMember(Value = "SubtitleContentOptionsEnabled")]
-        SubtitleContentOptionsEnabled = 25    }
+        SubtitleContentOptionsEnabled = 25,
+        /// <summary>
+        /// Enum ExternalAudioNotSupported for value: ExternalAudioNotSupported
+        /// </summary>
+        [EnumMember(Value = "ExternalAudioNotSupported")]
+        ExternalAudioNotSupported = 26,
+        /// <summary>
+        /// Enum AudioDelayNotSupported for value: AudioDelayNotSupported
+        /// </summary>
+        [EnumMember(Value = "AudioDelayNotSupported")]
+        AudioDelayNotSupported = 27    }
 }

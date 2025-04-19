@@ -43,7 +43,8 @@ public enum ProfileConditionValue {
   AUDIOSAMPLERATE("AudioSampleRate"),
   AUDIOBITDEPTH("AudioBitDepth"),
   VIDEORANGE("VideoRange"),
-  VIDEOROTATION("VideoRotation");
+  VIDEOROTATION("VideoRotation"),
+  ISEXTERNALAUDIO("IsExternalAudio");
 
   private String value;
 

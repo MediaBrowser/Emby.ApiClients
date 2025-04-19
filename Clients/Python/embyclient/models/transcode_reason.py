@@ -43,6 +43,8 @@ class TranscodeReason(object):
     DIRECTPLAYERROR = "DirectPlayError"
     VIDEORANGENOTSUPPORTED = "VideoRangeNotSupported"
     SUBTITLECONTENTOPTIONSENABLED = "SubtitleContentOptionsEnabled"
+    EXTERNALAUDIONOTSUPPORTED = "ExternalAudioNotSupported"
+    AUDIODELAYNOTSUPPORTED = "AudioDelayNotSupported"
     """
     Attributes:
       swagger_types (dict): The key is attribute name

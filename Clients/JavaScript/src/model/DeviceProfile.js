@@ -20,7 +20,7 @@ import TranscodingProfile from './TranscodingProfile';
 /**
 * The DeviceProfile model module.
 * @module model/DeviceProfile
-* @version 4.9.0.48
+* @version 4.9.0.49
 */
 export default class DeviceProfile {
     /**
@@ -64,6 +64,9 @@ export default class DeviceProfile {
             }
             if (data.hasOwnProperty('MaxStaticMusicBitrate')) {
                 obj['MaxStaticMusicBitrate'] = ApiClient.convertToType(data['MaxStaticMusicBitrate'], 'Number');
+            }
+            if (data.hasOwnProperty('DeclaredFeatures')) {
+                obj['DeclaredFeatures'] = ApiClient.convertToType(data['DeclaredFeatures'], ['String']);
             }
             if (data.hasOwnProperty('DirectPlayProfiles')) {
                 obj['DirectPlayProfiles'] = ApiClient.convertToType(data['DirectPlayProfiles'], [DirectPlayProfile]);
@@ -112,6 +115,10 @@ export default class DeviceProfile {
     * @member {Number} MaxStaticMusicBitrate
     */
     'MaxStaticMusicBitrate' = undefined;
+    /**
+    * @member {Array.<String>} DeclaredFeatures
+    */
+    'DeclaredFeatures' = undefined;
     /**
     * The direct play profiles.
     * @member {Array.<module:model/DirectPlayProfile>} DirectPlayProfiles

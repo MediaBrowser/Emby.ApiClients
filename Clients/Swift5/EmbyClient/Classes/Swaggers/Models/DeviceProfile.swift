@@ -18,6 +18,7 @@ public struct DeviceProfile: Codable {
     public var maxStreamingBitrate: Int64?
     public var musicStreamingTranscodingBitrate: Int?
     public var maxStaticMusicBitrate: Int?
+    public var declaredFeatures: [String]?
     /** The direct play profiles. */
     public var directPlayProfiles: [DirectPlayProfile]?
     /** The transcoding profiles. */
@@ -27,13 +28,14 @@ public struct DeviceProfile: Codable {
     public var responseProfiles: [ResponseProfile]?
     public var subtitleProfiles: [SubtitleProfile]?
 
-    public init(name: String? = nil, _id: String? = nil, supportedMediaTypes: String? = nil, maxStreamingBitrate: Int64? = nil, musicStreamingTranscodingBitrate: Int? = nil, maxStaticMusicBitrate: Int? = nil, directPlayProfiles: [DirectPlayProfile]? = nil, transcodingProfiles: [TranscodingProfile]? = nil, containerProfiles: [ContainerProfile]? = nil, codecProfiles: [CodecProfile]? = nil, responseProfiles: [ResponseProfile]? = nil, subtitleProfiles: [SubtitleProfile]? = nil) {
+    public init(name: String? = nil, _id: String? = nil, supportedMediaTypes: String? = nil, maxStreamingBitrate: Int64? = nil, musicStreamingTranscodingBitrate: Int? = nil, maxStaticMusicBitrate: Int? = nil, declaredFeatures: [String]? = nil, directPlayProfiles: [DirectPlayProfile]? = nil, transcodingProfiles: [TranscodingProfile]? = nil, containerProfiles: [ContainerProfile]? = nil, codecProfiles: [CodecProfile]? = nil, responseProfiles: [ResponseProfile]? = nil, subtitleProfiles: [SubtitleProfile]? = nil) {
         self.name = name
         self._id = _id
         self.supportedMediaTypes = supportedMediaTypes
         self.maxStreamingBitrate = maxStreamingBitrate
         self.musicStreamingTranscodingBitrate = musicStreamingTranscodingBitrate
         self.maxStaticMusicBitrate = maxStaticMusicBitrate
+        self.declaredFeatures = declaredFeatures
         self.directPlayProfiles = directPlayProfiles
         self.transcodingProfiles = transcodingProfiles
         self.containerProfiles = containerProfiles
@@ -49,6 +51,7 @@ public struct DeviceProfile: Codable {
         case maxStreamingBitrate = "MaxStreamingBitrate"
         case musicStreamingTranscodingBitrate = "MusicStreamingTranscodingBitrate"
         case maxStaticMusicBitrate = "MaxStaticMusicBitrate"
+        case declaredFeatures = "DeclaredFeatures"
         case directPlayProfiles = "DirectPlayProfiles"
         case transcodingProfiles = "TranscodingProfiles"
         case containerProfiles = "ContainerProfiles"

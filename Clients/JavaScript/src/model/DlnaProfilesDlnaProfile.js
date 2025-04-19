@@ -23,7 +23,7 @@ import TranscodingProfile from './TranscodingProfile';
 /**
 * The DlnaProfilesDlnaProfile model module.
 * @module model/DlnaProfilesDlnaProfile
-* @version 4.9.0.48
+* @version 4.9.0.49
 */
 export default class DlnaProfilesDlnaProfile {
     /**
@@ -148,6 +148,9 @@ export default class DlnaProfilesDlnaProfile {
             }
             if (data.hasOwnProperty('MaxStaticMusicBitrate')) {
                 obj['MaxStaticMusicBitrate'] = ApiClient.convertToType(data['MaxStaticMusicBitrate'], 'Number');
+            }
+            if (data.hasOwnProperty('DeclaredFeatures')) {
+                obj['DeclaredFeatures'] = ApiClient.convertToType(data['DeclaredFeatures'], ['String']);
             }
             if (data.hasOwnProperty('DirectPlayProfiles')) {
                 obj['DirectPlayProfiles'] = ApiClient.convertToType(data['DirectPlayProfiles'], [DirectPlayProfile]);
@@ -304,6 +307,10 @@ export default class DlnaProfilesDlnaProfile {
     * @member {Number} MaxStaticMusicBitrate
     */
     'MaxStaticMusicBitrate' = undefined;
+    /**
+    * @member {Array.<String>} DeclaredFeatures
+    */
+    'DeclaredFeatures' = undefined;
     /**
     * The direct play profiles.
     * @member {Array.<module:model/DirectPlayProfile>} DirectPlayProfiles

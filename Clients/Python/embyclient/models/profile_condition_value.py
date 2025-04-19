@@ -43,6 +43,7 @@ class ProfileConditionValue(object):
     AUDIOBITDEPTH = "AudioBitDepth"
     VIDEORANGE = "VideoRange"
     VIDEOROTATION = "VideoRotation"
+    ISEXTERNALAUDIO = "IsExternalAudio"
     """
     Attributes:
       swagger_types (dict): The key is attribute name

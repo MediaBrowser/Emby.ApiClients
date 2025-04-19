@@ -35,4 +35,5 @@ const (
 	AUDIO_BIT_DEPTH_ProfileConditionValue ProfileConditionValue = "AudioBitDepth"
 	VIDEO_RANGE_ProfileConditionValue ProfileConditionValue = "VideoRange"
 	VIDEO_ROTATION_ProfileConditionValue ProfileConditionValue = "VideoRotation"
+	IS_EXTERNAL_AUDIO_ProfileConditionValue ProfileConditionValue = "IsExternalAudio"
 )

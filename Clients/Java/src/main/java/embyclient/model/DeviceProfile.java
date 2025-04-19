@@ -46,6 +46,9 @@ public class DeviceProfile {
   @SerializedName("MaxStaticMusicBitrate")
   private Integer maxStaticMusicBitrate = null;
 
+  @SerializedName("DeclaredFeatures")
+  private List<String> declaredFeatures = null;
+
   @SerializedName("DirectPlayProfiles")
   private List<DirectPlayProfile> directPlayProfiles = null;
 
@@ -170,6 +173,32 @@ public class DeviceProfile {
 
   public void setMaxStaticMusicBitrate(Integer maxStaticMusicBitrate) {
     this.maxStaticMusicBitrate = maxStaticMusicBitrate;
+  }
+
+  public DeviceProfile declaredFeatures(List<String> declaredFeatures) {
+    this.declaredFeatures = declaredFeatures;
+    return this;
+  }
+
+  public DeviceProfile addDeclaredFeaturesItem(String declaredFeaturesItem) {
+    if (this.declaredFeatures == null) {
+      this.declaredFeatures = new ArrayList<>();
+    }
+    this.declaredFeatures.add(declaredFeaturesItem);
+    return this;
+  }
+
+   /**
+   * Get declaredFeatures
+   * @return declaredFeatures
+  **/
+  @Schema(description = "")
+  public List<String> getDeclaredFeatures() {
+    return declaredFeatures;
+  }
+
+  public void setDeclaredFeatures(List<String> declaredFeatures) {
+    this.declaredFeatures = declaredFeatures;
   }
 
   public DeviceProfile directPlayProfiles(List<DirectPlayProfile> directPlayProfiles) {
@@ -344,6 +373,7 @@ public class DeviceProfile {
         Objects.equals(this.maxStreamingBitrate, deviceProfile.maxStreamingBitrate) &&
         Objects.equals(this.musicStreamingTranscodingBitrate, deviceProfile.musicStreamingTranscodingBitrate) &&
         Objects.equals(this.maxStaticMusicBitrate, deviceProfile.maxStaticMusicBitrate) &&
+        Objects.equals(this.declaredFeatures, deviceProfile.declaredFeatures) &&
         Objects.equals(this.directPlayProfiles, deviceProfile.directPlayProfiles) &&
         Objects.equals(this.transcodingProfiles, deviceProfile.transcodingProfiles) &&
         Objects.equals(this.containerProfiles, deviceProfile.containerProfiles) &&
@@ -354,7 +384,7 @@ public class DeviceProfile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, supportedMediaTypes, maxStreamingBitrate, musicStreamingTranscodingBitrate, maxStaticMusicBitrate, directPlayProfiles, transcodingProfiles, containerProfiles, codecProfiles, responseProfiles, subtitleProfiles);
+    return Objects.hash(name, id, supportedMediaTypes, maxStreamingBitrate, musicStreamingTranscodingBitrate, maxStaticMusicBitrate, declaredFeatures, directPlayProfiles, transcodingProfiles, containerProfiles, codecProfiles, responseProfiles, subtitleProfiles);
   }
 
 
@@ -369,6 +399,7 @@ public class DeviceProfile {
     sb.append("    maxStreamingBitrate: ").append(toIndentedString(maxStreamingBitrate)).append("\n");
     sb.append("    musicStreamingTranscodingBitrate: ").append(toIndentedString(musicStreamingTranscodingBitrate)).append("\n");
     sb.append("    maxStaticMusicBitrate: ").append(toIndentedString(maxStaticMusicBitrate)).append("\n");
+    sb.append("    declaredFeatures: ").append(toIndentedString(declaredFeatures)).append("\n");
     sb.append("    directPlayProfiles: ").append(toIndentedString(directPlayProfiles)).append("\n");
     sb.append("    transcodingProfiles: ").append(toIndentedString(transcodingProfiles)).append("\n");
     sb.append("    containerProfiles: ").append(toIndentedString(containerProfiles)).append("\n");

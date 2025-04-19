@@ -130,6 +130,9 @@ public class DlnaProfilesDlnaProfile {
   @SerializedName("MaxStaticMusicBitrate")
   private Integer maxStaticMusicBitrate = null;
 
+  @SerializedName("DeclaredFeatures")
+  private List<String> declaredFeatures = null;
+
   @SerializedName("DirectPlayProfiles")
   private List<DirectPlayProfile> directPlayProfiles = null;
 
@@ -742,6 +745,32 @@ public class DlnaProfilesDlnaProfile {
     this.maxStaticMusicBitrate = maxStaticMusicBitrate;
   }
 
+  public DlnaProfilesDlnaProfile declaredFeatures(List<String> declaredFeatures) {
+    this.declaredFeatures = declaredFeatures;
+    return this;
+  }
+
+  public DlnaProfilesDlnaProfile addDeclaredFeaturesItem(String declaredFeaturesItem) {
+    if (this.declaredFeatures == null) {
+      this.declaredFeatures = new ArrayList<>();
+    }
+    this.declaredFeatures.add(declaredFeaturesItem);
+    return this;
+  }
+
+   /**
+   * Get declaredFeatures
+   * @return declaredFeatures
+  **/
+  @Schema(description = "")
+  public List<String> getDeclaredFeatures() {
+    return declaredFeatures;
+  }
+
+  public void setDeclaredFeatures(List<String> declaredFeatures) {
+    this.declaredFeatures = declaredFeatures;
+  }
+
   public DlnaProfilesDlnaProfile directPlayProfiles(List<DirectPlayProfile> directPlayProfiles) {
     this.directPlayProfiles = directPlayProfiles;
     return this;
@@ -941,6 +970,7 @@ public class DlnaProfilesDlnaProfile {
         Objects.equals(this.maxStreamingBitrate, dlnaProfilesDlnaProfile.maxStreamingBitrate) &&
         Objects.equals(this.musicStreamingTranscodingBitrate, dlnaProfilesDlnaProfile.musicStreamingTranscodingBitrate) &&
         Objects.equals(this.maxStaticMusicBitrate, dlnaProfilesDlnaProfile.maxStaticMusicBitrate) &&
+        Objects.equals(this.declaredFeatures, dlnaProfilesDlnaProfile.declaredFeatures) &&
         Objects.equals(this.directPlayProfiles, dlnaProfilesDlnaProfile.directPlayProfiles) &&
         Objects.equals(this.transcodingProfiles, dlnaProfilesDlnaProfile.transcodingProfiles) &&
         Objects.equals(this.containerProfiles, dlnaProfilesDlnaProfile.containerProfiles) &&
@@ -951,7 +981,7 @@ public class DlnaProfilesDlnaProfile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, path, userId, albumArtPn, maxAlbumArtWidth, maxAlbumArtHeight, maxIconWidth, maxIconHeight, friendlyName, manufacturer, manufacturerUrl, modelName, modelDescription, modelNumber, modelUrl, serialNumber, enableAlbumArtInDidl, enableSingleAlbumArtLimit, enableSingleSubtitleLimit, protocolInfo, timelineOffsetSeconds, requiresPlainVideoItems, requiresPlainFolders, ignoreTranscodeByteRangeRequests, supportsSamsungBookmark, identification, protocolInfoDetection, name, id, supportedMediaTypes, maxStreamingBitrate, musicStreamingTranscodingBitrate, maxStaticMusicBitrate, directPlayProfiles, transcodingProfiles, containerProfiles, codecProfiles, responseProfiles, subtitleProfiles);
+    return Objects.hash(type, path, userId, albumArtPn, maxAlbumArtWidth, maxAlbumArtHeight, maxIconWidth, maxIconHeight, friendlyName, manufacturer, manufacturerUrl, modelName, modelDescription, modelNumber, modelUrl, serialNumber, enableAlbumArtInDidl, enableSingleAlbumArtLimit, enableSingleSubtitleLimit, protocolInfo, timelineOffsetSeconds, requiresPlainVideoItems, requiresPlainFolders, ignoreTranscodeByteRangeRequests, supportsSamsungBookmark, identification, protocolInfoDetection, name, id, supportedMediaTypes, maxStreamingBitrate, musicStreamingTranscodingBitrate, maxStaticMusicBitrate, declaredFeatures, directPlayProfiles, transcodingProfiles, containerProfiles, codecProfiles, responseProfiles, subtitleProfiles);
   }
 
 
@@ -993,6 +1023,7 @@ public class DlnaProfilesDlnaProfile {
     sb.append("    maxStreamingBitrate: ").append(toIndentedString(maxStreamingBitrate)).append("\n");
     sb.append("    musicStreamingTranscodingBitrate: ").append(toIndentedString(musicStreamingTranscodingBitrate)).append("\n");
     sb.append("    maxStaticMusicBitrate: ").append(toIndentedString(maxStaticMusicBitrate)).append("\n");
+    sb.append("    declaredFeatures: ").append(toIndentedString(declaredFeatures)).append("\n");
     sb.append("    directPlayProfiles: ").append(toIndentedString(directPlayProfiles)).append("\n");
     sb.append("    transcodingProfiles: ").append(toIndentedString(transcodingProfiles)).append("\n");
     sb.append("    containerProfiles: ").append(toIndentedString(containerProfiles)).append("\n");

@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.48
+  version: 4.9.0.49
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -81706,7 +81706,7 @@ components:
           type: integer
           format: int32
       example:
-        TotalRecordCount: 4
+        TotalRecordCount: 3
         Items:
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
@@ -81719,14 +81719,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -82080,14 +82080,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -82103,12 +82103,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -82119,7 +82119,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -82128,6 +82128,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -82156,7 +82157,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -82169,7 +82170,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -82194,18 +82195,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -82238,14 +82239,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -82258,7 +82259,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -82269,7 +82270,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
           Size: 6
@@ -82281,14 +82282,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -82642,14 +82643,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -82665,12 +82666,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -82681,7 +82682,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -82690,6 +82691,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -82718,7 +82720,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -82731,7 +82733,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -82756,18 +82758,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -82800,14 +82802,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -82820,7 +82822,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -82831,7 +82833,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
     BaseItemDto:
       type: object
       properties:
@@ -83085,6 +83087,10 @@ components:
         ChildCount:
           type: integer
           description: The child count.
+          format: int32
+          nullable: true
+        SeasonCount:
+          type: integer
           format: int32
           nullable: true
         SeriesName:
@@ -83393,14 +83399,14 @@ components:
         - Id: 0
           Name: Name
         CameraMake: CameraMake
-        Aperture: 1.041444916118296
+        Aperture: 4.678947989005849
         ChannelPrimaryImageTag: ChannelPrimaryImageTag
         ExtraType: ExtraType
         ParentBackdropItemId: ParentBackdropItemId
         Etag: Etag
         TunerName: TunerName
         ParentLogoImageTag: ParentLogoImageTag
-        ExposureTime: 6.628464275087742
+        ExposureTime: 4.258773108174356
         MediaType: MediaType
         ManagementId: ManagementId
         Tags:
@@ -83754,14 +83760,14 @@ components:
         - null
         - null
         OfficialRating: OfficialRating
-        Longitude: 9.132027271330688
+        Longitude: 0.8774076871421566
         Composers:
         - null
         - null
         LockData: true
-        FocalLength: 4.258773108174356
+        FocalLength: 1.041444916118296
         IsNews: true
-        ShutterSpeed: 4.678947989005849
+        ShutterSpeed: 7.260521264802104
         Id: Id
         SortIndexNumber: 0
         IsFolder: true
@@ -83777,12 +83783,12 @@ components:
         Prefix: Prefix
         CanDownload: true
         IsMovie: true
-        SeriesCount: 5
+        SeriesCount: 4
         PrimaryImageItemId: PrimaryImageItemId
         ListingsChannelId: ListingsChannelId
         SeriesStudio: SeriesStudio
         IsLive: true
-        Width: 4
+        Width: 0
         ExternalUrls:
         - Url: Url
           Name: Name
@@ -83793,7 +83799,7 @@ components:
         ParentId: ParentId
         TimerType: Program
         GameSystem: GameSystem
-        MusicVideoCount: 8
+        MusicVideoCount: 4
         IsSeries: true
         ProductionLocations:
         - ProductionLocations
@@ -83802,6 +83808,7 @@ components:
         - Subviews
         - Subviews
         Bitrate: 5
+        SeasonCount: 7
         EndDate: 2000-01-23T04:56:07.000+00:00
         SeriesPrimaryImageTag: SeriesPrimaryImageTag
         ParentThumbItemId: ParentThumbItemId
@@ -83830,7 +83837,7 @@ components:
         SortParentIndexNumber: 6
         DisplayPreferencesId: DisplayPreferencesId
         Album: Album
-        Latitude: 7.260521264802104
+        Latitude: 9.132027271330688
         Guid: Guid
         SortName: SortName
         Name: Name
@@ -83843,7 +83850,7 @@ components:
         SupportsSync: true
         LocalTrailerCount: 7
         IndexNumber: 3
-        CompletionPercentage: 0.5199002018724985
+        CompletionPercentage: 7.933506881737151
         Genres:
         - Genres
         - Genres
@@ -83868,18 +83875,18 @@ components:
         - Sunday
         - Sunday
         ParentLogoItemId: ParentLogoItemId
-        PartCount: 3
+        PartCount: 4
         ListingsProviderId: ListingsProviderId
         CanEditItems: true
         ChannelName: ChannelName
         EpisodeTitle: EpisodeTitle
-        IsoSpeedRating: 9
+        IsoSpeedRating: 0
         CommunityRating: 2.8841622
         Software: Software
         Chapters:
         - null
         - null
-        SongCount: 6
+        SongCount: 8
         Taglines:
         - Taglines
         - Taglines
@@ -83912,14 +83919,14 @@ components:
         - null
         ServerId: ServerId
         Number: Number
-        AlbumCount: 4
+        AlbumCount: 6
         IsRepeat: true
         CollectionType: CollectionType
-        PrimaryImageAspectRatio: 5.533258397034986
-        Height: 0
+        PrimaryImageAspectRatio: 3.2588565619047607
+        Height: 6
         IsKids: true
         DisplayOrder: DisplayOrder
-        MovieCount: 7
+        MovieCount: 5
         People:
         - Role: Role
           Type: Actor
@@ -83932,7 +83939,7 @@ components:
           Id: Id
           Name: Name
         Overview: Overview
-        SpecialFeatureCount: 7
+        SpecialFeatureCount: 5
         ImageOrientation: TopLeft
         AlbumArtist: AlbumArtist
         ImageTags:
@@ -83943,7 +83950,7 @@ components:
         SupportsResume: true
         LocationType: FileSystem
         IsPremiere: true
-        Altitude: 0.8774076871421566
+        Altitude: 9.702963800023566
       x-internal-ref-name: MediaBrowser.Model.Dto.BaseItemDto
     SyncJobItemStatus:
       type: string
@@ -85601,14 +85608,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -85962,14 +85969,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -85985,12 +85992,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -86001,7 +86008,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -86010,6 +86017,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -86038,7 +86046,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -86051,7 +86059,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -86076,18 +86084,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -86120,14 +86128,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -86140,7 +86148,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -86151,7 +86159,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
         TranscodingInfo:
           IsAudioDirect: true
           ProcessStatistics:
@@ -86924,6 +86932,8 @@ components:
       - DirectPlayError
       - VideoRangeNotSupported
       - SubtitleContentOptionsEnabled
+      - ExternalAudioNotSupported
+      - AudioDelayNotSupported
       x-internal-ref-name: MediaBrowser.Model.Session.TranscodeReason
     Tuple_Double-Double:
       type: object
@@ -87362,6 +87372,10 @@ components:
           type: integer
           format: int32
           nullable: true
+        DeclaredFeatures:
+          type: array
+          items:
+            type: string
         DirectPlayProfiles:
           type: array
           description: The direct play profiles.
@@ -87393,6 +87407,9 @@ components:
         EnableSingleAlbumArtLimit: true
         MusicStreamingTranscodingBitrate: 7
         AlbumArtPn: AlbumArtPn
+        DeclaredFeatures:
+        - DeclaredFeatures
+        - DeclaredFeatures
         TranscodingProfiles:
         - Context: Streaming
           BreakOnNonKeyFrames: true
@@ -87834,6 +87851,7 @@ components:
       - AudioBitDepth
       - VideoRange
       - VideoRotation
+      - IsExternalAudio
       x-internal-ref-name: MediaBrowser.Model.Dlna.ProfileConditionValue
     CodecProfile:
       type: object
@@ -89151,6 +89169,10 @@ components:
           type: integer
           format: int32
           nullable: true
+        DeclaredFeatures:
+          type: array
+          items:
+            type: string
         DirectPlayProfiles:
           type: array
           description: The direct play profiles.
@@ -89573,14 +89595,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -89934,14 +89956,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -89957,12 +89979,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -89973,7 +89995,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -89982,6 +90004,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -90010,7 +90033,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -90023,7 +90046,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -90048,18 +90071,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -90092,14 +90115,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -90112,7 +90135,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -90123,7 +90146,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
         - Programs:
           - null
           - null
@@ -90139,14 +90162,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -90500,14 +90523,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -90523,12 +90546,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -90539,7 +90562,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -90548,6 +90571,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -90576,7 +90600,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -90589,7 +90613,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -90614,18 +90638,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -90658,14 +90682,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -90678,7 +90702,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -90689,7 +90713,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
     Api.EpgRow:
       type: object
       properties:
@@ -90715,14 +90739,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -91076,14 +91100,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -91099,12 +91123,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -91115,7 +91139,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -91124,6 +91148,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -91152,7 +91177,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -91165,7 +91190,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -91190,18 +91215,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -91234,14 +91259,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -91254,7 +91279,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -91265,7 +91290,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
       x-internal-ref-name: Emby.LiveTV.Api.EpgRow
     Api.BaseItemsRequest:
       type: object
@@ -91428,14 +91453,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -91789,14 +91814,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -91812,12 +91837,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -91828,7 +91853,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -91837,6 +91862,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -91865,7 +91891,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -91878,7 +91904,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -91903,18 +91929,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -91947,14 +91973,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -91967,7 +91993,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -91978,7 +92004,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
           ServerId: ServerId
           ParentBackdropItemId: ParentBackdropItemId
           Status: New
@@ -92018,14 +92044,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -92379,14 +92405,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -92402,12 +92428,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -92418,7 +92444,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -92427,6 +92453,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -92455,7 +92482,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -92468,7 +92495,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -92493,18 +92520,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -92537,14 +92564,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -92557,7 +92584,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -92568,7 +92595,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
           ServerId: ServerId
           ParentBackdropItemId: ParentBackdropItemId
           Status: New
@@ -92692,14 +92719,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -93053,14 +93080,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -93076,12 +93103,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -93092,7 +93119,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -93101,6 +93128,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -93129,7 +93157,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -93142,7 +93170,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -93167,18 +93195,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -93211,14 +93239,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -93231,7 +93259,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -93242,7 +93270,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
         ServerId: ServerId
         ParentBackdropItemId: ParentBackdropItemId
         Status: New
@@ -93833,14 +93861,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -94194,14 +94222,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -94217,12 +94245,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -94233,7 +94261,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -94242,6 +94270,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -94270,7 +94299,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -94283,7 +94312,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -94308,18 +94337,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -94352,14 +94381,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -94372,7 +94401,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -94383,7 +94412,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
           Size: 6
@@ -94395,14 +94424,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -94756,14 +94785,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -94779,12 +94808,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -94795,7 +94824,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -94804,6 +94833,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -94832,7 +94862,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -94845,7 +94875,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -94870,18 +94900,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -94914,14 +94944,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -94934,7 +94964,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -94945,7 +94975,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
       x-internal-ref-name: MediaBrowser.Model.Dto.RecommendationDto
     RecommendationType:
       type: string
@@ -98328,14 +98358,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -98689,14 +98719,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -98712,12 +98742,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -98728,7 +98758,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -98737,6 +98767,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -98765,7 +98796,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -98778,7 +98809,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -98803,18 +98834,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -98847,14 +98878,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -98867,7 +98898,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -98878,7 +98909,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
           TranscodingInfo:
             IsAudioDirect: true
             ProcessStatistics:
@@ -101164,14 +101195,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -101525,14 +101556,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -101548,12 +101579,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -101564,7 +101595,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -101573,6 +101604,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -101601,7 +101633,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -101614,7 +101646,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -101639,18 +101671,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -101683,14 +101715,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -101703,7 +101735,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -101714,7 +101746,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
           - SeasonName: SeasonName
             PremiereDate: 2000-01-23T04:56:07.000+00:00
             Size: 6
@@ -101726,14 +101758,14 @@ components:
             - Id: 0
               Name: Name
             CameraMake: CameraMake
-            Aperture: 1.041444916118296
+            Aperture: 4.678947989005849
             ChannelPrimaryImageTag: ChannelPrimaryImageTag
             ExtraType: ExtraType
             ParentBackdropItemId: ParentBackdropItemId
             Etag: Etag
             TunerName: TunerName
             ParentLogoImageTag: ParentLogoImageTag
-            ExposureTime: 6.628464275087742
+            ExposureTime: 4.258773108174356
             MediaType: MediaType
             ManagementId: ManagementId
             Tags:
@@ -102087,14 +102119,14 @@ components:
             - null
             - null
             OfficialRating: OfficialRating
-            Longitude: 9.132027271330688
+            Longitude: 0.8774076871421566
             Composers:
             - null
             - null
             LockData: true
-            FocalLength: 4.258773108174356
+            FocalLength: 1.041444916118296
             IsNews: true
-            ShutterSpeed: 4.678947989005849
+            ShutterSpeed: 7.260521264802104
             Id: Id
             SortIndexNumber: 0
             IsFolder: true
@@ -102110,12 +102142,12 @@ components:
             Prefix: Prefix
             CanDownload: true
             IsMovie: true
-            SeriesCount: 5
+            SeriesCount: 4
             PrimaryImageItemId: PrimaryImageItemId
             ListingsChannelId: ListingsChannelId
             SeriesStudio: SeriesStudio
             IsLive: true
-            Width: 4
+            Width: 0
             ExternalUrls:
             - Url: Url
               Name: Name
@@ -102126,7 +102158,7 @@ components:
             ParentId: ParentId
             TimerType: Program
             GameSystem: GameSystem
-            MusicVideoCount: 8
+            MusicVideoCount: 4
             IsSeries: true
             ProductionLocations:
             - ProductionLocations
@@ -102135,6 +102167,7 @@ components:
             - Subviews
             - Subviews
             Bitrate: 5
+            SeasonCount: 7
             EndDate: 2000-01-23T04:56:07.000+00:00
             SeriesPrimaryImageTag: SeriesPrimaryImageTag
             ParentThumbItemId: ParentThumbItemId
@@ -102163,7 +102196,7 @@ components:
             SortParentIndexNumber: 6
             DisplayPreferencesId: DisplayPreferencesId
             Album: Album
-            Latitude: 7.260521264802104
+            Latitude: 9.132027271330688
             Guid: Guid
             SortName: SortName
             Name: Name
@@ -102176,7 +102209,7 @@ components:
             SupportsSync: true
             LocalTrailerCount: 7
             IndexNumber: 3
-            CompletionPercentage: 0.5199002018724985
+            CompletionPercentage: 7.933506881737151
             Genres:
             - Genres
             - Genres
@@ -102201,18 +102234,18 @@ components:
             - Sunday
             - Sunday
             ParentLogoItemId: ParentLogoItemId
-            PartCount: 3
+            PartCount: 4
             ListingsProviderId: ListingsProviderId
             CanEditItems: true
             ChannelName: ChannelName
             EpisodeTitle: EpisodeTitle
-            IsoSpeedRating: 9
+            IsoSpeedRating: 0
             CommunityRating: 2.8841622
             Software: Software
             Chapters:
             - null
             - null
-            SongCount: 6
+            SongCount: 8
             Taglines:
             - Taglines
             - Taglines
@@ -102245,14 +102278,14 @@ components:
             - null
             ServerId: ServerId
             Number: Number
-            AlbumCount: 4
+            AlbumCount: 6
             IsRepeat: true
             CollectionType: CollectionType
-            PrimaryImageAspectRatio: 5.533258397034986
-            Height: 0
+            PrimaryImageAspectRatio: 3.2588565619047607
+            Height: 6
             IsKids: true
             DisplayOrder: DisplayOrder
-            MovieCount: 7
+            MovieCount: 5
             People:
             - Role: Role
               Type: Actor
@@ -102265,7 +102298,7 @@ components:
               Id: Id
               Name: Name
             Overview: Overview
-            SpecialFeatureCount: 7
+            SpecialFeatureCount: 5
             ImageOrientation: TopLeft
             AlbumArtist: AlbumArtist
             ImageTags:
@@ -102276,7 +102309,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
-            Altitude: 0.8774076871421566
+            Altitude: 9.702963800023566
         SoundtrackSongsResult: null
         ThemeSongsResult: null
       x-internal-ref-name: MediaBrowser.Model.Querying.AllThemeMediaResult
@@ -102310,14 +102343,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -102671,14 +102704,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -102694,12 +102727,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -102710,7 +102743,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -102719,6 +102752,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -102747,7 +102781,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -102760,7 +102794,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -102785,18 +102819,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -102829,14 +102863,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -102849,7 +102883,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -102860,7 +102894,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
           Size: 6
@@ -102872,14 +102906,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -103233,14 +103267,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -103256,12 +103290,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -103272,7 +103306,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -103281,6 +103315,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -103309,7 +103344,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -103322,7 +103357,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -103347,18 +103382,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -103391,14 +103426,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -103411,7 +103446,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -103422,7 +103457,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
       x-internal-ref-name: MediaBrowser.Model.Querying.ThemeMediaResult
     ImageInfo:
       type: object
@@ -104934,14 +104969,14 @@ components:
           - Id: 0
             Name: Name
           CameraMake: CameraMake
-          Aperture: 1.041444916118296
+          Aperture: 4.678947989005849
           ChannelPrimaryImageTag: ChannelPrimaryImageTag
           ExtraType: ExtraType
           ParentBackdropItemId: ParentBackdropItemId
           Etag: Etag
           TunerName: TunerName
           ParentLogoImageTag: ParentLogoImageTag
-          ExposureTime: 6.628464275087742
+          ExposureTime: 4.258773108174356
           MediaType: MediaType
           ManagementId: ManagementId
           Tags:
@@ -105295,14 +105330,14 @@ components:
           - null
           - null
           OfficialRating: OfficialRating
-          Longitude: 9.132027271330688
+          Longitude: 0.8774076871421566
           Composers:
           - null
           - null
           LockData: true
-          FocalLength: 4.258773108174356
+          FocalLength: 1.041444916118296
           IsNews: true
-          ShutterSpeed: 4.678947989005849
+          ShutterSpeed: 7.260521264802104
           Id: Id
           SortIndexNumber: 0
           IsFolder: true
@@ -105318,12 +105353,12 @@ components:
           Prefix: Prefix
           CanDownload: true
           IsMovie: true
-          SeriesCount: 5
+          SeriesCount: 4
           PrimaryImageItemId: PrimaryImageItemId
           ListingsChannelId: ListingsChannelId
           SeriesStudio: SeriesStudio
           IsLive: true
-          Width: 4
+          Width: 0
           ExternalUrls:
           - Url: Url
             Name: Name
@@ -105334,7 +105369,7 @@ components:
           ParentId: ParentId
           TimerType: Program
           GameSystem: GameSystem
-          MusicVideoCount: 8
+          MusicVideoCount: 4
           IsSeries: true
           ProductionLocations:
           - ProductionLocations
@@ -105343,6 +105378,7 @@ components:
           - Subviews
           - Subviews
           Bitrate: 5
+          SeasonCount: 7
           EndDate: 2000-01-23T04:56:07.000+00:00
           SeriesPrimaryImageTag: SeriesPrimaryImageTag
           ParentThumbItemId: ParentThumbItemId
@@ -105371,7 +105407,7 @@ components:
           SortParentIndexNumber: 6
           DisplayPreferencesId: DisplayPreferencesId
           Album: Album
-          Latitude: 7.260521264802104
+          Latitude: 9.132027271330688
           Guid: Guid
           SortName: SortName
           Name: Name
@@ -105384,7 +105420,7 @@ components:
           SupportsSync: true
           LocalTrailerCount: 7
           IndexNumber: 3
-          CompletionPercentage: 0.5199002018724985
+          CompletionPercentage: 7.933506881737151
           Genres:
           - Genres
           - Genres
@@ -105409,18 +105445,18 @@ components:
           - Sunday
           - Sunday
           ParentLogoItemId: ParentLogoItemId
-          PartCount: 3
+          PartCount: 4
           ListingsProviderId: ListingsProviderId
           CanEditItems: true
           ChannelName: ChannelName
           EpisodeTitle: EpisodeTitle
-          IsoSpeedRating: 9
+          IsoSpeedRating: 0
           CommunityRating: 2.8841622
           Software: Software
           Chapters:
           - null
           - null
-          SongCount: 6
+          SongCount: 8
           Taglines:
           - Taglines
           - Taglines
@@ -105453,14 +105489,14 @@ components:
           - null
           ServerId: ServerId
           Number: Number
-          AlbumCount: 4
+          AlbumCount: 6
           IsRepeat: true
           CollectionType: CollectionType
-          PrimaryImageAspectRatio: 5.533258397034986
-          Height: 0
+          PrimaryImageAspectRatio: 3.2588565619047607
+          Height: 6
           IsKids: true
           DisplayOrder: DisplayOrder
-          MovieCount: 7
+          MovieCount: 5
           People:
           - Role: Role
             Type: Actor
@@ -105473,7 +105509,7 @@ components:
             Id: Id
             Name: Name
           Overview: Overview
-          SpecialFeatureCount: 7
+          SpecialFeatureCount: 5
           ImageOrientation: TopLeft
           AlbumArtist: AlbumArtist
           ImageTags:
@@ -105484,7 +105520,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
-          Altitude: 0.8774076871421566
+          Altitude: 9.702963800023566
         ServerId: ServerId
         SyncJobName: SyncJobName
         OriginalFileName: OriginalFileName

@@ -32,13 +32,14 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="maxStreamingBitrate">maxStreamingBitrate.</param>
         /// <param name="musicStreamingTranscodingBitrate">musicStreamingTranscodingBitrate.</param>
         /// <param name="maxStaticMusicBitrate">maxStaticMusicBitrate.</param>
+        /// <param name="declaredFeatures">declaredFeatures.</param>
         /// <param name="directPlayProfiles">The direct play profiles..</param>
         /// <param name="transcodingProfiles">The transcoding profiles..</param>
         /// <param name="containerProfiles">containerProfiles.</param>
         /// <param name="codecProfiles">codecProfiles.</param>
         /// <param name="responseProfiles">responseProfiles.</param>
         /// <param name="subtitleProfiles">subtitleProfiles.</param>
-        public DeviceProfile(string name = default(string), string id = default(string), string supportedMediaTypes = default(string), long? maxStreamingBitrate = default(long?), int? musicStreamingTranscodingBitrate = default(int?), int? maxStaticMusicBitrate = default(int?), List<DirectPlayProfile> directPlayProfiles = default(List<DirectPlayProfile>), List<TranscodingProfile> transcodingProfiles = default(List<TranscodingProfile>), List<ContainerProfile> containerProfiles = default(List<ContainerProfile>), List<CodecProfile> codecProfiles = default(List<CodecProfile>), List<ResponseProfile> responseProfiles = default(List<ResponseProfile>), List<SubtitleProfile> subtitleProfiles = default(List<SubtitleProfile>))
+        public DeviceProfile(string name = default(string), string id = default(string), string supportedMediaTypes = default(string), long? maxStreamingBitrate = default(long?), int? musicStreamingTranscodingBitrate = default(int?), int? maxStaticMusicBitrate = default(int?), List<string> declaredFeatures = default(List<string>), List<DirectPlayProfile> directPlayProfiles = default(List<DirectPlayProfile>), List<TranscodingProfile> transcodingProfiles = default(List<TranscodingProfile>), List<ContainerProfile> containerProfiles = default(List<ContainerProfile>), List<CodecProfile> codecProfiles = default(List<CodecProfile>), List<ResponseProfile> responseProfiles = default(List<ResponseProfile>), List<SubtitleProfile> subtitleProfiles = default(List<SubtitleProfile>))
         {
             this.Name = name;
             this.Id = id;
@@ -46,6 +47,7 @@ namespace EmbyClient.Dotnet.Model
             this.MaxStreamingBitrate = maxStreamingBitrate;
             this.MusicStreamingTranscodingBitrate = musicStreamingTranscodingBitrate;
             this.MaxStaticMusicBitrate = maxStaticMusicBitrate;
+            this.DeclaredFeatures = declaredFeatures;
             this.DirectPlayProfiles = directPlayProfiles;
             this.TranscodingProfiles = transcodingProfiles;
             this.ContainerProfiles = containerProfiles;
@@ -90,6 +92,12 @@ namespace EmbyClient.Dotnet.Model
         /// </summary>
         [DataMember(Name="MaxStaticMusicBitrate", EmitDefaultValue=false)]
         public int? MaxStaticMusicBitrate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeclaredFeatures
+        /// </summary>
+        [DataMember(Name="DeclaredFeatures", EmitDefaultValue=false)]
+        public List<string> DeclaredFeatures { get; set; }
 
         /// <summary>
         /// The direct play profiles.
@@ -143,6 +151,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  MaxStreamingBitrate: ").Append(MaxStreamingBitrate).Append("\n");
             sb.Append("  MusicStreamingTranscodingBitrate: ").Append(MusicStreamingTranscodingBitrate).Append("\n");
             sb.Append("  MaxStaticMusicBitrate: ").Append(MaxStaticMusicBitrate).Append("\n");
+            sb.Append("  DeclaredFeatures: ").Append(DeclaredFeatures).Append("\n");
             sb.Append("  DirectPlayProfiles: ").Append(DirectPlayProfiles).Append("\n");
             sb.Append("  TranscodingProfiles: ").Append(TranscodingProfiles).Append("\n");
             sb.Append("  ContainerProfiles: ").Append(ContainerProfiles).Append("\n");
@@ -214,6 +223,12 @@ namespace EmbyClient.Dotnet.Model
                     this.MaxStaticMusicBitrate.Equals(input.MaxStaticMusicBitrate))
                 ) && 
                 (
+                    this.DeclaredFeatures == input.DeclaredFeatures ||
+                    this.DeclaredFeatures != null &&
+                    input.DeclaredFeatures != null &&
+                    this.DeclaredFeatures.SequenceEqual(input.DeclaredFeatures)
+                ) && 
+                (
                     this.DirectPlayProfiles == input.DirectPlayProfiles ||
                     this.DirectPlayProfiles != null &&
                     input.DirectPlayProfiles != null &&
@@ -272,6 +287,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.MusicStreamingTranscodingBitrate.GetHashCode();
                 if (this.MaxStaticMusicBitrate != null)
                     hashCode = hashCode * 59 + this.MaxStaticMusicBitrate.GetHashCode();
+                if (this.DeclaredFeatures != null)
+                    hashCode = hashCode * 59 + this.DeclaredFeatures.GetHashCode();
                 if (this.DirectPlayProfiles != null)
                     hashCode = hashCode * 59 + this.DirectPlayProfiles.GetHashCode();
                 if (this.TranscodingProfiles != null)

@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The WakeOnLanInfo model module.
 * @module model/WakeOnLanInfo
-* @version 4.9.0.48
+* @version 4.9.0.49
 */
 export default class WakeOnLanInfo {
     /**

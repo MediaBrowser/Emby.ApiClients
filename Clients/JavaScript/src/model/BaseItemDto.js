@@ -31,7 +31,7 @@ import Video3DFormat from './Video3DFormat';
 /**
 * The BaseItemDto model module.
 * @module model/BaseItemDto
-* @version 4.9.0.48
+* @version 4.9.0.49
 */
 export default class BaseItemDto {
     /**
@@ -274,6 +274,9 @@ export default class BaseItemDto {
             }
             if (data.hasOwnProperty('ChildCount')) {
                 obj['ChildCount'] = ApiClient.convertToType(data['ChildCount'], 'Number');
+            }
+            if (data.hasOwnProperty('SeasonCount')) {
+                obj['SeasonCount'] = ApiClient.convertToType(data['SeasonCount'], 'Number');
             }
             if (data.hasOwnProperty('SeriesName')) {
                 obj['SeriesName'] = ApiClient.convertToType(data['SeriesName'], 'String');
@@ -856,6 +859,10 @@ export default class BaseItemDto {
     * @member {Number} ChildCount
     */
     'ChildCount' = undefined;
+    /**
+    * @member {Number} SeasonCount
+    */
+    'SeasonCount' = undefined;
     /**
     * The name of the series.
     * @member {String} SeriesName

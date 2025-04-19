@@ -259,6 +259,9 @@ public class BaseItemDto {
   @SerializedName("ChildCount")
   private Integer childCount = null;
 
+  @SerializedName("SeasonCount")
+  private Integer seasonCount = null;
+
   @SerializedName("SeriesName")
   private String seriesName = null;
 
@@ -1890,6 +1893,24 @@ public class BaseItemDto {
 
   public void setChildCount(Integer childCount) {
     this.childCount = childCount;
+  }
+
+  public BaseItemDto seasonCount(Integer seasonCount) {
+    this.seasonCount = seasonCount;
+    return this;
+  }
+
+   /**
+   * Get seasonCount
+   * @return seasonCount
+  **/
+  @Schema(description = "")
+  public Integer getSeasonCount() {
+    return seasonCount;
+  }
+
+  public void setSeasonCount(Integer seasonCount) {
+    this.seasonCount = seasonCount;
   }
 
   public BaseItemDto seriesName(String seriesName) {
@@ -3564,6 +3585,7 @@ public class BaseItemDto {
         Objects.equals(this.userData, baseItemDto.userData) &&
         Objects.equals(this.recursiveItemCount, baseItemDto.recursiveItemCount) &&
         Objects.equals(this.childCount, baseItemDto.childCount) &&
+        Objects.equals(this.seasonCount, baseItemDto.seasonCount) &&
         Objects.equals(this.seriesName, baseItemDto.seriesName) &&
         Objects.equals(this.seriesId, baseItemDto.seriesId) &&
         Objects.equals(this.seasonId, baseItemDto.seasonId) &&
@@ -3651,7 +3673,7 @@ public class BaseItemDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, originalTitle, serverId, id, guid, etag, prefix, tunerName, playlistItemId, dateCreated, extraType, sortIndexNumber, sortParentIndexNumber, canDelete, canDownload, canEditItems, supportsResume, presentationUniqueKey, preferredMetadataLanguage, preferredMetadataCountryCode, supportsSync, syncStatus, canManageAccess, canLeaveContent, canMakePublic, container, sortName, forcedSortName, video3DFormat, premiereDate, externalUrls, mediaSources, criticRating, gameSystemId, asSeries, gameSystem, productionLocations, path, officialRating, customRating, channelId, channelName, overview, taglines, genres, communityRating, runTimeTicks, size, fileName, bitrate, productionYear, number, channelNumber, indexNumber, indexNumberEnd, parentIndexNumber, remoteTrailers, providerIds, isFolder, parentId, type, people, studios, genreItems, tagItems, parentLogoItemId, parentBackdropItemId, parentBackdropImageTags, localTrailerCount, userData, recursiveItemCount, childCount, seriesName, seriesId, seasonId, specialFeatureCount, displayPreferencesId, status, airDays, tags, primaryImageAspectRatio, artists, artistItems, composers, album, collectionType, displayOrder, albumId, albumPrimaryImageTag, seriesPrimaryImageTag, albumArtist, albumArtists, seasonName, mediaStreams, partCount, imageTags, backdropImageTags, parentLogoImageTag, seriesStudio, primaryImageItemId, primaryImageTag, parentThumbItemId, parentThumbImageTag, chapters, locationType, mediaType, endDate, lockedFields, lockData, width, height, cameraMake, cameraModel, software, exposureTime, focalLength, imageOrientation, aperture, shutterSpeed, latitude, longitude, altitude, isoSpeedRating, seriesTimerId, channelPrimaryImageTag, startDate, completionPercentage, isRepeat, isNew, episodeTitle, isMovie, isSports, isSeries, isLive, isNews, isKids, isPremiere, timerType, disabled, managementId, timerId, currentProgram, movieCount, seriesCount, albumCount, songCount, musicVideoCount, subviews, listingsProviderId, listingsChannelId, listingsPath, listingsId, listingsChannelName, listingsChannelNumber, affiliateCallSign);
+    return Objects.hash(name, originalTitle, serverId, id, guid, etag, prefix, tunerName, playlistItemId, dateCreated, extraType, sortIndexNumber, sortParentIndexNumber, canDelete, canDownload, canEditItems, supportsResume, presentationUniqueKey, preferredMetadataLanguage, preferredMetadataCountryCode, supportsSync, syncStatus, canManageAccess, canLeaveContent, canMakePublic, container, sortName, forcedSortName, video3DFormat, premiereDate, externalUrls, mediaSources, criticRating, gameSystemId, asSeries, gameSystem, productionLocations, path, officialRating, customRating, channelId, channelName, overview, taglines, genres, communityRating, runTimeTicks, size, fileName, bitrate, productionYear, number, channelNumber, indexNumber, indexNumberEnd, parentIndexNumber, remoteTrailers, providerIds, isFolder, parentId, type, people, studios, genreItems, tagItems, parentLogoItemId, parentBackdropItemId, parentBackdropImageTags, localTrailerCount, userData, recursiveItemCount, childCount, seasonCount, seriesName, seriesId, seasonId, specialFeatureCount, displayPreferencesId, status, airDays, tags, primaryImageAspectRatio, artists, artistItems, composers, album, collectionType, displayOrder, albumId, albumPrimaryImageTag, seriesPrimaryImageTag, albumArtist, albumArtists, seasonName, mediaStreams, partCount, imageTags, backdropImageTags, parentLogoImageTag, seriesStudio, primaryImageItemId, primaryImageTag, parentThumbItemId, parentThumbImageTag, chapters, locationType, mediaType, endDate, lockedFields, lockData, width, height, cameraMake, cameraModel, software, exposureTime, focalLength, imageOrientation, aperture, shutterSpeed, latitude, longitude, altitude, isoSpeedRating, seriesTimerId, channelPrimaryImageTag, startDate, completionPercentage, isRepeat, isNew, episodeTitle, isMovie, isSports, isSeries, isLive, isNews, isKids, isPremiere, timerType, disabled, managementId, timerId, currentProgram, movieCount, seriesCount, albumCount, songCount, musicVideoCount, subviews, listingsProviderId, listingsChannelId, listingsPath, listingsId, listingsChannelName, listingsChannelNumber, affiliateCallSign);
   }
 
 
@@ -3732,6 +3754,7 @@ public class BaseItemDto {
     sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
     sb.append("    recursiveItemCount: ").append(toIndentedString(recursiveItemCount)).append("\n");
     sb.append("    childCount: ").append(toIndentedString(childCount)).append("\n");
+    sb.append("    seasonCount: ").append(toIndentedString(seasonCount)).append("\n");
     sb.append("    seriesName: ").append(toIndentedString(seriesName)).append("\n");
     sb.append("    seriesId: ").append(toIndentedString(seriesId)).append("\n");
     sb.append("    seasonId: ").append(toIndentedString(seasonId)).append("\n");

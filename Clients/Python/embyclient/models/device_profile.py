@@ -28,6 +28,7 @@ class DeviceProfile(object):
         'max_streaming_bitrate': 'int',
         'music_streaming_transcoding_bitrate': 'int',
         'max_static_music_bitrate': 'int',
+        'declared_features': 'list[str]',
         'direct_play_profiles': 'list[DirectPlayProfile]',
         'transcoding_profiles': 'list[TranscodingProfile]',
         'container_profiles': 'list[ContainerProfile]',
@@ -43,6 +44,7 @@ class DeviceProfile(object):
         'max_streaming_bitrate': 'MaxStreamingBitrate',
         'music_streaming_transcoding_bitrate': 'MusicStreamingTranscodingBitrate',
         'max_static_music_bitrate': 'MaxStaticMusicBitrate',
+        'declared_features': 'DeclaredFeatures',
         'direct_play_profiles': 'DirectPlayProfiles',
         'transcoding_profiles': 'TranscodingProfiles',
         'container_profiles': 'ContainerProfiles',
@@ -51,7 +53,7 @@ class DeviceProfile(object):
         'subtitle_profiles': 'SubtitleProfiles'
     }
 
-    def __init__(self, name=None, id=None, supported_media_types=None, max_streaming_bitrate=None, music_streaming_transcoding_bitrate=None, max_static_music_bitrate=None, direct_play_profiles=None, transcoding_profiles=None, container_profiles=None, codec_profiles=None, response_profiles=None, subtitle_profiles=None):  # noqa: E501
+    def __init__(self, name=None, id=None, supported_media_types=None, max_streaming_bitrate=None, music_streaming_transcoding_bitrate=None, max_static_music_bitrate=None, declared_features=None, direct_play_profiles=None, transcoding_profiles=None, container_profiles=None, codec_profiles=None, response_profiles=None, subtitle_profiles=None):  # noqa: E501
         """DeviceProfile - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._id = None
@@ -59,6 +61,7 @@ class DeviceProfile(object):
         self._max_streaming_bitrate = None
         self._music_streaming_transcoding_bitrate = None
         self._max_static_music_bitrate = None
+        self._declared_features = None
         self._direct_play_profiles = None
         self._transcoding_profiles = None
         self._container_profiles = None
@@ -78,6 +81,8 @@ class DeviceProfile(object):
             self.music_streaming_transcoding_bitrate = music_streaming_transcoding_bitrate
         if max_static_music_bitrate is not None:
             self.max_static_music_bitrate = max_static_music_bitrate
+        if declared_features is not None:
+            self.declared_features = declared_features
         if direct_play_profiles is not None:
             self.direct_play_profiles = direct_play_profiles
         if transcoding_profiles is not None:
@@ -218,6 +223,27 @@ class DeviceProfile(object):
         """
 
         self._max_static_music_bitrate = max_static_music_bitrate
+
+    @property
+    def declared_features(self):
+        """Gets the declared_features of this DeviceProfile.  # noqa: E501
+
+
+        :return: The declared_features of this DeviceProfile.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._declared_features
+
+    @declared_features.setter
+    def declared_features(self, declared_features):
+        """Sets the declared_features of this DeviceProfile.
+
+
+        :param declared_features: The declared_features of this DeviceProfile.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._declared_features = declared_features
 
     @property
     def direct_play_profiles(self):

@@ -82,6 +82,7 @@ open class DlnaServiceAPI {
   "EnableSingleAlbumArtLimit" : true,
   "MusicStreamingTranscodingBitrate" : 7,
   "AlbumArtPn" : "AlbumArtPn",
+  "DeclaredFeatures" : [ "DeclaredFeatures", "DeclaredFeatures" ],
   "TranscodingProfiles" : [ {
     "Context" : "Streaming",
     "BreakOnNonKeyFrames" : true,
@@ -261,6 +262,7 @@ open class DlnaServiceAPI {
   "EnableSingleAlbumArtLimit" : true,
   "MusicStreamingTranscodingBitrate" : 7,
   "AlbumArtPn" : "AlbumArtPn",
+  "DeclaredFeatures" : [ "DeclaredFeatures", "DeclaredFeatures" ],
   "TranscodingProfiles" : [ {
     "Context" : "Streaming",
     "BreakOnNonKeyFrames" : true,
@@ -478,6 +480,7 @@ open class DlnaServiceAPI {
   "EnableSingleAlbumArtLimit" : true,
   "MusicStreamingTranscodingBitrate" : 7,
   "AlbumArtPn" : "AlbumArtPn",
+  "DeclaredFeatures" : [ "DeclaredFeatures", "DeclaredFeatures" ],
   "TranscodingProfiles" : [ {
     "Context" : "Streaming",
     "BreakOnNonKeyFrames" : true,
@@ -698,6 +701,7 @@ open class DlnaServiceAPI {
   "EnableSingleAlbumArtLimit" : true,
   "MusicStreamingTranscodingBitrate" : 7,
   "AlbumArtPn" : "AlbumArtPn",
+  "DeclaredFeatures" : [ "DeclaredFeatures", "DeclaredFeatures" ],
   "TranscodingProfiles" : [ {
     "Context" : "Streaming",
     "BreakOnNonKeyFrames" : true,

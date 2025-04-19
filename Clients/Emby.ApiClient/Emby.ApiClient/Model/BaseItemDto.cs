@@ -459,6 +459,12 @@ namespace Emby.ApiClient.Model
         public int? ChildCount { get; set; }
 
         /// <summary>
+        /// Gets or Sets SeasonCount
+        /// </summary>
+        /// <value>The SeasonCount.</value>
+        public int? SeasonCount { get; set; }
+
+        /// <summary>
         /// The name of the series.
         /// </summary>
         /// <value>The SeriesName.</value>
@@ -1036,6 +1042,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  UserData: ").Append(UserData).Append("\n");
             sb.Append("  RecursiveItemCount: ").Append(RecursiveItemCount).Append("\n");
             sb.Append("  ChildCount: ").Append(ChildCount).Append("\n");
+            sb.Append("  SeasonCount: ").Append(SeasonCount).Append("\n");
             sb.Append("  SeriesName: ").Append(SeriesName).Append("\n");
             sb.Append("  SeriesId: ").Append(SeriesId).Append("\n");
             sb.Append("  SeasonId: ").Append(SeasonId).Append("\n");
@@ -1514,6 +1521,11 @@ namespace Emby.ApiClient.Model
                     this.ChildCount == input.ChildCount ||
                     (this.ChildCount != null &&
                     this.ChildCount.Equals(input.ChildCount))
+                ) && 
+                (
+                    this.SeasonCount == input.SeasonCount ||
+                    (this.SeasonCount != null &&
+                    this.SeasonCount.Equals(input.SeasonCount))
                 ) && 
                 (
                     this.SeriesName == input.SeriesName ||
@@ -2097,6 +2109,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.RecursiveItemCount.GetHashCode();
                 if (this.ChildCount != null)
                     hashCode = hashCode * 59 + this.ChildCount.GetHashCode();
+                if (this.SeasonCount != null)
+                    hashCode = hashCode * 59 + this.SeasonCount.GetHashCode();
                 if (this.SeriesName != null)
                     hashCode = hashCode * 59 + this.SeriesName.GetHashCode();
                 if (this.SeriesId != null)

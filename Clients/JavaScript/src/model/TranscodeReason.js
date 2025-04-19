@@ -166,6 +166,18 @@ export default class TranscodeReason {
          */
         SubtitleContentOptionsEnabled = "SubtitleContentOptionsEnabled";
 
+        /**
+         * value: "ExternalAudioNotSupported"
+         * @const
+         */
+        ExternalAudioNotSupported = "ExternalAudioNotSupported";
+
+        /**
+         * value: "AudioDelayNotSupported"
+         * @const
+         */
+        AudioDelayNotSupported = "AudioDelayNotSupported";
+
 
     /**
     * Returns a <code>TranscodeReason</code> enum value from a Javascript object name.

@@ -41,6 +41,7 @@ type DlnaProfilesDlnaProfile struct {
 	MaxStreamingBitrate int64 `json:"MaxStreamingBitrate,omitempty"`
 	MusicStreamingTranscodingBitrate int32 `json:"MusicStreamingTranscodingBitrate,omitempty"`
 	MaxStaticMusicBitrate int32 `json:"MaxStaticMusicBitrate,omitempty"`
+	DeclaredFeatures []string `json:"DeclaredFeatures,omitempty"`
 	// The direct play profiles.
 	DirectPlayProfiles []DirectPlayProfile `json:"DirectPlayProfiles,omitempty"`
 	// The transcoding profiles.

@@ -123,6 +123,7 @@ type BaseItemDto struct {
 	RecursiveItemCount int32 `json:"RecursiveItemCount,omitempty"`
 	// The child count.
 	ChildCount int32 `json:"ChildCount,omitempty"`
+	SeasonCount int32 `json:"SeasonCount,omitempty"`
 	// The name of the series.
 	SeriesName string `json:"SeriesName,omitempty"`
 	// The series id.
