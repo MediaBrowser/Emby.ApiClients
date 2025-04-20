@@ -16,7 +16,7 @@ import ProviderIdDictionary from './ProviderIdDictionary';
 /**
 * The GameInfo model module.
 * @module model/GameInfo
-* @version 4.9.0.49
+* @version 4.9.0.50
 */
 export default class GameInfo {
     /**

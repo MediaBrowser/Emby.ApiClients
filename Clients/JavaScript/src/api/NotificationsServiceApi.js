@@ -16,7 +16,7 @@ import NotificationCategoryInfo from '../model/NotificationCategoryInfo';
 /**
 * NotificationsService service.
 * @module api/NotificationsServiceApi
-* @version 4.9.0.49
+* @version 4.9.0.50
 */
 export default class NotificationsServiceApi {
 

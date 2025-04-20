@@ -15,7 +15,7 @@ import NotificationTypeInfo from './NotificationTypeInfo';
 /**
 * The NotificationCategoryInfo model module.
 * @module model/NotificationCategoryInfo
-* @version 4.9.0.49
+* @version 4.9.0.50
 */
 export default class NotificationCategoryInfo {
     /**
