@@ -57,6 +57,12 @@ namespace Emby.ApiClient.Model
         public List<LibraryTypeOptions> TypeOptions { get; set; }
 
         /// <summary>
+        /// Gets or Sets DefaultLibraryOptions
+        /// </summary>
+        /// <value>The DefaultLibraryOptions.</value>
+        public LibraryOptions DefaultLibraryOptions { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -69,6 +75,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  SubtitleFetchers: ").Append(SubtitleFetchers).Append("\n");
             sb.Append("  LyricsFetchers: ").Append(LyricsFetchers).Append("\n");
             sb.Append("  TypeOptions: ").Append(TypeOptions).Append("\n");
+            sb.Append("  DefaultLibraryOptions: ").Append(DefaultLibraryOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +130,11 @@ namespace Emby.ApiClient.Model
                     this.TypeOptions != null &&
                     input.TypeOptions != null &&
                     this.TypeOptions.SequenceEqual(input.TypeOptions)
+                ) && 
+                (
+                    this.DefaultLibraryOptions == input.DefaultLibraryOptions ||
+                    (this.DefaultLibraryOptions != null &&
+                    this.DefaultLibraryOptions.Equals(input.DefaultLibraryOptions))
                 );
         }
 
@@ -145,6 +157,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.LyricsFetchers.GetHashCode();
                 if (this.TypeOptions != null)
                     hashCode = hashCode * 59 + this.TypeOptions.GetHashCode();
+                if (this.DefaultLibraryOptions != null)
+                    hashCode = hashCode * 59 + this.DefaultLibraryOptions.GetHashCode();
                 return hashCode;
             }
         }

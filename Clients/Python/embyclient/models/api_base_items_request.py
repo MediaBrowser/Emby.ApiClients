@@ -55,7 +55,8 @@ class ApiBaseItemsRequest(object):
         'air_days': 'list[DayOfWeek]',
         'is_airing': 'bool',
         'has_aired': 'bool',
-        'collection_types': 'str'
+        'collection_types': 'str',
+        'exclude_sources': 'list[str]'
     }
 
     attribute_map = {
@@ -92,10 +93,11 @@ class ApiBaseItemsRequest(object):
         'air_days': 'AirDays',
         'is_airing': 'IsAiring',
         'has_aired': 'HasAired',
-        'collection_types': 'CollectionTypes'
+        'collection_types': 'CollectionTypes',
+        'exclude_sources': 'ExcludeSources'
     }
 
-    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None):  # noqa: E501
+    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None, exclude_sources=None):  # noqa: E501
         """ApiBaseItemsRequest - a model defined in Swagger"""  # noqa: E501
         self._is_special_episode = None
         self._is4_k = None
@@ -131,6 +133,7 @@ class ApiBaseItemsRequest(object):
         self._is_airing = None
         self._has_aired = None
         self._collection_types = None
+        self._exclude_sources = None
         self.discriminator = None
         if is_special_episode is not None:
             self.is_special_episode = is_special_episode
@@ -200,6 +203,8 @@ class ApiBaseItemsRequest(object):
             self.has_aired = has_aired
         if collection_types is not None:
             self.collection_types = collection_types
+        if exclude_sources is not None:
+            self.exclude_sources = exclude_sources
 
     @property
     def is_special_episode(self):
@@ -914,6 +919,27 @@ class ApiBaseItemsRequest(object):
         """
 
         self._collection_types = collection_types
+
+    @property
+    def exclude_sources(self):
+        """Gets the exclude_sources of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The exclude_sources of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._exclude_sources
+
+    @exclude_sources.setter
+    def exclude_sources(self, exclude_sources):
+        """Sets the exclude_sources of this ApiBaseItemsRequest.
+
+
+        :param exclude_sources: The exclude_sources of this ApiBaseItemsRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._exclude_sources = exclude_sources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

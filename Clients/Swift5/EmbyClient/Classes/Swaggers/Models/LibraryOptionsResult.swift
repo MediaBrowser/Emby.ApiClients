@@ -16,13 +16,15 @@ public struct LibraryOptionsResult: Codable {
     public var subtitleFetchers: [LibraryOptionInfo]?
     public var lyricsFetchers: [LibraryOptionInfo]?
     public var typeOptions: [LibraryTypeOptions]?
+    public var defaultLibraryOptions: LibraryOptions?
 
-    public init(metadataSavers: [LibraryOptionInfo]? = nil, metadataReaders: [LibraryOptionInfo]? = nil, subtitleFetchers: [LibraryOptionInfo]? = nil, lyricsFetchers: [LibraryOptionInfo]? = nil, typeOptions: [LibraryTypeOptions]? = nil) {
+    public init(metadataSavers: [LibraryOptionInfo]? = nil, metadataReaders: [LibraryOptionInfo]? = nil, subtitleFetchers: [LibraryOptionInfo]? = nil, lyricsFetchers: [LibraryOptionInfo]? = nil, typeOptions: [LibraryTypeOptions]? = nil, defaultLibraryOptions: LibraryOptions? = nil) {
         self.metadataSavers = metadataSavers
         self.metadataReaders = metadataReaders
         self.subtitleFetchers = subtitleFetchers
         self.lyricsFetchers = lyricsFetchers
         self.typeOptions = typeOptions
+        self.defaultLibraryOptions = defaultLibraryOptions
     }
 
     public enum CodingKeys: String, CodingKey { 
@@ -31,6 +33,7 @@ public struct LibraryOptionsResult: Codable {
         case subtitleFetchers = "SubtitleFetchers"
         case lyricsFetchers = "LyricsFetchers"
         case typeOptions = "TypeOptions"
+        case defaultLibraryOptions = "DefaultLibraryOptions"
     }
 
 }

@@ -15,7 +15,7 @@ import DeviceProfile from './DeviceProfile';
 /**
 * The ClientCapabilities model module.
 * @module model/ClientCapabilities
-* @version 4.9.0.50
+* @version 4.9.0.51
 */
 export default class ClientCapabilities {
     /**

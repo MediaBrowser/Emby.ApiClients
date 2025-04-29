@@ -41,4 +41,5 @@ type ApiBaseItemsRequest struct {
 	IsAiring bool `json:"IsAiring,omitempty"`
 	HasAired bool `json:"HasAired,omitempty"`
 	CollectionTypes string `json:"CollectionTypes,omitempty"`
+	ExcludeSources []string `json:"ExcludeSources,omitempty"`
 }

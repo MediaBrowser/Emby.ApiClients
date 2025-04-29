@@ -18,7 +18,7 @@ import PersonType from './PersonType';
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.9.0.50
+* @version 4.9.0.51
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -146,6 +146,9 @@ export default class ApiBaseItemsRequest {
             }
             if (data.hasOwnProperty('CollectionTypes')) {
                 obj['CollectionTypes'] = ApiClient.convertToType(data['CollectionTypes'], 'String');
+            }
+            if (data.hasOwnProperty('ExcludeSources')) {
+                obj['ExcludeSources'] = ApiClient.convertToType(data['ExcludeSources'], ['String']);
             }
         }
         return obj;
@@ -287,6 +290,10 @@ export default class ApiBaseItemsRequest {
     * @member {String} CollectionTypes
     */
     'CollectionTypes' = undefined;
+    /**
+    * @member {Array.<String>} ExcludeSources
+    */
+    'ExcludeSources' = undefined;
 
 
 

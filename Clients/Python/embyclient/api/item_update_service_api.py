@@ -26,7 +26,7 @@ class ItemUpdateServiceApi(object):
     def get_items_by_itemid_metadataeditor(self, item_id, **kwargs):  # noqa: E501
         """Gets metadata editor info for an item  # noqa: E501
 
-        Requires authentication as administrator  # noqa: E501
+        Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_items_by_itemid_metadataeditor(item_id, async_req=True)
@@ -48,7 +48,7 @@ class ItemUpdateServiceApi(object):
     def get_items_by_itemid_metadataeditor_with_http_info(self, item_id, **kwargs):  # noqa: E501
         """Gets metadata editor info for an item  # noqa: E501
 
-        Requires authentication as administrator  # noqa: E501
+        Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_items_by_itemid_metadataeditor_with_http_info(item_id, async_req=True)
@@ -121,7 +121,7 @@ class ItemUpdateServiceApi(object):
     def post_items_by_itemid(self, body, item_id, **kwargs):  # noqa: E501
         """Updates an item  # noqa: E501
 
-        Requires authentication as administrator  # noqa: E501
+        Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_items_by_itemid(body, item_id, async_req=True)
@@ -144,7 +144,7 @@ class ItemUpdateServiceApi(object):
     def post_items_by_itemid_with_http_info(self, body, item_id, **kwargs):  # noqa: E501
         """Updates an item  # noqa: E501
 
-        Requires authentication as administrator  # noqa: E501
+        Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_items_by_itemid_with_http_info(body, item_id, async_req=True)

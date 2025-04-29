@@ -28,7 +28,7 @@ public class ItemUpdateServiceApiTest {
     /**
      * Gets metadata editor info for an item
      *
-     * Requires authentication as administrator
+     * Requires authentication as user
      *
      * @throws Exception
      *          if the Api call fails
@@ -43,7 +43,7 @@ public class ItemUpdateServiceApiTest {
     /**
      * Updates an item
      *
-     * Requires authentication as administrator
+     * Requires authentication as user
      *
      * @throws Exception
      *          if the Api call fails

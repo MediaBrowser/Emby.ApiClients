@@ -12,4 +12,5 @@ type LibraryOptionsResult struct {
 	SubtitleFetchers []LibraryOptionInfo `json:"SubtitleFetchers,omitempty"`
 	LyricsFetchers []LibraryOptionInfo `json:"LyricsFetchers,omitempty"`
 	TypeOptions []LibraryTypeOptions `json:"TypeOptions,omitempty"`
+	DefaultLibraryOptions *LibraryOptions `json:"DefaultLibraryOptions,omitempty"`
 }

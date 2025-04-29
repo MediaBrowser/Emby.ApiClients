@@ -26,7 +26,8 @@ class LibraryOptionsResult(object):
         'metadata_readers': 'list[LibraryOptionInfo]',
         'subtitle_fetchers': 'list[LibraryOptionInfo]',
         'lyrics_fetchers': 'list[LibraryOptionInfo]',
-        'type_options': 'list[LibraryTypeOptions]'
+        'type_options': 'list[LibraryTypeOptions]',
+        'default_library_options': 'LibraryOptions'
     }
 
     attribute_map = {
@@ -34,16 +35,18 @@ class LibraryOptionsResult(object):
         'metadata_readers': 'MetadataReaders',
         'subtitle_fetchers': 'SubtitleFetchers',
         'lyrics_fetchers': 'LyricsFetchers',
-        'type_options': 'TypeOptions'
+        'type_options': 'TypeOptions',
+        'default_library_options': 'DefaultLibraryOptions'
     }
 
-    def __init__(self, metadata_savers=None, metadata_readers=None, subtitle_fetchers=None, lyrics_fetchers=None, type_options=None):  # noqa: E501
+    def __init__(self, metadata_savers=None, metadata_readers=None, subtitle_fetchers=None, lyrics_fetchers=None, type_options=None, default_library_options=None):  # noqa: E501
         """LibraryOptionsResult - a model defined in Swagger"""  # noqa: E501
         self._metadata_savers = None
         self._metadata_readers = None
         self._subtitle_fetchers = None
         self._lyrics_fetchers = None
         self._type_options = None
+        self._default_library_options = None
         self.discriminator = None
         if metadata_savers is not None:
             self.metadata_savers = metadata_savers
@@ -55,6 +58,8 @@ class LibraryOptionsResult(object):
             self.lyrics_fetchers = lyrics_fetchers
         if type_options is not None:
             self.type_options = type_options
+        if default_library_options is not None:
+            self.default_library_options = default_library_options
 
     @property
     def metadata_savers(self):
@@ -160,6 +165,27 @@ class LibraryOptionsResult(object):
         """
 
         self._type_options = type_options
+
+    @property
+    def default_library_options(self):
+        """Gets the default_library_options of this LibraryOptionsResult.  # noqa: E501
+
+
+        :return: The default_library_options of this LibraryOptionsResult.  # noqa: E501
+        :rtype: LibraryOptions
+        """
+        return self._default_library_options
+
+    @default_library_options.setter
+    def default_library_options(self, default_library_options):
+        """Sets the default_library_options of this LibraryOptionsResult.
+
+
+        :param default_library_options: The default_library_options of this LibraryOptionsResult.  # noqa: E501
+        :type: LibraryOptions
+        """
+
+        self._default_library_options = default_library_options
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.0.50
+  version: 4.9.0.51
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -24344,7 +24344,7 @@ paths:
       tags:
       - ItemUpdateService
       summary: Updates an item
-      description: Requires authentication as administrator
+      description: Requires authentication as user
       operationId: postItemsByItemid
       parameters:
       - name: ItemId
@@ -24381,7 +24381,7 @@ paths:
       security:
       - apikeyauth: []
       - embyauth: []
-      x-RequiredAuthentication: Requires authentication as administrator
+      x-RequiredAuthentication: Requires authentication as user
   /Items/Prefixes:
     summary: Gets items based on a query.
     get:
@@ -45478,7 +45478,7 @@ paths:
       tags:
       - ItemUpdateService
       summary: Gets metadata editor info for an item
-      description: Requires authentication as administrator
+      description: Requires authentication as user
       operationId: getItemsByItemidMetadataeditor
       parameters:
       - name: ItemId
@@ -45512,7 +45512,7 @@ paths:
       security:
       - apikeyauth: []
       - embyauth: []
-      x-RequiredAuthentication: Requires authentication as administrator
+      x-RequiredAuthentication: Requires authentication as user
   /Items/{Id}/MakePublic:
     summary: Makes an item public to all users
     post:
@@ -88527,10 +88527,134 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LibraryTypeOptions'
+        DefaultLibraryOptions:
+          $ref: '#/components/schemas/LibraryOptions'
       example:
         LyricsFetchers:
         - null
         - null
+        DefaultLibraryOptions:
+          LyricsDownloadMaxAgeDays: 7
+          SaveLyricsWithMedia: true
+          EnableMarkerDetection: true
+          ContentType: ContentType
+          SaveSubtitlesWithMedia: true
+          ForcedSubtitlesOnly: true
+          MetadataCountryCode: MetadataCountryCode
+          MetadataSavers:
+          - MetadataSavers
+          - MetadataSavers
+          SaveMetadataHidden: true
+          SaveLocalMetadata: true
+          PreferredImageLanguage: PreferredImageLanguage
+          EnableMultiVersionByMetadata: true
+          DownloadImagesInAdvance: true
+          ThumbnailImagesIntervalSeconds: 1
+          MaxResumePct: 4
+          MinResumeDurationSeconds: 7
+          EnableAudioResume: true
+          MusicFolderStructure: MusicFolderStructure
+          IgnoreHiddenFiles: true
+          ShareEmbeddedMusicAlbumImages: true
+          TypeOptions:
+          - Type: Type
+            MetadataFetcherOrder:
+            - MetadataFetcherOrder
+            - MetadataFetcherOrder
+            ImageFetchers:
+            - ImageFetchers
+            - ImageFetchers
+            ImageOptions:
+            - null
+            - null
+            ImageFetcherOrder:
+            - ImageFetcherOrder
+            - ImageFetcherOrder
+            MetadataFetchers:
+            - MetadataFetchers
+            - MetadataFetchers
+          - Type: Type
+            MetadataFetcherOrder:
+            - MetadataFetcherOrder
+            - MetadataFetcherOrder
+            ImageFetchers:
+            - ImageFetchers
+            - ImageFetchers
+            ImageOptions:
+            - null
+            - null
+            ImageFetcherOrder:
+            - ImageFetcherOrder
+            - ImageFetcherOrder
+            MetadataFetchers:
+            - MetadataFetchers
+            - MetadataFetchers
+          DisabledLyricsFetchers:
+          - DisabledLyricsFetchers
+          - DisabledLyricsFetchers
+          LyricsDownloadLanguages:
+          - LyricsDownloadLanguages
+          - LyricsDownloadLanguages
+          ImportPlaylists: true
+          EnableRealtimeMonitor: true
+          IntroDetectionFingerprintLength: 1
+          EnableAutomaticSeriesGrouping: true
+          ExtractChapterImagesDuringLibraryScan: true
+          SubtitleDownloadLanguages:
+          - SubtitleDownloadLanguages
+          - SubtitleDownloadLanguages
+          MinResumePct: 2
+          SaveLocalThumbnailSets: true
+          SubtitleDownloadMaxAgeDays: 9
+          EnableAdultMetadata: true
+          SkipSubtitlesIfAudioTrackMatches: true
+          RequirePerfectSubtitleMatch: true
+          DisabledSubtitleFetchers:
+          - DisabledSubtitleFetchers
+          - DisabledSubtitleFetchers
+          EnableMultiPartItems: true
+          LocalMetadataReaderOrder:
+          - LocalMetadataReaderOrder
+          - LocalMetadataReaderOrder
+          LyricsFetcherOrder:
+          - LyricsFetcherOrder
+          - LyricsFetcherOrder
+          HearingImpairedSubtitlesOnly: true
+          CacheImages: true
+          IgnoreFileExtensions:
+          - IgnoreFileExtensions
+          - IgnoreFileExtensions
+          CollapseSingleItemFolders: true
+          EnableMarkerDetectionDuringLibraryScan: true
+          EnableEmbeddedTitles: true
+          PlaceholderMetadataRefreshIntervalDays: 2
+          EnableChapterImageExtraction: true
+          AutomaticRefreshIntervalDays: 5
+          SubtitleFetcherOrder:
+          - SubtitleFetcherOrder
+          - SubtitleFetcherOrder
+          ImportCollections: true
+          AutoGenerateChapters: true
+          EnableArchiveMediaFiles: true
+          AutoGenerateChapterIntervalMinutes: 5
+          EnableMultiVersionByFiles: true
+          DisabledLocalMetadataReaders:
+          - DisabledLocalMetadataReaders
+          - DisabledLocalMetadataReaders
+          PreferredMetadataLanguage: PreferredMetadataLanguage
+          EnablePhotos: true
+          SkipSubtitlesIfEmbeddedSubtitlesPresent: true
+          PathInfos:
+          - Path: Path
+            Username: Username
+            NetworkPath: NetworkPath
+            Password: Password
+          - Path: Path
+            Username: Username
+            NetworkPath: NetworkPath
+            Password: Password
+          SampleIgnoreSize: 1
+          MinCollectionItems: 3
         TypeOptions:
         - DefaultImageOptions:
           - Type: null
@@ -88672,69 +88796,6 @@ components:
         Limit: 0
         MinWidth: 6
       x-internal-ref-name: MediaBrowser.Model.Configuration.ImageOption
-    Library.MediaFolder:
-      type: object
-      properties:
-        Name:
-          type: string
-        Id:
-          type: string
-        Guid:
-          type: string
-        SubFolders:
-          type: array
-          items:
-            $ref: '#/components/schemas/Library.SubFolder'
-        IsUserAccessConfigurable:
-          type: boolean
-      example:
-        IsUserAccessConfigurable: true
-        Id: Id
-        Guid: Guid
-        SubFolders:
-        - Path: Path
-          IsUserAccessConfigurable: true
-          Id: Id
-          Name: Name
-        - Path: Path
-          IsUserAccessConfigurable: true
-          Id: Id
-          Name: Name
-        Name: Name
-      x-internal-ref-name: Emby.Api.Library.MediaFolder
-    Library.SubFolder:
-      type: object
-      properties:
-        Name:
-          type: string
-        Id:
-          type: string
-        Path:
-          type: string
-        IsUserAccessConfigurable:
-          type: boolean
-      example:
-        Path: Path
-        IsUserAccessConfigurable: true
-        Id: Id
-        Name: Name
-      x-internal-ref-name: Emby.Api.Library.SubFolder
-    Library.AddVirtualFolder:
-      type: object
-      properties:
-        Name:
-          type: string
-        CollectionType:
-          type: string
-        RefreshLibrary:
-          type: boolean
-        Paths:
-          type: array
-          items:
-            type: string
-        LibraryOptions:
-          $ref: '#/components/schemas/LibraryOptions'
-      x-internal-ref-name: Emby.Api.Library.AddVirtualFolder
     LibraryOptions:
       type: object
       properties:
@@ -88906,7 +88967,7 @@ components:
           type: integer
           format: int32
       example:
-        LyricsDownloadMaxAgeDays: 5
+        LyricsDownloadMaxAgeDays: 7
         SaveLyricsWithMedia: true
         EnableMarkerDetection: true
         ContentType: ContentType
@@ -88921,9 +88982,9 @@ components:
         PreferredImageLanguage: PreferredImageLanguage
         EnableMultiVersionByMetadata: true
         DownloadImagesInAdvance: true
-        ThumbnailImagesIntervalSeconds: 4
-        MaxResumePct: 3
-        MinResumeDurationSeconds: 2
+        ThumbnailImagesIntervalSeconds: 1
+        MaxResumePct: 4
+        MinResumeDurationSeconds: 7
         EnableAudioResume: true
         MusicFolderStructure: MusicFolderStructure
         IgnoreHiddenFiles: true
@@ -88937,12 +88998,8 @@ components:
           - ImageFetchers
           - ImageFetchers
           ImageOptions:
-          - Type: null
-            Limit: 0
-            MinWidth: 6
-          - Type: null
-            Limit: 0
-            MinWidth: 6
+          - null
+          - null
           ImageFetcherOrder:
           - ImageFetcherOrder
           - ImageFetcherOrder
@@ -88957,12 +89014,8 @@ components:
           - ImageFetchers
           - ImageFetchers
           ImageOptions:
-          - Type: null
-            Limit: 0
-            MinWidth: 6
-          - Type: null
-            Limit: 0
-            MinWidth: 6
+          - null
+          - null
           ImageFetcherOrder:
           - ImageFetcherOrder
           - ImageFetcherOrder
@@ -88977,15 +89030,15 @@ components:
         - LyricsDownloadLanguages
         ImportPlaylists: true
         EnableRealtimeMonitor: true
-        IntroDetectionFingerprintLength: 0
+        IntroDetectionFingerprintLength: 1
         EnableAutomaticSeriesGrouping: true
         ExtractChapterImagesDuringLibraryScan: true
         SubtitleDownloadLanguages:
         - SubtitleDownloadLanguages
         - SubtitleDownloadLanguages
-        MinResumePct: 9
+        MinResumePct: 2
         SaveLocalThumbnailSets: true
-        SubtitleDownloadMaxAgeDays: 2
+        SubtitleDownloadMaxAgeDays: 9
         EnableAdultMetadata: true
         SkipSubtitlesIfAudioTrackMatches: true
         RequirePerfectSubtitleMatch: true
@@ -89007,16 +89060,16 @@ components:
         CollapseSingleItemFolders: true
         EnableMarkerDetectionDuringLibraryScan: true
         EnableEmbeddedTitles: true
-        PlaceholderMetadataRefreshIntervalDays: 5
+        PlaceholderMetadataRefreshIntervalDays: 2
         EnableChapterImageExtraction: true
-        AutomaticRefreshIntervalDays: 1
+        AutomaticRefreshIntervalDays: 5
         SubtitleFetcherOrder:
         - SubtitleFetcherOrder
         - SubtitleFetcherOrder
         ImportCollections: true
         AutoGenerateChapters: true
         EnableArchiveMediaFiles: true
-        AutoGenerateChapterIntervalMinutes: 6
+        AutoGenerateChapterIntervalMinutes: 5
         EnableMultiVersionByFiles: true
         DisabledLocalMetadataReaders:
         - DisabledLocalMetadataReaders
@@ -89033,8 +89086,8 @@ components:
           Username: Username
           NetworkPath: NetworkPath
           Password: Password
-        SampleIgnoreSize: 7
-        MinCollectionItems: 7
+        SampleIgnoreSize: 1
+        MinCollectionItems: 3
       x-internal-ref-name: MediaBrowser.Model.Configuration.LibraryOptions
     MediaPathInfo:
       type: object
@@ -89087,12 +89140,8 @@ components:
         - ImageFetchers
         - ImageFetchers
         ImageOptions:
-        - Type: null
-          Limit: 0
-          MinWidth: 6
-        - Type: null
-          Limit: 0
-          MinWidth: 6
+        - null
+        - null
         ImageFetcherOrder:
         - ImageFetcherOrder
         - ImageFetcherOrder
@@ -89100,6 +89149,69 @@ components:
         - MetadataFetchers
         - MetadataFetchers
       x-internal-ref-name: MediaBrowser.Model.Configuration.TypeOptions
+    Library.MediaFolder:
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          type: string
+        Guid:
+          type: string
+        SubFolders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Library.SubFolder'
+        IsUserAccessConfigurable:
+          type: boolean
+      example:
+        IsUserAccessConfigurable: true
+        Id: Id
+        Guid: Guid
+        SubFolders:
+        - Path: Path
+          IsUserAccessConfigurable: true
+          Id: Id
+          Name: Name
+        - Path: Path
+          IsUserAccessConfigurable: true
+          Id: Id
+          Name: Name
+        Name: Name
+      x-internal-ref-name: Emby.Api.Library.MediaFolder
+    Library.SubFolder:
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          type: string
+        Path:
+          type: string
+        IsUserAccessConfigurable:
+          type: boolean
+      example:
+        Path: Path
+        IsUserAccessConfigurable: true
+        Id: Id
+        Name: Name
+      x-internal-ref-name: Emby.Api.Library.SubFolder
+    Library.AddVirtualFolder:
+      type: object
+      properties:
+        Name:
+          type: string
+        CollectionType:
+          type: string
+        RefreshLibrary:
+          type: boolean
+        Paths:
+          type: array
+          items:
+            type: string
+        LibraryOptions:
+          $ref: '#/components/schemas/LibraryOptions'
+      x-internal-ref-name: Emby.Api.Library.AddVirtualFolder
     LiveStreamRequest:
       type: object
       properties:
@@ -91383,6 +91495,10 @@ components:
           nullable: true
         CollectionTypes:
           type: string
+        ExcludeSources:
+          type: array
+          items:
+            type: string
       x-internal-ref-name: MediaBrowser.Controller.Api.BaseItemsRequest
     LiveTv.KeywordType:
       type: string
@@ -104077,9 +104193,9 @@ components:
           type: integer
           format: int32
       example:
-        TotalRecordCount: 1
+        TotalRecordCount: 6
         Items:
-        - RefreshProgress: 1.2315135367772556
+        - RefreshProgress: 0.8008281904610115
           PrimaryImageItemId: PrimaryImageItemId
           CollectionType: CollectionType
           Locations:
@@ -104087,7 +104203,7 @@ components:
           - Locations
           PrimaryImageTag: PrimaryImageTag
           LibraryOptions:
-            LyricsDownloadMaxAgeDays: 5
+            LyricsDownloadMaxAgeDays: 7
             SaveLyricsWithMedia: true
             EnableMarkerDetection: true
             ContentType: ContentType
@@ -104102,9 +104218,9 @@ components:
             PreferredImageLanguage: PreferredImageLanguage
             EnableMultiVersionByMetadata: true
             DownloadImagesInAdvance: true
-            ThumbnailImagesIntervalSeconds: 4
-            MaxResumePct: 3
-            MinResumeDurationSeconds: 2
+            ThumbnailImagesIntervalSeconds: 1
+            MaxResumePct: 4
+            MinResumeDurationSeconds: 7
             EnableAudioResume: true
             MusicFolderStructure: MusicFolderStructure
             IgnoreHiddenFiles: true
@@ -104118,12 +104234,8 @@ components:
               - ImageFetchers
               - ImageFetchers
               ImageOptions:
-              - Type: null
-                Limit: 0
-                MinWidth: 6
-              - Type: null
-                Limit: 0
-                MinWidth: 6
+              - null
+              - null
               ImageFetcherOrder:
               - ImageFetcherOrder
               - ImageFetcherOrder
@@ -104138,12 +104250,8 @@ components:
               - ImageFetchers
               - ImageFetchers
               ImageOptions:
-              - Type: null
-                Limit: 0
-                MinWidth: 6
-              - Type: null
-                Limit: 0
-                MinWidth: 6
+              - null
+              - null
               ImageFetcherOrder:
               - ImageFetcherOrder
               - ImageFetcherOrder
@@ -104158,15 +104266,15 @@ components:
             - LyricsDownloadLanguages
             ImportPlaylists: true
             EnableRealtimeMonitor: true
-            IntroDetectionFingerprintLength: 0
+            IntroDetectionFingerprintLength: 1
             EnableAutomaticSeriesGrouping: true
             ExtractChapterImagesDuringLibraryScan: true
             SubtitleDownloadLanguages:
             - SubtitleDownloadLanguages
             - SubtitleDownloadLanguages
-            MinResumePct: 9
+            MinResumePct: 2
             SaveLocalThumbnailSets: true
-            SubtitleDownloadMaxAgeDays: 2
+            SubtitleDownloadMaxAgeDays: 9
             EnableAdultMetadata: true
             SkipSubtitlesIfAudioTrackMatches: true
             RequirePerfectSubtitleMatch: true
@@ -104188,16 +104296,16 @@ components:
             CollapseSingleItemFolders: true
             EnableMarkerDetectionDuringLibraryScan: true
             EnableEmbeddedTitles: true
-            PlaceholderMetadataRefreshIntervalDays: 5
+            PlaceholderMetadataRefreshIntervalDays: 2
             EnableChapterImageExtraction: true
-            AutomaticRefreshIntervalDays: 1
+            AutomaticRefreshIntervalDays: 5
             SubtitleFetcherOrder:
             - SubtitleFetcherOrder
             - SubtitleFetcherOrder
             ImportCollections: true
             AutoGenerateChapters: true
             EnableArchiveMediaFiles: true
-            AutoGenerateChapterIntervalMinutes: 6
+            AutoGenerateChapterIntervalMinutes: 5
             EnableMultiVersionByFiles: true
             DisabledLocalMetadataReaders:
             - DisabledLocalMetadataReaders
@@ -104214,14 +104322,14 @@ components:
               Username: Username
               NetworkPath: NetworkPath
               Password: Password
-            SampleIgnoreSize: 7
-            MinCollectionItems: 7
+            SampleIgnoreSize: 1
+            MinCollectionItems: 3
           Id: Id
           Guid: Guid
           ItemId: ItemId
           RefreshStatus: RefreshStatus
           Name: Name
-        - RefreshProgress: 1.2315135367772556
+        - RefreshProgress: 0.8008281904610115
           PrimaryImageItemId: PrimaryImageItemId
           CollectionType: CollectionType
           Locations:
@@ -104229,7 +104337,7 @@ components:
           - Locations
           PrimaryImageTag: PrimaryImageTag
           LibraryOptions:
-            LyricsDownloadMaxAgeDays: 5
+            LyricsDownloadMaxAgeDays: 7
             SaveLyricsWithMedia: true
             EnableMarkerDetection: true
             ContentType: ContentType
@@ -104244,9 +104352,9 @@ components:
             PreferredImageLanguage: PreferredImageLanguage
             EnableMultiVersionByMetadata: true
             DownloadImagesInAdvance: true
-            ThumbnailImagesIntervalSeconds: 4
-            MaxResumePct: 3
-            MinResumeDurationSeconds: 2
+            ThumbnailImagesIntervalSeconds: 1
+            MaxResumePct: 4
+            MinResumeDurationSeconds: 7
             EnableAudioResume: true
             MusicFolderStructure: MusicFolderStructure
             IgnoreHiddenFiles: true
@@ -104260,12 +104368,8 @@ components:
               - ImageFetchers
               - ImageFetchers
               ImageOptions:
-              - Type: null
-                Limit: 0
-                MinWidth: 6
-              - Type: null
-                Limit: 0
-                MinWidth: 6
+              - null
+              - null
               ImageFetcherOrder:
               - ImageFetcherOrder
               - ImageFetcherOrder
@@ -104280,12 +104384,8 @@ components:
               - ImageFetchers
               - ImageFetchers
               ImageOptions:
-              - Type: null
-                Limit: 0
-                MinWidth: 6
-              - Type: null
-                Limit: 0
-                MinWidth: 6
+              - null
+              - null
               ImageFetcherOrder:
               - ImageFetcherOrder
               - ImageFetcherOrder
@@ -104300,15 +104400,15 @@ components:
             - LyricsDownloadLanguages
             ImportPlaylists: true
             EnableRealtimeMonitor: true
-            IntroDetectionFingerprintLength: 0
+            IntroDetectionFingerprintLength: 1
             EnableAutomaticSeriesGrouping: true
             ExtractChapterImagesDuringLibraryScan: true
             SubtitleDownloadLanguages:
             - SubtitleDownloadLanguages
             - SubtitleDownloadLanguages
-            MinResumePct: 9
+            MinResumePct: 2
             SaveLocalThumbnailSets: true
-            SubtitleDownloadMaxAgeDays: 2
+            SubtitleDownloadMaxAgeDays: 9
             EnableAdultMetadata: true
             SkipSubtitlesIfAudioTrackMatches: true
             RequirePerfectSubtitleMatch: true
@@ -104330,16 +104430,16 @@ components:
             CollapseSingleItemFolders: true
             EnableMarkerDetectionDuringLibraryScan: true
             EnableEmbeddedTitles: true
-            PlaceholderMetadataRefreshIntervalDays: 5
+            PlaceholderMetadataRefreshIntervalDays: 2
             EnableChapterImageExtraction: true
-            AutomaticRefreshIntervalDays: 1
+            AutomaticRefreshIntervalDays: 5
             SubtitleFetcherOrder:
             - SubtitleFetcherOrder
             - SubtitleFetcherOrder
             ImportCollections: true
             AutoGenerateChapters: true
             EnableArchiveMediaFiles: true
-            AutoGenerateChapterIntervalMinutes: 6
+            AutoGenerateChapterIntervalMinutes: 5
             EnableMultiVersionByFiles: true
             DisabledLocalMetadataReaders:
             - DisabledLocalMetadataReaders
@@ -104356,8 +104456,8 @@ components:
               Username: Username
               NetworkPath: NetworkPath
               Password: Password
-            SampleIgnoreSize: 7
-            MinCollectionItems: 7
+            SampleIgnoreSize: 1
+            MinCollectionItems: 3
           Id: Id
           Guid: Guid
           ItemId: ItemId
@@ -104401,7 +104501,7 @@ components:
       description: "Used to hold information about a user's list of configured virtual\
         \ folders\r\n"
       example:
-        RefreshProgress: 1.2315135367772556
+        RefreshProgress: 0.8008281904610115
         PrimaryImageItemId: PrimaryImageItemId
         CollectionType: CollectionType
         Locations:
@@ -104409,7 +104509,7 @@ components:
         - Locations
         PrimaryImageTag: PrimaryImageTag
         LibraryOptions:
-          LyricsDownloadMaxAgeDays: 5
+          LyricsDownloadMaxAgeDays: 7
           SaveLyricsWithMedia: true
           EnableMarkerDetection: true
           ContentType: ContentType
@@ -104424,9 +104524,9 @@ components:
           PreferredImageLanguage: PreferredImageLanguage
           EnableMultiVersionByMetadata: true
           DownloadImagesInAdvance: true
-          ThumbnailImagesIntervalSeconds: 4
-          MaxResumePct: 3
-          MinResumeDurationSeconds: 2
+          ThumbnailImagesIntervalSeconds: 1
+          MaxResumePct: 4
+          MinResumeDurationSeconds: 7
           EnableAudioResume: true
           MusicFolderStructure: MusicFolderStructure
           IgnoreHiddenFiles: true
@@ -104440,12 +104540,8 @@ components:
             - ImageFetchers
             - ImageFetchers
             ImageOptions:
-            - Type: null
-              Limit: 0
-              MinWidth: 6
-            - Type: null
-              Limit: 0
-              MinWidth: 6
+            - null
+            - null
             ImageFetcherOrder:
             - ImageFetcherOrder
             - ImageFetcherOrder
@@ -104460,12 +104556,8 @@ components:
             - ImageFetchers
             - ImageFetchers
             ImageOptions:
-            - Type: null
-              Limit: 0
-              MinWidth: 6
-            - Type: null
-              Limit: 0
-              MinWidth: 6
+            - null
+            - null
             ImageFetcherOrder:
             - ImageFetcherOrder
             - ImageFetcherOrder
@@ -104480,15 +104572,15 @@ components:
           - LyricsDownloadLanguages
           ImportPlaylists: true
           EnableRealtimeMonitor: true
-          IntroDetectionFingerprintLength: 0
+          IntroDetectionFingerprintLength: 1
           EnableAutomaticSeriesGrouping: true
           ExtractChapterImagesDuringLibraryScan: true
           SubtitleDownloadLanguages:
           - SubtitleDownloadLanguages
           - SubtitleDownloadLanguages
-          MinResumePct: 9
+          MinResumePct: 2
           SaveLocalThumbnailSets: true
-          SubtitleDownloadMaxAgeDays: 2
+          SubtitleDownloadMaxAgeDays: 9
           EnableAdultMetadata: true
           SkipSubtitlesIfAudioTrackMatches: true
           RequirePerfectSubtitleMatch: true
@@ -104510,16 +104602,16 @@ components:
           CollapseSingleItemFolders: true
           EnableMarkerDetectionDuringLibraryScan: true
           EnableEmbeddedTitles: true
-          PlaceholderMetadataRefreshIntervalDays: 5
+          PlaceholderMetadataRefreshIntervalDays: 2
           EnableChapterImageExtraction: true
-          AutomaticRefreshIntervalDays: 1
+          AutomaticRefreshIntervalDays: 5
           SubtitleFetcherOrder:
           - SubtitleFetcherOrder
           - SubtitleFetcherOrder
           ImportCollections: true
           AutoGenerateChapters: true
           EnableArchiveMediaFiles: true
-          AutoGenerateChapterIntervalMinutes: 6
+          AutoGenerateChapterIntervalMinutes: 5
           EnableMultiVersionByFiles: true
           DisabledLocalMetadataReaders:
           - DisabledLocalMetadataReaders
@@ -104536,8 +104628,8 @@ components:
             Username: Username
             NetworkPath: NetworkPath
             Password: Password
-          SampleIgnoreSize: 7
-          MinCollectionItems: 7
+          SampleIgnoreSize: 1
+          MinCollectionItems: 3
         Id: Id
         Guid: Guid
         ItemId: ItemId

@@ -24,7 +24,7 @@ var (
 type ItemUpdateServiceApiService service
 /*
 ItemUpdateServiceApiService Gets metadata editor info for an item
-Requires authentication as administrator
+Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param itemId The id of the item
 @return MetadataEditorInfo
@@ -122,7 +122,7 @@ func (a *ItemUpdateServiceApiService) GetItemsByItemidMetadataeditor(ctx context
 }
 /*
 ItemUpdateServiceApiService Updates an item
-Requires authentication as administrator
+Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body BaseItemDto: 
  * @param itemId The id of the item

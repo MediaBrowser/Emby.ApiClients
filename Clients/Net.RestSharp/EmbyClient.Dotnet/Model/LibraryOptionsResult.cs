@@ -31,13 +31,15 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="subtitleFetchers">subtitleFetchers.</param>
         /// <param name="lyricsFetchers">lyricsFetchers.</param>
         /// <param name="typeOptions">typeOptions.</param>
-        public LibraryOptionsResult(List<LibraryOptionInfo> metadataSavers = default(List<LibraryOptionInfo>), List<LibraryOptionInfo> metadataReaders = default(List<LibraryOptionInfo>), List<LibraryOptionInfo> subtitleFetchers = default(List<LibraryOptionInfo>), List<LibraryOptionInfo> lyricsFetchers = default(List<LibraryOptionInfo>), List<LibraryTypeOptions> typeOptions = default(List<LibraryTypeOptions>))
+        /// <param name="defaultLibraryOptions">defaultLibraryOptions.</param>
+        public LibraryOptionsResult(List<LibraryOptionInfo> metadataSavers = default(List<LibraryOptionInfo>), List<LibraryOptionInfo> metadataReaders = default(List<LibraryOptionInfo>), List<LibraryOptionInfo> subtitleFetchers = default(List<LibraryOptionInfo>), List<LibraryOptionInfo> lyricsFetchers = default(List<LibraryOptionInfo>), List<LibraryTypeOptions> typeOptions = default(List<LibraryTypeOptions>), LibraryOptions defaultLibraryOptions = default(LibraryOptions))
         {
             this.MetadataSavers = metadataSavers;
             this.MetadataReaders = metadataReaders;
             this.SubtitleFetchers = subtitleFetchers;
             this.LyricsFetchers = lyricsFetchers;
             this.TypeOptions = typeOptions;
+            this.DefaultLibraryOptions = defaultLibraryOptions;
         }
         
         /// <summary>
@@ -71,6 +73,12 @@ namespace EmbyClient.Dotnet.Model
         public List<LibraryTypeOptions> TypeOptions { get; set; }
 
         /// <summary>
+        /// Gets or Sets DefaultLibraryOptions
+        /// </summary>
+        [DataMember(Name="DefaultLibraryOptions", EmitDefaultValue=false)]
+        public LibraryOptions DefaultLibraryOptions { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -83,6 +91,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  SubtitleFetchers: ").Append(SubtitleFetchers).Append("\n");
             sb.Append("  LyricsFetchers: ").Append(LyricsFetchers).Append("\n");
             sb.Append("  TypeOptions: ").Append(TypeOptions).Append("\n");
+            sb.Append("  DefaultLibraryOptions: ").Append(DefaultLibraryOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -146,6 +155,11 @@ namespace EmbyClient.Dotnet.Model
                     this.TypeOptions != null &&
                     input.TypeOptions != null &&
                     this.TypeOptions.SequenceEqual(input.TypeOptions)
+                ) && 
+                (
+                    this.DefaultLibraryOptions == input.DefaultLibraryOptions ||
+                    (this.DefaultLibraryOptions != null &&
+                    this.DefaultLibraryOptions.Equals(input.DefaultLibraryOptions))
                 );
         }
 
@@ -168,6 +182,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.LyricsFetchers.GetHashCode();
                 if (this.TypeOptions != null)
                     hashCode = hashCode * 59 + this.TypeOptions.GetHashCode();
+                if (this.DefaultLibraryOptions != null)
+                    hashCode = hashCode * 59 + this.DefaultLibraryOptions.GetHashCode();
                 return hashCode;
             }
         }

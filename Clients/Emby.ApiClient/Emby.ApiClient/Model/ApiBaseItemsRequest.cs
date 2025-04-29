@@ -231,6 +231,12 @@ namespace Emby.ApiClient.Model
         public string CollectionTypes { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExcludeSources
+        /// </summary>
+        /// <value>The ExcludeSources.</value>
+        public List<string> ExcludeSources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -272,6 +278,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  IsAiring: ").Append(IsAiring).Append("\n");
             sb.Append("  HasAired: ").Append(HasAired).Append("\n");
             sb.Append("  CollectionTypes: ").Append(CollectionTypes).Append("\n");
+            sb.Append("  ExcludeSources: ").Append(ExcludeSources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -468,6 +475,12 @@ namespace Emby.ApiClient.Model
                     this.CollectionTypes == input.CollectionTypes ||
                     (this.CollectionTypes != null &&
                     this.CollectionTypes.Equals(input.CollectionTypes))
+                ) && 
+                (
+                    this.ExcludeSources == input.ExcludeSources ||
+                    this.ExcludeSources != null &&
+                    input.ExcludeSources != null &&
+                    this.ExcludeSources.SequenceEqual(input.ExcludeSources)
                 );
         }
 
@@ -548,6 +561,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.HasAired.GetHashCode();
                 if (this.CollectionTypes != null)
                     hashCode = hashCode * 59 + this.CollectionTypes.GetHashCode();
+                if (this.ExcludeSources != null)
+                    hashCode = hashCode * 59 + this.ExcludeSources.GetHashCode();
                 return hashCode;
             }
         }

@@ -13,6 +13,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import embyclient.model.LibraryOptionInfo;
+import embyclient.model.LibraryOptions;
 import embyclient.model.LibraryTypeOptions;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -38,6 +39,9 @@ public class LibraryOptionsResult {
 
   @SerializedName("TypeOptions")
   private List<LibraryTypeOptions> typeOptions = null;
+
+  @SerializedName("DefaultLibraryOptions")
+  private LibraryOptions defaultLibraryOptions = null;
 
   public LibraryOptionsResult metadataSavers(List<LibraryOptionInfo> metadataSavers) {
     this.metadataSavers = metadataSavers;
@@ -169,6 +173,24 @@ public class LibraryOptionsResult {
     this.typeOptions = typeOptions;
   }
 
+  public LibraryOptionsResult defaultLibraryOptions(LibraryOptions defaultLibraryOptions) {
+    this.defaultLibraryOptions = defaultLibraryOptions;
+    return this;
+  }
+
+   /**
+   * Get defaultLibraryOptions
+   * @return defaultLibraryOptions
+  **/
+  @Schema(description = "")
+  public LibraryOptions getDefaultLibraryOptions() {
+    return defaultLibraryOptions;
+  }
+
+  public void setDefaultLibraryOptions(LibraryOptions defaultLibraryOptions) {
+    this.defaultLibraryOptions = defaultLibraryOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -183,12 +205,13 @@ public class LibraryOptionsResult {
         Objects.equals(this.metadataReaders, libraryOptionsResult.metadataReaders) &&
         Objects.equals(this.subtitleFetchers, libraryOptionsResult.subtitleFetchers) &&
         Objects.equals(this.lyricsFetchers, libraryOptionsResult.lyricsFetchers) &&
-        Objects.equals(this.typeOptions, libraryOptionsResult.typeOptions);
+        Objects.equals(this.typeOptions, libraryOptionsResult.typeOptions) &&
+        Objects.equals(this.defaultLibraryOptions, libraryOptionsResult.defaultLibraryOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metadataSavers, metadataReaders, subtitleFetchers, lyricsFetchers, typeOptions);
+    return Objects.hash(metadataSavers, metadataReaders, subtitleFetchers, lyricsFetchers, typeOptions, defaultLibraryOptions);
   }
 
 
@@ -202,6 +225,7 @@ public class LibraryOptionsResult {
     sb.append("    subtitleFetchers: ").append(toIndentedString(subtitleFetchers)).append("\n");
     sb.append("    lyricsFetchers: ").append(toIndentedString(lyricsFetchers)).append("\n");
     sb.append("    typeOptions: ").append(toIndentedString(typeOptions)).append("\n");
+    sb.append("    defaultLibraryOptions: ").append(toIndentedString(defaultLibraryOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

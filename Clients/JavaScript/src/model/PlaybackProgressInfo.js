@@ -20,7 +20,7 @@ import SleepTimerMode from './SleepTimerMode';
 /**
 * The PlaybackProgressInfo model module.
 * @module model/PlaybackProgressInfo
-* @version 4.9.0.50
+* @version 4.9.0.51
 */
 export default class PlaybackProgressInfo {
     /**

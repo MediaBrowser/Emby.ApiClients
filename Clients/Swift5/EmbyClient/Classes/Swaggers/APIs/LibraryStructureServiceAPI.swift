@@ -109,15 +109,15 @@ open class LibraryStructureServiceAPI {
        - type: http
        - name: embyauth
      - examples: [{contentType=application/json, example={
-  "TotalRecordCount" : 1,
+  "TotalRecordCount" : 6,
   "Items" : [ {
-    "RefreshProgress" : 1.2315135367772556,
+    "RefreshProgress" : 0.8008281904610115,
     "PrimaryImageItemId" : "PrimaryImageItemId",
     "CollectionType" : "CollectionType",
     "Locations" : [ "Locations", "Locations" ],
     "PrimaryImageTag" : "PrimaryImageTag",
     "LibraryOptions" : {
-      "LyricsDownloadMaxAgeDays" : 5,
+      "LyricsDownloadMaxAgeDays" : 7,
       "SaveLyricsWithMedia" : true,
       "EnableMarkerDetection" : true,
       "ContentType" : "ContentType",
@@ -130,9 +130,9 @@ open class LibraryStructureServiceAPI {
       "PreferredImageLanguage" : "PreferredImageLanguage",
       "EnableMultiVersionByMetadata" : true,
       "DownloadImagesInAdvance" : true,
-      "ThumbnailImagesIntervalSeconds" : 4,
-      "MaxResumePct" : 3,
-      "MinResumeDurationSeconds" : 2,
+      "ThumbnailImagesIntervalSeconds" : 1,
+      "MaxResumePct" : 4,
+      "MinResumeDurationSeconds" : 7,
       "EnableAudioResume" : true,
       "MusicFolderStructure" : "MusicFolderStructure",
       "IgnoreHiddenFiles" : true,
@@ -141,26 +141,14 @@ open class LibraryStructureServiceAPI {
         "Type" : "Type",
         "MetadataFetcherOrder" : [ "MetadataFetcherOrder", "MetadataFetcherOrder" ],
         "ImageFetchers" : [ "ImageFetchers", "ImageFetchers" ],
-        "ImageOptions" : [ {
-          "Limit" : 0,
-          "MinWidth" : 6
-        }, {
-          "Limit" : 0,
-          "MinWidth" : 6
-        } ],
+        "ImageOptions" : [ null, null ],
         "ImageFetcherOrder" : [ "ImageFetcherOrder", "ImageFetcherOrder" ],
         "MetadataFetchers" : [ "MetadataFetchers", "MetadataFetchers" ]
       }, {
         "Type" : "Type",
         "MetadataFetcherOrder" : [ "MetadataFetcherOrder", "MetadataFetcherOrder" ],
         "ImageFetchers" : [ "ImageFetchers", "ImageFetchers" ],
-        "ImageOptions" : [ {
-          "Limit" : 0,
-          "MinWidth" : 6
-        }, {
-          "Limit" : 0,
-          "MinWidth" : 6
-        } ],
+        "ImageOptions" : [ null, null ],
         "ImageFetcherOrder" : [ "ImageFetcherOrder", "ImageFetcherOrder" ],
         "MetadataFetchers" : [ "MetadataFetchers", "MetadataFetchers" ]
       } ],
@@ -168,13 +156,13 @@ open class LibraryStructureServiceAPI {
       "LyricsDownloadLanguages" : [ "LyricsDownloadLanguages", "LyricsDownloadLanguages" ],
       "ImportPlaylists" : true,
       "EnableRealtimeMonitor" : true,
-      "IntroDetectionFingerprintLength" : 0,
+      "IntroDetectionFingerprintLength" : 1,
       "EnableAutomaticSeriesGrouping" : true,
       "ExtractChapterImagesDuringLibraryScan" : true,
       "SubtitleDownloadLanguages" : [ "SubtitleDownloadLanguages", "SubtitleDownloadLanguages" ],
-      "MinResumePct" : 9,
+      "MinResumePct" : 2,
       "SaveLocalThumbnailSets" : true,
-      "SubtitleDownloadMaxAgeDays" : 2,
+      "SubtitleDownloadMaxAgeDays" : 9,
       "EnableAdultMetadata" : true,
       "SkipSubtitlesIfAudioTrackMatches" : true,
       "RequirePerfectSubtitleMatch" : true,
@@ -188,14 +176,14 @@ open class LibraryStructureServiceAPI {
       "CollapseSingleItemFolders" : true,
       "EnableMarkerDetectionDuringLibraryScan" : true,
       "EnableEmbeddedTitles" : true,
-      "PlaceholderMetadataRefreshIntervalDays" : 5,
+      "PlaceholderMetadataRefreshIntervalDays" : 2,
       "EnableChapterImageExtraction" : true,
-      "AutomaticRefreshIntervalDays" : 1,
+      "AutomaticRefreshIntervalDays" : 5,
       "SubtitleFetcherOrder" : [ "SubtitleFetcherOrder", "SubtitleFetcherOrder" ],
       "ImportCollections" : true,
       "AutoGenerateChapters" : true,
       "EnableArchiveMediaFiles" : true,
-      "AutoGenerateChapterIntervalMinutes" : 6,
+      "AutoGenerateChapterIntervalMinutes" : 5,
       "EnableMultiVersionByFiles" : true,
       "DisabledLocalMetadataReaders" : [ "DisabledLocalMetadataReaders", "DisabledLocalMetadataReaders" ],
       "PreferredMetadataLanguage" : "PreferredMetadataLanguage",
@@ -212,8 +200,8 @@ open class LibraryStructureServiceAPI {
         "NetworkPath" : "NetworkPath",
         "Password" : "Password"
       } ],
-      "SampleIgnoreSize" : 7,
-      "MinCollectionItems" : 7
+      "SampleIgnoreSize" : 1,
+      "MinCollectionItems" : 3
     },
     "Id" : "Id",
     "Guid" : "Guid",
@@ -221,13 +209,13 @@ open class LibraryStructureServiceAPI {
     "RefreshStatus" : "RefreshStatus",
     "Name" : "Name"
   }, {
-    "RefreshProgress" : 1.2315135367772556,
+    "RefreshProgress" : 0.8008281904610115,
     "PrimaryImageItemId" : "PrimaryImageItemId",
     "CollectionType" : "CollectionType",
     "Locations" : [ "Locations", "Locations" ],
     "PrimaryImageTag" : "PrimaryImageTag",
     "LibraryOptions" : {
-      "LyricsDownloadMaxAgeDays" : 5,
+      "LyricsDownloadMaxAgeDays" : 7,
       "SaveLyricsWithMedia" : true,
       "EnableMarkerDetection" : true,
       "ContentType" : "ContentType",
@@ -240,9 +228,9 @@ open class LibraryStructureServiceAPI {
       "PreferredImageLanguage" : "PreferredImageLanguage",
       "EnableMultiVersionByMetadata" : true,
       "DownloadImagesInAdvance" : true,
-      "ThumbnailImagesIntervalSeconds" : 4,
-      "MaxResumePct" : 3,
-      "MinResumeDurationSeconds" : 2,
+      "ThumbnailImagesIntervalSeconds" : 1,
+      "MaxResumePct" : 4,
+      "MinResumeDurationSeconds" : 7,
       "EnableAudioResume" : true,
       "MusicFolderStructure" : "MusicFolderStructure",
       "IgnoreHiddenFiles" : true,
@@ -251,26 +239,14 @@ open class LibraryStructureServiceAPI {
         "Type" : "Type",
         "MetadataFetcherOrder" : [ "MetadataFetcherOrder", "MetadataFetcherOrder" ],
         "ImageFetchers" : [ "ImageFetchers", "ImageFetchers" ],
-        "ImageOptions" : [ {
-          "Limit" : 0,
-          "MinWidth" : 6
-        }, {
-          "Limit" : 0,
-          "MinWidth" : 6
-        } ],
+        "ImageOptions" : [ null, null ],
         "ImageFetcherOrder" : [ "ImageFetcherOrder", "ImageFetcherOrder" ],
         "MetadataFetchers" : [ "MetadataFetchers", "MetadataFetchers" ]
       }, {
         "Type" : "Type",
         "MetadataFetcherOrder" : [ "MetadataFetcherOrder", "MetadataFetcherOrder" ],
         "ImageFetchers" : [ "ImageFetchers", "ImageFetchers" ],
-        "ImageOptions" : [ {
-          "Limit" : 0,
-          "MinWidth" : 6
-        }, {
-          "Limit" : 0,
-          "MinWidth" : 6
-        } ],
+        "ImageOptions" : [ null, null ],
         "ImageFetcherOrder" : [ "ImageFetcherOrder", "ImageFetcherOrder" ],
         "MetadataFetchers" : [ "MetadataFetchers", "MetadataFetchers" ]
       } ],
@@ -278,13 +254,13 @@ open class LibraryStructureServiceAPI {
       "LyricsDownloadLanguages" : [ "LyricsDownloadLanguages", "LyricsDownloadLanguages" ],
       "ImportPlaylists" : true,
       "EnableRealtimeMonitor" : true,
-      "IntroDetectionFingerprintLength" : 0,
+      "IntroDetectionFingerprintLength" : 1,
       "EnableAutomaticSeriesGrouping" : true,
       "ExtractChapterImagesDuringLibraryScan" : true,
       "SubtitleDownloadLanguages" : [ "SubtitleDownloadLanguages", "SubtitleDownloadLanguages" ],
-      "MinResumePct" : 9,
+      "MinResumePct" : 2,
       "SaveLocalThumbnailSets" : true,
-      "SubtitleDownloadMaxAgeDays" : 2,
+      "SubtitleDownloadMaxAgeDays" : 9,
       "EnableAdultMetadata" : true,
       "SkipSubtitlesIfAudioTrackMatches" : true,
       "RequirePerfectSubtitleMatch" : true,
@@ -298,14 +274,14 @@ open class LibraryStructureServiceAPI {
       "CollapseSingleItemFolders" : true,
       "EnableMarkerDetectionDuringLibraryScan" : true,
       "EnableEmbeddedTitles" : true,
-      "PlaceholderMetadataRefreshIntervalDays" : 5,
+      "PlaceholderMetadataRefreshIntervalDays" : 2,
       "EnableChapterImageExtraction" : true,
-      "AutomaticRefreshIntervalDays" : 1,
+      "AutomaticRefreshIntervalDays" : 5,
       "SubtitleFetcherOrder" : [ "SubtitleFetcherOrder", "SubtitleFetcherOrder" ],
       "ImportCollections" : true,
       "AutoGenerateChapters" : true,
       "EnableArchiveMediaFiles" : true,
-      "AutoGenerateChapterIntervalMinutes" : 6,
+      "AutoGenerateChapterIntervalMinutes" : 5,
       "EnableMultiVersionByFiles" : true,
       "DisabledLocalMetadataReaders" : [ "DisabledLocalMetadataReaders", "DisabledLocalMetadataReaders" ],
       "PreferredMetadataLanguage" : "PreferredMetadataLanguage",
@@ -322,8 +298,8 @@ open class LibraryStructureServiceAPI {
         "NetworkPath" : "NetworkPath",
         "Password" : "Password"
       } ],
-      "SampleIgnoreSize" : 7,
-      "MinCollectionItems" : 7
+      "SampleIgnoreSize" : 1,
+      "MinCollectionItems" : 3
     },
     "Id" : "Id",
     "Guid" : "Guid",

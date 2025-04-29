@@ -115,7 +115,7 @@ public class ItemUpdateServiceApi {
 
     /**
      * Gets metadata editor info for an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @param itemId The id of the item (required)
      * @return MetadataEditorInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -127,7 +127,7 @@ public class ItemUpdateServiceApi {
 
     /**
      * Gets metadata editor info for an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @param itemId The id of the item (required)
      * @return ApiResponse&lt;MetadataEditorInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -140,7 +140,7 @@ public class ItemUpdateServiceApi {
 
     /**
      * Gets metadata editor info for an item (asynchronously)
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @param itemId The id of the item (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -245,7 +245,7 @@ public class ItemUpdateServiceApi {
 
     /**
      * Updates an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @param body BaseItemDto:  (required)
      * @param itemId The id of the item (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -256,7 +256,7 @@ public class ItemUpdateServiceApi {
 
     /**
      * Updates an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @param body BaseItemDto:  (required)
      * @param itemId The id of the item (required)
      * @return ApiResponse&lt;Void&gt;
@@ -269,7 +269,7 @@ public class ItemUpdateServiceApi {
 
     /**
      * Updates an item (asynchronously)
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @param body BaseItemDto:  (required)
      * @param itemId The id of the item (required)
      * @param callback The callback to be executed when the API call finishes

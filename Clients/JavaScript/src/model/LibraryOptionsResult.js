@@ -11,12 +11,13 @@
 
 import ApiClient from '../ApiClient';
 import LibraryOptionInfo from './LibraryOptionInfo';
+import LibraryOptions from './LibraryOptions';
 import LibraryTypeOptions from './LibraryTypeOptions';
 
 /**
 * The LibraryOptionsResult model module.
 * @module model/LibraryOptionsResult
-* @version 4.9.0.50
+* @version 4.9.0.51
 */
 export default class LibraryOptionsResult {
     /**
@@ -58,6 +59,9 @@ export default class LibraryOptionsResult {
             if (data.hasOwnProperty('TypeOptions')) {
                 obj['TypeOptions'] = ApiClient.convertToType(data['TypeOptions'], [LibraryTypeOptions]);
             }
+            if (data.hasOwnProperty('DefaultLibraryOptions')) {
+                obj['DefaultLibraryOptions'] = LibraryOptions.constructFromObject(data['DefaultLibraryOptions']);
+            }
         }
         return obj;
     }
@@ -82,6 +86,10 @@ export default class LibraryOptionsResult {
     * @member {Array.<module:model/LibraryTypeOptions>} TypeOptions
     */
     'TypeOptions' = undefined;
+    /**
+    * @member {module:model/LibraryOptions} DefaultLibraryOptions
+    */
+    'DefaultLibraryOptions' = undefined;
 
 
 

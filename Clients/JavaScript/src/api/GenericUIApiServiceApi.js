@@ -16,7 +16,7 @@ import UIViewInfo from '../model/UIViewInfo';
 /**
 * GenericUIApiService service.
 * @module api/GenericUIApiServiceApi
-* @version 4.9.0.50
+* @version 4.9.0.51
 */
 export default class GenericUIApiServiceApi {
 

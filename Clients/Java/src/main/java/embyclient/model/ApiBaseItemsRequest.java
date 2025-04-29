@@ -128,6 +128,9 @@ public class ApiBaseItemsRequest {
   @SerializedName("CollectionTypes")
   private String collectionTypes = null;
 
+  @SerializedName("ExcludeSources")
+  private List<String> excludeSources = null;
+
   public ApiBaseItemsRequest isSpecialEpisode(Boolean isSpecialEpisode) {
     this.isSpecialEpisode = isSpecialEpisode;
     return this;
@@ -756,6 +759,32 @@ public class ApiBaseItemsRequest {
     this.collectionTypes = collectionTypes;
   }
 
+  public ApiBaseItemsRequest excludeSources(List<String> excludeSources) {
+    this.excludeSources = excludeSources;
+    return this;
+  }
+
+  public ApiBaseItemsRequest addExcludeSourcesItem(String excludeSourcesItem) {
+    if (this.excludeSources == null) {
+      this.excludeSources = new ArrayList<>();
+    }
+    this.excludeSources.add(excludeSourcesItem);
+    return this;
+  }
+
+   /**
+   * Get excludeSources
+   * @return excludeSources
+  **/
+  @Schema(description = "")
+  public List<String> getExcludeSources() {
+    return excludeSources;
+  }
+
+  public void setExcludeSources(List<String> excludeSources) {
+    this.excludeSources = excludeSources;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -799,12 +828,13 @@ public class ApiBaseItemsRequest {
         Objects.equals(this.airDays, apiBaseItemsRequest.airDays) &&
         Objects.equals(this.isAiring, apiBaseItemsRequest.isAiring) &&
         Objects.equals(this.hasAired, apiBaseItemsRequest.hasAired) &&
-        Objects.equals(this.collectionTypes, apiBaseItemsRequest.collectionTypes);
+        Objects.equals(this.collectionTypes, apiBaseItemsRequest.collectionTypes) &&
+        Objects.equals(this.excludeSources, apiBaseItemsRequest.excludeSources);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, itemPersonTypes, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes);
+    return Objects.hash(isSpecialEpisode, is4K, enableTotalRecordCount, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, itemPersonTypes, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes, excludeSources);
   }
 
 
@@ -847,6 +877,7 @@ public class ApiBaseItemsRequest {
     sb.append("    isAiring: ").append(toIndentedString(isAiring)).append("\n");
     sb.append("    hasAired: ").append(toIndentedString(hasAired)).append("\n");
     sb.append("    collectionTypes: ").append(toIndentedString(collectionTypes)).append("\n");
+    sb.append("    excludeSources: ").append(toIndentedString(excludeSources)).append("\n");
     sb.append("}");
     return sb.toString();
   }

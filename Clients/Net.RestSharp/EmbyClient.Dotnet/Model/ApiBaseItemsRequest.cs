@@ -60,7 +60,8 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="isAiring">isAiring.</param>
         /// <param name="hasAired">hasAired.</param>
         /// <param name="collectionTypes">collectionTypes.</param>
-        public ApiBaseItemsRequest(bool? isSpecialEpisode = default(bool?), bool? is4K = default(bool?), bool? enableTotalRecordCount = default(bool?), bool? isDuplicate = default(bool?), string name = default(string), string recordingKeyword = default(string), LiveTvKeywordType recordingKeywordType = default(LiveTvKeywordType), int? randomSeed = default(int?), string genreIds = default(string), string collectionIds = default(string), string tagIds = default(string), string excludeTagIds = default(string), List<PersonType> itemPersonTypes = default(List<PersonType>), string excludeArtistIds = default(string), string albumArtistIds = default(string), string composerArtistIds = default(string), string contributingArtistIds = default(string), string albumIds = default(string), string outerIds = default(string), string listItemIds = default(string), string audioLanguages = default(string), string subtitleLanguages = default(string), bool? canEditItems = default(bool?), LibraryItemLinkType groupItemsInto = default(LibraryItemLinkType), bool? isStandaloneSpecial = default(bool?), int? minWidth = default(int?), int? minHeight = default(int?), int? maxWidth = default(int?), int? maxHeight = default(int?), bool? groupProgramsBySeries = default(bool?), List<DayOfWeek> airDays = default(List<DayOfWeek>), bool? isAiring = default(bool?), bool? hasAired = default(bool?), string collectionTypes = default(string))
+        /// <param name="excludeSources">excludeSources.</param>
+        public ApiBaseItemsRequest(bool? isSpecialEpisode = default(bool?), bool? is4K = default(bool?), bool? enableTotalRecordCount = default(bool?), bool? isDuplicate = default(bool?), string name = default(string), string recordingKeyword = default(string), LiveTvKeywordType recordingKeywordType = default(LiveTvKeywordType), int? randomSeed = default(int?), string genreIds = default(string), string collectionIds = default(string), string tagIds = default(string), string excludeTagIds = default(string), List<PersonType> itemPersonTypes = default(List<PersonType>), string excludeArtistIds = default(string), string albumArtistIds = default(string), string composerArtistIds = default(string), string contributingArtistIds = default(string), string albumIds = default(string), string outerIds = default(string), string listItemIds = default(string), string audioLanguages = default(string), string subtitleLanguages = default(string), bool? canEditItems = default(bool?), LibraryItemLinkType groupItemsInto = default(LibraryItemLinkType), bool? isStandaloneSpecial = default(bool?), int? minWidth = default(int?), int? minHeight = default(int?), int? maxWidth = default(int?), int? maxHeight = default(int?), bool? groupProgramsBySeries = default(bool?), List<DayOfWeek> airDays = default(List<DayOfWeek>), bool? isAiring = default(bool?), bool? hasAired = default(bool?), string collectionTypes = default(string), List<string> excludeSources = default(List<string>))
         {
             this.IsSpecialEpisode = isSpecialEpisode;
             this.Is4K = is4K;
@@ -96,6 +97,7 @@ namespace EmbyClient.Dotnet.Model
             this.IsAiring = isAiring;
             this.HasAired = hasAired;
             this.CollectionTypes = collectionTypes;
+            this.ExcludeSources = excludeSources;
         }
         
         /// <summary>
@@ -303,6 +305,12 @@ namespace EmbyClient.Dotnet.Model
         public string CollectionTypes { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExcludeSources
+        /// </summary>
+        [DataMember(Name="ExcludeSources", EmitDefaultValue=false)]
+        public List<string> ExcludeSources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -344,6 +352,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  IsAiring: ").Append(IsAiring).Append("\n");
             sb.Append("  HasAired: ").Append(HasAired).Append("\n");
             sb.Append("  CollectionTypes: ").Append(CollectionTypes).Append("\n");
+            sb.Append("  ExcludeSources: ").Append(ExcludeSources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -549,6 +558,12 @@ namespace EmbyClient.Dotnet.Model
                     this.CollectionTypes == input.CollectionTypes ||
                     (this.CollectionTypes != null &&
                     this.CollectionTypes.Equals(input.CollectionTypes))
+                ) && 
+                (
+                    this.ExcludeSources == input.ExcludeSources ||
+                    this.ExcludeSources != null &&
+                    input.ExcludeSources != null &&
+                    this.ExcludeSources.SequenceEqual(input.ExcludeSources)
                 );
         }
 
@@ -629,6 +644,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.HasAired.GetHashCode();
                 if (this.CollectionTypes != null)
                     hashCode = hashCode * 59 + this.CollectionTypes.GetHashCode();
+                if (this.ExcludeSources != null)
+                    hashCode = hashCode * 59 + this.ExcludeSources.GetHashCode();
                 return hashCode;
             }
         }

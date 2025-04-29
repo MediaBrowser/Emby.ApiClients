@@ -16,7 +16,7 @@ import MetadataEditorInfo from '../model/MetadataEditorInfo';
 /**
 * ItemUpdateService service.
 * @module api/ItemUpdateServiceApi
-* @version 4.9.0.50
+* @version 4.9.0.51
 */
 export default class ItemUpdateServiceApi {
 
@@ -35,7 +35,7 @@ export default class ItemUpdateServiceApi {
 
     /**
      * Gets metadata editor info for an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MetadataEditorInfo} and HTTP response
      */
     getItemsByItemidMetadataeditorWithHttpInfo() {
@@ -65,7 +65,7 @@ export default class ItemUpdateServiceApi {
 
     /**
      * Gets metadata editor info for an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MetadataEditorInfo}
      */
     getItemsByItemidMetadataeditor() {
@@ -78,7 +78,7 @@ export default class ItemUpdateServiceApi {
 
     /**
      * Updates an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     postItemsByItemidWithHttpInfo() {
@@ -108,7 +108,7 @@ export default class ItemUpdateServiceApi {
 
     /**
      * Updates an item
-     * Requires authentication as administrator
+     * Requires authentication as user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     postItemsByItemid() {
