@@ -15,7 +15,7 @@ import MBBackupBackupInfo from './MBBackupBackupInfo';
 /**
 * The MBBackupApiAllBackupsInfo model module.
 * @module model/MBBackupApiAllBackupsInfo
-* @version 4.9.0.52
+* @version 4.9.0.53
 */
 export default class MBBackupApiAllBackupsInfo {
     /**

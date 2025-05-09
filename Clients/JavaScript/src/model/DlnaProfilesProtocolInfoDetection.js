@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The DlnaProfilesProtocolInfoDetection model module.
 * @module model/DlnaProfilesProtocolInfoDetection
-* @version 4.9.0.52
+* @version 4.9.0.53
 */
 export default class DlnaProfilesProtocolInfoDetection {
     /**

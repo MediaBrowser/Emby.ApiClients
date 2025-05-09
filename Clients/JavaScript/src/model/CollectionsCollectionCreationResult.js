@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The CollectionsCollectionCreationResult model module.
 * @module model/CollectionsCollectionCreationResult
-* @version 4.9.0.52
+* @version 4.9.0.53
 */
 export default class CollectionsCollectionCreationResult {
     /**

@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ApiSetChannelMapping model module.
 * @module model/ApiSetChannelMapping
-* @version 4.9.0.52
+* @version 4.9.0.53
 */
 export default class ApiSetChannelMapping {
     /**
