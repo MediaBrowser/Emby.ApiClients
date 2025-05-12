@@ -15,7 +15,7 @@ import MetadataRefreshMode from '../model/MetadataRefreshMode';
 /**
 * ItemRefreshService service.
 * @module api/ItemRefreshServiceApi
-* @version 4.9.0.53
+* @version 4.9.0.54
 */
 export default class ItemRefreshServiceApi {
 

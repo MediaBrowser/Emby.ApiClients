@@ -15,7 +15,7 @@ import RecommendationDto from '../model/RecommendationDto';
 /**
 * MoviesService service.
 * @module api/MoviesServiceApi
-* @version 4.9.0.53
+* @version 4.9.0.54
 */
 export default class MoviesServiceApi {
 
