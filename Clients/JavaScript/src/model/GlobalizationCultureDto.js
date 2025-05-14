@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The GlobalizationCultureDto model module.
 * @module model/GlobalizationCultureDto
-* @version 4.9.0.55
+* @version 4.9.0.56
 */
 export default class GlobalizationCultureDto {
     /**

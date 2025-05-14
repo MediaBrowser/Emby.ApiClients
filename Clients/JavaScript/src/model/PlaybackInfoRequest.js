@@ -15,7 +15,7 @@ import DeviceProfile from './DeviceProfile';
 /**
 * The PlaybackInfoRequest model module.
 * @module model/PlaybackInfoRequest
-* @version 4.9.0.55
+* @version 4.9.0.56
 */
 export default class PlaybackInfoRequest {
     /**

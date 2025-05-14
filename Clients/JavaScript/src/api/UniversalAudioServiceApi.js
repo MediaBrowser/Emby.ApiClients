@@ -14,7 +14,7 @@ import ApiClient from "../ApiClient";
 /**
 * UniversalAudioService service.
 * @module api/UniversalAudioServiceApi
-* @version 4.9.0.55
+* @version 4.9.0.56
 */
 export default class UniversalAudioServiceApi {
 
