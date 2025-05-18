@@ -15,7 +15,7 @@ import QueryResultBaseItemDto from '../model/QueryResultBaseItemDto';
 /**
 * TvShowsService service.
 * @module api/TvShowsServiceApi
-* @version 4.9.0.56
+* @version 4.9.0.57
 */
 export default class TvShowsServiceApi {
 
