@@ -18,7 +18,7 @@ import QueryResultBaseItemDto from '../model/QueryResultBaseItemDto';
 /**
 * PlaylistService service.
 * @module api/PlaylistServiceApi
-* @version 4.9.0.57
+* @version 4.9.0.58
 */
 export default class PlaylistServiceApi {
 

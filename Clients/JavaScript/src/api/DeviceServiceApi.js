@@ -18,7 +18,7 @@ import QueryResultDevicesDeviceInfo from '../model/QueryResultDevicesDeviceInfo'
 /**
 * DeviceService service.
 * @module api/DeviceServiceApi
-* @version 4.9.0.57
+* @version 4.9.0.58
 */
 export default class DeviceServiceApi {
 

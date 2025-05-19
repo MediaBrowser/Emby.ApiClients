@@ -15,7 +15,7 @@ import ServerConfiguration from '../model/ServerConfiguration';
 /**
 * ConfigurationService service.
 * @module api/ConfigurationServiceApi
-* @version 4.9.0.57
+* @version 4.9.0.58
 */
 export default class ConfigurationServiceApi {
 

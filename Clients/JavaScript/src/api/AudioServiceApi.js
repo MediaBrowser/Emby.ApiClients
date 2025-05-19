@@ -15,7 +15,7 @@ import SubtitleDeliveryMethod from '../model/SubtitleDeliveryMethod';
 /**
 * AudioService service.
 * @module api/AudioServiceApi
-* @version 4.9.0.57
+* @version 4.9.0.58
 */
 export default class AudioServiceApi {
 
