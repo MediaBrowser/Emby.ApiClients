@@ -20,7 +20,7 @@ import SleepTimerMode from './SleepTimerMode';
 /**
 * The PlaybackStartInfo model module.
 * @module model/PlaybackStartInfo
-* @version 4.9.0.59
+* @version 4.9.0.60
 */
 export default class PlaybackStartInfo {
     /**
