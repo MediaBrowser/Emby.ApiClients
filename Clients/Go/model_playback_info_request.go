@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 type PlaybackInfoRequest struct {
 	Id string `json:"Id,omitempty"`
@@ -25,6 +25,5 @@ type PlaybackInfoRequest struct {
 	AllowAudioStreamCopy bool `json:"AllowAudioStreamCopy,omitempty"`
 	IsPlayback bool `json:"IsPlayback,omitempty"`
 	AutoOpenLiveStream bool `json:"AutoOpenLiveStream,omitempty"`
-	DirectPlayProtocols []MediaProtocol `json:"DirectPlayProtocols,omitempty"`
 	CurrentPlaySessionId string `json:"CurrentPlaySessionId,omitempty"`
 }

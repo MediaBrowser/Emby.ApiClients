@@ -87,7 +87,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmbyClient.Dotnet\EmbyClient.Dotnet.csproj">
+    <ProjectReference Include="..\Emby.ApiClient\Emby.ApiClient.csproj">
       <Project>{a7541a38-cd5f-46cf-83aa-7b7617f087cf}</Project>
       <Name>EmbyClient.Dotnet</Name>
     </ProjectReference>

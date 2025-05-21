@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 // MetadataFields : Enum MetadataFields  
 type MetadataFields string
 
@@ -28,4 +28,7 @@ const (
 	COMMUNITY_RATING_MetadataFields MetadataFields = "CommunityRating"
 	CRITIC_RATING_MetadataFields MetadataFields = "CriticRating"
 	TAGLINE_MetadataFields MetadataFields = "Tagline"
+	COMPOSERS_MetadataFields MetadataFields = "Composers"
+	ARTISTS_MetadataFields MetadataFields = "Artists"
+	ALBUM_ARTISTS_MetadataFields MetadataFields = "AlbumArtists"
 )

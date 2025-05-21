@@ -51,6 +51,12 @@ namespace Emby.ApiClient.Model
         public List<ExternalIdInfo> ExternalIdInfos { get; set; }
 
         /// <summary>
+        /// Gets or Sets PersonExternalIdInfos
+        /// </summary>
+        /// <value>The PersonExternalIdInfos.</value>
+        public List<ExternalIdInfo> PersonExternalIdInfos { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +68,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  Countries: ").Append(Countries).Append("\n");
             sb.Append("  Cultures: ").Append(Cultures).Append("\n");
             sb.Append("  ExternalIdInfos: ").Append(ExternalIdInfos).Append("\n");
+            sb.Append("  PersonExternalIdInfos: ").Append(PersonExternalIdInfos).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +117,12 @@ namespace Emby.ApiClient.Model
                     this.ExternalIdInfos != null &&
                     input.ExternalIdInfos != null &&
                     this.ExternalIdInfos.SequenceEqual(input.ExternalIdInfos)
+                ) && 
+                (
+                    this.PersonExternalIdInfos == input.PersonExternalIdInfos ||
+                    this.PersonExternalIdInfos != null &&
+                    input.PersonExternalIdInfos != null &&
+                    this.PersonExternalIdInfos.SequenceEqual(input.PersonExternalIdInfos)
                 );
         }
 
@@ -130,6 +143,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.Cultures.GetHashCode();
                 if (this.ExternalIdInfos != null)
                     hashCode = hashCode * 59 + this.ExternalIdInfos.GetHashCode();
+                if (this.PersonExternalIdInfos != null)
+                    hashCode = hashCode * 59 + this.PersonExternalIdInfos.GetHashCode();
                 return hashCode;
             }
         }

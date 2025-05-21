@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class LibraryOptions {
     /**
@@ -109,6 +109,9 @@ export default class LibraryOptions {
             if (data.hasOwnProperty('AutoGenerateChapters')) {
                 obj['AutoGenerateChapters'] = ApiClient.convertToType(data['AutoGenerateChapters'], 'Boolean');
             }
+            if (data.hasOwnProperty('AutoGenerateChapterIntervalMinutes')) {
+                obj['AutoGenerateChapterIntervalMinutes'] = ApiClient.convertToType(data['AutoGenerateChapterIntervalMinutes'], 'Number');
+            }
             if (data.hasOwnProperty('AutomaticRefreshIntervalDays')) {
                 obj['AutomaticRefreshIntervalDays'] = ApiClient.convertToType(data['AutomaticRefreshIntervalDays'], 'Number');
             }
@@ -192,6 +195,15 @@ export default class LibraryOptions {
             }
             if (data.hasOwnProperty('ImportCollections')) {
                 obj['ImportCollections'] = ApiClient.convertToType(data['ImportCollections'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnableMultiVersionByFiles')) {
+                obj['EnableMultiVersionByFiles'] = ApiClient.convertToType(data['EnableMultiVersionByFiles'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnableMultiVersionByMetadata')) {
+                obj['EnableMultiVersionByMetadata'] = ApiClient.convertToType(data['EnableMultiVersionByMetadata'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnableMultiPartItems')) {
+                obj['EnableMultiPartItems'] = ApiClient.convertToType(data['EnableMultiPartItems'], 'Boolean');
             }
             if (data.hasOwnProperty('MinCollectionItems')) {
                 obj['MinCollectionItems'] = ApiClient.convertToType(data['MinCollectionItems'], 'Number');
@@ -307,6 +319,10 @@ export default class LibraryOptions {
     */
     'AutoGenerateChapters' = undefined;
     /**
+    * @member {Number} AutoGenerateChapterIntervalMinutes
+    */
+    'AutoGenerateChapterIntervalMinutes' = undefined;
+    /**
     * @member {Number} AutomaticRefreshIntervalDays
     */
     'AutomaticRefreshIntervalDays' = undefined;
@@ -420,6 +436,18 @@ export default class LibraryOptions {
     * @member {Boolean} ImportCollections
     */
     'ImportCollections' = undefined;
+    /**
+    * @member {Boolean} EnableMultiVersionByFiles
+    */
+    'EnableMultiVersionByFiles' = undefined;
+    /**
+    * @member {Boolean} EnableMultiVersionByMetadata
+    */
+    'EnableMultiVersionByMetadata' = undefined;
+    /**
+    * @member {Boolean} EnableMultiPartItems
+    */
+    'EnableMultiPartItems' = undefined;
     /**
     * @member {Number} MinCollectionItems
     */

@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 type UserPolicy struct {
 	// A value indicating whether this instance is administrator.
@@ -49,7 +49,6 @@ type UserPolicy struct {
 	EnableAllFolders bool `json:"EnableAllFolders,omitempty"`
 	InvalidLoginAttemptCount int32 `json:"InvalidLoginAttemptCount,omitempty"`
 	EnablePublicSharing bool `json:"EnablePublicSharing,omitempty"`
-	BlockedMediaFolders []string `json:"BlockedMediaFolders,omitempty"`
 	RemoteClientBitrateLimit int32 `json:"RemoteClientBitrateLimit,omitempty"`
 	AuthenticationProviderId string `json:"AuthenticationProviderId,omitempty"`
 	ExcludedSubFolders []string `json:"ExcludedSubFolders,omitempty"`

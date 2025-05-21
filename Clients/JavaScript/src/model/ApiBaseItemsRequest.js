@@ -13,11 +13,12 @@ import ApiClient from '../ApiClient';
 import DayOfWeek from './DayOfWeek';
 import LibraryItemLinkType from './LibraryItemLinkType';
 import LiveTvKeywordType from './LiveTvKeywordType';
+import PersonType from './PersonType';
 
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -44,11 +45,20 @@ export default class ApiBaseItemsRequest {
             obj = obj || new ApiBaseItemsRequest();
                         
             
+            if (data.hasOwnProperty('IsSpecialEpisode')) {
+                obj['IsSpecialEpisode'] = ApiClient.convertToType(data['IsSpecialEpisode'], 'Boolean');
+            }
             if (data.hasOwnProperty('Is4K')) {
                 obj['Is4K'] = ApiClient.convertToType(data['Is4K'], 'Boolean');
             }
             if (data.hasOwnProperty('EnableTotalRecordCount')) {
                 obj['EnableTotalRecordCount'] = ApiClient.convertToType(data['EnableTotalRecordCount'], 'Boolean');
+            }
+            if (data.hasOwnProperty('IsDuplicate')) {
+                obj['IsDuplicate'] = ApiClient.convertToType(data['IsDuplicate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('Name')) {
+                obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
             }
             if (data.hasOwnProperty('RecordingKeyword')) {
                 obj['RecordingKeyword'] = ApiClient.convertToType(data['RecordingKeyword'], 'String');
@@ -71,11 +81,17 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('ExcludeTagIds')) {
                 obj['ExcludeTagIds'] = ApiClient.convertToType(data['ExcludeTagIds'], 'String');
             }
+            if (data.hasOwnProperty('ItemPersonTypes')) {
+                obj['ItemPersonTypes'] = ApiClient.convertToType(data['ItemPersonTypes'], [PersonType]);
+            }
             if (data.hasOwnProperty('ExcludeArtistIds')) {
                 obj['ExcludeArtistIds'] = ApiClient.convertToType(data['ExcludeArtistIds'], 'String');
             }
             if (data.hasOwnProperty('AlbumArtistIds')) {
                 obj['AlbumArtistIds'] = ApiClient.convertToType(data['AlbumArtistIds'], 'String');
+            }
+            if (data.hasOwnProperty('ComposerArtistIds')) {
+                obj['ComposerArtistIds'] = ApiClient.convertToType(data['ComposerArtistIds'], 'String');
             }
             if (data.hasOwnProperty('ContributingArtistIds')) {
                 obj['ContributingArtistIds'] = ApiClient.convertToType(data['ContributingArtistIds'], 'String');
@@ -101,6 +117,9 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('GroupItemsInto')) {
                 obj['GroupItemsInto'] = LibraryItemLinkType.constructFromObject(data['GroupItemsInto']);
             }
+            if (data.hasOwnProperty('IsStandaloneSpecial')) {
+                obj['IsStandaloneSpecial'] = ApiClient.convertToType(data['IsStandaloneSpecial'], 'Boolean');
+            }
             if (data.hasOwnProperty('MinWidth')) {
                 obj['MinWidth'] = ApiClient.convertToType(data['MinWidth'], 'Number');
             }
@@ -125,10 +144,20 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('HasAired')) {
                 obj['HasAired'] = ApiClient.convertToType(data['HasAired'], 'Boolean');
             }
+            if (data.hasOwnProperty('CollectionTypes')) {
+                obj['CollectionTypes'] = ApiClient.convertToType(data['CollectionTypes'], 'String');
+            }
+            if (data.hasOwnProperty('ExcludeSources')) {
+                obj['ExcludeSources'] = ApiClient.convertToType(data['ExcludeSources'], ['String']);
+            }
         }
         return obj;
     }
 
+    /**
+    * @member {Boolean} IsSpecialEpisode
+    */
+    'IsSpecialEpisode' = undefined;
     /**
     * @member {Boolean} Is4K
     */
@@ -137,6 +166,14 @@ export default class ApiBaseItemsRequest {
     * @member {Boolean} EnableTotalRecordCount
     */
     'EnableTotalRecordCount' = undefined;
+    /**
+    * @member {Boolean} IsDuplicate
+    */
+    'IsDuplicate' = undefined;
+    /**
+    * @member {String} Name
+    */
+    'Name' = undefined;
     /**
     * @member {String} RecordingKeyword
     */
@@ -166,6 +203,10 @@ export default class ApiBaseItemsRequest {
     */
     'ExcludeTagIds' = undefined;
     /**
+    * @member {Array.<module:model/PersonType>} ItemPersonTypes
+    */
+    'ItemPersonTypes' = undefined;
+    /**
     * @member {String} ExcludeArtistIds
     */
     'ExcludeArtistIds' = undefined;
@@ -173,6 +214,10 @@ export default class ApiBaseItemsRequest {
     * @member {String} AlbumArtistIds
     */
     'AlbumArtistIds' = undefined;
+    /**
+    * @member {String} ComposerArtistIds
+    */
+    'ComposerArtistIds' = undefined;
     /**
     * @member {String} ContributingArtistIds
     */
@@ -206,6 +251,10 @@ export default class ApiBaseItemsRequest {
     */
     'GroupItemsInto' = undefined;
     /**
+    * @member {Boolean} IsStandaloneSpecial
+    */
+    'IsStandaloneSpecial' = undefined;
+    /**
     * @member {Number} MinWidth
     */
     'MinWidth' = undefined;
@@ -237,6 +286,14 @@ export default class ApiBaseItemsRequest {
     * @member {Boolean} HasAired
     */
     'HasAired' = undefined;
+    /**
+    * @member {String} CollectionTypes
+    */
+    'CollectionTypes' = undefined;
+    /**
+    * @member {Array.<String>} ExcludeSources
+    */
+    'ExcludeSources' = undefined;
 
 
 

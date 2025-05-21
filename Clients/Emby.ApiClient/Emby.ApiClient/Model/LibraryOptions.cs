@@ -159,6 +159,12 @@ namespace Emby.ApiClient.Model
         public bool? AutoGenerateChapters { get; set; }
 
         /// <summary>
+        /// Gets or Sets AutoGenerateChapterIntervalMinutes
+        /// </summary>
+        /// <value>The AutoGenerateChapterIntervalMinutes.</value>
+        public int? AutoGenerateChapterIntervalMinutes { get; set; }
+
+        /// <summary>
         /// Gets or Sets AutomaticRefreshIntervalDays
         /// </summary>
         /// <value>The AutomaticRefreshIntervalDays.</value>
@@ -327,6 +333,24 @@ namespace Emby.ApiClient.Model
         public bool? ImportCollections { get; set; }
 
         /// <summary>
+        /// Gets or Sets EnableMultiVersionByFiles
+        /// </summary>
+        /// <value>The EnableMultiVersionByFiles.</value>
+        public bool? EnableMultiVersionByFiles { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnableMultiVersionByMetadata
+        /// </summary>
+        /// <value>The EnableMultiVersionByMetadata.</value>
+        public bool? EnableMultiVersionByMetadata { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnableMultiPartItems
+        /// </summary>
+        /// <value>The EnableMultiPartItems.</value>
+        public bool? EnableMultiPartItems { get; set; }
+
+        /// <summary>
         /// Gets or Sets MinCollectionItems
         /// </summary>
         /// <value>The MinCollectionItems.</value>
@@ -398,6 +422,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  EnableEmbeddedTitles: ").Append(EnableEmbeddedTitles).Append("\n");
             sb.Append("  EnableAudioResume: ").Append(EnableAudioResume).Append("\n");
             sb.Append("  AutoGenerateChapters: ").Append(AutoGenerateChapters).Append("\n");
+            sb.Append("  AutoGenerateChapterIntervalMinutes: ").Append(AutoGenerateChapterIntervalMinutes).Append("\n");
             sb.Append("  AutomaticRefreshIntervalDays: ").Append(AutomaticRefreshIntervalDays).Append("\n");
             sb.Append("  PlaceholderMetadataRefreshIntervalDays: ").Append(PlaceholderMetadataRefreshIntervalDays).Append("\n");
             sb.Append("  PreferredMetadataLanguage: ").Append(PreferredMetadataLanguage).Append("\n");
@@ -426,6 +451,9 @@ namespace Emby.ApiClient.Model
             sb.Append("  CollapseSingleItemFolders: ").Append(CollapseSingleItemFolders).Append("\n");
             sb.Append("  EnableAdultMetadata: ").Append(EnableAdultMetadata).Append("\n");
             sb.Append("  ImportCollections: ").Append(ImportCollections).Append("\n");
+            sb.Append("  EnableMultiVersionByFiles: ").Append(EnableMultiVersionByFiles).Append("\n");
+            sb.Append("  EnableMultiVersionByMetadata: ").Append(EnableMultiVersionByMetadata).Append("\n");
+            sb.Append("  EnableMultiPartItems: ").Append(EnableMultiPartItems).Append("\n");
             sb.Append("  MinCollectionItems: ").Append(MinCollectionItems).Append("\n");
             sb.Append("  MusicFolderStructure: ").Append(MusicFolderStructure).Append("\n");
             sb.Append("  MinResumePct: ").Append(MinResumePct).Append("\n");
@@ -569,6 +597,11 @@ namespace Emby.ApiClient.Model
                     this.AutoGenerateChapters == input.AutoGenerateChapters ||
                     (this.AutoGenerateChapters != null &&
                     this.AutoGenerateChapters.Equals(input.AutoGenerateChapters))
+                ) && 
+                (
+                    this.AutoGenerateChapterIntervalMinutes == input.AutoGenerateChapterIntervalMinutes ||
+                    (this.AutoGenerateChapterIntervalMinutes != null &&
+                    this.AutoGenerateChapterIntervalMinutes.Equals(input.AutoGenerateChapterIntervalMinutes))
                 ) && 
                 (
                     this.AutomaticRefreshIntervalDays == input.AutomaticRefreshIntervalDays ||
@@ -721,6 +754,21 @@ namespace Emby.ApiClient.Model
                     this.ImportCollections.Equals(input.ImportCollections))
                 ) && 
                 (
+                    this.EnableMultiVersionByFiles == input.EnableMultiVersionByFiles ||
+                    (this.EnableMultiVersionByFiles != null &&
+                    this.EnableMultiVersionByFiles.Equals(input.EnableMultiVersionByFiles))
+                ) && 
+                (
+                    this.EnableMultiVersionByMetadata == input.EnableMultiVersionByMetadata ||
+                    (this.EnableMultiVersionByMetadata != null &&
+                    this.EnableMultiVersionByMetadata.Equals(input.EnableMultiVersionByMetadata))
+                ) && 
+                (
+                    this.EnableMultiPartItems == input.EnableMultiPartItems ||
+                    (this.EnableMultiPartItems != null &&
+                    this.EnableMultiPartItems.Equals(input.EnableMultiPartItems))
+                ) && 
+                (
                     this.MinCollectionItems == input.MinCollectionItems ||
                     (this.MinCollectionItems != null &&
                     this.MinCollectionItems.Equals(input.MinCollectionItems))
@@ -810,6 +858,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableAudioResume.GetHashCode();
                 if (this.AutoGenerateChapters != null)
                     hashCode = hashCode * 59 + this.AutoGenerateChapters.GetHashCode();
+                if (this.AutoGenerateChapterIntervalMinutes != null)
+                    hashCode = hashCode * 59 + this.AutoGenerateChapterIntervalMinutes.GetHashCode();
                 if (this.AutomaticRefreshIntervalDays != null)
                     hashCode = hashCode * 59 + this.AutomaticRefreshIntervalDays.GetHashCode();
                 if (this.PlaceholderMetadataRefreshIntervalDays != null)
@@ -866,6 +916,12 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableAdultMetadata.GetHashCode();
                 if (this.ImportCollections != null)
                     hashCode = hashCode * 59 + this.ImportCollections.GetHashCode();
+                if (this.EnableMultiVersionByFiles != null)
+                    hashCode = hashCode * 59 + this.EnableMultiVersionByFiles.GetHashCode();
+                if (this.EnableMultiVersionByMetadata != null)
+                    hashCode = hashCode * 59 + this.EnableMultiVersionByMetadata.GetHashCode();
+                if (this.EnableMultiPartItems != null)
+                    hashCode = hashCode * 59 + this.EnableMultiPartItems.GetHashCode();
                 if (this.MinCollectionItems != null)
                     hashCode = hashCode * 59 + this.MinCollectionItems.GetHashCode();
                 if (this.MusicFolderStructure != null)

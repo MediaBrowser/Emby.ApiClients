@@ -22,7 +22,7 @@ namespace EmbyClient.Dotnet.Api
         /// Gets metadata editor info for an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -33,7 +33,7 @@ namespace EmbyClient.Dotnet.Api
         /// Gets metadata editor info for an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -43,7 +43,7 @@ namespace EmbyClient.Dotnet.Api
         /// Updates an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -55,7 +55,7 @@ namespace EmbyClient.Dotnet.Api
         /// Updates an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -68,7 +68,7 @@ namespace EmbyClient.Dotnet.Api
         /// Gets metadata editor info for an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -79,7 +79,7 @@ namespace EmbyClient.Dotnet.Api
         /// Gets metadata editor info for an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -89,7 +89,7 @@ namespace EmbyClient.Dotnet.Api
         /// Updates an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -101,7 +101,7 @@ namespace EmbyClient.Dotnet.Api
         /// Updates an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -220,7 +220,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Gets metadata editor info for an item Requires authentication as administrator
+        /// Gets metadata editor info for an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -232,7 +232,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Gets metadata editor info for an item Requires authentication as administrator
+        /// Gets metadata editor info for an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -297,7 +297,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Gets metadata editor info for an item Requires authentication as administrator
+        /// Gets metadata editor info for an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -310,7 +310,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Gets metadata editor info for an item Requires authentication as administrator
+        /// Gets metadata editor info for an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="itemId">The id of the item</param>
@@ -375,7 +375,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Updates an item Requires authentication as administrator
+        /// Updates an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -387,7 +387,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Updates an item Requires authentication as administrator
+        /// Updates an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -464,7 +464,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Updates an item Requires authentication as administrator
+        /// Updates an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>
@@ -477,7 +477,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Updates an item Requires authentication as administrator
+        /// Updates an item Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">BaseItemDto: </param>

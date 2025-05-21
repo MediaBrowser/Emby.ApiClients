@@ -225,6 +225,12 @@ namespace Emby.ApiClient.Model
         public int? MaxStaticMusicBitrate { get; set; }
 
         /// <summary>
+        /// Gets or Sets DeclaredFeatures
+        /// </summary>
+        /// <value>The DeclaredFeatures.</value>
+        public List<string> DeclaredFeatures { get; set; }
+
+        /// <summary>
         /// The direct play profiles.
         /// </summary>
         /// <value>The DirectPlayProfiles.</value>
@@ -301,6 +307,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  MaxStreamingBitrate: ").Append(MaxStreamingBitrate).Append("\n");
             sb.Append("  MusicStreamingTranscodingBitrate: ").Append(MusicStreamingTranscodingBitrate).Append("\n");
             sb.Append("  MaxStaticMusicBitrate: ").Append(MaxStaticMusicBitrate).Append("\n");
+            sb.Append("  DeclaredFeatures: ").Append(DeclaredFeatures).Append("\n");
             sb.Append("  DirectPlayProfiles: ").Append(DirectPlayProfiles).Append("\n");
             sb.Append("  TranscodingProfiles: ").Append(TranscodingProfiles).Append("\n");
             sb.Append("  ContainerProfiles: ").Append(ContainerProfiles).Append("\n");
@@ -498,6 +505,12 @@ namespace Emby.ApiClient.Model
                     this.MaxStaticMusicBitrate.Equals(input.MaxStaticMusicBitrate))
                 ) && 
                 (
+                    this.DeclaredFeatures == input.DeclaredFeatures ||
+                    this.DeclaredFeatures != null &&
+                    input.DeclaredFeatures != null &&
+                    this.DeclaredFeatures.SequenceEqual(input.DeclaredFeatures)
+                ) && 
+                (
                     this.DirectPlayProfiles == input.DirectPlayProfiles ||
                     this.DirectPlayProfiles != null &&
                     input.DirectPlayProfiles != null &&
@@ -610,6 +623,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.MusicStreamingTranscodingBitrate.GetHashCode();
                 if (this.MaxStaticMusicBitrate != null)
                     hashCode = hashCode * 59 + this.MaxStaticMusicBitrate.GetHashCode();
+                if (this.DeclaredFeatures != null)
+                    hashCode = hashCode * 59 + this.DeclaredFeatures.GetHashCode();
                 if (this.DirectPlayProfiles != null)
                     hashCode = hashCode * 59 + this.DirectPlayProfiles.GetHashCode();
                 if (this.TranscodingProfiles != null)

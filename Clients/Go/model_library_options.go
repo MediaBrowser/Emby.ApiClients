@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 type LibraryOptions struct {
 	EnableArchiveMediaFiles bool `json:"EnableArchiveMediaFiles,omitempty"`
@@ -29,6 +29,7 @@ type LibraryOptions struct {
 	EnableEmbeddedTitles bool `json:"EnableEmbeddedTitles,omitempty"`
 	EnableAudioResume bool `json:"EnableAudioResume,omitempty"`
 	AutoGenerateChapters bool `json:"AutoGenerateChapters,omitempty"`
+	AutoGenerateChapterIntervalMinutes int32 `json:"AutoGenerateChapterIntervalMinutes,omitempty"`
 	AutomaticRefreshIntervalDays int32 `json:"AutomaticRefreshIntervalDays,omitempty"`
 	PlaceholderMetadataRefreshIntervalDays int32 `json:"PlaceholderMetadataRefreshIntervalDays,omitempty"`
 	// The preferred metadata language.
@@ -59,6 +60,9 @@ type LibraryOptions struct {
 	CollapseSingleItemFolders bool `json:"CollapseSingleItemFolders,omitempty"`
 	EnableAdultMetadata bool `json:"EnableAdultMetadata,omitempty"`
 	ImportCollections bool `json:"ImportCollections,omitempty"`
+	EnableMultiVersionByFiles bool `json:"EnableMultiVersionByFiles,omitempty"`
+	EnableMultiVersionByMetadata bool `json:"EnableMultiVersionByMetadata,omitempty"`
+	EnableMultiPartItems bool `json:"EnableMultiPartItems,omitempty"`
 	MinCollectionItems int32 `json:"MinCollectionItems,omitempty"`
 	MusicFolderStructure string `json:"MusicFolderStructure,omitempty"`
 	// The minimum percentage of an item that must be played in order for playstate to be updated.

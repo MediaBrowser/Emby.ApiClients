@@ -15,11 +15,12 @@ import PlayMethod from './PlayMethod';
 import ProgressEvent from './ProgressEvent';
 import QueueItem from './QueueItem';
 import RepeatMode from './RepeatMode';
+import SleepTimerMode from './SleepTimerMode';
 
 /**
 * The PlaybackProgressInfo model module.
 * @module model/PlaybackProgressInfo
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class PlaybackProgressInfo {
     /**
@@ -50,23 +51,14 @@ export default class PlaybackProgressInfo {
             if (data.hasOwnProperty('CanSeek')) {
                 obj['CanSeek'] = ApiClient.convertToType(data['CanSeek'], 'Boolean');
             }
-            if (data.hasOwnProperty('Item')) {
-                obj['Item'] = BaseItemDto.constructFromObject(data['Item']);
-            }
             if (data.hasOwnProperty('NowPlayingQueue')) {
                 obj['NowPlayingQueue'] = ApiClient.convertToType(data['NowPlayingQueue'], [QueueItem]);
             }
             if (data.hasOwnProperty('PlaylistItemId')) {
                 obj['PlaylistItemId'] = ApiClient.convertToType(data['PlaylistItemId'], 'String');
             }
-            if (data.hasOwnProperty('ItemId')) {
-                obj['ItemId'] = ApiClient.convertToType(data['ItemId'], 'String');
-            }
             if (data.hasOwnProperty('SessionId')) {
                 obj['SessionId'] = ApiClient.convertToType(data['SessionId'], 'String');
-            }
-            if (data.hasOwnProperty('MediaSourceId')) {
-                obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
             }
             if (data.hasOwnProperty('AudioStreamIndex')) {
                 obj['AudioStreamIndex'] = ApiClient.convertToType(data['AudioStreamIndex'], 'Number');
@@ -85,9 +77,6 @@ export default class PlaybackProgressInfo {
             }
             if (data.hasOwnProperty('IsMuted')) {
                 obj['IsMuted'] = ApiClient.convertToType(data['IsMuted'], 'Boolean');
-            }
-            if (data.hasOwnProperty('PositionTicks')) {
-                obj['PositionTicks'] = ApiClient.convertToType(data['PositionTicks'], 'Number');
             }
             if (data.hasOwnProperty('RunTimeTicks')) {
                 obj['RunTimeTicks'] = ApiClient.convertToType(data['RunTimeTicks'], 'Number');
@@ -110,14 +99,14 @@ export default class PlaybackProgressInfo {
             if (data.hasOwnProperty('PlayMethod')) {
                 obj['PlayMethod'] = PlayMethod.constructFromObject(data['PlayMethod']);
             }
-            if (data.hasOwnProperty('LiveStreamId')) {
-                obj['LiveStreamId'] = ApiClient.convertToType(data['LiveStreamId'], 'String');
-            }
-            if (data.hasOwnProperty('PlaySessionId')) {
-                obj['PlaySessionId'] = ApiClient.convertToType(data['PlaySessionId'], 'String');
-            }
             if (data.hasOwnProperty('RepeatMode')) {
                 obj['RepeatMode'] = RepeatMode.constructFromObject(data['RepeatMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerMode')) {
+                obj['SleepTimerMode'] = SleepTimerMode.constructFromObject(data['SleepTimerMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerEndTime')) {
+                obj['SleepTimerEndTime'] = ApiClient.convertToType(data['SleepTimerEndTime'], 'Date');
             }
             if (data.hasOwnProperty('Shuffle')) {
                 obj['Shuffle'] = ApiClient.convertToType(data['Shuffle'], 'Boolean');
@@ -131,6 +120,24 @@ export default class PlaybackProgressInfo {
             if (data.hasOwnProperty('PlaylistItemIds')) {
                 obj['PlaylistItemIds'] = ApiClient.convertToType(data['PlaylistItemIds'], ['String']);
             }
+            if (data.hasOwnProperty('PlaySessionId')) {
+                obj['PlaySessionId'] = ApiClient.convertToType(data['PlaySessionId'], 'String');
+            }
+            if (data.hasOwnProperty('ItemId')) {
+                obj['ItemId'] = ApiClient.convertToType(data['ItemId'], 'String');
+            }
+            if (data.hasOwnProperty('LiveStreamId')) {
+                obj['LiveStreamId'] = ApiClient.convertToType(data['LiveStreamId'], 'String');
+            }
+            if (data.hasOwnProperty('MediaSourceId')) {
+                obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
+            }
+            if (data.hasOwnProperty('Item')) {
+                obj['Item'] = BaseItemDto.constructFromObject(data['Item']);
+            }
+            if (data.hasOwnProperty('PositionTicks')) {
+                obj['PositionTicks'] = ApiClient.convertToType(data['PositionTicks'], 'Number');
+            }
         }
         return obj;
     }
@@ -141,10 +148,6 @@ export default class PlaybackProgressInfo {
     */
     'CanSeek' = undefined;
     /**
-    * @member {module:model/BaseItemDto} Item
-    */
-    'Item' = undefined;
-    /**
     * @member {Array.<module:model/QueueItem>} NowPlayingQueue
     */
     'NowPlayingQueue' = undefined;
@@ -153,20 +156,10 @@ export default class PlaybackProgressInfo {
     */
     'PlaylistItemId' = undefined;
     /**
-    * The item identifier.
-    * @member {String} ItemId
-    */
-    'ItemId' = undefined;
-    /**
     * The session id.
     * @member {String} SessionId
     */
     'SessionId' = undefined;
-    /**
-    * The media version identifier.
-    * @member {String} MediaSourceId
-    */
-    'MediaSourceId' = undefined;
     /**
     * The index of the audio stream.
     * @member {Number} AudioStreamIndex
@@ -195,11 +188,6 @@ export default class PlaybackProgressInfo {
     * @member {Boolean} IsMuted
     */
     'IsMuted' = undefined;
-    /**
-    * The position ticks.
-    * @member {Number} PositionTicks
-    */
-    'PositionTicks' = undefined;
     /**
     * @member {Number} RunTimeTicks
     */
@@ -230,19 +218,17 @@ export default class PlaybackProgressInfo {
     */
     'PlayMethod' = undefined;
     /**
-    * The live stream identifier.
-    * @member {String} LiveStreamId
-    */
-    'LiveStreamId' = undefined;
-    /**
-    * The play session identifier.
-    * @member {String} PlaySessionId
-    */
-    'PlaySessionId' = undefined;
-    /**
     * @member {module:model/RepeatMode} RepeatMode
     */
     'RepeatMode' = undefined;
+    /**
+    * @member {module:model/SleepTimerMode} SleepTimerMode
+    */
+    'SleepTimerMode' = undefined;
+    /**
+    * @member {Date} SleepTimerEndTime
+    */
+    'SleepTimerEndTime' = undefined;
     /**
     * @member {Boolean} Shuffle
     */
@@ -259,6 +245,35 @@ export default class PlaybackProgressInfo {
     * @member {Array.<String>} PlaylistItemIds
     */
     'PlaylistItemIds' = undefined;
+    /**
+    * The play session identifier.
+    * @member {String} PlaySessionId
+    */
+    'PlaySessionId' = undefined;
+    /**
+    * The item identifier.
+    * @member {String} ItemId
+    */
+    'ItemId' = undefined;
+    /**
+    * The live stream identifier.
+    * @member {String} LiveStreamId
+    */
+    'LiveStreamId' = undefined;
+    /**
+    * The media version identifier.
+    * @member {String} MediaSourceId
+    */
+    'MediaSourceId' = undefined;
+    /**
+    * @member {module:model/BaseItemDto} Item
+    */
+    'Item' = undefined;
+    /**
+    * The position ticks.
+    * @member {Number} PositionTicks
+    */
+    'PositionTicks' = undefined;
 
 
 

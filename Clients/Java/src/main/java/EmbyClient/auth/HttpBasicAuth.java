@@ -3,9 +3,9 @@
  * 
  */
 
-package EmbyClient.auth;
+package embyclient.auth;
 
-import EmbyClient.Pair;
+import embyclient.Pair;
 
 import com.squareup.okhttp.Credentials;
 

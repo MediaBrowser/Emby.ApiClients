@@ -421,6 +421,58 @@ namespace Emby.ApiClient.Api
         /// <param name="id">Item Id</param>
         /// <param name="mediaSourceId">MediaSourceId</param>
         /// <param name="index">The subtitle stream index</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async Task<RestResponse<Object>> GetVideosByIdByMediasourceidAttachmentsByIndexStream (string id, string mediaSourceId, int? index)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new ApiException("Missing required parameter 'id' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            }
+            
+            // verify the required parameter 'mediaSourceId' is set
+            if (mediaSourceId == null)
+            {
+                throw new ApiException("Missing required parameter 'mediaSourceId' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            }
+            
+            // verify the required parameter 'index' is set
+            if (index == null)
+            {
+                throw new ApiException("Missing required parameter 'index' when calling SubtitleServiceApi->GetVideosByIdByMediasourceidAttachmentsByIndexStream");
+            }
+            
+            var request = new RestRequest("/Videos/{Id}/{MediaSourceId}/Attachments/{Index}/Stream", Method.Get);
+
+            if (id != null)
+            {
+                request.AddParameter("Id", this.ApiClient.ParameterToString(id), ParameterType.UrlSegment);
+            }
+
+            if (mediaSourceId != null)
+            {
+                request.AddParameter("MediaSourceId", this.ApiClient.ParameterToString(mediaSourceId), ParameterType.UrlSegment);
+            }
+
+            if (index != null)
+            {
+                request.AddParameter("Index", this.ApiClient.ParameterToString(index), ParameterType.UrlSegment);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.ApiClient.RestClient.ExecuteAsync<Object>(request).ConfigureAwait(false);
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Gets subtitles in a specified format.
+        /// </summary>
+        /// <remarks>
+        /// Requires authentication as user
+        /// </remarks>
+        /// <param name="id">Item Id</param>
+        /// <param name="mediaSourceId">MediaSourceId</param>
+        /// <param name="index">The subtitle stream index</param>
         /// <param name="format">Format</param>
         /// <param name="startPositionTicks">StartPositionTicks</param>
         /// <param name="endPositionTicks">EndPositionTicks (optional)</param>

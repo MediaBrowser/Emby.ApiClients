@@ -99,6 +99,12 @@ namespace Emby.ApiClient.Model
         public bool? LogAllQueryTimes { get; set; }
 
         /// <summary>
+        /// Gets or Sets DisableOutgoingIPv6
+        /// </summary>
+        /// <value>The DisableOutgoingIPv6.</value>
+        public bool? DisableOutgoingIPv6 { get; set; }
+
+        /// <summary>
         /// A value indicating whether \\[enable case sensitive item ids\\].
         /// </summary>
         /// <value>The EnableCaseSensitiveItemIds.</value>
@@ -321,6 +327,24 @@ namespace Emby.ApiClient.Model
         public int? DatabaseAnalysisLimit { get; set; }
 
         /// <summary>
+        /// Gets or Sets MaxLibraryDbConnections
+        /// </summary>
+        /// <value>The MaxLibraryDbConnections.</value>
+        public int? MaxLibraryDbConnections { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaxAuthDbConnections
+        /// </summary>
+        /// <value>The MaxAuthDbConnections.</value>
+        public int? MaxAuthDbConnections { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaxOtherDbConnections
+        /// </summary>
+        /// <value>The MaxOtherDbConnections.</value>
+        public int? MaxOtherDbConnections { get; set; }
+
+        /// <summary>
         /// Gets or Sets DisableAsyncIO
         /// </summary>
         /// <value>The DisableAsyncIO.</value>
@@ -424,6 +448,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  AutoRunWebApp: ").Append(AutoRunWebApp).Append("\n");
             sb.Append("  EnableRemoteAccess: ").Append(EnableRemoteAccess).Append("\n");
             sb.Append("  LogAllQueryTimes: ").Append(LogAllQueryTimes).Append("\n");
+            sb.Append("  DisableOutgoingIPv6: ").Append(DisableOutgoingIPv6).Append("\n");
             sb.Append("  EnableCaseSensitiveItemIds: ").Append(EnableCaseSensitiveItemIds).Append("\n");
             sb.Append("  MetadataPath: ").Append(MetadataPath).Append("\n");
             sb.Append("  MetadataNetworkPath: ").Append(MetadataNetworkPath).Append("\n");
@@ -461,6 +486,9 @@ namespace Emby.ApiClient.Model
             sb.Append("  EnablePeopleLetterSubFolders: ").Append(EnablePeopleLetterSubFolders).Append("\n");
             sb.Append("  OptimizeDatabaseOnShutdown: ").Append(OptimizeDatabaseOnShutdown).Append("\n");
             sb.Append("  DatabaseAnalysisLimit: ").Append(DatabaseAnalysisLimit).Append("\n");
+            sb.Append("  MaxLibraryDbConnections: ").Append(MaxLibraryDbConnections).Append("\n");
+            sb.Append("  MaxAuthDbConnections: ").Append(MaxAuthDbConnections).Append("\n");
+            sb.Append("  MaxOtherDbConnections: ").Append(MaxOtherDbConnections).Append("\n");
             sb.Append("  DisableAsyncIO: ").Append(DisableAsyncIO).Append("\n");
             sb.Append("  MigratedToUserItemShares8: ").Append(MigratedToUserItemShares8).Append("\n");
             sb.Append("  MigratedLibraryOptionsToDb: ").Append(MigratedLibraryOptionsToDb).Append("\n");
@@ -559,6 +587,11 @@ namespace Emby.ApiClient.Model
                     this.LogAllQueryTimes == input.LogAllQueryTimes ||
                     (this.LogAllQueryTimes != null &&
                     this.LogAllQueryTimes.Equals(input.LogAllQueryTimes))
+                ) && 
+                (
+                    this.DisableOutgoingIPv6 == input.DisableOutgoingIPv6 ||
+                    (this.DisableOutgoingIPv6 != null &&
+                    this.DisableOutgoingIPv6.Equals(input.DisableOutgoingIPv6))
                 ) && 
                 (
                     this.EnableCaseSensitiveItemIds == input.EnableCaseSensitiveItemIds ||
@@ -752,6 +785,21 @@ namespace Emby.ApiClient.Model
                     this.DatabaseAnalysisLimit.Equals(input.DatabaseAnalysisLimit))
                 ) && 
                 (
+                    this.MaxLibraryDbConnections == input.MaxLibraryDbConnections ||
+                    (this.MaxLibraryDbConnections != null &&
+                    this.MaxLibraryDbConnections.Equals(input.MaxLibraryDbConnections))
+                ) && 
+                (
+                    this.MaxAuthDbConnections == input.MaxAuthDbConnections ||
+                    (this.MaxAuthDbConnections != null &&
+                    this.MaxAuthDbConnections.Equals(input.MaxAuthDbConnections))
+                ) && 
+                (
+                    this.MaxOtherDbConnections == input.MaxOtherDbConnections ||
+                    (this.MaxOtherDbConnections != null &&
+                    this.MaxOtherDbConnections.Equals(input.MaxOtherDbConnections))
+                ) && 
+                (
                     this.DisableAsyncIO == input.DisableAsyncIO ||
                     (this.DisableAsyncIO != null &&
                     this.DisableAsyncIO.Equals(input.DisableAsyncIO))
@@ -856,6 +904,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableRemoteAccess.GetHashCode();
                 if (this.LogAllQueryTimes != null)
                     hashCode = hashCode * 59 + this.LogAllQueryTimes.GetHashCode();
+                if (this.DisableOutgoingIPv6 != null)
+                    hashCode = hashCode * 59 + this.DisableOutgoingIPv6.GetHashCode();
                 if (this.EnableCaseSensitiveItemIds != null)
                     hashCode = hashCode * 59 + this.EnableCaseSensitiveItemIds.GetHashCode();
                 if (this.MetadataPath != null)
@@ -930,6 +980,12 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.OptimizeDatabaseOnShutdown.GetHashCode();
                 if (this.DatabaseAnalysisLimit != null)
                     hashCode = hashCode * 59 + this.DatabaseAnalysisLimit.GetHashCode();
+                if (this.MaxLibraryDbConnections != null)
+                    hashCode = hashCode * 59 + this.MaxLibraryDbConnections.GetHashCode();
+                if (this.MaxAuthDbConnections != null)
+                    hashCode = hashCode * 59 + this.MaxAuthDbConnections.GetHashCode();
+                if (this.MaxOtherDbConnections != null)
+                    hashCode = hashCode * 59 + this.MaxOtherDbConnections.GetHashCode();
                 if (this.DisableAsyncIO != null)
                     hashCode = hashCode * 59 + this.DisableAsyncIO.GetHashCode();
                 if (this.MigratedToUserItemShares8 != null)

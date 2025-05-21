@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The MBBackupApiUserRestoreInfo model module.
 * @module model/MBBackupApiUserRestoreInfo
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class MBBackupApiUserRestoreInfo {
     /**

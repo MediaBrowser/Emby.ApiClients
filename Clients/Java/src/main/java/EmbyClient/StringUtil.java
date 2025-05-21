@@ -3,7 +3,7 @@
  * 
  */
 
-package EmbyClient;
+package embyclient;
 
 public class StringUtil {
   /**

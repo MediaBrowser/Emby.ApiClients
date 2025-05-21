@@ -18,7 +18,7 @@ import ProxyHeaderMode from './ProxyHeaderMode';
 /**
 * The ServerConfiguration model module.
 * @module model/ServerConfiguration
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class ServerConfiguration {
     /**
@@ -81,6 +81,9 @@ export default class ServerConfiguration {
             }
             if (data.hasOwnProperty('LogAllQueryTimes')) {
                 obj['LogAllQueryTimes'] = ApiClient.convertToType(data['LogAllQueryTimes'], 'Boolean');
+            }
+            if (data.hasOwnProperty('DisableOutgoingIPv6')) {
+                obj['DisableOutgoingIPv6'] = ApiClient.convertToType(data['DisableOutgoingIPv6'], 'Boolean');
             }
             if (data.hasOwnProperty('EnableCaseSensitiveItemIds')) {
                 obj['EnableCaseSensitiveItemIds'] = ApiClient.convertToType(data['EnableCaseSensitiveItemIds'], 'Boolean');
@@ -193,6 +196,15 @@ export default class ServerConfiguration {
             if (data.hasOwnProperty('DatabaseAnalysisLimit')) {
                 obj['DatabaseAnalysisLimit'] = ApiClient.convertToType(data['DatabaseAnalysisLimit'], 'Number');
             }
+            if (data.hasOwnProperty('MaxLibraryDbConnections')) {
+                obj['MaxLibraryDbConnections'] = ApiClient.convertToType(data['MaxLibraryDbConnections'], 'Number');
+            }
+            if (data.hasOwnProperty('MaxAuthDbConnections')) {
+                obj['MaxAuthDbConnections'] = ApiClient.convertToType(data['MaxAuthDbConnections'], 'Number');
+            }
+            if (data.hasOwnProperty('MaxOtherDbConnections')) {
+                obj['MaxOtherDbConnections'] = ApiClient.convertToType(data['MaxOtherDbConnections'], 'Number');
+            }
             if (data.hasOwnProperty('DisableAsyncIO')) {
                 obj['DisableAsyncIO'] = ApiClient.convertToType(data['DisableAsyncIO'], 'Boolean');
             }
@@ -295,6 +307,10 @@ export default class ServerConfiguration {
     * @member {Boolean} LogAllQueryTimes
     */
     'LogAllQueryTimes' = undefined;
+    /**
+    * @member {Boolean} DisableOutgoingIPv6
+    */
+    'DisableOutgoingIPv6' = undefined;
     /**
     * A value indicating whether \\[enable case sensitive item ids\\].
     * @member {Boolean} EnableCaseSensitiveItemIds
@@ -451,6 +467,18 @@ export default class ServerConfiguration {
     * @member {Number} DatabaseAnalysisLimit
     */
     'DatabaseAnalysisLimit' = undefined;
+    /**
+    * @member {Number} MaxLibraryDbConnections
+    */
+    'MaxLibraryDbConnections' = undefined;
+    /**
+    * @member {Number} MaxAuthDbConnections
+    */
+    'MaxAuthDbConnections' = undefined;
+    /**
+    * @member {Number} MaxOtherDbConnections
+    */
+    'MaxOtherDbConnections' = undefined;
     /**
     * @member {Boolean} DisableAsyncIO
     */

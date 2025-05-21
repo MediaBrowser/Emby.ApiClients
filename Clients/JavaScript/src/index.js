@@ -15,6 +15,7 @@ import ActionsPostbackAction from './model/ActionsPostbackAction';
 import ActivityLogEntry from './model/ActivityLogEntry';
 import AlbumInfo from './model/AlbumInfo';
 import AllThemeMediaResult from './model/AllThemeMediaResult';
+import ApiAddAdminNotification from './model/ApiAddAdminNotification';
 import ApiAvailableRecordingOptions from './model/ApiAvailableRecordingOptions';
 import ApiBaseItemsRequest from './model/ApiBaseItemsRequest';
 import ApiConfigurationPageInfo from './model/ApiConfigurationPageInfo';
@@ -108,6 +109,7 @@ import ImageOption from './model/ImageOption';
 import ImageProviderInfo from './model/ImageProviderInfo';
 import ImageSavingConvention from './model/ImageSavingConvention';
 import ImageType from './model/ImageType';
+import ImagesBaseDownloadRemoteImage from './model/ImagesBaseDownloadRemoteImage';
 import InstallationInfo from './model/InstallationInfo';
 import ItemCounts from './model/ItemCounts';
 import ItemFileInfo from './model/ItemFileInfo';
@@ -118,17 +120,17 @@ import LibraryAddMediaPath from './model/LibraryAddMediaPath';
 import LibraryAddVirtualFolder from './model/LibraryAddVirtualFolder';
 import LibraryDeleteInfo from './model/LibraryDeleteInfo';
 import LibraryItemLinkType from './model/LibraryItemLinkType';
-import LibraryLibraryOptionInfo from './model/LibraryLibraryOptionInfo';
-import LibraryLibraryOptionsResult from './model/LibraryLibraryOptionsResult';
-import LibraryLibraryTypeOptions from './model/LibraryLibraryTypeOptions';
 import LibraryMediaFolder from './model/LibraryMediaFolder';
 import LibraryMediaUpdateInfo from './model/LibraryMediaUpdateInfo';
+import LibraryOptionInfo from './model/LibraryOptionInfo';
 import LibraryOptions from './model/LibraryOptions';
+import LibraryOptionsResult from './model/LibraryOptionsResult';
 import LibraryPostUpdatedMedia from './model/LibraryPostUpdatedMedia';
 import LibraryRemoveMediaPath from './model/LibraryRemoveMediaPath';
 import LibraryRemoveVirtualFolder from './model/LibraryRemoveVirtualFolder';
 import LibraryRenameVirtualFolder from './model/LibraryRenameVirtualFolder';
 import LibrarySubFolder from './model/LibrarySubFolder';
+import LibraryTypeOptions from './model/LibraryTypeOptions';
 import LibraryUpdateLibraryOptions from './model/LibraryUpdateLibraryOptions';
 import LibraryUpdateMediaPath from './model/LibraryUpdateMediaPath';
 import LibraryUserCopyOptions from './model/LibraryUserCopyOptions';
@@ -198,6 +200,7 @@ import PlaybackProgressInfo from './model/PlaybackProgressInfo';
 import PlaybackStartInfo from './model/PlaybackStartInfo';
 import PlaybackStopInfo from './model/PlaybackStopInfo';
 import PlayerStateInfo from './model/PlayerStateInfo';
+import PlaylistsAddToPlaylistInfo from './model/PlaylistsAddToPlaylistInfo';
 import PlaylistsAddToPlaylistResult from './model/PlaylistsAddToPlaylistResult';
 import PlaylistsPlaylistCreationResult from './model/PlaylistsPlaylistCreationResult';
 import PlaystateCommand from './model/PlaystateCommand';
@@ -262,6 +265,7 @@ import SeriesInfo from './model/SeriesInfo';
 import ServerConfiguration from './model/ServerConfiguration';
 import SessionSessionInfo from './model/SessionSessionInfo';
 import SessionUserInfo from './model/SessionUserInfo';
+import SleepTimerMode from './model/SleepTimerMode';
 import SongInfo from './model/SongInfo';
 import SortOrder from './model/SortOrder';
 import SubtitleDeliveryMethod from './model/SubtitleDeliveryMethod';
@@ -329,84 +333,84 @@ import VideoCodecBase from './model/VideoCodecBase';
 import VideoMediaTypes from './model/VideoMediaTypes';
 import VirtualFolderInfo from './model/VirtualFolderInfo';
 import WakeOnLanInfo from './model/WakeOnLanInfo';
-import ActivityLogServiceApi from './EmbyClient.JavaScript/ActivityLogServiceApi';
-import ArtistsServiceApi from './EmbyClient.JavaScript/ArtistsServiceApi';
-import AudioServiceApi from './EmbyClient.JavaScript/AudioServiceApi';
-import BackupApiApi from './EmbyClient.JavaScript/BackupApiApi';
-import BifServiceApi from './EmbyClient.JavaScript/BifServiceApi';
-import BrandingServiceApi from './EmbyClient.JavaScript/BrandingServiceApi';
-import ChannelServiceApi from './EmbyClient.JavaScript/ChannelServiceApi';
-import CodecParameterServiceApi from './EmbyClient.JavaScript/CodecParameterServiceApi';
-import CollectionServiceApi from './EmbyClient.JavaScript/CollectionServiceApi';
-import ConfigurationServiceApi from './EmbyClient.JavaScript/ConfigurationServiceApi';
-import ConnectServiceApi from './EmbyClient.JavaScript/ConnectServiceApi';
-import DeviceServiceApi from './EmbyClient.JavaScript/DeviceServiceApi';
-import DisplayPreferencesServiceApi from './EmbyClient.JavaScript/DisplayPreferencesServiceApi';
-import DlnaServerServiceApi from './EmbyClient.JavaScript/DlnaServerServiceApi';
-import DlnaServiceApi from './EmbyClient.JavaScript/DlnaServiceApi';
-import DynamicHlsServiceApi from './EmbyClient.JavaScript/DynamicHlsServiceApi';
-import EncodingInfoServiceApi from './EmbyClient.JavaScript/EncodingInfoServiceApi';
-import EnvironmentServiceApi from './EmbyClient.JavaScript/EnvironmentServiceApi';
-import FeatureServiceApi from './EmbyClient.JavaScript/FeatureServiceApi';
-import FfmpegOptionsServiceApi from './EmbyClient.JavaScript/FfmpegOptionsServiceApi';
-import GameGenresServiceApi from './EmbyClient.JavaScript/GameGenresServiceApi';
-import GenericUIApiServiceApi from './EmbyClient.JavaScript/GenericUIApiServiceApi';
-import GenresServiceApi from './EmbyClient.JavaScript/GenresServiceApi';
-import HlsSegmentServiceApi from './EmbyClient.JavaScript/HlsSegmentServiceApi';
-import ImageServiceApi from './EmbyClient.JavaScript/ImageServiceApi';
-import InstantMixServiceApi from './EmbyClient.JavaScript/InstantMixServiceApi';
-import ItemLookupServiceApi from './EmbyClient.JavaScript/ItemLookupServiceApi';
-import ItemRefreshServiceApi from './EmbyClient.JavaScript/ItemRefreshServiceApi';
-import ItemUpdateServiceApi from './EmbyClient.JavaScript/ItemUpdateServiceApi';
-import ItemsServiceApi from './EmbyClient.JavaScript/ItemsServiceApi';
-import LibraryServiceApi from './EmbyClient.JavaScript/LibraryServiceApi';
-import LibraryStructureServiceApi from './EmbyClient.JavaScript/LibraryStructureServiceApi';
-import LiveStreamServiceApi from './EmbyClient.JavaScript/LiveStreamServiceApi';
-import LiveTvServiceApi from './EmbyClient.JavaScript/LiveTvServiceApi';
-import LocalizationServiceApi from './EmbyClient.JavaScript/LocalizationServiceApi';
-import MediaInfoServiceApi from './EmbyClient.JavaScript/MediaInfoServiceApi';
-import MoviesServiceApi from './EmbyClient.JavaScript/MoviesServiceApi';
-import MusicGenresServiceApi from './EmbyClient.JavaScript/MusicGenresServiceApi';
-import NotificationsServiceApi from './EmbyClient.JavaScript/NotificationsServiceApi';
-import OfficialRatingServiceApi from './EmbyClient.JavaScript/OfficialRatingServiceApi';
-import OpenApiServiceApi from './EmbyClient.JavaScript/OpenApiServiceApi';
-import PackageServiceApi from './EmbyClient.JavaScript/PackageServiceApi';
-import PersonsServiceApi from './EmbyClient.JavaScript/PersonsServiceApi';
-import PlaylistServiceApi from './EmbyClient.JavaScript/PlaylistServiceApi';
-import PlaystateServiceApi from './EmbyClient.JavaScript/PlaystateServiceApi';
-import PluginServiceApi from './EmbyClient.JavaScript/PluginServiceApi';
-import RemoteImageServiceApi from './EmbyClient.JavaScript/RemoteImageServiceApi';
-import ScheduledTaskServiceApi from './EmbyClient.JavaScript/ScheduledTaskServiceApi';
-import SessionsServiceApi from './EmbyClient.JavaScript/SessionsServiceApi';
-import StudiosServiceApi from './EmbyClient.JavaScript/StudiosServiceApi';
-import SubtitleOptionsServiceApi from './EmbyClient.JavaScript/SubtitleOptionsServiceApi';
-import SubtitleServiceApi from './EmbyClient.JavaScript/SubtitleServiceApi';
-import SuggestionsServiceApi from './EmbyClient.JavaScript/SuggestionsServiceApi';
-import SyncServiceApi from './EmbyClient.JavaScript/SyncServiceApi';
-import SystemServiceApi from './EmbyClient.JavaScript/SystemServiceApi';
-import TagServiceApi from './EmbyClient.JavaScript/TagServiceApi';
-import ToneMapOptionsServiceApi from './EmbyClient.JavaScript/ToneMapOptionsServiceApi';
-import TrailersServiceApi from './EmbyClient.JavaScript/TrailersServiceApi';
-import TvShowsServiceApi from './EmbyClient.JavaScript/TvShowsServiceApi';
-import UniversalAudioServiceApi from './EmbyClient.JavaScript/UniversalAudioServiceApi';
-import UserLibraryServiceApi from './EmbyClient.JavaScript/UserLibraryServiceApi';
-import UserNotificationsServiceApi from './EmbyClient.JavaScript/UserNotificationsServiceApi';
-import UserServiceApi from './EmbyClient.JavaScript/UserServiceApi';
-import UserViewsServiceApi from './EmbyClient.JavaScript/UserViewsServiceApi';
-import VideoHlsServiceApi from './EmbyClient.JavaScript/VideoHlsServiceApi';
-import VideoServiceApi from './EmbyClient.JavaScript/VideoServiceApi';
-import VideosServiceApi from './EmbyClient.JavaScript/VideosServiceApi';
-import WebAppServiceApi from './EmbyClient.JavaScript/WebAppServiceApi';
+import ActivityLogServiceApi from './api/ActivityLogServiceApi';
+import ArtistsServiceApi from './api/ArtistsServiceApi';
+import AudioServiceApi from './api/AudioServiceApi';
+import BackupApiApi from './api/BackupApiApi';
+import BifServiceApi from './api/BifServiceApi';
+import BrandingServiceApi from './api/BrandingServiceApi';
+import ChannelServiceApi from './api/ChannelServiceApi';
+import CodecParameterServiceApi from './api/CodecParameterServiceApi';
+import CollectionServiceApi from './api/CollectionServiceApi';
+import ConfigurationServiceApi from './api/ConfigurationServiceApi';
+import ConnectServiceApi from './api/ConnectServiceApi';
+import DeviceServiceApi from './api/DeviceServiceApi';
+import DisplayPreferencesServiceApi from './api/DisplayPreferencesServiceApi';
+import DlnaServerServiceApi from './api/DlnaServerServiceApi';
+import DlnaServiceApi from './api/DlnaServiceApi';
+import DynamicHlsServiceApi from './api/DynamicHlsServiceApi';
+import EncodingInfoServiceApi from './api/EncodingInfoServiceApi';
+import EnvironmentServiceApi from './api/EnvironmentServiceApi';
+import FeatureServiceApi from './api/FeatureServiceApi';
+import FfmpegOptionsServiceApi from './api/FfmpegOptionsServiceApi';
+import GameGenresServiceApi from './api/GameGenresServiceApi';
+import GenericUIApiServiceApi from './api/GenericUIApiServiceApi';
+import GenresServiceApi from './api/GenresServiceApi';
+import HlsSegmentServiceApi from './api/HlsSegmentServiceApi';
+import ImageServiceApi from './api/ImageServiceApi';
+import InstantMixServiceApi from './api/InstantMixServiceApi';
+import ItemLookupServiceApi from './api/ItemLookupServiceApi';
+import ItemRefreshServiceApi from './api/ItemRefreshServiceApi';
+import ItemUpdateServiceApi from './api/ItemUpdateServiceApi';
+import ItemsServiceApi from './api/ItemsServiceApi';
+import LibraryServiceApi from './api/LibraryServiceApi';
+import LibraryStructureServiceApi from './api/LibraryStructureServiceApi';
+import LiveStreamServiceApi from './api/LiveStreamServiceApi';
+import LiveTvServiceApi from './api/LiveTvServiceApi';
+import LocalizationServiceApi from './api/LocalizationServiceApi';
+import MediaInfoServiceApi from './api/MediaInfoServiceApi';
+import MoviesServiceApi from './api/MoviesServiceApi';
+import MusicGenresServiceApi from './api/MusicGenresServiceApi';
+import NotificationsServiceApi from './api/NotificationsServiceApi';
+import OfficialRatingServiceApi from './api/OfficialRatingServiceApi';
+import OpenApiServiceApi from './api/OpenApiServiceApi';
+import PackageServiceApi from './api/PackageServiceApi';
+import PersonsServiceApi from './api/PersonsServiceApi';
+import PlaylistServiceApi from './api/PlaylistServiceApi';
+import PlaystateServiceApi from './api/PlaystateServiceApi';
+import PluginServiceApi from './api/PluginServiceApi';
+import RemoteImageServiceApi from './api/RemoteImageServiceApi';
+import ScheduledTaskServiceApi from './api/ScheduledTaskServiceApi';
+import SessionsServiceApi from './api/SessionsServiceApi';
+import StudiosServiceApi from './api/StudiosServiceApi';
+import SubtitleOptionsServiceApi from './api/SubtitleOptionsServiceApi';
+import SubtitleServiceApi from './api/SubtitleServiceApi';
+import SuggestionsServiceApi from './api/SuggestionsServiceApi';
+import SyncServiceApi from './api/SyncServiceApi';
+import SystemServiceApi from './api/SystemServiceApi';
+import TagServiceApi from './api/TagServiceApi';
+import ToneMapOptionsServiceApi from './api/ToneMapOptionsServiceApi';
+import TrailersServiceApi from './api/TrailersServiceApi';
+import TvShowsServiceApi from './api/TvShowsServiceApi';
+import UniversalAudioServiceApi from './api/UniversalAudioServiceApi';
+import UserLibraryServiceApi from './api/UserLibraryServiceApi';
+import UserNotificationsServiceApi from './api/UserNotificationsServiceApi';
+import UserServiceApi from './api/UserServiceApi';
+import UserViewsServiceApi from './api/UserViewsServiceApi';
+import VideoHlsServiceApi from './api/VideoHlsServiceApi';
+import VideoServiceApi from './api/VideoServiceApi';
+import VideosServiceApi from './api/VideosServiceApi';
+import WebAppServiceApi from './api/WebAppServiceApi';
 
 /**
-* A client library for accessing Emby Server via REST API.<br>
+* The official JavaScript client library for Emby Server REST API access.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var EmbyClientJavaScript = require('index'); // See note below*.
-* var xxxSvc = new EmbyClientJavaScript.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new EmbyClientJavaScript.Yyy(); // Construct a model instance.
+* var EmbyclientJs = require('index'); // See note below*.
+* var xxxSvc = new EmbyclientJs.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new EmbyclientJs.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -418,8 +422,8 @@ import WebAppServiceApi from './EmbyClient.JavaScript/WebAppServiceApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new EmbyClientJavaScript.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new EmbyClientJavaScript.Yyy(); // Construct a model instance.
+* var xxxSvc = new EmbyclientJs.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new EmbyclientJs.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -427,7 +431,7 @@ import WebAppServiceApi from './EmbyClient.JavaScript/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export {
     /**
@@ -465,6 +469,12 @@ export {
      * @property {module:model/AllThemeMediaResult}
      */
     AllThemeMediaResult,
+
+    /**
+     * The ApiAddAdminNotification model constructor.
+     * @property {module:model/ApiAddAdminNotification}
+     */
+    ApiAddAdminNotification,
 
     /**
      * The ApiAvailableRecordingOptions model constructor.
@@ -1025,6 +1035,12 @@ export {
     ImageType,
 
     /**
+     * The ImagesBaseDownloadRemoteImage model constructor.
+     * @property {module:model/ImagesBaseDownloadRemoteImage}
+     */
+    ImagesBaseDownloadRemoteImage,
+
+    /**
      * The InstallationInfo model constructor.
      * @property {module:model/InstallationInfo}
      */
@@ -1085,24 +1101,6 @@ export {
     LibraryItemLinkType,
 
     /**
-     * The LibraryLibraryOptionInfo model constructor.
-     * @property {module:model/LibraryLibraryOptionInfo}
-     */
-    LibraryLibraryOptionInfo,
-
-    /**
-     * The LibraryLibraryOptionsResult model constructor.
-     * @property {module:model/LibraryLibraryOptionsResult}
-     */
-    LibraryLibraryOptionsResult,
-
-    /**
-     * The LibraryLibraryTypeOptions model constructor.
-     * @property {module:model/LibraryLibraryTypeOptions}
-     */
-    LibraryLibraryTypeOptions,
-
-    /**
      * The LibraryMediaFolder model constructor.
      * @property {module:model/LibraryMediaFolder}
      */
@@ -1115,10 +1113,22 @@ export {
     LibraryMediaUpdateInfo,
 
     /**
+     * The LibraryOptionInfo model constructor.
+     * @property {module:model/LibraryOptionInfo}
+     */
+    LibraryOptionInfo,
+
+    /**
      * The LibraryOptions model constructor.
      * @property {module:model/LibraryOptions}
      */
     LibraryOptions,
+
+    /**
+     * The LibraryOptionsResult model constructor.
+     * @property {module:model/LibraryOptionsResult}
+     */
+    LibraryOptionsResult,
 
     /**
      * The LibraryPostUpdatedMedia model constructor.
@@ -1149,6 +1159,12 @@ export {
      * @property {module:model/LibrarySubFolder}
      */
     LibrarySubFolder,
+
+    /**
+     * The LibraryTypeOptions model constructor.
+     * @property {module:model/LibraryTypeOptions}
+     */
+    LibraryTypeOptions,
 
     /**
      * The LibraryUpdateLibraryOptions model constructor.
@@ -1565,6 +1581,12 @@ export {
     PlayerStateInfo,
 
     /**
+     * The PlaylistsAddToPlaylistInfo model constructor.
+     * @property {module:model/PlaylistsAddToPlaylistInfo}
+     */
+    PlaylistsAddToPlaylistInfo,
+
+    /**
      * The PlaylistsAddToPlaylistResult model constructor.
      * @property {module:model/PlaylistsAddToPlaylistResult}
      */
@@ -1947,6 +1969,12 @@ export {
      * @property {module:model/SessionUserInfo}
      */
     SessionUserInfo,
+
+    /**
+     * The SleepTimerMode model constructor.
+     * @property {module:model/SleepTimerMode}
+     */
+    SleepTimerMode,
 
     /**
      * The SongInfo model constructor.
@@ -2352,409 +2380,409 @@ export {
 
     /**
     * The ActivityLogServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ActivityLogServiceApi}
+    * @property {module:api/ActivityLogServiceApi}
     */
     ActivityLogServiceApi,
 
     /**
     * The ArtistsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ArtistsServiceApi}
+    * @property {module:api/ArtistsServiceApi}
     */
     ArtistsServiceApi,
 
     /**
     * The AudioServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/AudioServiceApi}
+    * @property {module:api/AudioServiceApi}
     */
     AudioServiceApi,
 
     /**
     * The BackupApiApi service constructor.
-    * @property {module:EmbyClient.JavaScript/BackupApiApi}
+    * @property {module:api/BackupApiApi}
     */
     BackupApiApi,
 
     /**
     * The BifServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/BifServiceApi}
+    * @property {module:api/BifServiceApi}
     */
     BifServiceApi,
 
     /**
     * The BrandingServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/BrandingServiceApi}
+    * @property {module:api/BrandingServiceApi}
     */
     BrandingServiceApi,
 
     /**
     * The ChannelServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ChannelServiceApi}
+    * @property {module:api/ChannelServiceApi}
     */
     ChannelServiceApi,
 
     /**
     * The CodecParameterServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/CodecParameterServiceApi}
+    * @property {module:api/CodecParameterServiceApi}
     */
     CodecParameterServiceApi,
 
     /**
     * The CollectionServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/CollectionServiceApi}
+    * @property {module:api/CollectionServiceApi}
     */
     CollectionServiceApi,
 
     /**
     * The ConfigurationServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ConfigurationServiceApi}
+    * @property {module:api/ConfigurationServiceApi}
     */
     ConfigurationServiceApi,
 
     /**
     * The ConnectServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ConnectServiceApi}
+    * @property {module:api/ConnectServiceApi}
     */
     ConnectServiceApi,
 
     /**
     * The DeviceServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DeviceServiceApi}
+    * @property {module:api/DeviceServiceApi}
     */
     DeviceServiceApi,
 
     /**
     * The DisplayPreferencesServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DisplayPreferencesServiceApi}
+    * @property {module:api/DisplayPreferencesServiceApi}
     */
     DisplayPreferencesServiceApi,
 
     /**
     * The DlnaServerServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DlnaServerServiceApi}
+    * @property {module:api/DlnaServerServiceApi}
     */
     DlnaServerServiceApi,
 
     /**
     * The DlnaServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DlnaServiceApi}
+    * @property {module:api/DlnaServiceApi}
     */
     DlnaServiceApi,
 
     /**
     * The DynamicHlsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/DynamicHlsServiceApi}
+    * @property {module:api/DynamicHlsServiceApi}
     */
     DynamicHlsServiceApi,
 
     /**
     * The EncodingInfoServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/EncodingInfoServiceApi}
+    * @property {module:api/EncodingInfoServiceApi}
     */
     EncodingInfoServiceApi,
 
     /**
     * The EnvironmentServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/EnvironmentServiceApi}
+    * @property {module:api/EnvironmentServiceApi}
     */
     EnvironmentServiceApi,
 
     /**
     * The FeatureServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/FeatureServiceApi}
+    * @property {module:api/FeatureServiceApi}
     */
     FeatureServiceApi,
 
     /**
     * The FfmpegOptionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/FfmpegOptionsServiceApi}
+    * @property {module:api/FfmpegOptionsServiceApi}
     */
     FfmpegOptionsServiceApi,
 
     /**
     * The GameGenresServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/GameGenresServiceApi}
+    * @property {module:api/GameGenresServiceApi}
     */
     GameGenresServiceApi,
 
     /**
     * The GenericUIApiServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/GenericUIApiServiceApi}
+    * @property {module:api/GenericUIApiServiceApi}
     */
     GenericUIApiServiceApi,
 
     /**
     * The GenresServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/GenresServiceApi}
+    * @property {module:api/GenresServiceApi}
     */
     GenresServiceApi,
 
     /**
     * The HlsSegmentServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/HlsSegmentServiceApi}
+    * @property {module:api/HlsSegmentServiceApi}
     */
     HlsSegmentServiceApi,
 
     /**
     * The ImageServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ImageServiceApi}
+    * @property {module:api/ImageServiceApi}
     */
     ImageServiceApi,
 
     /**
     * The InstantMixServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/InstantMixServiceApi}
+    * @property {module:api/InstantMixServiceApi}
     */
     InstantMixServiceApi,
 
     /**
     * The ItemLookupServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemLookupServiceApi}
+    * @property {module:api/ItemLookupServiceApi}
     */
     ItemLookupServiceApi,
 
     /**
     * The ItemRefreshServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemRefreshServiceApi}
+    * @property {module:api/ItemRefreshServiceApi}
     */
     ItemRefreshServiceApi,
 
     /**
     * The ItemUpdateServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemUpdateServiceApi}
+    * @property {module:api/ItemUpdateServiceApi}
     */
     ItemUpdateServiceApi,
 
     /**
     * The ItemsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ItemsServiceApi}
+    * @property {module:api/ItemsServiceApi}
     */
     ItemsServiceApi,
 
     /**
     * The LibraryServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LibraryServiceApi}
+    * @property {module:api/LibraryServiceApi}
     */
     LibraryServiceApi,
 
     /**
     * The LibraryStructureServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LibraryStructureServiceApi}
+    * @property {module:api/LibraryStructureServiceApi}
     */
     LibraryStructureServiceApi,
 
     /**
     * The LiveStreamServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LiveStreamServiceApi}
+    * @property {module:api/LiveStreamServiceApi}
     */
     LiveStreamServiceApi,
 
     /**
     * The LiveTvServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LiveTvServiceApi}
+    * @property {module:api/LiveTvServiceApi}
     */
     LiveTvServiceApi,
 
     /**
     * The LocalizationServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/LocalizationServiceApi}
+    * @property {module:api/LocalizationServiceApi}
     */
     LocalizationServiceApi,
 
     /**
     * The MediaInfoServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/MediaInfoServiceApi}
+    * @property {module:api/MediaInfoServiceApi}
     */
     MediaInfoServiceApi,
 
     /**
     * The MoviesServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/MoviesServiceApi}
+    * @property {module:api/MoviesServiceApi}
     */
     MoviesServiceApi,
 
     /**
     * The MusicGenresServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/MusicGenresServiceApi}
+    * @property {module:api/MusicGenresServiceApi}
     */
     MusicGenresServiceApi,
 
     /**
     * The NotificationsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/NotificationsServiceApi}
+    * @property {module:api/NotificationsServiceApi}
     */
     NotificationsServiceApi,
 
     /**
     * The OfficialRatingServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/OfficialRatingServiceApi}
+    * @property {module:api/OfficialRatingServiceApi}
     */
     OfficialRatingServiceApi,
 
     /**
     * The OpenApiServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/OpenApiServiceApi}
+    * @property {module:api/OpenApiServiceApi}
     */
     OpenApiServiceApi,
 
     /**
     * The PackageServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PackageServiceApi}
+    * @property {module:api/PackageServiceApi}
     */
     PackageServiceApi,
 
     /**
     * The PersonsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PersonsServiceApi}
+    * @property {module:api/PersonsServiceApi}
     */
     PersonsServiceApi,
 
     /**
     * The PlaylistServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PlaylistServiceApi}
+    * @property {module:api/PlaylistServiceApi}
     */
     PlaylistServiceApi,
 
     /**
     * The PlaystateServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PlaystateServiceApi}
+    * @property {module:api/PlaystateServiceApi}
     */
     PlaystateServiceApi,
 
     /**
     * The PluginServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/PluginServiceApi}
+    * @property {module:api/PluginServiceApi}
     */
     PluginServiceApi,
 
     /**
     * The RemoteImageServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/RemoteImageServiceApi}
+    * @property {module:api/RemoteImageServiceApi}
     */
     RemoteImageServiceApi,
 
     /**
     * The ScheduledTaskServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ScheduledTaskServiceApi}
+    * @property {module:api/ScheduledTaskServiceApi}
     */
     ScheduledTaskServiceApi,
 
     /**
     * The SessionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SessionsServiceApi}
+    * @property {module:api/SessionsServiceApi}
     */
     SessionsServiceApi,
 
     /**
     * The StudiosServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/StudiosServiceApi}
+    * @property {module:api/StudiosServiceApi}
     */
     StudiosServiceApi,
 
     /**
     * The SubtitleOptionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SubtitleOptionsServiceApi}
+    * @property {module:api/SubtitleOptionsServiceApi}
     */
     SubtitleOptionsServiceApi,
 
     /**
     * The SubtitleServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SubtitleServiceApi}
+    * @property {module:api/SubtitleServiceApi}
     */
     SubtitleServiceApi,
 
     /**
     * The SuggestionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SuggestionsServiceApi}
+    * @property {module:api/SuggestionsServiceApi}
     */
     SuggestionsServiceApi,
 
     /**
     * The SyncServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SyncServiceApi}
+    * @property {module:api/SyncServiceApi}
     */
     SyncServiceApi,
 
     /**
     * The SystemServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/SystemServiceApi}
+    * @property {module:api/SystemServiceApi}
     */
     SystemServiceApi,
 
     /**
     * The TagServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/TagServiceApi}
+    * @property {module:api/TagServiceApi}
     */
     TagServiceApi,
 
     /**
     * The ToneMapOptionsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/ToneMapOptionsServiceApi}
+    * @property {module:api/ToneMapOptionsServiceApi}
     */
     ToneMapOptionsServiceApi,
 
     /**
     * The TrailersServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/TrailersServiceApi}
+    * @property {module:api/TrailersServiceApi}
     */
     TrailersServiceApi,
 
     /**
     * The TvShowsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/TvShowsServiceApi}
+    * @property {module:api/TvShowsServiceApi}
     */
     TvShowsServiceApi,
 
     /**
     * The UniversalAudioServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UniversalAudioServiceApi}
+    * @property {module:api/UniversalAudioServiceApi}
     */
     UniversalAudioServiceApi,
 
     /**
     * The UserLibraryServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserLibraryServiceApi}
+    * @property {module:api/UserLibraryServiceApi}
     */
     UserLibraryServiceApi,
 
     /**
     * The UserNotificationsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserNotificationsServiceApi}
+    * @property {module:api/UserNotificationsServiceApi}
     */
     UserNotificationsServiceApi,
 
     /**
     * The UserServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserServiceApi}
+    * @property {module:api/UserServiceApi}
     */
     UserServiceApi,
 
     /**
     * The UserViewsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/UserViewsServiceApi}
+    * @property {module:api/UserViewsServiceApi}
     */
     UserViewsServiceApi,
 
     /**
     * The VideoHlsServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/VideoHlsServiceApi}
+    * @property {module:api/VideoHlsServiceApi}
     */
     VideoHlsServiceApi,
 
     /**
     * The VideoServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/VideoServiceApi}
+    * @property {module:api/VideoServiceApi}
     */
     VideoServiceApi,
 
     /**
     * The VideosServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/VideosServiceApi}
+    * @property {module:api/VideosServiceApi}
     */
     VideosServiceApi,
 
     /**
     * The WebAppServiceApi service constructor.
-    * @property {module:EmbyClient.JavaScript/WebAppServiceApi}
+    * @property {module:api/WebAppServiceApi}
     */
     WebAppServiceApi
 };

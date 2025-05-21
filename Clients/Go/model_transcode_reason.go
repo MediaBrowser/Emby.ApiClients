@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 type TranscodeReason string
 
@@ -35,4 +35,6 @@ const (
 	DIRECT_PLAY_ERROR_TranscodeReason TranscodeReason = "DirectPlayError"
 	VIDEO_RANGE_NOT_SUPPORTED_TranscodeReason TranscodeReason = "VideoRangeNotSupported"
 	SUBTITLE_CONTENT_OPTIONS_ENABLED_TranscodeReason TranscodeReason = "SubtitleContentOptionsEnabled"
+	EXTERNAL_AUDIO_NOT_SUPPORTED_TranscodeReason TranscodeReason = "ExternalAudioNotSupported"
+	AUDIO_DELAY_NOT_SUPPORTED_TranscodeReason TranscodeReason = "AudioDelayNotSupported"
 )

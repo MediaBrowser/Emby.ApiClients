@@ -10,13 +10,15 @@
  */
 
 import ApiClient from '../ApiClient';
+import MediaSourceInfo from './MediaSourceInfo';
 import PlayMethod from './PlayMethod';
 import RepeatMode from './RepeatMode';
+import SleepTimerMode from './SleepTimerMode';
 
 /**
 * The PlayerStateInfo model module.
 * @module model/PlayerStateInfo
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class PlayerStateInfo {
     /**
@@ -67,11 +69,20 @@ export default class PlayerStateInfo {
             if (data.hasOwnProperty('MediaSourceId')) {
                 obj['MediaSourceId'] = ApiClient.convertToType(data['MediaSourceId'], 'String');
             }
+            if (data.hasOwnProperty('MediaSource')) {
+                obj['MediaSource'] = MediaSourceInfo.constructFromObject(data['MediaSource']);
+            }
             if (data.hasOwnProperty('PlayMethod')) {
                 obj['PlayMethod'] = PlayMethod.constructFromObject(data['PlayMethod']);
             }
             if (data.hasOwnProperty('RepeatMode')) {
                 obj['RepeatMode'] = RepeatMode.constructFromObject(data['RepeatMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerMode')) {
+                obj['SleepTimerMode'] = SleepTimerMode.constructFromObject(data['SleepTimerMode']);
+            }
+            if (data.hasOwnProperty('SleepTimerEndTime')) {
+                obj['SleepTimerEndTime'] = ApiClient.convertToType(data['SleepTimerEndTime'], 'Date');
             }
             if (data.hasOwnProperty('SubtitleOffset')) {
                 obj['SubtitleOffset'] = ApiClient.convertToType(data['SubtitleOffset'], 'Number');
@@ -127,6 +138,10 @@ export default class PlayerStateInfo {
     */
     'MediaSourceId' = undefined;
     /**
+    * @member {module:model/MediaSourceInfo} MediaSource
+    */
+    'MediaSource' = undefined;
+    /**
     * @member {module:model/PlayMethod} PlayMethod
     */
     'PlayMethod' = undefined;
@@ -134,6 +149,14 @@ export default class PlayerStateInfo {
     * @member {module:model/RepeatMode} RepeatMode
     */
     'RepeatMode' = undefined;
+    /**
+    * @member {module:model/SleepTimerMode} SleepTimerMode
+    */
+    'SleepTimerMode' = undefined;
+    /**
+    * @member {Date} SleepTimerEndTime
+    */
+    'SleepTimerEndTime' = undefined;
     /**
     * @member {Number} SubtitleOffset
     */

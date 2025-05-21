@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 import (
 	"bytes"
@@ -34,7 +34,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the Emby Server REST API API v4.8.11.0
+// APIClient manages communication with the Emby Server REST API API v4.9.0.70
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration

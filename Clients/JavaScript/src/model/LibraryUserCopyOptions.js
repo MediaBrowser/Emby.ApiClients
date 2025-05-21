@@ -20,13 +20,19 @@ export default class LibraryUserCopyOptions {
          * value: "UserPolicy"
          * @const
          */
-        userPolicy = "UserPolicy";
+        UserPolicy = "UserPolicy";
 
         /**
          * value: "UserConfiguration"
          * @const
          */
-        userConfiguration = "UserConfiguration";
+        UserConfiguration = "UserConfiguration";
+
+        /**
+         * value: "UserData"
+         * @const
+         */
+        UserData = "UserData";
 
 
     /**

@@ -75,6 +75,12 @@ namespace Emby.ApiClient.Model
         public string MediaSourceId { get; set; }
 
         /// <summary>
+        /// Gets or Sets MediaSource
+        /// </summary>
+        /// <value>The MediaSource.</value>
+        public MediaSourceInfo MediaSource { get; set; }
+
+        /// <summary>
         /// Gets or Sets PlayMethod
         /// </summary>
         /// <value>The PlayMethod.</value>
@@ -85,6 +91,18 @@ namespace Emby.ApiClient.Model
         /// </summary>
         /// <value>The RepeatMode.</value>
         public RepeatMode RepeatMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerMode
+        /// </summary>
+        /// <value>The SleepTimerMode.</value>
+        public SleepTimerMode SleepTimerMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerEndTime
+        /// </summary>
+        /// <value>The SleepTimerEndTime.</value>
+        public DateTimeOffset? SleepTimerEndTime { get; set; }
 
         /// <summary>
         /// Gets or Sets SubtitleOffset
@@ -120,8 +138,11 @@ namespace Emby.ApiClient.Model
             sb.Append("  AudioStreamIndex: ").Append(AudioStreamIndex).Append("\n");
             sb.Append("  SubtitleStreamIndex: ").Append(SubtitleStreamIndex).Append("\n");
             sb.Append("  MediaSourceId: ").Append(MediaSourceId).Append("\n");
+            sb.Append("  MediaSource: ").Append(MediaSource).Append("\n");
             sb.Append("  PlayMethod: ").Append(PlayMethod).Append("\n");
             sb.Append("  RepeatMode: ").Append(RepeatMode).Append("\n");
+            sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
+            sb.Append("  SleepTimerEndTime: ").Append(SleepTimerEndTime).Append("\n");
             sb.Append("  SubtitleOffset: ").Append(SubtitleOffset).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
             sb.Append("  PlaybackRate: ").Append(PlaybackRate).Append("\n");
@@ -191,6 +212,11 @@ namespace Emby.ApiClient.Model
                     this.MediaSourceId.Equals(input.MediaSourceId))
                 ) && 
                 (
+                    this.MediaSource == input.MediaSource ||
+                    (this.MediaSource != null &&
+                    this.MediaSource.Equals(input.MediaSource))
+                ) && 
+                (
                     this.PlayMethod == input.PlayMethod ||
                     (this.PlayMethod != null &&
                     this.PlayMethod.Equals(input.PlayMethod))
@@ -199,6 +225,16 @@ namespace Emby.ApiClient.Model
                     this.RepeatMode == input.RepeatMode ||
                     (this.RepeatMode != null &&
                     this.RepeatMode.Equals(input.RepeatMode))
+                ) && 
+                (
+                    this.SleepTimerMode == input.SleepTimerMode ||
+                    (this.SleepTimerMode != null &&
+                    this.SleepTimerMode.Equals(input.SleepTimerMode))
+                ) && 
+                (
+                    this.SleepTimerEndTime == input.SleepTimerEndTime ||
+                    (this.SleepTimerEndTime != null &&
+                    this.SleepTimerEndTime.Equals(input.SleepTimerEndTime))
                 ) && 
                 (
                     this.SubtitleOffset == input.SubtitleOffset ||
@@ -242,10 +278,16 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.SubtitleStreamIndex.GetHashCode();
                 if (this.MediaSourceId != null)
                     hashCode = hashCode * 59 + this.MediaSourceId.GetHashCode();
+                if (this.MediaSource != null)
+                    hashCode = hashCode * 59 + this.MediaSource.GetHashCode();
                 if (this.PlayMethod != null)
                     hashCode = hashCode * 59 + this.PlayMethod.GetHashCode();
                 if (this.RepeatMode != null)
                     hashCode = hashCode * 59 + this.RepeatMode.GetHashCode();
+                if (this.SleepTimerMode != null)
+                    hashCode = hashCode * 59 + this.SleepTimerMode.GetHashCode();
+                if (this.SleepTimerEndTime != null)
+                    hashCode = hashCode * 59 + this.SleepTimerEndTime.GetHashCode();
                 if (this.SubtitleOffset != null)
                     hashCode = hashCode * 59 + this.SubtitleOffset.GetHashCode();
                 if (this.Shuffle != null)

@@ -93,5 +93,10 @@ namespace Emby.ApiClient.Model
         /// Enum ShuffleChange for value: ShuffleChange
         /// </summary>
         [EnumMember(Value = "ShuffleChange")]
-        ShuffleChange = 15    }
+        ShuffleChange = 15,
+        /// <summary>
+        /// Enum SleepTimerChange for value: SleepTimerChange
+        /// </summary>
+        [EnumMember(Value = "SleepTimerChange")]
+        SleepTimerChange = 16    }
 }

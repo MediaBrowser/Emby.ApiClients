@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 // Used to hold information about a user's list of configured virtual folders  
 type VirtualFolderInfo struct {
@@ -22,6 +22,7 @@ type VirtualFolderInfo struct {
 	Guid string `json:"Guid,omitempty"`
 	// The primary image item identifier.
 	PrimaryImageItemId string `json:"PrimaryImageItemId,omitempty"`
+	PrimaryImageTag string `json:"PrimaryImageTag,omitempty"`
 	RefreshProgress float64 `json:"RefreshProgress,omitempty"`
 	RefreshStatus string `json:"RefreshStatus,omitempty"`
 }

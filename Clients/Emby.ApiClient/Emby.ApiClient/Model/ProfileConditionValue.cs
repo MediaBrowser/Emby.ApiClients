@@ -143,5 +143,10 @@ namespace Emby.ApiClient.Model
         /// Enum VideoRotation for value: VideoRotation
         /// </summary>
         [EnumMember(Value = "VideoRotation")]
-        VideoRotation = 25    }
+        VideoRotation = 25,
+        /// <summary>
+        /// Enum IsExternalAudio for value: IsExternalAudio
+        /// </summary>
+        [EnumMember(Value = "IsExternalAudio")]
+        IsExternalAudio = 26    }
 }

@@ -69,6 +69,12 @@ namespace Emby.ApiClient.Model
         public string Prefix { get; set; }
 
         /// <summary>
+        /// Gets or Sets TunerName
+        /// </summary>
+        /// <value>The TunerName.</value>
+        public string TunerName { get; set; }
+
+        /// <summary>
         /// The playlist item identifier.
         /// </summary>
         /// <value>The PlaylistItemId.</value>
@@ -451,6 +457,12 @@ namespace Emby.ApiClient.Model
         /// </summary>
         /// <value>The ChildCount.</value>
         public int? ChildCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SeasonCount
+        /// </summary>
+        /// <value>The SeasonCount.</value>
+        public int? SeasonCount { get; set; }
 
         /// <summary>
         /// The name of the series.
@@ -965,6 +977,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  Guid: ").Append(Guid).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
+            sb.Append("  TunerName: ").Append(TunerName).Append("\n");
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
             sb.Append("  ExtraType: ").Append(ExtraType).Append("\n");
@@ -1029,6 +1042,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  UserData: ").Append(UserData).Append("\n");
             sb.Append("  RecursiveItemCount: ").Append(RecursiveItemCount).Append("\n");
             sb.Append("  ChildCount: ").Append(ChildCount).Append("\n");
+            sb.Append("  SeasonCount: ").Append(SeasonCount).Append("\n");
             sb.Append("  SeriesName: ").Append(SeriesName).Append("\n");
             sb.Append("  SeriesId: ").Append(SeriesId).Append("\n");
             sb.Append("  SeasonId: ").Append(SeasonId).Append("\n");
@@ -1171,6 +1185,11 @@ namespace Emby.ApiClient.Model
                     this.Prefix == input.Prefix ||
                     (this.Prefix != null &&
                     this.Prefix.Equals(input.Prefix))
+                ) && 
+                (
+                    this.TunerName == input.TunerName ||
+                    (this.TunerName != null &&
+                    this.TunerName.Equals(input.TunerName))
                 ) && 
                 (
                     this.PlaylistItemId == input.PlaylistItemId ||
@@ -1502,6 +1521,11 @@ namespace Emby.ApiClient.Model
                     this.ChildCount == input.ChildCount ||
                     (this.ChildCount != null &&
                     this.ChildCount.Equals(input.ChildCount))
+                ) && 
+                (
+                    this.SeasonCount == input.SeasonCount ||
+                    (this.SeasonCount != null &&
+                    this.SeasonCount.Equals(input.SeasonCount))
                 ) && 
                 (
                     this.SeriesName == input.SeriesName ||
@@ -1955,6 +1979,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Prefix != null)
                     hashCode = hashCode * 59 + this.Prefix.GetHashCode();
+                if (this.TunerName != null)
+                    hashCode = hashCode * 59 + this.TunerName.GetHashCode();
                 if (this.PlaylistItemId != null)
                     hashCode = hashCode * 59 + this.PlaylistItemId.GetHashCode();
                 if (this.DateCreated != null)
@@ -2083,6 +2109,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.RecursiveItemCount.GetHashCode();
                 if (this.ChildCount != null)
                     hashCode = hashCode * 59 + this.ChildCount.GetHashCode();
+                if (this.SeasonCount != null)
+                    hashCode = hashCode * 59 + this.SeasonCount.GetHashCode();
                 if (this.SeriesName != null)
                     hashCode = hashCode * 59 + this.SeriesName.GetHashCode();
                 if (this.SeriesId != null)

@@ -44,7 +44,7 @@ namespace Emby.ApiClient.Api
         /// Gets metadata editor info for an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <param name="itemId">The id of the item</param>
         /// <returns>Task of ApiResponse (MetadataEditorInfo)</returns>
@@ -72,7 +72,7 @@ namespace Emby.ApiClient.Api
         /// Updates an item
         /// </summary>
         /// <remarks>
-        /// Requires authentication as administrator
+        /// Requires authentication as user
         /// </remarks>
         /// <param name="body">BaseItemDto: </param>
         /// <param name="itemId">The id of the item</param>

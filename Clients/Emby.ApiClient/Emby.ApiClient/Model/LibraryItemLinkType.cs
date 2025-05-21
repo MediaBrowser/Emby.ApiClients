@@ -63,5 +63,15 @@ namespace Emby.ApiClient.Model
         /// Enum CollectionFolders for value: CollectionFolders
         /// </summary>
         [EnumMember(Value = "CollectionFolders")]
-        CollectionFolders = 9    }
+        CollectionFolders = 9,
+        /// <summary>
+        /// Enum LiveTVSeries for value: LiveTVSeries
+        /// </summary>
+        [EnumMember(Value = "LiveTVSeries")]
+        LiveTVSeries = 10,
+        /// <summary>
+        /// Enum GameSystems for value: GameSystems
+        /// </summary>
+        [EnumMember(Value = "GameSystems")]
+        GameSystems = 11    }
 }

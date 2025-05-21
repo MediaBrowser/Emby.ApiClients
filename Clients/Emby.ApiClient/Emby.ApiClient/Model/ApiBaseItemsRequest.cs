@@ -27,6 +27,12 @@ namespace Emby.ApiClient.Model
         }
         
         /// <summary>
+        /// Gets or Sets IsSpecialEpisode
+        /// </summary>
+        /// <value>The IsSpecialEpisode.</value>
+        public bool? IsSpecialEpisode { get; set; }
+
+        /// <summary>
         /// Gets or Sets Is4K
         /// </summary>
         /// <value>The Is4K.</value>
@@ -37,6 +43,18 @@ namespace Emby.ApiClient.Model
         /// </summary>
         /// <value>The EnableTotalRecordCount.</value>
         public bool? EnableTotalRecordCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDuplicate
+        /// </summary>
+        /// <value>The IsDuplicate.</value>
+        public bool? IsDuplicate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        /// <value>The Name.</value>
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets RecordingKeyword
@@ -81,6 +99,12 @@ namespace Emby.ApiClient.Model
         public string ExcludeTagIds { get; set; }
 
         /// <summary>
+        /// Gets or Sets ItemPersonTypes
+        /// </summary>
+        /// <value>The ItemPersonTypes.</value>
+        public List<PersonType> ItemPersonTypes { get; set; }
+
+        /// <summary>
         /// Gets or Sets ExcludeArtistIds
         /// </summary>
         /// <value>The ExcludeArtistIds.</value>
@@ -91,6 +115,12 @@ namespace Emby.ApiClient.Model
         /// </summary>
         /// <value>The AlbumArtistIds.</value>
         public string AlbumArtistIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ComposerArtistIds
+        /// </summary>
+        /// <value>The ComposerArtistIds.</value>
+        public string ComposerArtistIds { get; set; }
 
         /// <summary>
         /// Gets or Sets ContributingArtistIds
@@ -141,6 +171,12 @@ namespace Emby.ApiClient.Model
         public LibraryItemLinkType GroupItemsInto { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsStandaloneSpecial
+        /// </summary>
+        /// <value>The IsStandaloneSpecial.</value>
+        public bool? IsStandaloneSpecial { get; set; }
+
+        /// <summary>
         /// Gets or Sets MinWidth
         /// </summary>
         /// <value>The MinWidth.</value>
@@ -189,6 +225,18 @@ namespace Emby.ApiClient.Model
         public bool? HasAired { get; set; }
 
         /// <summary>
+        /// Gets or Sets CollectionTypes
+        /// </summary>
+        /// <value>The CollectionTypes.</value>
+        public string CollectionTypes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExcludeSources
+        /// </summary>
+        /// <value>The ExcludeSources.</value>
+        public List<string> ExcludeSources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -196,8 +244,11 @@ namespace Emby.ApiClient.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiBaseItemsRequest {\n");
+            sb.Append("  IsSpecialEpisode: ").Append(IsSpecialEpisode).Append("\n");
             sb.Append("  Is4K: ").Append(Is4K).Append("\n");
             sb.Append("  EnableTotalRecordCount: ").Append(EnableTotalRecordCount).Append("\n");
+            sb.Append("  IsDuplicate: ").Append(IsDuplicate).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  RecordingKeyword: ").Append(RecordingKeyword).Append("\n");
             sb.Append("  RecordingKeywordType: ").Append(RecordingKeywordType).Append("\n");
             sb.Append("  RandomSeed: ").Append(RandomSeed).Append("\n");
@@ -205,8 +256,10 @@ namespace Emby.ApiClient.Model
             sb.Append("  CollectionIds: ").Append(CollectionIds).Append("\n");
             sb.Append("  TagIds: ").Append(TagIds).Append("\n");
             sb.Append("  ExcludeTagIds: ").Append(ExcludeTagIds).Append("\n");
+            sb.Append("  ItemPersonTypes: ").Append(ItemPersonTypes).Append("\n");
             sb.Append("  ExcludeArtistIds: ").Append(ExcludeArtistIds).Append("\n");
             sb.Append("  AlbumArtistIds: ").Append(AlbumArtistIds).Append("\n");
+            sb.Append("  ComposerArtistIds: ").Append(ComposerArtistIds).Append("\n");
             sb.Append("  ContributingArtistIds: ").Append(ContributingArtistIds).Append("\n");
             sb.Append("  AlbumIds: ").Append(AlbumIds).Append("\n");
             sb.Append("  OuterIds: ").Append(OuterIds).Append("\n");
@@ -215,6 +268,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  SubtitleLanguages: ").Append(SubtitleLanguages).Append("\n");
             sb.Append("  CanEditItems: ").Append(CanEditItems).Append("\n");
             sb.Append("  GroupItemsInto: ").Append(GroupItemsInto).Append("\n");
+            sb.Append("  IsStandaloneSpecial: ").Append(IsStandaloneSpecial).Append("\n");
             sb.Append("  MinWidth: ").Append(MinWidth).Append("\n");
             sb.Append("  MinHeight: ").Append(MinHeight).Append("\n");
             sb.Append("  MaxWidth: ").Append(MaxWidth).Append("\n");
@@ -223,6 +277,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  AirDays: ").Append(AirDays).Append("\n");
             sb.Append("  IsAiring: ").Append(IsAiring).Append("\n");
             sb.Append("  HasAired: ").Append(HasAired).Append("\n");
+            sb.Append("  CollectionTypes: ").Append(CollectionTypes).Append("\n");
+            sb.Append("  ExcludeSources: ").Append(ExcludeSources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -249,6 +305,11 @@ namespace Emby.ApiClient.Model
 
             return 
                 (
+                    this.IsSpecialEpisode == input.IsSpecialEpisode ||
+                    (this.IsSpecialEpisode != null &&
+                    this.IsSpecialEpisode.Equals(input.IsSpecialEpisode))
+                ) && 
+                (
                     this.Is4K == input.Is4K ||
                     (this.Is4K != null &&
                     this.Is4K.Equals(input.Is4K))
@@ -257,6 +318,16 @@ namespace Emby.ApiClient.Model
                     this.EnableTotalRecordCount == input.EnableTotalRecordCount ||
                     (this.EnableTotalRecordCount != null &&
                     this.EnableTotalRecordCount.Equals(input.EnableTotalRecordCount))
+                ) && 
+                (
+                    this.IsDuplicate == input.IsDuplicate ||
+                    (this.IsDuplicate != null &&
+                    this.IsDuplicate.Equals(input.IsDuplicate))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
                     this.RecordingKeyword == input.RecordingKeyword ||
@@ -294,6 +365,12 @@ namespace Emby.ApiClient.Model
                     this.ExcludeTagIds.Equals(input.ExcludeTagIds))
                 ) && 
                 (
+                    this.ItemPersonTypes == input.ItemPersonTypes ||
+                    this.ItemPersonTypes != null &&
+                    input.ItemPersonTypes != null &&
+                    this.ItemPersonTypes.SequenceEqual(input.ItemPersonTypes)
+                ) && 
+                (
                     this.ExcludeArtistIds == input.ExcludeArtistIds ||
                     (this.ExcludeArtistIds != null &&
                     this.ExcludeArtistIds.Equals(input.ExcludeArtistIds))
@@ -302,6 +379,11 @@ namespace Emby.ApiClient.Model
                     this.AlbumArtistIds == input.AlbumArtistIds ||
                     (this.AlbumArtistIds != null &&
                     this.AlbumArtistIds.Equals(input.AlbumArtistIds))
+                ) && 
+                (
+                    this.ComposerArtistIds == input.ComposerArtistIds ||
+                    (this.ComposerArtistIds != null &&
+                    this.ComposerArtistIds.Equals(input.ComposerArtistIds))
                 ) && 
                 (
                     this.ContributingArtistIds == input.ContributingArtistIds ||
@@ -344,6 +426,11 @@ namespace Emby.ApiClient.Model
                     this.GroupItemsInto.Equals(input.GroupItemsInto))
                 ) && 
                 (
+                    this.IsStandaloneSpecial == input.IsStandaloneSpecial ||
+                    (this.IsStandaloneSpecial != null &&
+                    this.IsStandaloneSpecial.Equals(input.IsStandaloneSpecial))
+                ) && 
+                (
                     this.MinWidth == input.MinWidth ||
                     (this.MinWidth != null &&
                     this.MinWidth.Equals(input.MinWidth))
@@ -383,6 +470,17 @@ namespace Emby.ApiClient.Model
                     this.HasAired == input.HasAired ||
                     (this.HasAired != null &&
                     this.HasAired.Equals(input.HasAired))
+                ) && 
+                (
+                    this.CollectionTypes == input.CollectionTypes ||
+                    (this.CollectionTypes != null &&
+                    this.CollectionTypes.Equals(input.CollectionTypes))
+                ) && 
+                (
+                    this.ExcludeSources == input.ExcludeSources ||
+                    this.ExcludeSources != null &&
+                    input.ExcludeSources != null &&
+                    this.ExcludeSources.SequenceEqual(input.ExcludeSources)
                 );
         }
 
@@ -395,10 +493,16 @@ namespace Emby.ApiClient.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.IsSpecialEpisode != null)
+                    hashCode = hashCode * 59 + this.IsSpecialEpisode.GetHashCode();
                 if (this.Is4K != null)
                     hashCode = hashCode * 59 + this.Is4K.GetHashCode();
                 if (this.EnableTotalRecordCount != null)
                     hashCode = hashCode * 59 + this.EnableTotalRecordCount.GetHashCode();
+                if (this.IsDuplicate != null)
+                    hashCode = hashCode * 59 + this.IsDuplicate.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RecordingKeyword != null)
                     hashCode = hashCode * 59 + this.RecordingKeyword.GetHashCode();
                 if (this.RecordingKeywordType != null)
@@ -413,10 +517,14 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.TagIds.GetHashCode();
                 if (this.ExcludeTagIds != null)
                     hashCode = hashCode * 59 + this.ExcludeTagIds.GetHashCode();
+                if (this.ItemPersonTypes != null)
+                    hashCode = hashCode * 59 + this.ItemPersonTypes.GetHashCode();
                 if (this.ExcludeArtistIds != null)
                     hashCode = hashCode * 59 + this.ExcludeArtistIds.GetHashCode();
                 if (this.AlbumArtistIds != null)
                     hashCode = hashCode * 59 + this.AlbumArtistIds.GetHashCode();
+                if (this.ComposerArtistIds != null)
+                    hashCode = hashCode * 59 + this.ComposerArtistIds.GetHashCode();
                 if (this.ContributingArtistIds != null)
                     hashCode = hashCode * 59 + this.ContributingArtistIds.GetHashCode();
                 if (this.AlbumIds != null)
@@ -433,6 +541,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.CanEditItems.GetHashCode();
                 if (this.GroupItemsInto != null)
                     hashCode = hashCode * 59 + this.GroupItemsInto.GetHashCode();
+                if (this.IsStandaloneSpecial != null)
+                    hashCode = hashCode * 59 + this.IsStandaloneSpecial.GetHashCode();
                 if (this.MinWidth != null)
                     hashCode = hashCode * 59 + this.MinWidth.GetHashCode();
                 if (this.MinHeight != null)
@@ -449,6 +559,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.IsAiring.GetHashCode();
                 if (this.HasAired != null)
                     hashCode = hashCode * 59 + this.HasAired.GetHashCode();
+                if (this.CollectionTypes != null)
+                    hashCode = hashCode * 59 + this.CollectionTypes.GetHashCode();
+                if (this.ExcludeSources != null)
+                    hashCode = hashCode * 59 + this.ExcludeSources.GetHashCode();
                 return hashCode;
             }
         }

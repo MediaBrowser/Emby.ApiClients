@@ -3,7 +3,7 @@
  * 
  */
 
-package EmbyClient;
+package embyclient;
 
 import java.util.Map;
 import java.util.List;

@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 import (
 	"time"
 )
@@ -16,6 +16,7 @@ type SongInfo struct {
 	Composers []string `json:"Composers,omitempty"`
 	// The name.
 	Name string `json:"Name,omitempty"`
+	Path string `json:"Path,omitempty"`
 	// The metadata language.
 	MetadataLanguage string `json:"MetadataLanguage,omitempty"`
 	// The metadata country code.

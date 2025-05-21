@@ -3,7 +3,7 @@
  * 
  */
 
-package EmbyClient;
+package embyclient;
 
 import com.squareup.okhttp.*;
 import okio.Buffer;

@@ -5,7 +5,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 import (
 	"context"
@@ -35,7 +35,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -136,7 +138,9 @@ type TagServiceApiGetArtistsPrefixesOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -265,8 +269,14 @@ func (a *TagServiceApiService) GetArtistsPrefixes(ctx context.Context, localVarO
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -621,7 +631,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -722,7 +734,9 @@ type TagServiceApiGetAudiocodecsOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -851,8 +865,14 @@ func (a *TagServiceApiService) GetAudiocodecs(ctx context.Context, localVarOptio
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -1207,7 +1227,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -1308,7 +1330,9 @@ type TagServiceApiGetAudiolayoutsOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -1437,8 +1461,14 @@ func (a *TagServiceApiService) GetAudiolayouts(ctx context.Context, localVarOpti
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -1793,7 +1823,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -1894,7 +1926,9 @@ type TagServiceApiGetContainersOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -2023,8 +2057,14 @@ func (a *TagServiceApiService) GetContainers(ctx context.Context, localVarOption
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -2379,7 +2419,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -2480,7 +2522,9 @@ type TagServiceApiGetExtendedvideotypesOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -2609,8 +2653,14 @@ func (a *TagServiceApiService) GetExtendedvideotypes(ctx context.Context, localV
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -2965,7 +3015,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -3066,7 +3118,9 @@ type TagServiceApiGetItemsPrefixesOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -3195,8 +3249,14 @@ func (a *TagServiceApiService) GetItemsPrefixes(ctx context.Context, localVarOpt
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -3551,7 +3611,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -3652,7 +3714,9 @@ type TagServiceApiGetItemtypesOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -3781,8 +3845,14 @@ func (a *TagServiceApiService) GetItemtypes(ctx context.Context, localVarOptiona
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -4137,7 +4207,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -4238,7 +4310,9 @@ type TagServiceApiGetStreamlanguagesOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -4367,8 +4441,14 @@ func (a *TagServiceApiService) GetStreamlanguages(ctx context.Context, localVarO
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -4723,7 +4803,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -4824,7 +4906,9 @@ type TagServiceApiGetSubtitlecodecsOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -4953,8 +5037,14 @@ func (a *TagServiceApiService) GetSubtitlecodecs(ctx context.Context, localVarOp
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -5309,7 +5399,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -5410,7 +5502,9 @@ type TagServiceApiGetTagsOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -5539,8 +5633,14 @@ func (a *TagServiceApiService) GetTags(ctx context.Context, localVarOptionals *T
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -5895,7 +5995,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -5996,7 +6098,9 @@ type TagServiceApiGetVideocodecsOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -6125,8 +6229,14 @@ func (a *TagServiceApiService) GetVideocodecs(ctx context.Context, localVarOptio
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))
@@ -6481,7 +6591,9 @@ Requires authentication as user
      * @param "HasSubtitles" (optional.Bool) -  Optional filter by items with subtitles.
      * @param "HasSpecialFeature" (optional.Bool) -  Optional filter by items with special features.
      * @param "HasTrailer" (optional.Bool) -  Optional filter by items with trailers.
+     * @param "IsSpecialSeason" (optional.Bool) -  Optional. Filter by special season.
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
+     * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
      * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
      * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
@@ -6582,7 +6694,9 @@ type TagServiceApiGetYearsOpts struct {
     HasSubtitles optional.Bool
     HasSpecialFeature optional.Bool
     HasTrailer optional.Bool
+    IsSpecialSeason optional.Bool
     AdjacentTo optional.String
+    StartItemId optional.String
     MinIndexNumber optional.Int32
     MinStartDate optional.String
     MaxStartDate optional.String
@@ -6711,8 +6825,14 @@ func (a *TagServiceApiService) GetYears(ctx context.Context, localVarOptionals *
 	if localVarOptionals != nil && localVarOptionals.HasTrailer.IsSet() {
 		localVarQueryParams.Add("HasTrailer", parameterToString(localVarOptionals.HasTrailer.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.IsSpecialSeason.IsSet() {
+		localVarQueryParams.Add("IsSpecialSeason", parameterToString(localVarOptionals.IsSpecialSeason.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.AdjacentTo.IsSet() {
 		localVarQueryParams.Add("AdjacentTo", parameterToString(localVarOptionals.AdjacentTo.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartItemId.IsSet() {
+		localVarQueryParams.Add("StartItemId", parameterToString(localVarOptionals.StartItemId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.MinIndexNumber.IsSet() {
 		localVarQueryParams.Add("MinIndexNumber", parameterToString(localVarOptionals.MinIndexNumber.Value(), ""))

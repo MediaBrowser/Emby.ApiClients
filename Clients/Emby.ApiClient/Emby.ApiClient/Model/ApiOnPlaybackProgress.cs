@@ -45,6 +45,18 @@ namespace Emby.ApiClient.Model
         public bool? Shuffle { get; set; }
 
         /// <summary>
+        /// Gets or Sets SleepTimerMode
+        /// </summary>
+        /// <value>The SleepTimerMode.</value>
+        public SleepTimerMode SleepTimerMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SleepTimerEndTime
+        /// </summary>
+        /// <value>The SleepTimerEndTime.</value>
+        public DateTimeOffset? SleepTimerEndTime { get; set; }
+
+        /// <summary>
         /// Gets or Sets EventName
         /// </summary>
         /// <value>The EventName.</value>
@@ -61,6 +73,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  PlaylistIndex: ").Append(PlaylistIndex).Append("\n");
             sb.Append("  PlaylistLength: ").Append(PlaylistLength).Append("\n");
             sb.Append("  Shuffle: ").Append(Shuffle).Append("\n");
+            sb.Append("  SleepTimerMode: ").Append(SleepTimerMode).Append("\n");
+            sb.Append("  SleepTimerEndTime: ").Append(SleepTimerEndTime).Append("\n");
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -103,6 +117,16 @@ namespace Emby.ApiClient.Model
                     this.Shuffle.Equals(input.Shuffle))
                 ) && 
                 (
+                    this.SleepTimerMode == input.SleepTimerMode ||
+                    (this.SleepTimerMode != null &&
+                    this.SleepTimerMode.Equals(input.SleepTimerMode))
+                ) && 
+                (
+                    this.SleepTimerEndTime == input.SleepTimerEndTime ||
+                    (this.SleepTimerEndTime != null &&
+                    this.SleepTimerEndTime.Equals(input.SleepTimerEndTime))
+                ) && 
+                (
                     this.EventName == input.EventName ||
                     (this.EventName != null &&
                     this.EventName.Equals(input.EventName))
@@ -124,6 +148,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.PlaylistLength.GetHashCode();
                 if (this.Shuffle != null)
                     hashCode = hashCode * 59 + this.Shuffle.GetHashCode();
+                if (this.SleepTimerMode != null)
+                    hashCode = hashCode * 59 + this.SleepTimerMode.GetHashCode();
+                if (this.SleepTimerEndTime != null)
+                    hashCode = hashCode * 59 + this.SleepTimerEndTime.GetHashCode();
                 if (this.EventName != null)
                     hashCode = hashCode * 59 + this.EventName.GetHashCode();
                 return hashCode;

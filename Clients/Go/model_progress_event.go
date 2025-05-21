@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 type ProgressEvent string
 
@@ -25,4 +25,5 @@ const (
 	SUBTITLE_OFFSET_CHANGE_ProgressEvent ProgressEvent = "SubtitleOffsetChange"
 	PLAYBACK_RATE_CHANGE_ProgressEvent ProgressEvent = "PlaybackRateChange"
 	SHUFFLE_CHANGE_ProgressEvent ProgressEvent = "ShuffleChange"
+	SLEEP_TIMER_CHANGE_ProgressEvent ProgressEvent = "SleepTimerChange"
 )

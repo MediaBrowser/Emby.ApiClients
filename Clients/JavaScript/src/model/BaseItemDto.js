@@ -31,7 +31,7 @@ import Video3DFormat from './Video3DFormat';
 /**
 * The BaseItemDto model module.
 * @module model/BaseItemDto
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class BaseItemDto {
     /**
@@ -79,6 +79,9 @@ export default class BaseItemDto {
             }
             if (data.hasOwnProperty('Prefix')) {
                 obj['Prefix'] = ApiClient.convertToType(data['Prefix'], 'String');
+            }
+            if (data.hasOwnProperty('TunerName')) {
+                obj['TunerName'] = ApiClient.convertToType(data['TunerName'], 'String');
             }
             if (data.hasOwnProperty('PlaylistItemId')) {
                 obj['PlaylistItemId'] = ApiClient.convertToType(data['PlaylistItemId'], 'String');
@@ -271,6 +274,9 @@ export default class BaseItemDto {
             }
             if (data.hasOwnProperty('ChildCount')) {
                 obj['ChildCount'] = ApiClient.convertToType(data['ChildCount'], 'Number');
+            }
+            if (data.hasOwnProperty('SeasonCount')) {
+                obj['SeasonCount'] = ApiClient.convertToType(data['SeasonCount'], 'Number');
             }
             if (data.hasOwnProperty('SeriesName')) {
                 obj['SeriesName'] = ApiClient.convertToType(data['SeriesName'], 'String');
@@ -558,6 +564,10 @@ export default class BaseItemDto {
     * @member {String} Prefix
     */
     'Prefix' = undefined;
+    /**
+    * @member {String} TunerName
+    */
+    'TunerName' = undefined;
     /**
     * The playlist item identifier.
     * @member {String} PlaylistItemId
@@ -849,6 +859,10 @@ export default class BaseItemDto {
     * @member {Number} ChildCount
     */
     'ChildCount' = undefined;
+    /**
+    * @member {Number} SeasonCount
+    */
+    'SeasonCount' = undefined;
     /**
     * The name of the series.
     * @member {String} SeriesName

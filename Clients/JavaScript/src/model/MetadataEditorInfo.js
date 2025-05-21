@@ -18,7 +18,7 @@ import ParentalRating from './ParentalRating';
 /**
 * The MetadataEditorInfo model module.
 * @module model/MetadataEditorInfo
-* @version 4.8.11.0
+* @version 4.9.0.70
 */
 export default class MetadataEditorInfo {
     /**
@@ -57,6 +57,9 @@ export default class MetadataEditorInfo {
             if (data.hasOwnProperty('ExternalIdInfos')) {
                 obj['ExternalIdInfos'] = ApiClient.convertToType(data['ExternalIdInfos'], [ExternalIdInfo]);
             }
+            if (data.hasOwnProperty('PersonExternalIdInfos')) {
+                obj['PersonExternalIdInfos'] = ApiClient.convertToType(data['PersonExternalIdInfos'], [ExternalIdInfo]);
+            }
         }
         return obj;
     }
@@ -77,6 +80,10 @@ export default class MetadataEditorInfo {
     * @member {Array.<module:model/ExternalIdInfo>} ExternalIdInfos
     */
     'ExternalIdInfos' = undefined;
+    /**
+    * @member {Array.<module:model/ExternalIdInfo>} PersonExternalIdInfos
+    */
+    'PersonExternalIdInfos' = undefined;
 
 
 

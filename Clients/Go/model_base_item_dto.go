@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 import (
 	"time"
 )
@@ -23,6 +23,7 @@ type BaseItemDto struct {
 	Etag string `json:"Etag,omitempty"`
 	// The Prefix.
 	Prefix string `json:"Prefix,omitempty"`
+	TunerName string `json:"TunerName,omitempty"`
 	// The playlist item identifier.
 	PlaylistItemId string `json:"PlaylistItemId,omitempty"`
 	// The date created.
@@ -122,6 +123,7 @@ type BaseItemDto struct {
 	RecursiveItemCount int32 `json:"RecursiveItemCount,omitempty"`
 	// The child count.
 	ChildCount int32 `json:"ChildCount,omitempty"`
+	SeasonCount int32 `json:"SeasonCount,omitempty"`
 	// The name of the series.
 	SeriesName string `json:"SeriesName,omitempty"`
 	// The series id.

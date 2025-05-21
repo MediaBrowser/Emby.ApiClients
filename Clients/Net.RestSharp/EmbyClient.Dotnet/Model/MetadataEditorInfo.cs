@@ -30,12 +30,14 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="countries">countries.</param>
         /// <param name="cultures">cultures.</param>
         /// <param name="externalIdInfos">externalIdInfos.</param>
-        public MetadataEditorInfo(List<ParentalRating> parentalRatingOptions = default(List<ParentalRating>), List<GlobalizationCountryInfo> countries = default(List<GlobalizationCountryInfo>), List<GlobalizationCultureDto> cultures = default(List<GlobalizationCultureDto>), List<ExternalIdInfo> externalIdInfos = default(List<ExternalIdInfo>))
+        /// <param name="personExternalIdInfos">personExternalIdInfos.</param>
+        public MetadataEditorInfo(List<ParentalRating> parentalRatingOptions = default(List<ParentalRating>), List<GlobalizationCountryInfo> countries = default(List<GlobalizationCountryInfo>), List<GlobalizationCultureDto> cultures = default(List<GlobalizationCultureDto>), List<ExternalIdInfo> externalIdInfos = default(List<ExternalIdInfo>), List<ExternalIdInfo> personExternalIdInfos = default(List<ExternalIdInfo>))
         {
             this.ParentalRatingOptions = parentalRatingOptions;
             this.Countries = countries;
             this.Cultures = cultures;
             this.ExternalIdInfos = externalIdInfos;
+            this.PersonExternalIdInfos = personExternalIdInfos;
         }
         
         /// <summary>
@@ -63,6 +65,12 @@ namespace EmbyClient.Dotnet.Model
         public List<ExternalIdInfo> ExternalIdInfos { get; set; }
 
         /// <summary>
+        /// Gets or Sets PersonExternalIdInfos
+        /// </summary>
+        [DataMember(Name="PersonExternalIdInfos", EmitDefaultValue=false)]
+        public List<ExternalIdInfo> PersonExternalIdInfos { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +82,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  Countries: ").Append(Countries).Append("\n");
             sb.Append("  Cultures: ").Append(Cultures).Append("\n");
             sb.Append("  ExternalIdInfos: ").Append(ExternalIdInfos).Append("\n");
+            sb.Append("  PersonExternalIdInfos: ").Append(PersonExternalIdInfos).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +140,12 @@ namespace EmbyClient.Dotnet.Model
                     this.ExternalIdInfos != null &&
                     input.ExternalIdInfos != null &&
                     this.ExternalIdInfos.SequenceEqual(input.ExternalIdInfos)
+                ) && 
+                (
+                    this.PersonExternalIdInfos == input.PersonExternalIdInfos ||
+                    this.PersonExternalIdInfos != null &&
+                    input.PersonExternalIdInfos != null &&
+                    this.PersonExternalIdInfos.SequenceEqual(input.PersonExternalIdInfos)
                 );
         }
 
@@ -151,6 +166,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.Cultures.GetHashCode();
                 if (this.ExternalIdInfos != null)
                     hashCode = hashCode * 59 + this.ExternalIdInfos.GetHashCode();
+                if (this.PersonExternalIdInfos != null)
+                    hashCode = hashCode * 59 + this.PersonExternalIdInfos.GetHashCode();
                 return hashCode;
             }
         }

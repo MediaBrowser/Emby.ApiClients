@@ -4,7 +4,7 @@
  * Explore the Emby Server API
  *
  */
-package embyclient-rest-go
+package embyclient
 
 // Represents the server configuration.  
 type ServerConfiguration struct {
@@ -28,6 +28,7 @@ type ServerConfiguration struct {
 	AutoRunWebApp bool `json:"AutoRunWebApp,omitempty"`
 	EnableRemoteAccess bool `json:"EnableRemoteAccess,omitempty"`
 	LogAllQueryTimes bool `json:"LogAllQueryTimes,omitempty"`
+	DisableOutgoingIPv6 bool `json:"DisableOutgoingIPv6,omitempty"`
 	// A value indicating whether \\[enable case sensitive item ids\\].
 	EnableCaseSensitiveItemIds bool `json:"EnableCaseSensitiveItemIds,omitempty"`
 	// The metadata path.
@@ -73,6 +74,9 @@ type ServerConfiguration struct {
 	EnablePeopleLetterSubFolders bool `json:"EnablePeopleLetterSubFolders,omitempty"`
 	OptimizeDatabaseOnShutdown bool `json:"OptimizeDatabaseOnShutdown,omitempty"`
 	DatabaseAnalysisLimit int32 `json:"DatabaseAnalysisLimit,omitempty"`
+	MaxLibraryDbConnections int32 `json:"MaxLibraryDbConnections,omitempty"`
+	MaxAuthDbConnections int32 `json:"MaxAuthDbConnections,omitempty"`
+	MaxOtherDbConnections int32 `json:"MaxOtherDbConnections,omitempty"`
 	DisableAsyncIO bool `json:"DisableAsyncIO,omitempty"`
 	MigratedToUserItemShares8 bool `json:"MigratedToUserItemShares8,omitempty"`
 	MigratedLibraryOptionsToDb bool `json:"MigratedLibraryOptionsToDb,omitempty"`

@@ -62,14 +62,21 @@ namespace Emby.ApiClient.Api
         /// <remarks>
         /// Requires authentication as user
         /// </remarks>
+        /// <param name="body">AddAdminNotification</param>
         /// <param name="name">The notification&#x27;s name</param>
         /// <param name="description">The notification&#x27;s description</param>
         /// <param name="imageUrl">The notification&#x27;s image url (optional)</param>
         /// <param name="url">The notification&#x27;s info url (optional)</param>
         /// <param name="level">The notification level (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async Task<RestResponse<Object>> PostNotificationsAdmin (string name, string description, string imageUrl, string url, string level)
+        public async Task<RestResponse<Object>> PostNotificationsAdmin (ApiAddAdminNotification body, string name, string description, string imageUrl, string url, string level)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+            {
+                throw new ApiException("Missing required parameter 'body' when calling NotificationsServiceApi->PostNotificationsAdmin");
+            }
+            
             // verify the required parameter 'name' is set
             if (name == null)
             {
@@ -109,6 +116,11 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("Level", this.ApiClient.ParameterToString(level));
             }
 
+            if (body != null)
+            {
+                request.AddJsonBody(body);
+            }
+            
             // make the HTTP request
             var localVarResponse = await this.ApiClient.RestClient.ExecuteAsync<Object>(request).ConfigureAwait(false);
             return localVarResponse;

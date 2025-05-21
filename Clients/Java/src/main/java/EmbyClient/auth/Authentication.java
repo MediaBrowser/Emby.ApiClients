@@ -3,9 +3,9 @@
  * 
  */
 
-package EmbyClient.auth;
+package embyclient.auth;
 
-import EmbyClient.Pair;
+import embyclient.Pair;
 
 import java.util.Map;
 import java.util.List;

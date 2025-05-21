@@ -28,5 +28,10 @@ namespace Emby.ApiClient.Model
         /// Enum UserConfiguration for value: UserConfiguration
         /// </summary>
         [EnumMember(Value = "UserConfiguration")]
-        UserConfiguration = 2    }
+        UserConfiguration = 2,
+        /// <summary>
+        /// Enum UserData for value: UserData
+        /// </summary>
+        [EnumMember(Value = "UserData")]
+        UserData = 3    }
 }
