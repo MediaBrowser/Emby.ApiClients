@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ProcessRunMetricsProcessMetricPoint model module.
 * @module model/ProcessRunMetricsProcessMetricPoint
-* @version 4.9.0.60
+* @version 4.9.1.0
 */
 export default class ProcessRunMetricsProcessMetricPoint {
     /**
