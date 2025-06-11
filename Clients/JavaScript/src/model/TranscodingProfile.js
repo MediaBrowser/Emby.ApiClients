@@ -17,7 +17,7 @@ import TranscodeSeekInfo from './TranscodeSeekInfo';
 /**
 * The TranscodingProfile model module.
 * @module model/TranscodingProfile
-* @version 4.9.1.0
+* @version 4.9.1.1
 */
 export default class TranscodingProfile {
     /**

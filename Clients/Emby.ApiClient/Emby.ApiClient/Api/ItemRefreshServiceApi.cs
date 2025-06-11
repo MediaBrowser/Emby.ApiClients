@@ -46,15 +46,22 @@ namespace Emby.ApiClient.Api
         /// <remarks>
         /// Requires authentication as user
         /// </remarks>
-        /// <param name="recursive">Indicates if the refresh should occur recursively. (optional)</param>
+        /// <param name="body">BaseRefreshRequest: </param>
         /// <param name="id">Item Id</param>
+        /// <param name="recursive">Indicates if the refresh should occur recursively. (optional)</param>
         /// <param name="metadataRefreshMode">Specifies the metadata refresh mode (optional)</param>
         /// <param name="imageRefreshMode">Specifies the image refresh mode (optional)</param>
         /// <param name="replaceAllMetadata">Determines if metadata should be replaced. Only applicable if mode is FullRefresh (optional)</param>
         /// <param name="replaceAllImages">Determines if images should be replaced. Only applicable if mode is FullRefresh (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async Task<RestResponse<Object>> PostItemsByIdRefresh (bool? recursive, string id, MetadataRefreshMode metadataRefreshMode, MetadataRefreshMode imageRefreshMode, bool? replaceAllMetadata, bool? replaceAllImages)
+        public async Task<RestResponse<Object>> PostItemsByIdRefresh (BaseRefreshRequest body, string id, bool? recursive, MetadataRefreshMode metadataRefreshMode, MetadataRefreshMode imageRefreshMode, bool? replaceAllMetadata, bool? replaceAllImages)
         {
+            // verify the required parameter 'body' is set
+            if (body == null)
+            {
+                throw new ApiException("Missing required parameter 'body' when calling ItemRefreshServiceApi->PostItemsByIdRefresh");
+            }
+            
             // verify the required parameter 'id' is set
             if (id == null)
             {
@@ -93,6 +100,11 @@ namespace Emby.ApiClient.Api
                 request.AddQueryParameter("ReplaceAllImages", this.ApiClient.ParameterToString(replaceAllImages));
             }
 
+            if (body != null)
+            {
+                request.AddJsonBody(body);
+            }
+            
             // make the HTTP request
             var localVarResponse = await this.ApiClient.RestClient.ExecuteAsync<Object>(request).ConfigureAwait(false);
             return localVarResponse;

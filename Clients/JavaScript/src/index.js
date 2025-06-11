@@ -35,6 +35,7 @@ import AuthenticateUserByName from './model/AuthenticateUserByName';
 import AuthenticationAuthenticationResult from './model/AuthenticationAuthenticationResult';
 import BaseItemDto from './model/BaseItemDto';
 import BaseItemPerson from './model/BaseItemPerson';
+import BaseRefreshRequest from './model/BaseRefreshRequest';
 import BitRate from './model/BitRate';
 import BookInfo from './model/BookInfo';
 import BrandingBrandingOptions from './model/BrandingBrandingOptions';
@@ -431,7 +432,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.1.0
+* @version 4.9.1.1
 */
 export {
     /**
@@ -589,6 +590,12 @@ export {
      * @property {module:model/BaseItemPerson}
      */
     BaseItemPerson,
+
+    /**
+     * The BaseRefreshRequest model constructor.
+     * @property {module:model/BaseRefreshRequest}
+     */
+    BaseRefreshRequest,
 
     /**
      * The BitRate model constructor.

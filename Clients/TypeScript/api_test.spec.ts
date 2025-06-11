@@ -2,7 +2,7 @@
  * Emby Server REST API (BETA)
  * Explore the Emby Server API
  *
- * OpenAPI spec version: 4.9.1.0
+ * OpenAPI spec version: 4.9.1.1
  * 
  *
  * NOTE: This file is auto generated.
@@ -3049,13 +3049,14 @@ describe("ItemRefreshServiceApi", () => {
   });
 
   test("postItemsByIdRefresh", () => {
+    const body: api.BaseRefreshRequest = undefined
     const Id: string = "Id_example"
     const Recursive: boolean = true
     const MetadataRefreshMode: MetadataRefreshMode = undefined
     const ImageRefreshMode: MetadataRefreshMode = undefined
     const ReplaceAllMetadata: boolean = true
     const ReplaceAllImages: boolean = true
-    return expect(instance.postItemsByIdRefresh(Id, Recursive, MetadataRefreshMode, ImageRefreshMode, ReplaceAllMetadata, ReplaceAllImages, {})).resolves.toBe(null)
+    return expect(instance.postItemsByIdRefresh(body, Id, Recursive, MetadataRefreshMode, ImageRefreshMode, ReplaceAllMetadata, ReplaceAllImages, {})).resolves.toBe(null)
   })
 })
 

@@ -15,7 +15,7 @@ import SubtitleDeliveryMethod from '../model/SubtitleDeliveryMethod';
 /**
 * DynamicHlsService service.
 * @module api/DynamicHlsServiceApi
-* @version 4.9.1.0
+* @version 4.9.1.1
 */
 export default class DynamicHlsServiceApi {
 

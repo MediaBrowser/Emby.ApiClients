@@ -73,6 +73,9 @@ public class BaseItemDto {
   @SerializedName("DateCreated")
   private OffsetDateTime dateCreated = null;
 
+  @SerializedName("DateModified")
+  private OffsetDateTime dateModified = null;
+
   @SerializedName("ExtraType")
   private String extraType = null;
 
@@ -689,6 +692,24 @@ public class BaseItemDto {
 
   public void setDateCreated(OffsetDateTime dateCreated) {
     this.dateCreated = dateCreated;
+  }
+
+  public BaseItemDto dateModified(OffsetDateTime dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+
+   /**
+   * Get dateModified
+   * @return dateModified
+  **/
+  @Schema(description = "")
+  public OffsetDateTime getDateModified() {
+    return dateModified;
+  }
+
+  public void setDateModified(OffsetDateTime dateModified) {
+    this.dateModified = dateModified;
   }
 
   public BaseItemDto extraType(String extraType) {
@@ -3523,6 +3544,7 @@ public class BaseItemDto {
         Objects.equals(this.tunerName, baseItemDto.tunerName) &&
         Objects.equals(this.playlistItemId, baseItemDto.playlistItemId) &&
         Objects.equals(this.dateCreated, baseItemDto.dateCreated) &&
+        Objects.equals(this.dateModified, baseItemDto.dateModified) &&
         Objects.equals(this.extraType, baseItemDto.extraType) &&
         Objects.equals(this.sortIndexNumber, baseItemDto.sortIndexNumber) &&
         Objects.equals(this.sortParentIndexNumber, baseItemDto.sortParentIndexNumber) &&
@@ -3673,7 +3695,7 @@ public class BaseItemDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, originalTitle, serverId, id, guid, etag, prefix, tunerName, playlistItemId, dateCreated, extraType, sortIndexNumber, sortParentIndexNumber, canDelete, canDownload, canEditItems, supportsResume, presentationUniqueKey, preferredMetadataLanguage, preferredMetadataCountryCode, supportsSync, syncStatus, canManageAccess, canLeaveContent, canMakePublic, container, sortName, forcedSortName, video3DFormat, premiereDate, externalUrls, mediaSources, criticRating, gameSystemId, asSeries, gameSystem, productionLocations, path, officialRating, customRating, channelId, channelName, overview, taglines, genres, communityRating, runTimeTicks, size, fileName, bitrate, productionYear, number, channelNumber, indexNumber, indexNumberEnd, parentIndexNumber, remoteTrailers, providerIds, isFolder, parentId, type, people, studios, genreItems, tagItems, parentLogoItemId, parentBackdropItemId, parentBackdropImageTags, localTrailerCount, userData, recursiveItemCount, childCount, seasonCount, seriesName, seriesId, seasonId, specialFeatureCount, displayPreferencesId, status, airDays, tags, primaryImageAspectRatio, artists, artistItems, composers, album, collectionType, displayOrder, albumId, albumPrimaryImageTag, seriesPrimaryImageTag, albumArtist, albumArtists, seasonName, mediaStreams, partCount, imageTags, backdropImageTags, parentLogoImageTag, seriesStudio, primaryImageItemId, primaryImageTag, parentThumbItemId, parentThumbImageTag, chapters, locationType, mediaType, endDate, lockedFields, lockData, width, height, cameraMake, cameraModel, software, exposureTime, focalLength, imageOrientation, aperture, shutterSpeed, latitude, longitude, altitude, isoSpeedRating, seriesTimerId, channelPrimaryImageTag, startDate, completionPercentage, isRepeat, isNew, episodeTitle, isMovie, isSports, isSeries, isLive, isNews, isKids, isPremiere, timerType, disabled, managementId, timerId, currentProgram, movieCount, seriesCount, albumCount, songCount, musicVideoCount, subviews, listingsProviderId, listingsChannelId, listingsPath, listingsId, listingsChannelName, listingsChannelNumber, affiliateCallSign);
+    return Objects.hash(name, originalTitle, serverId, id, guid, etag, prefix, tunerName, playlistItemId, dateCreated, dateModified, extraType, sortIndexNumber, sortParentIndexNumber, canDelete, canDownload, canEditItems, supportsResume, presentationUniqueKey, preferredMetadataLanguage, preferredMetadataCountryCode, supportsSync, syncStatus, canManageAccess, canLeaveContent, canMakePublic, container, sortName, forcedSortName, video3DFormat, premiereDate, externalUrls, mediaSources, criticRating, gameSystemId, asSeries, gameSystem, productionLocations, path, officialRating, customRating, channelId, channelName, overview, taglines, genres, communityRating, runTimeTicks, size, fileName, bitrate, productionYear, number, channelNumber, indexNumber, indexNumberEnd, parentIndexNumber, remoteTrailers, providerIds, isFolder, parentId, type, people, studios, genreItems, tagItems, parentLogoItemId, parentBackdropItemId, parentBackdropImageTags, localTrailerCount, userData, recursiveItemCount, childCount, seasonCount, seriesName, seriesId, seasonId, specialFeatureCount, displayPreferencesId, status, airDays, tags, primaryImageAspectRatio, artists, artistItems, composers, album, collectionType, displayOrder, albumId, albumPrimaryImageTag, seriesPrimaryImageTag, albumArtist, albumArtists, seasonName, mediaStreams, partCount, imageTags, backdropImageTags, parentLogoImageTag, seriesStudio, primaryImageItemId, primaryImageTag, parentThumbItemId, parentThumbImageTag, chapters, locationType, mediaType, endDate, lockedFields, lockData, width, height, cameraMake, cameraModel, software, exposureTime, focalLength, imageOrientation, aperture, shutterSpeed, latitude, longitude, altitude, isoSpeedRating, seriesTimerId, channelPrimaryImageTag, startDate, completionPercentage, isRepeat, isNew, episodeTitle, isMovie, isSports, isSeries, isLive, isNews, isKids, isPremiere, timerType, disabled, managementId, timerId, currentProgram, movieCount, seriesCount, albumCount, songCount, musicVideoCount, subviews, listingsProviderId, listingsChannelId, listingsPath, listingsId, listingsChannelName, listingsChannelNumber, affiliateCallSign);
   }
 
 
@@ -3692,6 +3714,7 @@ public class BaseItemDto {
     sb.append("    tunerName: ").append(toIndentedString(tunerName)).append("\n");
     sb.append("    playlistItemId: ").append(toIndentedString(playlistItemId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    extraType: ").append(toIndentedString(extraType)).append("\n");
     sb.append("    sortIndexNumber: ").append(toIndentedString(sortIndexNumber)).append("\n");
     sb.append("    sortParentIndexNumber: ").append(toIndentedString(sortParentIndexNumber)).append("\n");

@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.1.0
+  version: 4.9.1.1
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -45455,6 +45455,16 @@ paths:
         explode: false
         schema:
           type: boolean
+      requestBody:
+        description: "BaseRefreshRequest: "
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BaseRefreshRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BaseRefreshRequest'
+        required: true
       responses:
         "200":
           description: Operation successful. Empty response.
@@ -82270,6 +82280,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
@@ -82833,6 +82844,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
     BaseItemDto:
       type: object
@@ -82864,6 +82876,10 @@ components:
         DateCreated:
           type: string
           description: The date created.
+          format: date-time
+          nullable: true
+        DateModified:
+          type: string
           format: date-time
           nullable: true
         ExtraType:
@@ -83950,6 +83966,7 @@ components:
         SupportsResume: true
         LocationType: FileSystem
         IsPremiere: true
+        DateModified: 2000-01-23T04:56:07.000+00:00
         Altitude: 9.702963800023566
       x-internal-ref-name: MediaBrowser.Model.Dto.BaseItemDto
     SyncJobItemStatus:
@@ -86159,6 +86176,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
         TranscodingInfo:
           IsAudioDirect: true
@@ -90258,6 +90276,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
         - Programs:
           - null
@@ -90825,6 +90844,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
     Api.EpgRow:
       type: object
@@ -91402,6 +91422,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
       x-internal-ref-name: Emby.LiveTV.Api.EpgRow
     Api.BaseItemsRequest:
@@ -92120,6 +92141,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
           ServerId: ServerId
           ParentBackdropItemId: ParentBackdropItemId
@@ -92711,6 +92733,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
           ServerId: ServerId
           ParentBackdropItemId: ParentBackdropItemId
@@ -93386,6 +93409,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
         ServerId: ServerId
         ParentBackdropItemId: ParentBackdropItemId
@@ -94528,6 +94552,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
@@ -95091,6 +95116,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
       x-internal-ref-name: MediaBrowser.Model.Dto.RecommendationDto
     RecommendationType:
@@ -99025,6 +99051,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
           TranscodingInfo:
             IsAudioDirect: true
@@ -101188,6 +101215,12 @@ components:
       - Default
       - FullRefresh
       x-internal-ref-name: MediaBrowser.Controller.Providers.MetadataRefreshMode
+    BaseRefreshRequest:
+      type: object
+      properties:
+        ReplaceThumbnailImages:
+          type: boolean
+      x-internal-ref-name: Emby.Api.BaseRefreshRequest
     MetadataEditorInfo:
       type: object
       properties:
@@ -101862,6 +101895,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
           - SeasonName: SeasonName
             PremiereDate: 2000-01-23T04:56:07.000+00:00
@@ -102425,6 +102459,7 @@ components:
             SupportsResume: true
             LocationType: FileSystem
             IsPremiere: true
+            DateModified: 2000-01-23T04:56:07.000+00:00
             Altitude: 9.702963800023566
         SoundtrackSongsResult: null
         ThemeSongsResult: null
@@ -103010,6 +103045,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
         - SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
@@ -103573,6 +103609,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
       x-internal-ref-name: MediaBrowser.Model.Querying.ThemeMediaResult
     ImageInfo:
@@ -105612,6 +105649,7 @@ components:
           SupportsResume: true
           LocationType: FileSystem
           IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 9.702963800023566
         ServerId: ServerId
         SyncJobName: SyncJobName

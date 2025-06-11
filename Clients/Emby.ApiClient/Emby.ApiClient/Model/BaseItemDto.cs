@@ -87,6 +87,12 @@ namespace Emby.ApiClient.Model
         public DateTimeOffset? DateCreated { get; set; }
 
         /// <summary>
+        /// Gets or Sets DateModified
+        /// </summary>
+        /// <value>The DateModified.</value>
+        public DateTimeOffset? DateModified { get; set; }
+
+        /// <summary>
         /// Gets or Sets ExtraType
         /// </summary>
         /// <value>The ExtraType.</value>
@@ -980,6 +986,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  TunerName: ").Append(TunerName).Append("\n");
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
+            sb.Append("  DateModified: ").Append(DateModified).Append("\n");
             sb.Append("  ExtraType: ").Append(ExtraType).Append("\n");
             sb.Append("  SortIndexNumber: ").Append(SortIndexNumber).Append("\n");
             sb.Append("  SortParentIndexNumber: ").Append(SortParentIndexNumber).Append("\n");
@@ -1200,6 +1207,11 @@ namespace Emby.ApiClient.Model
                     this.DateCreated == input.DateCreated ||
                     (this.DateCreated != null &&
                     this.DateCreated.Equals(input.DateCreated))
+                ) && 
+                (
+                    this.DateModified == input.DateModified ||
+                    (this.DateModified != null &&
+                    this.DateModified.Equals(input.DateModified))
                 ) && 
                 (
                     this.ExtraType == input.ExtraType ||
@@ -1985,6 +1997,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.PlaylistItemId.GetHashCode();
                 if (this.DateCreated != null)
                     hashCode = hashCode * 59 + this.DateCreated.GetHashCode();
+                if (this.DateModified != null)
+                    hashCode = hashCode * 59 + this.DateModified.GetHashCode();
                 if (this.ExtraType != null)
                     hashCode = hashCode * 59 + this.ExtraType.GetHashCode();
                 if (this.SortIndexNumber != null)

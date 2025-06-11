@@ -28,6 +28,7 @@ type BaseItemDto struct {
 	PlaylistItemId string `json:"PlaylistItemId,omitempty"`
 	// The date created.
 	DateCreated time.Time `json:"DateCreated,omitempty"`
+	DateModified time.Time `json:"DateModified,omitempty"`
 	ExtraType string `json:"ExtraType,omitempty"`
 	SortIndexNumber int32 `json:"SortIndexNumber,omitempty"`
 	SortParentIndexNumber int32 `json:"SortParentIndexNumber,omitempty"`

@@ -5,6 +5,7 @@
 
 package embyclient.api;
 
+import embyclient.model.BaseRefreshRequest;
 import embyclient.model.MetadataRefreshMode;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -34,13 +35,14 @@ public class ItemRefreshServiceApiTest {
      */
     @Test
     public void postItemsByIdRefreshTest() throws Exception {
+        BaseRefreshRequest body = null;
         String id = null;
         Boolean recursive = null;
         MetadataRefreshMode metadataRefreshMode = null;
         MetadataRefreshMode imageRefreshMode = null;
         Boolean replaceAllMetadata = null;
         Boolean replaceAllImages = null;
-        api.postItemsByIdRefresh(id, recursive, metadataRefreshMode, imageRefreshMode, replaceAllMetadata, replaceAllImages);
+        api.postItemsByIdRefresh(body, id, recursive, metadataRefreshMode, imageRefreshMode, replaceAllMetadata, replaceAllImages);
 
         // TODO: test validations
     }

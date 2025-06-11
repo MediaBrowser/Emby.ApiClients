@@ -715,6 +715,7 @@ open class SyncServiceAPI {
     "SupportsResume" : true,
     "LocationType" : "FileSystem",
     "IsPremiere" : true,
+    "DateModified" : "2000-01-23T04:56:07.000+00:00",
     "Altitude" : 9.702963800023566
   },
   "ServerId" : "ServerId",
@@ -1279,6 +1280,7 @@ open class SyncServiceAPI {
     "SupportsResume" : true,
     "LocationType" : "FileSystem",
     "IsPremiere" : true,
+    "DateModified" : "2000-01-23T04:56:07.000+00:00",
     "Altitude" : 9.702963800023566
   },
   "ServerId" : "ServerId",

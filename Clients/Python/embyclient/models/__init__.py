@@ -33,6 +33,7 @@ from embyclient.models.authenticate_user_by_name import AuthenticateUserByName
 from embyclient.models.authentication_authentication_result import AuthenticationAuthenticationResult
 from embyclient.models.base_item_dto import BaseItemDto
 from embyclient.models.base_item_person import BaseItemPerson
+from embyclient.models.base_refresh_request import BaseRefreshRequest
 from embyclient.models.bit_rate import BitRate
 from embyclient.models.book_info import BookInfo
 from embyclient.models.branding_branding_options import BrandingBrandingOptions
