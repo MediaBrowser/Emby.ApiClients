@@ -629,7 +629,7 @@ public class MediaInfoServiceApi {
     }
 
     /**
-     * Closes a media source
+     * Gets media info for a live stream
      * Requires authentication as user
      * @param liveStreamId LiveStreamId (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -639,7 +639,7 @@ public class MediaInfoServiceApi {
     }
 
     /**
-     * Closes a media source
+     * Gets media info for a live stream
      * Requires authentication as user
      * @param liveStreamId LiveStreamId (required)
      * @return ApiResponse&lt;Void&gt;
@@ -651,7 +651,7 @@ public class MediaInfoServiceApi {
     }
 
     /**
-     * Closes a media source (asynchronously)
+     * Gets media info for a live stream (asynchronously)
      * Requires authentication as user
      * @param liveStreamId LiveStreamId (required)
      * @param callback The callback to be executed when the API call finishes

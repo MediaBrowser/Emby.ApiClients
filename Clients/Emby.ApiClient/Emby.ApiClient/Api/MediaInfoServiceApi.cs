@@ -177,7 +177,7 @@ namespace Emby.ApiClient.Api
         }
 
         /// <summary>
-        /// Closes a media source
+        /// Gets media info for a live stream
         /// </summary>
         /// <remarks>
         /// Requires authentication as user

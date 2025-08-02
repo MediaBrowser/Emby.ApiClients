@@ -51,6 +51,12 @@ namespace Emby.ApiClient.Model
         public string MimeType { get; set; }
 
         /// <summary>
+        /// Gets or Sets DateCreated
+        /// </summary>
+        /// <value>The DateCreated.</value>
+        public DateTimeOffset? DateCreated { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +68,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Album: ").Append(Album).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
+            sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +113,11 @@ namespace Emby.ApiClient.Model
                     this.MimeType == input.MimeType ||
                     (this.MimeType != null &&
                     this.MimeType.Equals(input.MimeType))
+                ) && 
+                (
+                    this.DateCreated == input.DateCreated ||
+                    (this.DateCreated != null &&
+                    this.DateCreated.Equals(input.DateCreated))
                 );
         }
 
@@ -126,6 +138,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.Album.GetHashCode();
                 if (this.MimeType != null)
                     hashCode = hashCode * 59 + this.MimeType.GetHashCode();
+                if (this.DateCreated != null)
+                    hashCode = hashCode * 59 + this.DateCreated.GetHashCode();
                 return hashCode;
             }
         }

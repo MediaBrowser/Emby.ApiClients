@@ -50,7 +50,7 @@ namespace Emby.ApiClient.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>Task of ApiResponse (QueryResultActivityLogEntry)</returns>
-        public async Task<RestResponse<QueryResultActivityLogEntry>> GetSystemActivitylogEntries (int? startIndex, int? limit, string minDate)
+        public async Task<RestResponse<QueryResultActivityLogEntry>> GetSystemActivitylogEntries (int? startIndex, int? limit, DateTimeOffset? minDate)
         {
             var request = new RestRequest("/System/ActivityLog/Entries", Method.Get);
 

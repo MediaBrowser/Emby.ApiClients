@@ -29,6 +29,10 @@ type BaseItemDto struct {
 	// The date created.
 	DateCreated time.Time `json:"DateCreated,omitempty"`
 	DateModified time.Time `json:"DateModified,omitempty"`
+	VideoCodec string `json:"VideoCodec,omitempty"`
+	AudioCodec string `json:"AudioCodec,omitempty"`
+	AverageFrameRate float32 `json:"AverageFrameRate,omitempty"`
+	RealFrameRate float32 `json:"RealFrameRate,omitempty"`
 	ExtraType string `json:"ExtraType,omitempty"`
 	SortIndexNumber int32 `json:"SortIndexNumber,omitempty"`
 	SortParentIndexNumber int32 `json:"SortParentIndexNumber,omitempty"`

@@ -90,7 +90,7 @@ public class MediaInfoServiceApiTest {
         // TODO: test validations
     }
     /**
-     * Closes a media source
+     * Gets media info for a live stream
      *
      * Requires authentication as user
      *

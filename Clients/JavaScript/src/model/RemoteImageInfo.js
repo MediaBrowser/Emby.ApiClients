@@ -16,7 +16,7 @@ import RatingType from './RatingType';
 /**
 * The RemoteImageInfo model module.
 * @module model/RemoteImageInfo
-* @version 4.9.1.1
+* @version 4.9.1.13
 */
 export default class RemoteImageInfo {
     /**

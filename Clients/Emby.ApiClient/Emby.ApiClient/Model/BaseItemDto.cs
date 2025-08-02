@@ -93,6 +93,30 @@ namespace Emby.ApiClient.Model
         public DateTimeOffset? DateModified { get; set; }
 
         /// <summary>
+        /// Gets or Sets VideoCodec
+        /// </summary>
+        /// <value>The VideoCodec.</value>
+        public string VideoCodec { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AudioCodec
+        /// </summary>
+        /// <value>The AudioCodec.</value>
+        public string AudioCodec { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AverageFrameRate
+        /// </summary>
+        /// <value>The AverageFrameRate.</value>
+        public float? AverageFrameRate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RealFrameRate
+        /// </summary>
+        /// <value>The RealFrameRate.</value>
+        public float? RealFrameRate { get; set; }
+
+        /// <summary>
         /// Gets or Sets ExtraType
         /// </summary>
         /// <value>The ExtraType.</value>
@@ -987,6 +1011,10 @@ namespace Emby.ApiClient.Model
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
             sb.Append("  DateModified: ").Append(DateModified).Append("\n");
+            sb.Append("  VideoCodec: ").Append(VideoCodec).Append("\n");
+            sb.Append("  AudioCodec: ").Append(AudioCodec).Append("\n");
+            sb.Append("  AverageFrameRate: ").Append(AverageFrameRate).Append("\n");
+            sb.Append("  RealFrameRate: ").Append(RealFrameRate).Append("\n");
             sb.Append("  ExtraType: ").Append(ExtraType).Append("\n");
             sb.Append("  SortIndexNumber: ").Append(SortIndexNumber).Append("\n");
             sb.Append("  SortParentIndexNumber: ").Append(SortParentIndexNumber).Append("\n");
@@ -1212,6 +1240,26 @@ namespace Emby.ApiClient.Model
                     this.DateModified == input.DateModified ||
                     (this.DateModified != null &&
                     this.DateModified.Equals(input.DateModified))
+                ) && 
+                (
+                    this.VideoCodec == input.VideoCodec ||
+                    (this.VideoCodec != null &&
+                    this.VideoCodec.Equals(input.VideoCodec))
+                ) && 
+                (
+                    this.AudioCodec == input.AudioCodec ||
+                    (this.AudioCodec != null &&
+                    this.AudioCodec.Equals(input.AudioCodec))
+                ) && 
+                (
+                    this.AverageFrameRate == input.AverageFrameRate ||
+                    (this.AverageFrameRate != null &&
+                    this.AverageFrameRate.Equals(input.AverageFrameRate))
+                ) && 
+                (
+                    this.RealFrameRate == input.RealFrameRate ||
+                    (this.RealFrameRate != null &&
+                    this.RealFrameRate.Equals(input.RealFrameRate))
                 ) && 
                 (
                     this.ExtraType == input.ExtraType ||
@@ -1999,6 +2047,14 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.DateCreated.GetHashCode();
                 if (this.DateModified != null)
                     hashCode = hashCode * 59 + this.DateModified.GetHashCode();
+                if (this.VideoCodec != null)
+                    hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
+                if (this.AudioCodec != null)
+                    hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
+                if (this.AverageFrameRate != null)
+                    hashCode = hashCode * 59 + this.AverageFrameRate.GetHashCode();
+                if (this.RealFrameRate != null)
+                    hashCode = hashCode * 59 + this.RealFrameRate.GetHashCode();
                 if (this.ExtraType != null)
                     hashCode = hashCode * 59 + this.ExtraType.GetHashCode();
                 if (this.SortIndexNumber != null)

@@ -227,10 +227,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -240,10 +240,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -348,10 +348,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -361,10 +361,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -718,10 +718,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -731,10 +731,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -839,10 +839,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -852,10 +852,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -1209,10 +1209,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -1222,10 +1222,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -1330,10 +1330,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -1343,10 +1343,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -2179,10 +2179,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -2192,10 +2192,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -2300,10 +2300,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -2313,10 +2313,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -2671,10 +2671,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -2684,10 +2684,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -2793,10 +2793,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -2806,10 +2806,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -3166,10 +3166,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -3179,10 +3179,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -3288,10 +3288,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -3301,10 +3301,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -3661,10 +3661,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -3674,10 +3674,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -3783,10 +3783,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -3796,10 +3796,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -4689,10 +4689,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -4702,10 +4702,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -4810,10 +4810,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -4823,10 +4823,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -5180,10 +5180,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -5193,10 +5193,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -5301,10 +5301,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -5314,10 +5314,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -5671,10 +5671,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -5684,10 +5684,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.
@@ -5792,10 +5792,10 @@ class LibraryServiceApi(object):
         :param str adjacent_to: Optional. Return items that are siblings of a supplied item.
         :param str start_item_id: Optional. Skip through the list until a given item is found.
         :param int min_index_number: Optional filter by minimum index number.
-        :param str min_start_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_start_date: Optional. The maximum premiere date. Format = ISO
-        :param str min_end_date: Optional. The minimum premiere date. Format = ISO
-        :param str max_end_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_start_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_start_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_end_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_end_date: Optional. The maximum premiere date. Format = ISO
         :param int min_players: Optional filter by minimum number of game players.
         :param int max_players: Optional filter by maximum number of game players.
         :param int parent_index_number: Optional filter by parent index number.
@@ -5805,10 +5805,10 @@ class LibraryServiceApi(object):
         :param float min_community_rating: Optional filter by minimum community rating.
         :param float min_critic_rating: Optional filter by minimum critic rating.
         :param int aired_during_season: Gets all episodes that aired during a season, including specials.
-        :param str min_premiere_date: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved: Optional. The minimum premiere date. Format = ISO
-        :param str min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
-        :param str max_premiere_date: Optional. The maximum premiere date. Format = ISO
+        :param datetime min_premiere_date: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved: Optional. The minimum premiere date. Format = ISO
+        :param datetime min_date_last_saved_for_user: Optional. The minimum premiere date. Format = ISO
+        :param datetime max_premiere_date: Optional. The maximum premiere date. Format = ISO
         :param bool has_overview: Optional filter by items that have an overview or not.
         :param bool has_imdb_id: Optional filter by items that have an imdb id or not.
         :param bool has_tmdb_id: Optional filter by items that have a tmdb id or not.

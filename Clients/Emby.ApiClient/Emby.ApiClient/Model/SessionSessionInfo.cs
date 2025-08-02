@@ -93,6 +93,12 @@ namespace Emby.ApiClient.Model
         public string UserId { get; set; }
 
         /// <summary>
+        /// Gets or Sets PartyId
+        /// </summary>
+        /// <value>The PartyId.</value>
+        public string PartyId { get; set; }
+
+        /// <summary>
         /// The username.
         /// </summary>
         /// <value>The UserName.</value>
@@ -195,6 +201,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ServerId: ").Append(ServerId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  PartyId: ").Append(PartyId).Append("\n");
             sb.Append("  UserName: ").Append(UserName).Append("\n");
             sb.Append("  UserPrimaryImageTag: ").Append(UserPrimaryImageTag).Append("\n");
             sb.Append("  _Client: ").Append(_Client).Append("\n");
@@ -290,6 +297,11 @@ namespace Emby.ApiClient.Model
                     this.UserId == input.UserId ||
                     (this.UserId != null &&
                     this.UserId.Equals(input.UserId))
+                ) && 
+                (
+                    this.PartyId == input.PartyId ||
+                    (this.PartyId != null &&
+                    this.PartyId.Equals(input.PartyId))
                 ) && 
                 (
                     this.UserName == input.UserName ||
@@ -395,6 +407,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.PartyId != null)
+                    hashCode = hashCode * 59 + this.PartyId.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.UserPrimaryImageTag != null)

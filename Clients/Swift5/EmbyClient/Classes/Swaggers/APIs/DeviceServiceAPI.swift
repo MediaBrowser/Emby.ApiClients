@@ -149,11 +149,13 @@ open class DeviceServiceAPI {
      - examples: [{contentType=application/json, example={
   "FilesUploaded" : [ {
     "Album" : "Album",
+    "DateCreated" : "2000-01-23T04:56:07.000+00:00",
     "Id" : "Id",
     "MimeType" : "MimeType",
     "Name" : "Name"
   }, {
     "Album" : "Album",
+    "DateCreated" : "2000-01-23T04:56:07.000+00:00",
     "Id" : "Id",
     "MimeType" : "MimeType",
     "Name" : "Name"

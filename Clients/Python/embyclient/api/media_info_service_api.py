@@ -416,7 +416,7 @@ class MediaInfoServiceApi(object):
             collection_formats=collection_formats)
 
     def post_livestreams_mediainfo(self, live_stream_id, **kwargs):  # noqa: E501
-        """Closes a media source  # noqa: E501
+        """Gets media info for a live stream  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -438,7 +438,7 @@ class MediaInfoServiceApi(object):
             return data
 
     def post_livestreams_mediainfo_with_http_info(self, live_stream_id, **kwargs):  # noqa: E501
-        """Closes a media source  # noqa: E501
+        """Gets media info for a live stream  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

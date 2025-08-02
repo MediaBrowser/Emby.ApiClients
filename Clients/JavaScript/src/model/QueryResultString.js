@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The QueryResultString model module.
 * @module model/QueryResultString
-* @version 4.9.1.1
+* @version 4.9.1.13
 */
 export default class QueryResultString {
     /**

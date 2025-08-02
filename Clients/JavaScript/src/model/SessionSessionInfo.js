@@ -18,7 +18,7 @@ import TranscodingInfo from './TranscodingInfo';
 /**
 * The SessionSessionInfo model module.
 * @module model/SessionSessionInfo
-* @version 4.9.1.1
+* @version 4.9.1.13
 */
 export default class SessionSessionInfo {
     /**
@@ -78,6 +78,9 @@ export default class SessionSessionInfo {
             }
             if (data.hasOwnProperty('UserId')) {
                 obj['UserId'] = ApiClient.convertToType(data['UserId'], 'String');
+            }
+            if (data.hasOwnProperty('PartyId')) {
+                obj['PartyId'] = ApiClient.convertToType(data['PartyId'], 'String');
             }
             if (data.hasOwnProperty('UserName')) {
                 obj['UserName'] = ApiClient.convertToType(data['UserName'], 'String');
@@ -173,6 +176,10 @@ export default class SessionSessionInfo {
     * @member {String} UserId
     */
     'UserId' = undefined;
+    /**
+    * @member {String} PartyId
+    */
+    'PartyId' = undefined;
     /**
     * The username.
     * @member {String} UserName

@@ -1,7 +1,7 @@
 # embyclient
 
 Emby Server REST API (BETA)
-- API version: 4.9.1.1
+- API version: 4.9.1.13
 
 Explore the Emby Server API
 
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>media.emby</groupId>
   <artifactId>embyclient</artifactId>
-  <version>4.9.1.1</version>
+  <version>4.9.1.13</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -47,7 +47,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "media.emby:embyclient:4.9.1.1"
+compile "media.emby:embyclient:4.9.1.13"
 ```
 
 ### Others
@@ -60,7 +60,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/embyclient-4.9.1.1.jar`
+* `target/embyclient-4.9.1.13.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -91,7 +91,7 @@ public class ActivityLogServiceApiExample {
         ActivityLogServiceApi apiInstance = new ActivityLogServiceApi();
         Integer startIndex = 56; // Integer | Optional. The record index to start at. All items with a lower index will be dropped from the results.
         Integer limit = 56; // Integer | Optional. The maximum number of records to return
-        String minDate = "minDate_example"; // String | Optional. The minimum date. Format = ISO
+        OffsetDateTime minDate = new OffsetDateTime(); // OffsetDateTime | Optional. The minimum date. Format = ISO
         try {
             QueryResultActivityLogEntry result = apiInstance.getSystemActivitylogEntries(startIndex, limit, minDate);
             System.out.println(result);

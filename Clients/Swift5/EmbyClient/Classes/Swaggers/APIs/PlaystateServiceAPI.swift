@@ -35,13 +35,13 @@ open class PlaystateServiceAPI {
        - type: http
        - name: embyauth
      - examples: [{contentType=application/json, example={
-  "UnplayedItemCount" : 4,
+  "UnplayedItemCount" : 7,
   "Played" : true,
   "ServerId" : "ServerId",
-  "PlayedPercentage" : 0.10263654006109402,
-  "Rating" : 6.519180951018382,
-  "PlayCount" : 7,
-  "PlaybackPositionTicks" : 8,
+  "PlayedPercentage" : 8.969578798196912,
+  "Rating" : 4.652396432933246,
+  "PlayCount" : 3,
+  "PlaybackPositionTicks" : 3,
   "LastPlayedDate" : "2000-01-23T04:56:07.000+00:00",
   "IsFavorite" : true,
   "ItemId" : "ItemId",
@@ -401,13 +401,13 @@ open class PlaystateServiceAPI {
        - type: http
        - name: embyauth
      - examples: [{contentType=application/json, example={
-  "UnplayedItemCount" : 4,
+  "UnplayedItemCount" : 7,
   "Played" : true,
   "ServerId" : "ServerId",
-  "PlayedPercentage" : 0.10263654006109402,
-  "Rating" : 6.519180951018382,
-  "PlayCount" : 7,
-  "PlaybackPositionTicks" : 8,
+  "PlayedPercentage" : 8.969578798196912,
+  "Rating" : 4.652396432933246,
+  "PlayCount" : 3,
+  "PlaybackPositionTicks" : 3,
   "LastPlayedDate" : "2000-01-23T04:56:07.000+00:00",
   "IsFavorite" : true,
   "ItemId" : "ItemId",
@@ -468,13 +468,13 @@ open class PlaystateServiceAPI {
        - type: http
        - name: embyauth
      - examples: [{contentType=application/json, example={
-  "UnplayedItemCount" : 4,
+  "UnplayedItemCount" : 7,
   "Played" : true,
   "ServerId" : "ServerId",
-  "PlayedPercentage" : 0.10263654006109402,
-  "Rating" : 6.519180951018382,
-  "PlayCount" : 7,
-  "PlaybackPositionTicks" : 8,
+  "PlayedPercentage" : 8.969578798196912,
+  "Rating" : 4.652396432933246,
+  "PlayCount" : 3,
+  "PlaybackPositionTicks" : 3,
   "LastPlayedDate" : "2000-01-23T04:56:07.000+00:00",
   "IsFavorite" : true,
   "ItemId" : "ItemId",

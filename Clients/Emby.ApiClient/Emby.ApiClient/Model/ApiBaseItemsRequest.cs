@@ -39,6 +39,18 @@ namespace Emby.ApiClient.Model
         public bool? Is4K { get; set; }
 
         /// <summary>
+        /// Gets or Sets MinDateCreated
+        /// </summary>
+        /// <value>The MinDateCreated.</value>
+        public DateTimeOffset? MinDateCreated { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaxDateCreated
+        /// </summary>
+        /// <value>The MaxDateCreated.</value>
+        public DateTimeOffset? MaxDateCreated { get; set; }
+
+        /// <summary>
         /// Gets or Sets EnableTotalRecordCount
         /// </summary>
         /// <value>The EnableTotalRecordCount.</value>
@@ -246,6 +258,8 @@ namespace Emby.ApiClient.Model
             sb.Append("class ApiBaseItemsRequest {\n");
             sb.Append("  IsSpecialEpisode: ").Append(IsSpecialEpisode).Append("\n");
             sb.Append("  Is4K: ").Append(Is4K).Append("\n");
+            sb.Append("  MinDateCreated: ").Append(MinDateCreated).Append("\n");
+            sb.Append("  MaxDateCreated: ").Append(MaxDateCreated).Append("\n");
             sb.Append("  EnableTotalRecordCount: ").Append(EnableTotalRecordCount).Append("\n");
             sb.Append("  IsDuplicate: ").Append(IsDuplicate).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -313,6 +327,16 @@ namespace Emby.ApiClient.Model
                     this.Is4K == input.Is4K ||
                     (this.Is4K != null &&
                     this.Is4K.Equals(input.Is4K))
+                ) && 
+                (
+                    this.MinDateCreated == input.MinDateCreated ||
+                    (this.MinDateCreated != null &&
+                    this.MinDateCreated.Equals(input.MinDateCreated))
+                ) && 
+                (
+                    this.MaxDateCreated == input.MaxDateCreated ||
+                    (this.MaxDateCreated != null &&
+                    this.MaxDateCreated.Equals(input.MaxDateCreated))
                 ) && 
                 (
                     this.EnableTotalRecordCount == input.EnableTotalRecordCount ||
@@ -497,6 +521,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.IsSpecialEpisode.GetHashCode();
                 if (this.Is4K != null)
                     hashCode = hashCode * 59 + this.Is4K.GetHashCode();
+                if (this.MinDateCreated != null)
+                    hashCode = hashCode * 59 + this.MinDateCreated.GetHashCode();
+                if (this.MaxDateCreated != null)
+                    hashCode = hashCode * 59 + this.MaxDateCreated.GetHashCode();
                 if (this.EnableTotalRecordCount != null)
                     hashCode = hashCode * 59 + this.EnableTotalRecordCount.GetHashCode();
                 if (this.IsDuplicate != null)

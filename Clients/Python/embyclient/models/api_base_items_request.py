@@ -24,6 +24,8 @@ class ApiBaseItemsRequest(object):
     swagger_types = {
         'is_special_episode': 'bool',
         'is4_k': 'bool',
+        'min_date_created': 'datetime',
+        'max_date_created': 'datetime',
         'enable_total_record_count': 'bool',
         'is_duplicate': 'bool',
         'name': 'str',
@@ -62,6 +64,8 @@ class ApiBaseItemsRequest(object):
     attribute_map = {
         'is_special_episode': 'IsSpecialEpisode',
         'is4_k': 'Is4K',
+        'min_date_created': 'MinDateCreated',
+        'max_date_created': 'MaxDateCreated',
         'enable_total_record_count': 'EnableTotalRecordCount',
         'is_duplicate': 'IsDuplicate',
         'name': 'Name',
@@ -97,10 +101,12 @@ class ApiBaseItemsRequest(object):
         'exclude_sources': 'ExcludeSources'
     }
 
-    def __init__(self, is_special_episode=None, is4_k=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None, exclude_sources=None):  # noqa: E501
+    def __init__(self, is_special_episode=None, is4_k=None, min_date_created=None, max_date_created=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None, exclude_sources=None):  # noqa: E501
         """ApiBaseItemsRequest - a model defined in Swagger"""  # noqa: E501
         self._is_special_episode = None
         self._is4_k = None
+        self._min_date_created = None
+        self._max_date_created = None
         self._enable_total_record_count = None
         self._is_duplicate = None
         self._name = None
@@ -139,6 +145,10 @@ class ApiBaseItemsRequest(object):
             self.is_special_episode = is_special_episode
         if is4_k is not None:
             self.is4_k = is4_k
+        if min_date_created is not None:
+            self.min_date_created = min_date_created
+        if max_date_created is not None:
+            self.max_date_created = max_date_created
         if enable_total_record_count is not None:
             self.enable_total_record_count = enable_total_record_count
         if is_duplicate is not None:
@@ -247,6 +257,48 @@ class ApiBaseItemsRequest(object):
         """
 
         self._is4_k = is4_k
+
+    @property
+    def min_date_created(self):
+        """Gets the min_date_created of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The min_date_created of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._min_date_created
+
+    @min_date_created.setter
+    def min_date_created(self, min_date_created):
+        """Sets the min_date_created of this ApiBaseItemsRequest.
+
+
+        :param min_date_created: The min_date_created of this ApiBaseItemsRequest.  # noqa: E501
+        :type: datetime
+        """
+
+        self._min_date_created = min_date_created
+
+    @property
+    def max_date_created(self):
+        """Gets the max_date_created of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The max_date_created of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._max_date_created
+
+    @max_date_created.setter
+    def max_date_created(self, max_date_created):
+        """Sets the max_date_created of this ApiBaseItemsRequest.
+
+
+        :param max_date_created: The max_date_created of this ApiBaseItemsRequest.  # noqa: E501
+        :type: datetime
+        """
+
+        self._max_date_created = max_date_created
 
     @property
     def enable_total_record_count(self):

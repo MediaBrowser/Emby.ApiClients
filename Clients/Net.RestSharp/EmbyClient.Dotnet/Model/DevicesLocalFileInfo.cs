@@ -30,12 +30,14 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="id">id.</param>
         /// <param name="album">album.</param>
         /// <param name="mimeType">mimeType.</param>
-        public DevicesLocalFileInfo(string name = default(string), string id = default(string), string album = default(string), string mimeType = default(string))
+        /// <param name="dateCreated">dateCreated.</param>
+        public DevicesLocalFileInfo(string name = default(string), string id = default(string), string album = default(string), string mimeType = default(string), DateTimeOffset? dateCreated = default(DateTimeOffset?))
         {
             this.Name = name;
             this.Id = id;
             this.Album = album;
             this.MimeType = mimeType;
+            this.DateCreated = dateCreated;
         }
         
         /// <summary>
@@ -63,6 +65,12 @@ namespace EmbyClient.Dotnet.Model
         public string MimeType { get; set; }
 
         /// <summary>
+        /// Gets or Sets DateCreated
+        /// </summary>
+        [DataMember(Name="DateCreated", EmitDefaultValue=false)]
+        public DateTimeOffset? DateCreated { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -74,6 +82,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Album: ").Append(Album).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
+            sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,6 +136,11 @@ namespace EmbyClient.Dotnet.Model
                     this.MimeType == input.MimeType ||
                     (this.MimeType != null &&
                     this.MimeType.Equals(input.MimeType))
+                ) && 
+                (
+                    this.DateCreated == input.DateCreated ||
+                    (this.DateCreated != null &&
+                    this.DateCreated.Equals(input.DateCreated))
                 );
         }
 
@@ -147,6 +161,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.Album.GetHashCode();
                 if (this.MimeType != null)
                     hashCode = hashCode * 59 + this.MimeType.GetHashCode();
+                if (this.DateCreated != null)
+                    hashCode = hashCode * 59 + this.DateCreated.GetHashCode();
                 return hashCode;
             }
         }

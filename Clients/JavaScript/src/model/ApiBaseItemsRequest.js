@@ -18,7 +18,7 @@ import PersonType from './PersonType';
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.9.1.1
+* @version 4.9.1.13
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -50,6 +50,12 @@ export default class ApiBaseItemsRequest {
             }
             if (data.hasOwnProperty('Is4K')) {
                 obj['Is4K'] = ApiClient.convertToType(data['Is4K'], 'Boolean');
+            }
+            if (data.hasOwnProperty('MinDateCreated')) {
+                obj['MinDateCreated'] = ApiClient.convertToType(data['MinDateCreated'], 'Date');
+            }
+            if (data.hasOwnProperty('MaxDateCreated')) {
+                obj['MaxDateCreated'] = ApiClient.convertToType(data['MaxDateCreated'], 'Date');
             }
             if (data.hasOwnProperty('EnableTotalRecordCount')) {
                 obj['EnableTotalRecordCount'] = ApiClient.convertToType(data['EnableTotalRecordCount'], 'Boolean');
@@ -162,6 +168,14 @@ export default class ApiBaseItemsRequest {
     * @member {Boolean} Is4K
     */
     'Is4K' = undefined;
+    /**
+    * @member {Date} MinDateCreated
+    */
+    'MinDateCreated' = undefined;
+    /**
+    * @member {Date} MaxDateCreated
+    */
+    'MaxDateCreated' = undefined;
     /**
     * @member {Boolean} EnableTotalRecordCount
     */

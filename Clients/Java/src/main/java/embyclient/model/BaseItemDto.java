@@ -76,6 +76,18 @@ public class BaseItemDto {
   @SerializedName("DateModified")
   private OffsetDateTime dateModified = null;
 
+  @SerializedName("VideoCodec")
+  private String videoCodec = null;
+
+  @SerializedName("AudioCodec")
+  private String audioCodec = null;
+
+  @SerializedName("AverageFrameRate")
+  private Float averageFrameRate = null;
+
+  @SerializedName("RealFrameRate")
+  private Float realFrameRate = null;
+
   @SerializedName("ExtraType")
   private String extraType = null;
 
@@ -710,6 +722,78 @@ public class BaseItemDto {
 
   public void setDateModified(OffsetDateTime dateModified) {
     this.dateModified = dateModified;
+  }
+
+  public BaseItemDto videoCodec(String videoCodec) {
+    this.videoCodec = videoCodec;
+    return this;
+  }
+
+   /**
+   * Get videoCodec
+   * @return videoCodec
+  **/
+  @Schema(description = "")
+  public String getVideoCodec() {
+    return videoCodec;
+  }
+
+  public void setVideoCodec(String videoCodec) {
+    this.videoCodec = videoCodec;
+  }
+
+  public BaseItemDto audioCodec(String audioCodec) {
+    this.audioCodec = audioCodec;
+    return this;
+  }
+
+   /**
+   * Get audioCodec
+   * @return audioCodec
+  **/
+  @Schema(description = "")
+  public String getAudioCodec() {
+    return audioCodec;
+  }
+
+  public void setAudioCodec(String audioCodec) {
+    this.audioCodec = audioCodec;
+  }
+
+  public BaseItemDto averageFrameRate(Float averageFrameRate) {
+    this.averageFrameRate = averageFrameRate;
+    return this;
+  }
+
+   /**
+   * Get averageFrameRate
+   * @return averageFrameRate
+  **/
+  @Schema(description = "")
+  public Float getAverageFrameRate() {
+    return averageFrameRate;
+  }
+
+  public void setAverageFrameRate(Float averageFrameRate) {
+    this.averageFrameRate = averageFrameRate;
+  }
+
+  public BaseItemDto realFrameRate(Float realFrameRate) {
+    this.realFrameRate = realFrameRate;
+    return this;
+  }
+
+   /**
+   * Get realFrameRate
+   * @return realFrameRate
+  **/
+  @Schema(description = "")
+  public Float getRealFrameRate() {
+    return realFrameRate;
+  }
+
+  public void setRealFrameRate(Float realFrameRate) {
+    this.realFrameRate = realFrameRate;
   }
 
   public BaseItemDto extraType(String extraType) {
@@ -3545,6 +3629,10 @@ public class BaseItemDto {
         Objects.equals(this.playlistItemId, baseItemDto.playlistItemId) &&
         Objects.equals(this.dateCreated, baseItemDto.dateCreated) &&
         Objects.equals(this.dateModified, baseItemDto.dateModified) &&
+        Objects.equals(this.videoCodec, baseItemDto.videoCodec) &&
+        Objects.equals(this.audioCodec, baseItemDto.audioCodec) &&
+        Objects.equals(this.averageFrameRate, baseItemDto.averageFrameRate) &&
+        Objects.equals(this.realFrameRate, baseItemDto.realFrameRate) &&
         Objects.equals(this.extraType, baseItemDto.extraType) &&
         Objects.equals(this.sortIndexNumber, baseItemDto.sortIndexNumber) &&
         Objects.equals(this.sortParentIndexNumber, baseItemDto.sortParentIndexNumber) &&
@@ -3695,7 +3783,7 @@ public class BaseItemDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, originalTitle, serverId, id, guid, etag, prefix, tunerName, playlistItemId, dateCreated, dateModified, extraType, sortIndexNumber, sortParentIndexNumber, canDelete, canDownload, canEditItems, supportsResume, presentationUniqueKey, preferredMetadataLanguage, preferredMetadataCountryCode, supportsSync, syncStatus, canManageAccess, canLeaveContent, canMakePublic, container, sortName, forcedSortName, video3DFormat, premiereDate, externalUrls, mediaSources, criticRating, gameSystemId, asSeries, gameSystem, productionLocations, path, officialRating, customRating, channelId, channelName, overview, taglines, genres, communityRating, runTimeTicks, size, fileName, bitrate, productionYear, number, channelNumber, indexNumber, indexNumberEnd, parentIndexNumber, remoteTrailers, providerIds, isFolder, parentId, type, people, studios, genreItems, tagItems, parentLogoItemId, parentBackdropItemId, parentBackdropImageTags, localTrailerCount, userData, recursiveItemCount, childCount, seasonCount, seriesName, seriesId, seasonId, specialFeatureCount, displayPreferencesId, status, airDays, tags, primaryImageAspectRatio, artists, artistItems, composers, album, collectionType, displayOrder, albumId, albumPrimaryImageTag, seriesPrimaryImageTag, albumArtist, albumArtists, seasonName, mediaStreams, partCount, imageTags, backdropImageTags, parentLogoImageTag, seriesStudio, primaryImageItemId, primaryImageTag, parentThumbItemId, parentThumbImageTag, chapters, locationType, mediaType, endDate, lockedFields, lockData, width, height, cameraMake, cameraModel, software, exposureTime, focalLength, imageOrientation, aperture, shutterSpeed, latitude, longitude, altitude, isoSpeedRating, seriesTimerId, channelPrimaryImageTag, startDate, completionPercentage, isRepeat, isNew, episodeTitle, isMovie, isSports, isSeries, isLive, isNews, isKids, isPremiere, timerType, disabled, managementId, timerId, currentProgram, movieCount, seriesCount, albumCount, songCount, musicVideoCount, subviews, listingsProviderId, listingsChannelId, listingsPath, listingsId, listingsChannelName, listingsChannelNumber, affiliateCallSign);
+    return Objects.hash(name, originalTitle, serverId, id, guid, etag, prefix, tunerName, playlistItemId, dateCreated, dateModified, videoCodec, audioCodec, averageFrameRate, realFrameRate, extraType, sortIndexNumber, sortParentIndexNumber, canDelete, canDownload, canEditItems, supportsResume, presentationUniqueKey, preferredMetadataLanguage, preferredMetadataCountryCode, supportsSync, syncStatus, canManageAccess, canLeaveContent, canMakePublic, container, sortName, forcedSortName, video3DFormat, premiereDate, externalUrls, mediaSources, criticRating, gameSystemId, asSeries, gameSystem, productionLocations, path, officialRating, customRating, channelId, channelName, overview, taglines, genres, communityRating, runTimeTicks, size, fileName, bitrate, productionYear, number, channelNumber, indexNumber, indexNumberEnd, parentIndexNumber, remoteTrailers, providerIds, isFolder, parentId, type, people, studios, genreItems, tagItems, parentLogoItemId, parentBackdropItemId, parentBackdropImageTags, localTrailerCount, userData, recursiveItemCount, childCount, seasonCount, seriesName, seriesId, seasonId, specialFeatureCount, displayPreferencesId, status, airDays, tags, primaryImageAspectRatio, artists, artistItems, composers, album, collectionType, displayOrder, albumId, albumPrimaryImageTag, seriesPrimaryImageTag, albumArtist, albumArtists, seasonName, mediaStreams, partCount, imageTags, backdropImageTags, parentLogoImageTag, seriesStudio, primaryImageItemId, primaryImageTag, parentThumbItemId, parentThumbImageTag, chapters, locationType, mediaType, endDate, lockedFields, lockData, width, height, cameraMake, cameraModel, software, exposureTime, focalLength, imageOrientation, aperture, shutterSpeed, latitude, longitude, altitude, isoSpeedRating, seriesTimerId, channelPrimaryImageTag, startDate, completionPercentage, isRepeat, isNew, episodeTitle, isMovie, isSports, isSeries, isLive, isNews, isKids, isPremiere, timerType, disabled, managementId, timerId, currentProgram, movieCount, seriesCount, albumCount, songCount, musicVideoCount, subviews, listingsProviderId, listingsChannelId, listingsPath, listingsId, listingsChannelName, listingsChannelNumber, affiliateCallSign);
   }
 
 
@@ -3715,6 +3803,10 @@ public class BaseItemDto {
     sb.append("    playlistItemId: ").append(toIndentedString(playlistItemId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    videoCodec: ").append(toIndentedString(videoCodec)).append("\n");
+    sb.append("    audioCodec: ").append(toIndentedString(audioCodec)).append("\n");
+    sb.append("    averageFrameRate: ").append(toIndentedString(averageFrameRate)).append("\n");
+    sb.append("    realFrameRate: ").append(toIndentedString(realFrameRate)).append("\n");
     sb.append("    extraType: ").append(toIndentedString(extraType)).append("\n");
     sb.append("    sortIndexNumber: ").append(toIndentedString(sortIndexNumber)).append("\n");
     sb.append("    sortParentIndexNumber: ").append(toIndentedString(sortParentIndexNumber)).append("\n");
