@@ -15,7 +15,7 @@ import IOFileSystemEntryType from './IOFileSystemEntryType';
 /**
 * The IOFileSystemEntryInfo model module.
 * @module model/IOFileSystemEntryInfo
-* @version 4.9.1.13
+* @version 4.9.1.14
 */
 export default class IOFileSystemEntryInfo {
     /**

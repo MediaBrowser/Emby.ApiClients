@@ -15,7 +15,7 @@ import MarkerType from './MarkerType';
 /**
 * The ChapterInfo model module.
 * @module model/ChapterInfo
-* @version 4.9.1.13
+* @version 4.9.1.14
 */
 export default class ChapterInfo {
     /**

@@ -15,7 +15,7 @@ import UserActionType from './UserActionType';
 /**
 * The UserAction model module.
 * @module model/UserAction
-* @version 4.9.1.13
+* @version 4.9.1.14
 */
 export default class UserAction {
     /**
