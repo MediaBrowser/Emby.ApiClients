@@ -16,7 +16,7 @@ import ScrollDirection from './ScrollDirection';
 /**
 * The ContentSection model module.
 * @module model/ContentSection
-* @version 4.9.1.15
+* @version 4.9.1.16
 */
 export default class ContentSection {
     /**

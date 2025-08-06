@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ApiSetChannelDisabled model module.
 * @module model/ApiSetChannelDisabled
-* @version 4.9.1.15
+* @version 4.9.1.16
 */
 export default class ApiSetChannelDisabled {
     /**
