@@ -12768,6 +12768,7 @@ open class LibraryServiceAPI {
     "EnableMultiVersionByMetadata" : true,
     "DownloadImagesInAdvance" : true,
     "ThumbnailImagesIntervalSeconds" : 1,
+    "EnablePlexIgnore" : true,
     "MaxResumePct" : 4,
     "MinResumeDurationSeconds" : 7,
     "EnableAudioResume" : true,

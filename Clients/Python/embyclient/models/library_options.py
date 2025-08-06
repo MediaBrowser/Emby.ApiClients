@@ -32,6 +32,7 @@ class LibraryOptions(object):
         'extract_chapter_images_during_library_scan': 'bool',
         'download_images_in_advance': 'bool',
         'cache_images': 'bool',
+        'enable_plex_ignore': 'bool',
         'path_infos': 'list[MediaPathInfo]',
         'ignore_hidden_files': 'bool',
         'ignore_file_extensions': 'list[str]',
@@ -96,6 +97,7 @@ class LibraryOptions(object):
         'extract_chapter_images_during_library_scan': 'ExtractChapterImagesDuringLibraryScan',
         'download_images_in_advance': 'DownloadImagesInAdvance',
         'cache_images': 'CacheImages',
+        'enable_plex_ignore': 'EnablePlexIgnore',
         'path_infos': 'PathInfos',
         'ignore_hidden_files': 'IgnoreHiddenFiles',
         'ignore_file_extensions': 'IgnoreFileExtensions',
@@ -149,7 +151,7 @@ class LibraryOptions(object):
         'sample_ignore_size': 'SampleIgnoreSize'
     }
 
-    def __init__(self, enable_archive_media_files=None, enable_photos=None, enable_realtime_monitor=None, enable_marker_detection=None, enable_marker_detection_during_library_scan=None, intro_detection_fingerprint_length=None, enable_chapter_image_extraction=None, extract_chapter_images_during_library_scan=None, download_images_in_advance=None, cache_images=None, path_infos=None, ignore_hidden_files=None, ignore_file_extensions=None, save_local_metadata=None, save_metadata_hidden=None, save_local_thumbnail_sets=None, import_playlists=None, enable_automatic_series_grouping=None, share_embedded_music_album_images=None, enable_embedded_titles=None, enable_audio_resume=None, auto_generate_chapters=None, auto_generate_chapter_interval_minutes=None, automatic_refresh_interval_days=None, placeholder_metadata_refresh_interval_days=None, preferred_metadata_language=None, preferred_image_language=None, content_type=None, metadata_country_code=None, metadata_savers=None, disabled_local_metadata_readers=None, local_metadata_reader_order=None, disabled_lyrics_fetchers=None, save_lyrics_with_media=None, lyrics_download_max_age_days=None, lyrics_fetcher_order=None, lyrics_download_languages=None, disabled_subtitle_fetchers=None, subtitle_fetcher_order=None, skip_subtitles_if_embedded_subtitles_present=None, skip_subtitles_if_audio_track_matches=None, subtitle_download_languages=None, subtitle_download_max_age_days=None, require_perfect_subtitle_match=None, save_subtitles_with_media=None, forced_subtitles_only=None, hearing_impaired_subtitles_only=None, type_options=None, collapse_single_item_folders=None, enable_adult_metadata=None, import_collections=None, enable_multi_version_by_files=None, enable_multi_version_by_metadata=None, enable_multi_part_items=None, min_collection_items=None, music_folder_structure=None, min_resume_pct=None, max_resume_pct=None, min_resume_duration_seconds=None, thumbnail_images_interval_seconds=None, sample_ignore_size=None):  # noqa: E501
+    def __init__(self, enable_archive_media_files=None, enable_photos=None, enable_realtime_monitor=None, enable_marker_detection=None, enable_marker_detection_during_library_scan=None, intro_detection_fingerprint_length=None, enable_chapter_image_extraction=None, extract_chapter_images_during_library_scan=None, download_images_in_advance=None, cache_images=None, enable_plex_ignore=None, path_infos=None, ignore_hidden_files=None, ignore_file_extensions=None, save_local_metadata=None, save_metadata_hidden=None, save_local_thumbnail_sets=None, import_playlists=None, enable_automatic_series_grouping=None, share_embedded_music_album_images=None, enable_embedded_titles=None, enable_audio_resume=None, auto_generate_chapters=None, auto_generate_chapter_interval_minutes=None, automatic_refresh_interval_days=None, placeholder_metadata_refresh_interval_days=None, preferred_metadata_language=None, preferred_image_language=None, content_type=None, metadata_country_code=None, metadata_savers=None, disabled_local_metadata_readers=None, local_metadata_reader_order=None, disabled_lyrics_fetchers=None, save_lyrics_with_media=None, lyrics_download_max_age_days=None, lyrics_fetcher_order=None, lyrics_download_languages=None, disabled_subtitle_fetchers=None, subtitle_fetcher_order=None, skip_subtitles_if_embedded_subtitles_present=None, skip_subtitles_if_audio_track_matches=None, subtitle_download_languages=None, subtitle_download_max_age_days=None, require_perfect_subtitle_match=None, save_subtitles_with_media=None, forced_subtitles_only=None, hearing_impaired_subtitles_only=None, type_options=None, collapse_single_item_folders=None, enable_adult_metadata=None, import_collections=None, enable_multi_version_by_files=None, enable_multi_version_by_metadata=None, enable_multi_part_items=None, min_collection_items=None, music_folder_structure=None, min_resume_pct=None, max_resume_pct=None, min_resume_duration_seconds=None, thumbnail_images_interval_seconds=None, sample_ignore_size=None):  # noqa: E501
         """LibraryOptions - a model defined in Swagger"""  # noqa: E501
         self._enable_archive_media_files = None
         self._enable_photos = None
@@ -161,6 +163,7 @@ class LibraryOptions(object):
         self._extract_chapter_images_during_library_scan = None
         self._download_images_in_advance = None
         self._cache_images = None
+        self._enable_plex_ignore = None
         self._path_infos = None
         self._ignore_hidden_files = None
         self._ignore_file_extensions = None
@@ -233,6 +236,8 @@ class LibraryOptions(object):
             self.download_images_in_advance = download_images_in_advance
         if cache_images is not None:
             self.cache_images = cache_images
+        if enable_plex_ignore is not None:
+            self.enable_plex_ignore = enable_plex_ignore
         if path_infos is not None:
             self.path_infos = path_infos
         if ignore_hidden_files is not None:
@@ -545,6 +550,27 @@ class LibraryOptions(object):
         """
 
         self._cache_images = cache_images
+
+    @property
+    def enable_plex_ignore(self):
+        """Gets the enable_plex_ignore of this LibraryOptions.  # noqa: E501
+
+
+        :return: The enable_plex_ignore of this LibraryOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_plex_ignore
+
+    @enable_plex_ignore.setter
+    def enable_plex_ignore(self, enable_plex_ignore):
+        """Sets the enable_plex_ignore of this LibraryOptions.
+
+
+        :param enable_plex_ignore: The enable_plex_ignore of this LibraryOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_plex_ignore = enable_plex_ignore
 
     @property
     def path_infos(self):

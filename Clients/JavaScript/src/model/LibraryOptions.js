@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.9.1.14
+* @version 4.9.1.15
 */
 export default class LibraryOptions {
     /**
@@ -72,6 +72,9 @@ export default class LibraryOptions {
             }
             if (data.hasOwnProperty('CacheImages')) {
                 obj['CacheImages'] = ApiClient.convertToType(data['CacheImages'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnablePlexIgnore')) {
+                obj['EnablePlexIgnore'] = ApiClient.convertToType(data['EnablePlexIgnore'], 'Boolean');
             }
             if (data.hasOwnProperty('PathInfos')) {
                 obj['PathInfos'] = ApiClient.convertToType(data['PathInfos'], [MediaPathInfo]);
@@ -270,6 +273,10 @@ export default class LibraryOptions {
     * @member {Boolean} CacheImages
     */
     'CacheImages' = undefined;
+    /**
+    * @member {Boolean} EnablePlexIgnore
+    */
+    'EnablePlexIgnore' = undefined;
     /**
     * @member {Array.<module:model/MediaPathInfo>} PathInfos
     */

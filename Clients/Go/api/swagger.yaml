@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.1.14
+  version: 4.9.1.15
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -266,6 +266,10 @@ tags:
   externalDocs:
     description: "API Reference: SuggestionsService"
     url: https://betadev.emby.media/reference/RestAPI/SuggestionsService.html
+- name: ContentService
+  externalDocs:
+    description: "API Reference: ContentService"
+    url: https://betadev.emby.media/reference/RestAPI/ContentService.html
 - name: UserViewsService
   externalDocs:
     description: "API Documentation: Browsing the Library"
@@ -66118,6 +66122,50 @@ paths:
       - apikeyauth: []
       - embyauth: []
       x-RequiredAuthentication: Requires authentication as administrator
+  /Users/{UserId}/HomeSections:
+    get:
+      tags:
+      - ContentService
+      description: Requires authentication as user
+      operationId: getUsersByUseridHomesections
+      parameters:
+      - name: UserId
+        in: path
+        description: User Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Operation successful. Returning a List<ContentSection> object.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContentSection'
+                x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContentSection'
+        "400":
+          description: Bad Request. Server cannot process request.
+        "401":
+          description: Unauthorized. Client needs to authenticate.
+        "403":
+          description: Forbidden. No permission for the reqested operation.
+        "404":
+          description: Resource not found or unavailable.
+        "500":
+          description: Server error.
+      security:
+      - apikeyauth: []
+      - embyauth: []
+      x-RequiredAuthentication: Requires authentication as user
   /Users/{UserId}/Items:
     summary: Gets items based on a query.
     get:
@@ -79977,6 +80025,952 @@ paths:
       - apikeyauth: []
       - embyauth: []
       x-RequiredAuthentication: Requires authentication as user
+  /Users/{UserId}/Sections/{SectionId}/Items:
+    get:
+      tags:
+      - ContentService
+      description: Requires authentication as user
+      externalDocs:
+        description: "API Documentation: Item Information"
+        url: https://betadev.emby.media/doc/restapi/Item-Information.html
+      operationId: getUsersByUseridSectionsBySectionidItems
+      parameters:
+      - name: SectionId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: ArtistType
+        in: query
+        description: Artist or AlbumArtist
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: MaxOfficialRating
+        in: query
+        description: "Optional filter by maximum official rating (PG, PG-13, TV-MA,\
+          \ etc)."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: HasThemeSong
+        in: query
+        description: Optional filter by items with theme songs.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasThemeVideo
+        in: query
+        description: Optional filter by items with theme videos.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasSubtitles
+        in: query
+        description: Optional filter by items with subtitles.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasSpecialFeature
+        in: query
+        description: Optional filter by items with special features.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasTrailer
+        in: query
+        description: Optional filter by items with trailers.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsSpecialSeason
+        in: query
+        description: Optional. Filter by special season.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: AdjacentTo
+        in: query
+        description: Optional. Return items that are siblings of a supplied item.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: StartItemId
+        in: query
+        description: Optional. Skip through the list until a given item is found.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: MinIndexNumber
+        in: query
+        description: Optional filter by minimum index number.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: MinStartDate
+        in: query
+        description: Optional. The minimum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MaxStartDate
+        in: query
+        description: Optional. The maximum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MinEndDate
+        in: query
+        description: Optional. The minimum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MaxEndDate
+        in: query
+        description: Optional. The maximum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MinPlayers
+        in: query
+        description: Optional filter by minimum number of game players.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: MaxPlayers
+        in: query
+        description: Optional filter by maximum number of game players.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: ParentIndexNumber
+        in: query
+        description: Optional filter by parent index number.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: HasParentalRating
+        in: query
+        description: Optional filter by items that have or do not have a parental
+          rating
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsHD
+        in: query
+        description: Optional filter by items that are HD or not.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsUnaired
+        in: query
+        description: Optional filter by items that are unaired episodes or not.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: MinCommunityRating
+        in: query
+        description: Optional filter by minimum community rating.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: number
+          format: double
+          nullable: true
+      - name: MinCriticRating
+        in: query
+        description: Optional filter by minimum critic rating.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: number
+          format: double
+          nullable: true
+      - name: AiredDuringSeason
+        in: query
+        description: "Gets all episodes that aired during a season, including specials."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: MinPremiereDate
+        in: query
+        description: Optional. The minimum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MinDateLastSaved
+        in: query
+        description: Optional. The minimum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MinDateLastSavedForUser
+        in: query
+        description: Optional. The minimum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: MaxPremiereDate
+        in: query
+        description: Optional. The maximum premiere date. Format = ISO
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: date-time
+          nullable: true
+      - name: HasOverview
+        in: query
+        description: Optional filter by items that have an overview or not.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasImdbId
+        in: query
+        description: Optional filter by items that have an imdb id or not.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasTmdbId
+        in: query
+        description: Optional filter by items that have a tmdb id or not.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasTvdbId
+        in: query
+        description: Optional filter by items that have a tvdb id or not.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: ExcludeItemIds
+        in: query
+        description: "Optional. If specified, results will be filtered by exxcluding\
+          \ item ids. This allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: StartIndex
+        in: query
+        description: Optional. The record index to start at. All items with a lower
+          index will be dropped from the results.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: Limit
+        in: query
+        description: Optional. The maximum number of records to return
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: Recursive
+        in: query
+        description: "When searching within folders, this determines whether or not\
+          \ the search will be recursive. true/false"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      - name: SearchTerm
+        in: query
+        description: Enter a search term to perform a search request
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: SortOrder
+        in: query
+        description: "Sort Order - Ascending,Descending"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: ParentId
+        in: query
+        description: Specify this to localize the search to a specific item or folder.
+          Omit to use the root
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: Fields
+        in: query
+        description: "Optional. Specify additional fields of information to return\
+          \ in the output. This allows multiple, comma delimeted. Options: Budget,\
+          \ Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams,\
+          \ Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio,\
+          \ Revenue, SortName, Studios, Taglines"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ExcludeItemTypes
+        in: query
+        description: "Optional. If specified, results will be filtered based on item\
+          \ type. This allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: IncludeItemTypes
+        in: query
+        description: "Optional. If specified, results will be filtered based on item\
+          \ type. This allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: AnyProviderIdEquals
+        in: query
+        description: "Optional. If specified, result will be filtered to contain only\
+          \ items which match at least one of the specified IDs. Each provider ID\
+          \ must be in the form 'prov.id', e.g. 'imdb.tt123456'. This allows multiple,\
+          \ comma delimeted value pairs."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Filters
+        in: query
+        description: "Optional. Specify additional filters to apply. This allows multiple,\
+          \ comma delimeted. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed,\
+          \ IsFavorite, IsResumable, Likes, Dislikes"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: IsFavorite
+        in: query
+        description: "Optional filter by items that are marked as favorite, or not."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsMovie
+        in: query
+        description: Optional filter for movies.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsSeries
+        in: query
+        description: Optional filter for series.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsFolder
+        in: query
+        description: Optional filter for folders.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsNews
+        in: query
+        description: Optional filter for news.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsKids
+        in: query
+        description: Optional filter for kids.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsSports
+        in: query
+        description: Optional filter for sports.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsNew
+        in: query
+        description: Optional filter for IsNew.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsPremiere
+        in: query
+        description: Optional filter for IsPremiere.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsNewOrPremiere
+        in: query
+        description: Optional filter for IsNewOrPremiere.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsRepeat
+        in: query
+        description: Optional filter for IsRepeat.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: ProjectToMedia
+        in: query
+        description: ProjectToMedia
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      - name: MediaTypes
+        in: query
+        description: "Optional filter by MediaType. Allows multiple, comma delimited."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ImageTypes
+        in: query
+        description: "Optional. If specified, results will be filtered based on those\
+          \ containing image types. This allows multiple, comma delimited."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: SortBy
+        in: query
+        description: "Optional. Specify one or more sort orders, comma delimeted.\
+          \ Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating,\
+          \ DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName,\
+          \ Random, Revenue, Runtime"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: IsPlayed
+        in: query
+        description: "Optional filter by items that are played, or not."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: Genres
+        in: query
+        description: "Optional. If specified, results will be filtered based on genre.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: OfficialRatings
+        in: query
+        description: "Optional. If specified, results will be filtered based on OfficialRating.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Tags
+        in: query
+        description: "Optional. If specified, results will be filtered based on tag.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ExcludeTags
+        in: query
+        description: "Optional. If specified, results will be filtered based on tag.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Years
+        in: query
+        description: "Optional. If specified, results will be filtered based on production\
+          \ year. This allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: EnableImages
+        in: query
+        description: "Optional, include image information in output"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: EnableUserData
+        in: query
+        description: "Optional, include user data"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: ImageTypeLimit
+        in: query
+        description: "Optional, the max number of images to return, per image type"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          nullable: true
+      - name: EnableImageTypes
+        in: query
+        description: Optional. The image types to include in the output.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: Person
+        in: query
+        description: "Optional. If specified, results will be filtered to include\
+          \ only those containing the specified person."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: PersonIds
+        in: query
+        description: "Optional. If specified, results will be filtered to include\
+          \ only those containing the specified person."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: PersonTypes
+        in: query
+        description: "Optional. If specified, along with Person, results will be filtered\
+          \ to include only those containing the specified person and PersonType.\
+          \ Allows multiple, comma-delimited"
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: Studios
+        in: query
+        description: "Optional. If specified, results will be filtered based on studio.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: StudioIds
+        in: query
+        description: "Optional. If specified, results will be filtered based on studio.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Artists
+        in: query
+        description: "Optional. If specified, results will be filtered based on artist.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ArtistIds
+        in: query
+        description: "Optional. If specified, results will be filtered based on artist.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Albums
+        in: query
+        description: "Optional. If specified, results will be filtered based on album.\
+          \ This allows multiple, pipe delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Ids
+        in: query
+        description: "Optional. If specific items are needed, specify a list of item\
+          \ id's to retrieve. This allows multiple, comma delimited."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: VideoTypes
+        in: query
+        description: "Optional filter by VideoType (videofile, dvd, bluray, iso).\
+          \ Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Containers
+        in: query
+        description: "Optional filter by Container. Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: AudioCodecs
+        in: query
+        description: "Optional filter by AudioCodec. Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: AudioLayouts
+        in: query
+        description: "Optional filter by AudioLayout. Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: VideoCodecs
+        in: query
+        description: "Optional filter by VideoCodec. Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ExtendedVideoTypes
+        in: query
+        description: "Optional filter by ExtendedVideoType. Allows multiple, comma\
+          \ delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: SubtitleCodecs
+        in: query
+        description: "Optional filter by SubtitleCodec. Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: Path
+        in: query
+        description: Optional filter by Path.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: UserId
+        in: path
+        description: User Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          format: guid
+      - name: MinOfficialRating
+        in: query
+        description: "Optional filter by minimum official rating (PG, PG-13, TV-MA,\
+          \ etc)."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: IsLocked
+        in: query
+        description: Optional filter by items that are locked.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: IsPlaceHolder
+        in: query
+        description: Optional filter by items that are placeholders
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: HasOfficialRating
+        in: query
+        description: Optional filter by items that have official ratings
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: GroupItemsIntoCollections
+        in: query
+        description: Whether or not to hide items behind their boxsets.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+      - name: Is3D
+        in: query
+        description: "Optional filter by items that are 3D, or not."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: boolean
+          nullable: true
+      - name: SeriesStatus
+        in: query
+        description: "Optional filter by Series Status. Allows multiple, comma delimeted."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: NameStartsWithOrGreater
+        in: query
+        description: Optional filter by items whose name is sorted equally or greater
+          than a given input string.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: ArtistStartsWithOrGreater
+        in: query
+        description: Optional filter by items whose name is sorted equally or greater
+          than a given input string.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: AlbumArtistStartsWithOrGreater
+        in: query
+        description: Optional filter by items whose name is sorted equally or greater
+          than a given input string.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: NameStartsWith
+        in: query
+        description: Optional filter by items whose name is sorted equally than a
+          given input string.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: NameLessThan
+        in: query
+        description: Optional filter by items whose name is equally or lesser than
+          a given input string.
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Operation successful. Returning a QueryResult<BaseItemDto>
+            object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResult_BaseItemDto'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/QueryResult_BaseItemDto'
+        "400":
+          description: Bad Request. Server cannot process request.
+        "401":
+          description: Unauthorized. Client needs to authenticate.
+        "403":
+          description: Forbidden. No permission for the reqested operation.
+        "404":
+          description: Resource not found or unavailable.
+        "500":
+          description: Server error.
+      security:
+      - apikeyauth: []
+      - embyauth: []
+      x-RequiredAuthentication: Requires authentication as user
   /Users/{UserId}/Items/{Id}/SpecialFeatures:
     summary: Gets special features for an item
     get:
@@ -89504,6 +90498,7 @@ components:
           EnableMultiVersionByMetadata: true
           DownloadImagesInAdvance: true
           ThumbnailImagesIntervalSeconds: 1
+          EnablePlexIgnore: true
           MaxResumePct: 4
           MinResumeDurationSeconds: 7
           EnableAudioResume: true
@@ -89774,6 +90769,8 @@ components:
           type: boolean
         CacheImages:
           type: boolean
+        EnablePlexIgnore:
+          type: boolean
         PathInfos:
           type: array
           items:
@@ -89937,6 +90934,7 @@ components:
         EnableMultiVersionByMetadata: true
         DownloadImagesInAdvance: true
         ThumbnailImagesIntervalSeconds: 1
+        EnablePlexIgnore: true
         MaxResumePct: 4
         MinResumeDurationSeconds: 7
         EnableAudioResume: true
@@ -105253,6 +106251,7 @@ components:
             EnableMultiVersionByMetadata: true
             DownloadImagesInAdvance: true
             ThumbnailImagesIntervalSeconds: 1
+            EnablePlexIgnore: true
             MaxResumePct: 4
             MinResumeDurationSeconds: 7
             EnableAudioResume: true
@@ -105387,6 +106386,7 @@ components:
             EnableMultiVersionByMetadata: true
             DownloadImagesInAdvance: true
             ThumbnailImagesIntervalSeconds: 1
+            EnablePlexIgnore: true
             MaxResumePct: 4
             MinResumeDurationSeconds: 7
             EnableAudioResume: true
@@ -105559,6 +106559,7 @@ components:
           EnableMultiVersionByMetadata: true
           DownloadImagesInAdvance: true
           ThumbnailImagesIntervalSeconds: 1
+          EnablePlexIgnore: true
           MaxResumePct: 4
           MinResumeDurationSeconds: 7
           EnableAudioResume: true
@@ -106884,6 +107885,617 @@ components:
         - UsersReset
         Success: true
       x-internal-ref-name: MediaBrowser.Model.Users.PinRedeemResult
+    ContentSection:
+      type: object
+      properties:
+        Name:
+          type: string
+        Id:
+          type: string
+        SectionType:
+          type: string
+        CollectionType:
+          type: string
+        ViewType:
+          type: string
+        Monitor:
+          type: array
+          items:
+            type: string
+        CardSizeOffset:
+          type: integer
+          format: int32
+        ScrollDirection:
+          $ref: '#/components/schemas/ScrollDirection'
+        ParentItem:
+          $ref: '#/components/schemas/BaseItemDto'
+      example:
+        CardSizeOffset: 0
+        SectionType: SectionType
+        Monitor:
+        - Monitor
+        - Monitor
+        ScrollDirection: Horizontal
+        CollectionType: CollectionType
+        ParentItem:
+          SeasonName: SeasonName
+          PremiereDate: 2000-01-23T04:56:07.000+00:00
+          Size: 6
+          CriticRating: 2.8841622
+          GameSystemId: 6
+          Studios:
+          - Id: 6
+            Name: Name
+          - Id: 6
+            Name: Name
+          CameraMake: CameraMake
+          Aperture: 9.132027271330688
+          ChannelPrimaryImageTag: ChannelPrimaryImageTag
+          ExtraType: ExtraType
+          ParentBackdropItemId: ParentBackdropItemId
+          Etag: Etag
+          TunerName: TunerName
+          ParentLogoImageTag: ParentLogoImageTag
+          ExposureTime: 4.678947989005849
+          MediaType: MediaType
+          ManagementId: ManagementId
+          Tags:
+          - Tags
+          - Tags
+          Status: Status
+          IndexNumberEnd: 0
+          ArtistItems:
+          - Id: Id
+            Name: Name
+          - Id: Id
+            Name: Name
+          MediaSources:
+          - EncoderPath: EncoderPath
+            RequiredHttpHeaders:
+              key: RequiredHttpHeaders
+            RunTimeTicks: 9
+            HasMixedProtocols: true
+            MediaStreams:
+            - VideoRange: VideoRange
+              ColorSpace: ColorSpace
+              Index: 6
+              BitDepth: 1
+              ItemId: ItemId
+              SupportsExternalStream: true
+              Codec: Codec
+              SampleRate: 1
+              IsAnamorphic: true
+              PixelFormat: PixelFormat
+              AttachmentSize: 9
+              SubtitleLocationType: InternalStream
+              RefFrames: 1
+              IsAVC: true
+              ColorTransfer: ColorTransfer
+              ExtendedVideoSubTypeDescription: ExtendedVideoSubTypeDescription
+              IsExternalUrl: true
+              DisplayTitle: DisplayTitle
+              IsForced: true
+              ChannelLayout: ChannelLayout
+              DisplayLanguage: DisplayLanguage
+              AverageFrameRate: 9.965781
+              StreamStartTimeTicks: 7
+              IsExternal: true
+              Level: 8.762042012749001
+              ExtendedVideoSubType: None
+              Channels: 7
+              Profile: Profile
+              MimeType: MimeType
+              DeliveryUrl: DeliveryUrl
+              ColorPrimaries: ColorPrimaries
+              ServerId: ServerId
+              Language: Language
+              IsTextSubtitleStream: true
+              NalLengthSize: NalLengthSize
+              Height: 4
+              Protocol: null
+              Width: 5
+              TimeBase: TimeBase
+              CodecTag: CodecTag
+              IsDefault: true
+              Path: Path
+              Comment: Comment
+              DeliveryMethod: Encode
+              Title: Title
+              ExtendedVideoType: None
+              Rotation: 6
+              RealFrameRate: 9.36931
+              IsHearingImpaired: true
+              AspectRatio: AspectRatio
+              Type: Unknown
+              IsInterlaced: true
+              Extradata: Extradata
+              BitRate: 1
+            - VideoRange: VideoRange
+              ColorSpace: ColorSpace
+              Index: 6
+              BitDepth: 1
+              ItemId: ItemId
+              SupportsExternalStream: true
+              Codec: Codec
+              SampleRate: 1
+              IsAnamorphic: true
+              PixelFormat: PixelFormat
+              AttachmentSize: 9
+              SubtitleLocationType: InternalStream
+              RefFrames: 1
+              IsAVC: true
+              ColorTransfer: ColorTransfer
+              ExtendedVideoSubTypeDescription: ExtendedVideoSubTypeDescription
+              IsExternalUrl: true
+              DisplayTitle: DisplayTitle
+              IsForced: true
+              ChannelLayout: ChannelLayout
+              DisplayLanguage: DisplayLanguage
+              AverageFrameRate: 9.965781
+              StreamStartTimeTicks: 7
+              IsExternal: true
+              Level: 8.762042012749001
+              ExtendedVideoSubType: None
+              Channels: 7
+              Profile: Profile
+              MimeType: MimeType
+              DeliveryUrl: DeliveryUrl
+              ColorPrimaries: ColorPrimaries
+              ServerId: ServerId
+              Language: Language
+              IsTextSubtitleStream: true
+              NalLengthSize: NalLengthSize
+              Height: 4
+              Protocol: null
+              Width: 5
+              TimeBase: TimeBase
+              CodecTag: CodecTag
+              IsDefault: true
+              Path: Path
+              Comment: Comment
+              DeliveryMethod: Encode
+              Title: Title
+              ExtendedVideoType: None
+              Rotation: 6
+              RealFrameRate: 9.36931
+              IsHearingImpaired: true
+              AspectRatio: AspectRatio
+              Type: Unknown
+              IsInterlaced: true
+              Extradata: Extradata
+              BitRate: 1
+            Size: 7
+            Video3DFormat: null
+            BufferMs: 4
+            ContainerStartTimeTicks: 3
+            SortName: SortName
+            Timestamp: None
+            ItemId: ItemId
+            Name: Name
+            RequiresOpening: true
+            DirectStreamUrl: DirectStreamUrl
+            SupportsDirectStream: true
+            RequiresClosing: true
+            Container: Container
+            ServerId: ServerId
+            LiveStreamId: LiveStreamId
+            RequiresLooping: true
+            Protocol: File
+            AddApiKeyToDirectStreamUrl: true
+            DefaultSubtitleStreamIndex: 1
+            TrancodeLiveStartIndex: 2
+            IsInfiniteStream: true
+            Path: Path
+            IsRemote: true
+            EncoderProtocol: null
+            SupportsDirectPlay: true
+            TranscodingSubProtocol: TranscodingSubProtocol
+            Formats:
+            - Formats
+            - Formats
+            AnalyzeDurationMs: 3
+            WallClockStart: 2000-01-23T04:56:07.000+00:00
+            Bitrate: 6
+            OpenToken: OpenToken
+            ProbeProtocol: null
+            SupportsProbing: true
+            Type: Default
+            ReadAtNativeFramerate: true
+            TranscodingContainer: TranscodingContainer
+            ProbePath: ProbePath
+            TranscodingUrl: TranscodingUrl
+            Chapters:
+            - StartPositionTicks: 5
+              ImageTag: ImageTag
+              MarkerType: Chapter
+              ChapterIndex: 2
+              Name: Name
+            - StartPositionTicks: 5
+              ImageTag: ImageTag
+              MarkerType: Chapter
+              ChapterIndex: 2
+              Name: Name
+            Id: Id
+            SupportsTranscoding: true
+            DefaultAudioStreamIndex: 6
+          - EncoderPath: EncoderPath
+            RequiredHttpHeaders:
+              key: RequiredHttpHeaders
+            RunTimeTicks: 9
+            HasMixedProtocols: true
+            MediaStreams:
+            - VideoRange: VideoRange
+              ColorSpace: ColorSpace
+              Index: 6
+              BitDepth: 1
+              ItemId: ItemId
+              SupportsExternalStream: true
+              Codec: Codec
+              SampleRate: 1
+              IsAnamorphic: true
+              PixelFormat: PixelFormat
+              AttachmentSize: 9
+              SubtitleLocationType: InternalStream
+              RefFrames: 1
+              IsAVC: true
+              ColorTransfer: ColorTransfer
+              ExtendedVideoSubTypeDescription: ExtendedVideoSubTypeDescription
+              IsExternalUrl: true
+              DisplayTitle: DisplayTitle
+              IsForced: true
+              ChannelLayout: ChannelLayout
+              DisplayLanguage: DisplayLanguage
+              AverageFrameRate: 9.965781
+              StreamStartTimeTicks: 7
+              IsExternal: true
+              Level: 8.762042012749001
+              ExtendedVideoSubType: None
+              Channels: 7
+              Profile: Profile
+              MimeType: MimeType
+              DeliveryUrl: DeliveryUrl
+              ColorPrimaries: ColorPrimaries
+              ServerId: ServerId
+              Language: Language
+              IsTextSubtitleStream: true
+              NalLengthSize: NalLengthSize
+              Height: 4
+              Protocol: null
+              Width: 5
+              TimeBase: TimeBase
+              CodecTag: CodecTag
+              IsDefault: true
+              Path: Path
+              Comment: Comment
+              DeliveryMethod: Encode
+              Title: Title
+              ExtendedVideoType: None
+              Rotation: 6
+              RealFrameRate: 9.36931
+              IsHearingImpaired: true
+              AspectRatio: AspectRatio
+              Type: Unknown
+              IsInterlaced: true
+              Extradata: Extradata
+              BitRate: 1
+            - VideoRange: VideoRange
+              ColorSpace: ColorSpace
+              Index: 6
+              BitDepth: 1
+              ItemId: ItemId
+              SupportsExternalStream: true
+              Codec: Codec
+              SampleRate: 1
+              IsAnamorphic: true
+              PixelFormat: PixelFormat
+              AttachmentSize: 9
+              SubtitleLocationType: InternalStream
+              RefFrames: 1
+              IsAVC: true
+              ColorTransfer: ColorTransfer
+              ExtendedVideoSubTypeDescription: ExtendedVideoSubTypeDescription
+              IsExternalUrl: true
+              DisplayTitle: DisplayTitle
+              IsForced: true
+              ChannelLayout: ChannelLayout
+              DisplayLanguage: DisplayLanguage
+              AverageFrameRate: 9.965781
+              StreamStartTimeTicks: 7
+              IsExternal: true
+              Level: 8.762042012749001
+              ExtendedVideoSubType: None
+              Channels: 7
+              Profile: Profile
+              MimeType: MimeType
+              DeliveryUrl: DeliveryUrl
+              ColorPrimaries: ColorPrimaries
+              ServerId: ServerId
+              Language: Language
+              IsTextSubtitleStream: true
+              NalLengthSize: NalLengthSize
+              Height: 4
+              Protocol: null
+              Width: 5
+              TimeBase: TimeBase
+              CodecTag: CodecTag
+              IsDefault: true
+              Path: Path
+              Comment: Comment
+              DeliveryMethod: Encode
+              Title: Title
+              ExtendedVideoType: None
+              Rotation: 6
+              RealFrameRate: 9.36931
+              IsHearingImpaired: true
+              AspectRatio: AspectRatio
+              Type: Unknown
+              IsInterlaced: true
+              Extradata: Extradata
+              BitRate: 1
+            Size: 7
+            Video3DFormat: null
+            BufferMs: 4
+            ContainerStartTimeTicks: 3
+            SortName: SortName
+            Timestamp: None
+            ItemId: ItemId
+            Name: Name
+            RequiresOpening: true
+            DirectStreamUrl: DirectStreamUrl
+            SupportsDirectStream: true
+            RequiresClosing: true
+            Container: Container
+            ServerId: ServerId
+            LiveStreamId: LiveStreamId
+            RequiresLooping: true
+            Protocol: File
+            AddApiKeyToDirectStreamUrl: true
+            DefaultSubtitleStreamIndex: 1
+            TrancodeLiveStartIndex: 2
+            IsInfiniteStream: true
+            Path: Path
+            IsRemote: true
+            EncoderProtocol: null
+            SupportsDirectPlay: true
+            TranscodingSubProtocol: TranscodingSubProtocol
+            Formats:
+            - Formats
+            - Formats
+            AnalyzeDurationMs: 3
+            WallClockStart: 2000-01-23T04:56:07.000+00:00
+            Bitrate: 6
+            OpenToken: OpenToken
+            ProbeProtocol: null
+            SupportsProbing: true
+            Type: Default
+            ReadAtNativeFramerate: true
+            TranscodingContainer: TranscodingContainer
+            ProbePath: ProbePath
+            TranscodingUrl: TranscodingUrl
+            Chapters:
+            - StartPositionTicks: 5
+              ImageTag: ImageTag
+              MarkerType: Chapter
+              ChapterIndex: 2
+              Name: Name
+            - StartPositionTicks: 5
+              ImageTag: ImageTag
+              MarkerType: Chapter
+              ChapterIndex: 2
+              Name: Name
+            Id: Id
+            SupportsTranscoding: true
+            DefaultAudioStreamIndex: 6
+          GenreItems:
+          - null
+          - null
+          OfficialRating: OfficialRating
+          Longitude: 0.5199002018724985
+          Composers:
+          - null
+          - null
+          AverageFrameRate: 0.8008282
+          LockData: true
+          FocalLength: 7.260521264802104
+          IsNews: true
+          ShutterSpeed: 0.8774076871421566
+          Id: Id
+          SortIndexNumber: 1
+          IsFolder: true
+          CanMakePublic: true
+          SeriesTimerId: SeriesTimerId
+          SeriesId: SeriesId
+          ListingsPath: ListingsPath
+          MediaStreams:
+          - null
+          - null
+          FileName: FileName
+          PrimaryImageTag: PrimaryImageTag
+          Prefix: Prefix
+          CanDownload: true
+          IsMovie: true
+          SeriesCount: 8
+          PrimaryImageItemId: PrimaryImageItemId
+          ListingsChannelId: ListingsChannelId
+          SeriesStudio: SeriesStudio
+          IsLive: true
+          Width: 4
+          ExternalUrls:
+          - Url: Url
+            Name: Name
+          - Url: Url
+            Name: Name
+          RecursiveItemCount: 7
+          Path: Path
+          ParentId: ParentId
+          TimerType: Program
+          GameSystem: GameSystem
+          MusicVideoCount: 0
+          IsSeries: true
+          ProductionLocations:
+          - ProductionLocations
+          - ProductionLocations
+          Subviews:
+          - Subviews
+          - Subviews
+          Bitrate: 3
+          SeasonCount: 3
+          EndDate: 2000-01-23T04:56:07.000+00:00
+          RealFrameRate: 6.0274563
+          SeriesPrimaryImageTag: SeriesPrimaryImageTag
+          ParentThumbItemId: ParentThumbItemId
+          PreferredMetadataLanguage: PreferredMetadataLanguage
+          CanLeaveContent: true
+          Type: Type
+          BackdropImageTags:
+          - BackdropImageTags
+          - BackdropImageTags
+          ParentBackdropImageTags:
+          - ParentBackdropImageTags
+          - ParentBackdropImageTags
+          ChildCount: 5
+          TagItems:
+          - null
+          - null
+          Artists:
+          - Artists
+          - Artists
+          ListingsChannelName: ListingsChannelName
+          RunTimeTicks: 5
+          AlbumPrimaryImageTag: AlbumPrimaryImageTag
+          Video3DFormat: HalfSideBySide
+          CanDelete: true
+          PlaylistItemId: PlaylistItemId
+          SortParentIndexNumber: 5
+          DisplayPreferencesId: DisplayPreferencesId
+          Album: Album
+          Latitude: 9.702963800023566
+          Guid: Guid
+          SortName: SortName
+          Name: Name
+          StartDate: 2000-01-23T04:56:07.000+00:00
+          Container: Container
+          ProductionYear: 3
+          SeriesName: SeriesName
+          AsSeries: true
+          AlbumId: AlbumId
+          SupportsSync: true
+          LocalTrailerCount: 0
+          IndexNumber: 7
+          CompletionPercentage: 4.86315908102884
+          Genres:
+          - Genres
+          - Genres
+          SeasonId: SeasonId
+          LockedFields:
+          - Cast
+          - Cast
+          Disabled: true
+          ProviderIds:
+            key: ProviderIds
+          AudioCodec: AudioCodec
+          RemoteTrailers:
+          - Url: Url
+            Name: Name
+          - Url: Url
+            Name: Name
+          PresentationUniqueKey: PresentationUniqueKey
+          CustomRating: CustomRating
+          ListingsChannelNumber: ListingsChannelNumber
+          SyncStatus: Queued
+          CanManageAccess: true
+          AirDays:
+          - Sunday
+          - Sunday
+          VideoCodec: VideoCodec
+          ParentLogoItemId: ParentLogoItemId
+          PartCount: 6
+          ListingsProviderId: ListingsProviderId
+          CanEditItems: true
+          ChannelName: ChannelName
+          EpisodeTitle: EpisodeTitle
+          IsoSpeedRating: 5
+          CommunityRating: 6.878052
+          Software: Software
+          Chapters:
+          - null
+          - null
+          SongCount: 3
+          Taglines:
+          - Taglines
+          - Taglines
+          PreferredMetadataCountryCode: PreferredMetadataCountryCode
+          CameraModel: CameraModel
+          ChannelNumber: ChannelNumber
+          UserData:
+            UnplayedItemCount: 7
+            Played: true
+            ServerId: ServerId
+            PlayedPercentage: 8.969578798196912
+            Rating: 4.652396432933246
+            PlayCount: 3
+            PlaybackPositionTicks: 3
+            LastPlayedDate: 2000-01-23T04:56:07.000+00:00
+            IsFavorite: true
+            ItemId: ItemId
+            Key: Key
+          TimerId: TimerId
+          DateCreated: 2000-01-23T04:56:07.000+00:00
+          ParentThumbImageTag: ParentThumbImageTag
+          IsSports: true
+          ChannelId: ChannelId
+          ParentIndexNumber: 7
+          IsNew: true
+          AffiliateCallSign: AffiliateCallSign
+          ListingsId: ListingsId
+          AlbumArtists:
+          - null
+          - null
+          ServerId: ServerId
+          Number: Number
+          AlbumCount: 4
+          IsRepeat: true
+          CollectionType: CollectionType
+          PrimaryImageAspectRatio: 0.2025324113236393
+          Height: 1
+          IsKids: true
+          DisplayOrder: DisplayOrder
+          MovieCount: 6
+          People:
+          - Role: Role
+            Type: Actor
+            PrimaryImageTag: PrimaryImageTag
+            Id: Id
+            Name: Name
+          - Role: Role
+            Type: Actor
+            PrimaryImageTag: PrimaryImageTag
+            Id: Id
+            Name: Name
+          Overview: Overview
+          SpecialFeatureCount: 4
+          ImageOrientation: TopLeft
+          AlbumArtist: AlbumArtist
+          ImageTags:
+            key: ImageTags
+          OriginalTitle: OriginalTitle
+          ForcedSortName: ForcedSortName
+          CurrentProgram: null
+          SupportsResume: true
+          LocationType: FileSystem
+          IsPremiere: true
+          DateModified: 2000-01-23T04:56:07.000+00:00
+          Altitude: 7.933506881737151
+        Id: Id
+        ViewType: ViewType
+        Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Entities.ContentSection
+    ScrollDirection:
+      type: string
+      enum:
+      - Horizontal
+      - Vertical
+      x-internal-ref-name: MediaBrowser.Model.Entities.ScrollDirection
     UserLibrary.AddTags:
       type: object
       properties:

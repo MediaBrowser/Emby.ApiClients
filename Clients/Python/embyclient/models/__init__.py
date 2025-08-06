@@ -58,6 +58,7 @@ from embyclient.models.connect_connect_authentication_exchange_result import Con
 from embyclient.models.connect_user_link_result import ConnectUserLinkResult
 from embyclient.models.connect_user_link_type import ConnectUserLinkType
 from embyclient.models.container_profile import ContainerProfile
+from embyclient.models.content_section import ContentSection
 from embyclient.models.create_user_by_name import CreateUserByName
 from embyclient.models.day_of_week import DayOfWeek
 from embyclient.models.default_directory_browser_info import DefaultDirectoryBrowserInfo
@@ -257,6 +258,7 @@ from embyclient.models.response_profile import ResponseProfile
 from embyclient.models.roku_metadata_api_thumbnail_info import RokuMetadataApiThumbnailInfo
 from embyclient.models.roku_metadata_api_thumbnail_set_info import RokuMetadataApiThumbnailSetInfo
 from embyclient.models.run_ui_command import RunUICommand
+from embyclient.models.scroll_direction import ScrollDirection
 from embyclient.models.secondary_frameworks import SecondaryFrameworks
 from embyclient.models.segment_skip_mode import SegmentSkipMode
 from embyclient.models.series_display_order import SeriesDisplayOrder

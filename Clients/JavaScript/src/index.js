@@ -60,6 +60,7 @@ import ConnectConnectAuthenticationExchangeResult from './model/ConnectConnectAu
 import ConnectUserLinkResult from './model/ConnectUserLinkResult';
 import ConnectUserLinkType from './model/ConnectUserLinkType';
 import ContainerProfile from './model/ContainerProfile';
+import ContentSection from './model/ContentSection';
 import CreateUserByName from './model/CreateUserByName';
 import DayOfWeek from './model/DayOfWeek';
 import DefaultDirectoryBrowserInfo from './model/DefaultDirectoryBrowserInfo';
@@ -259,6 +260,7 @@ import ResponseProfile from './model/ResponseProfile';
 import RokuMetadataApiThumbnailInfo from './model/RokuMetadataApiThumbnailInfo';
 import RokuMetadataApiThumbnailSetInfo from './model/RokuMetadataApiThumbnailSetInfo';
 import RunUICommand from './model/RunUICommand';
+import ScrollDirection from './model/ScrollDirection';
 import SecondaryFrameworks from './model/SecondaryFrameworks';
 import SegmentSkipMode from './model/SegmentSkipMode';
 import SeriesDisplayOrder from './model/SeriesDisplayOrder';
@@ -345,6 +347,7 @@ import CodecParameterServiceApi from './api/CodecParameterServiceApi';
 import CollectionServiceApi from './api/CollectionServiceApi';
 import ConfigurationServiceApi from './api/ConfigurationServiceApi';
 import ConnectServiceApi from './api/ConnectServiceApi';
+import ContentServiceApi from './api/ContentServiceApi';
 import DeviceServiceApi from './api/DeviceServiceApi';
 import DisplayPreferencesServiceApi from './api/DisplayPreferencesServiceApi';
 import DlnaServerServiceApi from './api/DlnaServerServiceApi';
@@ -432,7 +435,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.1.14
+* @version 4.9.1.15
 */
 export {
     /**
@@ -740,6 +743,12 @@ export {
      * @property {module:model/ContainerProfile}
      */
     ContainerProfile,
+
+    /**
+     * The ContentSection model constructor.
+     * @property {module:model/ContentSection}
+     */
+    ContentSection,
 
     /**
      * The CreateUserByName model constructor.
@@ -1936,6 +1945,12 @@ export {
     RunUICommand,
 
     /**
+     * The ScrollDirection model constructor.
+     * @property {module:model/ScrollDirection}
+     */
+    ScrollDirection,
+
+    /**
      * The SecondaryFrameworks model constructor.
      * @property {module:model/SecondaryFrameworks}
      */
@@ -2450,6 +2465,12 @@ export {
     * @property {module:api/ConnectServiceApi}
     */
     ConnectServiceApi,
+
+    /**
+    * The ContentServiceApi service constructor.
+    * @property {module:api/ContentServiceApi}
+    */
+    ContentServiceApi,
 
     /**
     * The DeviceServiceApi service constructor.

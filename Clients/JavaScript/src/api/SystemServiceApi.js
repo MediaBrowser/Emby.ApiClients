@@ -21,7 +21,7 @@ import WakeOnLanInfo from '../model/WakeOnLanInfo';
 /**
 * SystemService service.
 * @module api/SystemServiceApi
-* @version 4.9.1.14
+* @version 4.9.1.15
 */
 export default class SystemServiceApi {
 

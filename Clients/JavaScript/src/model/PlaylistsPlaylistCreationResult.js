@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The PlaylistsPlaylistCreationResult model module.
 * @module model/PlaylistsPlaylistCreationResult
-* @version 4.9.1.14
+* @version 4.9.1.15
 */
 export default class PlaylistsPlaylistCreationResult {
     /**

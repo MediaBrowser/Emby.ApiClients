@@ -87,6 +87,12 @@ namespace Emby.ApiClient.Model
         public bool? CacheImages { get; set; }
 
         /// <summary>
+        /// Gets or Sets EnablePlexIgnore
+        /// </summary>
+        /// <value>The EnablePlexIgnore.</value>
+        public bool? EnablePlexIgnore { get; set; }
+
+        /// <summary>
         /// Gets or Sets PathInfos
         /// </summary>
         /// <value>The PathInfos.</value>
@@ -410,6 +416,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  ExtractChapterImagesDuringLibraryScan: ").Append(ExtractChapterImagesDuringLibraryScan).Append("\n");
             sb.Append("  DownloadImagesInAdvance: ").Append(DownloadImagesInAdvance).Append("\n");
             sb.Append("  CacheImages: ").Append(CacheImages).Append("\n");
+            sb.Append("  EnablePlexIgnore: ").Append(EnablePlexIgnore).Append("\n");
             sb.Append("  PathInfos: ").Append(PathInfos).Append("\n");
             sb.Append("  IgnoreHiddenFiles: ").Append(IgnoreHiddenFiles).Append("\n");
             sb.Append("  IgnoreFileExtensions: ").Append(IgnoreFileExtensions).Append("\n");
@@ -535,6 +542,11 @@ namespace Emby.ApiClient.Model
                     this.CacheImages == input.CacheImages ||
                     (this.CacheImages != null &&
                     this.CacheImages.Equals(input.CacheImages))
+                ) && 
+                (
+                    this.EnablePlexIgnore == input.EnablePlexIgnore ||
+                    (this.EnablePlexIgnore != null &&
+                    this.EnablePlexIgnore.Equals(input.EnablePlexIgnore))
                 ) && 
                 (
                     this.PathInfos == input.PathInfos ||
@@ -834,6 +846,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.DownloadImagesInAdvance.GetHashCode();
                 if (this.CacheImages != null)
                     hashCode = hashCode * 59 + this.CacheImages.GetHashCode();
+                if (this.EnablePlexIgnore != null)
+                    hashCode = hashCode * 59 + this.EnablePlexIgnore.GetHashCode();
                 if (this.PathInfos != null)
                     hashCode = hashCode * 59 + this.PathInfos.GetHashCode();
                 if (this.IgnoreHiddenFiles != null)
