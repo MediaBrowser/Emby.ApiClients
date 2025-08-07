@@ -23,6 +23,7 @@ public struct UserConfiguration: Codable {
     public var subtitleMode: SubtitlePlaybackMode?
     public var orderedViews: [String]?
     public var latestItemsExcludes: [String]?
+    public var searchExcludes: [String]?
     public var myMediaExcludes: [String]?
     public var hidePlayedInLatest: Bool?
     public var hidePlayedInMoreLikeThis: Bool?
@@ -34,7 +35,7 @@ public struct UserConfiguration: Codable {
     public var introSkipMode: SegmentSkipMode?
     public var enableLocalPassword: Bool?
 
-    public init(audioLanguagePreference: String? = nil, playDefaultAudioTrack: Bool? = nil, subtitleLanguagePreference: String? = nil, profilePin: String? = nil, displayMissingEpisodes: Bool? = nil, subtitleMode: SubtitlePlaybackMode? = nil, orderedViews: [String]? = nil, latestItemsExcludes: [String]? = nil, myMediaExcludes: [String]? = nil, hidePlayedInLatest: Bool? = nil, hidePlayedInMoreLikeThis: Bool? = nil, hidePlayedInSuggestions: Bool? = nil, rememberAudioSelections: Bool? = nil, rememberSubtitleSelections: Bool? = nil, enableNextEpisodeAutoPlay: Bool? = nil, resumeRewindSeconds: Int? = nil, introSkipMode: SegmentSkipMode? = nil, enableLocalPassword: Bool? = nil) {
+    public init(audioLanguagePreference: String? = nil, playDefaultAudioTrack: Bool? = nil, subtitleLanguagePreference: String? = nil, profilePin: String? = nil, displayMissingEpisodes: Bool? = nil, subtitleMode: SubtitlePlaybackMode? = nil, orderedViews: [String]? = nil, latestItemsExcludes: [String]? = nil, searchExcludes: [String]? = nil, myMediaExcludes: [String]? = nil, hidePlayedInLatest: Bool? = nil, hidePlayedInMoreLikeThis: Bool? = nil, hidePlayedInSuggestions: Bool? = nil, rememberAudioSelections: Bool? = nil, rememberSubtitleSelections: Bool? = nil, enableNextEpisodeAutoPlay: Bool? = nil, resumeRewindSeconds: Int? = nil, introSkipMode: SegmentSkipMode? = nil, enableLocalPassword: Bool? = nil) {
         self.audioLanguagePreference = audioLanguagePreference
         self.playDefaultAudioTrack = playDefaultAudioTrack
         self.subtitleLanguagePreference = subtitleLanguagePreference
@@ -43,6 +44,7 @@ public struct UserConfiguration: Codable {
         self.subtitleMode = subtitleMode
         self.orderedViews = orderedViews
         self.latestItemsExcludes = latestItemsExcludes
+        self.searchExcludes = searchExcludes
         self.myMediaExcludes = myMediaExcludes
         self.hidePlayedInLatest = hidePlayedInLatest
         self.hidePlayedInMoreLikeThis = hidePlayedInMoreLikeThis
@@ -64,6 +66,7 @@ public struct UserConfiguration: Codable {
         case subtitleMode = "SubtitleMode"
         case orderedViews = "OrderedViews"
         case latestItemsExcludes = "LatestItemsExcludes"
+        case searchExcludes = "SearchExcludes"
         case myMediaExcludes = "MyMediaExcludes"
         case hidePlayedInLatest = "HidePlayedInLatest"
         case hidePlayedInMoreLikeThis = "HidePlayedInMoreLikeThis"

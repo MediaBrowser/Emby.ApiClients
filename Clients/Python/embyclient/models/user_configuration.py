@@ -30,6 +30,7 @@ class UserConfiguration(object):
         'subtitle_mode': 'SubtitlePlaybackMode',
         'ordered_views': 'list[str]',
         'latest_items_excludes': 'list[str]',
+        'search_excludes': 'list[str]',
         'my_media_excludes': 'list[str]',
         'hide_played_in_latest': 'bool',
         'hide_played_in_more_like_this': 'bool',
@@ -51,6 +52,7 @@ class UserConfiguration(object):
         'subtitle_mode': 'SubtitleMode',
         'ordered_views': 'OrderedViews',
         'latest_items_excludes': 'LatestItemsExcludes',
+        'search_excludes': 'SearchExcludes',
         'my_media_excludes': 'MyMediaExcludes',
         'hide_played_in_latest': 'HidePlayedInLatest',
         'hide_played_in_more_like_this': 'HidePlayedInMoreLikeThis',
@@ -63,7 +65,7 @@ class UserConfiguration(object):
         'enable_local_password': 'EnableLocalPassword'
     }
 
-    def __init__(self, audio_language_preference=None, play_default_audio_track=None, subtitle_language_preference=None, profile_pin=None, display_missing_episodes=None, subtitle_mode=None, ordered_views=None, latest_items_excludes=None, my_media_excludes=None, hide_played_in_latest=None, hide_played_in_more_like_this=None, hide_played_in_suggestions=None, remember_audio_selections=None, remember_subtitle_selections=None, enable_next_episode_auto_play=None, resume_rewind_seconds=None, intro_skip_mode=None, enable_local_password=None):  # noqa: E501
+    def __init__(self, audio_language_preference=None, play_default_audio_track=None, subtitle_language_preference=None, profile_pin=None, display_missing_episodes=None, subtitle_mode=None, ordered_views=None, latest_items_excludes=None, search_excludes=None, my_media_excludes=None, hide_played_in_latest=None, hide_played_in_more_like_this=None, hide_played_in_suggestions=None, remember_audio_selections=None, remember_subtitle_selections=None, enable_next_episode_auto_play=None, resume_rewind_seconds=None, intro_skip_mode=None, enable_local_password=None):  # noqa: E501
         """UserConfiguration - a model defined in Swagger"""  # noqa: E501
         self._audio_language_preference = None
         self._play_default_audio_track = None
@@ -73,6 +75,7 @@ class UserConfiguration(object):
         self._subtitle_mode = None
         self._ordered_views = None
         self._latest_items_excludes = None
+        self._search_excludes = None
         self._my_media_excludes = None
         self._hide_played_in_latest = None
         self._hide_played_in_more_like_this = None
@@ -100,6 +103,8 @@ class UserConfiguration(object):
             self.ordered_views = ordered_views
         if latest_items_excludes is not None:
             self.latest_items_excludes = latest_items_excludes
+        if search_excludes is not None:
+            self.search_excludes = search_excludes
         if my_media_excludes is not None:
             self.my_media_excludes = my_media_excludes
         if hide_played_in_latest is not None:
@@ -294,6 +299,27 @@ class UserConfiguration(object):
         """
 
         self._latest_items_excludes = latest_items_excludes
+
+    @property
+    def search_excludes(self):
+        """Gets the search_excludes of this UserConfiguration.  # noqa: E501
+
+
+        :return: The search_excludes of this UserConfiguration.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._search_excludes
+
+    @search_excludes.setter
+    def search_excludes(self, search_excludes):
+        """Sets the search_excludes of this UserConfiguration.
+
+
+        :param search_excludes: The search_excludes of this UserConfiguration.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._search_excludes = search_excludes
 
     @property
     def my_media_excludes(self):

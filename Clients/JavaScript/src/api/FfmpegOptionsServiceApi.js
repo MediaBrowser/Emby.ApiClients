@@ -15,7 +15,7 @@ import EditObjectContainer from '../model/EditObjectContainer';
 /**
 * FfmpegOptionsService service.
 * @module api/FfmpegOptionsServiceApi
-* @version 4.9.1.16
+* @version 4.9.1.17
 */
 export default class FfmpegOptionsServiceApi {
 

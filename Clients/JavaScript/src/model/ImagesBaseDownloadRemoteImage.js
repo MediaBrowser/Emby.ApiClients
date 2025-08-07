@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ImagesBaseDownloadRemoteImage model module.
 * @module model/ImagesBaseDownloadRemoteImage
-* @version 4.9.1.16
+* @version 4.9.1.17
 */
 export default class ImagesBaseDownloadRemoteImage {
     /**

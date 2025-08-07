@@ -19,6 +19,7 @@ type UserConfiguration struct {
 	SubtitleMode *SubtitlePlaybackMode `json:"SubtitleMode,omitempty"`
 	OrderedViews []string `json:"OrderedViews,omitempty"`
 	LatestItemsExcludes []string `json:"LatestItemsExcludes,omitempty"`
+	SearchExcludes []string `json:"SearchExcludes,omitempty"`
 	MyMediaExcludes []string `json:"MyMediaExcludes,omitempty"`
 	HidePlayedInLatest bool `json:"HidePlayedInLatest,omitempty"`
 	HidePlayedInMoreLikeThis bool `json:"HidePlayedInMoreLikeThis,omitempty"`

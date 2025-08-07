@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.1.16
+  version: 4.9.1.17
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -99694,6 +99694,9 @@ components:
           OrderedViews:
           - OrderedViews
           - OrderedViews
+          SearchExcludes:
+          - SearchExcludes
+          - SearchExcludes
           LatestItemsExcludes:
           - LatestItemsExcludes
           - LatestItemsExcludes
@@ -99758,6 +99761,10 @@ components:
           type: array
           items:
             type: string
+        SearchExcludes:
+          type: array
+          items:
+            type: string
         MyMediaExcludes:
           type: array
           items:
@@ -99791,6 +99798,9 @@ components:
         OrderedViews:
         - OrderedViews
         - OrderedViews
+        SearchExcludes:
+        - SearchExcludes
+        - SearchExcludes
         LatestItemsExcludes:
         - LatestItemsExcludes
         - LatestItemsExcludes
@@ -100161,6 +100171,9 @@ components:
             OrderedViews:
             - OrderedViews
             - OrderedViews
+            SearchExcludes:
+            - SearchExcludes
+            - SearchExcludes
             LatestItemsExcludes:
             - LatestItemsExcludes
             - LatestItemsExcludes
@@ -100273,6 +100286,9 @@ components:
             OrderedViews:
             - OrderedViews
             - OrderedViews
+            SearchExcludes:
+            - SearchExcludes
+            - SearchExcludes
             LatestItemsExcludes:
             - LatestItemsExcludes
             - LatestItemsExcludes
@@ -100408,6 +100424,9 @@ components:
             OrderedViews:
             - OrderedViews
             - OrderedViews
+            SearchExcludes:
+            - SearchExcludes
+            - SearchExcludes
             LatestItemsExcludes:
             - LatestItemsExcludes
             - LatestItemsExcludes

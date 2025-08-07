@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The DevicesDeviceInfo model module.
 * @module model/DevicesDeviceInfo
-* @version 4.9.1.16
+* @version 4.9.1.17
 */
 export default class DevicesDeviceInfo {
     /**

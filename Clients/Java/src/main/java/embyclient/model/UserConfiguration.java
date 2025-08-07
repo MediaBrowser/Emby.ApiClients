@@ -48,6 +48,9 @@ public class UserConfiguration {
   @SerializedName("LatestItemsExcludes")
   private List<String> latestItemsExcludes = null;
 
+  @SerializedName("SearchExcludes")
+  private List<String> searchExcludes = null;
+
   @SerializedName("MyMediaExcludes")
   private List<String> myMediaExcludes = null;
 
@@ -236,6 +239,32 @@ public class UserConfiguration {
 
   public void setLatestItemsExcludes(List<String> latestItemsExcludes) {
     this.latestItemsExcludes = latestItemsExcludes;
+  }
+
+  public UserConfiguration searchExcludes(List<String> searchExcludes) {
+    this.searchExcludes = searchExcludes;
+    return this;
+  }
+
+  public UserConfiguration addSearchExcludesItem(String searchExcludesItem) {
+    if (this.searchExcludes == null) {
+      this.searchExcludes = new ArrayList<>();
+    }
+    this.searchExcludes.add(searchExcludesItem);
+    return this;
+  }
+
+   /**
+   * Get searchExcludes
+   * @return searchExcludes
+  **/
+  @Schema(description = "")
+  public List<String> getSearchExcludes() {
+    return searchExcludes;
+  }
+
+  public void setSearchExcludes(List<String> searchExcludes) {
+    this.searchExcludes = searchExcludes;
   }
 
   public UserConfiguration myMediaExcludes(List<String> myMediaExcludes) {
@@ -444,6 +473,7 @@ public class UserConfiguration {
         Objects.equals(this.subtitleMode, userConfiguration.subtitleMode) &&
         Objects.equals(this.orderedViews, userConfiguration.orderedViews) &&
         Objects.equals(this.latestItemsExcludes, userConfiguration.latestItemsExcludes) &&
+        Objects.equals(this.searchExcludes, userConfiguration.searchExcludes) &&
         Objects.equals(this.myMediaExcludes, userConfiguration.myMediaExcludes) &&
         Objects.equals(this.hidePlayedInLatest, userConfiguration.hidePlayedInLatest) &&
         Objects.equals(this.hidePlayedInMoreLikeThis, userConfiguration.hidePlayedInMoreLikeThis) &&
@@ -458,7 +488,7 @@ public class UserConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(audioLanguagePreference, playDefaultAudioTrack, subtitleLanguagePreference, profilePin, displayMissingEpisodes, subtitleMode, orderedViews, latestItemsExcludes, myMediaExcludes, hidePlayedInLatest, hidePlayedInMoreLikeThis, hidePlayedInSuggestions, rememberAudioSelections, rememberSubtitleSelections, enableNextEpisodeAutoPlay, resumeRewindSeconds, introSkipMode, enableLocalPassword);
+    return Objects.hash(audioLanguagePreference, playDefaultAudioTrack, subtitleLanguagePreference, profilePin, displayMissingEpisodes, subtitleMode, orderedViews, latestItemsExcludes, searchExcludes, myMediaExcludes, hidePlayedInLatest, hidePlayedInMoreLikeThis, hidePlayedInSuggestions, rememberAudioSelections, rememberSubtitleSelections, enableNextEpisodeAutoPlay, resumeRewindSeconds, introSkipMode, enableLocalPassword);
   }
 
 
@@ -475,6 +505,7 @@ public class UserConfiguration {
     sb.append("    subtitleMode: ").append(toIndentedString(subtitleMode)).append("\n");
     sb.append("    orderedViews: ").append(toIndentedString(orderedViews)).append("\n");
     sb.append("    latestItemsExcludes: ").append(toIndentedString(latestItemsExcludes)).append("\n");
+    sb.append("    searchExcludes: ").append(toIndentedString(searchExcludes)).append("\n");
     sb.append("    myMediaExcludes: ").append(toIndentedString(myMediaExcludes)).append("\n");
     sb.append("    hidePlayedInLatest: ").append(toIndentedString(hidePlayedInLatest)).append("\n");
     sb.append("    hidePlayedInMoreLikeThis: ").append(toIndentedString(hidePlayedInMoreLikeThis)).append("\n");

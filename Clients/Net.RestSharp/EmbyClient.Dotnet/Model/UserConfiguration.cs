@@ -34,6 +34,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="subtitleMode">subtitleMode.</param>
         /// <param name="orderedViews">orderedViews.</param>
         /// <param name="latestItemsExcludes">latestItemsExcludes.</param>
+        /// <param name="searchExcludes">searchExcludes.</param>
         /// <param name="myMediaExcludes">myMediaExcludes.</param>
         /// <param name="hidePlayedInLatest">hidePlayedInLatest.</param>
         /// <param name="hidePlayedInMoreLikeThis">hidePlayedInMoreLikeThis.</param>
@@ -44,7 +45,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="resumeRewindSeconds">resumeRewindSeconds.</param>
         /// <param name="introSkipMode">introSkipMode.</param>
         /// <param name="enableLocalPassword">enableLocalPassword.</param>
-        public UserConfiguration(string audioLanguagePreference = default(string), bool? playDefaultAudioTrack = default(bool?), string subtitleLanguagePreference = default(string), string profilePin = default(string), bool? displayMissingEpisodes = default(bool?), SubtitlePlaybackMode subtitleMode = default(SubtitlePlaybackMode), List<string> orderedViews = default(List<string>), List<string> latestItemsExcludes = default(List<string>), List<string> myMediaExcludes = default(List<string>), bool? hidePlayedInLatest = default(bool?), bool? hidePlayedInMoreLikeThis = default(bool?), bool? hidePlayedInSuggestions = default(bool?), bool? rememberAudioSelections = default(bool?), bool? rememberSubtitleSelections = default(bool?), bool? enableNextEpisodeAutoPlay = default(bool?), int? resumeRewindSeconds = default(int?), SegmentSkipMode introSkipMode = default(SegmentSkipMode), bool? enableLocalPassword = default(bool?))
+        public UserConfiguration(string audioLanguagePreference = default(string), bool? playDefaultAudioTrack = default(bool?), string subtitleLanguagePreference = default(string), string profilePin = default(string), bool? displayMissingEpisodes = default(bool?), SubtitlePlaybackMode subtitleMode = default(SubtitlePlaybackMode), List<string> orderedViews = default(List<string>), List<string> latestItemsExcludes = default(List<string>), List<string> searchExcludes = default(List<string>), List<string> myMediaExcludes = default(List<string>), bool? hidePlayedInLatest = default(bool?), bool? hidePlayedInMoreLikeThis = default(bool?), bool? hidePlayedInSuggestions = default(bool?), bool? rememberAudioSelections = default(bool?), bool? rememberSubtitleSelections = default(bool?), bool? enableNextEpisodeAutoPlay = default(bool?), int? resumeRewindSeconds = default(int?), SegmentSkipMode introSkipMode = default(SegmentSkipMode), bool? enableLocalPassword = default(bool?))
         {
             this.AudioLanguagePreference = audioLanguagePreference;
             this.PlayDefaultAudioTrack = playDefaultAudioTrack;
@@ -54,6 +55,7 @@ namespace EmbyClient.Dotnet.Model
             this.SubtitleMode = subtitleMode;
             this.OrderedViews = orderedViews;
             this.LatestItemsExcludes = latestItemsExcludes;
+            this.SearchExcludes = searchExcludes;
             this.MyMediaExcludes = myMediaExcludes;
             this.HidePlayedInLatest = hidePlayedInLatest;
             this.HidePlayedInMoreLikeThis = hidePlayedInMoreLikeThis;
@@ -116,6 +118,12 @@ namespace EmbyClient.Dotnet.Model
         /// </summary>
         [DataMember(Name="LatestItemsExcludes", EmitDefaultValue=false)]
         public List<string> LatestItemsExcludes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SearchExcludes
+        /// </summary>
+        [DataMember(Name="SearchExcludes", EmitDefaultValue=false)]
+        public List<string> SearchExcludes { get; set; }
 
         /// <summary>
         /// Gets or Sets MyMediaExcludes
@@ -193,6 +201,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  SubtitleMode: ").Append(SubtitleMode).Append("\n");
             sb.Append("  OrderedViews: ").Append(OrderedViews).Append("\n");
             sb.Append("  LatestItemsExcludes: ").Append(LatestItemsExcludes).Append("\n");
+            sb.Append("  SearchExcludes: ").Append(SearchExcludes).Append("\n");
             sb.Append("  MyMediaExcludes: ").Append(MyMediaExcludes).Append("\n");
             sb.Append("  HidePlayedInLatest: ").Append(HidePlayedInLatest).Append("\n");
             sb.Append("  HidePlayedInMoreLikeThis: ").Append(HidePlayedInMoreLikeThis).Append("\n");
@@ -280,6 +289,12 @@ namespace EmbyClient.Dotnet.Model
                     this.LatestItemsExcludes.SequenceEqual(input.LatestItemsExcludes)
                 ) && 
                 (
+                    this.SearchExcludes == input.SearchExcludes ||
+                    this.SearchExcludes != null &&
+                    input.SearchExcludes != null &&
+                    this.SearchExcludes.SequenceEqual(input.SearchExcludes)
+                ) && 
+                (
                     this.MyMediaExcludes == input.MyMediaExcludes ||
                     this.MyMediaExcludes != null &&
                     input.MyMediaExcludes != null &&
@@ -357,6 +372,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.OrderedViews.GetHashCode();
                 if (this.LatestItemsExcludes != null)
                     hashCode = hashCode * 59 + this.LatestItemsExcludes.GetHashCode();
+                if (this.SearchExcludes != null)
+                    hashCode = hashCode * 59 + this.SearchExcludes.GetHashCode();
                 if (this.MyMediaExcludes != null)
                     hashCode = hashCode * 59 + this.MyMediaExcludes.GetHashCode();
                 if (this.HidePlayedInLatest != null)

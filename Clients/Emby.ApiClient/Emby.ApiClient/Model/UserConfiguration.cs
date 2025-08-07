@@ -75,6 +75,12 @@ namespace Emby.ApiClient.Model
         public List<string> LatestItemsExcludes { get; set; }
 
         /// <summary>
+        /// Gets or Sets SearchExcludes
+        /// </summary>
+        /// <value>The SearchExcludes.</value>
+        public List<string> SearchExcludes { get; set; }
+
+        /// <summary>
         /// Gets or Sets MyMediaExcludes
         /// </summary>
         /// <value>The MyMediaExcludes.</value>
@@ -150,6 +156,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  SubtitleMode: ").Append(SubtitleMode).Append("\n");
             sb.Append("  OrderedViews: ").Append(OrderedViews).Append("\n");
             sb.Append("  LatestItemsExcludes: ").Append(LatestItemsExcludes).Append("\n");
+            sb.Append("  SearchExcludes: ").Append(SearchExcludes).Append("\n");
             sb.Append("  MyMediaExcludes: ").Append(MyMediaExcludes).Append("\n");
             sb.Append("  HidePlayedInLatest: ").Append(HidePlayedInLatest).Append("\n");
             sb.Append("  HidePlayedInMoreLikeThis: ").Append(HidePlayedInMoreLikeThis).Append("\n");
@@ -226,6 +233,12 @@ namespace Emby.ApiClient.Model
                     this.LatestItemsExcludes != null &&
                     input.LatestItemsExcludes != null &&
                     this.LatestItemsExcludes.SequenceEqual(input.LatestItemsExcludes)
+                ) && 
+                (
+                    this.SearchExcludes == input.SearchExcludes ||
+                    this.SearchExcludes != null &&
+                    input.SearchExcludes != null &&
+                    this.SearchExcludes.SequenceEqual(input.SearchExcludes)
                 ) && 
                 (
                     this.MyMediaExcludes == input.MyMediaExcludes ||
@@ -305,6 +318,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.OrderedViews.GetHashCode();
                 if (this.LatestItemsExcludes != null)
                     hashCode = hashCode * 59 + this.LatestItemsExcludes.GetHashCode();
+                if (this.SearchExcludes != null)
+                    hashCode = hashCode * 59 + this.SearchExcludes.GetHashCode();
                 if (this.MyMediaExcludes != null)
                     hashCode = hashCode * 59 + this.MyMediaExcludes.GetHashCode();
                 if (this.HidePlayedInLatest != null)
