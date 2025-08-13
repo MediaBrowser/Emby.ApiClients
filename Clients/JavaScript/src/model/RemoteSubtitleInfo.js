@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The RemoteSubtitleInfo model module.
 * @module model/RemoteSubtitleInfo
-* @version 4.9.1.17
+* @version 4.9.1.18
 */
 export default class RemoteSubtitleInfo {
     /**

@@ -12,11 +12,12 @@
 import ApiClient from '../ApiClient';
 import BaseItemDto from './BaseItemDto';
 import ScrollDirection from './ScrollDirection';
+import TextSectionInfo from './TextSectionInfo';
 
 /**
 * The ContentSection model module.
 * @module model/ContentSection
-* @version 4.9.1.17
+* @version 4.9.1.18
 */
 export default class ContentSection {
     /**
@@ -46,6 +47,9 @@ export default class ContentSection {
             if (data.hasOwnProperty('Name')) {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
             }
+            if (data.hasOwnProperty('Subtitle')) {
+                obj['Subtitle'] = ApiClient.convertToType(data['Subtitle'], 'String');
+            }
             if (data.hasOwnProperty('Id')) {
                 obj['Id'] = ApiClient.convertToType(data['Id'], 'String');
             }
@@ -70,6 +74,18 @@ export default class ContentSection {
             if (data.hasOwnProperty('ParentItem')) {
                 obj['ParentItem'] = BaseItemDto.constructFromObject(data['ParentItem']);
             }
+            if (data.hasOwnProperty('TextInfo')) {
+                obj['TextInfo'] = TextSectionInfo.constructFromObject(data['TextInfo']);
+            }
+            if (data.hasOwnProperty('PremiumFeature')) {
+                obj['PremiumFeature'] = ApiClient.convertToType(data['PremiumFeature'], 'String');
+            }
+            if (data.hasOwnProperty('PremiumMessage')) {
+                obj['PremiumMessage'] = ApiClient.convertToType(data['PremiumMessage'], 'String');
+            }
+            if (data.hasOwnProperty('RefreshInterval')) {
+                obj['RefreshInterval'] = ApiClient.convertToType(data['RefreshInterval'], 'Number');
+            }
         }
         return obj;
     }
@@ -78,6 +94,10 @@ export default class ContentSection {
     * @member {String} Name
     */
     'Name' = undefined;
+    /**
+    * @member {String} Subtitle
+    */
+    'Subtitle' = undefined;
     /**
     * @member {String} Id
     */
@@ -110,6 +130,22 @@ export default class ContentSection {
     * @member {module:model/BaseItemDto} ParentItem
     */
     'ParentItem' = undefined;
+    /**
+    * @member {module:model/TextSectionInfo} TextInfo
+    */
+    'TextInfo' = undefined;
+    /**
+    * @member {String} PremiumFeature
+    */
+    'PremiumFeature' = undefined;
+    /**
+    * @member {String} PremiumMessage
+    */
+    'PremiumMessage' = undefined;
+    /**
+    * @member {Number} RefreshInterval
+    */
+    'RefreshInterval' = undefined;
 
 
 

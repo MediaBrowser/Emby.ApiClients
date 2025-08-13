@@ -14,6 +14,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import embyclient.model.BaseItemDto;
 import embyclient.model.ScrollDirection;
+import embyclient.model.TextSectionInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,6 +27,9 @@ import java.util.List;
 public class ContentSection {
   @SerializedName("Name")
   private String name = null;
+
+  @SerializedName("Subtitle")
+  private String subtitle = null;
 
   @SerializedName("Id")
   private String id = null;
@@ -51,6 +55,18 @@ public class ContentSection {
   @SerializedName("ParentItem")
   private BaseItemDto parentItem = null;
 
+  @SerializedName("TextInfo")
+  private TextSectionInfo textInfo = null;
+
+  @SerializedName("PremiumFeature")
+  private String premiumFeature = null;
+
+  @SerializedName("PremiumMessage")
+  private String premiumMessage = null;
+
+  @SerializedName("RefreshInterval")
+  private Integer refreshInterval = null;
+
   public ContentSection name(String name) {
     this.name = name;
     return this;
@@ -67,6 +83,24 @@ public class ContentSection {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public ContentSection subtitle(String subtitle) {
+    this.subtitle = subtitle;
+    return this;
+  }
+
+   /**
+   * Get subtitle
+   * @return subtitle
+  **/
+  @Schema(description = "")
+  public String getSubtitle() {
+    return subtitle;
+  }
+
+  public void setSubtitle(String subtitle) {
+    this.subtitle = subtitle;
   }
 
   public ContentSection id(String id) {
@@ -221,6 +255,78 @@ public class ContentSection {
     this.parentItem = parentItem;
   }
 
+  public ContentSection textInfo(TextSectionInfo textInfo) {
+    this.textInfo = textInfo;
+    return this;
+  }
+
+   /**
+   * Get textInfo
+   * @return textInfo
+  **/
+  @Schema(description = "")
+  public TextSectionInfo getTextInfo() {
+    return textInfo;
+  }
+
+  public void setTextInfo(TextSectionInfo textInfo) {
+    this.textInfo = textInfo;
+  }
+
+  public ContentSection premiumFeature(String premiumFeature) {
+    this.premiumFeature = premiumFeature;
+    return this;
+  }
+
+   /**
+   * Get premiumFeature
+   * @return premiumFeature
+  **/
+  @Schema(description = "")
+  public String getPremiumFeature() {
+    return premiumFeature;
+  }
+
+  public void setPremiumFeature(String premiumFeature) {
+    this.premiumFeature = premiumFeature;
+  }
+
+  public ContentSection premiumMessage(String premiumMessage) {
+    this.premiumMessage = premiumMessage;
+    return this;
+  }
+
+   /**
+   * Get premiumMessage
+   * @return premiumMessage
+  **/
+  @Schema(description = "")
+  public String getPremiumMessage() {
+    return premiumMessage;
+  }
+
+  public void setPremiumMessage(String premiumMessage) {
+    this.premiumMessage = premiumMessage;
+  }
+
+  public ContentSection refreshInterval(Integer refreshInterval) {
+    this.refreshInterval = refreshInterval;
+    return this;
+  }
+
+   /**
+   * Get refreshInterval
+   * @return refreshInterval
+  **/
+  @Schema(description = "")
+  public Integer getRefreshInterval() {
+    return refreshInterval;
+  }
+
+  public void setRefreshInterval(Integer refreshInterval) {
+    this.refreshInterval = refreshInterval;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -232,6 +338,7 @@ public class ContentSection {
     }
     ContentSection contentSection = (ContentSection) o;
     return Objects.equals(this.name, contentSection.name) &&
+        Objects.equals(this.subtitle, contentSection.subtitle) &&
         Objects.equals(this.id, contentSection.id) &&
         Objects.equals(this.sectionType, contentSection.sectionType) &&
         Objects.equals(this.collectionType, contentSection.collectionType) &&
@@ -239,12 +346,16 @@ public class ContentSection {
         Objects.equals(this.monitor, contentSection.monitor) &&
         Objects.equals(this.cardSizeOffset, contentSection.cardSizeOffset) &&
         Objects.equals(this.scrollDirection, contentSection.scrollDirection) &&
-        Objects.equals(this.parentItem, contentSection.parentItem);
+        Objects.equals(this.parentItem, contentSection.parentItem) &&
+        Objects.equals(this.textInfo, contentSection.textInfo) &&
+        Objects.equals(this.premiumFeature, contentSection.premiumFeature) &&
+        Objects.equals(this.premiumMessage, contentSection.premiumMessage) &&
+        Objects.equals(this.refreshInterval, contentSection.refreshInterval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, sectionType, collectionType, viewType, monitor, cardSizeOffset, scrollDirection, parentItem);
+    return Objects.hash(name, subtitle, id, sectionType, collectionType, viewType, monitor, cardSizeOffset, scrollDirection, parentItem, textInfo, premiumFeature, premiumMessage, refreshInterval);
   }
 
 
@@ -254,6 +365,7 @@ public class ContentSection {
     sb.append("class ContentSection {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    sectionType: ").append(toIndentedString(sectionType)).append("\n");
     sb.append("    collectionType: ").append(toIndentedString(collectionType)).append("\n");
@@ -262,6 +374,10 @@ public class ContentSection {
     sb.append("    cardSizeOffset: ").append(toIndentedString(cardSizeOffset)).append("\n");
     sb.append("    scrollDirection: ").append(toIndentedString(scrollDirection)).append("\n");
     sb.append("    parentItem: ").append(toIndentedString(parentItem)).append("\n");
+    sb.append("    textInfo: ").append(toIndentedString(textInfo)).append("\n");
+    sb.append("    premiumFeature: ").append(toIndentedString(premiumFeature)).append("\n");
+    sb.append("    premiumMessage: ").append(toIndentedString(premiumMessage)).append("\n");
+    sb.append("    refreshInterval: ").append(toIndentedString(refreshInterval)).append("\n");
     sb.append("}");
     return sb.toString();
   }

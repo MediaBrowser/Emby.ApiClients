@@ -179,6 +179,7 @@ from embyclient.models.net_end_point_info import NetEndPointInfo
 from embyclient.models.net_sockets_address_family import NetSocketsAddressFamily
 from embyclient.models.notification_category_info import NotificationCategoryInfo
 from embyclient.models.notification_type_info import NotificationTypeInfo
+from embyclient.models.notifications_notification_level import NotificationsNotificationLevel
 from embyclient.models.operating_system import OperatingSystem
 from embyclient.models.package_info import PackageInfo
 from embyclient.models.package_target_system import PackageTargetSystem
@@ -297,6 +298,7 @@ from embyclient.models.task_info import TaskInfo
 from embyclient.models.task_result import TaskResult
 from embyclient.models.task_state import TaskState
 from embyclient.models.task_trigger_info import TaskTriggerInfo
+from embyclient.models.text_section_info import TextSectionInfo
 from embyclient.models.theme_media_result import ThemeMediaResult
 from embyclient.models.trailer_info import TrailerInfo
 from embyclient.models.transcode_reason import TranscodeReason

@@ -23,6 +23,7 @@ class ContentSection(object):
     """
     swagger_types = {
         'name': 'str',
+        'subtitle': 'str',
         'id': 'str',
         'section_type': 'str',
         'collection_type': 'str',
@@ -30,11 +31,16 @@ class ContentSection(object):
         'monitor': 'list[str]',
         'card_size_offset': 'int',
         'scroll_direction': 'ScrollDirection',
-        'parent_item': 'BaseItemDto'
+        'parent_item': 'BaseItemDto',
+        'text_info': 'TextSectionInfo',
+        'premium_feature': 'str',
+        'premium_message': 'str',
+        'refresh_interval': 'int'
     }
 
     attribute_map = {
         'name': 'Name',
+        'subtitle': 'Subtitle',
         'id': 'Id',
         'section_type': 'SectionType',
         'collection_type': 'CollectionType',
@@ -42,12 +48,17 @@ class ContentSection(object):
         'monitor': 'Monitor',
         'card_size_offset': 'CardSizeOffset',
         'scroll_direction': 'ScrollDirection',
-        'parent_item': 'ParentItem'
+        'parent_item': 'ParentItem',
+        'text_info': 'TextInfo',
+        'premium_feature': 'PremiumFeature',
+        'premium_message': 'PremiumMessage',
+        'refresh_interval': 'RefreshInterval'
     }
 
-    def __init__(self, name=None, id=None, section_type=None, collection_type=None, view_type=None, monitor=None, card_size_offset=None, scroll_direction=None, parent_item=None):  # noqa: E501
+    def __init__(self, name=None, subtitle=None, id=None, section_type=None, collection_type=None, view_type=None, monitor=None, card_size_offset=None, scroll_direction=None, parent_item=None, text_info=None, premium_feature=None, premium_message=None, refresh_interval=None):  # noqa: E501
         """ContentSection - a model defined in Swagger"""  # noqa: E501
         self._name = None
+        self._subtitle = None
         self._id = None
         self._section_type = None
         self._collection_type = None
@@ -56,9 +67,15 @@ class ContentSection(object):
         self._card_size_offset = None
         self._scroll_direction = None
         self._parent_item = None
+        self._text_info = None
+        self._premium_feature = None
+        self._premium_message = None
+        self._refresh_interval = None
         self.discriminator = None
         if name is not None:
             self.name = name
+        if subtitle is not None:
+            self.subtitle = subtitle
         if id is not None:
             self.id = id
         if section_type is not None:
@@ -75,6 +92,14 @@ class ContentSection(object):
             self.scroll_direction = scroll_direction
         if parent_item is not None:
             self.parent_item = parent_item
+        if text_info is not None:
+            self.text_info = text_info
+        if premium_feature is not None:
+            self.premium_feature = premium_feature
+        if premium_message is not None:
+            self.premium_message = premium_message
+        if refresh_interval is not None:
+            self.refresh_interval = refresh_interval
 
     @property
     def name(self):
@@ -96,6 +121,27 @@ class ContentSection(object):
         """
 
         self._name = name
+
+    @property
+    def subtitle(self):
+        """Gets the subtitle of this ContentSection.  # noqa: E501
+
+
+        :return: The subtitle of this ContentSection.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtitle
+
+    @subtitle.setter
+    def subtitle(self, subtitle):
+        """Sets the subtitle of this ContentSection.
+
+
+        :param subtitle: The subtitle of this ContentSection.  # noqa: E501
+        :type: str
+        """
+
+        self._subtitle = subtitle
 
     @property
     def id(self):
@@ -264,6 +310,90 @@ class ContentSection(object):
         """
 
         self._parent_item = parent_item
+
+    @property
+    def text_info(self):
+        """Gets the text_info of this ContentSection.  # noqa: E501
+
+
+        :return: The text_info of this ContentSection.  # noqa: E501
+        :rtype: TextSectionInfo
+        """
+        return self._text_info
+
+    @text_info.setter
+    def text_info(self, text_info):
+        """Sets the text_info of this ContentSection.
+
+
+        :param text_info: The text_info of this ContentSection.  # noqa: E501
+        :type: TextSectionInfo
+        """
+
+        self._text_info = text_info
+
+    @property
+    def premium_feature(self):
+        """Gets the premium_feature of this ContentSection.  # noqa: E501
+
+
+        :return: The premium_feature of this ContentSection.  # noqa: E501
+        :rtype: str
+        """
+        return self._premium_feature
+
+    @premium_feature.setter
+    def premium_feature(self, premium_feature):
+        """Sets the premium_feature of this ContentSection.
+
+
+        :param premium_feature: The premium_feature of this ContentSection.  # noqa: E501
+        :type: str
+        """
+
+        self._premium_feature = premium_feature
+
+    @property
+    def premium_message(self):
+        """Gets the premium_message of this ContentSection.  # noqa: E501
+
+
+        :return: The premium_message of this ContentSection.  # noqa: E501
+        :rtype: str
+        """
+        return self._premium_message
+
+    @premium_message.setter
+    def premium_message(self, premium_message):
+        """Sets the premium_message of this ContentSection.
+
+
+        :param premium_message: The premium_message of this ContentSection.  # noqa: E501
+        :type: str
+        """
+
+        self._premium_message = premium_message
+
+    @property
+    def refresh_interval(self):
+        """Gets the refresh_interval of this ContentSection.  # noqa: E501
+
+
+        :return: The refresh_interval of this ContentSection.  # noqa: E501
+        :rtype: int
+        """
+        return self._refresh_interval
+
+    @refresh_interval.setter
+    def refresh_interval(self, refresh_interval):
+        """Sets the refresh_interval of this ContentSection.
+
+
+        :param refresh_interval: The refresh_interval of this ContentSection.  # noqa: E501
+        :type: int
+        """
+
+        self._refresh_interval = refresh_interval
 
     def to_dict(self):
         """Returns the model properties as a dict"""

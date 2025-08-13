@@ -82,6 +82,8 @@ class ServerConfiguration(object):
         'enable_saved_metadata_for_people': 'bool',
         'tv_channels_refreshed': 'bool',
         'proxy_header_mode': 'ProxyHeaderMode',
+        'is_in_maintenance_mode': 'bool',
+        'maintenance_mode_message': 'str',
         'enable_debug_level_logging': 'bool',
         'revert_debug_logging': 'str',
         'enable_auto_update': 'bool',
@@ -152,6 +154,8 @@ class ServerConfiguration(object):
         'enable_saved_metadata_for_people': 'EnableSavedMetadataForPeople',
         'tv_channels_refreshed': 'TvChannelsRefreshed',
         'proxy_header_mode': 'ProxyHeaderMode',
+        'is_in_maintenance_mode': 'IsInMaintenanceMode',
+        'maintenance_mode_message': 'MaintenanceModeMessage',
         'enable_debug_level_logging': 'EnableDebugLevelLogging',
         'revert_debug_logging': 'RevertDebugLogging',
         'enable_auto_update': 'EnableAutoUpdate',
@@ -161,7 +165,7 @@ class ServerConfiguration(object):
         'cache_path': 'CachePath'
     }
 
-    def __init__(self, enable_upn_p=None, public_port=None, public_https_port=None, http_server_port_number=None, https_port_number=None, enable_https=None, certificate_path=None, certificate_password=None, is_port_authorized=None, auto_run_web_app=None, enable_remote_access=None, log_all_query_times=None, disable_outgoing_ipv6=None, enable_case_sensitive_item_ids=None, metadata_path=None, metadata_network_path=None, preferred_metadata_language=None, metadata_country_code=None, sort_remove_words=None, library_monitor_delay_seconds=None, enable_dashboard_response_caching=None, dashboard_source_path=None, image_saving_convention=None, enable_automatic_restart=None, server_name=None, preferred_detected_remote_address_family=None, wan_ddns=None, ui_culture=None, remote_client_bitrate_limit=None, local_network_subnets=None, local_network_addresses=None, enable_external_content_in_suggestions=None, require_https=None, is_behind_proxy=None, remote_ip_filter=None, is_remote_ip_filter_blacklist=None, image_extraction_timeout_ms=None, path_substitutions=None, uninstalled_plugins=None, collapse_video_folders=None, enable_original_track_titles=None, vacuum_database_on_startup=None, simultaneous_stream_limit=None, database_cache_size_mb=None, enable_sq_lite_mmio=None, playlists_upgraded_to_m3_u=None, image_extractor_upgraded1=None, enable_people_letter_sub_folders=None, optimize_database_on_shutdown=None, database_analysis_limit=None, max_library_db_connections=None, max_auth_db_connections=None, max_other_db_connections=None, disable_async_io=None, migrated_to_user_item_shares8=None, migrated_library_options_to_db=None, allow_legacy_local_network_password=None, enable_saved_metadata_for_people=None, tv_channels_refreshed=None, proxy_header_mode=None, enable_debug_level_logging=None, revert_debug_logging=None, enable_auto_update=None, log_file_retention_days=None, run_at_startup=None, is_startup_wizard_completed=None, cache_path=None):  # noqa: E501
+    def __init__(self, enable_upn_p=None, public_port=None, public_https_port=None, http_server_port_number=None, https_port_number=None, enable_https=None, certificate_path=None, certificate_password=None, is_port_authorized=None, auto_run_web_app=None, enable_remote_access=None, log_all_query_times=None, disable_outgoing_ipv6=None, enable_case_sensitive_item_ids=None, metadata_path=None, metadata_network_path=None, preferred_metadata_language=None, metadata_country_code=None, sort_remove_words=None, library_monitor_delay_seconds=None, enable_dashboard_response_caching=None, dashboard_source_path=None, image_saving_convention=None, enable_automatic_restart=None, server_name=None, preferred_detected_remote_address_family=None, wan_ddns=None, ui_culture=None, remote_client_bitrate_limit=None, local_network_subnets=None, local_network_addresses=None, enable_external_content_in_suggestions=None, require_https=None, is_behind_proxy=None, remote_ip_filter=None, is_remote_ip_filter_blacklist=None, image_extraction_timeout_ms=None, path_substitutions=None, uninstalled_plugins=None, collapse_video_folders=None, enable_original_track_titles=None, vacuum_database_on_startup=None, simultaneous_stream_limit=None, database_cache_size_mb=None, enable_sq_lite_mmio=None, playlists_upgraded_to_m3_u=None, image_extractor_upgraded1=None, enable_people_letter_sub_folders=None, optimize_database_on_shutdown=None, database_analysis_limit=None, max_library_db_connections=None, max_auth_db_connections=None, max_other_db_connections=None, disable_async_io=None, migrated_to_user_item_shares8=None, migrated_library_options_to_db=None, allow_legacy_local_network_password=None, enable_saved_metadata_for_people=None, tv_channels_refreshed=None, proxy_header_mode=None, is_in_maintenance_mode=None, maintenance_mode_message=None, enable_debug_level_logging=None, revert_debug_logging=None, enable_auto_update=None, log_file_retention_days=None, run_at_startup=None, is_startup_wizard_completed=None, cache_path=None):  # noqa: E501
         """ServerConfiguration - a model defined in Swagger"""  # noqa: E501
         self._enable_upn_p = None
         self._public_port = None
@@ -223,6 +227,8 @@ class ServerConfiguration(object):
         self._enable_saved_metadata_for_people = None
         self._tv_channels_refreshed = None
         self._proxy_header_mode = None
+        self._is_in_maintenance_mode = None
+        self._maintenance_mode_message = None
         self._enable_debug_level_logging = None
         self._revert_debug_logging = None
         self._enable_auto_update = None
@@ -351,6 +357,10 @@ class ServerConfiguration(object):
             self.tv_channels_refreshed = tv_channels_refreshed
         if proxy_header_mode is not None:
             self.proxy_header_mode = proxy_header_mode
+        if is_in_maintenance_mode is not None:
+            self.is_in_maintenance_mode = is_in_maintenance_mode
+        if maintenance_mode_message is not None:
+            self.maintenance_mode_message = maintenance_mode_message
         if enable_debug_level_logging is not None:
             self.enable_debug_level_logging = enable_debug_level_logging
         if revert_debug_logging is not None:
@@ -1657,6 +1667,48 @@ class ServerConfiguration(object):
         """
 
         self._proxy_header_mode = proxy_header_mode
+
+    @property
+    def is_in_maintenance_mode(self):
+        """Gets the is_in_maintenance_mode of this ServerConfiguration.  # noqa: E501
+
+
+        :return: The is_in_maintenance_mode of this ServerConfiguration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_in_maintenance_mode
+
+    @is_in_maintenance_mode.setter
+    def is_in_maintenance_mode(self, is_in_maintenance_mode):
+        """Sets the is_in_maintenance_mode of this ServerConfiguration.
+
+
+        :param is_in_maintenance_mode: The is_in_maintenance_mode of this ServerConfiguration.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_in_maintenance_mode = is_in_maintenance_mode
+
+    @property
+    def maintenance_mode_message(self):
+        """Gets the maintenance_mode_message of this ServerConfiguration.  # noqa: E501
+
+
+        :return: The maintenance_mode_message of this ServerConfiguration.  # noqa: E501
+        :rtype: str
+        """
+        return self._maintenance_mode_message
+
+    @maintenance_mode_message.setter
+    def maintenance_mode_message(self, maintenance_mode_message):
+        """Sets the maintenance_mode_message of this ServerConfiguration.
+
+
+        :param maintenance_mode_message: The maintenance_mode_message of this ServerConfiguration.  # noqa: E501
+        :type: str
+        """
+
+        self._maintenance_mode_message = maintenance_mode_message
 
     @property
     def enable_debug_level_logging(self):

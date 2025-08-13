@@ -33,10 +33,8 @@ open class ContentServiceAPI {
        - name: embyauth
      - examples: [{contentType=application/json, example=[ {
   "CardSizeOffset" : 0,
-  "SectionType" : "SectionType",
-  "Monitor" : [ "Monitor", "Monitor" ],
+  "PremiumFeature" : "PremiumFeature",
   "ScrollDirection" : "Horizontal",
-  "CollectionType" : "CollectionType",
   "ParentItem" : {
     "SeasonName" : "SeasonName",
     "PremiereDate" : "2000-01-23T04:56:07.000+00:00",
@@ -585,15 +583,25 @@ open class ContentServiceAPI {
     "DateModified" : "2000-01-23T04:56:07.000+00:00",
     "Altitude" : 7.933506881737151
   },
+  "Name" : "Name",
+  "Subtitle" : "Subtitle",
+  "SectionType" : "SectionType",
+  "Monitor" : [ "Monitor", "Monitor" ],
+  "CollectionType" : "CollectionType",
+  "TextInfo" : {
+    "Text" : "Text",
+    "Level" : "Normal",
+    "Id" : "Id",
+    "Name" : "Name"
+  },
+  "PremiumMessage" : "PremiumMessage",
+  "RefreshInterval" : 6,
   "Id" : "Id",
-  "ViewType" : "ViewType",
-  "Name" : "Name"
+  "ViewType" : "ViewType"
 }, {
   "CardSizeOffset" : 0,
-  "SectionType" : "SectionType",
-  "Monitor" : [ "Monitor", "Monitor" ],
+  "PremiumFeature" : "PremiumFeature",
   "ScrollDirection" : "Horizontal",
-  "CollectionType" : "CollectionType",
   "ParentItem" : {
     "SeasonName" : "SeasonName",
     "PremiereDate" : "2000-01-23T04:56:07.000+00:00",
@@ -1142,9 +1150,21 @@ open class ContentServiceAPI {
     "DateModified" : "2000-01-23T04:56:07.000+00:00",
     "Altitude" : 7.933506881737151
   },
+  "Name" : "Name",
+  "Subtitle" : "Subtitle",
+  "SectionType" : "SectionType",
+  "Monitor" : [ "Monitor", "Monitor" ],
+  "CollectionType" : "CollectionType",
+  "TextInfo" : {
+    "Text" : "Text",
+    "Level" : "Normal",
+    "Id" : "Id",
+    "Name" : "Name"
+  },
+  "PremiumMessage" : "PremiumMessage",
+  "RefreshInterval" : 6,
   "Id" : "Id",
-  "ViewType" : "ViewType",
-  "Name" : "Name"
+  "ViewType" : "ViewType"
 } ]}]
      - parameter userId: (path) User Id 
 

@@ -27,6 +27,7 @@ namespace EmbyClient.Dotnet.Model
         /// Initializes a new instance of the <see cref="ContentSection" /> class.
         /// </summary>
         /// <param name="name">name.</param>
+        /// <param name="subtitle">subtitle.</param>
         /// <param name="id">id.</param>
         /// <param name="sectionType">sectionType.</param>
         /// <param name="collectionType">collectionType.</param>
@@ -35,9 +36,14 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="cardSizeOffset">cardSizeOffset.</param>
         /// <param name="scrollDirection">scrollDirection.</param>
         /// <param name="parentItem">parentItem.</param>
-        public ContentSection(string name = default(string), string id = default(string), string sectionType = default(string), string collectionType = default(string), string viewType = default(string), List<string> monitor = default(List<string>), int? cardSizeOffset = default(int?), ScrollDirection scrollDirection = default(ScrollDirection), BaseItemDto parentItem = default(BaseItemDto))
+        /// <param name="textInfo">textInfo.</param>
+        /// <param name="premiumFeature">premiumFeature.</param>
+        /// <param name="premiumMessage">premiumMessage.</param>
+        /// <param name="refreshInterval">refreshInterval.</param>
+        public ContentSection(string name = default(string), string subtitle = default(string), string id = default(string), string sectionType = default(string), string collectionType = default(string), string viewType = default(string), List<string> monitor = default(List<string>), int? cardSizeOffset = default(int?), ScrollDirection scrollDirection = default(ScrollDirection), BaseItemDto parentItem = default(BaseItemDto), TextSectionInfo textInfo = default(TextSectionInfo), string premiumFeature = default(string), string premiumMessage = default(string), int? refreshInterval = default(int?))
         {
             this.Name = name;
+            this.Subtitle = subtitle;
             this.Id = id;
             this.SectionType = sectionType;
             this.CollectionType = collectionType;
@@ -46,6 +52,10 @@ namespace EmbyClient.Dotnet.Model
             this.CardSizeOffset = cardSizeOffset;
             this.ScrollDirection = scrollDirection;
             this.ParentItem = parentItem;
+            this.TextInfo = textInfo;
+            this.PremiumFeature = premiumFeature;
+            this.PremiumMessage = premiumMessage;
+            this.RefreshInterval = refreshInterval;
         }
         
         /// <summary>
@@ -53,6 +63,12 @@ namespace EmbyClient.Dotnet.Model
         /// </summary>
         [DataMember(Name="Name", EmitDefaultValue=false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Subtitle
+        /// </summary>
+        [DataMember(Name="Subtitle", EmitDefaultValue=false)]
+        public string Subtitle { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -103,6 +119,30 @@ namespace EmbyClient.Dotnet.Model
         public BaseItemDto ParentItem { get; set; }
 
         /// <summary>
+        /// Gets or Sets TextInfo
+        /// </summary>
+        [DataMember(Name="TextInfo", EmitDefaultValue=false)]
+        public TextSectionInfo TextInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PremiumFeature
+        /// </summary>
+        [DataMember(Name="PremiumFeature", EmitDefaultValue=false)]
+        public string PremiumFeature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PremiumMessage
+        /// </summary>
+        [DataMember(Name="PremiumMessage", EmitDefaultValue=false)]
+        public string PremiumMessage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefreshInterval
+        /// </summary>
+        [DataMember(Name="RefreshInterval", EmitDefaultValue=false)]
+        public int? RefreshInterval { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +151,7 @@ namespace EmbyClient.Dotnet.Model
             var sb = new StringBuilder();
             sb.Append("class ContentSection {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Subtitle: ").Append(Subtitle).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SectionType: ").Append(SectionType).Append("\n");
             sb.Append("  CollectionType: ").Append(CollectionType).Append("\n");
@@ -119,6 +160,10 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  CardSizeOffset: ").Append(CardSizeOffset).Append("\n");
             sb.Append("  ScrollDirection: ").Append(ScrollDirection).Append("\n");
             sb.Append("  ParentItem: ").Append(ParentItem).Append("\n");
+            sb.Append("  TextInfo: ").Append(TextInfo).Append("\n");
+            sb.Append("  PremiumFeature: ").Append(PremiumFeature).Append("\n");
+            sb.Append("  PremiumMessage: ").Append(PremiumMessage).Append("\n");
+            sb.Append("  RefreshInterval: ").Append(RefreshInterval).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -157,6 +202,11 @@ namespace EmbyClient.Dotnet.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Subtitle == input.Subtitle ||
+                    (this.Subtitle != null &&
+                    this.Subtitle.Equals(input.Subtitle))
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -198,6 +248,26 @@ namespace EmbyClient.Dotnet.Model
                     this.ParentItem == input.ParentItem ||
                     (this.ParentItem != null &&
                     this.ParentItem.Equals(input.ParentItem))
+                ) && 
+                (
+                    this.TextInfo == input.TextInfo ||
+                    (this.TextInfo != null &&
+                    this.TextInfo.Equals(input.TextInfo))
+                ) && 
+                (
+                    this.PremiumFeature == input.PremiumFeature ||
+                    (this.PremiumFeature != null &&
+                    this.PremiumFeature.Equals(input.PremiumFeature))
+                ) && 
+                (
+                    this.PremiumMessage == input.PremiumMessage ||
+                    (this.PremiumMessage != null &&
+                    this.PremiumMessage.Equals(input.PremiumMessage))
+                ) && 
+                (
+                    this.RefreshInterval == input.RefreshInterval ||
+                    (this.RefreshInterval != null &&
+                    this.RefreshInterval.Equals(input.RefreshInterval))
                 );
         }
 
@@ -212,6 +282,8 @@ namespace EmbyClient.Dotnet.Model
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Subtitle != null)
+                    hashCode = hashCode * 59 + this.Subtitle.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.SectionType != null)
@@ -228,6 +300,14 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.ScrollDirection.GetHashCode();
                 if (this.ParentItem != null)
                     hashCode = hashCode * 59 + this.ParentItem.GetHashCode();
+                if (this.TextInfo != null)
+                    hashCode = hashCode * 59 + this.TextInfo.GetHashCode();
+                if (this.PremiumFeature != null)
+                    hashCode = hashCode * 59 + this.PremiumFeature.GetHashCode();
+                if (this.PremiumMessage != null)
+                    hashCode = hashCode * 59 + this.PremiumMessage.GetHashCode();
+                if (this.RefreshInterval != null)
+                    hashCode = hashCode * 59 + this.RefreshInterval.GetHashCode();
                 return hashCode;
             }
         }

@@ -181,6 +181,7 @@ import NetEndPointInfo from './model/NetEndPointInfo';
 import NetSocketsAddressFamily from './model/NetSocketsAddressFamily';
 import NotificationCategoryInfo from './model/NotificationCategoryInfo';
 import NotificationTypeInfo from './model/NotificationTypeInfo';
+import NotificationsNotificationLevel from './model/NotificationsNotificationLevel';
 import OperatingSystem from './model/OperatingSystem';
 import PackageInfo from './model/PackageInfo';
 import PackageTargetSystem from './model/PackageTargetSystem';
@@ -299,6 +300,7 @@ import TaskInfo from './model/TaskInfo';
 import TaskResult from './model/TaskResult';
 import TaskState from './model/TaskState';
 import TaskTriggerInfo from './model/TaskTriggerInfo';
+import TextSectionInfo from './model/TextSectionInfo';
 import ThemeMediaResult from './model/ThemeMediaResult';
 import TrailerInfo from './model/TrailerInfo';
 import TranscodeReason from './model/TranscodeReason';
@@ -435,7 +437,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.1.17
+* @version 4.9.1.18
 */
 export {
     /**
@@ -1471,6 +1473,12 @@ export {
     NotificationTypeInfo,
 
     /**
+     * The NotificationsNotificationLevel model constructor.
+     * @property {module:model/NotificationsNotificationLevel}
+     */
+    NotificationsNotificationLevel,
+
+    /**
      * The OperatingSystem model constructor.
      * @property {module:model/OperatingSystem}
      */
@@ -2177,6 +2185,12 @@ export {
      * @property {module:model/TaskTriggerInfo}
      */
     TaskTriggerInfo,
+
+    /**
+     * The TextSectionInfo model constructor.
+     * @property {module:model/TextSectionInfo}
+     */
+    TextSectionInfo,
 
     /**
      * The ThemeMediaResult model constructor.

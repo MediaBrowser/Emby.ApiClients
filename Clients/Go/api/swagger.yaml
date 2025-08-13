@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.1.17
+  version: 4.9.1.18
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -98975,6 +98975,10 @@ components:
           type: boolean
         ProxyHeaderMode:
           $ref: '#/components/schemas/ProxyHeaderMode'
+        IsInMaintenanceMode:
+          type: boolean
+        MaintenanceModeMessage:
+          type: string
         EnableDebugLevelLogging:
           type: boolean
           description: "A value indicating whether \\[enable debug level logging\\\
@@ -99067,6 +99071,7 @@ components:
         AutoRunWebApp: true
         MetadataPath: MetadataPath
         IsRemoteIPFilterBlacklist: true
+        MaintenanceModeMessage: MaintenanceModeMessage
         DatabaseAnalysisLimit: 2
         PreferredMetadataLanguage: PreferredMetadataLanguage
         PublicHttpsPort: 6
@@ -99076,6 +99081,7 @@ components:
         SortRemoveWords:
         - SortRemoveWords
         - SortRemoveWords
+        IsInMaintenanceMode: true
         EnableAutomaticRestart: true
         EnableSqLiteMmio: true
         PublicPort: 0
@@ -107909,6 +107915,8 @@ components:
       properties:
         Name:
           type: string
+        Subtitle:
+          type: string
         Id:
           type: string
         SectionType:
@@ -107928,14 +107936,20 @@ components:
           $ref: '#/components/schemas/ScrollDirection'
         ParentItem:
           $ref: '#/components/schemas/BaseItemDto'
+        TextInfo:
+          $ref: '#/components/schemas/TextSectionInfo'
+        PremiumFeature:
+          type: string
+        PremiumMessage:
+          type: string
+        RefreshInterval:
+          type: integer
+          format: int32
+          nullable: true
       example:
         CardSizeOffset: 0
-        SectionType: SectionType
-        Monitor:
-        - Monitor
-        - Monitor
+        PremiumFeature: PremiumFeature
         ScrollDirection: Horizontal
-        CollectionType: CollectionType
         ParentItem:
           SeasonName: SeasonName
           PremiereDate: 2000-01-23T04:56:07.000+00:00
@@ -108505,9 +108519,22 @@ components:
           IsPremiere: true
           DateModified: 2000-01-23T04:56:07.000+00:00
           Altitude: 7.933506881737151
+        Name: Name
+        Subtitle: Subtitle
+        SectionType: SectionType
+        Monitor:
+        - Monitor
+        - Monitor
+        CollectionType: CollectionType
+        TextInfo:
+          Text: Text
+          Level: Normal
+          Id: Id
+          Name: Name
+        PremiumMessage: PremiumMessage
+        RefreshInterval: 6
         Id: Id
         ViewType: ViewType
-        Name: Name
       x-internal-ref-name: MediaBrowser.Model.Entities.ContentSection
     ScrollDirection:
       type: string
@@ -108515,6 +108542,30 @@ components:
       - Horizontal
       - Vertical
       x-internal-ref-name: MediaBrowser.Model.Entities.ScrollDirection
+    TextSectionInfo:
+      type: object
+      properties:
+        Text:
+          type: string
+        Name:
+          type: string
+        Id:
+          type: string
+        Level:
+          $ref: '#/components/schemas/Notifications.NotificationLevel'
+      example:
+        Text: Text
+        Level: Normal
+        Id: Id
+        Name: Name
+      x-internal-ref-name: MediaBrowser.Model.Entities.TextSectionInfo
+    Notifications.NotificationLevel:
+      type: string
+      enum:
+      - Normal
+      - Warning
+      - Error
+      x-internal-ref-name: MediaBrowser.Model.Notifications.NotificationLevel
     UserLibrary.AddTags:
       type: object
       properties:

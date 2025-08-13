@@ -33,6 +33,12 @@ namespace Emby.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets Subtitle
+        /// </summary>
+        /// <value>The Subtitle.</value>
+        public string Subtitle { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         /// <value>The Id.</value>
@@ -81,6 +87,30 @@ namespace Emby.ApiClient.Model
         public BaseItemDto ParentItem { get; set; }
 
         /// <summary>
+        /// Gets or Sets TextInfo
+        /// </summary>
+        /// <value>The TextInfo.</value>
+        public TextSectionInfo TextInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PremiumFeature
+        /// </summary>
+        /// <value>The PremiumFeature.</value>
+        public string PremiumFeature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PremiumMessage
+        /// </summary>
+        /// <value>The PremiumMessage.</value>
+        public string PremiumMessage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefreshInterval
+        /// </summary>
+        /// <value>The RefreshInterval.</value>
+        public int? RefreshInterval { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +119,7 @@ namespace Emby.ApiClient.Model
             var sb = new StringBuilder();
             sb.Append("class ContentSection {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Subtitle: ").Append(Subtitle).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SectionType: ").Append(SectionType).Append("\n");
             sb.Append("  CollectionType: ").Append(CollectionType).Append("\n");
@@ -97,6 +128,10 @@ namespace Emby.ApiClient.Model
             sb.Append("  CardSizeOffset: ").Append(CardSizeOffset).Append("\n");
             sb.Append("  ScrollDirection: ").Append(ScrollDirection).Append("\n");
             sb.Append("  ParentItem: ").Append(ParentItem).Append("\n");
+            sb.Append("  TextInfo: ").Append(TextInfo).Append("\n");
+            sb.Append("  PremiumFeature: ").Append(PremiumFeature).Append("\n");
+            sb.Append("  PremiumMessage: ").Append(PremiumMessage).Append("\n");
+            sb.Append("  RefreshInterval: ").Append(RefreshInterval).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,6 +161,11 @@ namespace Emby.ApiClient.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Subtitle == input.Subtitle ||
+                    (this.Subtitle != null &&
+                    this.Subtitle.Equals(input.Subtitle))
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -167,6 +207,26 @@ namespace Emby.ApiClient.Model
                     this.ParentItem == input.ParentItem ||
                     (this.ParentItem != null &&
                     this.ParentItem.Equals(input.ParentItem))
+                ) && 
+                (
+                    this.TextInfo == input.TextInfo ||
+                    (this.TextInfo != null &&
+                    this.TextInfo.Equals(input.TextInfo))
+                ) && 
+                (
+                    this.PremiumFeature == input.PremiumFeature ||
+                    (this.PremiumFeature != null &&
+                    this.PremiumFeature.Equals(input.PremiumFeature))
+                ) && 
+                (
+                    this.PremiumMessage == input.PremiumMessage ||
+                    (this.PremiumMessage != null &&
+                    this.PremiumMessage.Equals(input.PremiumMessage))
+                ) && 
+                (
+                    this.RefreshInterval == input.RefreshInterval ||
+                    (this.RefreshInterval != null &&
+                    this.RefreshInterval.Equals(input.RefreshInterval))
                 );
         }
 
@@ -181,6 +241,8 @@ namespace Emby.ApiClient.Model
                 int hashCode = 41;
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Subtitle != null)
+                    hashCode = hashCode * 59 + this.Subtitle.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.SectionType != null)
@@ -197,6 +259,14 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.ScrollDirection.GetHashCode();
                 if (this.ParentItem != null)
                     hashCode = hashCode * 59 + this.ParentItem.GetHashCode();
+                if (this.TextInfo != null)
+                    hashCode = hashCode * 59 + this.TextInfo.GetHashCode();
+                if (this.PremiumFeature != null)
+                    hashCode = hashCode * 59 + this.PremiumFeature.GetHashCode();
+                if (this.PremiumMessage != null)
+                    hashCode = hashCode * 59 + this.PremiumMessage.GetHashCode();
+                if (this.RefreshInterval != null)
+                    hashCode = hashCode * 59 + this.RefreshInterval.GetHashCode();
                 return hashCode;
             }
         }

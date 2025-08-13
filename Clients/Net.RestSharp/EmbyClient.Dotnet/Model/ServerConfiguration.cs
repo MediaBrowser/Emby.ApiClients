@@ -86,6 +86,8 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="enableSavedMetadataForPeople">enableSavedMetadataForPeople.</param>
         /// <param name="tvChannelsRefreshed">tvChannelsRefreshed.</param>
         /// <param name="proxyHeaderMode">proxyHeaderMode.</param>
+        /// <param name="isInMaintenanceMode">isInMaintenanceMode.</param>
+        /// <param name="maintenanceModeMessage">maintenanceModeMessage.</param>
         /// <param name="enableDebugLevelLogging">A value indicating whether \\[enable debug level logging\\]..</param>
         /// <param name="revertDebugLogging">revertDebugLogging.</param>
         /// <param name="enableAutoUpdate">Enable automatically and silently updating of the application.</param>
@@ -93,7 +95,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="runAtStartup">A value indicating whether \\[run at startup\\]..</param>
         /// <param name="isStartupWizardCompleted">A value indicating whether this instance is first run..</param>
         /// <param name="cachePath">The cache path..</param>
-        public ServerConfiguration(bool? enableUPnP = default(bool?), int? publicPort = default(int?), int? publicHttpsPort = default(int?), int? httpServerPortNumber = default(int?), int? httpsPortNumber = default(int?), bool? enableHttps = default(bool?), string certificatePath = default(string), string certificatePassword = default(string), bool? isPortAuthorized = default(bool?), bool? autoRunWebApp = default(bool?), bool? enableRemoteAccess = default(bool?), bool? logAllQueryTimes = default(bool?), bool? disableOutgoingIPv6 = default(bool?), bool? enableCaseSensitiveItemIds = default(bool?), string metadataPath = default(string), string metadataNetworkPath = default(string), string preferredMetadataLanguage = default(string), string metadataCountryCode = default(string), List<string> sortRemoveWords = default(List<string>), int? libraryMonitorDelaySeconds = default(int?), bool? enableDashboardResponseCaching = default(bool?), string dashboardSourcePath = default(string), ImageSavingConvention imageSavingConvention = default(ImageSavingConvention), bool? enableAutomaticRestart = default(bool?), string serverName = default(string), NetSocketsAddressFamily preferredDetectedRemoteAddressFamily = default(NetSocketsAddressFamily), string wanDdns = default(string), string uICulture = default(string), int? remoteClientBitrateLimit = default(int?), List<string> localNetworkSubnets = default(List<string>), List<string> localNetworkAddresses = default(List<string>), bool? enableExternalContentInSuggestions = default(bool?), bool? requireHttps = default(bool?), bool? isBehindProxy = default(bool?), List<string> remoteIPFilter = default(List<string>), bool? isRemoteIPFilterBlacklist = default(bool?), int? imageExtractionTimeoutMs = default(int?), List<PathSubstitution> pathSubstitutions = default(List<PathSubstitution>), List<string> uninstalledPlugins = default(List<string>), bool? collapseVideoFolders = default(bool?), bool? enableOriginalTrackTitles = default(bool?), bool? vacuumDatabaseOnStartup = default(bool?), int? simultaneousStreamLimit = default(int?), int? databaseCacheSizeMB = default(int?), bool? enableSqLiteMmio = default(bool?), bool? playlistsUpgradedToM3U = default(bool?), bool? imageExtractorUpgraded1 = default(bool?), bool? enablePeopleLetterSubFolders = default(bool?), bool? optimizeDatabaseOnShutdown = default(bool?), int? databaseAnalysisLimit = default(int?), int? maxLibraryDbConnections = default(int?), int? maxAuthDbConnections = default(int?), int? maxOtherDbConnections = default(int?), bool? disableAsyncIO = default(bool?), bool? migratedToUserItemShares8 = default(bool?), bool? migratedLibraryOptionsToDb = default(bool?), bool? allowLegacyLocalNetworkPassword = default(bool?), bool? enableSavedMetadataForPeople = default(bool?), bool? tvChannelsRefreshed = default(bool?), ProxyHeaderMode proxyHeaderMode = default(ProxyHeaderMode), bool? enableDebugLevelLogging = default(bool?), string revertDebugLogging = default(string), bool? enableAutoUpdate = default(bool?), int? logFileRetentionDays = default(int?), bool? runAtStartup = default(bool?), bool? isStartupWizardCompleted = default(bool?), string cachePath = default(string))
+        public ServerConfiguration(bool? enableUPnP = default(bool?), int? publicPort = default(int?), int? publicHttpsPort = default(int?), int? httpServerPortNumber = default(int?), int? httpsPortNumber = default(int?), bool? enableHttps = default(bool?), string certificatePath = default(string), string certificatePassword = default(string), bool? isPortAuthorized = default(bool?), bool? autoRunWebApp = default(bool?), bool? enableRemoteAccess = default(bool?), bool? logAllQueryTimes = default(bool?), bool? disableOutgoingIPv6 = default(bool?), bool? enableCaseSensitiveItemIds = default(bool?), string metadataPath = default(string), string metadataNetworkPath = default(string), string preferredMetadataLanguage = default(string), string metadataCountryCode = default(string), List<string> sortRemoveWords = default(List<string>), int? libraryMonitorDelaySeconds = default(int?), bool? enableDashboardResponseCaching = default(bool?), string dashboardSourcePath = default(string), ImageSavingConvention imageSavingConvention = default(ImageSavingConvention), bool? enableAutomaticRestart = default(bool?), string serverName = default(string), NetSocketsAddressFamily preferredDetectedRemoteAddressFamily = default(NetSocketsAddressFamily), string wanDdns = default(string), string uICulture = default(string), int? remoteClientBitrateLimit = default(int?), List<string> localNetworkSubnets = default(List<string>), List<string> localNetworkAddresses = default(List<string>), bool? enableExternalContentInSuggestions = default(bool?), bool? requireHttps = default(bool?), bool? isBehindProxy = default(bool?), List<string> remoteIPFilter = default(List<string>), bool? isRemoteIPFilterBlacklist = default(bool?), int? imageExtractionTimeoutMs = default(int?), List<PathSubstitution> pathSubstitutions = default(List<PathSubstitution>), List<string> uninstalledPlugins = default(List<string>), bool? collapseVideoFolders = default(bool?), bool? enableOriginalTrackTitles = default(bool?), bool? vacuumDatabaseOnStartup = default(bool?), int? simultaneousStreamLimit = default(int?), int? databaseCacheSizeMB = default(int?), bool? enableSqLiteMmio = default(bool?), bool? playlistsUpgradedToM3U = default(bool?), bool? imageExtractorUpgraded1 = default(bool?), bool? enablePeopleLetterSubFolders = default(bool?), bool? optimizeDatabaseOnShutdown = default(bool?), int? databaseAnalysisLimit = default(int?), int? maxLibraryDbConnections = default(int?), int? maxAuthDbConnections = default(int?), int? maxOtherDbConnections = default(int?), bool? disableAsyncIO = default(bool?), bool? migratedToUserItemShares8 = default(bool?), bool? migratedLibraryOptionsToDb = default(bool?), bool? allowLegacyLocalNetworkPassword = default(bool?), bool? enableSavedMetadataForPeople = default(bool?), bool? tvChannelsRefreshed = default(bool?), ProxyHeaderMode proxyHeaderMode = default(ProxyHeaderMode), bool? isInMaintenanceMode = default(bool?), string maintenanceModeMessage = default(string), bool? enableDebugLevelLogging = default(bool?), string revertDebugLogging = default(string), bool? enableAutoUpdate = default(bool?), int? logFileRetentionDays = default(int?), bool? runAtStartup = default(bool?), bool? isStartupWizardCompleted = default(bool?), string cachePath = default(string))
         {
             this.EnableUPnP = enableUPnP;
             this.PublicPort = publicPort;
@@ -155,6 +157,8 @@ namespace EmbyClient.Dotnet.Model
             this.EnableSavedMetadataForPeople = enableSavedMetadataForPeople;
             this.TvChannelsRefreshed = tvChannelsRefreshed;
             this.ProxyHeaderMode = proxyHeaderMode;
+            this.IsInMaintenanceMode = isInMaintenanceMode;
+            this.MaintenanceModeMessage = maintenanceModeMessage;
             this.EnableDebugLevelLogging = enableDebugLevelLogging;
             this.RevertDebugLogging = revertDebugLogging;
             this.EnableAutoUpdate = enableAutoUpdate;
@@ -541,6 +545,18 @@ namespace EmbyClient.Dotnet.Model
         public ProxyHeaderMode ProxyHeaderMode { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsInMaintenanceMode
+        /// </summary>
+        [DataMember(Name="IsInMaintenanceMode", EmitDefaultValue=false)]
+        public bool? IsInMaintenanceMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaintenanceModeMessage
+        /// </summary>
+        [DataMember(Name="MaintenanceModeMessage", EmitDefaultValue=false)]
+        public string MaintenanceModeMessage { get; set; }
+
+        /// <summary>
         /// A value indicating whether \\[enable debug level logging\\].
         /// </summary>
         /// <value>A value indicating whether \\[enable debug level logging\\].</value>
@@ -656,6 +672,8 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  EnableSavedMetadataForPeople: ").Append(EnableSavedMetadataForPeople).Append("\n");
             sb.Append("  TvChannelsRefreshed: ").Append(TvChannelsRefreshed).Append("\n");
             sb.Append("  ProxyHeaderMode: ").Append(ProxyHeaderMode).Append("\n");
+            sb.Append("  IsInMaintenanceMode: ").Append(IsInMaintenanceMode).Append("\n");
+            sb.Append("  MaintenanceModeMessage: ").Append(MaintenanceModeMessage).Append("\n");
             sb.Append("  EnableDebugLevelLogging: ").Append(EnableDebugLevelLogging).Append("\n");
             sb.Append("  RevertDebugLogging: ").Append(RevertDebugLogging).Append("\n");
             sb.Append("  EnableAutoUpdate: ").Append(EnableAutoUpdate).Append("\n");
@@ -1004,6 +1022,16 @@ namespace EmbyClient.Dotnet.Model
                     this.ProxyHeaderMode.Equals(input.ProxyHeaderMode))
                 ) && 
                 (
+                    this.IsInMaintenanceMode == input.IsInMaintenanceMode ||
+                    (this.IsInMaintenanceMode != null &&
+                    this.IsInMaintenanceMode.Equals(input.IsInMaintenanceMode))
+                ) && 
+                (
+                    this.MaintenanceModeMessage == input.MaintenanceModeMessage ||
+                    (this.MaintenanceModeMessage != null &&
+                    this.MaintenanceModeMessage.Equals(input.MaintenanceModeMessage))
+                ) && 
+                (
                     this.EnableDebugLevelLogging == input.EnableDebugLevelLogging ||
                     (this.EnableDebugLevelLogging != null &&
                     this.EnableDebugLevelLogging.Equals(input.EnableDebugLevelLogging))
@@ -1169,6 +1197,10 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.TvChannelsRefreshed.GetHashCode();
                 if (this.ProxyHeaderMode != null)
                     hashCode = hashCode * 59 + this.ProxyHeaderMode.GetHashCode();
+                if (this.IsInMaintenanceMode != null)
+                    hashCode = hashCode * 59 + this.IsInMaintenanceMode.GetHashCode();
+                if (this.MaintenanceModeMessage != null)
+                    hashCode = hashCode * 59 + this.MaintenanceModeMessage.GetHashCode();
                 if (this.EnableDebugLevelLogging != null)
                     hashCode = hashCode * 59 + this.EnableDebugLevelLogging.GetHashCode();
                 if (this.RevertDebugLogging != null)
