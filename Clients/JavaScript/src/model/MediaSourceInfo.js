@@ -20,7 +20,7 @@ import Video3DFormat from './Video3DFormat';
 /**
 * The MediaSourceInfo model module.
 * @module model/MediaSourceInfo
-* @version 4.9.1.18
+* @version 4.9.1.19
 */
 export default class MediaSourceInfo {
     /**
