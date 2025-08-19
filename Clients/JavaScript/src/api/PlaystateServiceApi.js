@@ -21,7 +21,7 @@ import UserItemDataDto from '../model/UserItemDataDto';
 /**
 * PlaystateService service.
 * @module api/PlaystateServiceApi
-* @version 4.9.1.19
+* @version 4.9.1.20
 */
 export default class PlaystateServiceApi {
 

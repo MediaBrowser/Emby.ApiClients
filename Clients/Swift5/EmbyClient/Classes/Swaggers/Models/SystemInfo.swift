@@ -59,6 +59,7 @@ public struct SystemInfo: Codable {
     public var supportsAutoRunAtStartup: Bool?
     public var hardwareAccelerationRequiresPremiere: Bool?
     public var wakeOnLanInfo: [WakeOnLanInfo]?
+    public var isInMaintenanceMode: Bool?
     /** The local address. */
     public var localAddress: String?
     public var localAddresses: [String]?
@@ -72,7 +73,7 @@ public struct SystemInfo: Codable {
     /** The id. */
     public var _id: String?
 
-    public init(systemUpdateLevel: PackageVersionClass? = nil, operatingSystemDisplayName: String? = nil, packageName: String? = nil, hasPendingRestart: Bool? = nil, isShuttingDown: Bool? = nil, hasImageEnhancers: Bool? = nil, operatingSystem: String? = nil, supportsLibraryMonitor: Bool? = nil, supportsLocalPortConfiguration: Bool? = nil, supportsWakeServer: Bool? = nil, webSocketPortNumber: Int? = nil, completedInstallations: [InstallationInfo]? = nil, canSelfRestart: Bool? = nil, canSelfUpdate: Bool? = nil, canLaunchWebBrowser: Bool? = nil, programDataPath: String? = nil, itemsByNamePath: String? = nil, cachePath: String? = nil, logPath: String? = nil, internalMetadataPath: String? = nil, transcodingTempPath: String? = nil, httpServerPortNumber: Int? = nil, supportsHttps: Bool? = nil, httpsPortNumber: Int? = nil, hasUpdateAvailable: Bool? = nil, supportsAutoRunAtStartup: Bool? = nil, hardwareAccelerationRequiresPremiere: Bool? = nil, wakeOnLanInfo: [WakeOnLanInfo]? = nil, localAddress: String? = nil, localAddresses: [String]? = nil, wanAddress: String? = nil, remoteAddresses: [String]? = nil, serverName: String? = nil, version: String? = nil, _id: String? = nil) {
+    public init(systemUpdateLevel: PackageVersionClass? = nil, operatingSystemDisplayName: String? = nil, packageName: String? = nil, hasPendingRestart: Bool? = nil, isShuttingDown: Bool? = nil, hasImageEnhancers: Bool? = nil, operatingSystem: String? = nil, supportsLibraryMonitor: Bool? = nil, supportsLocalPortConfiguration: Bool? = nil, supportsWakeServer: Bool? = nil, webSocketPortNumber: Int? = nil, completedInstallations: [InstallationInfo]? = nil, canSelfRestart: Bool? = nil, canSelfUpdate: Bool? = nil, canLaunchWebBrowser: Bool? = nil, programDataPath: String? = nil, itemsByNamePath: String? = nil, cachePath: String? = nil, logPath: String? = nil, internalMetadataPath: String? = nil, transcodingTempPath: String? = nil, httpServerPortNumber: Int? = nil, supportsHttps: Bool? = nil, httpsPortNumber: Int? = nil, hasUpdateAvailable: Bool? = nil, supportsAutoRunAtStartup: Bool? = nil, hardwareAccelerationRequiresPremiere: Bool? = nil, wakeOnLanInfo: [WakeOnLanInfo]? = nil, isInMaintenanceMode: Bool? = nil, localAddress: String? = nil, localAddresses: [String]? = nil, wanAddress: String? = nil, remoteAddresses: [String]? = nil, serverName: String? = nil, version: String? = nil, _id: String? = nil) {
         self.systemUpdateLevel = systemUpdateLevel
         self.operatingSystemDisplayName = operatingSystemDisplayName
         self.packageName = packageName
@@ -101,6 +102,7 @@ public struct SystemInfo: Codable {
         self.supportsAutoRunAtStartup = supportsAutoRunAtStartup
         self.hardwareAccelerationRequiresPremiere = hardwareAccelerationRequiresPremiere
         self.wakeOnLanInfo = wakeOnLanInfo
+        self.isInMaintenanceMode = isInMaintenanceMode
         self.localAddress = localAddress
         self.localAddresses = localAddresses
         self.wanAddress = wanAddress
@@ -139,6 +141,7 @@ public struct SystemInfo: Codable {
         case supportsAutoRunAtStartup = "SupportsAutoRunAtStartup"
         case hardwareAccelerationRequiresPremiere = "HardwareAccelerationRequiresPremiere"
         case wakeOnLanInfo = "WakeOnLanInfo"
+        case isInMaintenanceMode = "IsInMaintenanceMode"
         case localAddress = "LocalAddress"
         case localAddresses = "LocalAddresses"
         case wanAddress = "WanAddress"

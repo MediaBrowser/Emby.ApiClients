@@ -109,6 +109,9 @@ public class SystemInfo {
   @SerializedName("WakeOnLanInfo")
   private List<WakeOnLanInfo> wakeOnLanInfo = null;
 
+  @SerializedName("IsInMaintenanceMode")
+  private Boolean isInMaintenanceMode = null;
+
   @SerializedName("LocalAddress")
   private String localAddress = null;
 
@@ -650,6 +653,24 @@ public class SystemInfo {
     this.wakeOnLanInfo = wakeOnLanInfo;
   }
 
+  public SystemInfo isInMaintenanceMode(Boolean isInMaintenanceMode) {
+    this.isInMaintenanceMode = isInMaintenanceMode;
+    return this;
+  }
+
+   /**
+   * Get isInMaintenanceMode
+   * @return isInMaintenanceMode
+  **/
+  @Schema(description = "")
+  public Boolean isIsInMaintenanceMode() {
+    return isInMaintenanceMode;
+  }
+
+  public void setIsInMaintenanceMode(Boolean isInMaintenanceMode) {
+    this.isInMaintenanceMode = isInMaintenanceMode;
+  }
+
   public SystemInfo localAddress(String localAddress) {
     this.localAddress = localAddress;
     return this;
@@ -830,6 +851,7 @@ public class SystemInfo {
         Objects.equals(this.supportsAutoRunAtStartup, systemInfo.supportsAutoRunAtStartup) &&
         Objects.equals(this.hardwareAccelerationRequiresPremiere, systemInfo.hardwareAccelerationRequiresPremiere) &&
         Objects.equals(this.wakeOnLanInfo, systemInfo.wakeOnLanInfo) &&
+        Objects.equals(this.isInMaintenanceMode, systemInfo.isInMaintenanceMode) &&
         Objects.equals(this.localAddress, systemInfo.localAddress) &&
         Objects.equals(this.localAddresses, systemInfo.localAddresses) &&
         Objects.equals(this.wanAddress, systemInfo.wanAddress) &&
@@ -841,7 +863,7 @@ public class SystemInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(systemUpdateLevel, operatingSystemDisplayName, packageName, hasPendingRestart, isShuttingDown, hasImageEnhancers, operatingSystem, supportsLibraryMonitor, supportsLocalPortConfiguration, supportsWakeServer, webSocketPortNumber, completedInstallations, canSelfRestart, canSelfUpdate, canLaunchWebBrowser, programDataPath, itemsByNamePath, cachePath, logPath, internalMetadataPath, transcodingTempPath, httpServerPortNumber, supportsHttps, httpsPortNumber, hasUpdateAvailable, supportsAutoRunAtStartup, hardwareAccelerationRequiresPremiere, wakeOnLanInfo, localAddress, localAddresses, wanAddress, remoteAddresses, serverName, version, id);
+    return Objects.hash(systemUpdateLevel, operatingSystemDisplayName, packageName, hasPendingRestart, isShuttingDown, hasImageEnhancers, operatingSystem, supportsLibraryMonitor, supportsLocalPortConfiguration, supportsWakeServer, webSocketPortNumber, completedInstallations, canSelfRestart, canSelfUpdate, canLaunchWebBrowser, programDataPath, itemsByNamePath, cachePath, logPath, internalMetadataPath, transcodingTempPath, httpServerPortNumber, supportsHttps, httpsPortNumber, hasUpdateAvailable, supportsAutoRunAtStartup, hardwareAccelerationRequiresPremiere, wakeOnLanInfo, isInMaintenanceMode, localAddress, localAddresses, wanAddress, remoteAddresses, serverName, version, id);
   }
 
 
@@ -878,6 +900,7 @@ public class SystemInfo {
     sb.append("    supportsAutoRunAtStartup: ").append(toIndentedString(supportsAutoRunAtStartup)).append("\n");
     sb.append("    hardwareAccelerationRequiresPremiere: ").append(toIndentedString(hardwareAccelerationRequiresPremiere)).append("\n");
     sb.append("    wakeOnLanInfo: ").append(toIndentedString(wakeOnLanInfo)).append("\n");
+    sb.append("    isInMaintenanceMode: ").append(toIndentedString(isInMaintenanceMode)).append("\n");
     sb.append("    localAddress: ").append(toIndentedString(localAddress)).append("\n");
     sb.append("    localAddresses: ").append(toIndentedString(localAddresses)).append("\n");
     sb.append("    wanAddress: ").append(toIndentedString(wanAddress)).append("\n");

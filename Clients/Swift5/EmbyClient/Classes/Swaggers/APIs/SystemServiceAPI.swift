@@ -124,6 +124,7 @@ open class SystemServiceAPI {
   "InternalMetadataPath" : "InternalMetadataPath",
   "ServerName" : "ServerName",
   "SupportsLocalPortConfiguration" : true,
+  "IsInMaintenanceMode" : true,
   "Id" : "Id",
   "HasUpdateAvailable" : true,
   "LogPath" : "LogPath",

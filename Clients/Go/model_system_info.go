@@ -55,6 +55,7 @@ type SystemInfo struct {
 	SupportsAutoRunAtStartup bool `json:"SupportsAutoRunAtStartup,omitempty"`
 	HardwareAccelerationRequiresPremiere bool `json:"HardwareAccelerationRequiresPremiere,omitempty"`
 	WakeOnLanInfo []WakeOnLanInfo `json:"WakeOnLanInfo,omitempty"`
+	IsInMaintenanceMode bool `json:"IsInMaintenanceMode,omitempty"`
 	// The local address.
 	LocalAddress string `json:"LocalAddress,omitempty"`
 	LocalAddresses []string `json:"LocalAddresses,omitempty"`

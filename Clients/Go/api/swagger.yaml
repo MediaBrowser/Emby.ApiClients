@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.1.19
+  version: 4.9.1.20
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -99250,6 +99250,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/WakeOnLanInfo'
+        IsInMaintenanceMode:
+          type: boolean
         LocalAddress:
           type: string
           description: The local address.
@@ -99328,6 +99330,7 @@ components:
         InternalMetadataPath: InternalMetadataPath
         ServerName: ServerName
         SupportsLocalPortConfiguration: true
+        IsInMaintenanceMode: true
         Id: Id
         HasUpdateAvailable: true
         LogPath: LogPath

@@ -195,6 +195,12 @@ namespace Emby.ApiClient.Model
         public List<WakeOnLanInfo> WakeOnLanInfo { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsInMaintenanceMode
+        /// </summary>
+        /// <value>The IsInMaintenanceMode.</value>
+        public bool? IsInMaintenanceMode { get; set; }
+
+        /// <summary>
         /// The local address.
         /// </summary>
         /// <value>The LocalAddress.</value>
@@ -272,6 +278,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  SupportsAutoRunAtStartup: ").Append(SupportsAutoRunAtStartup).Append("\n");
             sb.Append("  HardwareAccelerationRequiresPremiere: ").Append(HardwareAccelerationRequiresPremiere).Append("\n");
             sb.Append("  WakeOnLanInfo: ").Append(WakeOnLanInfo).Append("\n");
+            sb.Append("  IsInMaintenanceMode: ").Append(IsInMaintenanceMode).Append("\n");
             sb.Append("  LocalAddress: ").Append(LocalAddress).Append("\n");
             sb.Append("  LocalAddresses: ").Append(LocalAddresses).Append("\n");
             sb.Append("  WanAddress: ").Append(WanAddress).Append("\n");
@@ -447,6 +454,11 @@ namespace Emby.ApiClient.Model
                     this.WakeOnLanInfo.SequenceEqual(input.WakeOnLanInfo)
                 ) && 
                 (
+                    this.IsInMaintenanceMode == input.IsInMaintenanceMode ||
+                    (this.IsInMaintenanceMode != null &&
+                    this.IsInMaintenanceMode.Equals(input.IsInMaintenanceMode))
+                ) && 
+                (
                     this.LocalAddress == input.LocalAddress ||
                     (this.LocalAddress != null &&
                     this.LocalAddress.Equals(input.LocalAddress))
@@ -550,6 +562,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.HardwareAccelerationRequiresPremiere.GetHashCode();
                 if (this.WakeOnLanInfo != null)
                     hashCode = hashCode * 59 + this.WakeOnLanInfo.GetHashCode();
+                if (this.IsInMaintenanceMode != null)
+                    hashCode = hashCode * 59 + this.IsInMaintenanceMode.GetHashCode();
                 if (this.LocalAddress != null)
                     hashCode = hashCode * 59 + this.LocalAddress.GetHashCode();
                 if (this.LocalAddresses != null)
