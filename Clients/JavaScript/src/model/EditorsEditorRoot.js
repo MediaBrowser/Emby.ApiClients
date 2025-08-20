@@ -19,7 +19,7 @@ import EditorsEditorButtonItem from './EditorsEditorButtonItem';
 /**
 * The EditorsEditorRoot model module.
 * @module model/EditorsEditorRoot
-* @version 4.9.1.20
+* @version 4.9.1.21
 */
 export default class EditorsEditorRoot {
     /**
