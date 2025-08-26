@@ -16,7 +16,7 @@ import ProfileCondition from './ProfileCondition';
 /**
 * The ContainerProfile model module.
 * @module model/ContainerProfile
-* @version 4.9.1.22
+* @version 4.9.1.23
 */
 export default class ContainerProfile {
     /**

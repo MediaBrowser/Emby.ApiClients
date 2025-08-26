@@ -17,7 +17,7 @@ import SeriesDisplayOrder from './SeriesDisplayOrder';
 /**
 * The SeriesInfo model module.
 * @module model/SeriesInfo
-* @version 4.9.1.22
+* @version 4.9.1.23
 */
 export default class SeriesInfo {
     /**

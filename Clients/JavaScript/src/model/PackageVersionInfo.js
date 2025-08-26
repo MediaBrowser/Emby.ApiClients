@@ -15,7 +15,7 @@ import PackageVersionClass from './PackageVersionClass';
 /**
 * The PackageVersionInfo model module.
 * @module model/PackageVersionInfo
-* @version 4.9.1.22
+* @version 4.9.1.23
 */
 export default class PackageVersionInfo {
     /**
