@@ -16,7 +16,7 @@ import SubtitlePlaybackMode from './SubtitlePlaybackMode';
 /**
 * The UserConfiguration model module.
 * @module model/UserConfiguration
-* @version 4.9.1.23
+* @version 4.9.1.24
 */
 export default class UserConfiguration {
     /**
@@ -67,9 +67,6 @@ export default class UserConfiguration {
             }
             if (data.hasOwnProperty('LatestItemsExcludes')) {
                 obj['LatestItemsExcludes'] = ApiClient.convertToType(data['LatestItemsExcludes'], ['String']);
-            }
-            if (data.hasOwnProperty('SearchExcludes')) {
-                obj['SearchExcludes'] = ApiClient.convertToType(data['SearchExcludes'], ['String']);
             }
             if (data.hasOwnProperty('MyMediaExcludes')) {
                 obj['MyMediaExcludes'] = ApiClient.convertToType(data['MyMediaExcludes'], ['String']);
@@ -140,10 +137,6 @@ export default class UserConfiguration {
     * @member {Array.<String>} LatestItemsExcludes
     */
     'LatestItemsExcludes' = undefined;
-    /**
-    * @member {Array.<String>} SearchExcludes
-    */
-    'SearchExcludes' = undefined;
     /**
     * @member {Array.<String>} MyMediaExcludes
     */

@@ -54,6 +54,9 @@ public class LibraryOptions {
   @SerializedName("CacheImages")
   private Boolean cacheImages = null;
 
+  @SerializedName("ExcludeFromSearch")
+  private Boolean excludeFromSearch = null;
+
   @SerializedName("EnablePlexIgnore")
   private Boolean enablePlexIgnore = null;
 
@@ -388,6 +391,24 @@ public class LibraryOptions {
 
   public void setCacheImages(Boolean cacheImages) {
     this.cacheImages = cacheImages;
+  }
+
+  public LibraryOptions excludeFromSearch(Boolean excludeFromSearch) {
+    this.excludeFromSearch = excludeFromSearch;
+    return this;
+  }
+
+   /**
+   * Get excludeFromSearch
+   * @return excludeFromSearch
+  **/
+  @Schema(description = "")
+  public Boolean isExcludeFromSearch() {
+    return excludeFromSearch;
+  }
+
+  public void setExcludeFromSearch(Boolean excludeFromSearch) {
+    this.excludeFromSearch = excludeFromSearch;
   }
 
   public LibraryOptions enablePlexIgnore(Boolean enablePlexIgnore) {
@@ -1442,6 +1463,7 @@ public class LibraryOptions {
         Objects.equals(this.extractChapterImagesDuringLibraryScan, libraryOptions.extractChapterImagesDuringLibraryScan) &&
         Objects.equals(this.downloadImagesInAdvance, libraryOptions.downloadImagesInAdvance) &&
         Objects.equals(this.cacheImages, libraryOptions.cacheImages) &&
+        Objects.equals(this.excludeFromSearch, libraryOptions.excludeFromSearch) &&
         Objects.equals(this.enablePlexIgnore, libraryOptions.enablePlexIgnore) &&
         Objects.equals(this.pathInfos, libraryOptions.pathInfos) &&
         Objects.equals(this.ignoreHiddenFiles, libraryOptions.ignoreHiddenFiles) &&
@@ -1498,7 +1520,7 @@ public class LibraryOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableArchiveMediaFiles, enablePhotos, enableRealtimeMonitor, enableMarkerDetection, enableMarkerDetectionDuringLibraryScan, introDetectionFingerprintLength, enableChapterImageExtraction, extractChapterImagesDuringLibraryScan, downloadImagesInAdvance, cacheImages, enablePlexIgnore, pathInfos, ignoreHiddenFiles, ignoreFileExtensions, saveLocalMetadata, saveMetadataHidden, saveLocalThumbnailSets, importPlaylists, enableAutomaticSeriesGrouping, shareEmbeddedMusicAlbumImages, enableEmbeddedTitles, enableAudioResume, autoGenerateChapters, autoGenerateChapterIntervalMinutes, automaticRefreshIntervalDays, placeholderMetadataRefreshIntervalDays, preferredMetadataLanguage, preferredImageLanguage, contentType, metadataCountryCode, metadataSavers, disabledLocalMetadataReaders, localMetadataReaderOrder, disabledLyricsFetchers, saveLyricsWithMedia, lyricsDownloadMaxAgeDays, lyricsFetcherOrder, lyricsDownloadLanguages, disabledSubtitleFetchers, subtitleFetcherOrder, skipSubtitlesIfEmbeddedSubtitlesPresent, skipSubtitlesIfAudioTrackMatches, subtitleDownloadLanguages, subtitleDownloadMaxAgeDays, requirePerfectSubtitleMatch, saveSubtitlesWithMedia, forcedSubtitlesOnly, hearingImpairedSubtitlesOnly, typeOptions, collapseSingleItemFolders, enableAdultMetadata, importCollections, enableMultiVersionByFiles, enableMultiVersionByMetadata, enableMultiPartItems, minCollectionItems, musicFolderStructure, minResumePct, maxResumePct, minResumeDurationSeconds, thumbnailImagesIntervalSeconds, sampleIgnoreSize);
+    return Objects.hash(enableArchiveMediaFiles, enablePhotos, enableRealtimeMonitor, enableMarkerDetection, enableMarkerDetectionDuringLibraryScan, introDetectionFingerprintLength, enableChapterImageExtraction, extractChapterImagesDuringLibraryScan, downloadImagesInAdvance, cacheImages, excludeFromSearch, enablePlexIgnore, pathInfos, ignoreHiddenFiles, ignoreFileExtensions, saveLocalMetadata, saveMetadataHidden, saveLocalThumbnailSets, importPlaylists, enableAutomaticSeriesGrouping, shareEmbeddedMusicAlbumImages, enableEmbeddedTitles, enableAudioResume, autoGenerateChapters, autoGenerateChapterIntervalMinutes, automaticRefreshIntervalDays, placeholderMetadataRefreshIntervalDays, preferredMetadataLanguage, preferredImageLanguage, contentType, metadataCountryCode, metadataSavers, disabledLocalMetadataReaders, localMetadataReaderOrder, disabledLyricsFetchers, saveLyricsWithMedia, lyricsDownloadMaxAgeDays, lyricsFetcherOrder, lyricsDownloadLanguages, disabledSubtitleFetchers, subtitleFetcherOrder, skipSubtitlesIfEmbeddedSubtitlesPresent, skipSubtitlesIfAudioTrackMatches, subtitleDownloadLanguages, subtitleDownloadMaxAgeDays, requirePerfectSubtitleMatch, saveSubtitlesWithMedia, forcedSubtitlesOnly, hearingImpairedSubtitlesOnly, typeOptions, collapseSingleItemFolders, enableAdultMetadata, importCollections, enableMultiVersionByFiles, enableMultiVersionByMetadata, enableMultiPartItems, minCollectionItems, musicFolderStructure, minResumePct, maxResumePct, minResumeDurationSeconds, thumbnailImagesIntervalSeconds, sampleIgnoreSize);
   }
 
 
@@ -1517,6 +1539,7 @@ public class LibraryOptions {
     sb.append("    extractChapterImagesDuringLibraryScan: ").append(toIndentedString(extractChapterImagesDuringLibraryScan)).append("\n");
     sb.append("    downloadImagesInAdvance: ").append(toIndentedString(downloadImagesInAdvance)).append("\n");
     sb.append("    cacheImages: ").append(toIndentedString(cacheImages)).append("\n");
+    sb.append("    excludeFromSearch: ").append(toIndentedString(excludeFromSearch)).append("\n");
     sb.append("    enablePlexIgnore: ").append(toIndentedString(enablePlexIgnore)).append("\n");
     sb.append("    pathInfos: ").append(toIndentedString(pathInfos)).append("\n");
     sb.append("    ignoreHiddenFiles: ").append(toIndentedString(ignoreHiddenFiles)).append("\n");

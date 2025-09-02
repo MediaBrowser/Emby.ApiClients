@@ -17,6 +17,7 @@ type LibraryOptions struct {
 	ExtractChapterImagesDuringLibraryScan bool `json:"ExtractChapterImagesDuringLibraryScan,omitempty"`
 	DownloadImagesInAdvance bool `json:"DownloadImagesInAdvance,omitempty"`
 	CacheImages bool `json:"CacheImages,omitempty"`
+	ExcludeFromSearch bool `json:"ExcludeFromSearch,omitempty"`
 	EnablePlexIgnore bool `json:"EnablePlexIgnore,omitempty"`
 	PathInfos []MediaPathInfo `json:"PathInfos,omitempty"`
 	IgnoreHiddenFiles bool `json:"IgnoreHiddenFiles,omitempty"`

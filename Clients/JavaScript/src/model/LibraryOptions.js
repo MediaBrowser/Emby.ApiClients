@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.9.1.23
+* @version 4.9.1.24
 */
 export default class LibraryOptions {
     /**
@@ -72,6 +72,9 @@ export default class LibraryOptions {
             }
             if (data.hasOwnProperty('CacheImages')) {
                 obj['CacheImages'] = ApiClient.convertToType(data['CacheImages'], 'Boolean');
+            }
+            if (data.hasOwnProperty('ExcludeFromSearch')) {
+                obj['ExcludeFromSearch'] = ApiClient.convertToType(data['ExcludeFromSearch'], 'Boolean');
             }
             if (data.hasOwnProperty('EnablePlexIgnore')) {
                 obj['EnablePlexIgnore'] = ApiClient.convertToType(data['EnablePlexIgnore'], 'Boolean');
@@ -273,6 +276,10 @@ export default class LibraryOptions {
     * @member {Boolean} CacheImages
     */
     'CacheImages' = undefined;
+    /**
+    * @member {Boolean} ExcludeFromSearch
+    */
+    'ExcludeFromSearch' = undefined;
     /**
     * @member {Boolean} EnablePlexIgnore
     */

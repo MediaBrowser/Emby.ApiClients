@@ -6,7 +6,7 @@ info:
   contact:
     name: Emby Developer Forum
     url: https://emby.media/community/index.php?/forum/47-developer-api
-  version: 4.9.1.23
+  version: 4.9.1.24
 externalDocs:
   description: embyDEV - REST API Documentation
   url: https://dev.emby.media/doc/restapi/index.html
@@ -90578,6 +90578,7 @@ components:
           EnableEmbeddedTitles: true
           PlaceholderMetadataRefreshIntervalDays: 2
           EnableChapterImageExtraction: true
+          ExcludeFromSearch: true
           AutomaticRefreshIntervalDays: 5
           SubtitleFetcherOrder:
           - SubtitleFetcherOrder
@@ -90768,6 +90769,8 @@ components:
         DownloadImagesInAdvance:
           type: boolean
         CacheImages:
+          type: boolean
+        ExcludeFromSearch:
           type: boolean
         EnablePlexIgnore:
           type: boolean
@@ -91014,6 +91017,7 @@ components:
         EnableEmbeddedTitles: true
         PlaceholderMetadataRefreshIntervalDays: 2
         EnableChapterImageExtraction: true
+        ExcludeFromSearch: true
         AutomaticRefreshIntervalDays: 5
         SubtitleFetcherOrder:
         - SubtitleFetcherOrder
@@ -99703,9 +99707,6 @@ components:
           OrderedViews:
           - OrderedViews
           - OrderedViews
-          SearchExcludes:
-          - SearchExcludes
-          - SearchExcludes
           LatestItemsExcludes:
           - LatestItemsExcludes
           - LatestItemsExcludes
@@ -99770,10 +99771,6 @@ components:
           type: array
           items:
             type: string
-        SearchExcludes:
-          type: array
-          items:
-            type: string
         MyMediaExcludes:
           type: array
           items:
@@ -99807,9 +99804,6 @@ components:
         OrderedViews:
         - OrderedViews
         - OrderedViews
-        SearchExcludes:
-        - SearchExcludes
-        - SearchExcludes
         LatestItemsExcludes:
         - LatestItemsExcludes
         - LatestItemsExcludes
@@ -100180,9 +100174,6 @@ components:
             OrderedViews:
             - OrderedViews
             - OrderedViews
-            SearchExcludes:
-            - SearchExcludes
-            - SearchExcludes
             LatestItemsExcludes:
             - LatestItemsExcludes
             - LatestItemsExcludes
@@ -100295,9 +100286,6 @@ components:
             OrderedViews:
             - OrderedViews
             - OrderedViews
-            SearchExcludes:
-            - SearchExcludes
-            - SearchExcludes
             LatestItemsExcludes:
             - LatestItemsExcludes
             - LatestItemsExcludes
@@ -100433,9 +100421,6 @@ components:
             OrderedViews:
             - OrderedViews
             - OrderedViews
-            SearchExcludes:
-            - SearchExcludes
-            - SearchExcludes
             LatestItemsExcludes:
             - LatestItemsExcludes
             - LatestItemsExcludes
@@ -106359,6 +106344,7 @@ components:
             EnableEmbeddedTitles: true
             PlaceholderMetadataRefreshIntervalDays: 2
             EnableChapterImageExtraction: true
+            ExcludeFromSearch: true
             AutomaticRefreshIntervalDays: 5
             SubtitleFetcherOrder:
             - SubtitleFetcherOrder
@@ -106494,6 +106480,7 @@ components:
             EnableEmbeddedTitles: true
             PlaceholderMetadataRefreshIntervalDays: 2
             EnableChapterImageExtraction: true
+            ExcludeFromSearch: true
             AutomaticRefreshIntervalDays: 5
             SubtitleFetcherOrder:
             - SubtitleFetcherOrder
@@ -106667,6 +106654,7 @@ components:
           EnableEmbeddedTitles: true
           PlaceholderMetadataRefreshIntervalDays: 2
           EnableChapterImageExtraction: true
+          ExcludeFromSearch: true
           AutomaticRefreshIntervalDays: 5
           SubtitleFetcherOrder:
           - SubtitleFetcherOrder

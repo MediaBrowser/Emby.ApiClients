@@ -12816,6 +12816,7 @@ open class LibraryServiceAPI {
     "EnableEmbeddedTitles" : true,
     "PlaceholderMetadataRefreshIntervalDays" : 2,
     "EnableChapterImageExtraction" : true,
+    "ExcludeFromSearch" : true,
     "AutomaticRefreshIntervalDays" : 5,
     "SubtitleFetcherOrder" : [ "SubtitleFetcherOrder", "SubtitleFetcherOrder" ],
     "ImportCollections" : true,

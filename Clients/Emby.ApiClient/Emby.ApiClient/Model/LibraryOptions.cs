@@ -87,6 +87,12 @@ namespace Emby.ApiClient.Model
         public bool? CacheImages { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExcludeFromSearch
+        /// </summary>
+        /// <value>The ExcludeFromSearch.</value>
+        public bool? ExcludeFromSearch { get; set; }
+
+        /// <summary>
         /// Gets or Sets EnablePlexIgnore
         /// </summary>
         /// <value>The EnablePlexIgnore.</value>
@@ -416,6 +422,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  ExtractChapterImagesDuringLibraryScan: ").Append(ExtractChapterImagesDuringLibraryScan).Append("\n");
             sb.Append("  DownloadImagesInAdvance: ").Append(DownloadImagesInAdvance).Append("\n");
             sb.Append("  CacheImages: ").Append(CacheImages).Append("\n");
+            sb.Append("  ExcludeFromSearch: ").Append(ExcludeFromSearch).Append("\n");
             sb.Append("  EnablePlexIgnore: ").Append(EnablePlexIgnore).Append("\n");
             sb.Append("  PathInfos: ").Append(PathInfos).Append("\n");
             sb.Append("  IgnoreHiddenFiles: ").Append(IgnoreHiddenFiles).Append("\n");
@@ -542,6 +549,11 @@ namespace Emby.ApiClient.Model
                     this.CacheImages == input.CacheImages ||
                     (this.CacheImages != null &&
                     this.CacheImages.Equals(input.CacheImages))
+                ) && 
+                (
+                    this.ExcludeFromSearch == input.ExcludeFromSearch ||
+                    (this.ExcludeFromSearch != null &&
+                    this.ExcludeFromSearch.Equals(input.ExcludeFromSearch))
                 ) && 
                 (
                     this.EnablePlexIgnore == input.EnablePlexIgnore ||
@@ -846,6 +858,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.DownloadImagesInAdvance.GetHashCode();
                 if (this.CacheImages != null)
                     hashCode = hashCode * 59 + this.CacheImages.GetHashCode();
+                if (this.ExcludeFromSearch != null)
+                    hashCode = hashCode * 59 + this.ExcludeFromSearch.GetHashCode();
                 if (this.EnablePlexIgnore != null)
                     hashCode = hashCode * 59 + this.EnablePlexIgnore.GetHashCode();
                 if (this.PathInfos != null)
