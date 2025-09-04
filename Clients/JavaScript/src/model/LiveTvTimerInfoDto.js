@@ -18,7 +18,7 @@ import LiveTvTimerType from './LiveTvTimerType';
 /**
 * The LiveTvTimerInfoDto model module.
 * @module model/LiveTvTimerInfoDto
-* @version 4.9.1.24
+* @version 4.9.1.25
 */
 export default class LiveTvTimerInfoDto {
     /**
