@@ -118,5 +118,10 @@ namespace EmbyClient.Dotnet.Model
         /// Enum ConnectTo for value: ConnectTo
         /// </summary>
         [EnumMember(Value = "ConnectTo")]
-        ConnectTo = 19    }
+        ConnectTo = 19,
+        /// <summary>
+        /// Enum Rotate for value: Rotate
+        /// </summary>
+        [EnumMember(Value = "Rotate")]
+        Rotate = 20    }
 }

@@ -37,6 +37,7 @@ class TranscodingVpStepTypes(object):
     SHOWSPEAKER = "ShowSpeaker"
     STRIPSTYLES = "StripStyles"
     CONNECTTO = "ConnectTo"
+    ROTATE = "Rotate"
     """
     Attributes:
       swagger_types (dict): The key is attribute name

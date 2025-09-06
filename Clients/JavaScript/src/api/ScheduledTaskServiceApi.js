@@ -16,7 +16,7 @@ import TaskTriggerInfo from '../model/TaskTriggerInfo';
 /**
 * ScheduledTaskService service.
 * @module api/ScheduledTaskServiceApi
-* @version 4.9.1.25
+* @version 4.9.1.26
 */
 export default class ScheduledTaskServiceApi {
 

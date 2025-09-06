@@ -29,4 +29,5 @@ const (
 	SHOW_SPEAKER_TranscodingVpStepTypes TranscodingVpStepTypes = "ShowSpeaker"
 	STRIP_STYLES_TranscodingVpStepTypes TranscodingVpStepTypes = "StripStyles"
 	CONNECT_TO_TranscodingVpStepTypes TranscodingVpStepTypes = "ConnectTo"
+	ROTATE_TranscodingVpStepTypes TranscodingVpStepTypes = "Rotate"
 )

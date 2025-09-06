@@ -130,6 +130,12 @@ export default class TranscodingVpStepTypes {
          */
         ConnectTo = "ConnectTo";
 
+        /**
+         * value: "Rotate"
+         * @const
+         */
+        Rotate = "Rotate";
+
 
     /**
     * Returns a <code>TranscodingVpStepTypes</code> enum value from a Javascript object name.
