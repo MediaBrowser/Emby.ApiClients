@@ -18,7 +18,7 @@ import ValidatePath from '../model/ValidatePath';
 /**
 * EnvironmentService service.
 * @module api/EnvironmentServiceApi
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class EnvironmentServiceApi {
 

@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ActionsPostbackAction model module.
 * @module model/ActionsPostbackAction
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class ActionsPostbackAction {
     /**

@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The NetEndPointInfo model module.
 * @module model/NetEndPointInfo
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class NetEndPointInfo {
     /**

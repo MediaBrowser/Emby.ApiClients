@@ -15,7 +15,7 @@ import Resolution from './Resolution';
 /**
 * The ResolutionWithRate model module.
 * @module model/ResolutionWithRate
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class ResolutionWithRate {
     /**

@@ -15,7 +15,7 @@ import LibrarySubFolder from './LibrarySubFolder';
 /**
 * The LibraryMediaFolder model module.
 * @module model/LibraryMediaFolder
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class LibraryMediaFolder {
     /**

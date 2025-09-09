@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The PinRedeemResult model module.
 * @module model/PinRedeemResult
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class PinRedeemResult {
     /**

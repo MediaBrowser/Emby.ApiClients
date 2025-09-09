@@ -15,7 +15,7 @@ import ActivityLogEntry from './ActivityLogEntry';
 /**
 * The QueryResultActivityLogEntry model module.
 * @module model/QueryResultActivityLogEntry
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class QueryResultActivityLogEntry {
     /**

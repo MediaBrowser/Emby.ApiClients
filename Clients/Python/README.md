@@ -1,7 +1,7 @@
 # embyclient
 
-- API version: 4.9.1.27
-- Package version: 4.9.1.27
+- API version: 4.9.1.29
+- Package version: 4.9.1.29
 - Build package: io.swagger.codegen.v3.generators.python.PythonClientCodegen
 
 ## Requirements.

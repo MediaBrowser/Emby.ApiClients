@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The PlaylistsAddToPlaylistInfo model module.
 * @module model/PlaylistsAddToPlaylistInfo
-* @version 4.9.1.27
+* @version 4.9.1.29
 */
 export default class PlaylistsAddToPlaylistInfo {
     /**
