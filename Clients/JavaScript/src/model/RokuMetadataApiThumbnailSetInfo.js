@@ -15,7 +15,7 @@ import RokuMetadataApiThumbnailInfo from './RokuMetadataApiThumbnailInfo';
 /**
 * The RokuMetadataApiThumbnailSetInfo model module.
 * @module model/RokuMetadataApiThumbnailSetInfo
-* @version 4.9.1.29
+* @version 4.9.1.30
 */
 export default class RokuMetadataApiThumbnailSetInfo {
     /**

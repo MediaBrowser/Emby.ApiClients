@@ -15,7 +15,7 @@ import BrandingBrandingOptions from '../model/BrandingBrandingOptions';
 /**
 * BrandingService service.
 * @module api/BrandingServiceApi
-* @version 4.9.1.29
+* @version 4.9.1.30
 */
 export default class BrandingServiceApi {
 
