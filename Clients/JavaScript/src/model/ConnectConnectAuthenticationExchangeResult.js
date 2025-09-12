@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ConnectConnectAuthenticationExchangeResult model module.
 * @module model/ConnectConnectAuthenticationExchangeResult
-* @version 4.9.1.30
+* @version 4.9.1.31
 */
 export default class ConnectConnectAuthenticationExchangeResult {
     /**

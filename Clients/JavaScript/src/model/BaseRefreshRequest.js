@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The BaseRefreshRequest model module.
 * @module model/BaseRefreshRequest
-* @version 4.9.1.30
+* @version 4.9.1.31
 */
 export default class BaseRefreshRequest {
     /**

@@ -15,7 +15,7 @@ import QueryResultBaseItemDto from '../model/QueryResultBaseItemDto';
 /**
 * SuggestionsService service.
 * @module api/SuggestionsServiceApi
-* @version 4.9.1.30
+* @version 4.9.1.31
 */
 export default class SuggestionsServiceApi {
 
