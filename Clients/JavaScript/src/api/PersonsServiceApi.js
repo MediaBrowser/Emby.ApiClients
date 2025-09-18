@@ -16,7 +16,7 @@ import QueryResultBaseItemDto from '../model/QueryResultBaseItemDto';
 /**
 * PersonsService service.
 * @module api/PersonsServiceApi
-* @version 4.9.1.32
+* @version 4.9.1.33
 */
 export default class PersonsServiceApi {
 

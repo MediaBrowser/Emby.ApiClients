@@ -15,7 +15,7 @@ import DlnaProfilesHttpHeaderInfo from './DlnaProfilesHttpHeaderInfo';
 /**
 * The DlnaProfilesDeviceIdentification model module.
 * @module model/DlnaProfilesDeviceIdentification
-* @version 4.9.1.32
+* @version 4.9.1.33
 */
 export default class DlnaProfilesDeviceIdentification {
     /**

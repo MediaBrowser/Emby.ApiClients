@@ -15,7 +15,7 @@ import LiveTvKeywordType from './LiveTvKeywordType';
 /**
 * The LiveTvKeywordInfo model module.
 * @module model/LiveTvKeywordInfo
-* @version 4.9.1.32
+* @version 4.9.1.33
 */
 export default class LiveTvKeywordInfo {
     /**
