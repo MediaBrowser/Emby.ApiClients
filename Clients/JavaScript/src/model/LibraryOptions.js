@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.9.1.33
+* @version 4.9.1.34
 */
 export default class LibraryOptions {
     /**
@@ -114,6 +114,9 @@ export default class LibraryOptions {
             }
             if (data.hasOwnProperty('AutoGenerateChapters')) {
                 obj['AutoGenerateChapters'] = ApiClient.convertToType(data['AutoGenerateChapters'], 'Boolean');
+            }
+            if (data.hasOwnProperty('MergeTopLevelFolders')) {
+                obj['MergeTopLevelFolders'] = ApiClient.convertToType(data['MergeTopLevelFolders'], 'Boolean');
             }
             if (data.hasOwnProperty('AutoGenerateChapterIntervalMinutes')) {
                 obj['AutoGenerateChapterIntervalMinutes'] = ApiClient.convertToType(data['AutoGenerateChapterIntervalMinutes'], 'Number');
@@ -332,6 +335,10 @@ export default class LibraryOptions {
     * @member {Boolean} AutoGenerateChapters
     */
     'AutoGenerateChapters' = undefined;
+    /**
+    * @member {Boolean} MergeTopLevelFolders
+    */
+    'MergeTopLevelFolders' = undefined;
     /**
     * @member {Number} AutoGenerateChapterIntervalMinutes
     */

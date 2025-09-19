@@ -31,6 +31,7 @@ type LibraryOptions struct {
 	EnableEmbeddedTitles bool `json:"EnableEmbeddedTitles,omitempty"`
 	EnableAudioResume bool `json:"EnableAudioResume,omitempty"`
 	AutoGenerateChapters bool `json:"AutoGenerateChapters,omitempty"`
+	MergeTopLevelFolders bool `json:"MergeTopLevelFolders,omitempty"`
 	AutoGenerateChapterIntervalMinutes int32 `json:"AutoGenerateChapterIntervalMinutes,omitempty"`
 	AutomaticRefreshIntervalDays int32 `json:"AutomaticRefreshIntervalDays,omitempty"`
 	PlaceholderMetadataRefreshIntervalDays int32 `json:"PlaceholderMetadataRefreshIntervalDays,omitempty"`

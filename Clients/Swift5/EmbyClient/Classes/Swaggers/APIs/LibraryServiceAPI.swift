@@ -12810,6 +12810,7 @@ open class LibraryServiceAPI {
     "LyricsFetcherOrder" : [ "LyricsFetcherOrder", "LyricsFetcherOrder" ],
     "HearingImpairedSubtitlesOnly" : true,
     "CacheImages" : true,
+    "MergeTopLevelFolders" : true,
     "IgnoreFileExtensions" : [ "IgnoreFileExtensions", "IgnoreFileExtensions" ],
     "CollapseSingleItemFolders" : true,
     "EnableMarkerDetectionDuringLibraryScan" : true,

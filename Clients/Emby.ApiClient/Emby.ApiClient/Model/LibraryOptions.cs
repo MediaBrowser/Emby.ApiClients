@@ -171,6 +171,12 @@ namespace Emby.ApiClient.Model
         public bool? AutoGenerateChapters { get; set; }
 
         /// <summary>
+        /// Gets or Sets MergeTopLevelFolders
+        /// </summary>
+        /// <value>The MergeTopLevelFolders.</value>
+        public bool? MergeTopLevelFolders { get; set; }
+
+        /// <summary>
         /// Gets or Sets AutoGenerateChapterIntervalMinutes
         /// </summary>
         /// <value>The AutoGenerateChapterIntervalMinutes.</value>
@@ -436,6 +442,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  EnableEmbeddedTitles: ").Append(EnableEmbeddedTitles).Append("\n");
             sb.Append("  EnableAudioResume: ").Append(EnableAudioResume).Append("\n");
             sb.Append("  AutoGenerateChapters: ").Append(AutoGenerateChapters).Append("\n");
+            sb.Append("  MergeTopLevelFolders: ").Append(MergeTopLevelFolders).Append("\n");
             sb.Append("  AutoGenerateChapterIntervalMinutes: ").Append(AutoGenerateChapterIntervalMinutes).Append("\n");
             sb.Append("  AutomaticRefreshIntervalDays: ").Append(AutomaticRefreshIntervalDays).Append("\n");
             sb.Append("  PlaceholderMetadataRefreshIntervalDays: ").Append(PlaceholderMetadataRefreshIntervalDays).Append("\n");
@@ -621,6 +628,11 @@ namespace Emby.ApiClient.Model
                     this.AutoGenerateChapters == input.AutoGenerateChapters ||
                     (this.AutoGenerateChapters != null &&
                     this.AutoGenerateChapters.Equals(input.AutoGenerateChapters))
+                ) && 
+                (
+                    this.MergeTopLevelFolders == input.MergeTopLevelFolders ||
+                    (this.MergeTopLevelFolders != null &&
+                    this.MergeTopLevelFolders.Equals(input.MergeTopLevelFolders))
                 ) && 
                 (
                     this.AutoGenerateChapterIntervalMinutes == input.AutoGenerateChapterIntervalMinutes ||
@@ -886,6 +898,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableAudioResume.GetHashCode();
                 if (this.AutoGenerateChapters != null)
                     hashCode = hashCode * 59 + this.AutoGenerateChapters.GetHashCode();
+                if (this.MergeTopLevelFolders != null)
+                    hashCode = hashCode * 59 + this.MergeTopLevelFolders.GetHashCode();
                 if (this.AutoGenerateChapterIntervalMinutes != null)
                     hashCode = hashCode * 59 + this.AutoGenerateChapterIntervalMinutes.GetHashCode();
                 if (this.AutomaticRefreshIntervalDays != null)

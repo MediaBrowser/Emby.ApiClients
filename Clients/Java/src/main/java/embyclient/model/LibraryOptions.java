@@ -96,6 +96,9 @@ public class LibraryOptions {
   @SerializedName("AutoGenerateChapters")
   private Boolean autoGenerateChapters = null;
 
+  @SerializedName("MergeTopLevelFolders")
+  private Boolean mergeTopLevelFolders = null;
+
   @SerializedName("AutoGenerateChapterIntervalMinutes")
   private Integer autoGenerateChapterIntervalMinutes = null;
 
@@ -659,6 +662,24 @@ public class LibraryOptions {
 
   public void setAutoGenerateChapters(Boolean autoGenerateChapters) {
     this.autoGenerateChapters = autoGenerateChapters;
+  }
+
+  public LibraryOptions mergeTopLevelFolders(Boolean mergeTopLevelFolders) {
+    this.mergeTopLevelFolders = mergeTopLevelFolders;
+    return this;
+  }
+
+   /**
+   * Get mergeTopLevelFolders
+   * @return mergeTopLevelFolders
+  **/
+  @Schema(description = "")
+  public Boolean isMergeTopLevelFolders() {
+    return mergeTopLevelFolders;
+  }
+
+  public void setMergeTopLevelFolders(Boolean mergeTopLevelFolders) {
+    this.mergeTopLevelFolders = mergeTopLevelFolders;
   }
 
   public LibraryOptions autoGenerateChapterIntervalMinutes(Integer autoGenerateChapterIntervalMinutes) {
@@ -1477,6 +1498,7 @@ public class LibraryOptions {
         Objects.equals(this.enableEmbeddedTitles, libraryOptions.enableEmbeddedTitles) &&
         Objects.equals(this.enableAudioResume, libraryOptions.enableAudioResume) &&
         Objects.equals(this.autoGenerateChapters, libraryOptions.autoGenerateChapters) &&
+        Objects.equals(this.mergeTopLevelFolders, libraryOptions.mergeTopLevelFolders) &&
         Objects.equals(this.autoGenerateChapterIntervalMinutes, libraryOptions.autoGenerateChapterIntervalMinutes) &&
         Objects.equals(this.automaticRefreshIntervalDays, libraryOptions.automaticRefreshIntervalDays) &&
         Objects.equals(this.placeholderMetadataRefreshIntervalDays, libraryOptions.placeholderMetadataRefreshIntervalDays) &&
@@ -1520,7 +1542,7 @@ public class LibraryOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableArchiveMediaFiles, enablePhotos, enableRealtimeMonitor, enableMarkerDetection, enableMarkerDetectionDuringLibraryScan, introDetectionFingerprintLength, enableChapterImageExtraction, extractChapterImagesDuringLibraryScan, downloadImagesInAdvance, cacheImages, excludeFromSearch, enablePlexIgnore, pathInfos, ignoreHiddenFiles, ignoreFileExtensions, saveLocalMetadata, saveMetadataHidden, saveLocalThumbnailSets, importPlaylists, enableAutomaticSeriesGrouping, shareEmbeddedMusicAlbumImages, enableEmbeddedTitles, enableAudioResume, autoGenerateChapters, autoGenerateChapterIntervalMinutes, automaticRefreshIntervalDays, placeholderMetadataRefreshIntervalDays, preferredMetadataLanguage, preferredImageLanguage, contentType, metadataCountryCode, metadataSavers, disabledLocalMetadataReaders, localMetadataReaderOrder, disabledLyricsFetchers, saveLyricsWithMedia, lyricsDownloadMaxAgeDays, lyricsFetcherOrder, lyricsDownloadLanguages, disabledSubtitleFetchers, subtitleFetcherOrder, skipSubtitlesIfEmbeddedSubtitlesPresent, skipSubtitlesIfAudioTrackMatches, subtitleDownloadLanguages, subtitleDownloadMaxAgeDays, requirePerfectSubtitleMatch, saveSubtitlesWithMedia, forcedSubtitlesOnly, hearingImpairedSubtitlesOnly, typeOptions, collapseSingleItemFolders, enableAdultMetadata, importCollections, enableMultiVersionByFiles, enableMultiVersionByMetadata, enableMultiPartItems, minCollectionItems, musicFolderStructure, minResumePct, maxResumePct, minResumeDurationSeconds, thumbnailImagesIntervalSeconds, sampleIgnoreSize);
+    return Objects.hash(enableArchiveMediaFiles, enablePhotos, enableRealtimeMonitor, enableMarkerDetection, enableMarkerDetectionDuringLibraryScan, introDetectionFingerprintLength, enableChapterImageExtraction, extractChapterImagesDuringLibraryScan, downloadImagesInAdvance, cacheImages, excludeFromSearch, enablePlexIgnore, pathInfos, ignoreHiddenFiles, ignoreFileExtensions, saveLocalMetadata, saveMetadataHidden, saveLocalThumbnailSets, importPlaylists, enableAutomaticSeriesGrouping, shareEmbeddedMusicAlbumImages, enableEmbeddedTitles, enableAudioResume, autoGenerateChapters, mergeTopLevelFolders, autoGenerateChapterIntervalMinutes, automaticRefreshIntervalDays, placeholderMetadataRefreshIntervalDays, preferredMetadataLanguage, preferredImageLanguage, contentType, metadataCountryCode, metadataSavers, disabledLocalMetadataReaders, localMetadataReaderOrder, disabledLyricsFetchers, saveLyricsWithMedia, lyricsDownloadMaxAgeDays, lyricsFetcherOrder, lyricsDownloadLanguages, disabledSubtitleFetchers, subtitleFetcherOrder, skipSubtitlesIfEmbeddedSubtitlesPresent, skipSubtitlesIfAudioTrackMatches, subtitleDownloadLanguages, subtitleDownloadMaxAgeDays, requirePerfectSubtitleMatch, saveSubtitlesWithMedia, forcedSubtitlesOnly, hearingImpairedSubtitlesOnly, typeOptions, collapseSingleItemFolders, enableAdultMetadata, importCollections, enableMultiVersionByFiles, enableMultiVersionByMetadata, enableMultiPartItems, minCollectionItems, musicFolderStructure, minResumePct, maxResumePct, minResumeDurationSeconds, thumbnailImagesIntervalSeconds, sampleIgnoreSize);
   }
 
 
@@ -1553,6 +1575,7 @@ public class LibraryOptions {
     sb.append("    enableEmbeddedTitles: ").append(toIndentedString(enableEmbeddedTitles)).append("\n");
     sb.append("    enableAudioResume: ").append(toIndentedString(enableAudioResume)).append("\n");
     sb.append("    autoGenerateChapters: ").append(toIndentedString(autoGenerateChapters)).append("\n");
+    sb.append("    mergeTopLevelFolders: ").append(toIndentedString(mergeTopLevelFolders)).append("\n");
     sb.append("    autoGenerateChapterIntervalMinutes: ").append(toIndentedString(autoGenerateChapterIntervalMinutes)).append("\n");
     sb.append("    automaticRefreshIntervalDays: ").append(toIndentedString(automaticRefreshIntervalDays)).append("\n");
     sb.append("    placeholderMetadataRefreshIntervalDays: ").append(toIndentedString(placeholderMetadataRefreshIntervalDays)).append("\n");
