@@ -15,7 +15,7 @@ import GameInfo from './GameInfo';
 /**
 * The RemoteSearchQueryGameInfo model module.
 * @module model/RemoteSearchQueryGameInfo
-* @version 4.9.1.34
+* @version 4.9.1.35
 */
 export default class RemoteSearchQueryGameInfo {
     /**

@@ -15,7 +15,7 @@ import NameValuePair from './NameValuePair';
 /**
 * The LiveTvListingsProviderInfo model module.
 * @module model/LiveTvListingsProviderInfo
-* @version 4.9.1.34
+* @version 4.9.1.35
 */
 export default class LiveTvListingsProviderInfo {
     /**
