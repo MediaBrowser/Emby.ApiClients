@@ -33,6 +33,7 @@ from embyclient.models.authenticate_user_by_name import AuthenticateUserByName
 from embyclient.models.authentication_authentication_result import AuthenticationAuthenticationResult
 from embyclient.models.base_item_dto import BaseItemDto
 from embyclient.models.base_item_person import BaseItemPerson
+from embyclient.models.base_refresh_request import BaseRefreshRequest
 from embyclient.models.bit_rate import BitRate
 from embyclient.models.book_info import BookInfo
 from embyclient.models.branding_branding_options import BrandingBrandingOptions
@@ -57,6 +58,7 @@ from embyclient.models.connect_connect_authentication_exchange_result import Con
 from embyclient.models.connect_user_link_result import ConnectUserLinkResult
 from embyclient.models.connect_user_link_type import ConnectUserLinkType
 from embyclient.models.container_profile import ContainerProfile
+from embyclient.models.content_section import ContentSection
 from embyclient.models.create_user_by_name import CreateUserByName
 from embyclient.models.day_of_week import DayOfWeek
 from embyclient.models.default_directory_browser_info import DefaultDirectoryBrowserInfo
@@ -177,6 +179,7 @@ from embyclient.models.net_end_point_info import NetEndPointInfo
 from embyclient.models.net_sockets_address_family import NetSocketsAddressFamily
 from embyclient.models.notification_category_info import NotificationCategoryInfo
 from embyclient.models.notification_type_info import NotificationTypeInfo
+from embyclient.models.notifications_notification_level import NotificationsNotificationLevel
 from embyclient.models.operating_system import OperatingSystem
 from embyclient.models.package_info import PackageInfo
 from embyclient.models.package_target_system import PackageTargetSystem
@@ -256,6 +259,7 @@ from embyclient.models.response_profile import ResponseProfile
 from embyclient.models.roku_metadata_api_thumbnail_info import RokuMetadataApiThumbnailInfo
 from embyclient.models.roku_metadata_api_thumbnail_set_info import RokuMetadataApiThumbnailSetInfo
 from embyclient.models.run_ui_command import RunUICommand
+from embyclient.models.scroll_direction import ScrollDirection
 from embyclient.models.secondary_frameworks import SecondaryFrameworks
 from embyclient.models.segment_skip_mode import SegmentSkipMode
 from embyclient.models.series_display_order import SeriesDisplayOrder
@@ -294,6 +298,7 @@ from embyclient.models.task_info import TaskInfo
 from embyclient.models.task_result import TaskResult
 from embyclient.models.task_state import TaskState
 from embyclient.models.task_trigger_info import TaskTriggerInfo
+from embyclient.models.text_section_info import TextSectionInfo
 from embyclient.models.theme_media_result import ThemeMediaResult
 from embyclient.models.trailer_info import TrailerInfo
 from embyclient.models.transcode_reason import TranscodeReason

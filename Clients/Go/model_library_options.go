@@ -17,6 +17,8 @@ type LibraryOptions struct {
 	ExtractChapterImagesDuringLibraryScan bool `json:"ExtractChapterImagesDuringLibraryScan,omitempty"`
 	DownloadImagesInAdvance bool `json:"DownloadImagesInAdvance,omitempty"`
 	CacheImages bool `json:"CacheImages,omitempty"`
+	ExcludeFromSearch bool `json:"ExcludeFromSearch,omitempty"`
+	EnablePlexIgnore bool `json:"EnablePlexIgnore,omitempty"`
 	PathInfos []MediaPathInfo `json:"PathInfos,omitempty"`
 	IgnoreHiddenFiles bool `json:"IgnoreHiddenFiles,omitempty"`
 	IgnoreFileExtensions []string `json:"IgnoreFileExtensions,omitempty"`
@@ -29,6 +31,7 @@ type LibraryOptions struct {
 	EnableEmbeddedTitles bool `json:"EnableEmbeddedTitles,omitempty"`
 	EnableAudioResume bool `json:"EnableAudioResume,omitempty"`
 	AutoGenerateChapters bool `json:"AutoGenerateChapters,omitempty"`
+	MergeTopLevelFolders bool `json:"MergeTopLevelFolders,omitempty"`
 	AutoGenerateChapterIntervalMinutes int32 `json:"AutoGenerateChapterIntervalMinutes,omitempty"`
 	AutomaticRefreshIntervalDays int32 `json:"AutomaticRefreshIntervalDays,omitempty"`
 	PlaceholderMetadataRefreshIntervalDays int32 `json:"PlaceholderMetadataRefreshIntervalDays,omitempty"`

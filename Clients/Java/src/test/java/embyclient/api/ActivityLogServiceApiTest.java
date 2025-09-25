@@ -5,6 +5,7 @@
 
 package embyclient.api;
 
+import java.time.OffsetDateTime;
 import embyclient.model.QueryResultActivityLogEntry;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -36,7 +37,7 @@ public class ActivityLogServiceApiTest {
     public void getSystemActivitylogEntriesTest() throws Exception {
         Integer startIndex = null;
         Integer limit = null;
-        String minDate = null;
+        OffsetDateTime minDate = null;
         QueryResultActivityLogEntry response = api.getSystemActivitylogEntries(startIndex, limit, minDate);
 
         // TODO: test validations

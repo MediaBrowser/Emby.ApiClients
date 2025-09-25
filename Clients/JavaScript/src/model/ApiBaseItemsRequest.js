@@ -18,7 +18,7 @@ import PersonType from './PersonType';
 /**
 * The ApiBaseItemsRequest model module.
 * @module model/ApiBaseItemsRequest
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class ApiBaseItemsRequest {
     /**
@@ -51,8 +51,17 @@ export default class ApiBaseItemsRequest {
             if (data.hasOwnProperty('Is4K')) {
                 obj['Is4K'] = ApiClient.convertToType(data['Is4K'], 'Boolean');
             }
+            if (data.hasOwnProperty('MinDateCreated')) {
+                obj['MinDateCreated'] = ApiClient.convertToType(data['MinDateCreated'], 'Date');
+            }
+            if (data.hasOwnProperty('MaxDateCreated')) {
+                obj['MaxDateCreated'] = ApiClient.convertToType(data['MaxDateCreated'], 'Date');
+            }
             if (data.hasOwnProperty('EnableTotalRecordCount')) {
                 obj['EnableTotalRecordCount'] = ApiClient.convertToType(data['EnableTotalRecordCount'], 'Boolean');
+            }
+            if (data.hasOwnProperty('MatchAnyWord')) {
+                obj['MatchAnyWord'] = ApiClient.convertToType(data['MatchAnyWord'], 'Boolean');
             }
             if (data.hasOwnProperty('IsDuplicate')) {
                 obj['IsDuplicate'] = ApiClient.convertToType(data['IsDuplicate'], 'Boolean');
@@ -163,9 +172,21 @@ export default class ApiBaseItemsRequest {
     */
     'Is4K' = undefined;
     /**
+    * @member {Date} MinDateCreated
+    */
+    'MinDateCreated' = undefined;
+    /**
+    * @member {Date} MaxDateCreated
+    */
+    'MaxDateCreated' = undefined;
+    /**
     * @member {Boolean} EnableTotalRecordCount
     */
     'EnableTotalRecordCount' = undefined;
+    /**
+    * @member {Boolean} MatchAnyWord
+    */
+    'MatchAnyWord' = undefined;
     /**
     * @member {Boolean} IsDuplicate
     */

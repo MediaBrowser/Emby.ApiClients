@@ -54,6 +54,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="supportsAutoRunAtStartup">A value indicating whether \\[supports automatic run at startup\\]..</param>
         /// <param name="hardwareAccelerationRequiresPremiere">hardwareAccelerationRequiresPremiere.</param>
         /// <param name="wakeOnLanInfo">wakeOnLanInfo.</param>
+        /// <param name="isInMaintenanceMode">isInMaintenanceMode.</param>
         /// <param name="localAddress">The local address..</param>
         /// <param name="localAddresses">localAddresses.</param>
         /// <param name="wanAddress">The wan address..</param>
@@ -61,7 +62,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="serverName">The name of the server..</param>
         /// <param name="version">The version..</param>
         /// <param name="id">The id..</param>
-        public SystemInfo(PackageVersionClass systemUpdateLevel = default(PackageVersionClass), string operatingSystemDisplayName = default(string), string packageName = default(string), bool? hasPendingRestart = default(bool?), bool? isShuttingDown = default(bool?), bool? hasImageEnhancers = default(bool?), string operatingSystem = default(string), bool? supportsLibraryMonitor = default(bool?), bool? supportsLocalPortConfiguration = default(bool?), bool? supportsWakeServer = default(bool?), int? webSocketPortNumber = default(int?), List<InstallationInfo> completedInstallations = default(List<InstallationInfo>), bool? canSelfRestart = default(bool?), bool? canSelfUpdate = default(bool?), bool? canLaunchWebBrowser = default(bool?), string programDataPath = default(string), string itemsByNamePath = default(string), string cachePath = default(string), string logPath = default(string), string internalMetadataPath = default(string), string transcodingTempPath = default(string), int? httpServerPortNumber = default(int?), bool? supportsHttps = default(bool?), int? httpsPortNumber = default(int?), bool? hasUpdateAvailable = default(bool?), bool? supportsAutoRunAtStartup = default(bool?), bool? hardwareAccelerationRequiresPremiere = default(bool?), List<WakeOnLanInfo> wakeOnLanInfo = default(List<WakeOnLanInfo>), string localAddress = default(string), List<string> localAddresses = default(List<string>), string wanAddress = default(string), List<string> remoteAddresses = default(List<string>), string serverName = default(string), string version = default(string), string id = default(string))
+        public SystemInfo(PackageVersionClass systemUpdateLevel = default(PackageVersionClass), string operatingSystemDisplayName = default(string), string packageName = default(string), bool? hasPendingRestart = default(bool?), bool? isShuttingDown = default(bool?), bool? hasImageEnhancers = default(bool?), string operatingSystem = default(string), bool? supportsLibraryMonitor = default(bool?), bool? supportsLocalPortConfiguration = default(bool?), bool? supportsWakeServer = default(bool?), int? webSocketPortNumber = default(int?), List<InstallationInfo> completedInstallations = default(List<InstallationInfo>), bool? canSelfRestart = default(bool?), bool? canSelfUpdate = default(bool?), bool? canLaunchWebBrowser = default(bool?), string programDataPath = default(string), string itemsByNamePath = default(string), string cachePath = default(string), string logPath = default(string), string internalMetadataPath = default(string), string transcodingTempPath = default(string), int? httpServerPortNumber = default(int?), bool? supportsHttps = default(bool?), int? httpsPortNumber = default(int?), bool? hasUpdateAvailable = default(bool?), bool? supportsAutoRunAtStartup = default(bool?), bool? hardwareAccelerationRequiresPremiere = default(bool?), List<WakeOnLanInfo> wakeOnLanInfo = default(List<WakeOnLanInfo>), bool? isInMaintenanceMode = default(bool?), string localAddress = default(string), List<string> localAddresses = default(List<string>), string wanAddress = default(string), List<string> remoteAddresses = default(List<string>), string serverName = default(string), string version = default(string), string id = default(string))
         {
             this.SystemUpdateLevel = systemUpdateLevel;
             this.OperatingSystemDisplayName = operatingSystemDisplayName;
@@ -91,6 +92,7 @@ namespace EmbyClient.Dotnet.Model
             this.SupportsAutoRunAtStartup = supportsAutoRunAtStartup;
             this.HardwareAccelerationRequiresPremiere = hardwareAccelerationRequiresPremiere;
             this.WakeOnLanInfo = wakeOnLanInfo;
+            this.IsInMaintenanceMode = isInMaintenanceMode;
             this.LocalAddress = localAddress;
             this.LocalAddresses = localAddresses;
             this.WanAddress = wanAddress;
@@ -288,6 +290,12 @@ namespace EmbyClient.Dotnet.Model
         public List<WakeOnLanInfo> WakeOnLanInfo { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsInMaintenanceMode
+        /// </summary>
+        [DataMember(Name="IsInMaintenanceMode", EmitDefaultValue=false)]
+        public bool? IsInMaintenanceMode { get; set; }
+
+        /// <summary>
         /// The local address.
         /// </summary>
         /// <value>The local address.</value>
@@ -370,6 +378,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  SupportsAutoRunAtStartup: ").Append(SupportsAutoRunAtStartup).Append("\n");
             sb.Append("  HardwareAccelerationRequiresPremiere: ").Append(HardwareAccelerationRequiresPremiere).Append("\n");
             sb.Append("  WakeOnLanInfo: ").Append(WakeOnLanInfo).Append("\n");
+            sb.Append("  IsInMaintenanceMode: ").Append(IsInMaintenanceMode).Append("\n");
             sb.Append("  LocalAddress: ").Append(LocalAddress).Append("\n");
             sb.Append("  LocalAddresses: ").Append(LocalAddresses).Append("\n");
             sb.Append("  WanAddress: ").Append(WanAddress).Append("\n");
@@ -554,6 +563,11 @@ namespace EmbyClient.Dotnet.Model
                     this.WakeOnLanInfo.SequenceEqual(input.WakeOnLanInfo)
                 ) && 
                 (
+                    this.IsInMaintenanceMode == input.IsInMaintenanceMode ||
+                    (this.IsInMaintenanceMode != null &&
+                    this.IsInMaintenanceMode.Equals(input.IsInMaintenanceMode))
+                ) && 
+                (
                     this.LocalAddress == input.LocalAddress ||
                     (this.LocalAddress != null &&
                     this.LocalAddress.Equals(input.LocalAddress))
@@ -657,6 +671,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.HardwareAccelerationRequiresPremiere.GetHashCode();
                 if (this.WakeOnLanInfo != null)
                     hashCode = hashCode * 59 + this.WakeOnLanInfo.GetHashCode();
+                if (this.IsInMaintenanceMode != null)
+                    hashCode = hashCode * 59 + this.IsInMaintenanceMode.GetHashCode();
                 if (this.LocalAddress != null)
                     hashCode = hashCode * 59 + this.LocalAddress.GetHashCode();
                 if (this.LocalAddresses != null)

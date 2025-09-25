@@ -14,6 +14,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 /**
  * DevicesLocalFileInfo
  */
@@ -31,6 +32,9 @@ public class DevicesLocalFileInfo {
 
   @SerializedName("MimeType")
   private String mimeType = null;
+
+  @SerializedName("DateCreated")
+  private OffsetDateTime dateCreated = null;
 
   public DevicesLocalFileInfo name(String name) {
     this.name = name;
@@ -104,6 +108,24 @@ public class DevicesLocalFileInfo {
     this.mimeType = mimeType;
   }
 
+  public DevicesLocalFileInfo dateCreated(OffsetDateTime dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+
+   /**
+   * Get dateCreated
+   * @return dateCreated
+  **/
+  @Schema(description = "")
+  public OffsetDateTime getDateCreated() {
+    return dateCreated;
+  }
+
+  public void setDateCreated(OffsetDateTime dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -117,12 +139,13 @@ public class DevicesLocalFileInfo {
     return Objects.equals(this.name, devicesLocalFileInfo.name) &&
         Objects.equals(this.id, devicesLocalFileInfo.id) &&
         Objects.equals(this.album, devicesLocalFileInfo.album) &&
-        Objects.equals(this.mimeType, devicesLocalFileInfo.mimeType);
+        Objects.equals(this.mimeType, devicesLocalFileInfo.mimeType) &&
+        Objects.equals(this.dateCreated, devicesLocalFileInfo.dateCreated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, album, mimeType);
+    return Objects.hash(name, id, album, mimeType, dateCreated);
   }
 
 
@@ -135,6 +158,7 @@ public class DevicesLocalFileInfo {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    album: ").append(toIndentedString(album)).append("\n");
     sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

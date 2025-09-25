@@ -31,7 +31,7 @@ import Video3DFormat from './Video3DFormat';
 /**
 * The BaseItemDto model module.
 * @module model/BaseItemDto
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class BaseItemDto {
     /**
@@ -88,6 +88,21 @@ export default class BaseItemDto {
             }
             if (data.hasOwnProperty('DateCreated')) {
                 obj['DateCreated'] = ApiClient.convertToType(data['DateCreated'], 'Date');
+            }
+            if (data.hasOwnProperty('DateModified')) {
+                obj['DateModified'] = ApiClient.convertToType(data['DateModified'], 'Date');
+            }
+            if (data.hasOwnProperty('VideoCodec')) {
+                obj['VideoCodec'] = ApiClient.convertToType(data['VideoCodec'], 'String');
+            }
+            if (data.hasOwnProperty('AudioCodec')) {
+                obj['AudioCodec'] = ApiClient.convertToType(data['AudioCodec'], 'String');
+            }
+            if (data.hasOwnProperty('AverageFrameRate')) {
+                obj['AverageFrameRate'] = ApiClient.convertToType(data['AverageFrameRate'], 'Number');
+            }
+            if (data.hasOwnProperty('RealFrameRate')) {
+                obj['RealFrameRate'] = ApiClient.convertToType(data['RealFrameRate'], 'Number');
             }
             if (data.hasOwnProperty('ExtraType')) {
                 obj['ExtraType'] = ApiClient.convertToType(data['ExtraType'], 'String');
@@ -578,6 +593,26 @@ export default class BaseItemDto {
     * @member {Date} DateCreated
     */
     'DateCreated' = undefined;
+    /**
+    * @member {Date} DateModified
+    */
+    'DateModified' = undefined;
+    /**
+    * @member {String} VideoCodec
+    */
+    'VideoCodec' = undefined;
+    /**
+    * @member {String} AudioCodec
+    */
+    'AudioCodec' = undefined;
+    /**
+    * @member {Number} AverageFrameRate
+    */
+    'AverageFrameRate' = undefined;
+    /**
+    * @member {Number} RealFrameRate
+    */
+    'RealFrameRate' = undefined;
     /**
     * @member {String} ExtraType
     */

@@ -16,7 +16,7 @@ import TypeOptions from './TypeOptions';
 /**
 * The LibraryOptions model module.
 * @module model/LibraryOptions
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class LibraryOptions {
     /**
@@ -73,6 +73,12 @@ export default class LibraryOptions {
             if (data.hasOwnProperty('CacheImages')) {
                 obj['CacheImages'] = ApiClient.convertToType(data['CacheImages'], 'Boolean');
             }
+            if (data.hasOwnProperty('ExcludeFromSearch')) {
+                obj['ExcludeFromSearch'] = ApiClient.convertToType(data['ExcludeFromSearch'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnablePlexIgnore')) {
+                obj['EnablePlexIgnore'] = ApiClient.convertToType(data['EnablePlexIgnore'], 'Boolean');
+            }
             if (data.hasOwnProperty('PathInfos')) {
                 obj['PathInfos'] = ApiClient.convertToType(data['PathInfos'], [MediaPathInfo]);
             }
@@ -108,6 +114,9 @@ export default class LibraryOptions {
             }
             if (data.hasOwnProperty('AutoGenerateChapters')) {
                 obj['AutoGenerateChapters'] = ApiClient.convertToType(data['AutoGenerateChapters'], 'Boolean');
+            }
+            if (data.hasOwnProperty('MergeTopLevelFolders')) {
+                obj['MergeTopLevelFolders'] = ApiClient.convertToType(data['MergeTopLevelFolders'], 'Boolean');
             }
             if (data.hasOwnProperty('AutoGenerateChapterIntervalMinutes')) {
                 obj['AutoGenerateChapterIntervalMinutes'] = ApiClient.convertToType(data['AutoGenerateChapterIntervalMinutes'], 'Number');
@@ -271,6 +280,14 @@ export default class LibraryOptions {
     */
     'CacheImages' = undefined;
     /**
+    * @member {Boolean} ExcludeFromSearch
+    */
+    'ExcludeFromSearch' = undefined;
+    /**
+    * @member {Boolean} EnablePlexIgnore
+    */
+    'EnablePlexIgnore' = undefined;
+    /**
     * @member {Array.<module:model/MediaPathInfo>} PathInfos
     */
     'PathInfos' = undefined;
@@ -318,6 +335,10 @@ export default class LibraryOptions {
     * @member {Boolean} AutoGenerateChapters
     */
     'AutoGenerateChapters' = undefined;
+    /**
+    * @member {Boolean} MergeTopLevelFolders
+    */
+    'MergeTopLevelFolders' = undefined;
     /**
     * @member {Number} AutoGenerateChapterIntervalMinutes
     */

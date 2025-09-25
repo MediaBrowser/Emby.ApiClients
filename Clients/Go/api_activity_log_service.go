@@ -29,14 +29,14 @@ Requires authentication as administrator
  * @param optional nil or *ActivityLogServiceApiGetSystemActivitylogEntriesOpts - Optional Parameters:
      * @param "StartIndex" (optional.Int32) -  Optional. The record index to start at. All items with a lower index will be dropped from the results.
      * @param "Limit" (optional.Int32) -  Optional. The maximum number of records to return
-     * @param "MinDate" (optional.String) -  Optional. The minimum date. Format &#x3D; ISO
+     * @param "MinDate" (optional.Time) -  Optional. The minimum date. Format &#x3D; ISO
 @return QueryResultActivityLogEntry
 */
 
 type ActivityLogServiceApiGetSystemActivitylogEntriesOpts struct {
     StartIndex optional.Int32
     Limit optional.Int32
-    MinDate optional.String
+    MinDate optional.Time
 }
 
 func (a *ActivityLogServiceApiService) GetSystemActivitylogEntries(ctx context.Context, localVarOptionals *ActivityLogServiceApiGetSystemActivitylogEntriesOpts) (QueryResultActivityLogEntry, *http.Response, error) {

@@ -14,6 +14,7 @@ from embyclient.api.codec_parameter_service_api import CodecParameterServiceApi
 from embyclient.api.collection_service_api import CollectionServiceApi
 from embyclient.api.configuration_service_api import ConfigurationServiceApi
 from embyclient.api.connect_service_api import ConnectServiceApi
+from embyclient.api.content_service_api import ContentServiceApi
 from embyclient.api.device_service_api import DeviceServiceApi
 from embyclient.api.display_preferences_service_api import DisplayPreferencesServiceApi
 from embyclient.api.dlna_server_service_api import DlnaServerServiceApi

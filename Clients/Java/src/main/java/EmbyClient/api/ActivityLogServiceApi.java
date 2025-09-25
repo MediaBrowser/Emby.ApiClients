@@ -19,6 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.time.OffsetDateTime;
 import embyclient.model.QueryResultActivityLogEntry;
 
 import java.lang.reflect.Type;
@@ -56,7 +57,7 @@ public class ActivityLogServiceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSystemActivitylogEntriesCall(Integer startIndex, Integer limit, String minDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSystemActivitylogEntriesCall(Integer startIndex, Integer limit, OffsetDateTime minDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -104,7 +105,7 @@ public class ActivityLogServiceApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSystemActivitylogEntriesValidateBeforeCall(Integer startIndex, Integer limit, String minDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSystemActivitylogEntriesValidateBeforeCall(Integer startIndex, Integer limit, OffsetDateTime minDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = getSystemActivitylogEntriesCall(startIndex, limit, minDate, progressListener, progressRequestListener);
         return call;
@@ -124,7 +125,7 @@ public class ActivityLogServiceApi {
      * @return QueryResultActivityLogEntry
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public QueryResultActivityLogEntry getSystemActivitylogEntries(Integer startIndex, Integer limit, String minDate) throws ApiException {
+    public QueryResultActivityLogEntry getSystemActivitylogEntries(Integer startIndex, Integer limit, OffsetDateTime minDate) throws ApiException {
         ApiResponse<QueryResultActivityLogEntry> resp = getSystemActivitylogEntriesWithHttpInfo(startIndex, limit, minDate);
         return resp.getData();
     }
@@ -138,7 +139,7 @@ public class ActivityLogServiceApi {
      * @return ApiResponse&lt;QueryResultActivityLogEntry&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<QueryResultActivityLogEntry> getSystemActivitylogEntriesWithHttpInfo(Integer startIndex, Integer limit, String minDate) throws ApiException {
+    public ApiResponse<QueryResultActivityLogEntry> getSystemActivitylogEntriesWithHttpInfo(Integer startIndex, Integer limit, OffsetDateTime minDate) throws ApiException {
         com.squareup.okhttp.Call call = getSystemActivitylogEntriesValidateBeforeCall(startIndex, limit, minDate, null, null);
         Type localVarReturnType = new TypeToken<QueryResultActivityLogEntry>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -154,7 +155,7 @@ public class ActivityLogServiceApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSystemActivitylogEntriesAsync(Integer startIndex, Integer limit, String minDate, final ApiCallback<QueryResultActivityLogEntry> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSystemActivitylogEntriesAsync(Integer startIndex, Integer limit, OffsetDateTime minDate, final ApiCallback<QueryResultActivityLogEntry> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -87,6 +87,18 @@ namespace Emby.ApiClient.Model
         public bool? CacheImages { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExcludeFromSearch
+        /// </summary>
+        /// <value>The ExcludeFromSearch.</value>
+        public bool? ExcludeFromSearch { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnablePlexIgnore
+        /// </summary>
+        /// <value>The EnablePlexIgnore.</value>
+        public bool? EnablePlexIgnore { get; set; }
+
+        /// <summary>
         /// Gets or Sets PathInfos
         /// </summary>
         /// <value>The PathInfos.</value>
@@ -157,6 +169,12 @@ namespace Emby.ApiClient.Model
         /// </summary>
         /// <value>The AutoGenerateChapters.</value>
         public bool? AutoGenerateChapters { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MergeTopLevelFolders
+        /// </summary>
+        /// <value>The MergeTopLevelFolders.</value>
+        public bool? MergeTopLevelFolders { get; set; }
 
         /// <summary>
         /// Gets or Sets AutoGenerateChapterIntervalMinutes
@@ -410,6 +428,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  ExtractChapterImagesDuringLibraryScan: ").Append(ExtractChapterImagesDuringLibraryScan).Append("\n");
             sb.Append("  DownloadImagesInAdvance: ").Append(DownloadImagesInAdvance).Append("\n");
             sb.Append("  CacheImages: ").Append(CacheImages).Append("\n");
+            sb.Append("  ExcludeFromSearch: ").Append(ExcludeFromSearch).Append("\n");
+            sb.Append("  EnablePlexIgnore: ").Append(EnablePlexIgnore).Append("\n");
             sb.Append("  PathInfos: ").Append(PathInfos).Append("\n");
             sb.Append("  IgnoreHiddenFiles: ").Append(IgnoreHiddenFiles).Append("\n");
             sb.Append("  IgnoreFileExtensions: ").Append(IgnoreFileExtensions).Append("\n");
@@ -422,6 +442,7 @@ namespace Emby.ApiClient.Model
             sb.Append("  EnableEmbeddedTitles: ").Append(EnableEmbeddedTitles).Append("\n");
             sb.Append("  EnableAudioResume: ").Append(EnableAudioResume).Append("\n");
             sb.Append("  AutoGenerateChapters: ").Append(AutoGenerateChapters).Append("\n");
+            sb.Append("  MergeTopLevelFolders: ").Append(MergeTopLevelFolders).Append("\n");
             sb.Append("  AutoGenerateChapterIntervalMinutes: ").Append(AutoGenerateChapterIntervalMinutes).Append("\n");
             sb.Append("  AutomaticRefreshIntervalDays: ").Append(AutomaticRefreshIntervalDays).Append("\n");
             sb.Append("  PlaceholderMetadataRefreshIntervalDays: ").Append(PlaceholderMetadataRefreshIntervalDays).Append("\n");
@@ -537,6 +558,16 @@ namespace Emby.ApiClient.Model
                     this.CacheImages.Equals(input.CacheImages))
                 ) && 
                 (
+                    this.ExcludeFromSearch == input.ExcludeFromSearch ||
+                    (this.ExcludeFromSearch != null &&
+                    this.ExcludeFromSearch.Equals(input.ExcludeFromSearch))
+                ) && 
+                (
+                    this.EnablePlexIgnore == input.EnablePlexIgnore ||
+                    (this.EnablePlexIgnore != null &&
+                    this.EnablePlexIgnore.Equals(input.EnablePlexIgnore))
+                ) && 
+                (
                     this.PathInfos == input.PathInfos ||
                     this.PathInfos != null &&
                     input.PathInfos != null &&
@@ -597,6 +628,11 @@ namespace Emby.ApiClient.Model
                     this.AutoGenerateChapters == input.AutoGenerateChapters ||
                     (this.AutoGenerateChapters != null &&
                     this.AutoGenerateChapters.Equals(input.AutoGenerateChapters))
+                ) && 
+                (
+                    this.MergeTopLevelFolders == input.MergeTopLevelFolders ||
+                    (this.MergeTopLevelFolders != null &&
+                    this.MergeTopLevelFolders.Equals(input.MergeTopLevelFolders))
                 ) && 
                 (
                     this.AutoGenerateChapterIntervalMinutes == input.AutoGenerateChapterIntervalMinutes ||
@@ -834,6 +870,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.DownloadImagesInAdvance.GetHashCode();
                 if (this.CacheImages != null)
                     hashCode = hashCode * 59 + this.CacheImages.GetHashCode();
+                if (this.ExcludeFromSearch != null)
+                    hashCode = hashCode * 59 + this.ExcludeFromSearch.GetHashCode();
+                if (this.EnablePlexIgnore != null)
+                    hashCode = hashCode * 59 + this.EnablePlexIgnore.GetHashCode();
                 if (this.PathInfos != null)
                     hashCode = hashCode * 59 + this.PathInfos.GetHashCode();
                 if (this.IgnoreHiddenFiles != null)
@@ -858,6 +898,8 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.EnableAudioResume.GetHashCode();
                 if (this.AutoGenerateChapters != null)
                     hashCode = hashCode * 59 + this.AutoGenerateChapters.GetHashCode();
+                if (this.MergeTopLevelFolders != null)
+                    hashCode = hashCode * 59 + this.MergeTopLevelFolders.GetHashCode();
                 if (this.AutoGenerateChapterIntervalMinutes != null)
                     hashCode = hashCode * 59 + this.AutoGenerateChapterIntervalMinutes.GetHashCode();
                 if (this.AutomaticRefreshIntervalDays != null)

@@ -35,6 +35,7 @@ import AuthenticateUserByName from './model/AuthenticateUserByName';
 import AuthenticationAuthenticationResult from './model/AuthenticationAuthenticationResult';
 import BaseItemDto from './model/BaseItemDto';
 import BaseItemPerson from './model/BaseItemPerson';
+import BaseRefreshRequest from './model/BaseRefreshRequest';
 import BitRate from './model/BitRate';
 import BookInfo from './model/BookInfo';
 import BrandingBrandingOptions from './model/BrandingBrandingOptions';
@@ -59,6 +60,7 @@ import ConnectConnectAuthenticationExchangeResult from './model/ConnectConnectAu
 import ConnectUserLinkResult from './model/ConnectUserLinkResult';
 import ConnectUserLinkType from './model/ConnectUserLinkType';
 import ContainerProfile from './model/ContainerProfile';
+import ContentSection from './model/ContentSection';
 import CreateUserByName from './model/CreateUserByName';
 import DayOfWeek from './model/DayOfWeek';
 import DefaultDirectoryBrowserInfo from './model/DefaultDirectoryBrowserInfo';
@@ -179,6 +181,7 @@ import NetEndPointInfo from './model/NetEndPointInfo';
 import NetSocketsAddressFamily from './model/NetSocketsAddressFamily';
 import NotificationCategoryInfo from './model/NotificationCategoryInfo';
 import NotificationTypeInfo from './model/NotificationTypeInfo';
+import NotificationsNotificationLevel from './model/NotificationsNotificationLevel';
 import OperatingSystem from './model/OperatingSystem';
 import PackageInfo from './model/PackageInfo';
 import PackageTargetSystem from './model/PackageTargetSystem';
@@ -258,6 +261,7 @@ import ResponseProfile from './model/ResponseProfile';
 import RokuMetadataApiThumbnailInfo from './model/RokuMetadataApiThumbnailInfo';
 import RokuMetadataApiThumbnailSetInfo from './model/RokuMetadataApiThumbnailSetInfo';
 import RunUICommand from './model/RunUICommand';
+import ScrollDirection from './model/ScrollDirection';
 import SecondaryFrameworks from './model/SecondaryFrameworks';
 import SegmentSkipMode from './model/SegmentSkipMode';
 import SeriesDisplayOrder from './model/SeriesDisplayOrder';
@@ -296,6 +300,7 @@ import TaskInfo from './model/TaskInfo';
 import TaskResult from './model/TaskResult';
 import TaskState from './model/TaskState';
 import TaskTriggerInfo from './model/TaskTriggerInfo';
+import TextSectionInfo from './model/TextSectionInfo';
 import ThemeMediaResult from './model/ThemeMediaResult';
 import TrailerInfo from './model/TrailerInfo';
 import TranscodeReason from './model/TranscodeReason';
@@ -344,6 +349,7 @@ import CodecParameterServiceApi from './api/CodecParameterServiceApi';
 import CollectionServiceApi from './api/CollectionServiceApi';
 import ConfigurationServiceApi from './api/ConfigurationServiceApi';
 import ConnectServiceApi from './api/ConnectServiceApi';
+import ContentServiceApi from './api/ContentServiceApi';
 import DeviceServiceApi from './api/DeviceServiceApi';
 import DisplayPreferencesServiceApi from './api/DisplayPreferencesServiceApi';
 import DlnaServerServiceApi from './api/DlnaServerServiceApi';
@@ -431,7 +437,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export {
     /**
@@ -591,6 +597,12 @@ export {
     BaseItemPerson,
 
     /**
+     * The BaseRefreshRequest model constructor.
+     * @property {module:model/BaseRefreshRequest}
+     */
+    BaseRefreshRequest,
+
+    /**
      * The BitRate model constructor.
      * @property {module:model/BitRate}
      */
@@ -733,6 +745,12 @@ export {
      * @property {module:model/ContainerProfile}
      */
     ContainerProfile,
+
+    /**
+     * The ContentSection model constructor.
+     * @property {module:model/ContentSection}
+     */
+    ContentSection,
 
     /**
      * The CreateUserByName model constructor.
@@ -1455,6 +1473,12 @@ export {
     NotificationTypeInfo,
 
     /**
+     * The NotificationsNotificationLevel model constructor.
+     * @property {module:model/NotificationsNotificationLevel}
+     */
+    NotificationsNotificationLevel,
+
+    /**
      * The OperatingSystem model constructor.
      * @property {module:model/OperatingSystem}
      */
@@ -1929,6 +1953,12 @@ export {
     RunUICommand,
 
     /**
+     * The ScrollDirection model constructor.
+     * @property {module:model/ScrollDirection}
+     */
+    ScrollDirection,
+
+    /**
      * The SecondaryFrameworks model constructor.
      * @property {module:model/SecondaryFrameworks}
      */
@@ -2155,6 +2185,12 @@ export {
      * @property {module:model/TaskTriggerInfo}
      */
     TaskTriggerInfo,
+
+    /**
+     * The TextSectionInfo model constructor.
+     * @property {module:model/TextSectionInfo}
+     */
+    TextSectionInfo,
 
     /**
      * The ThemeMediaResult model constructor.
@@ -2443,6 +2479,12 @@ export {
     * @property {module:api/ConnectServiceApi}
     */
     ConnectServiceApi,
+
+    /**
+    * The ContentServiceApi service constructor.
+    * @property {module:api/ContentServiceApi}
+    */
+    ContentServiceApi,
 
     /**
     * The DeviceServiceApi service constructor.

@@ -25,22 +25,25 @@ class DevicesLocalFileInfo(object):
         'name': 'str',
         'id': 'str',
         'album': 'str',
-        'mime_type': 'str'
+        'mime_type': 'str',
+        'date_created': 'datetime'
     }
 
     attribute_map = {
         'name': 'Name',
         'id': 'Id',
         'album': 'Album',
-        'mime_type': 'MimeType'
+        'mime_type': 'MimeType',
+        'date_created': 'DateCreated'
     }
 
-    def __init__(self, name=None, id=None, album=None, mime_type=None):  # noqa: E501
+    def __init__(self, name=None, id=None, album=None, mime_type=None, date_created=None):  # noqa: E501
         """DevicesLocalFileInfo - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._id = None
         self._album = None
         self._mime_type = None
+        self._date_created = None
         self.discriminator = None
         if name is not None:
             self.name = name
@@ -50,6 +53,8 @@ class DevicesLocalFileInfo(object):
             self.album = album
         if mime_type is not None:
             self.mime_type = mime_type
+        if date_created is not None:
+            self.date_created = date_created
 
     @property
     def name(self):
@@ -134,6 +139,27 @@ class DevicesLocalFileInfo(object):
         """
 
         self._mime_type = mime_type
+
+    @property
+    def date_created(self):
+        """Gets the date_created of this DevicesLocalFileInfo.  # noqa: E501
+
+
+        :return: The date_created of this DevicesLocalFileInfo.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """Sets the date_created of this DevicesLocalFileInfo.
+
+
+        :param date_created: The date_created of this DevicesLocalFileInfo.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_created = date_created
 
     def to_dict(self):
         """Returns the model properties as a dict"""

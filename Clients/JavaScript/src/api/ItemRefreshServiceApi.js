@@ -10,12 +10,13 @@
  */
 
 import ApiClient from "../ApiClient";
+import BaseRefreshRequest from '../model/BaseRefreshRequest';
 import MetadataRefreshMode from '../model/MetadataRefreshMode';
 
 /**
 * ItemRefreshService service.
 * @module api/ItemRefreshServiceApi
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class ItemRefreshServiceApi {
 
@@ -40,7 +41,7 @@ export default class ItemRefreshServiceApi {
      */
     postItemsByIdRefreshWithHttpInfo() {
       opts = opts || {};
-      let postBody = null;
+      let postBody = body;
 
       let pathParams = {
         'Id': Id
@@ -58,7 +59,7 @@ export default class ItemRefreshServiceApi {
       };
 
       let authNames = ['apikeyauth', 'embyauth'];
-      let contentTypes = [];
+      let contentTypes = ['application/json', 'application/xml'];
       let accepts = [];
       let returnType = null;
 

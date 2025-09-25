@@ -27,6 +27,7 @@ type ItemRefreshServiceApiService service
 ItemRefreshServiceApiService Refreshes metadata for an item
 Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body BaseRefreshRequest: 
  * @param id Item Id
  * @param optional nil or *ItemRefreshServiceApiPostItemsByIdRefreshOpts - Optional Parameters:
      * @param "Recursive" (optional.Bool) -  Indicates if the refresh should occur recursively.
@@ -45,7 +46,7 @@ type ItemRefreshServiceApiPostItemsByIdRefreshOpts struct {
     ReplaceAllImages optional.Bool
 }
 
-func (a *ItemRefreshServiceApiService) PostItemsByIdRefresh(ctx context.Context, id string, localVarOptionals *ItemRefreshServiceApiPostItemsByIdRefreshOpts) (*http.Response, error) {
+func (a *ItemRefreshServiceApiService) PostItemsByIdRefresh(ctx context.Context, body BaseRefreshRequest, id string, localVarOptionals *ItemRefreshServiceApiPostItemsByIdRefreshOpts) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -78,7 +79,7 @@ func (a *ItemRefreshServiceApiService) PostItemsByIdRefresh(ctx context.Context,
 		localVarQueryParams.Add("ReplaceAllImages", parameterToString(localVarOptionals.ReplaceAllImages.Value(), ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json", "application/xml"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -94,6 +95,8 @@ func (a *ItemRefreshServiceApiService) PostItemsByIdRefresh(ctx context.Context,
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	// body params
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

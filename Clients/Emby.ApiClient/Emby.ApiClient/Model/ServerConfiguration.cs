@@ -387,6 +387,18 @@ namespace Emby.ApiClient.Model
         public ProxyHeaderMode ProxyHeaderMode { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsInMaintenanceMode
+        /// </summary>
+        /// <value>The IsInMaintenanceMode.</value>
+        public bool? IsInMaintenanceMode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaintenanceModeMessage
+        /// </summary>
+        /// <value>The MaintenanceModeMessage.</value>
+        public string MaintenanceModeMessage { get; set; }
+
+        /// <summary>
         /// A value indicating whether \\[enable debug level logging\\].
         /// </summary>
         /// <value>The EnableDebugLevelLogging.</value>
@@ -496,6 +508,8 @@ namespace Emby.ApiClient.Model
             sb.Append("  EnableSavedMetadataForPeople: ").Append(EnableSavedMetadataForPeople).Append("\n");
             sb.Append("  TvChannelsRefreshed: ").Append(TvChannelsRefreshed).Append("\n");
             sb.Append("  ProxyHeaderMode: ").Append(ProxyHeaderMode).Append("\n");
+            sb.Append("  IsInMaintenanceMode: ").Append(IsInMaintenanceMode).Append("\n");
+            sb.Append("  MaintenanceModeMessage: ").Append(MaintenanceModeMessage).Append("\n");
             sb.Append("  EnableDebugLevelLogging: ").Append(EnableDebugLevelLogging).Append("\n");
             sb.Append("  RevertDebugLogging: ").Append(RevertDebugLogging).Append("\n");
             sb.Append("  EnableAutoUpdate: ").Append(EnableAutoUpdate).Append("\n");
@@ -835,6 +849,16 @@ namespace Emby.ApiClient.Model
                     this.ProxyHeaderMode.Equals(input.ProxyHeaderMode))
                 ) && 
                 (
+                    this.IsInMaintenanceMode == input.IsInMaintenanceMode ||
+                    (this.IsInMaintenanceMode != null &&
+                    this.IsInMaintenanceMode.Equals(input.IsInMaintenanceMode))
+                ) && 
+                (
+                    this.MaintenanceModeMessage == input.MaintenanceModeMessage ||
+                    (this.MaintenanceModeMessage != null &&
+                    this.MaintenanceModeMessage.Equals(input.MaintenanceModeMessage))
+                ) && 
+                (
                     this.EnableDebugLevelLogging == input.EnableDebugLevelLogging ||
                     (this.EnableDebugLevelLogging != null &&
                     this.EnableDebugLevelLogging.Equals(input.EnableDebugLevelLogging))
@@ -1000,6 +1024,10 @@ namespace Emby.ApiClient.Model
                     hashCode = hashCode * 59 + this.TvChannelsRefreshed.GetHashCode();
                 if (this.ProxyHeaderMode != null)
                     hashCode = hashCode * 59 + this.ProxyHeaderMode.GetHashCode();
+                if (this.IsInMaintenanceMode != null)
+                    hashCode = hashCode * 59 + this.IsInMaintenanceMode.GetHashCode();
+                if (this.MaintenanceModeMessage != null)
+                    hashCode = hashCode * 59 + this.MaintenanceModeMessage.GetHashCode();
                 if (this.EnableDebugLevelLogging != null)
                     hashCode = hashCode * 59 + this.EnableDebugLevelLogging.GetHashCode();
                 if (this.RevertDebugLogging != null)

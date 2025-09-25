@@ -33,6 +33,7 @@ class SessionSessionInfo(object):
         'id': 'str',
         'server_id': 'str',
         'user_id': 'str',
+        'party_id': 'str',
         'user_name': 'str',
         'user_primary_image_tag': 'str',
         'client': 'str',
@@ -61,6 +62,7 @@ class SessionSessionInfo(object):
         'id': 'Id',
         'server_id': 'ServerId',
         'user_id': 'UserId',
+        'party_id': 'PartyId',
         'user_name': 'UserName',
         'user_primary_image_tag': 'UserPrimaryImageTag',
         'client': 'Client',
@@ -77,7 +79,7 @@ class SessionSessionInfo(object):
         'supports_remote_control': 'SupportsRemoteControl'
     }
 
-    def __init__(self, play_state=None, additional_users=None, remote_end_point=None, protocol=None, playable_media_types=None, playlist_item_id=None, playlist_index=None, playlist_length=None, id=None, server_id=None, user_id=None, user_name=None, user_primary_image_tag=None, client=None, last_activity_date=None, device_name=None, device_type=None, now_playing_item=None, internal_device_id=None, device_id=None, application_version=None, app_icon_url=None, supported_commands=None, transcoding_info=None, supports_remote_control=None):  # noqa: E501
+    def __init__(self, play_state=None, additional_users=None, remote_end_point=None, protocol=None, playable_media_types=None, playlist_item_id=None, playlist_index=None, playlist_length=None, id=None, server_id=None, user_id=None, party_id=None, user_name=None, user_primary_image_tag=None, client=None, last_activity_date=None, device_name=None, device_type=None, now_playing_item=None, internal_device_id=None, device_id=None, application_version=None, app_icon_url=None, supported_commands=None, transcoding_info=None, supports_remote_control=None):  # noqa: E501
         """SessionSessionInfo - a model defined in Swagger"""  # noqa: E501
         self._play_state = None
         self._additional_users = None
@@ -90,6 +92,7 @@ class SessionSessionInfo(object):
         self._id = None
         self._server_id = None
         self._user_id = None
+        self._party_id = None
         self._user_name = None
         self._user_primary_image_tag = None
         self._client = None
@@ -127,6 +130,8 @@ class SessionSessionInfo(object):
             self.server_id = server_id
         if user_id is not None:
             self.user_id = user_id
+        if party_id is not None:
+            self.party_id = party_id
         if user_name is not None:
             self.user_name = user_name
         if user_primary_image_tag is not None:
@@ -394,6 +399,27 @@ class SessionSessionInfo(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def party_id(self):
+        """Gets the party_id of this SessionSessionInfo.  # noqa: E501
+
+
+        :return: The party_id of this SessionSessionInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._party_id
+
+    @party_id.setter
+    def party_id(self, party_id):
+        """Sets the party_id of this SessionSessionInfo.
+
+
+        :param party_id: The party_id of this SessionSessionInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._party_id = party_id
 
     @property
     def user_name(self):

@@ -26,6 +26,7 @@ type SessionSessionInfo struct {
 	ServerId string `json:"ServerId,omitempty"`
 	// The user id.
 	UserId string `json:"UserId,omitempty"`
+	PartyId string `json:"PartyId,omitempty"`
 	// The username.
 	UserName string `json:"UserName,omitempty"`
 	UserPrimaryImageTag string `json:"UserPrimaryImageTag,omitempty"`

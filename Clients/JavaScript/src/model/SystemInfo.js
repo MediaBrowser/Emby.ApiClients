@@ -17,7 +17,7 @@ import WakeOnLanInfo from './WakeOnLanInfo';
 /**
 * The SystemInfo model module.
 * @module model/SystemInfo
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class SystemInfo {
     /**
@@ -128,6 +128,9 @@ export default class SystemInfo {
             }
             if (data.hasOwnProperty('WakeOnLanInfo')) {
                 obj['WakeOnLanInfo'] = ApiClient.convertToType(data['WakeOnLanInfo'], [WakeOnLanInfo]);
+            }
+            if (data.hasOwnProperty('IsInMaintenanceMode')) {
+                obj['IsInMaintenanceMode'] = ApiClient.convertToType(data['IsInMaintenanceMode'], 'Boolean');
             }
             if (data.hasOwnProperty('LocalAddress')) {
                 obj['LocalAddress'] = ApiClient.convertToType(data['LocalAddress'], 'String');
@@ -285,6 +288,10 @@ export default class SystemInfo {
     * @member {Array.<module:model/WakeOnLanInfo>} WakeOnLanInfo
     */
     'WakeOnLanInfo' = undefined;
+    /**
+    * @member {Boolean} IsInMaintenanceMode
+    */
+    'IsInMaintenanceMode' = undefined;
     /**
     * The local address.
     * @member {String} LocalAddress

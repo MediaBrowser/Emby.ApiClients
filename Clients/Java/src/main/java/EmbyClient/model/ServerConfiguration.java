@@ -206,6 +206,12 @@ public class ServerConfiguration {
   @SerializedName("ProxyHeaderMode")
   private ProxyHeaderMode proxyHeaderMode = null;
 
+  @SerializedName("IsInMaintenanceMode")
+  private Boolean isInMaintenanceMode = null;
+
+  @SerializedName("MaintenanceModeMessage")
+  private String maintenanceModeMessage = null;
+
   @SerializedName("EnableDebugLevelLogging")
   private Boolean enableDebugLevelLogging = null;
 
@@ -1355,6 +1361,42 @@ public class ServerConfiguration {
     this.proxyHeaderMode = proxyHeaderMode;
   }
 
+  public ServerConfiguration isInMaintenanceMode(Boolean isInMaintenanceMode) {
+    this.isInMaintenanceMode = isInMaintenanceMode;
+    return this;
+  }
+
+   /**
+   * Get isInMaintenanceMode
+   * @return isInMaintenanceMode
+  **/
+  @Schema(description = "")
+  public Boolean isIsInMaintenanceMode() {
+    return isInMaintenanceMode;
+  }
+
+  public void setIsInMaintenanceMode(Boolean isInMaintenanceMode) {
+    this.isInMaintenanceMode = isInMaintenanceMode;
+  }
+
+  public ServerConfiguration maintenanceModeMessage(String maintenanceModeMessage) {
+    this.maintenanceModeMessage = maintenanceModeMessage;
+    return this;
+  }
+
+   /**
+   * Get maintenanceModeMessage
+   * @return maintenanceModeMessage
+  **/
+  @Schema(description = "")
+  public String getMaintenanceModeMessage() {
+    return maintenanceModeMessage;
+  }
+
+  public void setMaintenanceModeMessage(String maintenanceModeMessage) {
+    this.maintenanceModeMessage = maintenanceModeMessage;
+  }
+
   public ServerConfiguration enableDebugLevelLogging(Boolean enableDebugLevelLogging) {
     this.enableDebugLevelLogging = enableDebugLevelLogging;
     return this;
@@ -1551,6 +1593,8 @@ public class ServerConfiguration {
         Objects.equals(this.enableSavedMetadataForPeople, serverConfiguration.enableSavedMetadataForPeople) &&
         Objects.equals(this.tvChannelsRefreshed, serverConfiguration.tvChannelsRefreshed) &&
         Objects.equals(this.proxyHeaderMode, serverConfiguration.proxyHeaderMode) &&
+        Objects.equals(this.isInMaintenanceMode, serverConfiguration.isInMaintenanceMode) &&
+        Objects.equals(this.maintenanceModeMessage, serverConfiguration.maintenanceModeMessage) &&
         Objects.equals(this.enableDebugLevelLogging, serverConfiguration.enableDebugLevelLogging) &&
         Objects.equals(this.revertDebugLogging, serverConfiguration.revertDebugLogging) &&
         Objects.equals(this.enableAutoUpdate, serverConfiguration.enableAutoUpdate) &&
@@ -1562,7 +1606,7 @@ public class ServerConfiguration {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableUPnP, publicPort, publicHttpsPort, httpServerPortNumber, httpsPortNumber, enableHttps, certificatePath, certificatePassword, isPortAuthorized, autoRunWebApp, enableRemoteAccess, logAllQueryTimes, disableOutgoingIPv6, enableCaseSensitiveItemIds, metadataPath, metadataNetworkPath, preferredMetadataLanguage, metadataCountryCode, sortRemoveWords, libraryMonitorDelaySeconds, enableDashboardResponseCaching, dashboardSourcePath, imageSavingConvention, enableAutomaticRestart, serverName, preferredDetectedRemoteAddressFamily, wanDdns, uiCulture, remoteClientBitrateLimit, localNetworkSubnets, localNetworkAddresses, enableExternalContentInSuggestions, requireHttps, isBehindProxy, remoteIPFilter, isRemoteIPFilterBlacklist, imageExtractionTimeoutMs, pathSubstitutions, uninstalledPlugins, collapseVideoFolders, enableOriginalTrackTitles, vacuumDatabaseOnStartup, simultaneousStreamLimit, databaseCacheSizeMB, enableSqLiteMmio, playlistsUpgradedToM3U, imageExtractorUpgraded1, enablePeopleLetterSubFolders, optimizeDatabaseOnShutdown, databaseAnalysisLimit, maxLibraryDbConnections, maxAuthDbConnections, maxOtherDbConnections, disableAsyncIO, migratedToUserItemShares8, migratedLibraryOptionsToDb, allowLegacyLocalNetworkPassword, enableSavedMetadataForPeople, tvChannelsRefreshed, proxyHeaderMode, enableDebugLevelLogging, revertDebugLogging, enableAutoUpdate, logFileRetentionDays, runAtStartup, isStartupWizardCompleted, cachePath);
+    return Objects.hash(enableUPnP, publicPort, publicHttpsPort, httpServerPortNumber, httpsPortNumber, enableHttps, certificatePath, certificatePassword, isPortAuthorized, autoRunWebApp, enableRemoteAccess, logAllQueryTimes, disableOutgoingIPv6, enableCaseSensitiveItemIds, metadataPath, metadataNetworkPath, preferredMetadataLanguage, metadataCountryCode, sortRemoveWords, libraryMonitorDelaySeconds, enableDashboardResponseCaching, dashboardSourcePath, imageSavingConvention, enableAutomaticRestart, serverName, preferredDetectedRemoteAddressFamily, wanDdns, uiCulture, remoteClientBitrateLimit, localNetworkSubnets, localNetworkAddresses, enableExternalContentInSuggestions, requireHttps, isBehindProxy, remoteIPFilter, isRemoteIPFilterBlacklist, imageExtractionTimeoutMs, pathSubstitutions, uninstalledPlugins, collapseVideoFolders, enableOriginalTrackTitles, vacuumDatabaseOnStartup, simultaneousStreamLimit, databaseCacheSizeMB, enableSqLiteMmio, playlistsUpgradedToM3U, imageExtractorUpgraded1, enablePeopleLetterSubFolders, optimizeDatabaseOnShutdown, databaseAnalysisLimit, maxLibraryDbConnections, maxAuthDbConnections, maxOtherDbConnections, disableAsyncIO, migratedToUserItemShares8, migratedLibraryOptionsToDb, allowLegacyLocalNetworkPassword, enableSavedMetadataForPeople, tvChannelsRefreshed, proxyHeaderMode, isInMaintenanceMode, maintenanceModeMessage, enableDebugLevelLogging, revertDebugLogging, enableAutoUpdate, logFileRetentionDays, runAtStartup, isStartupWizardCompleted, cachePath);
   }
 
 
@@ -1631,6 +1675,8 @@ public class ServerConfiguration {
     sb.append("    enableSavedMetadataForPeople: ").append(toIndentedString(enableSavedMetadataForPeople)).append("\n");
     sb.append("    tvChannelsRefreshed: ").append(toIndentedString(tvChannelsRefreshed)).append("\n");
     sb.append("    proxyHeaderMode: ").append(toIndentedString(proxyHeaderMode)).append("\n");
+    sb.append("    isInMaintenanceMode: ").append(toIndentedString(isInMaintenanceMode)).append("\n");
+    sb.append("    maintenanceModeMessage: ").append(toIndentedString(maintenanceModeMessage)).append("\n");
     sb.append("    enableDebugLevelLogging: ").append(toIndentedString(enableDebugLevelLogging)).append("\n");
     sb.append("    revertDebugLogging: ").append(toIndentedString(revertDebugLogging)).append("\n");
     sb.append("    enableAutoUpdate: ").append(toIndentedString(enableAutoUpdate)).append("\n");

@@ -23,16 +23,17 @@ class ItemRefreshServiceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def post_items_by_id_refresh(self, id, **kwargs):  # noqa: E501
+    def post_items_by_id_refresh(self, body, id, **kwargs):  # noqa: E501
         """Refreshes metadata for an item  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_items_by_id_refresh(id, async_req=True)
+        >>> thread = api.post_items_by_id_refresh(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param BaseRefreshRequest body: BaseRefreshRequest:  (required)
         :param str id: Item Id (required)
         :param bool recursive: Indicates if the refresh should occur recursively.
         :param MetadataRefreshMode metadata_refresh_mode: Specifies the metadata refresh mode
@@ -45,21 +46,22 @@ class ItemRefreshServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_items_by_id_refresh_with_http_info(id, **kwargs)  # noqa: E501
+            return self.post_items_by_id_refresh_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.post_items_by_id_refresh_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.post_items_by_id_refresh_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def post_items_by_id_refresh_with_http_info(self, id, **kwargs):  # noqa: E501
+    def post_items_by_id_refresh_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """Refreshes metadata for an item  # noqa: E501
 
         Requires authentication as user  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_items_by_id_refresh_with_http_info(id, async_req=True)
+        >>> thread = api.post_items_by_id_refresh_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param BaseRefreshRequest body: BaseRefreshRequest:  (required)
         :param str id: Item Id (required)
         :param bool recursive: Indicates if the refresh should occur recursively.
         :param MetadataRefreshMode metadata_refresh_mode: Specifies the metadata refresh mode
@@ -71,7 +73,7 @@ class ItemRefreshServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'recursive', 'metadata_refresh_mode', 'image_refresh_mode', 'replace_all_metadata', 'replace_all_images']  # noqa: E501
+        all_params = ['body', 'id', 'recursive', 'metadata_refresh_mode', 'image_refresh_mode', 'replace_all_metadata', 'replace_all_images']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -86,6 +88,10 @@ class ItemRefreshServiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_items_by_id_refresh`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
@@ -115,6 +121,12 @@ class ItemRefreshServiceApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/xml'])  # noqa: E501
+
         # Authentication setting
         auth_settings = ['apikeyauth', 'embyauth']  # noqa: E501
 

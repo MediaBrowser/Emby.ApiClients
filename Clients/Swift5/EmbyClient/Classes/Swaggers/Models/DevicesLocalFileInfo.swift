@@ -15,12 +15,14 @@ public struct DevicesLocalFileInfo: Codable {
     public var _id: String?
     public var album: String?
     public var mimeType: String?
+    public var dateCreated: Date?
 
-    public init(name: String? = nil, _id: String? = nil, album: String? = nil, mimeType: String? = nil) {
+    public init(name: String? = nil, _id: String? = nil, album: String? = nil, mimeType: String? = nil, dateCreated: Date? = nil) {
         self.name = name
         self._id = _id
         self.album = album
         self.mimeType = mimeType
+        self.dateCreated = dateCreated
     }
 
     public enum CodingKeys: String, CodingKey { 
@@ -28,6 +30,7 @@ public struct DevicesLocalFileInfo: Codable {
         case _id = "Id"
         case album = "Album"
         case mimeType = "MimeType"
+        case dateCreated = "DateCreated"
     }
 
 }

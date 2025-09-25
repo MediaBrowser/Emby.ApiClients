@@ -50,6 +50,7 @@ class SystemInfo(object):
         'supports_auto_run_at_startup': 'bool',
         'hardware_acceleration_requires_premiere': 'bool',
         'wake_on_lan_info': 'list[WakeOnLanInfo]',
+        'is_in_maintenance_mode': 'bool',
         'local_address': 'str',
         'local_addresses': 'list[str]',
         'wan_address': 'str',
@@ -88,6 +89,7 @@ class SystemInfo(object):
         'supports_auto_run_at_startup': 'SupportsAutoRunAtStartup',
         'hardware_acceleration_requires_premiere': 'HardwareAccelerationRequiresPremiere',
         'wake_on_lan_info': 'WakeOnLanInfo',
+        'is_in_maintenance_mode': 'IsInMaintenanceMode',
         'local_address': 'LocalAddress',
         'local_addresses': 'LocalAddresses',
         'wan_address': 'WanAddress',
@@ -97,7 +99,7 @@ class SystemInfo(object):
         'id': 'Id'
     }
 
-    def __init__(self, system_update_level=None, operating_system_display_name=None, package_name=None, has_pending_restart=None, is_shutting_down=None, has_image_enhancers=None, operating_system=None, supports_library_monitor=None, supports_local_port_configuration=None, supports_wake_server=None, web_socket_port_number=None, completed_installations=None, can_self_restart=None, can_self_update=None, can_launch_web_browser=None, program_data_path=None, items_by_name_path=None, cache_path=None, log_path=None, internal_metadata_path=None, transcoding_temp_path=None, http_server_port_number=None, supports_https=None, https_port_number=None, has_update_available=None, supports_auto_run_at_startup=None, hardware_acceleration_requires_premiere=None, wake_on_lan_info=None, local_address=None, local_addresses=None, wan_address=None, remote_addresses=None, server_name=None, version=None, id=None):  # noqa: E501
+    def __init__(self, system_update_level=None, operating_system_display_name=None, package_name=None, has_pending_restart=None, is_shutting_down=None, has_image_enhancers=None, operating_system=None, supports_library_monitor=None, supports_local_port_configuration=None, supports_wake_server=None, web_socket_port_number=None, completed_installations=None, can_self_restart=None, can_self_update=None, can_launch_web_browser=None, program_data_path=None, items_by_name_path=None, cache_path=None, log_path=None, internal_metadata_path=None, transcoding_temp_path=None, http_server_port_number=None, supports_https=None, https_port_number=None, has_update_available=None, supports_auto_run_at_startup=None, hardware_acceleration_requires_premiere=None, wake_on_lan_info=None, is_in_maintenance_mode=None, local_address=None, local_addresses=None, wan_address=None, remote_addresses=None, server_name=None, version=None, id=None):  # noqa: E501
         """SystemInfo - a model defined in Swagger"""  # noqa: E501
         self._system_update_level = None
         self._operating_system_display_name = None
@@ -127,6 +129,7 @@ class SystemInfo(object):
         self._supports_auto_run_at_startup = None
         self._hardware_acceleration_requires_premiere = None
         self._wake_on_lan_info = None
+        self._is_in_maintenance_mode = None
         self._local_address = None
         self._local_addresses = None
         self._wan_address = None
@@ -191,6 +194,8 @@ class SystemInfo(object):
             self.hardware_acceleration_requires_premiere = hardware_acceleration_requires_premiere
         if wake_on_lan_info is not None:
             self.wake_on_lan_info = wake_on_lan_info
+        if is_in_maintenance_mode is not None:
+            self.is_in_maintenance_mode = is_in_maintenance_mode
         if local_address is not None:
             self.local_address = local_address
         if local_addresses is not None:
@@ -831,6 +836,27 @@ class SystemInfo(object):
         """
 
         self._wake_on_lan_info = wake_on_lan_info
+
+    @property
+    def is_in_maintenance_mode(self):
+        """Gets the is_in_maintenance_mode of this SystemInfo.  # noqa: E501
+
+
+        :return: The is_in_maintenance_mode of this SystemInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_in_maintenance_mode
+
+    @is_in_maintenance_mode.setter
+    def is_in_maintenance_mode(self, is_in_maintenance_mode):
+        """Sets the is_in_maintenance_mode of this SystemInfo.
+
+
+        :param is_in_maintenance_mode: The is_in_maintenance_mode of this SystemInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_in_maintenance_mode = is_in_maintenance_mode
 
     @property
     def local_address(self):

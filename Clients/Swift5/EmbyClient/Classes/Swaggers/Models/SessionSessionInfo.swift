@@ -27,6 +27,7 @@ public struct SessionSessionInfo: Codable {
     public var serverId: String?
     /** The user id. */
     public var userId: String?
+    public var partyId: String?
     /** The username. */
     public var userName: String?
     public var userPrimaryImageTag: String?
@@ -50,7 +51,7 @@ public struct SessionSessionInfo: Codable {
     public var transcodingInfo: TranscodingInfo?
     public var supportsRemoteControl: Bool?
 
-    public init(playState: PlayerStateInfo? = nil, additionalUsers: [SessionUserInfo]? = nil, remoteEndPoint: String? = nil, _protocol: String? = nil, playableMediaTypes: [String]? = nil, playlistItemId: String? = nil, playlistIndex: Int? = nil, playlistLength: Int? = nil, _id: String? = nil, serverId: String? = nil, userId: String? = nil, userName: String? = nil, userPrimaryImageTag: String? = nil, client: String? = nil, lastActivityDate: Date? = nil, deviceName: String? = nil, deviceType: String? = nil, nowPlayingItem: BaseItemDto? = nil, internalDeviceId: Int64? = nil, deviceId: String? = nil, applicationVersion: String? = nil, appIconUrl: String? = nil, supportedCommands: [String]? = nil, transcodingInfo: TranscodingInfo? = nil, supportsRemoteControl: Bool? = nil) {
+    public init(playState: PlayerStateInfo? = nil, additionalUsers: [SessionUserInfo]? = nil, remoteEndPoint: String? = nil, _protocol: String? = nil, playableMediaTypes: [String]? = nil, playlistItemId: String? = nil, playlistIndex: Int? = nil, playlistLength: Int? = nil, _id: String? = nil, serverId: String? = nil, userId: String? = nil, partyId: String? = nil, userName: String? = nil, userPrimaryImageTag: String? = nil, client: String? = nil, lastActivityDate: Date? = nil, deviceName: String? = nil, deviceType: String? = nil, nowPlayingItem: BaseItemDto? = nil, internalDeviceId: Int64? = nil, deviceId: String? = nil, applicationVersion: String? = nil, appIconUrl: String? = nil, supportedCommands: [String]? = nil, transcodingInfo: TranscodingInfo? = nil, supportsRemoteControl: Bool? = nil) {
         self.playState = playState
         self.additionalUsers = additionalUsers
         self.remoteEndPoint = remoteEndPoint
@@ -62,6 +63,7 @@ public struct SessionSessionInfo: Codable {
         self._id = _id
         self.serverId = serverId
         self.userId = userId
+        self.partyId = partyId
         self.userName = userName
         self.userPrimaryImageTag = userPrimaryImageTag
         self.client = client
@@ -90,6 +92,7 @@ public struct SessionSessionInfo: Codable {
         case _id = "Id"
         case serverId = "ServerId"
         case userId = "UserId"
+        case partyId = "PartyId"
         case userName = "UserName"
         case userPrimaryImageTag = "UserPrimaryImageTag"
         case client = "Client"

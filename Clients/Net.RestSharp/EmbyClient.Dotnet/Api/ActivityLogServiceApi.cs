@@ -29,7 +29,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>QueryResultActivityLogEntry</returns>
-        QueryResultActivityLogEntry GetSystemActivitylogEntries (int? startIndex, int? limit, string minDate);
+        QueryResultActivityLogEntry GetSystemActivitylogEntries (int? startIndex, int? limit, DateTimeOffset? minDate);
 
         /// <summary>
         /// Gets activity log entries
@@ -42,7 +42,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>ApiResponse of QueryResultActivityLogEntry</returns>
-        ApiResponse<QueryResultActivityLogEntry> GetSystemActivitylogEntriesWithHttpInfo (int? startIndex, int? limit, string minDate);
+        ApiResponse<QueryResultActivityLogEntry> GetSystemActivitylogEntriesWithHttpInfo (int? startIndex, int? limit, DateTimeOffset? minDate);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -56,7 +56,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>Task of QueryResultActivityLogEntry</returns>
-        System.Threading.Tasks.Task<QueryResultActivityLogEntry> GetSystemActivitylogEntriesAsync (int? startIndex, int? limit, string minDate);
+        System.Threading.Tasks.Task<QueryResultActivityLogEntry> GetSystemActivitylogEntriesAsync (int? startIndex, int? limit, DateTimeOffset? minDate);
 
         /// <summary>
         /// Gets activity log entries
@@ -69,7 +69,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>Task of ApiResponse (QueryResultActivityLogEntry)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QueryResultActivityLogEntry>> GetSystemActivitylogEntriesAsyncWithHttpInfo (int? startIndex, int? limit, string minDate);
+        System.Threading.Tasks.Task<ApiResponse<QueryResultActivityLogEntry>> GetSystemActivitylogEntriesAsyncWithHttpInfo (int? startIndex, int? limit, DateTimeOffset? minDate);
         #endregion Asynchronous Operations
     }
 
@@ -189,7 +189,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>QueryResultActivityLogEntry</returns>
-        public QueryResultActivityLogEntry GetSystemActivitylogEntries (int? startIndex, int? limit, string minDate)
+        public QueryResultActivityLogEntry GetSystemActivitylogEntries (int? startIndex, int? limit, DateTimeOffset? minDate)
         {
              ApiResponse<QueryResultActivityLogEntry> localVarResponse = GetSystemActivitylogEntriesWithHttpInfo(startIndex, limit, minDate);
              return localVarResponse.Data;
@@ -203,7 +203,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>ApiResponse of QueryResultActivityLogEntry</returns>
-        public ApiResponse< QueryResultActivityLogEntry > GetSystemActivitylogEntriesWithHttpInfo (int? startIndex, int? limit, string minDate)
+        public ApiResponse< QueryResultActivityLogEntry > GetSystemActivitylogEntriesWithHttpInfo (int? startIndex, int? limit, DateTimeOffset? minDate)
         {
 
             var localVarPath = "/System/ActivityLog/Entries";
@@ -269,7 +269,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>Task of QueryResultActivityLogEntry</returns>
-        public async System.Threading.Tasks.Task<QueryResultActivityLogEntry> GetSystemActivitylogEntriesAsync (int? startIndex, int? limit, string minDate)
+        public async System.Threading.Tasks.Task<QueryResultActivityLogEntry> GetSystemActivitylogEntriesAsync (int? startIndex, int? limit, DateTimeOffset? minDate)
         {
              ApiResponse<QueryResultActivityLogEntry> localVarResponse = await GetSystemActivitylogEntriesAsyncWithHttpInfo(startIndex, limit, minDate);
              return localVarResponse.Data;
@@ -284,7 +284,7 @@ namespace EmbyClient.Dotnet.Api
         /// <param name="limit">Optional. The maximum number of records to return (optional)</param>
         /// <param name="minDate">Optional. The minimum date. Format &#x3D; ISO (optional)</param>
         /// <returns>Task of ApiResponse (QueryResultActivityLogEntry)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<QueryResultActivityLogEntry>> GetSystemActivitylogEntriesAsyncWithHttpInfo (int? startIndex, int? limit, string minDate)
+        public async System.Threading.Tasks.Task<ApiResponse<QueryResultActivityLogEntry>> GetSystemActivitylogEntriesAsyncWithHttpInfo (int? startIndex, int? limit, DateTimeOffset? minDate)
         {
 
             var localVarPath = "/System/ActivityLog/Entries";

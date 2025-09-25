@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The DevicesLocalFileInfo model module.
 * @module model/DevicesLocalFileInfo
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class DevicesLocalFileInfo {
     /**
@@ -53,6 +53,9 @@ export default class DevicesLocalFileInfo {
             if (data.hasOwnProperty('MimeType')) {
                 obj['MimeType'] = ApiClient.convertToType(data['MimeType'], 'String');
             }
+            if (data.hasOwnProperty('DateCreated')) {
+                obj['DateCreated'] = ApiClient.convertToType(data['DateCreated'], 'Date');
+            }
         }
         return obj;
     }
@@ -73,6 +76,10 @@ export default class DevicesLocalFileInfo {
     * @member {String} MimeType
     */
     'MimeType' = undefined;
+    /**
+    * @member {Date} DateCreated
+    */
+    'DateCreated' = undefined;
 
 
 

@@ -29,4 +29,5 @@ public enum TranscodingVpStepTypes: String, Codable {
     case showSpeaker = "ShowSpeaker"
     case stripStyles = "StripStyles"
     case connectTo = "ConnectTo"
+    case rotate = "Rotate"
 }

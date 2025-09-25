@@ -6,6 +6,7 @@
 package embyclient.api;
 
 import embyclient.model.BaseItemDto;
+import java.time.OffsetDateTime;
 import embyclient.model.QueryResultBaseItemDto;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -46,10 +47,10 @@ public class MusicGenresServiceApiTest {
         String adjacentTo = null;
         String startItemId = null;
         Integer minIndexNumber = null;
-        String minStartDate = null;
-        String maxStartDate = null;
-        String minEndDate = null;
-        String maxEndDate = null;
+        OffsetDateTime minStartDate = null;
+        OffsetDateTime maxStartDate = null;
+        OffsetDateTime minEndDate = null;
+        OffsetDateTime maxEndDate = null;
         Integer minPlayers = null;
         Integer maxPlayers = null;
         Integer parentIndexNumber = null;
@@ -59,10 +60,10 @@ public class MusicGenresServiceApiTest {
         Double minCommunityRating = null;
         Double minCriticRating = null;
         Integer airedDuringSeason = null;
-        String minPremiereDate = null;
-        String minDateLastSaved = null;
-        String minDateLastSavedForUser = null;
-        String maxPremiereDate = null;
+        OffsetDateTime minPremiereDate = null;
+        OffsetDateTime minDateLastSaved = null;
+        OffsetDateTime minDateLastSavedForUser = null;
+        OffsetDateTime maxPremiereDate = null;
         Boolean hasOverview = null;
         Boolean hasImdbId = null;
         Boolean hasTmdbId = null;

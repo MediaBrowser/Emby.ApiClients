@@ -37,6 +37,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="id">The id..</param>
         /// <param name="serverId">serverId.</param>
         /// <param name="userId">The user id..</param>
+        /// <param name="partyId">partyId.</param>
         /// <param name="userName">The username..</param>
         /// <param name="userPrimaryImageTag">userPrimaryImageTag.</param>
         /// <param name="_client">The type of the client..</param>
@@ -51,7 +52,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="supportedCommands">The supported commands..</param>
         /// <param name="transcodingInfo">transcodingInfo.</param>
         /// <param name="supportsRemoteControl">supportsRemoteControl.</param>
-        public SessionSessionInfo(PlayerStateInfo playState = default(PlayerStateInfo), List<SessionUserInfo> additionalUsers = default(List<SessionUserInfo>), string remoteEndPoint = default(string), string protocol = default(string), List<string> playableMediaTypes = default(List<string>), string playlistItemId = default(string), int? playlistIndex = default(int?), int? playlistLength = default(int?), string id = default(string), string serverId = default(string), string userId = default(string), string userName = default(string), string userPrimaryImageTag = default(string), string _client = default(string), DateTimeOffset? lastActivityDate = default(DateTimeOffset?), string deviceName = default(string), string deviceType = default(string), BaseItemDto nowPlayingItem = default(BaseItemDto), long? internalDeviceId = default(long?), string deviceId = default(string), string applicationVersion = default(string), string appIconUrl = default(string), List<string> supportedCommands = default(List<string>), TranscodingInfo transcodingInfo = default(TranscodingInfo), bool? supportsRemoteControl = default(bool?))
+        public SessionSessionInfo(PlayerStateInfo playState = default(PlayerStateInfo), List<SessionUserInfo> additionalUsers = default(List<SessionUserInfo>), string remoteEndPoint = default(string), string protocol = default(string), List<string> playableMediaTypes = default(List<string>), string playlistItemId = default(string), int? playlistIndex = default(int?), int? playlistLength = default(int?), string id = default(string), string serverId = default(string), string userId = default(string), string partyId = default(string), string userName = default(string), string userPrimaryImageTag = default(string), string _client = default(string), DateTimeOffset? lastActivityDate = default(DateTimeOffset?), string deviceName = default(string), string deviceType = default(string), BaseItemDto nowPlayingItem = default(BaseItemDto), long? internalDeviceId = default(long?), string deviceId = default(string), string applicationVersion = default(string), string appIconUrl = default(string), List<string> supportedCommands = default(List<string>), TranscodingInfo transcodingInfo = default(TranscodingInfo), bool? supportsRemoteControl = default(bool?))
         {
             this.PlayState = playState;
             this.AdditionalUsers = additionalUsers;
@@ -64,6 +65,7 @@ namespace EmbyClient.Dotnet.Model
             this.Id = id;
             this.ServerId = serverId;
             this.UserId = userId;
+            this.PartyId = partyId;
             this.UserName = userName;
             this.UserPrimaryImageTag = userPrimaryImageTag;
             this._Client = _client;
@@ -149,6 +151,12 @@ namespace EmbyClient.Dotnet.Model
         /// <value>The user id.</value>
         [DataMember(Name="UserId", EmitDefaultValue=false)]
         public string UserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PartyId
+        /// </summary>
+        [DataMember(Name="PartyId", EmitDefaultValue=false)]
+        public string PartyId { get; set; }
 
         /// <summary>
         /// The username.
@@ -261,6 +269,7 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ServerId: ").Append(ServerId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  PartyId: ").Append(PartyId).Append("\n");
             sb.Append("  UserName: ").Append(UserName).Append("\n");
             sb.Append("  UserPrimaryImageTag: ").Append(UserPrimaryImageTag).Append("\n");
             sb.Append("  _Client: ").Append(_Client).Append("\n");
@@ -367,6 +376,11 @@ namespace EmbyClient.Dotnet.Model
                     this.UserId.Equals(input.UserId))
                 ) && 
                 (
+                    this.PartyId == input.PartyId ||
+                    (this.PartyId != null &&
+                    this.PartyId.Equals(input.PartyId))
+                ) && 
+                (
                     this.UserName == input.UserName ||
                     (this.UserName != null &&
                     this.UserName.Equals(input.UserName))
@@ -470,6 +484,8 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.PartyId != null)
+                    hashCode = hashCode * 59 + this.PartyId.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.UserPrimaryImageTag != null)

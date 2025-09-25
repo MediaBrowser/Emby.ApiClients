@@ -18,7 +18,7 @@ import PlaybackInfoResponse from '../model/PlaybackInfoResponse';
 /**
 * MediaInfoService service.
 * @module api/MediaInfoServiceApi
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class MediaInfoServiceApi {
 
@@ -207,7 +207,7 @@ export default class MediaInfoServiceApi {
 
 
     /**
-     * Closes a media source
+     * Gets media info for a live stream
      * Requires authentication as user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -237,7 +237,7 @@ export default class MediaInfoServiceApi {
     }
 
     /**
-     * Closes a media source
+     * Gets media info for a live stream
      * Requires authentication as user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */

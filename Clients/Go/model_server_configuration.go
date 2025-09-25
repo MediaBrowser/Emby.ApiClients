@@ -84,6 +84,8 @@ type ServerConfiguration struct {
 	EnableSavedMetadataForPeople bool `json:"EnableSavedMetadataForPeople,omitempty"`
 	TvChannelsRefreshed bool `json:"TvChannelsRefreshed,omitempty"`
 	ProxyHeaderMode *ProxyHeaderMode `json:"ProxyHeaderMode,omitempty"`
+	IsInMaintenanceMode bool `json:"IsInMaintenanceMode,omitempty"`
+	MaintenanceModeMessage string `json:"MaintenanceModeMessage,omitempty"`
 	// A value indicating whether \\[enable debug level logging\\].
 	EnableDebugLevelLogging bool `json:"EnableDebugLevelLogging,omitempty"`
 	RevertDebugLogging string `json:"RevertDebugLogging,omitempty"`

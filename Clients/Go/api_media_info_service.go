@@ -386,7 +386,7 @@ func (a *MediaInfoServiceApiService) PostLivestreamsClose(ctx context.Context, l
 	return localVarHttpResponse, nil
 }
 /*
-MediaInfoServiceApiService Closes a media source
+MediaInfoServiceApiService Gets media info for a live stream
 Requires authentication as user
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param liveStreamId LiveStreamId

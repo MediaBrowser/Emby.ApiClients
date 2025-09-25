@@ -60,6 +60,9 @@ public class SessionSessionInfo {
   @SerializedName("UserId")
   private String userId = null;
 
+  @SerializedName("PartyId")
+  private String partyId = null;
+
   @SerializedName("UserName")
   private String userName = null;
 
@@ -314,6 +317,24 @@ public class SessionSessionInfo {
 
   public void setUserId(String userId) {
     this.userId = userId;
+  }
+
+  public SessionSessionInfo partyId(String partyId) {
+    this.partyId = partyId;
+    return this;
+  }
+
+   /**
+   * Get partyId
+   * @return partyId
+  **/
+  @Schema(description = "")
+  public String getPartyId() {
+    return partyId;
+  }
+
+  public void setPartyId(String partyId) {
+    this.partyId = partyId;
   }
 
   public SessionSessionInfo userName(String userName) {
@@ -597,6 +618,7 @@ public class SessionSessionInfo {
         Objects.equals(this.id, sessionSessionInfo.id) &&
         Objects.equals(this.serverId, sessionSessionInfo.serverId) &&
         Objects.equals(this.userId, sessionSessionInfo.userId) &&
+        Objects.equals(this.partyId, sessionSessionInfo.partyId) &&
         Objects.equals(this.userName, sessionSessionInfo.userName) &&
         Objects.equals(this.userPrimaryImageTag, sessionSessionInfo.userPrimaryImageTag) &&
         Objects.equals(this.client, sessionSessionInfo.client) &&
@@ -615,7 +637,7 @@ public class SessionSessionInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(playState, additionalUsers, remoteEndPoint, protocol, playableMediaTypes, playlistItemId, playlistIndex, playlistLength, id, serverId, userId, userName, userPrimaryImageTag, client, lastActivityDate, deviceName, deviceType, nowPlayingItem, internalDeviceId, deviceId, applicationVersion, appIconUrl, supportedCommands, transcodingInfo, supportsRemoteControl);
+    return Objects.hash(playState, additionalUsers, remoteEndPoint, protocol, playableMediaTypes, playlistItemId, playlistIndex, playlistLength, id, serverId, userId, partyId, userName, userPrimaryImageTag, client, lastActivityDate, deviceName, deviceType, nowPlayingItem, internalDeviceId, deviceId, applicationVersion, appIconUrl, supportedCommands, transcodingInfo, supportsRemoteControl);
   }
 
 
@@ -635,6 +657,7 @@ public class SessionSessionInfo {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    partyId: ").append(toIndentedString(partyId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    userPrimaryImageTag: ").append(toIndentedString(userPrimaryImageTag)).append("\n");
     sb.append("    client: ").append(toIndentedString(client)).append("\n");

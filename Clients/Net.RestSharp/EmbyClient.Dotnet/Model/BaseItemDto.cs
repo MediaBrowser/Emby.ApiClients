@@ -36,6 +36,11 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="tunerName">tunerName.</param>
         /// <param name="playlistItemId">The playlist item identifier..</param>
         /// <param name="dateCreated">The date created..</param>
+        /// <param name="dateModified">dateModified.</param>
+        /// <param name="videoCodec">videoCodec.</param>
+        /// <param name="audioCodec">audioCodec.</param>
+        /// <param name="averageFrameRate">averageFrameRate.</param>
+        /// <param name="realFrameRate">realFrameRate.</param>
         /// <param name="extraType">extraType.</param>
         /// <param name="sortIndexNumber">sortIndexNumber.</param>
         /// <param name="sortParentIndexNumber">sortParentIndexNumber.</param>
@@ -182,7 +187,7 @@ namespace EmbyClient.Dotnet.Model
         /// <param name="listingsChannelName">listingsChannelName.</param>
         /// <param name="listingsChannelNumber">listingsChannelNumber.</param>
         /// <param name="affiliateCallSign">affiliateCallSign.</param>
-        public BaseItemDto(string name = default(string), string originalTitle = default(string), string serverId = default(string), string id = default(string), string guid = default(string), string etag = default(string), string prefix = default(string), string tunerName = default(string), string playlistItemId = default(string), DateTimeOffset? dateCreated = default(DateTimeOffset?), string extraType = default(string), int? sortIndexNumber = default(int?), int? sortParentIndexNumber = default(int?), bool? canDelete = default(bool?), bool? canDownload = default(bool?), bool? canEditItems = default(bool?), bool? supportsResume = default(bool?), string presentationUniqueKey = default(string), string preferredMetadataLanguage = default(string), string preferredMetadataCountryCode = default(string), bool? supportsSync = default(bool?), SyncJobItemStatus syncStatus = default(SyncJobItemStatus), bool? canManageAccess = default(bool?), bool? canLeaveContent = default(bool?), bool? canMakePublic = default(bool?), string container = default(string), string sortName = default(string), string forcedSortName = default(string), Video3DFormat video3DFormat = default(Video3DFormat), DateTimeOffset? premiereDate = default(DateTimeOffset?), List<ExternalUrl> externalUrls = default(List<ExternalUrl>), List<MediaSourceInfo> mediaSources = default(List<MediaSourceInfo>), float? criticRating = default(float?), long? gameSystemId = default(long?), bool? asSeries = default(bool?), string gameSystem = default(string), List<string> productionLocations = default(List<string>), string path = default(string), string officialRating = default(string), string customRating = default(string), string channelId = default(string), string channelName = default(string), string overview = default(string), List<string> taglines = default(List<string>), List<string> genres = default(List<string>), float? communityRating = default(float?), long? runTimeTicks = default(long?), long? size = default(long?), string fileName = default(string), int? bitrate = default(int?), int? productionYear = default(int?), string number = default(string), string channelNumber = default(string), int? indexNumber = default(int?), int? indexNumberEnd = default(int?), int? parentIndexNumber = default(int?), List<MediaUrl> remoteTrailers = default(List<MediaUrl>), ProviderIdDictionary providerIds = default(ProviderIdDictionary), bool? isFolder = default(bool?), string parentId = default(string), string type = default(string), List<BaseItemPerson> people = default(List<BaseItemPerson>), List<NameLongIdPair> studios = default(List<NameLongIdPair>), List<NameLongIdPair> genreItems = default(List<NameLongIdPair>), List<NameLongIdPair> tagItems = default(List<NameLongIdPair>), string parentLogoItemId = default(string), string parentBackdropItemId = default(string), List<string> parentBackdropImageTags = default(List<string>), int? localTrailerCount = default(int?), UserItemDataDto userData = default(UserItemDataDto), int? recursiveItemCount = default(int?), int? childCount = default(int?), int? seasonCount = default(int?), string seriesName = default(string), string seriesId = default(string), string seasonId = default(string), int? specialFeatureCount = default(int?), string displayPreferencesId = default(string), string status = default(string), List<DayOfWeek> airDays = default(List<DayOfWeek>), List<string> tags = default(List<string>), double? primaryImageAspectRatio = default(double?), List<string> artists = default(List<string>), List<NameIdPair> artistItems = default(List<NameIdPair>), List<NameIdPair> composers = default(List<NameIdPair>), string album = default(string), string collectionType = default(string), string displayOrder = default(string), string albumId = default(string), string albumPrimaryImageTag = default(string), string seriesPrimaryImageTag = default(string), string albumArtist = default(string), List<NameIdPair> albumArtists = default(List<NameIdPair>), string seasonName = default(string), List<MediaStream> mediaStreams = default(List<MediaStream>), int? partCount = default(int?), Dictionary<string, string> imageTags = default(Dictionary<string, string>), List<string> backdropImageTags = default(List<string>), string parentLogoImageTag = default(string), string seriesStudio = default(string), string primaryImageItemId = default(string), string primaryImageTag = default(string), string parentThumbItemId = default(string), string parentThumbImageTag = default(string), List<ChapterInfo> chapters = default(List<ChapterInfo>), LocationType locationType = default(LocationType), string mediaType = default(string), DateTimeOffset? endDate = default(DateTimeOffset?), List<MetadataFields> lockedFields = default(List<MetadataFields>), bool? lockData = default(bool?), int? width = default(int?), int? height = default(int?), string cameraMake = default(string), string cameraModel = default(string), string software = default(string), double? exposureTime = default(double?), double? focalLength = default(double?), DrawingImageOrientation imageOrientation = default(DrawingImageOrientation), double? aperture = default(double?), double? shutterSpeed = default(double?), double? latitude = default(double?), double? longitude = default(double?), double? altitude = default(double?), int? isoSpeedRating = default(int?), string seriesTimerId = default(string), string channelPrimaryImageTag = default(string), DateTimeOffset? startDate = default(DateTimeOffset?), double? completionPercentage = default(double?), bool? isRepeat = default(bool?), bool? isNew = default(bool?), string episodeTitle = default(string), bool? isMovie = default(bool?), bool? isSports = default(bool?), bool? isSeries = default(bool?), bool? isLive = default(bool?), bool? isNews = default(bool?), bool? isKids = default(bool?), bool? isPremiere = default(bool?), LiveTvTimerType timerType = default(LiveTvTimerType), bool? disabled = default(bool?), string managementId = default(string), string timerId = default(string), BaseItemDto currentProgram = default(BaseItemDto), int? movieCount = default(int?), int? seriesCount = default(int?), int? albumCount = default(int?), int? songCount = default(int?), int? musicVideoCount = default(int?), List<string> subviews = default(List<string>), string listingsProviderId = default(string), string listingsChannelId = default(string), string listingsPath = default(string), string listingsId = default(string), string listingsChannelName = default(string), string listingsChannelNumber = default(string), string affiliateCallSign = default(string))
+        public BaseItemDto(string name = default(string), string originalTitle = default(string), string serverId = default(string), string id = default(string), string guid = default(string), string etag = default(string), string prefix = default(string), string tunerName = default(string), string playlistItemId = default(string), DateTimeOffset? dateCreated = default(DateTimeOffset?), DateTimeOffset? dateModified = default(DateTimeOffset?), string videoCodec = default(string), string audioCodec = default(string), float? averageFrameRate = default(float?), float? realFrameRate = default(float?), string extraType = default(string), int? sortIndexNumber = default(int?), int? sortParentIndexNumber = default(int?), bool? canDelete = default(bool?), bool? canDownload = default(bool?), bool? canEditItems = default(bool?), bool? supportsResume = default(bool?), string presentationUniqueKey = default(string), string preferredMetadataLanguage = default(string), string preferredMetadataCountryCode = default(string), bool? supportsSync = default(bool?), SyncJobItemStatus syncStatus = default(SyncJobItemStatus), bool? canManageAccess = default(bool?), bool? canLeaveContent = default(bool?), bool? canMakePublic = default(bool?), string container = default(string), string sortName = default(string), string forcedSortName = default(string), Video3DFormat video3DFormat = default(Video3DFormat), DateTimeOffset? premiereDate = default(DateTimeOffset?), List<ExternalUrl> externalUrls = default(List<ExternalUrl>), List<MediaSourceInfo> mediaSources = default(List<MediaSourceInfo>), float? criticRating = default(float?), long? gameSystemId = default(long?), bool? asSeries = default(bool?), string gameSystem = default(string), List<string> productionLocations = default(List<string>), string path = default(string), string officialRating = default(string), string customRating = default(string), string channelId = default(string), string channelName = default(string), string overview = default(string), List<string> taglines = default(List<string>), List<string> genres = default(List<string>), float? communityRating = default(float?), long? runTimeTicks = default(long?), long? size = default(long?), string fileName = default(string), int? bitrate = default(int?), int? productionYear = default(int?), string number = default(string), string channelNumber = default(string), int? indexNumber = default(int?), int? indexNumberEnd = default(int?), int? parentIndexNumber = default(int?), List<MediaUrl> remoteTrailers = default(List<MediaUrl>), ProviderIdDictionary providerIds = default(ProviderIdDictionary), bool? isFolder = default(bool?), string parentId = default(string), string type = default(string), List<BaseItemPerson> people = default(List<BaseItemPerson>), List<NameLongIdPair> studios = default(List<NameLongIdPair>), List<NameLongIdPair> genreItems = default(List<NameLongIdPair>), List<NameLongIdPair> tagItems = default(List<NameLongIdPair>), string parentLogoItemId = default(string), string parentBackdropItemId = default(string), List<string> parentBackdropImageTags = default(List<string>), int? localTrailerCount = default(int?), UserItemDataDto userData = default(UserItemDataDto), int? recursiveItemCount = default(int?), int? childCount = default(int?), int? seasonCount = default(int?), string seriesName = default(string), string seriesId = default(string), string seasonId = default(string), int? specialFeatureCount = default(int?), string displayPreferencesId = default(string), string status = default(string), List<DayOfWeek> airDays = default(List<DayOfWeek>), List<string> tags = default(List<string>), double? primaryImageAspectRatio = default(double?), List<string> artists = default(List<string>), List<NameIdPair> artistItems = default(List<NameIdPair>), List<NameIdPair> composers = default(List<NameIdPair>), string album = default(string), string collectionType = default(string), string displayOrder = default(string), string albumId = default(string), string albumPrimaryImageTag = default(string), string seriesPrimaryImageTag = default(string), string albumArtist = default(string), List<NameIdPair> albumArtists = default(List<NameIdPair>), string seasonName = default(string), List<MediaStream> mediaStreams = default(List<MediaStream>), int? partCount = default(int?), Dictionary<string, string> imageTags = default(Dictionary<string, string>), List<string> backdropImageTags = default(List<string>), string parentLogoImageTag = default(string), string seriesStudio = default(string), string primaryImageItemId = default(string), string primaryImageTag = default(string), string parentThumbItemId = default(string), string parentThumbImageTag = default(string), List<ChapterInfo> chapters = default(List<ChapterInfo>), LocationType locationType = default(LocationType), string mediaType = default(string), DateTimeOffset? endDate = default(DateTimeOffset?), List<MetadataFields> lockedFields = default(List<MetadataFields>), bool? lockData = default(bool?), int? width = default(int?), int? height = default(int?), string cameraMake = default(string), string cameraModel = default(string), string software = default(string), double? exposureTime = default(double?), double? focalLength = default(double?), DrawingImageOrientation imageOrientation = default(DrawingImageOrientation), double? aperture = default(double?), double? shutterSpeed = default(double?), double? latitude = default(double?), double? longitude = default(double?), double? altitude = default(double?), int? isoSpeedRating = default(int?), string seriesTimerId = default(string), string channelPrimaryImageTag = default(string), DateTimeOffset? startDate = default(DateTimeOffset?), double? completionPercentage = default(double?), bool? isRepeat = default(bool?), bool? isNew = default(bool?), string episodeTitle = default(string), bool? isMovie = default(bool?), bool? isSports = default(bool?), bool? isSeries = default(bool?), bool? isLive = default(bool?), bool? isNews = default(bool?), bool? isKids = default(bool?), bool? isPremiere = default(bool?), LiveTvTimerType timerType = default(LiveTvTimerType), bool? disabled = default(bool?), string managementId = default(string), string timerId = default(string), BaseItemDto currentProgram = default(BaseItemDto), int? movieCount = default(int?), int? seriesCount = default(int?), int? albumCount = default(int?), int? songCount = default(int?), int? musicVideoCount = default(int?), List<string> subviews = default(List<string>), string listingsProviderId = default(string), string listingsChannelId = default(string), string listingsPath = default(string), string listingsId = default(string), string listingsChannelName = default(string), string listingsChannelNumber = default(string), string affiliateCallSign = default(string))
         {
             this.Name = name;
             this.OriginalTitle = originalTitle;
@@ -194,6 +199,11 @@ namespace EmbyClient.Dotnet.Model
             this.TunerName = tunerName;
             this.PlaylistItemId = playlistItemId;
             this.DateCreated = dateCreated;
+            this.DateModified = dateModified;
+            this.VideoCodec = videoCodec;
+            this.AudioCodec = audioCodec;
+            this.AverageFrameRate = averageFrameRate;
+            this.RealFrameRate = realFrameRate;
             this.ExtraType = extraType;
             this.SortIndexNumber = sortIndexNumber;
             this.SortParentIndexNumber = sortParentIndexNumber;
@@ -408,6 +418,36 @@ namespace EmbyClient.Dotnet.Model
         /// <value>The date created.</value>
         [DataMember(Name="DateCreated", EmitDefaultValue=false)]
         public DateTimeOffset? DateCreated { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DateModified
+        /// </summary>
+        [DataMember(Name="DateModified", EmitDefaultValue=false)]
+        public DateTimeOffset? DateModified { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VideoCodec
+        /// </summary>
+        [DataMember(Name="VideoCodec", EmitDefaultValue=false)]
+        public string VideoCodec { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AudioCodec
+        /// </summary>
+        [DataMember(Name="AudioCodec", EmitDefaultValue=false)]
+        public string AudioCodec { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AverageFrameRate
+        /// </summary>
+        [DataMember(Name="AverageFrameRate", EmitDefaultValue=false)]
+        public float? AverageFrameRate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RealFrameRate
+        /// </summary>
+        [DataMember(Name="RealFrameRate", EmitDefaultValue=false)]
+        public float? RealFrameRate { get; set; }
 
         /// <summary>
         /// Gets or Sets ExtraType
@@ -1383,6 +1423,11 @@ namespace EmbyClient.Dotnet.Model
             sb.Append("  TunerName: ").Append(TunerName).Append("\n");
             sb.Append("  PlaylistItemId: ").Append(PlaylistItemId).Append("\n");
             sb.Append("  DateCreated: ").Append(DateCreated).Append("\n");
+            sb.Append("  DateModified: ").Append(DateModified).Append("\n");
+            sb.Append("  VideoCodec: ").Append(VideoCodec).Append("\n");
+            sb.Append("  AudioCodec: ").Append(AudioCodec).Append("\n");
+            sb.Append("  AverageFrameRate: ").Append(AverageFrameRate).Append("\n");
+            sb.Append("  RealFrameRate: ").Append(RealFrameRate).Append("\n");
             sb.Append("  ExtraType: ").Append(ExtraType).Append("\n");
             sb.Append("  SortIndexNumber: ").Append(SortIndexNumber).Append("\n");
             sb.Append("  SortParentIndexNumber: ").Append(SortParentIndexNumber).Append("\n");
@@ -1612,6 +1657,31 @@ namespace EmbyClient.Dotnet.Model
                     this.DateCreated == input.DateCreated ||
                     (this.DateCreated != null &&
                     this.DateCreated.Equals(input.DateCreated))
+                ) && 
+                (
+                    this.DateModified == input.DateModified ||
+                    (this.DateModified != null &&
+                    this.DateModified.Equals(input.DateModified))
+                ) && 
+                (
+                    this.VideoCodec == input.VideoCodec ||
+                    (this.VideoCodec != null &&
+                    this.VideoCodec.Equals(input.VideoCodec))
+                ) && 
+                (
+                    this.AudioCodec == input.AudioCodec ||
+                    (this.AudioCodec != null &&
+                    this.AudioCodec.Equals(input.AudioCodec))
+                ) && 
+                (
+                    this.AverageFrameRate == input.AverageFrameRate ||
+                    (this.AverageFrameRate != null &&
+                    this.AverageFrameRate.Equals(input.AverageFrameRate))
+                ) && 
+                (
+                    this.RealFrameRate == input.RealFrameRate ||
+                    (this.RealFrameRate != null &&
+                    this.RealFrameRate.Equals(input.RealFrameRate))
                 ) && 
                 (
                     this.ExtraType == input.ExtraType ||
@@ -2397,6 +2467,16 @@ namespace EmbyClient.Dotnet.Model
                     hashCode = hashCode * 59 + this.PlaylistItemId.GetHashCode();
                 if (this.DateCreated != null)
                     hashCode = hashCode * 59 + this.DateCreated.GetHashCode();
+                if (this.DateModified != null)
+                    hashCode = hashCode * 59 + this.DateModified.GetHashCode();
+                if (this.VideoCodec != null)
+                    hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
+                if (this.AudioCodec != null)
+                    hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
+                if (this.AverageFrameRate != null)
+                    hashCode = hashCode * 59 + this.AverageFrameRate.GetHashCode();
+                if (this.RealFrameRate != null)
+                    hashCode = hashCode * 59 + this.RealFrameRate.GetHashCode();
                 if (this.ExtraType != null)
                     hashCode = hashCode * 59 + this.ExtraType.GetHashCode();
                 if (this.SortIndexNumber != null)

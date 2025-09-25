@@ -202,10 +202,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -215,10 +215,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -305,10 +305,10 @@ type LibraryServiceApiGetAlbumsByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -318,10 +318,10 @@ type LibraryServiceApiGetAlbumsByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -800,10 +800,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -813,10 +813,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -903,10 +903,10 @@ type LibraryServiceApiGetArtistsByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -916,10 +916,10 @@ type LibraryServiceApiGetArtistsByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -1398,10 +1398,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -1411,10 +1411,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -1501,10 +1501,10 @@ type LibraryServiceApiGetGamesByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -1514,10 +1514,10 @@ type LibraryServiceApiGetGamesByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -2477,10 +2477,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -2490,10 +2490,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -2580,10 +2580,10 @@ type LibraryServiceApiGetItemsByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -2593,10 +2593,10 @@ type LibraryServiceApiGetItemsByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -3076,10 +3076,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -3089,10 +3089,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -3180,10 +3180,10 @@ type LibraryServiceApiGetItemsByIdThememediaOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -3193,10 +3193,10 @@ type LibraryServiceApiGetItemsByIdThememediaOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -3679,10 +3679,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -3692,10 +3692,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -3783,10 +3783,10 @@ type LibraryServiceApiGetItemsByIdThemesongsOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -3796,10 +3796,10 @@ type LibraryServiceApiGetItemsByIdThemesongsOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -4282,10 +4282,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -4295,10 +4295,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -4386,10 +4386,10 @@ type LibraryServiceApiGetItemsByIdThemevideosOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -4399,10 +4399,10 @@ type LibraryServiceApiGetItemsByIdThemevideosOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -5485,10 +5485,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -5498,10 +5498,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -5588,10 +5588,10 @@ type LibraryServiceApiGetMoviesByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -5601,10 +5601,10 @@ type LibraryServiceApiGetMoviesByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -6083,10 +6083,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -6096,10 +6096,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -6186,10 +6186,10 @@ type LibraryServiceApiGetShowsByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -6199,10 +6199,10 @@ type LibraryServiceApiGetShowsByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool
@@ -6681,10 +6681,10 @@ Requires authentication as user
      * @param "AdjacentTo" (optional.String) -  Optional. Return items that are siblings of a supplied item.
      * @param "StartItemId" (optional.String) -  Optional. Skip through the list until a given item is found.
      * @param "MinIndexNumber" (optional.Int32) -  Optional filter by minimum index number.
-     * @param "MinStartDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxStartDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
-     * @param "MinEndDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxEndDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinStartDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxStartDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinEndDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxEndDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "MinPlayers" (optional.Int32) -  Optional filter by minimum number of game players.
      * @param "MaxPlayers" (optional.Int32) -  Optional filter by maximum number of game players.
      * @param "ParentIndexNumber" (optional.Int32) -  Optional filter by parent index number.
@@ -6694,10 +6694,10 @@ Requires authentication as user
      * @param "MinCommunityRating" (optional.Float64) -  Optional filter by minimum community rating.
      * @param "MinCriticRating" (optional.Float64) -  Optional filter by minimum critic rating.
      * @param "AiredDuringSeason" (optional.Int32) -  Gets all episodes that aired during a season, including specials.
-     * @param "MinPremiereDate" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSaved" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MinDateLastSavedForUser" (optional.String) -  Optional. The minimum premiere date. Format &#x3D; ISO
-     * @param "MaxPremiereDate" (optional.String) -  Optional. The maximum premiere date. Format &#x3D; ISO
+     * @param "MinPremiereDate" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSaved" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MinDateLastSavedForUser" (optional.Time) -  Optional. The minimum premiere date. Format &#x3D; ISO
+     * @param "MaxPremiereDate" (optional.Time) -  Optional. The maximum premiere date. Format &#x3D; ISO
      * @param "HasOverview" (optional.Bool) -  Optional filter by items that have an overview or not.
      * @param "HasImdbId" (optional.Bool) -  Optional filter by items that have an imdb id or not.
      * @param "HasTmdbId" (optional.Bool) -  Optional filter by items that have a tmdb id or not.
@@ -6784,10 +6784,10 @@ type LibraryServiceApiGetTrailersByIdSimilarOpts struct {
     AdjacentTo optional.String
     StartItemId optional.String
     MinIndexNumber optional.Int32
-    MinStartDate optional.String
-    MaxStartDate optional.String
-    MinEndDate optional.String
-    MaxEndDate optional.String
+    MinStartDate optional.Time
+    MaxStartDate optional.Time
+    MinEndDate optional.Time
+    MaxEndDate optional.Time
     MinPlayers optional.Int32
     MaxPlayers optional.Int32
     ParentIndexNumber optional.Int32
@@ -6797,10 +6797,10 @@ type LibraryServiceApiGetTrailersByIdSimilarOpts struct {
     MinCommunityRating optional.Float64
     MinCriticRating optional.Float64
     AiredDuringSeason optional.Int32
-    MinPremiereDate optional.String
-    MinDateLastSaved optional.String
-    MinDateLastSavedForUser optional.String
-    MaxPremiereDate optional.String
+    MinPremiereDate optional.Time
+    MinDateLastSaved optional.Time
+    MinDateLastSavedForUser optional.Time
+    MaxPremiereDate optional.Time
     HasOverview optional.Bool
     HasImdbId optional.Bool
     HasTmdbId optional.Bool

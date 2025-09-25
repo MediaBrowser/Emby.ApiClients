@@ -18,7 +18,7 @@ open class ActivityLogServiceAPI {
      - parameter minDate: (query) Optional. The minimum date. Format &#x3D; ISO (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func getSystemActivitylogEntries(startIndex: Int? = nil, limit: Int? = nil, minDate: String? = nil, completion: @escaping ((_ data: QueryResultActivityLogEntry?,_ error: Error?) -> Void)) {
+    open class func getSystemActivitylogEntries(startIndex: Int? = nil, limit: Int? = nil, minDate: Date? = nil, completion: @escaping ((_ data: QueryResultActivityLogEntry?,_ error: Error?) -> Void)) {
         getSystemActivitylogEntriesWithRequestBuilder(startIndex: startIndex, limit: limit, minDate: minDate).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -67,7 +67,7 @@ open class ActivityLogServiceAPI {
 
      - returns: RequestBuilder<QueryResultActivityLogEntry> 
      */
-    open class func getSystemActivitylogEntriesWithRequestBuilder(startIndex: Int? = nil, limit: Int? = nil, minDate: String? = nil) -> RequestBuilder<QueryResultActivityLogEntry> {
+    open class func getSystemActivitylogEntriesWithRequestBuilder(startIndex: Int? = nil, limit: Int? = nil, minDate: Date? = nil) -> RequestBuilder<QueryResultActivityLogEntry> {
         let path = "/System/ActivityLog/Entries"
         let URLString = EmbyClientAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -75,7 +75,7 @@ open class ActivityLogServiceAPI {
         url?.queryItems = APIHelper.mapValuesToQueryItems([
                         "StartIndex": startIndex?.encodeToJSON(), 
                         "Limit": limit?.encodeToJSON(), 
-                        "MinDate": minDate
+                        "MinDate": minDate?.encodeToJSON()
         ])
 
 

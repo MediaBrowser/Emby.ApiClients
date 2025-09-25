@@ -18,7 +18,7 @@ import ProxyHeaderMode from './ProxyHeaderMode';
 /**
 * The ServerConfiguration model module.
 * @module model/ServerConfiguration
-* @version 4.9.0.70
+* @version 4.9.1.40
 */
 export default class ServerConfiguration {
     /**
@@ -225,6 +225,12 @@ export default class ServerConfiguration {
             }
             if (data.hasOwnProperty('ProxyHeaderMode')) {
                 obj['ProxyHeaderMode'] = ProxyHeaderMode.constructFromObject(data['ProxyHeaderMode']);
+            }
+            if (data.hasOwnProperty('IsInMaintenanceMode')) {
+                obj['IsInMaintenanceMode'] = ApiClient.convertToType(data['IsInMaintenanceMode'], 'Boolean');
+            }
+            if (data.hasOwnProperty('MaintenanceModeMessage')) {
+                obj['MaintenanceModeMessage'] = ApiClient.convertToType(data['MaintenanceModeMessage'], 'String');
             }
             if (data.hasOwnProperty('EnableDebugLevelLogging')) {
                 obj['EnableDebugLevelLogging'] = ApiClient.convertToType(data['EnableDebugLevelLogging'], 'Boolean');
@@ -507,6 +513,14 @@ export default class ServerConfiguration {
     * @member {module:model/ProxyHeaderMode} ProxyHeaderMode
     */
     'ProxyHeaderMode' = undefined;
+    /**
+    * @member {Boolean} IsInMaintenanceMode
+    */
+    'IsInMaintenanceMode' = undefined;
+    /**
+    * @member {String} MaintenanceModeMessage
+    */
+    'MaintenanceModeMessage' = undefined;
     /**
     * A value indicating whether \\[enable debug level logging\\].
     * @member {Boolean} EnableDebugLevelLogging

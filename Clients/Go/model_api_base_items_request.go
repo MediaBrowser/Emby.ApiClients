@@ -5,11 +5,17 @@
  *
  */
 package embyclient
+import (
+	"time"
+)
 
 type ApiBaseItemsRequest struct {
 	IsSpecialEpisode bool `json:"IsSpecialEpisode,omitempty"`
 	Is4K bool `json:"Is4K,omitempty"`
+	MinDateCreated time.Time `json:"MinDateCreated,omitempty"`
+	MaxDateCreated time.Time `json:"MaxDateCreated,omitempty"`
 	EnableTotalRecordCount bool `json:"EnableTotalRecordCount,omitempty"`
+	MatchAnyWord bool `json:"MatchAnyWord,omitempty"`
 	IsDuplicate bool `json:"IsDuplicate,omitempty"`
 	Name string `json:"Name,omitempty"`
 	RecordingKeyword string `json:"RecordingKeyword,omitempty"`

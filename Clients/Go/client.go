@@ -34,7 +34,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the Emby Server REST API API v4.9.0.70
+// APIClient manages communication with the Emby Server REST API API v4.9.1.40
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -63,6 +63,8 @@ type APIClient struct {
 	ConfigurationServiceApi *ConfigurationServiceApiService
 
 	ConnectServiceApi *ConnectServiceApiService
+
+	ContentServiceApi *ContentServiceApiService
 
 	DeviceServiceApi *DeviceServiceApiService
 
@@ -206,6 +208,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CollectionServiceApi = (*CollectionServiceApiService)(&c.common)
 	c.ConfigurationServiceApi = (*ConfigurationServiceApiService)(&c.common)
 	c.ConnectServiceApi = (*ConnectServiceApiService)(&c.common)
+	c.ContentServiceApi = (*ContentServiceApiService)(&c.common)
 	c.DeviceServiceApi = (*DeviceServiceApiService)(&c.common)
 	c.DisplayPreferencesServiceApi = (*DisplayPreferencesServiceApiService)(&c.common)
 	c.DlnaServerServiceApi = (*DlnaServerServiceApiService)(&c.common)

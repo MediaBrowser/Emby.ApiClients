@@ -35,7 +35,7 @@ class ActivityLogServiceApi(object):
         :param async_req bool
         :param int start_index: Optional. The record index to start at. All items with a lower index will be dropped from the results.
         :param int limit: Optional. The maximum number of records to return
-        :param str min_date: Optional. The minimum date. Format = ISO
+        :param datetime min_date: Optional. The minimum date. Format = ISO
         :return: QueryResultActivityLogEntry
                  If the method is called asynchronously,
                  returns the request thread.
@@ -59,7 +59,7 @@ class ActivityLogServiceApi(object):
         :param async_req bool
         :param int start_index: Optional. The record index to start at. All items with a lower index will be dropped from the results.
         :param int limit: Optional. The maximum number of records to return
-        :param str min_date: Optional. The minimum date. Format = ISO
+        :param datetime min_date: Optional. The minimum date. Format = ISO
         :return: QueryResultActivityLogEntry
                  If the method is called asynchronously,
                  returns the request thread.

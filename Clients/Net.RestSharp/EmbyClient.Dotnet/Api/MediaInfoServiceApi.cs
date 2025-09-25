@@ -107,7 +107,7 @@ namespace EmbyClient.Dotnet.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> PostLivestreamsCloseWithHttpInfo (string liveStreamId);
         /// <summary>
-        /// Closes a media source
+        /// Gets media info for a live stream
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
@@ -118,7 +118,7 @@ namespace EmbyClient.Dotnet.Api
         void PostLivestreamsMediainfo (string liveStreamId);
 
         /// <summary>
-        /// Closes a media source
+        /// Gets media info for a live stream
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
@@ -239,7 +239,7 @@ namespace EmbyClient.Dotnet.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> PostLivestreamsCloseAsyncWithHttpInfo (string liveStreamId);
         /// <summary>
-        /// Closes a media source
+        /// Gets media info for a live stream
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
@@ -250,7 +250,7 @@ namespace EmbyClient.Dotnet.Api
         System.Threading.Tasks.Task PostLivestreamsMediainfoAsync (string liveStreamId);
 
         /// <summary>
-        /// Closes a media source
+        /// Gets media info for a live stream
         /// </summary>
         /// <remarks>
         /// Requires authentication as user
@@ -1042,7 +1042,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Closes a media source Requires authentication as user
+        /// Gets media info for a live stream Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="liveStreamId">LiveStreamId</param>
@@ -1053,7 +1053,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Closes a media source Requires authentication as user
+        /// Gets media info for a live stream Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="liveStreamId">LiveStreamId</param>
@@ -1116,7 +1116,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Closes a media source Requires authentication as user
+        /// Gets media info for a live stream Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="liveStreamId">LiveStreamId</param>
@@ -1128,7 +1128,7 @@ namespace EmbyClient.Dotnet.Api
         }
 
         /// <summary>
-        /// Closes a media source Requires authentication as user
+        /// Gets media info for a live stream Requires authentication as user
         /// </summary>
         /// <exception cref="EmbyClient.Dotnet.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="liveStreamId">LiveStreamId</param>
