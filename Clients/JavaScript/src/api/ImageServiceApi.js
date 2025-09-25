@@ -16,7 +16,7 @@ import ImageType from '../model/ImageType';
 /**
 * ImageService service.
 * @module api/ImageServiceApi
-* @version 4.9.1.35
+* @version 4.9.1.36
 */
 export default class ImageServiceApi {
 

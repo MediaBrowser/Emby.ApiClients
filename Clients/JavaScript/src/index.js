@@ -188,6 +188,8 @@ import PackageTargetSystem from './model/PackageTargetSystem';
 import PackageVersionClass from './model/PackageVersionClass';
 import PackageVersionInfo from './model/PackageVersionInfo';
 import ParentalRating from './model/ParentalRating';
+import PartyInfo from './model/PartyInfo';
+import PartyInfoResult from './model/PartyInfoResult';
 import PathSubstitution from './model/PathSubstitution';
 import PersistenceIntroDebugInfo from './model/PersistenceIntroDebugInfo';
 import PersonLookupInfo from './model/PersonLookupInfo';
@@ -381,6 +383,7 @@ import NotificationsServiceApi from './api/NotificationsServiceApi';
 import OfficialRatingServiceApi from './api/OfficialRatingServiceApi';
 import OpenApiServiceApi from './api/OpenApiServiceApi';
 import PackageServiceApi from './api/PackageServiceApi';
+import PartyServiceApi from './api/PartyServiceApi';
 import PersonsServiceApi from './api/PersonsServiceApi';
 import PlaylistServiceApi from './api/PlaylistServiceApi';
 import PlaystateServiceApi from './api/PlaystateServiceApi';
@@ -437,7 +440,7 @@ import WebAppServiceApi from './api/WebAppServiceApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.9.1.35
+* @version 4.9.1.36
 */
 export {
     /**
@@ -1513,6 +1516,18 @@ export {
      * @property {module:model/ParentalRating}
      */
     ParentalRating,
+
+    /**
+     * The PartyInfo model constructor.
+     * @property {module:model/PartyInfo}
+     */
+    PartyInfo,
+
+    /**
+     * The PartyInfoResult model constructor.
+     * @property {module:model/PartyInfoResult}
+     */
+    PartyInfoResult,
 
     /**
      * The PathSubstitution model constructor.
@@ -2671,6 +2686,12 @@ export {
     * @property {module:api/PackageServiceApi}
     */
     PackageServiceApi,
+
+    /**
+    * The PartyServiceApi service constructor.
+    * @property {module:api/PartyServiceApi}
+    */
+    PartyServiceApi,
 
     /**
     * The PersonsServiceApi service constructor.

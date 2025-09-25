@@ -27,6 +27,7 @@ class ApiBaseItemsRequest(object):
         'min_date_created': 'datetime',
         'max_date_created': 'datetime',
         'enable_total_record_count': 'bool',
+        'match_any_word': 'bool',
         'is_duplicate': 'bool',
         'name': 'str',
         'recording_keyword': 'str',
@@ -67,6 +68,7 @@ class ApiBaseItemsRequest(object):
         'min_date_created': 'MinDateCreated',
         'max_date_created': 'MaxDateCreated',
         'enable_total_record_count': 'EnableTotalRecordCount',
+        'match_any_word': 'MatchAnyWord',
         'is_duplicate': 'IsDuplicate',
         'name': 'Name',
         'recording_keyword': 'RecordingKeyword',
@@ -101,13 +103,14 @@ class ApiBaseItemsRequest(object):
         'exclude_sources': 'ExcludeSources'
     }
 
-    def __init__(self, is_special_episode=None, is4_k=None, min_date_created=None, max_date_created=None, enable_total_record_count=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None, exclude_sources=None):  # noqa: E501
+    def __init__(self, is_special_episode=None, is4_k=None, min_date_created=None, max_date_created=None, enable_total_record_count=None, match_any_word=None, is_duplicate=None, name=None, recording_keyword=None, recording_keyword_type=None, random_seed=None, genre_ids=None, collection_ids=None, tag_ids=None, exclude_tag_ids=None, item_person_types=None, exclude_artist_ids=None, album_artist_ids=None, composer_artist_ids=None, contributing_artist_ids=None, album_ids=None, outer_ids=None, list_item_ids=None, audio_languages=None, subtitle_languages=None, can_edit_items=None, group_items_into=None, is_standalone_special=None, min_width=None, min_height=None, max_width=None, max_height=None, group_programs_by_series=None, air_days=None, is_airing=None, has_aired=None, collection_types=None, exclude_sources=None):  # noqa: E501
         """ApiBaseItemsRequest - a model defined in Swagger"""  # noqa: E501
         self._is_special_episode = None
         self._is4_k = None
         self._min_date_created = None
         self._max_date_created = None
         self._enable_total_record_count = None
+        self._match_any_word = None
         self._is_duplicate = None
         self._name = None
         self._recording_keyword = None
@@ -151,6 +154,8 @@ class ApiBaseItemsRequest(object):
             self.max_date_created = max_date_created
         if enable_total_record_count is not None:
             self.enable_total_record_count = enable_total_record_count
+        if match_any_word is not None:
+            self.match_any_word = match_any_word
         if is_duplicate is not None:
             self.is_duplicate = is_duplicate
         if name is not None:
@@ -320,6 +325,27 @@ class ApiBaseItemsRequest(object):
         """
 
         self._enable_total_record_count = enable_total_record_count
+
+    @property
+    def match_any_word(self):
+        """Gets the match_any_word of this ApiBaseItemsRequest.  # noqa: E501
+
+
+        :return: The match_any_word of this ApiBaseItemsRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._match_any_word
+
+    @match_any_word.setter
+    def match_any_word(self, match_any_word):
+        """Sets the match_any_word of this ApiBaseItemsRequest.
+
+
+        :param match_any_word: The match_any_word of this ApiBaseItemsRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._match_any_word = match_any_word
 
     @property
     def is_duplicate(self):

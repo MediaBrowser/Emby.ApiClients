@@ -52,6 +52,7 @@ from embyclient.api.notifications_service_api import NotificationsServiceApi
 from embyclient.api.official_rating_service_api import OfficialRatingServiceApi
 from embyclient.api.open_api_service_api import OpenApiServiceApi
 from embyclient.api.package_service_api import PackageServiceApi
+from embyclient.api.party_service_api import PartyServiceApi
 from embyclient.api.persons_service_api import PersonsServiceApi
 from embyclient.api.playlist_service_api import PlaylistServiceApi
 from embyclient.api.playstate_service_api import PlaystateServiceApi
@@ -260,6 +261,8 @@ from embyclient.models.package_target_system import PackageTargetSystem
 from embyclient.models.package_version_class import PackageVersionClass
 from embyclient.models.package_version_info import PackageVersionInfo
 from embyclient.models.parental_rating import ParentalRating
+from embyclient.models.party_info import PartyInfo
+from embyclient.models.party_info_result import PartyInfoResult
 from embyclient.models.path_substitution import PathSubstitution
 from embyclient.models.persistence_intro_debug_info import PersistenceIntroDebugInfo
 from embyclient.models.person_lookup_info import PersonLookupInfo

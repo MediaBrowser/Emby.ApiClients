@@ -2,7 +2,7 @@
  * Emby Server REST API (BETA)
  * Explore the Emby Server API
  *
- * OpenAPI spec version: 4.9.1.35
+ * OpenAPI spec version: 4.9.1.36
  * 
  *
  * NOTE: This file is auto generated.
@@ -6277,6 +6277,30 @@ describe("PackageServiceApi", () => {
   test("postPackagesInstallingByIdDelete", () => {
     const Id: string = "Id_example"
     return expect(instance.postPackagesInstallingByIdDelete(Id, {})).resolves.toBe(null)
+  })
+})
+
+describe("PartyServiceApi", () => {
+  let instance: api.PartyServiceApi
+  beforeEach(function() {
+    instance = new api.PartyServiceApi(config)
+  });
+
+  test("getParties", () => {
+    return expect(instance.getParties({})).resolves.toBe(null)
+  })
+  test("getPartiesInfo", () => {
+    return expect(instance.getPartiesInfo({})).resolves.toBe(null)
+  })
+  test("postParties", () => {
+    return expect(instance.postParties({})).resolves.toBe(null)
+  })
+  test("postPartiesByIdJoin", () => {
+    const Id: string = "Id_example"
+    return expect(instance.postPartiesByIdJoin(Id, {})).resolves.toBe(null)
+  })
+  test("postPartiesLeave", () => {
+    return expect(instance.postPartiesLeave({})).resolves.toBe(null)
   })
 })
 

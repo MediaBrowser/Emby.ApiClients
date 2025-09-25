@@ -42,6 +42,9 @@ public class ApiBaseItemsRequest {
   @SerializedName("EnableTotalRecordCount")
   private Boolean enableTotalRecordCount = null;
 
+  @SerializedName("MatchAnyWord")
+  private Boolean matchAnyWord = null;
+
   @SerializedName("IsDuplicate")
   private Boolean isDuplicate = null;
 
@@ -226,6 +229,24 @@ public class ApiBaseItemsRequest {
 
   public void setEnableTotalRecordCount(Boolean enableTotalRecordCount) {
     this.enableTotalRecordCount = enableTotalRecordCount;
+  }
+
+  public ApiBaseItemsRequest matchAnyWord(Boolean matchAnyWord) {
+    this.matchAnyWord = matchAnyWord;
+    return this;
+  }
+
+   /**
+   * Get matchAnyWord
+   * @return matchAnyWord
+  **/
+  @Schema(description = "")
+  public Boolean isMatchAnyWord() {
+    return matchAnyWord;
+  }
+
+  public void setMatchAnyWord(Boolean matchAnyWord) {
+    this.matchAnyWord = matchAnyWord;
   }
 
   public ApiBaseItemsRequest isDuplicate(Boolean isDuplicate) {
@@ -843,6 +864,7 @@ public class ApiBaseItemsRequest {
         Objects.equals(this.minDateCreated, apiBaseItemsRequest.minDateCreated) &&
         Objects.equals(this.maxDateCreated, apiBaseItemsRequest.maxDateCreated) &&
         Objects.equals(this.enableTotalRecordCount, apiBaseItemsRequest.enableTotalRecordCount) &&
+        Objects.equals(this.matchAnyWord, apiBaseItemsRequest.matchAnyWord) &&
         Objects.equals(this.isDuplicate, apiBaseItemsRequest.isDuplicate) &&
         Objects.equals(this.name, apiBaseItemsRequest.name) &&
         Objects.equals(this.recordingKeyword, apiBaseItemsRequest.recordingKeyword) &&
@@ -879,7 +901,7 @@ public class ApiBaseItemsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(isSpecialEpisode, is4K, minDateCreated, maxDateCreated, enableTotalRecordCount, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, itemPersonTypes, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes, excludeSources);
+    return Objects.hash(isSpecialEpisode, is4K, minDateCreated, maxDateCreated, enableTotalRecordCount, matchAnyWord, isDuplicate, name, recordingKeyword, recordingKeywordType, randomSeed, genreIds, collectionIds, tagIds, excludeTagIds, itemPersonTypes, excludeArtistIds, albumArtistIds, composerArtistIds, contributingArtistIds, albumIds, outerIds, listItemIds, audioLanguages, subtitleLanguages, canEditItems, groupItemsInto, isStandaloneSpecial, minWidth, minHeight, maxWidth, maxHeight, groupProgramsBySeries, airDays, isAiring, hasAired, collectionTypes, excludeSources);
   }
 
 
@@ -893,6 +915,7 @@ public class ApiBaseItemsRequest {
     sb.append("    minDateCreated: ").append(toIndentedString(minDateCreated)).append("\n");
     sb.append("    maxDateCreated: ").append(toIndentedString(maxDateCreated)).append("\n");
     sb.append("    enableTotalRecordCount: ").append(toIndentedString(enableTotalRecordCount)).append("\n");
+    sb.append("    matchAnyWord: ").append(toIndentedString(matchAnyWord)).append("\n");
     sb.append("    isDuplicate: ").append(toIndentedString(isDuplicate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    recordingKeyword: ").append(toIndentedString(recordingKeyword)).append("\n");

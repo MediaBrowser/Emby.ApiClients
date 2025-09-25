@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ApiAddAdminNotification model module.
 * @module model/ApiAddAdminNotification
-* @version 4.9.1.35
+* @version 4.9.1.36
 */
 export default class ApiAddAdminNotification {
     /**

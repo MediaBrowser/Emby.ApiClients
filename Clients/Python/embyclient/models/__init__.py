@@ -186,6 +186,8 @@ from embyclient.models.package_target_system import PackageTargetSystem
 from embyclient.models.package_version_class import PackageVersionClass
 from embyclient.models.package_version_info import PackageVersionInfo
 from embyclient.models.parental_rating import ParentalRating
+from embyclient.models.party_info import PartyInfo
+from embyclient.models.party_info_result import PartyInfoResult
 from embyclient.models.path_substitution import PathSubstitution
 from embyclient.models.persistence_intro_debug_info import PersistenceIntroDebugInfo
 from embyclient.models.person_lookup_info import PersonLookupInfo
