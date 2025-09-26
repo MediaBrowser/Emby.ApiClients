@@ -18,7 +18,7 @@ import RemoteImageResult from '../model/RemoteImageResult';
 /**
 * RemoteImageService service.
 * @module api/RemoteImageServiceApi
-* @version 4.9.1.40
+* @version 4.9.1.50
 */
 export default class RemoteImageServiceApi {
 
