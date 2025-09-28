@@ -15,7 +15,7 @@ import QueryResultActivityLogEntry from '../model/QueryResultActivityLogEntry';
 /**
 * ActivityLogService service.
 * @module api/ActivityLogServiceApi
-* @version 4.9.1.50
+* @version 4.9.1.60
 */
 export default class ActivityLogServiceApi {
 

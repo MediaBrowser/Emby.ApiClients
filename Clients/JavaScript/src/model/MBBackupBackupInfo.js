@@ -15,7 +15,7 @@ import NameIdPair from './NameIdPair';
 /**
 * The MBBackupBackupInfo model module.
 * @module model/MBBackupBackupInfo
-* @version 4.9.1.50
+* @version 4.9.1.60
 */
 export default class MBBackupBackupInfo {
     /**

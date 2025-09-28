@@ -16,7 +16,7 @@ import PluginsConfigurationPageType from './PluginsConfigurationPageType';
 /**
 * The ApiConfigurationPageInfo model module.
 * @module model/ApiConfigurationPageInfo
-* @version 4.9.1.50
+* @version 4.9.1.60
 */
 export default class ApiConfigurationPageInfo {
     /**

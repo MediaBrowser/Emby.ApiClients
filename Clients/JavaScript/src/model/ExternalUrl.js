@@ -14,7 +14,7 @@ import ApiClient from '../ApiClient';
 /**
 * The ExternalUrl model module.
 * @module model/ExternalUrl
-* @version 4.9.1.50
+* @version 4.9.1.60
 */
 export default class ExternalUrl {
     /**

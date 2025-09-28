@@ -16,7 +16,7 @@ import UnratedItem from './UnratedItem';
 /**
 * The UserPolicy model module.
 * @module model/UserPolicy
-* @version 4.9.1.50
+* @version 4.9.1.60
 */
 export default class UserPolicy {
     /**
