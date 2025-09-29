@@ -34,7 +34,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the Emby Server REST API API v4.9.1.60
+// APIClient manages communication with the Emby Server REST API API v4.9.1.70
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration

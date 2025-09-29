@@ -18,7 +18,7 @@ import SleepTimerMode from './SleepTimerMode';
 /**
 * The PlayerStateInfo model module.
 * @module model/PlayerStateInfo
-* @version 4.9.1.60
+* @version 4.9.1.70
 */
 export default class PlayerStateInfo {
     /**
