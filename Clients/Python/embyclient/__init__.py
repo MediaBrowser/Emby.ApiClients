@@ -52,6 +52,7 @@ from embyclient.api.notifications_service_api import NotificationsServiceApi
 from embyclient.api.official_rating_service_api import OfficialRatingServiceApi
 from embyclient.api.open_api_service_api import OpenApiServiceApi
 from embyclient.api.package_service_api import PackageServiceApi
+from embyclient.api.party_service_api import PartyServiceApi
 from embyclient.api.persons_service_api import PersonsServiceApi
 from embyclient.api.playlist_service_api import PlaylistServiceApi
 from embyclient.api.playstate_service_api import PlaystateServiceApi
@@ -157,6 +158,8 @@ from embyclient.models.editors_editor_base import EditorsEditorBase
 from embyclient.models.editors_editor_button_item import EditorsEditorButtonItem
 from embyclient.models.editors_editor_root import EditorsEditorRoot
 from embyclient.models.encoding_context import EncodingContext
+from embyclient.models.entities_item_image_info import EntitiesItemImageInfo
+from embyclient.models.entities_user import EntitiesUser
 from embyclient.models.enums_ui_command_type import EnumsUICommandType
 from embyclient.models.enums_ui_view_type import EnumsUIViewType
 from embyclient.models.extended_video_sub_types import ExtendedVideoSubTypes
@@ -208,6 +211,7 @@ from embyclient.models.library_type_options import LibraryTypeOptions
 from embyclient.models.library_update_library_options import LibraryUpdateLibraryOptions
 from embyclient.models.library_update_media_path import LibraryUpdateMediaPath
 from embyclient.models.library_user_copy_options import LibraryUserCopyOptions
+from embyclient.models.linked_item_info import LinkedItemInfo
 from embyclient.models.live_stream_request import LiveStreamRequest
 from embyclient.models.live_stream_response import LiveStreamResponse
 from embyclient.models.live_tv_channel_type import LiveTvChannelType
@@ -339,6 +343,8 @@ from embyclient.models.segment_skip_mode import SegmentSkipMode
 from embyclient.models.series_display_order import SeriesDisplayOrder
 from embyclient.models.series_info import SeriesInfo
 from embyclient.models.server_configuration import ServerConfiguration
+from embyclient.models.session_party_info import SessionPartyInfo
+from embyclient.models.session_party_info_result import SessionPartyInfoResult
 from embyclient.models.session_session_info import SessionSessionInfo
 from embyclient.models.session_user_info import SessionUserInfo
 from embyclient.models.sleep_timer_mode import SleepTimerMode

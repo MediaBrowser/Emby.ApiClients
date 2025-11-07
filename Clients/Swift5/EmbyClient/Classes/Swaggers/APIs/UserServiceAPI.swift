@@ -184,7 +184,6 @@ open class UserServiceAPI {
     "EnableSyncTranscoding" : true,
     "RemoteClientBitrateLimit" : 7
   },
-  "HasConfiguredEasyPassword" : true,
   "EnableAutoLogin" : true,
   "UserItemShareLevel" : "None",
   "Configuration" : {
@@ -376,7 +375,6 @@ open class UserServiceAPI {
       "EnableSyncTranscoding" : true,
       "RemoteClientBitrateLimit" : 7
     },
-    "HasConfiguredEasyPassword" : true,
     "EnableAutoLogin" : true,
     "UserItemShareLevel" : "None",
     "Configuration" : {
@@ -469,7 +467,6 @@ open class UserServiceAPI {
       "EnableSyncTranscoding" : true,
       "RemoteClientBitrateLimit" : 7
     },
-    "HasConfiguredEasyPassword" : true,
     "EnableAutoLogin" : true,
     "UserItemShareLevel" : "None",
     "Configuration" : {
@@ -677,7 +674,6 @@ open class UserServiceAPI {
     "EnableSyncTranscoding" : true,
     "RemoteClientBitrateLimit" : 7
   },
-  "HasConfiguredEasyPassword" : true,
   "EnableAutoLogin" : true,
   "UserItemShareLevel" : "None",
   "Configuration" : {
@@ -770,7 +766,6 @@ open class UserServiceAPI {
     "EnableSyncTranscoding" : true,
     "RemoteClientBitrateLimit" : 7
   },
-  "HasConfiguredEasyPassword" : true,
   "EnableAutoLogin" : true,
   "UserItemShareLevel" : "None",
   "Configuration" : {
@@ -912,7 +907,6 @@ open class UserServiceAPI {
       "EnableSyncTranscoding" : true,
       "RemoteClientBitrateLimit" : 7
     },
-    "HasConfiguredEasyPassword" : true,
     "EnableAutoLogin" : true,
     "UserItemShareLevel" : "None",
     "Configuration" : {
@@ -1005,7 +999,6 @@ open class UserServiceAPI {
       "EnableSyncTranscoding" : true,
       "RemoteClientBitrateLimit" : 7
     },
-    "HasConfiguredEasyPassword" : true,
     "EnableAutoLogin" : true,
     "UserItemShareLevel" : "None",
     "Configuration" : {
@@ -1153,7 +1146,6 @@ open class UserServiceAPI {
       "EnableSyncTranscoding" : true,
       "RemoteClientBitrateLimit" : 7
     },
-    "HasConfiguredEasyPassword" : true,
     "EnableAutoLogin" : true,
     "UserItemShareLevel" : "None",
     "Configuration" : {
@@ -2191,7 +2183,6 @@ open class UserServiceAPI {
       "EnableSyncTranscoding" : true,
       "RemoteClientBitrateLimit" : 7
     },
-    "HasConfiguredEasyPassword" : true,
     "EnableAutoLogin" : true,
     "UserItemShareLevel" : "None",
     "Configuration" : {
@@ -3600,7 +3591,6 @@ open class UserServiceAPI {
     "EnableSyncTranscoding" : true,
     "RemoteClientBitrateLimit" : 7
   },
-  "HasConfiguredEasyPassword" : true,
   "EnableAutoLogin" : true,
   "UserItemShareLevel" : "None",
   "Configuration" : {

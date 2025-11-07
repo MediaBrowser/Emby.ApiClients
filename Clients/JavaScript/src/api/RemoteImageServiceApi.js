@@ -18,7 +18,7 @@ import RemoteImageResult from '../model/RemoteImageResult';
 /**
 * RemoteImageService service.
 * @module api/RemoteImageServiceApi
-* @version 4.9.1.80
+* @version 4.9.1.90
 */
 export default class RemoteImageServiceApi {
 
@@ -96,7 +96,8 @@ export default class RemoteImageServiceApi {
         'StartIndex': opts['StartIndex'],
         'Limit': opts['Limit'],
         'ProviderName': opts['ProviderName'],
-        'IncludeAllLanguages': opts['IncludeAllLanguages']
+        'IncludeAllLanguages': opts['IncludeAllLanguages'],
+        'EnableSeriesImages': opts['EnableSeriesImages']
       };
       let headerParams = {
       };

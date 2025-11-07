@@ -46,6 +46,7 @@ from embyclient.api.notifications_service_api import NotificationsServiceApi
 from embyclient.api.official_rating_service_api import OfficialRatingServiceApi
 from embyclient.api.open_api_service_api import OpenApiServiceApi
 from embyclient.api.package_service_api import PackageServiceApi
+from embyclient.api.party_service_api import PartyServiceApi
 from embyclient.api.persons_service_api import PersonsServiceApi
 from embyclient.api.playlist_service_api import PlaylistServiceApi
 from embyclient.api.playstate_service_api import PlaystateServiceApi

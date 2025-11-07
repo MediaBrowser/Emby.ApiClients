@@ -2,7 +2,7 @@
  * Emby Server REST API
  * Explore the Emby Server API
  *
- * OpenAPI spec version: 4.9.1.80
+ * OpenAPI spec version: 4.9.1.90
  * 
  *
  * NOTE: This file is auto generated.
@@ -5237,9 +5237,6 @@ describe("LiveTvServiceApi", () => {
     const Country: string = "Country_example"
     return expect(instance.getLivetvListingprovidersLineups(Id, Type, Location, Country, {})).resolves.toBe(null)
   })
-  test("getLivetvListingprovidersSchedulesdirectCountries", () => {
-    return expect(instance.getLivetvListingprovidersSchedulesdirectCountries({})).resolves.toBe(null)
-  })
   test("getLivetvManageChannels", () => {
     const StartIndex: number = 56
     const Limit: number = 56
@@ -6280,6 +6277,30 @@ describe("PackageServiceApi", () => {
   })
 })
 
+describe("PartyServiceApi", () => {
+  let instance: api.PartyServiceApi
+  beforeEach(function() {
+    instance = new api.PartyServiceApi(config)
+  });
+
+  test("getParties", () => {
+    return expect(instance.getParties({})).resolves.toBe(null)
+  })
+  test("getPartiesInfo", () => {
+    return expect(instance.getPartiesInfo({})).resolves.toBe(null)
+  })
+  test("postParties", () => {
+    return expect(instance.postParties({})).resolves.toBe(null)
+  })
+  test("postPartiesByIdJoin", () => {
+    const Id: string = "Id_example"
+    return expect(instance.postPartiesByIdJoin(Id, {})).resolves.toBe(null)
+  })
+  test("postPartiesLeave", () => {
+    return expect(instance.postPartiesLeave({})).resolves.toBe(null)
+  })
+})
+
 describe("PersonsServiceApi", () => {
   let instance: api.PersonsServiceApi
   beforeEach(function() {
@@ -6595,7 +6616,8 @@ describe("RemoteImageServiceApi", () => {
     const Limit: number = 56
     const ProviderName: string = "ProviderName_example"
     const IncludeAllLanguages: boolean = true
-    return expect(instance.getItemsByIdRemoteimages(Id, Type, StartIndex, Limit, ProviderName, IncludeAllLanguages, {})).resolves.toBe(null)
+    const EnableSeriesImages: boolean = true
+    return expect(instance.getItemsByIdRemoteimages(Id, Type, StartIndex, Limit, ProviderName, IncludeAllLanguages, EnableSeriesImages, {})).resolves.toBe(null)
   })
   test("getItemsByIdRemoteimagesProviders", () => {
     const Id: string = "Id_example"

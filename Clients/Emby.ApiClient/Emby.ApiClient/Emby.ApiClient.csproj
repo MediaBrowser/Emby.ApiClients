@@ -9,7 +9,7 @@
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
         <RootNamespace>Emby.ApiClient</RootNamespace>
-        <Version>4.9.1.80</Version>
+        <Version>4.9.1.90</Version>
     </PropertyGroup>
 
     <PropertyGroup>
